@@ -1,0 +1,8 @@
+checker:
+handle optionals
+handle special cases: 0, 1, too big
+
+history:
+
+
+photos:
