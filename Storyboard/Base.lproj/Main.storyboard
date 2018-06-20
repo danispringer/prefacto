@@ -123,34 +123,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl">
-                                <rect key="frame" x="74" y="254.5" width="173.5" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="100" y="116" width="121" height="31.5"/>
+                                <rect key="frame" x="100" y="111" width="121" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jum-QR-QoL">
-                                <rect key="frame" x="0.0" y="430" width="320" height="70"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl">
+                                <rect key="frame" x="35" y="249" width="250" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="qmc-hE-qJJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CJf-iG-clI"/>
+                                    <constraint firstAttribute="height" constant="40" id="S7O-Dy-kzA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Jum-QR-QoL" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="L8i-Yc-Zol"/>
                             <constraint firstItem="O3R-2E-fho" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="LcD-qH-xwE"/>
-                            <constraint firstItem="Jum-QR-QoL" firstAttribute="top" secondItem="m0x-Lr-7Xl" secondAttribute="bottom" constant="145.5" id="YeC-xh-Gb2"/>
-                            <constraint firstItem="Jum-QR-QoL" firstAttribute="width" secondItem="yAl-ue-BIR" secondAttribute="width" id="YkA-iU-A1K"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="107" id="lVM-3A-BJT"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="m9b-Ud-4Ju"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" id="vu0-46-TLp"/>
@@ -159,7 +151,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Checker" id="ZgU-OI-oa4"/>
                     <connections>
-                        <outlet property="resultLabel" destination="Jum-QR-QoL" id="PYp-Ct-9hN"/>
                         <outlet property="textfield" destination="m0x-Lr-7Xl" id="LsP-l7-Xxx"/>
                     </connections>
                 </viewController>

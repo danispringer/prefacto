@@ -16,17 +16,10 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var checkButton: UIButton!
-    @IBOutlet weak var resultLabel: UILabel!
     
     
     // MARK: Properties
-    
-    enum result: String {
-        case prime = "prime"
-        case notPrime = "notPrime"
-        case invalid = "invalid"
-        case error = "error"
-    }
+
     
     // MARK: Life Cycle
     
@@ -66,25 +59,80 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func checkButtonPressed() {
+        // edge cases: 0, 1, text, spaces, too big a number
+        print(Int.max)
+        guard let text = textfield.text else {
+            print("it's nil")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
+        guard !text.isEmpty else {
+            print("it's empty")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
+        guard let number = Int(text) else {
+            print("not a number, or too big - 4294967295")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
+        guard number != 0 else {
+            print("cannot check 0")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
+        guard number != 1 else {
+            print("cannot check 1")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.one.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
         // check if it's prime
         // if it is, set label to "prime"
         // if not, set label to "notPrime"
         textfield.resignFirstResponder()
         
         var status = true
-        let num = Int(textfield.text!)
-        let range = 2...(num! - 1)
+
+        let range = 2...(number - 1)
+        
         for n in range {
             print(n)
-            if num! % n == 0 {
+            if number % n == 0 {
                 // not prime
-                resultLabel.text = result.notPrime.rawValue + " " + "\(String(describing: num)) is divisible by \(n)."
+                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                }
                 status = false
                 break
             }
         }
         if status {
-            resultLabel.text = result.prime.rawValue
+            // prime
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
         }
     }
     

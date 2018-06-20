@@ -13,42 +13,42 @@ class Alert {
     static var shared = Alert()
 
     enum alertReason: String {
-        case usernameOrPasswordEmpty = "usernameOrPasswordEmpty"
-        case usernameOrPasswordInvalid = "usernameOrPasswordInvalid"
-        case url = "url"
-        case locationEmpty = "locationEmpty"
-        case locationInvalid = "locationInvalid"
+        case textfieldEmpty = "textfieldEmpty"
         case network = "network"
-        case invalidURL = "invalidURL"
+        case notNumberOrTooBig = "notNumberOrTooBig"
+        case zero = "zero"
+        case one = "one"
+        case prime = "prime"
+        case notPrime = "notPrime"
         case unknown = "unknown"
     }
 
-    func createAlert(alertReasonParam: String) -> UIAlertController {
+    func createAlert(alertReasonParam: String, num: Int = 0, divisibleBy: Int = 0) -> UIAlertController {
         
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-        case alertReason.usernameOrPasswordEmpty.rawValue:
-            alertTitle = "Empty field"
-            alertMessage = "Please enter your username and password and try again."
-        case alertReason.usernameOrPasswordInvalid.rawValue:
-            alertTitle = "Invalid credentials"
-            alertMessage = "Please check your username and password and try again"
-        case alertReason.url.rawValue:
-            alertTitle = "Empty URL"
-            alertMessage = "Please enter a URL."
-        case alertReason.locationEmpty.rawValue:
-            alertTitle = "Empty location"
-            alertMessage = "Please enter a location."
-        case alertReason.locationInvalid.rawValue:
-            alertTitle = "Invalid location"
-            alertMessage = "Please check your location and try again."
         case alertReason.network.rawValue:
             alertTitle = "Network error"
             alertMessage = "Please check your network connection and try again."
-        case alertReason.invalidURL.rawValue:
-            alertTitle = "Invalid URL"
-            alertMessage = "Please check your URL and try again."
+        case alertReason.textfieldEmpty.rawValue:
+            alertTitle = "Oops"
+            alertMessage = "Textfield is empty. Please enter a number and try again."
+        case alertReason.notNumberOrTooBig.rawValue:
+            alertTitle = "Oops"
+            alertMessage = "No text allowed. Just numbers.\nMax number: 9223372036854775807\nOr (2^63 − 1)"
+        case alertReason.zero.rawValue:
+            alertTitle = "Hmm..."
+            alertMessage = "Is 0 prime? Nobody knows! Please enter a different number."
+        case alertReason.one.rawValue:
+            alertTitle = "Hmm..."
+            alertMessage = "Is 1 prime? Nobody knows! Please enter a different number."
+        case alertReason.prime.rawValue:
+            alertTitle = "Prime"
+            alertMessage = "\(num) is a prime number!"
+        case alertReason.notPrime.rawValue:
+            alertTitle = "Not prime"
+            alertMessage = "\(num) is not a prime number.\nIs it divisible by \(divisibleBy)."
         default:
             alertTitle = "Unknown error"
             alertMessage = "An unknown error occurred. Please try again later."
