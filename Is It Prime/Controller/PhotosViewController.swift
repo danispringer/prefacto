@@ -26,6 +26,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        refreshButton.isEnabled = false
         getPhotos()
     }
     
