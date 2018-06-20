@@ -160,7 +160,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         try? dataController.viewContext.save()
         
     }
-    
-    
-    
 }
+
+
