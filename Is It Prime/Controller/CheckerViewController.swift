@@ -15,7 +15,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     // MARK: Outlets
     
     @IBOutlet weak var textfield: UITextField!
-    @IBOutlet weak var checkButton: UIButton!
     
     
     // MARK: Properties
