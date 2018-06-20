@@ -71,7 +71,6 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             self.imagesArray = data
-            print(self.imagesArray)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
