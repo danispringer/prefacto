@@ -15,11 +15,12 @@
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
 		33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33B6729620DAF1510041217B /* Model.xcdatamodeld */; };
 		33B6729A20DAF1B10041217B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6729920DAF1B10041217B /* DataController.swift */; };
-		33EE5BCB20D996C4008FEAF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BCA20D996C4008FEAF2 /* AppDelegate.swift */; };
-		33EE5BD020D996C4008FEAF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE5BCE20D996C4008FEAF2 /* Main.storyboard */; };
-		33EE5BD220D996C7008FEAF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EE5BD120D996C7008FEAF2 /* Assets.xcassets */; };
-		33EE5BD520D996C7008FEAF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE5BD320D996C7008FEAF2 /* LaunchScreen.storyboard */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */; };
+		33F49A6420DB1836007044C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F49A6320DB1836007044C5 /* AppDelegate.swift */; };
+		33F49A6A20DB1846007044C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F49A6620DB1846007044C5 /* LaunchScreen.storyboard */; };
+		33F49A6B20DB1846007044C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F49A6820DB1846007044C5 /* Main.storyboard */; };
+		33F49A6F20DB1853007044C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F49A6D20DB1853007044C5 /* Assets.xcassets */; };
+		33F49A7020DB1853007044C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33F49A6E20DB1853007044C5 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +33,12 @@
 		33B6729720DAF1510041217B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		33B6729920DAF1B10041217B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		33EE5BC720D996C4008FEAF2 /* Is It Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Is It Prime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		33EE5BCA20D996C4008FEAF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33EE5BCF20D996C4008FEAF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33EE5BD120D996C7008FEAF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		33EE5BD420D996C7008FEAF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		33EE5BD620D996C7008FEAF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
+		33F49A6320DB1836007044C5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Is It Prime/AppDelegate.swift"; sourceTree = "<group>"; };
+		33F49A6720DB1846007044C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		33F49A6920DB1846007044C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33F49A6D20DB1853007044C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33F49A6E20DB1853007044C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +93,10 @@
 		33EE5BBE20D996C4008FEAF2 = {
 			isa = PBXGroup;
 			children = (
-				33EE5BCA20D996C4008FEAF2 /* AppDelegate.swift */,
+				33F49A6320DB1836007044C5 /* AppDelegate.swift */,
 				33EE5BC920D996C4008FEAF2 /* Is It Prime */,
-				33EE5BDE20D99F77008FEAF2 /* Storyboard */,
-				33EE5BDF20D99FB3008FEAF2 /* Assets */,
+				33F49A6520DB1846007044C5 /* Storyboard */,
+				33F49A6C20DB1853007044C5 /* Assets */,
 				33EE5BC820D996C4008FEAF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,22 +119,24 @@
 			path = "Is It Prime";
 			sourceTree = "<group>";
 		};
-		33EE5BDE20D99F77008FEAF2 /* Storyboard */ = {
+		33F49A6520DB1846007044C5 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				33EE5BCE20D996C4008FEAF2 /* Main.storyboard */,
-				33EE5BD320D996C7008FEAF2 /* LaunchScreen.storyboard */,
+				33F49A6620DB1846007044C5 /* LaunchScreen.storyboard */,
+				33F49A6820DB1846007044C5 /* Main.storyboard */,
 			);
-			path = Storyboard;
+			name = Storyboard;
+			path = "Is It Prime/Storyboard";
 			sourceTree = "<group>";
 		};
-		33EE5BDF20D99FB3008FEAF2 /* Assets */ = {
+		33F49A6C20DB1853007044C5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				33EE5BD120D996C7008FEAF2 /* Assets.xcassets */,
-				33EE5BD620D996C7008FEAF2 /* Info.plist */,
+				33F49A6D20DB1853007044C5 /* Assets.xcassets */,
+				33F49A6E20DB1853007044C5 /* Info.plist */,
 			);
-			path = Assets;
+			name = Assets;
+			path = "Is It Prime/Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +197,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33EE5BD520D996C7008FEAF2 /* LaunchScreen.storyboard in Resources */,
-				33EE5BD220D996C7008FEAF2 /* Assets.xcassets in Resources */,
-				33EE5BD020D996C4008FEAF2 /* Main.storyboard in Resources */,
+				33F49A6B20DB1846007044C5 /* Main.storyboard in Resources */,
+				33F49A6A20DB1846007044C5 /* LaunchScreen.storyboard in Resources */,
+				33F49A6F20DB1853007044C5 /* Assets.xcassets in Resources */,
+				33F49A7020DB1853007044C5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F49A6420DB1836007044C5 /* AppDelegate.swift in Sources */,
 				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
 				3317915020D9FD1A00CA739F /* HistoryViewController.swift in Sources */,
 				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
@@ -214,7 +219,6 @@
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				33B6729A20DAF1B10041217B /* DataController.swift in Sources */,
 				33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */,
-				33EE5BCB20D996C4008FEAF2 /* AppDelegate.swift in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
 			);
@@ -223,20 +227,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		33EE5BCE20D996C4008FEAF2 /* Main.storyboard */ = {
+		33F49A6620DB1846007044C5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				33EE5BCF20D996C4008FEAF2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		33EE5BD320D996C7008FEAF2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				33EE5BD420D996C7008FEAF2 /* Base */,
+				33F49A6720DB1846007044C5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		33F49A6820DB1846007044C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33F49A6920DB1846007044C5 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -362,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = "$(SRCROOT)/Assets/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Is It Prime/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = "$(SRCROOT)/Assets/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Is It Prime/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
