@@ -13,6 +13,8 @@
 		3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915720D9FE3600CA739F /* FlickrConstants.swift */; };
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
+		33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33B6729620DAF1510041217B /* Model.xcdatamodeld */; };
+		33B6729A20DAF1B10041217B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6729920DAF1B10041217B /* DataController.swift */; };
 		33EE5BCB20D996C4008FEAF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BCA20D996C4008FEAF2 /* AppDelegate.swift */; };
 		33EE5BD020D996C4008FEAF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE5BCE20D996C4008FEAF2 /* Main.storyboard */; };
 		33EE5BD220D996C7008FEAF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EE5BD120D996C7008FEAF2 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		3317915720D9FE3600CA739F /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		33B6729720DAF1510041217B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		33B6729920DAF1B10041217B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		33EE5BC720D996C4008FEAF2 /* Is It Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Is It Prime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BCA20D996C4008FEAF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EE5BCF20D996C4008FEAF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		3317915C20DA042F00CA739F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				33B6729620DAF1510041217B /* Model.xcdatamodeld */,
+				33B6729920DAF1B10041217B /* DataController.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
 				3317915520D9FE3600CA739F /* Flickr */,
 			);
@@ -206,6 +212,8 @@
 				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
 				3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
+				33B6729A20DAF1B10041217B /* DataController.swift in Sources */,
+				33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */,
 				33EE5BCB20D996C4008FEAF2 /* AppDelegate.swift in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
@@ -406,6 +414,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		33B6729620DAF1510041217B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				33B6729720DAF1510041217B /* Model.xcdatamodel */,
+			);
+			currentVersion = 33B6729720DAF1510041217B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 33EE5BBF20D996C4008FEAF2 /* Project object */;
 }

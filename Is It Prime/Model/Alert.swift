@@ -23,7 +23,7 @@ class Alert {
         case unknown = "unknown"
     }
 
-    func createAlert(alertReasonParam: String, num: Int = 0, divisibleBy: Int = 0) -> UIAlertController {
+    func createAlert(alertReasonParam: String, num: Int64 = 0, divisibleBy: Int64 = 0) -> UIAlertController {
         
         var alertTitle = ""
         var alertMessage = ""

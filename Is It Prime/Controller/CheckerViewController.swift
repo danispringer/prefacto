@@ -20,6 +20,25 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
 
+    var dataController: DataController!
+    var number: Number!
+    var fetchedResultsController:NSFetchedResultsController<Number>!
+    
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "numbers")
+        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
+    }
+    
     
     // MARK: Life Cycle
     
@@ -60,7 +79,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     @objc func checkButtonPressed() {
         // edge cases: 0, 1, text, spaces, too big a number
-        print(Int.max)
+        
         guard let text = textfield.text else {
             print("it's nil")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
@@ -79,7 +98,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        guard let number = Int(text) else {
+        guard let number = Int64(text) else {
             print("not a number, or too big - 4294967295")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
@@ -134,6 +153,13 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
                 self.present(alert, animated: true)
             }
         }
+        
+        let numberToSave = Number(context: dataController.viewContext)
+        numberToSave.creationDate = Date()
+        numberToSave.value = number
+        numberToSave.isPrime = status
+        try? dataController.viewContext.save()
+        
     }
     
     
