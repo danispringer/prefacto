@@ -56,7 +56,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 
                 let alert = Alert.shared.createAlert(alertReasonParam: errorReason!)
                 DispatchQueue.main.async {
-                    self.setUIEnabled(false)
+                    self.setUIEnabled(true)
                     self.present(alert, animated: true)
                 }
                 return
@@ -66,7 +66,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 print("No data")
                 let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
-                    self.setUIEnabled(false)
+                    self.setUIEnabled(true)
                     self.present(alert, animated: true)
                 }
                 return
