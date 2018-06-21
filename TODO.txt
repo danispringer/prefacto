@@ -1,7 +1,13 @@
-checker:
+BUGS:
 
+
+FEATS:
+
+checker:
+title(s)
+move view up when keyboard shows, or reposition textfield
 
 history:
-
+show what it can be divided by
 
 photos:
