@@ -1,8 +1,10 @@
 # Is It Prime (iOS)
-- This iOS app allows you to:
-  - Check whether a number is prime
-  - See what numbers you already checked
-  - See fun pictures about numbers
+‘Is It Prime’ lets you quickly discover whether a number is prime or otherwise.
+You can also view fun images with prime numbers in them, and hit “Refresh” for more images!
+‘Is It Prime’ also keeps a history of what numbers you already checked, as well as whether each is prime, or otherwise.
+Get ‘Is It Prime’ today, and discover the Prime fun!
+
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/01.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/02.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/03.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/04.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/05.png)
 
 # How To Run
 - You need Xcode installed on your Computer (Xcode is available for Mac only).
