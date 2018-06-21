@@ -49,10 +49,11 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         let resignToolbar = UIToolbar()
         
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(checkButtonPressed))
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(cancelAndHideKeyboard))
+        let doneButton = UIBarButtonItem(title: "Check", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(cancelAndHideKeyboard))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
-        resignToolbar.items = [doneButton, cancelButton]
+        resignToolbar.items = [doneButton, space, cancelButton]
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
     }
@@ -146,7 +147,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         // check if it's prime
         // if it is, set label to "prime"
         // if not, set label to "notPrime"
-        textfield.resignFirstResponder()
         
         var status = true
 
