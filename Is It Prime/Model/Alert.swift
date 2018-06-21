@@ -18,6 +18,7 @@ class Alert {
         case notNumberOrTooBig = "notNumberOrTooBig"
         case zero = "zero"
         case one = "one"
+        case two = "two"
         case prime = "prime"
         case notPrime = "notPrime"
         case unknown = "unknown"
@@ -43,6 +44,9 @@ class Alert {
         case alertReason.one.rawValue:
             alertTitle = "Hmm..."
             alertMessage = "Is 1 prime? Nobody knows! Please enter a different number."
+        case alertReason.two.rawValue:
+            alertTitle = "Prime"
+            alertMessage = "2 is a prime number!"
         case alertReason.prime.rawValue:
             alertTitle = "Prime"
             alertMessage = "\(num) is a prime number!"
