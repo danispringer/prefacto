@@ -125,6 +125,15 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        guard number != 2 else {
+            print("cannot check 2")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
         // check if it's prime
         // if it is, set label to "prime"
         // if not, set label to "notPrime"
