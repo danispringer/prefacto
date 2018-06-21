@@ -19,6 +19,7 @@ class Alert {
         case zero = "zero"
         case one = "one"
         case two = "two"
+        case negative = "negative"
         case prime = "prime"
         case notPrime = "notPrime"
         case unknown = "unknown"
@@ -47,6 +48,9 @@ class Alert {
         case alertReason.two.rawValue:
             alertTitle = "Prime"
             alertMessage = "2 is a prime number!"
+        case alertReason.negative.rawValue:
+            alertTitle = "Don't be negative"
+            alertMessage = "Negative numbers cannot be prime. Please enter a different number."
         case alertReason.prime.rawValue:
             alertTitle = "Prime"
             alertMessage = "\(num) is a prime number!"
