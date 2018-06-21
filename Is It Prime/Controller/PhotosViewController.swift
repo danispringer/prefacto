@@ -23,6 +23,12 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     // MARK: Life Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = "Photos"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

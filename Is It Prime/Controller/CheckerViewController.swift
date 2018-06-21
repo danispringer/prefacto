@@ -45,6 +45,8 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Checker"
+        
         textfield.delegate = self
         
         let resignToolbar = UIToolbar()
