@@ -17,6 +17,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableview: UITableView!
     
     
+    
     // MARK: Properties
     
     var dataController: DataController!

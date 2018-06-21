@@ -15,7 +15,8 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     // MARK: Outlets
     
     @IBOutlet weak var textfield: UITextField!
-    
+    @IBOutlet weak var historyButton: UIBarButtonItem!
+    @IBOutlet weak var photosButton: UIBarButtonItem!
     
     // MARK: Properties
 
@@ -160,6 +161,24 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         try? dataController.viewContext.save()
         
     }
+    
+    @IBAction func historyButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
+        destinationVC.dataController = dataController
+        
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    @IBAction func photosButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
+        
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    
+    
 }
 
 

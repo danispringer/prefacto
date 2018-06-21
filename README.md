@@ -4,6 +4,8 @@ You can also view fun images with prime numbers in them, and hit “Refresh” f
 ‘Is It Prime’ also keeps a history of what numbers you already checked, as well as whether each is prime, or otherwise.
 Get ‘Is It Prime’ today, and discover the Prime fun!
 
+**REVIEWER NOTE: photos are not persisted. History of checked numbers is.**
+
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/01.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/02.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/03.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/04.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/05.png)
 
 # How To Run

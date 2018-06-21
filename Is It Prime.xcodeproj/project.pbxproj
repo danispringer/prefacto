@@ -121,8 +121,8 @@
 		33F49A6520DB1846007044C5 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				33F49A6620DB1846007044C5 /* LaunchScreen.storyboard */,
 				33F49A6820DB1846007044C5 /* Main.storyboard */,
+				33F49A6620DB1846007044C5 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
 			path = "Is It Prime/Storyboard";

@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         dataController.load()
         
-        let tabBarController = window?.rootViewController as! UITabBarController
-        let checkerViewController = tabBarController.selectedViewController as! CheckerViewController
+        let navigationController = window?.rootViewController as! UINavigationController
+        let checkerViewController = navigationController.topViewController as! CheckerViewController
         checkerViewController.dataController = dataController
         
         return true
