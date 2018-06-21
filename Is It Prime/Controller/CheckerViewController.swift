@@ -81,7 +81,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func checkButtonPressed() {
-        // edge cases: 0, 1, text, spaces, too big a number
         
         guard let text = textfield.text else {
             print("it's nil")
@@ -145,10 +144,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             }
             return
         }
-        
-        // check if it's prime
-        // if it is, set label to "prime"
-        // if not, set label to "notPrime"
         
         var status = true
 

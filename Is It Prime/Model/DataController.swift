@@ -1,9 +1,9 @@
 //
 //  DataController.swift
-//  Mooskine
+//  Is It Prime
 //
-//  Created by Kathryn Rotondo on 10/11/17.
-//  Copyright © 2017 Udacity. All rights reserved.
+//  Created by Dani Springer on 19/06/2018.
+//  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
 import Foundation

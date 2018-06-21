@@ -27,12 +27,10 @@ class FlickrClient: NSObject {
         let session = URLSession.shared
         let url = flickrURLFromParameters()
         let request = URLRequest(url: url)
-        
-        // create network request
+
         let task = session.dataTask(with: request) { (data, response, error) in
             
             guard error == nil else {
-                // network error
                 print("network error")
                 completion(nil, Alert.alertReason.network.rawValue)
                 return

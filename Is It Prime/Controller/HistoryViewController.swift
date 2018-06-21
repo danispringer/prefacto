@@ -27,8 +27,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     fileprivate func setupFetchedResultsController() {
         let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
-//        let predicate = NSPredicate(format: "number == %@", number)
-//        fetchRequest.predicate = predicate
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         

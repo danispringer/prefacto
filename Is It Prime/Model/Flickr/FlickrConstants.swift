@@ -43,7 +43,7 @@ struct Constants {
         static let ResponseFormat = "json"
         static let DisableJSONCallback = "1" /* 1 means "yes" */
         static let GalleryPhotosMethod = "flickr.photos.search"
-        static let GroupID = "74903361@N00" // https://www.flickr.com/groups/primenumbers/
+        static let GroupID = "74903361@N00"
         static let MediumURL = "url_m"
         static let UseSafeSearch = "1"
         static let PerPage = "500"
