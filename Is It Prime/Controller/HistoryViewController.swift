@@ -24,22 +24,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     var number: Number!
     
     var fetchedResultsController:NSFetchedResultsController<Number>!
-    
-    fileprivate func setupFetchedResultsController() {
-        let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "number")
-        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
-        
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            fatalError("The fetch could not be performed: \(error.localizedDescription)")
-        }
-    }
-    
+
     
     // MARK: Life Cycle
     
@@ -55,6 +40,21 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     // MARK: Helpers
+    
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "number")
+        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
+    }
     
     
     // MARK: TableView Delegate

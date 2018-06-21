@@ -24,21 +24,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     var number: Number!
     var fetchedResultsController:NSFetchedResultsController<Number>!
     
-    fileprivate func setupFetchedResultsController() {
-        let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
-        
-        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "numbers")
-        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            fatalError("The fetch could not be performed: \(error.localizedDescription)")
-        }
-    }
-    
     
     // MARK: Life Cycle
     
@@ -72,6 +57,21 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: Helpers
+    
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "numbers")
+        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
+    }
     
     
     @objc func cancelAndHideKeyboard() {
