@@ -18,3 +18,13 @@ To get the CheckerViewController you need, we should access the viewControllers 
 let checkerViewController = tabBarController.viewControllers?.first as! CheckerViewController
 
 Problem fixed :blush:
+~
+​
+12
+class Alert {
+SUGGESTION
+This could also be an extension of UIViewController. In this way you could access it directly from any view controller just by referring to self
+~
+UICollectionView delegates could be put in a separate extension of this View Controller to improve the organisation! This is a common practice in swift!
+I'll leave you some important documentation from Apple regarding extensions so that you can deepen your knowledge:
+https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
