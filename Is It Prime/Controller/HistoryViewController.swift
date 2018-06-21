@@ -66,9 +66,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let aNumber = fetchedResultsController.object(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(aNumber)"
+        cell.textLabel?.text = "\(aNumber.value)"
         cell.detailTextLabel?.text = aNumber.isPrime ? "Prime" : "Not prime"
         cell.backgroundColor = aNumber.isPrime ? UIColor.green : UIColor.red
+        cell.selectionStyle = .none
         
         return cell
     }
