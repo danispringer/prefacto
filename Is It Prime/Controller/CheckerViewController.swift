@@ -99,7 +99,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard let number = Int64(text) else {
-            print("not a number, or too big - 4294967295")
+            print("not a number, or too big - 9223372036854775807 is limit")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
@@ -128,6 +128,15 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         guard number != 2 else {
             print("cannot check 2")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
+        guard !(number < 0) else {
+            print("cannot check negative")
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
             }
