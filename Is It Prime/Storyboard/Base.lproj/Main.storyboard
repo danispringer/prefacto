@@ -169,21 +169,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="100" y="158" width="121" height="31.5"/>
+                                <rect key="frame" x="100" y="157.5" width="121" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl">
-                                <rect key="frame" x="35" y="296" width="250" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CJf-iG-clI"/>
-                                    <constraint firstAttribute="height" constant="40" id="S7O-Dy-kzA"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmj-Gk-ITZ">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
@@ -200,6 +190,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl">
+                                <rect key="frame" x="35" y="235" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CJf-iG-clI"/>
+                                    <constraint firstAttribute="height" constant="40" id="S7O-Dy-kzA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -207,9 +207,9 @@
                             <constraint firstItem="O3R-2E-fho" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="LcD-qH-xwE"/>
                             <constraint firstItem="Iu7-ta-hZk" firstAttribute="bottom" secondItem="Rmj-Gk-ITZ" secondAttribute="bottom" id="PYZ-DO-6iw"/>
                             <constraint firstItem="Rmj-Gk-ITZ" firstAttribute="width" secondItem="yAl-ue-BIR" secondAttribute="width" id="beH-19-Qkr"/>
-                            <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="107" id="lVM-3A-BJT"/>
+                            <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="46" id="lVM-3A-BJT"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="m9b-Ud-4Ju"/>
-                            <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" id="vu0-46-TLp"/>
+                            <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" constant="-61" id="vu0-46-TLp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iu7-ta-hZk"/>
                     </view>
