@@ -7,9 +7,7 @@ Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
 
 Is there a feature you'd like to see? A bug you'd like to go away? Leave a review!
 
-**REVIEWER NOTE: photos are not persisted. History of checked numbers is.**
-
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/01.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/02.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/03.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/04.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/05.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/06.jpg)
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/01.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/02.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/03.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/04.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/05.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/06.jpg)
 
 # How To Run
 - You need Xcode installed on your Computer (Xcode is available for Mac only).
