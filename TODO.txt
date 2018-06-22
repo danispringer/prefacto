@@ -28,3 +28,30 @@ This could also be an extension of UIViewController. In this way you could acces
 UICollectionView delegates could be put in a separate extension of this View Controller to improve the organisation! This is a common practice in swift!
 I'll leave you some important documentation from Apple regarding extensions so that you can deepen your knowledge:
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
+~
+let doneButton = UIBarButtonItem(title: "Check", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
+40
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(cancelAndHideKeyboard))
+41
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+42
+
+SUGGESTION
+These three bar buttons items could be added in the storyboard to save 3 lines of code
+[?] These three bar buttons items could be added in the storyboard to save 3 lines of code
+~
+ guard let number = Int64(text) else {
+104
+            print("not a number, or too big - 9223372036854775807 is limit")
+SUGGESTION
+All the strings in this file could be put in a separate struct in order to be organised in the same place
+~
+ self.imagesArray = data
+81
+            DispatchQueue.main.async {
+SUGGESTION
+Instead of dispatching to the main thread in three different blocks of code, we could just wrap the whole closure in a dispatch
+~
+These empty lines should be deleted to improve organisation
+~
+- Reposition launch screen text for is it prime, persist 2 1 and 0, as blue, with question mark, tell what the result is if divided by the divisibleBy (via a different page?), tell more numbers it’s divisible by, use built in calculator, add sound, make cancel “done”, add “check another one” to alert, add “done” to alert, add sharing option for photo/history stuff, add option to delete rows, or empty history.

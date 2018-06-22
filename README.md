@@ -1,8 +1,11 @@
-# Is It Prime (iOS)
-‘Is It Prime’ lets you quickly discover whether a number is prime or otherwise.
-You can also view fun images with prime numbers in them, and hit “Refresh” for more images!
-‘Is It Prime’ also keeps a history of what numbers you already checked, as well as whether each is prime, or otherwise.
-Get ‘Is It Prime’ today, and discover the Prime fun!
+# Is It Prime (iOS) (rinomina a prime numbers fun)
+‘Prime Numbers Fun’ lets you quickly discover whether a number is prime or otherwise.
+You can also view fun images with prime numbers in them, and hit “Refresh” for even more images!
+‘Prime Numbers Fun’ also keeps a history of what numbers you already checked, noting whether each is prime.
+
+Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
+
+Is there a feature you'd like to see? A bug you'd like to go away? Leave a review!
 
 **REVIEWER NOTE: photos are not persisted. History of checked numbers is.**
 
