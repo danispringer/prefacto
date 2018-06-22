@@ -1,4 +1,4 @@
-# Is It Prime (iOS) (rinomina a prime numbers fun)
+# Prime Numbers Fun (iOS)
 ‘Prime Numbers Fun’ lets you quickly discover whether a number is prime or otherwise.
 You can also view fun images with prime numbers in them, and hit “Refresh” for even more images!
 ‘Prime Numbers Fun’ also keeps a history of what numbers you already checked, noting whether each is prime.
@@ -9,11 +9,11 @@ Is there a feature you'd like to see? A bug you'd like to go away? Leave a revie
 
 **REVIEWER NOTE: photos are not persisted. History of checked numbers is.**
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/01.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/02.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/03.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/04.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/05.png)
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/01.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/02.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/03.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/04.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/05.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/is-it-prime-ios/master/i/06.jpg)
 
 # How To Run
 - You need Xcode installed on your Computer (Xcode is available for Mac only).
-- Open `Is It Prime.xcodeproj` in Xcode, click on the "play" button.
+- Open `Prime Numbers Fun.xcodeproj` in Xcode, click on the "play" button.
 
 
 # Dependencies
