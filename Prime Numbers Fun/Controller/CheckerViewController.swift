@@ -111,6 +111,11 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 0 else {
             print("cannot check 0")
+            let numberToSave = Number(context: dataController.viewContext)
+            numberToSave.creationDate = Date()
+            numberToSave.value = number
+            numberToSave.primeOr = NumberType.none.rawValue
+            try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
@@ -120,6 +125,11 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 1 else {
             print("cannot check 1")
+            let numberToSave = Number(context: dataController.viewContext)
+            numberToSave.creationDate = Date()
+            numberToSave.value = number
+            numberToSave.primeOr = NumberType.none.rawValue
+            try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.one.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
@@ -132,7 +142,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             let numberToSave = Number(context: dataController.viewContext)
             numberToSave.creationDate = Date()
             numberToSave.value = number
-            numberToSave.isPrime = true
+            numberToSave.primeOr = NumberType.isPrime.rawValue
             try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
             DispatchQueue.main.async {
@@ -150,7 +160,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        var status = true
+        var isPrimeBool = true
         var isDivisibleBy: Int64 = 0
 
         let range = 2...(number - 1)
@@ -164,11 +174,11 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
                 }
-                status = false
+                isPrimeBool = false
                 break
             }
         }
-        if status {
+        if isPrimeBool {
             // prime
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
             DispatchQueue.main.async {
@@ -179,7 +189,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         let numberToSave = Number(context: dataController.viewContext)
         numberToSave.creationDate = Date()
         numberToSave.value = number
-        numberToSave.isPrime = status
+        numberToSave.primeOr = isPrimeBool ? NumberType.isPrime.rawValue : NumberType.isNotPrime.rawValue
         numberToSave.isDivisibleBy = isDivisibleBy
         try? dataController.viewContext.save()
         

@@ -21,6 +21,7 @@
 		33CB11D320DCB5F7003E7522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11D120DCB5F7003E7522 /* Assets.xcassets */; };
 		33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11D520DCB607003E7522 /* Default-568h@2x.png */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */; };
+		33FBA60220DF1167003303D2 /* NumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBA60120DF1167003303D2 /* NumberType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		33CB11D520DCB607003E7522 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		33EE5BC720D996C4008FEAF2 /* Prime Numbers Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prime Numbers Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
+		33FBA60120DF1167003303D2 /* NumberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				33B6729920DAF1B10041217B /* DataController.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
 				3317915520D9FE3600CA739F /* Flickr */,
+				33FBA60120DF1167003303D2 /* NumberType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				3317915020D9FD1A00CA739F /* HistoryViewController.swift in Sources */,
 				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
 				3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */,
+				33FBA60220DF1167003303D2 /* NumberType.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				33B6729A20DAF1B10041217B /* DataController.swift in Sources */,
 				33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */,

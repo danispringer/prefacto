@@ -68,8 +68,26 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "\(aNumber.value)"
         let isDivisibleBy = aNumber.isDivisibleBy
-        cell.detailTextLabel?.text = aNumber.isPrime ? "Prime" : "Not prime: divisible by \(isDivisibleBy)"
-        cell.backgroundColor = aNumber.isPrime ? UIColor.green : UIColor.red
+        var detailText = aNumber.primeOr
+        var color = UIColor.white
+        
+        switch detailText {
+        case NumberType.isPrime.rawValue:
+            detailText = "Prime"
+            color = UIColor.green
+        case NumberType.isNotPrime.rawValue:
+            detailText = "Not prime: divisible by \(isDivisibleBy)"
+            color = UIColor.red
+        case NumberType.none.rawValue:
+            detailText = "Is N prime? Who knows?"
+            color = UIColor.blue
+        default:
+            print("default called in tableview!")
+            detailText = "Error. Please let the developer know."
+        }
+        
+        cell.detailTextLabel?.text = detailText
+        cell.backgroundColor = color
         cell.selectionStyle = .none
         
         return cell
