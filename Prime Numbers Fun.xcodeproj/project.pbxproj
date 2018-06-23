@@ -115,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				33CB11C720DCB5D0003E7522 /* AppDelegate.swift */,
-				33CB11C920DCB5DB003E7522 /* Storyboard */,
 				33EE5BC920D996C4008FEAF2 /* Prime Numbers Fun */,
+				33CB11C920DCB5DB003E7522 /* Storyboard */,
 				33CB11D020DCB5F7003E7522 /* Assets */,
 				33EE5BC820D996C4008FEAF2 /* Products */,
 			);

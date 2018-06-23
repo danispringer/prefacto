@@ -6,7 +6,6 @@ FEATS:
 checker:
 
 history:
-show what it can be divided by
 
 photos:
 

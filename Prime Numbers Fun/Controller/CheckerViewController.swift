@@ -129,6 +129,11 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 2 else {
             print("cannot check 2")
+            let numberToSave = Number(context: dataController.viewContext)
+            numberToSave.creationDate = Date()
+            numberToSave.value = number
+            numberToSave.isPrime = true
+            try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
@@ -146,6 +151,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         }
         
         var status = true
+        var isDivisibleBy: Int64 = 0
 
         let range = 2...(number - 1)
         
@@ -153,6 +159,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             print(n)
             if number % n == 0 {
                 // not prime
+                isDivisibleBy = n
                 let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
@@ -173,6 +180,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         numberToSave.creationDate = Date()
         numberToSave.value = number
         numberToSave.isPrime = status
+        numberToSave.isDivisibleBy = isDivisibleBy
         try? dataController.viewContext.save()
         
     }
