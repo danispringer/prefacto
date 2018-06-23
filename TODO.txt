@@ -9,7 +9,7 @@ history:
 
 photos:
 
-redo screenshots
+[done until furter changes] redo screenshots
 ~
 What is happening is that at this stage, the tab bar controller doesn't have a selectedViewController yet and you are then casting nil to CheckerViewController resulting in a crash.
 To get the CheckerViewController you need, we should access the viewControllers array of the tabBarController and get it from the first position in the array:
@@ -53,4 +53,4 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- Reposition launch screen text for is it prime, persist 2 1 and 0, as blue, with question mark, tell what the result is if divided by the divisibleBy (via a different page?), tell more numbers it’s divisible by, use built in calculator, add sound, make cancel “done”, add “check another one” to alert, add “done” to alert, add sharing option for photo/history stuff, add option to delete rows, or empty history, more photos
+- Persist 2 1 and 0 as blue with question mark, tell what the result is if divided by the divisibleBy (via a different page?), tell more numbers it’s divisible by, use built in calculator, add sound, make cancel “done”, add “check another one” to alert, add “done” to alert, add sharing option for photo/history stuff, add option to delete rows, or empty history, more photos
