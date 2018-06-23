@@ -54,4 +54,4 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- Reposition launch screen text for is it prime, persist 2 1 and 0, as blue, with question mark, tell what the result is if divided by the divisibleBy (via a different page?), tell more numbers it’s divisible by, use built in calculator, add sound, make cancel “done”, add “check another one” to alert, add “done” to alert, add sharing option for photo/history stuff, add option to delete rows, or empty history.
+- Reposition launch screen text for is it prime, persist 2 1 and 0, as blue, with question mark, tell what the result is if divided by the divisibleBy (via a different page?), tell more numbers it’s divisible by, use built in calculator, add sound, make cancel “done”, add “check another one” to alert, add “done” to alert, add sharing option for photo/history stuff, add option to delete rows, or empty history, more photos
