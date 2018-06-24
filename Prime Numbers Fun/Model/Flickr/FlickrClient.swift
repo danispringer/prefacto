@@ -77,7 +77,7 @@ class FlickrClient: NSObject {
             
             var images = [UIImage]()
             
-            for _ in 1...8 {
+            for _ in 1...20 {
                 let randomPhotoIndex = Int(arc4random_uniform(UInt32(photoArray.count)))
                 let photoDictionary = photoArray[randomPhotoIndex] as [String:AnyObject]
                 
