@@ -70,8 +70,8 @@
 				33B6729620DAF1510041217B /* Model.xcdatamodeld */,
 				33B6729920DAF1B10041217B /* DataController.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
-				3317915520D9FE3600CA739F /* Flickr */,
 				33FBA60120DF1167003303D2 /* NumberType.swift */,
+				3317915520D9FE3600CA739F /* Flickr */,
 			);
 			path = Model;
 			sourceTree = "<group>";
