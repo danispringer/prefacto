@@ -79,7 +79,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             detailText = "Not prime: divisible by \(isDivisibleBy)"
             color = UIColor.red
         case NumberType.none.rawValue:
-            detailText = "Is N prime? Who knows?"
+            detailText = "Is \(aNumber.value) prime? Who knows?"
             color = UIColor.blue
         default:
             print("default called in tableview!")
