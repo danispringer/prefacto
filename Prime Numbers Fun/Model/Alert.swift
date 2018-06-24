@@ -40,8 +40,8 @@ class Alert {
             alertTitle = "Oops"
             alertMessage = "No text allowed. Just numbers.\nMax number: 9223372036854775807\nOr (2^63 − 1)"
         case alertReason.zero.rawValue:
-            alertTitle = "Hmm..."
-            alertMessage = "Is 0 prime? Nobody knows! Please enter a different number."
+            alertTitle = "Oops"
+            alertMessage = "Is seems like you entered no value. Or actually, 0 value. Please enter a different number."
         case alertReason.one.rawValue:
             alertTitle = "Hmm..."
             alertMessage = "Is 1 prime? Nobody knows! Please enter a different number."
@@ -49,8 +49,8 @@ class Alert {
             alertTitle = "Prime"
             alertMessage = "2 is a prime number!"
         case alertReason.negative.rawValue:
-            alertTitle = "Don't be negative"
-            alertMessage = "Negative numbers cannot be prime. Please enter a different number."
+            alertTitle = "Oops"
+            alertMessage = "No negative numbers allowed. Please enter a different number."
         case alertReason.prime.rawValue:
             alertTitle = "Prime"
             alertMessage = "\(num) is a prime number!"
