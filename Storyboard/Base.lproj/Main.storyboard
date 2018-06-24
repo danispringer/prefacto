@@ -197,21 +197,30 @@ Find out!</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-V0-KlX">
-                                <rect key="frame" x="16" y="263" width="288" height="256"/>
+                                <rect key="frame" x="16" y="331" width="288" height="188"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="9j0-j3-bcb"/>
+                                    <constraint firstAttribute="height" constant="188" id="9j0-j3-bcb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
+                                <rect key="frame" x="150" y="259.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-HR-zZh" userLabel="Share">
+                                <rect key="frame" x="140" y="254.5" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="GDH-dL-aVw" eventType="touchUpInside" id="tFD-ST-tT3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fXB-4V-786" firstAttribute="centerY" secondItem="DGV-fo-RV1" secondAttribute="centerY" id="5Eb-zj-LIx"/>
+                            <constraint firstItem="fXB-4V-786" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="6FS-JH-z40"/>
+                            <constraint firstItem="6NV-HR-zZh" firstAttribute="centerY" secondItem="DGV-fo-RV1" secondAttribute="centerY" id="6Kf-Jv-7ZC"/>
                             <constraint firstItem="Whi-BS-llH" firstAttribute="width" secondItem="DGV-fo-RV1" secondAttribute="width" constant="-16" id="90R-nf-E9J"/>
                             <constraint firstItem="R4p-V0-KlX" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="Bd6-Nj-CKT"/>
                             <constraint firstItem="ptO-hj-b9l" firstAttribute="centerY" secondItem="DGV-fo-RV1" secondAttribute="centerY" constant="-61" id="GZG-Bs-iiD"/>
@@ -219,6 +228,7 @@ Find out!</string>
                             <constraint firstItem="ptO-hj-b9l" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="ch6-Gl-mzj"/>
                             <constraint firstItem="ptO-hj-b9l" firstAttribute="top" secondItem="Whi-BS-llH" secondAttribute="bottom" constant="45" id="nNk-ym-TDw"/>
                             <constraint firstItem="Whi-BS-llH" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="ple-UA-a58"/>
+                            <constraint firstItem="6NV-HR-zZh" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="sl9-5R-Oia"/>
                             <constraint firstItem="DGV-fo-RV1" firstAttribute="bottom" secondItem="R4p-V0-KlX" secondAttribute="bottom" id="vl2-u3-yzb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DGV-fo-RV1"/>
@@ -227,6 +237,7 @@ Find out!</string>
                     <connections>
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
                         <outlet property="resultLabel" destination="R4p-V0-KlX" id="BG3-P1-eb4"/>
+                        <outlet property="shareButton" destination="6NV-HR-zZh" id="Lnk-SF-SUh"/>
                         <outlet property="textfield" destination="ptO-hj-b9l" id="sHl-RG-VwR"/>
                     </connections>
                 </viewController>
