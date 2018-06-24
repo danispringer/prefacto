@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import CoreData
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController, UITableViewDataSource {
     
     // MARK: Outlets
     
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var myTableView: UITableView!
     
     
     
@@ -32,8 +32,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         self.title = "History"
-        
-        tableview.delegate = self
         
         setupFetchedResultsController()
     }
