@@ -45,6 +45,6 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- screenshots from iPhone, let user save image, share image, fit collectionview images to fill more space, improve design
+- screenshots from iPhone, fit collectionview images to fill more space, improve design
 ~
 [?] https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
