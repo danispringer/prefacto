@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import AVFoundation
 
 class CheckerViewController: UIViewController, UITextFieldDelegate {
     
@@ -96,6 +97,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
             return
         }
@@ -104,7 +106,9 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             print("not a number, or too big - 9223372036854775807 is limit")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
+                self.textfield.text = ""
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
             return
         }
@@ -118,6 +122,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
             DispatchQueue.main.async {
+                self.textfield.text = ""
                 self.present(alert, animated: true)
             }
             return
@@ -132,6 +137,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.one.rawValue)
             DispatchQueue.main.async {
+                self.textfield.text = ""
                 self.present(alert, animated: true)
             }
             return
@@ -146,7 +152,9 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
             DispatchQueue.main.async {
+                self.textfield.text = ""
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1023))
             }
             return
         }
@@ -156,6 +164,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
             return
         }
@@ -183,6 +192,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1023))
             }
         }
         
