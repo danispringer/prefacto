@@ -151,6 +151,12 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             for n in firstNumber...secondNumber {
                 if self.isPrime(number: n) {
                     self.arrayOfInts.append(n)
+                    DispatchQueue.main.async {
+                        self.resultTableView.reloadData()
+                        // scroll to last cell
+                        let myIndexPath = IndexPath(row: self.resultTableView.numberOfRows(inSection: 0) - 1, section: 0)
+                        self.resultTableView.scrollToRow(at: myIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+                    }
                 }
             }
             
@@ -168,6 +174,8 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                 }
                 
                 self.shareButton.isHidden = false
+                let myIndexPath = IndexPath(row: self.resultTableView.numberOfRows(inSection: 0) - 1, section: 0)
+                self.resultTableView.scrollToRow(at: myIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
                 self.enableUI(enabled: true)
             }
         }
@@ -214,7 +222,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         if list.count == 1 {
             message = "Hey, did you know that the only prime number between '\(firstNumber)' and '\(secondNumber)' is '\(list[0])'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         } else {
-            message = "Hey, did you know that the prime numbers between '\(firstNumber)' and '\(secondNumber)' are '\(list)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+            message = "Hey, did you know that the prime numbers between '\(firstNumber)' and '\(secondNumber)' are '\(list)'? That's no less than '\(list.count)' numbers! I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         }
         
         
@@ -282,6 +290,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        
         cell.textLabel?.text = "\(arrayOfInts[(indexPath as NSIndexPath).row])"
         
         return cell
