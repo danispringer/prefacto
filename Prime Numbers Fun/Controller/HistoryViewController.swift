@@ -43,7 +43,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     fileprivate func setupFetchedResultsController() {
         let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "number")
