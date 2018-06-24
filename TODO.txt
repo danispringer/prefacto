@@ -53,4 +53,4 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- Add sound, add “check another one” and “done” to alert, add sharing option for photo/history stuff, add option to slide to delete rows, add option to empty history, download more photos, improve design, don't add duplicates
+- Add sound, add sharing option for photo/history stuff, add option to slide to delete rows, add option to empty history, download more photos, improve design, don't add duplicates, add “check another one” and “done” to alert
