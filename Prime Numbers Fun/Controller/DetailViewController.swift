@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class DetailViewController: UIViewController {
     
@@ -15,19 +16,14 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var myToolbar: UIToolbar!
-
-    // MARK: Actions
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         view.isOpaque = false
         self.myToolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
         self.myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
@@ -35,8 +31,36 @@ class DetailViewController: UIViewController {
         detailImage.image = myImage
     }
     
+    
     // MARK: Properties
     
     var myImage: UIImage! = nil
+    let negativeSound: Int = 1257
     
+    
+    // MARK: Actions
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [detailImage.image!], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
+        activityController.completionWithItemsHandler = {
+            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            guard error == nil else {
+                print("Error: \(String(describing: error))")
+                print("Returned items: \(String(describing: returnedItems))")
+                // alert user
+                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                }
+                return
+            }
+        }
+        present(activityController, animated: true)
+    }
 }
