@@ -45,6 +45,6 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- range: , Improve design, add “check another one” and “done” to alert, prime numbers in a row: highscore, show meme, add option to empty history, add swipe to delete, detail image view, slide down to refresh, screenshots from iPhone, mute sound option
+- disable scrolling by user in range so scrolling continues, improve design, detail image view, slide down to refresh, screenshots from iPhone, mute sound option
 ~
 [?] https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667

@@ -265,6 +265,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
             self.view.alpha = 1
+            self.resultTableView.isScrollEnabled = true
         } else {
             self.activityIndicator.startAnimating()
             self.view.endEditing(true)
@@ -272,6 +273,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             self.firstTextField.isEnabled = false
             self.secondTextField.isEnabled = false
             self.view.alpha = 0.5
+            self.resultTableView.isScrollEnabled = false
         }
     }
     
