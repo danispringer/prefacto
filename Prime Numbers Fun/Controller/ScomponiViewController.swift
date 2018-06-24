@@ -223,12 +223,14 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         if enabled {
             self.activityIndicator.stopAnimating()
             self.textfield.isEnabled = true
+            self.view.alpha = 1
         } else {
             DispatchQueue.main.async {
                 self.activityIndicator.startAnimating()
                 self.view.endEditing(true)
                 self.resultLabel.text = ""
                 self.textfield.isEnabled = false
+                self.view.alpha = 0.5
             }
         }
     }

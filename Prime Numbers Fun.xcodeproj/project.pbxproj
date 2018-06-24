@@ -79,9 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */,
+				334C779B20E01E8600BE2C65 /* ListViewController.swift */,
 				33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */,
 				3317915120D9FD3D00CA739F /* PhotosViewController.swift */,
-				334C779B20E01E8600BE2C65 /* ListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

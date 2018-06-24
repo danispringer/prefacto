@@ -264,12 +264,14 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             self.activityIndicator.stopAnimating()
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
+            self.view.alpha = 1
         } else {
             self.activityIndicator.startAnimating()
             self.view.endEditing(true)
             //self.resultLabel.text = ""
             self.firstTextField.isEnabled = false
             self.secondTextField.isEnabled = false
+            self.view.alpha = 0.5
         }
     }
     
