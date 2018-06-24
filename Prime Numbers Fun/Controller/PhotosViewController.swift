@@ -26,13 +26,12 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Photos"
+        self.title = "Images"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getPhotos()
     }
     
     // MARK: CollectionViewDelegate
@@ -47,6 +46,14 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.cellImageView.image = imagesArray[(indexPath as NSIndexPath).row]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+        controller.myImage = imagesArray[(indexPath as NSIndexPath).row]
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller, animated: true)
     }
     
     // MARK: Helper functions
@@ -101,6 +108,7 @@ private extension PhotosViewController {
                 self.collectionView.alpha = 1.0
                 self.activityIndicator.stopAnimating()
                 self.refreshButton.isEnabled = true
+                self.refreshButton.title = "Get new images"
             }
             
         } else {
@@ -108,6 +116,7 @@ private extension PhotosViewController {
                 self.collectionView.alpha = 0.5
                 self.activityIndicator.startAnimating()
                 self.refreshButton.isEnabled = false
+                self.refreshButton.title = "Loading..."
             }
         }
     }

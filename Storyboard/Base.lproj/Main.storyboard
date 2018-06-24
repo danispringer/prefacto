@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos-->
+        <!--Images-->
         <scene sceneID="lsl-qr-u2N">
             <objects>
                 <viewController storyboardIdentifier="PhotosViewController" id="DBJ-ld-CGN" customClass="PhotosViewController" customModule="Prime_Numbers_Fun" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,11 +21,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-g7-4gH">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" image="refresh" id="Cab-kh-Z1R">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aSK-We-onv"/>
+                                    <barButtonItem title="Get new images" id="Cab-kh-Z1R">
                                         <connections>
                                             <action selector="refreshButtonPressed" destination="DBJ-ld-CGN" id="TQ8-NT-uU1"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fBT-0w-rnw"/>
                                 </items>
                             </toolbar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-Ta-qMt">
@@ -98,7 +100,7 @@ Find out!</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QV4-uj-5sZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photos" image="photos" id="8O1-bp-Tky"/>
+                    <tabBarItem key="tabBarItem" title="Images" image="photos" id="8O1-bp-Tky"/>
                     <connections>
                         <outlet property="activityIndicator" destination="8iU-02-QdW" id="WtK-7l-cNG"/>
                         <outlet property="collectionView" destination="bOb-Ta-qMt" id="ZyF-j1-uTQ"/>
@@ -108,6 +110,55 @@ Find out!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiT-tg-2Zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1466" y="1441"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="exh-ri-xyw">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="qBj-hI-XbB" customClass="DetailViewController" customModule="Prime_Numbers_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="roB-W7-TNl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-IL-DFL">
+                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="3hI-Ve-Ce5"/>
+                                    <constraint firstAttribute="height" constant="320" id="RwW-DH-WRF"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaN-KP-W9A">
+                                <rect key="frame" x="0.0" y="80" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uDQ-zZ-q7h"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Close" id="Gen-4n-Vy8">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="qBj-hI-XbB" id="MCH-kd-VhL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kaN-KP-W9A" firstAttribute="centerX" secondItem="gV0-b4-uOT" secondAttribute="centerX" id="FRo-qf-HMk"/>
+                            <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="MfW-eI-u9W"/>
+                            <constraint firstItem="MBl-IL-DFL" firstAttribute="top" secondItem="kaN-KP-W9A" secondAttribute="bottom" id="Ufa-FY-LCB"/>
+                            <constraint firstItem="kaN-KP-W9A" firstAttribute="width" secondItem="roB-W7-TNl" secondAttribute="width" id="ZBd-4P-fH7"/>
+                            <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" id="nKs-I4-gWd"/>
+                            <constraint firstItem="gV0-b4-uOT" firstAttribute="bottom" secondItem="MBl-IL-DFL" secondAttribute="bottom" constant="124" id="wYR-rc-7aA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gV0-b4-uOT"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailImage" destination="MBl-IL-DFL" id="1cn-I7-Fd3"/>
+                        <outlet property="myToolbar" destination="kaN-KP-W9A" id="Zvl-cU-jo3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-hk-dL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2300.625" y="1440.8450704225352"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gPC-s5-p8M">
@@ -352,7 +403,6 @@ Find out!</string>
         <image name="checker" width="26" height="26"/>
         <image name="photos" width="25" height="25"/>
         <image name="range" width="25" height="25"/>
-        <image name="refresh" width="24" height="24"/>
         <image name="scomponi" width="25" height="25"/>
     </resources>
 </document>

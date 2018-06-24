@@ -45,6 +45,6 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- disable scrolling by user in range so scrolling continues, improve design, detail image view, slide down to refresh, screenshots from iPhone, mute sound option
+- improve design, detail image view, slide down to refresh, screenshots from iPhone, mute sound option, let user save image, share image
 ~
 [?] https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
