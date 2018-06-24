@@ -55,11 +55,13 @@ class CheckerViewController: UIViewController {
     
     
     @objc func checkButtonPressed() {
+        textfield.resignFirstResponder()
         
         guard let text = textfield.text else {
             print("it's nil")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
             return
@@ -69,6 +71,7 @@ class CheckerViewController: UIViewController {
             print("it's empty")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -80,6 +83,7 @@ class CheckerViewController: UIViewController {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -91,6 +95,7 @@ class CheckerViewController: UIViewController {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
             return
@@ -101,6 +106,7 @@ class CheckerViewController: UIViewController {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.one.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
             return
@@ -116,6 +122,7 @@ class CheckerViewController: UIViewController {
             alert.addAction(shareAction)
             DispatchQueue.main.async {
                 self.textfield.text = ""
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1023))
             }
@@ -126,6 +133,7 @@ class CheckerViewController: UIViewController {
             print("cannot check negative")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -136,29 +144,35 @@ class CheckerViewController: UIViewController {
 
         let range = 2...(number - 1)
         
-        for n in range {
-            print(n)
-            if number % n == 0 {
-                // not prime
-                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
-                DispatchQueue.main.async {
-                    self.present(alert, animated: true)
+        let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
+        
+        downloadQueue.async {
+            for n in range {
+                if number % n == 0 {
+                    // not prime
+                    let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
+                    DispatchQueue.main.async {
+                        alert.view.layoutIfNeeded()
+                        self.present(alert, animated: true)
+                    }
+                    isPrimeBool = false
+                    break
                 }
-                isPrimeBool = false
-                break
             }
-        }
-        if isPrimeBool {
-            // prime
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
-            let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
-                action in
-                self.share(number: number)
-            })
-            alert.addAction(shareAction)
-            DispatchQueue.main.async {
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1023))
+            
+            if isPrimeBool {
+                // prime
+                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
+                let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
+                    action in
+                    self.share(number: number)
+                })
+                alert.addAction(shareAction)
+                DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(1023))
+                }
             }
         }
     }
