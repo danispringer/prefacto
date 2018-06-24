@@ -230,9 +230,16 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            if error != nil {
+            guard error == nil else {
                 print("Error: \(String(describing: error))")
                 print("Returned items: \(String(describing: returnedItems))")
+                // alert user
+                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                }
+                return
             }
         }
         present(activityController, animated: true)
