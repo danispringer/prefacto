@@ -91,6 +91,7 @@ class ScomponiViewController: UIViewController {
                 self.textfield.text = ""
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
             return
         }
@@ -121,6 +122,9 @@ class ScomponiViewController: UIViewController {
                 while number % index == 0 {
                     number = number / index
                     factors.append(index)
+                    DispatchQueue.main.async {
+                        self.resultLabel.text = "\(factors)"
+                    }
                 }
                 index += 1
             }
