@@ -8,37 +8,28 @@
 
 import Foundation
 import UIKit
-import CoreData
 import AVFoundation
 
-class CheckerViewController: UIViewController, UITextFieldDelegate {
+class CheckerViewController: UIViewController {
     
     // MARK: Outlets
     
     @IBOutlet weak var textfield: UITextField!
-    @IBOutlet weak var historyButton: UIBarButtonItem!
-    @IBOutlet weak var photosButton: UIBarButtonItem!
     
     // MARK: Properties
-
-    
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Checker"
-        
-        textfield.delegate = self
-        
         let resignToolbar = UIToolbar()
         
-        let doneButton = UIBarButtonItem(title: "Check", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
+        let checkButton = UIBarButtonItem(title: "Check", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
         let cancelButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(cancelAndHideKeyboard))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
-        resignToolbar.items = [doneButton, space, cancelButton]
+        resignToolbar.items = [checkButton, space, cancelButton]
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
     }
