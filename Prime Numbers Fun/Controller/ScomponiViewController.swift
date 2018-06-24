@@ -10,22 +10,28 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ScomponiViewController: UIViewController {
+class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Outlets
     
     @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     // MARK: Properties
     
+    var arrayOfInts = [Int64]()
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textfield.delegate = self
+        
+        shareButton.isHidden = true
         let resignToolbar = UIToolbar()
         
         let factorButton = UIBarButtonItem(title: "Factor", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
@@ -41,14 +47,20 @@ class ScomponiViewController: UIViewController {
     // MARK: Helpers
     
     
+    fileprivate func resetResults() {
+        shareButton.isHidden = true
+        resultLabel.text = ""
+        arrayOfInts = []
+    }
+    
     @objc func cancelAndHideKeyboard() {
-        textfield.text = ""
+        resetResults()
         textfield.resignFirstResponder()
     }
     
     
     @objc func checkButtonPressed() {
-        
+        resetResults()
         enableUI(enabled: false)
         
         guard let text = textfield.text else {
@@ -65,6 +77,7 @@ class ScomponiViewController: UIViewController {
             print("it's empty")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -76,7 +89,7 @@ class ScomponiViewController: UIViewController {
             print("not a number, or too big - 9223372036854775807 is limit")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
-                self.textfield.text = ""
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -88,7 +101,7 @@ class ScomponiViewController: UIViewController {
             print("cannot check 0")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
             DispatchQueue.main.async {
-                self.textfield.text = ""
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -100,6 +113,7 @@ class ScomponiViewController: UIViewController {
             print("cannot check negative")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
             DispatchQueue.main.async {
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -107,11 +121,16 @@ class ScomponiViewController: UIViewController {
             return
         }
         
-        var factors = [Int64]()
         var index = Int64(2)
         
         guard number != 1 else {
-            resultLabel.text = "1"
+            arrayOfInts.append(index)
+            DispatchQueue.main.async {
+                self.resultLabel.text = "[1]"
+                self.shareButton.isHidden = false
+                self.enableUI(enabled: true)
+            }
+            
             return
         }
         
@@ -121,34 +140,72 @@ class ScomponiViewController: UIViewController {
             while index <= number {
                 while number % index == 0 {
                     number = number / index
-                    factors.append(index)
+                    self.arrayOfInts.append(index)
                     DispatchQueue.main.async {
-                        self.resultLabel.text = "\(factors)"
+                        self.resultLabel.text = "\(self.arrayOfInts)"
                     }
                 }
                 index += 1
             }
             DispatchQueue.main.async {
-                self.resultLabel.text = "\(factors)"
+                self.resultLabel.text = "\(self.arrayOfInts)"
+                self.shareButton.isHidden = false
                 self.enableUI(enabled: true)
             }
         }
+    }
+    
+
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        guard let text = textfield.text else {
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
+            }
+            return
+        }
+        guard !text.isEmpty else {
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            DispatchQueue.main.async {
+                self.resetResults()
+                self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
+            }
+            return
+        }
+        guard var num = Int64(text) else {
+            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                self.resetResults()
+                self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
+            }
+            return
+        }
         
-//        let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
-//        let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
-//            action in
-//            self.share(number: number)
-//        })
-//        alert.addAction(shareAction)
-//        DispatchQueue.main.async {
-//            self.present(alert, animated: true)
-//
-//        }
+        guard arrayOfInts.count > 0 else {
+            resetResults()
+            num = Int64(2121)
+            let myList: [Int64] = [3, 7, 101]
+            share(number: num, list: myList)
+            return
+        }
+        
+        share(number: num, list: arrayOfInts)
     }
     
     
+    
     func share(number: Int64, list: [Int64]) {
-        let message = "Hey, did you know that the prime factors of '\(number)' are '\(list)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        var message = ""
+
+        if list.count == 1 {
+            message = "Hey, did you know that '\(number)' is a prime number? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        } else {
+            message = "Hey, did you know that the prime factors of '\(number)' are '\(list)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        }
+        
         
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
@@ -174,5 +231,14 @@ class ScomponiViewController: UIViewController {
                 self.textfield.isEnabled = false
             }
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField.text?.isEmpty)! {
+            shareButton.isHidden = true
+            resultLabel.text = ""
+            arrayOfInts = []
+        }
+        
     }
 }
