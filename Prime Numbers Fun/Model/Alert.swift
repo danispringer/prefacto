@@ -22,10 +22,12 @@ class Alert {
         case negative = "negative"
         case prime = "prime"
         case notPrime = "notPrime"
+        case sameTwice = "sameTwice"
+        case noPrimesInRange = "noPrimesInRange"
         case unknown = "unknown"
     }
 
-    func createAlert(alertReasonParam: String, num: Int64 = 0, divisibleBy: Int64 = 0) -> UIAlertController {
+    func createAlert(alertReasonParam: String, num: Int64 = 0, divisibleBy: Int64 = 0, firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
         
         var alertTitle = ""
         var alertMessage = ""
@@ -57,6 +59,12 @@ class Alert {
         case alertReason.notPrime.rawValue:
             alertTitle = "Not prime"
             alertMessage = "\(num) is not a prime number.\nIs it divisible by \(divisibleBy)."
+        case alertReason.sameTwice.rawValue:
+            alertTitle = "Oops"
+            alertMessage = "Cannot make a list from a single number. Please enter different numbers."
+        case alertReason.noPrimesInRange.rawValue:
+            alertTitle = "Oops"
+            alertMessage = "There are no prime numbers between '\(firstNum)' and '\(secondNum)'. Please enter different numbers."
         default:
             alertTitle = "Unknown error"
             alertMessage = "An unknown error occurred. Please try again later."
