@@ -29,7 +29,7 @@
                                 </items>
                             </toolbar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-Ta-qMt">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="150" width="320" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OeT-cN-Jyq">
                                     <size key="itemSize" width="132" height="128"/>
@@ -73,15 +73,25 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8iU-02-QdW">
                                 <rect key="frame" x="150" y="259.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-Ni-Izz">
+                                <rect key="frame" x="85" y="76" width="151" height="41"/>
+                                <string key="text">Are all these prime?
+Find out!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5pw-g7-4gH" firstAttribute="width" secondItem="gj3-Mh-0H1" secondAttribute="width" id="D3c-nH-6jg"/>
-                            <constraint firstItem="bOb-Ta-qMt" firstAttribute="top" secondItem="5pw-g7-4gH" secondAttribute="bottom" id="IEU-z6-dbZ"/>
+                            <constraint firstItem="bOb-Ta-qMt" firstAttribute="top" secondItem="5pw-g7-4gH" secondAttribute="bottom" constant="86" id="IEU-z6-dbZ"/>
                             <constraint firstItem="QV4-uj-5sZ" firstAttribute="bottom" secondItem="bOb-Ta-qMt" secondAttribute="bottom" id="T9N-E8-fTE"/>
+                            <constraint firstItem="BJ5-Ni-Izz" firstAttribute="top" secondItem="QV4-uj-5sZ" secondAttribute="top" constant="56" id="W9J-aT-gAe"/>
                             <constraint firstItem="8iU-02-QdW" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="hCP-aP-onm"/>
                             <constraint firstItem="5pw-g7-4gH" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="hLa-NV-xtS"/>
                             <constraint firstItem="bOb-Ta-qMt" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="msu-jf-zyS"/>
+                            <constraint firstItem="BJ5-Ni-Izz" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="r7t-5u-fKd"/>
                             <constraint firstItem="bOb-Ta-qMt" firstAttribute="width" secondItem="gj3-Mh-0H1" secondAttribute="width" id="xMQ-eU-xe9"/>
                             <constraint firstItem="8iU-02-QdW" firstAttribute="centerY" secondItem="QV4-uj-5sZ" secondAttribute="centerY" id="yI4-2D-n12"/>
                             <constraint firstItem="5pw-g7-4gH" firstAttribute="top" secondItem="QV4-uj-5sZ" secondAttribute="top" id="yqJ-i1-fIP"/>
@@ -97,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiT-tg-2Zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="1442"/>
+            <point key="canvasLocation" x="682.5" y="1441.9014084507041"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gPC-s5-p8M">
@@ -164,7 +174,7 @@
     </scenes>
     <resources>
         <image name="checker" width="50" height="50"/>
-        <image name="photos" width="50" height="50"/>
+        <image name="photos" width="25" height="25"/>
         <image name="refresh" width="24" height="24"/>
     </resources>
 </document>
