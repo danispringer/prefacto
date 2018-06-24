@@ -9,16 +9,8 @@ history:
 
 photos:
 
-[done until furter changes] redo screenshots
-~
-What is happening is that at this stage, the tab bar controller doesn't have a selectedViewController yet and you are then casting nil to CheckerViewController resulting in a crash.
-To get the CheckerViewController you need, we should access the viewControllers array of the tabBarController and get it from the first position in the array:
-
-let checkerViewController = tabBarController.viewControllers?.first as! CheckerViewController
-
-Problem fixed :blush:
-~
-​
+redo screenshots
+~​
 12
 class Alert {
 SUGGESTION

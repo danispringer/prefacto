@@ -21,9 +21,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
 
-    var dataController: DataController!
-    var number: Number!
-    var fetchedResultsController:NSFetchedResultsController<Number>!
     
     
     // MARK: Life Cycle
@@ -58,21 +55,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: Helpers
-    
-    fileprivate func setupFetchedResultsController() {
-        let fetchRequest:NSFetchRequest<Number> = Number.fetchRequest()
-        
-        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "numbers")
-        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            fatalError("The fetch could not be performed: \(error.localizedDescription)")
-        }
-    }
     
     
     @objc func cancelAndHideKeyboard() {
@@ -115,11 +97,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 0 else {
             print("cannot check 0")
-            let numberToSave = Number(context: dataController.viewContext)
-            numberToSave.creationDate = Date()
-            numberToSave.value = number
-            numberToSave.primeOr = NumberType.none.rawValue
-            try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
@@ -130,11 +107,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 1 else {
             print("cannot check 1")
-            let numberToSave = Number(context: dataController.viewContext)
-            numberToSave.creationDate = Date()
-            numberToSave.value = number
-            numberToSave.primeOr = NumberType.none.rawValue
-            try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.one.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
@@ -145,11 +117,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 2 else {
             print("cannot check 2")
-            let numberToSave = Number(context: dataController.viewContext)
-            numberToSave.creationDate = Date()
-            numberToSave.value = number
-            numberToSave.primeOr = NumberType.isPrime.rawValue
-            try? dataController.viewContext.save()
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
@@ -170,7 +137,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
         }
         
         var isPrimeBool = true
-        var isDivisibleBy: Int64 = 0
 
         let range = 2...(number - 1)
         
@@ -178,7 +144,6 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
             print(n)
             if number % n == 0 {
                 // not prime
-                isDivisibleBy = n
                 let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
@@ -195,33 +160,7 @@ class CheckerViewController: UIViewController, UITextFieldDelegate {
                 AudioServicesPlayAlertSound(SystemSoundID(1023))
             }
         }
-        
-        let numberToSave = Number(context: dataController.viewContext)
-        numberToSave.creationDate = Date()
-        numberToSave.value = number
-        numberToSave.primeOr = isPrimeBool ? NumberType.isPrime.rawValue : NumberType.isNotPrime.rawValue
-        numberToSave.isDivisibleBy = isDivisibleBy
-        try? dataController.viewContext.save()
-        
     }
-    
-    @IBAction func historyButtonPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
-        destinationVC.dataController = dataController
-        
-        self.navigationController?.pushViewController(destinationVC, animated: true)
-    }
-    
-    @IBAction func photosButtonPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
-        
-        self.navigationController?.pushViewController(destinationVC, animated: true)
-    }
-    
-    
-    
 }
 
 

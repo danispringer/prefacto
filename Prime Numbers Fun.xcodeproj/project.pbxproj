@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3317915020D9FD1A00CA739F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317914F20D9FD1A00CA739F /* HistoryViewController.swift */; };
 		3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915120D9FD3D00CA739F /* PhotosViewController.swift */; };
 		3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915620D9FE3600CA739F /* FlickrClient.swift */; };
 		3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915720D9FE3600CA739F /* FlickrConstants.swift */; };
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
-		33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33B6729620DAF1510041217B /* Model.xcdatamodeld */; };
-		33B6729A20DAF1B10041217B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6729920DAF1B10041217B /* DataController.swift */; };
+		33378FC020DF4E6900DC9A42 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33378FBF20DF4E6900DC9A42 /* Number.swift */; };
 		33CB11C820DCB5D0003E7522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB11C720DCB5D0003E7522 /* AppDelegate.swift */; };
 		33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CA20DCB5DB003E7522 /* LaunchScreen.storyboard */; };
 		33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CC20DCB5DB003E7522 /* Main.storyboard */; };
@@ -25,14 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3317914F20D9FD1A00CA739F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		3317915120D9FD3D00CA739F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		3317915620D9FE3600CA739F /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 		3317915720D9FE3600CA739F /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		33B6729720DAF1510041217B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		33B6729920DAF1B10041217B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		33378FBF20DF4E6900DC9A42 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		33CB11C720DCB5D0003E7522 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Prime Numbers Fun/AppDelegate.swift"; sourceTree = "<group>"; };
 		33CB11CB20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33CB11CD20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,11 +63,10 @@
 		3317915C20DA042F00CA739F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33B6729620DAF1510041217B /* Model.xcdatamodeld */,
-				33B6729920DAF1B10041217B /* DataController.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
 				33FBA60120DF1167003303D2 /* NumberType.swift */,
 				3317915520D9FE3600CA739F /* Flickr */,
+				33378FBF20DF4E6900DC9A42 /* Number.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -80,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */,
-				3317914F20D9FD1A00CA739F /* HistoryViewController.swift */,
 				3317915120D9FD3D00CA739F /* PhotosViewController.swift */,
 			);
 			path = Controller;
@@ -215,15 +209,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33378FC020DF4E6900DC9A42 /* Number.swift in Sources */,
 				33CB11C820DCB5D0003E7522 /* AppDelegate.swift in Sources */,
 				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
-				3317915020D9FD1A00CA739F /* HistoryViewController.swift in Sources */,
 				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
 				3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */,
 				33FBA60220DF1167003303D2 /* NumberType.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
-				33B6729A20DAF1B10041217B /* DataController.swift in Sources */,
-				33B6729820DAF1510041217B /* Model.xcdatamodeld in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
 			);
@@ -425,19 +417,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		33B6729620DAF1510041217B /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				33B6729720DAF1510041217B /* Model.xcdatamodel */,
-			);
-			currentVersion = 33B6729720DAF1510041217B /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 33EE5BBF20D996C4008FEAF2 /* Project object */;
 }
