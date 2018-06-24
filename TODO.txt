@@ -45,6 +45,6 @@ Instead of dispatching to the main thread in three different blocks of code, we 
 ~
 These empty lines should be deleted to improve organisation
 ~
-- scomponi: share, update list in real time, range: , Improve design, add “check another one” and “done” to alert, prime numbers in a row: highscore, show meme, add option to empty history, add swipe to delete
+- range: , Improve design, add “check another one” and “done” to alert, prime numbers in a row: highscore, show meme, add option to empty history, add swipe to delete
 ~
 [?] https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
