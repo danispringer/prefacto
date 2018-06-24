@@ -107,7 +107,7 @@ Find out!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiT-tg-2Zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682.5" y="1441.9014084507041"/>
+            <point key="canvasLocation" x="566" y="1441"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gPC-s5-p8M">
@@ -120,6 +120,7 @@ Find out!</string>
                     </tabBar>
                     <connections>
                         <segue destination="1t2-Bt-9xD" kind="relationship" relationship="viewControllers" id="PcD-sI-ABf"/>
+                        <segue destination="GDH-dL-aVw" kind="relationship" relationship="viewControllers" id="oRt-C6-7lD"/>
                         <segue destination="DBJ-ld-CGN" kind="relationship" relationship="viewControllers" id="YeW-lJ-XKc"/>
                     </connections>
                 </tabBarController>
@@ -136,7 +137,7 @@ Find out!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="99.5" y="111" width="121" height="31.5"/>
+                                <rect key="frame" x="99.5" y="112" width="121" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -155,7 +156,7 @@ Find out!</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="O3R-2E-fho" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="LcD-qH-xwE"/>
-                            <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="46" id="lVM-3A-BJT"/>
+                            <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="45" id="lVM-3A-BJT"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="m9b-Ud-4Ju"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" constant="-61" id="vu0-46-TLp"/>
                         </constraints>
@@ -169,12 +170,75 @@ Find out!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87F-1e-3ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-999.375" y="1442.9577464788733"/>
+            <point key="canvasLocation" x="-1016" y="1441"/>
+        </scene>
+        <!--Factor-->
+        <scene sceneID="Old-7D-uru">
+            <objects>
+                <viewController id="GDH-dL-aVw" customClass="ScomponiViewController" customModule="Prime_Numbers_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rfk-CT-EXo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factor a number into primes!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-BS-llH">
+                                <rect key="frame" x="8" y="80.5" width="304" height="62.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-hj-b9l">
+                                <rect key="frame" x="35" y="188" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3aW-L4-KEj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="nmS-Kk-4U5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-V0-KlX">
+                                <rect key="frame" x="16" y="263" width="288" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="9j0-j3-bcb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Whi-BS-llH" firstAttribute="width" secondItem="DGV-fo-RV1" secondAttribute="width" constant="-16" id="90R-nf-E9J"/>
+                            <constraint firstItem="R4p-V0-KlX" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="Bd6-Nj-CKT"/>
+                            <constraint firstItem="ptO-hj-b9l" firstAttribute="centerY" secondItem="DGV-fo-RV1" secondAttribute="centerY" constant="-61" id="GZG-Bs-iiD"/>
+                            <constraint firstItem="R4p-V0-KlX" firstAttribute="width" secondItem="rfk-CT-EXo" secondAttribute="width" constant="-32" id="X8F-kl-Prv"/>
+                            <constraint firstItem="ptO-hj-b9l" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="ch6-Gl-mzj"/>
+                            <constraint firstItem="ptO-hj-b9l" firstAttribute="top" secondItem="Whi-BS-llH" secondAttribute="bottom" constant="45" id="nNk-ym-TDw"/>
+                            <constraint firstItem="Whi-BS-llH" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="ple-UA-a58"/>
+                            <constraint firstItem="DGV-fo-RV1" firstAttribute="bottom" secondItem="R4p-V0-KlX" secondAttribute="bottom" id="vl2-u3-yzb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DGV-fo-RV1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Factor" image="scomponi" id="ts3-jk-KCl"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
+                        <outlet property="resultLabel" destination="R4p-V0-KlX" id="BG3-P1-eb4"/>
+                        <outlet property="textfield" destination="ptO-hj-b9l" id="sHl-RG-VwR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkA-y2-vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.625" y="1440.8450704225352"/>
         </scene>
     </scenes>
     <resources>
-        <image name="checker" width="50" height="50"/>
+        <image name="checker" width="26" height="26"/>
         <image name="photos" width="25" height="25"/>
         <image name="refresh" width="24" height="24"/>
+        <image name="scomponi" width="25" height="25"/>
     </resources>
 </document>
