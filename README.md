@@ -26,7 +26,7 @@ Want to help? You can:
 # License
 - Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
 
-# App Store Description
+###### App Store Description
 ‘Prime Numbers Fun’ lets you:
 • Check whether a number is prime
 • List the prime numbers in a given range
