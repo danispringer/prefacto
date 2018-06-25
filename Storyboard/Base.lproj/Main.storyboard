@@ -203,9 +203,9 @@ Find out!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl">
-                                <rect key="frame" x="35" y="188.5" width="250" height="40"/>
+                                <rect key="frame" x="40" y="188.5" width="240" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CJf-iG-clI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="CJf-iG-clI"/>
                                     <constraint firstAttribute="height" constant="40" id="S7O-Dy-kzA"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -247,10 +247,10 @@ Find out!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-hj-b9l">
-                                <rect key="frame" x="35" y="188" width="250" height="40"/>
+                                <rect key="frame" x="40" y="188" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3aW-L4-KEj"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="nmS-Kk-4U5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="nmS-Kk-4U5"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -320,9 +320,9 @@ Find out!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter first number here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-FV-42z">
-                                <rect key="frame" x="35" y="188.5" width="250" height="40"/>
+                                <rect key="frame" x="40" y="188.5" width="240" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="qYk-EK-mTg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="qYk-EK-mTg"/>
                                     <constraint firstAttribute="height" constant="40" id="yEi-Ba-BEA"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -330,10 +330,10 @@ Find out!</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter second number here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-op-hSX">
-                                <rect key="frame" x="35.5" y="242" width="250" height="40"/>
+                                <rect key="frame" x="40.5" y="242" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JXA-aw-pHi"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="diu-Ui-Her"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="diu-Ui-Her"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
