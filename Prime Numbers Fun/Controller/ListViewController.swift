@@ -19,14 +19,15 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var shareButton: UIButton!
+    
+    
     // MARK: Properties
     
     var arrayOfInts = [Int64]()
     
     let positiveSound: Int = 1023
     let negativeSound: Int = 1257
-
-
+    
     
     // MARK: Life Cycle
     
@@ -65,13 +66,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         secondTextField.resignFirstResponder()
     }
     
-    
     @objc func checkButtonPressed() {
-        resetResults()
-        enableUI(enabled: false)
+        DispatchQueue.main.async {
+            self.resetResults()
+            self.enableUI(enabled: false)
+        }
         
         guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
-            print("it's nil")
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
@@ -81,7 +82,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         }
         
         guard !firstText.isEmpty, !secondText.isEmpty else {
-            print("it's empty")
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -93,7 +93,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         }
         
         guard var firstNumber = Int64(firstText), var secondNumber = Int64(secondText) else {
-            print("not a number, or too big - 9223372036854775807 is limit")
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -105,7 +104,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         }
         
         guard firstNumber != 0, secondNumber != 0 else {
-            print("cannot make list from 0")
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -117,7 +115,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         }
         
         guard !(firstNumber < 0), !(secondNumber < 0) else {
-            print("cannot make list from negative")
             let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -129,7 +126,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         }
         
         guard !(firstNumber == secondNumber) else {
-            print("cannot make list from same number twice")
             let alert = createAlert(alertReasonParam: alertReason.sameTwice.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -231,9 +227,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                print("Error: \(String(describing: error))")
-                print("Returned items: \(String(describing: returnedItems))")
-                // alert user
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)

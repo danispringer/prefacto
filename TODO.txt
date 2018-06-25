@@ -4,11 +4,6 @@ BUGS:
 FEATS:
 
 redo screenshots
-~​
-12
-class Alert {
-SUGGESTION
-This could also be an extension of UIViewController. In this way you could access it directly from any view controller just by referring to self
 ~
 UICollectionView delegates could be put in a separate extension of this View Controller to improve the organisation! This is a common practice in swift!
 I'll leave you some important documentation from Apple regarding extensions so that you can deepen your knowledge:

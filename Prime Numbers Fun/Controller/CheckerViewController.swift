@@ -19,6 +19,10 @@ class CheckerViewController: UIViewController {
     
     // MARK: Properties
     
+    let positiveSound: Int = 1023
+    let negativeSound: Int = 1257
+    
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -61,7 +65,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard let text = textfield.text else {
-            print("it's nil")
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -72,7 +75,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard !text.isEmpty else {
-            print("it's empty")
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -84,7 +86,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard let number = Int64(text) else {
-            print("not a number, or too big - 9223372036854775807 is limit")
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -96,7 +97,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard number != 0 else {
-            print("cannot check 0")
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
@@ -108,7 +108,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard number != 1 else {
-            print("cannot check 1")
             let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
@@ -120,7 +119,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard number != 2 else {
-            print("cannot check 2")
             let alert = createAlert(alertReasonParam: alertReason.two.rawValue)
             let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
                 action in
@@ -137,7 +135,6 @@ class CheckerViewController: UIViewController {
         }
         
         guard !(number < 0) else {
-            print("cannot check negative")
             let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
@@ -209,9 +206,13 @@ class CheckerViewController: UIViewController {
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            if error != nil {
-                print("Error: \(String(describing: error))")
-                print("Returned items: \(String(describing: returnedItems))")
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                }
+                return
             }
         }
         DispatchQueue.main.async {

@@ -74,8 +74,6 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             guard let data = data else {
-                
-                print("No data")
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)

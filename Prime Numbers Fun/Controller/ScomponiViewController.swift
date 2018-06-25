@@ -23,6 +23,8 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
     
     var arrayOfInts = [Int64]()
+    let positiveSound: Int = 1023
+    let negativeSound: Int = 1257
     
     // MARK: Life Cycle
     
@@ -64,7 +66,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         enableUI(enabled: false)
         
         guard let text = textfield.text else {
-            print("it's nil")
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
@@ -74,7 +75,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !text.isEmpty else {
-            print("it's empty")
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -86,7 +86,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard var number = Int64(text) else {
-            print("not a number, or too big - 9223372036854775807 is limit")
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -98,7 +97,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard number != 0 else {
-            print("cannot check 0")
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -110,7 +108,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !(number < 0) else {
-            print("cannot check negative")
             let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
@@ -211,9 +208,13 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            if error != nil {
-                print("Error: \(String(describing: error))")
-                print("Returned items: \(String(describing: returnedItems))")
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                }
+                return
             }
         }
         present(activityController, animated: true)

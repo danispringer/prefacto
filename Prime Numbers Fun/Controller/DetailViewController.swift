@@ -50,9 +50,6 @@ class DetailViewController: UIViewController {
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                print("Error: \(String(describing: error))")
-                print("Returned items: \(String(describing: returnedItems))")
-                // alert user
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
