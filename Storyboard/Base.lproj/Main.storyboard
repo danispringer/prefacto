@@ -212,19 +212,25 @@ Find out!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-Ma-ASa">
+                                <rect key="frame" x="150" y="259.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2NI-Ma-ASa" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" id="3OQ-T5-Zrc"/>
                             <constraint firstItem="O3R-2E-fho" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="LcD-qH-xwE"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="45" id="lVM-3A-BJT"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="m9b-Ud-4Ju"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" constant="-61" id="vu0-46-TLp"/>
+                            <constraint firstItem="2NI-Ma-ASa" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="ybb-tE-t1m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iu7-ta-hZk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Checker" image="checker" id="ZgU-OI-oa4"/>
                     <navigationItem key="navigationItem" id="RoM-QN-z2j"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="2NI-Ma-ASa" id="TNC-Yp-8HM"/>
                         <outlet property="textfield" destination="m0x-Lr-7Xl" id="LsP-l7-Xxx"/>
                     </connections>
                 </viewController>
@@ -240,7 +246,7 @@ Find out!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factor into primes!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-BS-llH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factorize" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-BS-llH">
                                 <rect key="frame" x="8" y="111.5" width="304" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -313,7 +319,7 @@ Find out!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List primes in range!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-0K-8CX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Prime List" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-0K-8CX">
                                 <rect key="frame" x="8" y="112" width="304" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
