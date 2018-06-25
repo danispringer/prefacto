@@ -1,16 +1,10 @@
 # Prime Numbers Fun (iOS)
 ‘Prime Numbers Fun’ lets you:
-• Check whether a number is prime
-• List the prime numbers in a given range
-• Factorize to primes a given number
-• View fun images with prime numbers in them
-• Share your results, like that huge prime number you found, which everyone must know about
-
-Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
-
-Is there a feature you'd like to see? Leave a review!
-
-Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
+- Check whether a number is prime
+- List the prime numbers in a given range
+- Factorize to primes a given number
+- View fun images with prime numbers in them
+- Share your results, like that huge prime number you found, which everyone must know about
 
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-7.jpg)
 
@@ -31,3 +25,17 @@ Want to help? You can:
 
 # License
 - Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
+
+# App Store Description
+‘Prime Numbers Fun’ lets you:
+• Check whether a number is prime
+• List the prime numbers in a given range
+• Factorize to primes a given number
+• View fun images with prime numbers in them
+• Share your results, like that huge prime number you found, which everyone must know about
+
+Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
+
+Is there a feature you'd like to see? Leave a review!
+
+Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
