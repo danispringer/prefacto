@@ -53,7 +53,7 @@ class DetailViewController: UIViewController {
                 print("Error: \(String(describing: error))")
                 print("Returned items: \(String(describing: returnedItems))")
                 // alert user
-                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))

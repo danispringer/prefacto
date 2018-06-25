@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class Alert {
-    static var shared = Alert()
+extension UIViewController {
 
     enum alertReason: String {
         case textfieldEmpty = "textfieldEmpty"

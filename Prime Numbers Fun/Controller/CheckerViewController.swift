@@ -62,7 +62,7 @@ class CheckerViewController: UIViewController {
         
         guard let text = textfield.text else {
             print("it's nil")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
@@ -73,7 +73,7 @@ class CheckerViewController: UIViewController {
         
         guard !text.isEmpty else {
             print("it's empty")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
@@ -85,7 +85,7 @@ class CheckerViewController: UIViewController {
         
         guard let number = Int64(text) else {
             print("not a number, or too big - 9223372036854775807 is limit")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
@@ -97,7 +97,7 @@ class CheckerViewController: UIViewController {
         
         guard number != 0 else {
             print("cannot check 0")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
                 alert.view.layoutIfNeeded()
@@ -109,7 +109,7 @@ class CheckerViewController: UIViewController {
         
         guard number != 1 else {
             print("cannot check 1")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.one.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
                 alert.view.layoutIfNeeded()
@@ -121,7 +121,7 @@ class CheckerViewController: UIViewController {
         
         guard number != 2 else {
             print("cannot check 2")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.two.rawValue)
             let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
                 action in
                 self.share(number: number, isPrime: true)
@@ -138,7 +138,7 @@ class CheckerViewController: UIViewController {
         
         guard !(number < 0) else {
             print("cannot check negative")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.textfield.text = ""
                 alert.view.layoutIfNeeded()
@@ -161,7 +161,7 @@ class CheckerViewController: UIViewController {
                 if number % n == 0 {
                     // not prime
                     isDivisibleBy = n
-                    let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
+                    let alert = self.createAlert(alertReasonParam: alertReason.notPrime.rawValue, num: number, divisibleBy: n)
                     let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
                         action in
                         self.share(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
@@ -179,7 +179,7 @@ class CheckerViewController: UIViewController {
             
             if isPrimeBool {
                 // prime
-                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
+                let alert = self.createAlert(alertReasonParam: alertReason.prime.rawValue, num: number)
                 let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
                     action in
                     self.share(number: number, isPrime: isPrimeBool)

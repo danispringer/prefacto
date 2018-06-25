@@ -72,7 +72,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
             print("it's nil")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -82,7 +82,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         guard !firstText.isEmpty, !secondText.isEmpty else {
             print("it's empty")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -94,7 +94,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         guard var firstNumber = Int64(firstText), var secondNumber = Int64(secondText) else {
             print("not a number, or too big - 9223372036854775807 is limit")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -106,7 +106,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         guard firstNumber != 0, secondNumber != 0 else {
             print("cannot make list from 0")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -118,7 +118,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         guard !(firstNumber < 0), !(secondNumber < 0) else {
             print("cannot make list from negative")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -130,7 +130,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         guard !(firstNumber == secondNumber) else {
             print("cannot make list from same number twice")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.sameTwice.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.sameTwice.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -165,7 +165,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                 
                 guard self.arrayOfInts.count > 0 else {
                     // no primes in range
-                    let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.noPrimesInRange.rawValue, firstNum: firstNumber, secondNum: secondNumber)
+                    let alert = self.createAlert(alertReasonParam: alertReason.noPrimesInRange.rawValue, firstNum: firstNumber, secondNum: secondNumber)
                     self.resetResults()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
@@ -184,7 +184,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     @IBAction func shareButtonPressed(_ sender: Any) {
         guard let firstText = firstTextField.text, let secondtext = secondTextField.text else {
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
@@ -192,7 +192,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             return
         }
         guard !firstText.isEmpty, !secondtext.isEmpty else {
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.present(alert, animated: true)
@@ -201,7 +201,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             return
         }
         guard let firstNumber = Int64(firstText), let secondNumber = Int64(secondtext) else {
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.present(alert, animated: true)
@@ -234,7 +234,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                 print("Error: \(String(describing: error))")
                 print("Returned items: \(String(describing: returnedItems))")
                 // alert user
-                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))

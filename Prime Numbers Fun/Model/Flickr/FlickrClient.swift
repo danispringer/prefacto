@@ -15,6 +15,7 @@ import UIKit
 
 class FlickrClient: NSObject {
     
+    
     // MARK: Properties
     
     var latitude: Double = 0.0
@@ -32,19 +33,19 @@ class FlickrClient: NSObject {
             
             guard error == nil else {
                 print("network error")
-                completion(nil, Alert.alertReason.network.rawValue)
+                completion(nil, "network")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
                 print("Status code not 2xx")
-                completion(nil, Alert.alertReason.unknown.rawValue)
+                completion(nil, "unknown")
                 return
             }
             
             guard let data = data else {
                 print("No data")
-                completion(nil, Alert.alertReason.unknown.rawValue)
+                completion(nil, "unknown")
                 return
             }
             
@@ -53,25 +54,26 @@ class FlickrClient: NSObject {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
             } catch {
                 print("Could not parse data: '\(data)'")
-                completion(nil, Alert.alertReason.unknown.rawValue)
+                completion(nil, "unknown")
                 return
             }
             
             guard let stat = parsedResult[Constants.FlickrResponseKeys.Status] as? String, stat == Constants.FlickrResponseValues.OKStatus else {
                 print("Flickr API returned an error. See error code and message in \(parsedResult)")
-                completion(nil, Alert.alertReason.unknown.rawValue)
+                completion(nil, "unknown")
                 return
             }
             
             
             guard let photosDictionary = parsedResult[Constants.FlickrResponseKeys.Photos] as? [String:AnyObject] else {
                 print("Cannot find keys '\(Constants.FlickrResponseKeys.Photos)' in \(parsedResult)")
-                completion(nil, Alert.alertReason.unknown.rawValue)
+                completion(nil, "unknown")
                 return
             }
             
             guard let photoArray = photosDictionary[Constants.FlickrResponseKeys.Photo] as? [[String:AnyObject]] else {
                 print("Cannot find key '\(Constants.FlickrResponseKeys.Photo)' in \(parsedResult)")
+                completion(nil, "unknown")
                 return
             }
             
@@ -83,6 +85,7 @@ class FlickrClient: NSObject {
                 
                 guard let imageUrlString = photoDictionary[Constants.FlickrResponseKeys.MediumURL] as? String else {
                     print("Cannot find key '\(Constants.FlickrResponseKeys.MediumURL)' in \(photoDictionary)")
+                    completion(nil, "unknown")
                     return
                 }
                 

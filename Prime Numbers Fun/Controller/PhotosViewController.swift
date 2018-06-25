@@ -66,7 +66,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         FlickrClient.getPhotosAbstracted { data, errorReason in
             guard errorReason == nil else {
                 
-                let alert = Alert.shared.createAlert(alertReasonParam: errorReason!)
+                let alert = self.createAlert(alertReasonParam: errorReason!)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     self.present(alert, animated: true)
@@ -76,7 +76,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             guard let data = data else {
                 
                 print("No data")
-                let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     self.present(alert, animated: true)

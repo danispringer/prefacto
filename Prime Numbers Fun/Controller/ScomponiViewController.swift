@@ -65,7 +65,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         
         guard let text = textfield.text else {
             print("it's nil")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -75,7 +75,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         
         guard !text.isEmpty else {
             print("it's empty")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -87,7 +87,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         
         guard var number = Int64(text) else {
             print("not a number, or too big - 9223372036854775807 is limit")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -99,7 +99,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         
         guard number != 0 else {
             print("cannot check 0")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.zero.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -111,7 +111,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         
         guard !(number < 0) else {
             print("cannot check negative")
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
@@ -158,7 +158,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func shareButtonPressed(_ sender: Any) {
         guard let text = textfield.text else {
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -166,7 +166,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
             return
         }
         guard !text.isEmpty else {
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.present(alert, animated: true)
@@ -175,7 +175,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
             return
         }
         guard var num = Int64(text) else {
-            let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
                 self.present(alert, animated: true)
