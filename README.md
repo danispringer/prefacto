@@ -1,13 +1,18 @@
 # Prime Numbers Fun (iOS)
-‘Prime Numbers Fun’ lets you quickly discover whether a number is prime or otherwise.
-You can also view fun images with prime numbers in them, and hit “Refresh” for even more images!
-‘Prime Numbers Fun’ also keeps a history of what numbers you already checked, noting whether each is prime.
+‘Prime Numbers Fun’ lets you:
+• Check whether a number is prime
+• List the prime numbers in a given range
+• Factorize to primes a given number
+• View fun images with prime numbers in them
+• Share your results, like that huge prime number you found, which everyone must know about
 
 Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
 
-Is there a feature you'd like to see? A bug you'd like to go away? Leave a review!
+Is there a feature you'd like to see? Leave a review!
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/01.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/02.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/03.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/04.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/05.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/06.jpg)
+Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
+
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-7.jpg)
 
 # How To Run
 - You need Xcode installed on your Computer (Xcode is available for Mac only).
