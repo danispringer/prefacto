@@ -24,7 +24,7 @@ Want to help? You can:
 - Contact me: [https://danispringer.github.io/](https://danispringer.github.io/)
 
 # License
-- Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
+Copyright © 2018 Dani Springer. All rights reserved.
 
 ###### App Store Description
 ‘Prime Numbers Fun’ lets you:
