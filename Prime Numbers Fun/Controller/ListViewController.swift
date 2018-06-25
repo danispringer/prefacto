@@ -284,13 +284,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         }
     }
     
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        if (textField.text?.isEmpty)! {
-//            //shareButton.isHidden = true
-//            //resultLabel.text = ""
-//            arrayOfInts = []
-//        }
-//    }
     
     // MARK: TableView
     
@@ -303,6 +296,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         cell.textLabel?.text = "\(arrayOfInts[(indexPath as NSIndexPath).row])"
+        cell.selectionStyle = .none
         
         return cell
     }
