@@ -345,14 +345,16 @@ Find out!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
-                                <rect key="frame" x="16" y="151" width="288" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
+                                <rect key="frame" x="150" y="259.5" width="20" height="20"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-T3-HqB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-T3-HqB">
                                 <rect key="frame" x="16" y="296" width="288" height="223"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="1wT-5y-Tp1"/>
+                                    <constraint firstAttribute="height" constant="223" id="hT9-pK-G6p"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="EMK-ef-JB0" style="IBUITableViewCellStyleDefault" id="b30-ce-rRK">
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
@@ -377,9 +379,8 @@ Find out!</string>
                                     <outlet property="delegate" destination="enb-lg-n27" id="mw4-Cu-ZxM"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAu-RQ-eTu" userLabel="Share">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAu-RQ-eTu" userLabel="Share">
                                 <rect key="frame" x="140" y="60" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
                                 <connections>
                                     <action selector="shareButtonPressed:" destination="GDH-dL-aVw" eventType="touchUpInside" id="C5B-At-OCc"/>
@@ -393,8 +394,14 @@ Find out!</string>
                             <constraint firstItem="u8x-FV-42z" firstAttribute="centerY" secondItem="TF9-a1-dCQ" secondAttribute="centerY" constant="-61" id="7K3-a3-HdS"/>
                             <constraint firstItem="u8x-FV-42z" firstAttribute="centerX" secondItem="TF9-a1-dCQ" secondAttribute="centerX" id="9Wj-An-Vq6"/>
                             <constraint firstItem="p7b-0K-8CX" firstAttribute="width" secondItem="TF9-a1-dCQ" secondAttribute="width" constant="-16" id="ILt-xu-ZDN"/>
+                            <constraint firstItem="TF9-a1-dCQ" firstAttribute="bottom" secondItem="Ovk-T3-HqB" secondAttribute="bottom" id="KoJ-kh-Gdy"/>
+                            <constraint firstItem="dhX-Mn-u5f" firstAttribute="centerY" secondItem="TF9-a1-dCQ" secondAttribute="centerY" id="ROD-8u-ufx"/>
+                            <constraint firstItem="dhX-Mn-u5f" firstAttribute="centerX" secondItem="TF9-a1-dCQ" secondAttribute="centerX" id="VYE-VH-avx"/>
                             <constraint firstItem="yc2-op-hSX" firstAttribute="top" secondItem="p7b-0K-8CX" secondAttribute="bottom" constant="98.5" id="ZD0-es-IKJ"/>
+                            <constraint firstItem="Ovk-T3-HqB" firstAttribute="centerX" secondItem="TF9-a1-dCQ" secondAttribute="centerX" id="cZf-ej-u17"/>
                             <constraint firstItem="yc2-op-hSX" firstAttribute="centerX" secondItem="TF9-a1-dCQ" secondAttribute="centerX" id="cnG-0B-tC8"/>
+                            <constraint firstItem="zAu-RQ-eTu" firstAttribute="top" secondItem="TF9-a1-dCQ" secondAttribute="top" constant="40" id="iIX-x2-Tjp"/>
+                            <constraint firstItem="zAu-RQ-eTu" firstAttribute="centerX" secondItem="TF9-a1-dCQ" secondAttribute="centerX" id="kmy-e0-dm9"/>
                             <constraint firstItem="p7b-0K-8CX" firstAttribute="centerX" secondItem="TF9-a1-dCQ" secondAttribute="centerX" id="nh3-74-411"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TF9-a1-dCQ"/>
