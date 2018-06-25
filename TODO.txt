@@ -1,27 +1,14 @@
-BUGS:
+KNOWN BUGS:
+[there are no currently known bugs]
 
+REQUESTED FEATURES:
 
-FEATS:
-
+-----
+TODO:
 redo screenshots
 ~
-UICollectionView delegates could be put in a separate extension of this View Controller to improve the organisation! This is a common practice in swift!
-I'll leave you some important documentation from Apple regarding extensions so that you can deepen your knowledge:
+UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
-~
- guard let number = Int64(text) else {
-104
-            print("not a number, or too big - 9223372036854775807 is limit")
-SUGGESTION
-All the strings in this file could be put in a separate struct in order to be organised in the same place
-~
- self.imagesArray = data
-81
-            DispatchQueue.main.async {
-SUGGESTION
-Instead of dispatching to the main thread in three different blocks of code, we could just wrap the whole closure in a dispatch
-~
-These empty lines should be deleted to improve organisation
 ~
 [?] https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 ~

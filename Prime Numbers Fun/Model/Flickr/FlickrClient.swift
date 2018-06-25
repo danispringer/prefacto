@@ -6,12 +6,10 @@
 //  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
-
 import Foundation
 import CoreLocation
 import CoreData
 import UIKit
-
 
 class FlickrClient: NSObject {
     

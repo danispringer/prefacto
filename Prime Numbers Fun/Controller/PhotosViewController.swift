@@ -119,5 +119,3 @@ private extension PhotosViewController {
         }
     }
 }
-
-
