@@ -15,6 +15,7 @@ class CheckerViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
     
@@ -55,13 +56,16 @@ class CheckerViewController: UIViewController {
     
     
     @objc func checkButtonPressed() {
-        textfield.resignFirstResponder()
+        DispatchQueue.main.async {
+            self.enableUI(enabled: false)
+        }
         
         guard let text = textfield.text else {
             print("it's nil")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
             }
             return
@@ -72,6 +76,7 @@ class CheckerViewController: UIViewController {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -82,8 +87,8 @@ class CheckerViewController: UIViewController {
             print("not a number, or too big - 9223372036854775807 is limit")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
-                self.textfield.text = ""
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -96,6 +101,7 @@ class CheckerViewController: UIViewController {
             DispatchQueue.main.async {
                 self.textfield.text = ""
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
             }
             return
@@ -107,6 +113,7 @@ class CheckerViewController: UIViewController {
             DispatchQueue.main.async {
                 self.textfield.text = ""
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
             }
             return
@@ -117,12 +124,12 @@ class CheckerViewController: UIViewController {
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.two.rawValue)
             let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
                 action in
-                self.share(number: number)
+                self.share(number: number, isPrime: true)
             })
             alert.addAction(shareAction)
             DispatchQueue.main.async {
-                self.textfield.text = ""
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1023))
             }
@@ -133,7 +140,9 @@ class CheckerViewController: UIViewController {
             print("cannot check negative")
             let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.negative.rawValue)
             DispatchQueue.main.async {
+                self.textfield.text = ""
                 alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -141,6 +150,7 @@ class CheckerViewController: UIViewController {
         }
         
         var isPrimeBool = true
+        var isDivisibleBy: Int64 = 0
 
         let range = 2...(number - 1)
         
@@ -150,9 +160,16 @@ class CheckerViewController: UIViewController {
             for n in range {
                 if number % n == 0 {
                     // not prime
+                    isDivisibleBy = n
                     let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.notPrime.rawValue, num: number, divisibleBy: n)
+                    let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
+                        action in
+                        self.share(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
+                    })
+                    alert.addAction(shareAction)
                     DispatchQueue.main.async {
                         alert.view.layoutIfNeeded()
+                        self.enableUI(enabled: true)
                         self.present(alert, animated: true)
                     }
                     isPrimeBool = false
@@ -165,11 +182,12 @@ class CheckerViewController: UIViewController {
                 let alert = Alert.shared.createAlert(alertReasonParam: Alert.alertReason.prime.rawValue, num: number)
                 let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
                     action in
-                    self.share(number: number)
+                    self.share(number: number, isPrime: isPrimeBool)
                 })
                 alert.addAction(shareAction)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
+                    self.enableUI(enabled: true)
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(1023))
                 }
@@ -177,8 +195,15 @@ class CheckerViewController: UIViewController {
         }
     }
     
-    func share(number: Int64) {
-        let message = "Hey, did you know that '\(number)' is a prime number? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+    func share(number: Int64, isPrime: Bool, isDivisibleBy: Int64 = 0) {
+        var message = ""
+        
+        if isPrime {
+            message = "Hey, did you know that '\(number)' is a prime number? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        } else {
+            message = "Hey, did you know that '\(number)' is not prime, because it's divisible by '\(isDivisibleBy)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        }
+        
         
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
@@ -189,7 +214,24 @@ class CheckerViewController: UIViewController {
                 print("Returned items: \(String(describing: returnedItems))")
             }
         }
-        present(activityController, animated: true)
+        DispatchQueue.main.async {
+            self.present(activityController, animated: true)
+        }
+        
+    }
+    
+    func enableUI(enabled: Bool) {
+        if enabled {
+            self.activityIndicator.stopAnimating()
+            self.textfield.isEnabled = enabled
+            self.view.alpha = 1
+        } else {
+            self.activityIndicator.startAnimating()
+            self.view.endEditing(true)
+            //self.resultLabel.text = ""
+            self.textfield.isEnabled = false
+            self.view.alpha = 0.5
+        }
     }
 }
 
