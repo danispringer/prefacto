@@ -76,6 +76,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
             return
@@ -86,6 +87,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -97,6 +99,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -108,6 +111,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -119,6 +123,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -130,12 +135,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             DispatchQueue.main.async {
                 self.resetResults()
                 self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
             return
         }
-        
+
         if firstNumber > secondNumber {
             swap(&firstNumber, &secondNumber)
         }
@@ -164,6 +170,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                     let alert = self.createAlert(alertReasonParam: alertReason.noPrimesInRange.rawValue, firstNum: firstNumber, secondNum: secondNumber)
                     self.resetResults()
                     self.enableUI(enabled: true)
+                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                     return
@@ -182,6 +189,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         guard let firstText = firstTextField.text, let secondtext = secondTextField.text else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -191,6 +199,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -200,6 +209,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 self.resetResults()
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
             }
@@ -229,13 +239,14 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
         }
-        present(activityController, animated: true)
+        self.present(activityController, animated: true)
     }
     
     

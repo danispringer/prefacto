@@ -31,7 +31,7 @@ class ScomponiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shareButton.isHidden = true
+        shareButton.isEnabled = false
         let resignToolbar = UIToolbar()
         
         let factorButton = UIBarButtonItem(title: "Factor", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
@@ -46,30 +46,36 @@ class ScomponiViewController: UIViewController {
     
     // MARK: Helpers
     
-    
-    fileprivate func resetResults() {
-        DispatchQueue.main.async {
-            self.shareButton.isHidden = true
-            self.resultLabel.text = ""
-            self.arrayOfInts = []
-        }
-    }
-    
-    
     @objc func cancelAndHideKeyboard() {
         DispatchQueue.main.async {
-            self.resetResults()
             self.textfield.resignFirstResponder()
         }
     }
     
     
+    fileprivate func getFactors(number: Int64) {
+        
+        var index = Int64(2)
+        var someNumber = number
+        
+        //let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
+        
+        while index <= someNumber {
+            while someNumber % index == 0 {
+                someNumber = someNumber / index
+                
+                self.arrayOfInts.append(index)
+                //self.resultLabel.text = "\(self.arrayOfInts)" // TODO: should probably be in main dispatch
+            }
+            index += 1
+        }
+    }
+    
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
-            //self.resetResults()
-            print("will disable UI")
             self.enableUI(enabled: false)
-            
+            self.resultLabel.text = ""
+            self.arrayOfInts = []
         }
         
         
@@ -77,7 +83,6 @@ class ScomponiViewController: UIViewController {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
-                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 
@@ -90,7 +95,6 @@ class ScomponiViewController: UIViewController {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
-                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -98,11 +102,10 @@ class ScomponiViewController: UIViewController {
             return
         }
         
-        guard var number = Int64(text) else {
+        guard let number = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
-                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -114,7 +117,6 @@ class ScomponiViewController: UIViewController {
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
-                print("will disable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
             }
@@ -125,7 +127,6 @@ class ScomponiViewController: UIViewController {
             let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
-                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -133,13 +134,10 @@ class ScomponiViewController: UIViewController {
             return
         }
         
-        var index = Int64(2)
-        
         guard number != 1 else {
             let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
-                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
             }
@@ -149,20 +147,10 @@ class ScomponiViewController: UIViewController {
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         
         downloadQueue.async {
-            while index <= number {
-                while number % index == 0 {
-                    number = number / index
-                    self.arrayOfInts.append(index)
-                    DispatchQueue.main.async {
-                        self.resultLabel.text = "\(self.arrayOfInts)"
-                    }
-                }
-                index += 1
-            }
+            self.getFactors(number: number)
+            
             DispatchQueue.main.async {
                 self.resultLabel.text = "\(self.arrayOfInts)"
-                self.shareButton.isHidden = false
-                print("will enable UI")
                 self.enableUI(enabled: true)
             }
         }
@@ -173,6 +161,7 @@ class ScomponiViewController: UIViewController {
         guard let text = textfield.text else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -181,26 +170,24 @@ class ScomponiViewController: UIViewController {
         guard !text.isEmpty else {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
-                self.resetResults()
-                
             }
             return
         }
         guard var num = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
-                self.resetResults()
                 
             }
             return
         }
         
         guard arrayOfInts.count > 0 else {
-            resetResults()
             num = Int64(2121)
             let myList: [Int64] = [3, 7, 101]
             share(number: num, list: myList)
@@ -229,32 +216,31 @@ class ScomponiViewController: UIViewController {
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
         }
-        present(activityController, animated: true)
+        self.present(activityController, animated: true)
     }
     
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             if enabled {
-                print("will stop spinning")
                 self.activityIndicator.stopAnimating()
-                print("did stop spinning")
                 self.textfield.isEnabled = true
                 self.view.alpha = 1
+                self.shareButton.isEnabled = enabled
             } else {
                 self.textfield.resignFirstResponder()
-                print("will start spinning")
                 self.activityIndicator.startAnimating()
-                print("did start spinning")
                 self.view.endEditing(true)
                 self.resultLabel.text = ""
                 self.textfield.isEnabled = false
                 self.view.alpha = 0.5
+                self.shareButton.isEnabled = enabled
             }
         }
     }

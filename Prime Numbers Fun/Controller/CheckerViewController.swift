@@ -195,15 +195,14 @@ class CheckerViewController: UIViewController {
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
         }
-        DispatchQueue.main.async {
-            self.present(activityController, animated: true)
-        }
+        self.present(activityController, animated: true)
         
     }
     

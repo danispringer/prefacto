@@ -69,6 +69,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: errorReason!)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
+                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
                 return
@@ -77,6 +78,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
+                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
                 return
