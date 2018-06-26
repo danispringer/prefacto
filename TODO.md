@@ -11,6 +11,7 @@
 
 # [?] Upcoming Fixes & Features:
 - Fit collectionview images to fill more space
+- Improve screenshots crop
 - Improve design
 - Add abort option
 - iOS 12 support
