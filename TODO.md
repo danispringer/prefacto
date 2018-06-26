@@ -8,8 +8,10 @@
 
 # [?] Upcoming Fixes & Features:
 
+- Add to description: app can handle multiple pages running simultaneusly
 - Fit collectionview images to fill more space
 - Improve screenshots crop
+- Reduce hangs on check/list/factorize
 - Improve design
 - Add abort option
 - Minigame: tap the prime numbers. (collection view, reset on lives finished with alert, alert of lost life with alert or shake of tapped cell)
