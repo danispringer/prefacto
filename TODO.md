@@ -12,7 +12,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 # Developer notes:
 
-- Rifai da zero. Aggiungi e testa come qui sotto.
+- Rifai da zero **senza cancellare il progetto** per tenere la verifica. Aggiungi e testa come qui sotto.
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
 - Aggiungi a descrizione store: app can handle multiple pages running simultaneusly.
 - Migliora collectionview cells per riempire più spazio.
