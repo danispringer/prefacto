@@ -48,12 +48,14 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Helpers
     
-    
-    fileprivate func resetResults() {
-        shareButton.isHidden = true
-        resultLabel.text = ""
-        arrayOfInts = []
+    func resetResults() {
+        DispatchQueue.main.async {
+            self.shareButton.isHidden = true // TODO: move to enableui and change to isEnabled
+            self.resultLabel.text = ""
+            self.arrayOfInts = []
+        }
     }
+    
     
     @objc func cancelAndHideKeyboard() {
         resetResults()
@@ -63,7 +65,10 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     @objc func checkButtonPressed() {
         resetResults()
-        enableUI(enabled: false)
+        DispatchQueue.main.async {
+            self.enableUI(enabled: false)
+        }
+        
         
         guard let text = textfield.text else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
@@ -221,19 +226,20 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     }
     
     func enableUI(enabled: Bool) {
-        if enabled {
-            self.activityIndicator.stopAnimating()
-            self.textfield.isEnabled = true
-            self.view.alpha = 1
-        } else {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if enabled {
+                self.activityIndicator.stopAnimating()
+                self.textfield.isEnabled = true
+                self.view.alpha = 1
+            } else {
                 self.activityIndicator.startAnimating()
-                self.view.endEditing(true)
+                //self.view.endEditing(true)
                 self.resultLabel.text = ""
                 self.textfield.isEnabled = false
                 self.view.alpha = 0.5
             }
         }
+        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
