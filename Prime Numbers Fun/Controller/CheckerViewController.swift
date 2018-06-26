@@ -40,16 +40,6 @@ class CheckerViewController: UIViewController {
     }
     
     
-    // MARK: TextField Delegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        return true
-    }
-    
-    
-    
     // MARK: Helpers
     
     
