@@ -8,6 +8,7 @@
 
 # [?] Upcoming Fixes & Features:
 
+- Test: hangs, correct responses, alerts, sharing
 - Add to description: app can handle multiple pages running simultaneusly
 - Fit collectionview images to fill more space
 - Improve screenshots crop
