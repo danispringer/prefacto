@@ -2,18 +2,17 @@
 
 - [no known bugs. Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
----------------------------------------------------------------------------------------------------------------
-
 # Requested Features:
+
 [no requested features. Is there a feature you'd like? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
----------------------------------------------------------------------------------------------------------------
-
 # [?] Upcoming Fixes & Features:
+
 - Fit collectionview images to fill more space
 - Improve screenshots crop
 - Improve design
 - Add abort option
+- Minigame: tap the prime numbers. (collection view, reset on lives finished with alert, alert of lost life with alert or shake of tapped cell)
 - iOS 12 support
 - SiriKit: "Hey Siri, does Prime Numbers Fun think 2341 is prime?"
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Prime Numbers Fun"
