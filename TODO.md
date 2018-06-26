@@ -15,6 +15,7 @@
 - Reduce hangs on check/list/factorize
 - Improve design
 - Add abort option
+- Return all the numbers by which a non-prime number can be divided, and their amount
 - Minigame: tap the prime numbers. (collection view, reset on lives finished with alert, alert of lost life with alert or shake of tapped cell)
 - iOS 12 support
 - SiriKit: "Hey Siri, does Prime Numbers Fun think 2341 is prime?"
