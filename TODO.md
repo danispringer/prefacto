@@ -1,14 +1,15 @@
-KNOWN BUGS:
-[no known bugs. Found a bug? Let me know: https://danispringer.github.io]
+# Known Bugs:
+
+- [no known bugs. Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
 ---------------------------------------------------------------------------------------------------------------
 
-REQUESTED FEATURES:
-[no requested features. Is there a feature you'd like? Let me know: https://danispringer.github.io]
+# Requested Features:
+[no requested features. Is there a feature you'd like? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
 ---------------------------------------------------------------------------------------------------------------
 
-[?] UPCOMING FIXES & FEATURES:
+# [?] Upcoming Fixes & Features:
 - Fit collectionview images to fill more space
 - Improve design
 - Add abort option
@@ -21,8 +22,8 @@ REQUESTED FEATURES:
 [after significant change] redo screenshots, update description
 
 ---------------------------------------------------------------------------------------------------------------
-REFACTOR:
+# Refactor:
 UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 ~
-App store link [?] https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+[?] App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
