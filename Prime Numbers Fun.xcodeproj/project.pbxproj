@@ -15,7 +15,6 @@
 		33378FC020DF4E6900DC9A42 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33378FBF20DF4E6900DC9A42 /* Number.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
-		33AB518A20E1747100E53DE8 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AB518920E1747100E53DE8 /* tests.swift */; };
 		33CB11C820DCB5D0003E7522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB11C720DCB5D0003E7522 /* AppDelegate.swift */; };
 		33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CA20DCB5DB003E7522 /* LaunchScreen.storyboard */; };
 		33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CC20DCB5DB003E7522 /* Main.storyboard */; };
@@ -26,16 +25,6 @@
 		33FBA60220DF1167003303D2 /* NumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBA60120DF1167003303D2 /* NumberType.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		33AB518C20E1747100E53DE8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33EE5BBF20D996C4008FEAF2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 33EE5BC620D996C4008FEAF2;
-			remoteInfo = "Prime Numbers Fun";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3317915120D9FD3D00CA739F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		3317915620D9FE3600CA739F /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
@@ -45,9 +34,6 @@
 		33378FBF20DF4E6900DC9A42 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		33AB518720E1747100E53DE8 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		33AB518920E1747100E53DE8 /* tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
-		33AB518B20E1747100E53DE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33CB11C720DCB5D0003E7522 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Prime Numbers Fun/AppDelegate.swift"; sourceTree = "<group>"; };
 		33CB11CB20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33CB11CD20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,13 +47,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		33AB518420E1747100E53DE8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		33EE5BC420D996C4008FEAF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,15 +97,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		33AB518820E1747100E53DE8 /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				33AB518920E1747100E53DE8 /* tests.swift */,
-				33AB518B20E1747100E53DE8 /* Info.plist */,
-			);
-			path = tests;
-			sourceTree = "<group>";
-		};
 		33CB11C920DCB5DB003E7522 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +124,6 @@
 				33EE5BC920D996C4008FEAF2 /* Prime Numbers Fun */,
 				33CB11C920DCB5DB003E7522 /* Storyboard */,
 				33CB11D020DCB5F7003E7522 /* Assets */,
-				33AB518820E1747100E53DE8 /* tests */,
 				33EE5BC820D996C4008FEAF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				33EE5BC720D996C4008FEAF2 /* Prime Numbers Fun.app */,
-				33AB518720E1747100E53DE8 /* tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,24 +149,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33AB518620E1747100E53DE8 /* tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 33AB519020E1747100E53DE8 /* Build configuration list for PBXNativeTarget "tests" */;
-			buildPhases = (
-				33AB518320E1747100E53DE8 /* Sources */,
-				33AB518420E1747100E53DE8 /* Frameworks */,
-				33AB518520E1747100E53DE8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				33AB518D20E1747100E53DE8 /* PBXTargetDependency */,
-			);
-			name = tests;
-			productName = tests;
-			productReference = 33AB518720E1747100E53DE8 /* tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		33EE5BC620D996C4008FEAF2 /* Prime Numbers Fun */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33EE5BD920D996C7008FEAF2 /* Build configuration list for PBXNativeTarget "Prime Numbers Fun" */;
@@ -226,10 +176,6 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Dani Springer";
 				TargetAttributes = {
-					33AB518620E1747100E53DE8 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 33EE5BC620D996C4008FEAF2;
-					};
 					33EE5BC620D996C4008FEAF2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -249,19 +195,11 @@
 			projectRoot = "";
 			targets = (
 				33EE5BC620D996C4008FEAF2 /* Prime Numbers Fun */,
-				33AB518620E1747100E53DE8 /* tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		33AB518520E1747100E53DE8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		33EE5BC520D996C4008FEAF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,14 +214,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		33AB518320E1747100E53DE8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				33AB518A20E1747100E53DE8 /* tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		33EE5BC320D996C4008FEAF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,14 +235,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		33AB518D20E1747100E53DE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 33EE5BC620D996C4008FEAF2 /* Prime Numbers Fun */;
-			targetProxy = 33AB518C20E1747100E53DE8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		33CB11CA20DCB5DB003E7522 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -333,46 +255,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		33AB518E20E1747100E53DE8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prime Numbers Fun.app/Prime Numbers Fun";
-			};
-			name = Debug;
-		};
-		33AB518F20E1747100E53DE8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prime Numbers Fun.app/Prime Numbers Fun";
-			};
-			name = Release;
-		};
 		33EE5BD720D996C7008FEAF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -528,15 +410,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33AB519020E1747100E53DE8 /* Build configuration list for PBXNativeTarget "tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				33AB518E20E1747100E53DE8 /* Debug */,
-				33AB518F20E1747100E53DE8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		33EE5BC220D996C4008FEAF2 /* Build configuration list for PBXProject "Prime Numbers Fun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
