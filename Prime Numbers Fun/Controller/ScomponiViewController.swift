@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ScomponiViewController: UIViewController {
+class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Outlets
     
@@ -31,7 +31,9 @@ class ScomponiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shareButton.isEnabled = false
+        textfield.delegate = self
+        
+        shareButton.isHidden = true
         let resignToolbar = UIToolbar()
         
         let factorButton = UIBarButtonItem(title: "Factor", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
@@ -42,51 +44,32 @@ class ScomponiViewController: UIViewController {
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
     }
-
+    
     
     // MARK: Helpers
     
+    
+    fileprivate func resetResults() {
+        shareButton.isHidden = true
+        resultLabel.text = ""
+        arrayOfInts = []
+    }
+    
     @objc func cancelAndHideKeyboard() {
-        DispatchQueue.main.async {
-            self.textfield.resignFirstResponder()
-        }
+        resetResults()
+        textfield.resignFirstResponder()
     }
     
-    
-    fileprivate func getFactors(number: Int64) {
-        
-        var index = Int64(2)
-        var someNumber = number
-        
-        //let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-        
-        while index <= someNumber {
-            while someNumber % index == 0 {
-                someNumber = someNumber / index
-                
-                self.arrayOfInts.append(index)
-                //self.resultLabel.text = "\(self.arrayOfInts)" // TODO: should probably be in main dispatch
-            }
-            index += 1
-        }
-    }
     
     @objc func checkButtonPressed() {
-        DispatchQueue.main.async {
-            self.enableUI(enabled: false)
-            self.resultLabel.text = ""
-            self.arrayOfInts = []
-        }
-        
+        resetResults()
+        enableUI(enabled: false)
         
         guard let text = textfield.text else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                
-                
             }
             return
         }
@@ -94,7 +77,7 @@ class ScomponiViewController: UIViewController {
         guard !text.isEmpty else {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -102,10 +85,10 @@ class ScomponiViewController: UIViewController {
             return
         }
         
-        guard let number = Int64(text) else {
+        guard var number = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -116,17 +99,7 @@ class ScomponiViewController: UIViewController {
         guard number != 0 else {
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return
-        }
-
-        guard !(number < 0) else {
-            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -134,34 +107,56 @@ class ScomponiViewController: UIViewController {
             return
         }
         
-        guard number != 1 else {
-            let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
+        guard !(number < 0) else {
+            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
+                self.resetResults()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
+            return
+        }
+        
+        var index = Int64(2)
+        
+        guard number != 1 else {
+            arrayOfInts.append(index)
+            DispatchQueue.main.async {
+                self.resultLabel.text = "[1]"
+                self.shareButton.isHidden = false
+                self.enableUI(enabled: true)
+            }
+            
             return
         }
         
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         
         downloadQueue.async {
-            self.getFactors(number: number)
-            
+            while index <= number {
+                while number % index == 0 {
+                    number = number / index
+                    self.arrayOfInts.append(index)
+                    DispatchQueue.main.async {
+                        self.resultLabel.text = "\(self.arrayOfInts)"
+                    }
+                }
+                index += 1
+            }
             DispatchQueue.main.async {
                 self.resultLabel.text = "\(self.arrayOfInts)"
+                self.shareButton.isHidden = false
                 self.enableUI(enabled: true)
             }
         }
     }
     
-
+    
     @IBAction func shareButtonPressed(_ sender: Any) {
         guard let text = textfield.text else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -170,7 +165,7 @@ class ScomponiViewController: UIViewController {
         guard !text.isEmpty else {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
+                self.resetResults()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
@@ -179,15 +174,15 @@ class ScomponiViewController: UIViewController {
         guard var num = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
+                self.resetResults()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
-                
             }
             return
         }
         
         guard arrayOfInts.count > 0 else {
+            resetResults()
             num = Int64(2121)
             let myList: [Int64] = [3, 7, 101]
             share(number: num, list: myList)
@@ -201,7 +196,7 @@ class ScomponiViewController: UIViewController {
     
     func share(number: Int64, list: [Int64]) {
         var message = ""
-
+        
         if list.count == 1 {
             message = "Hey, did you know that '\(number)' is a prime number? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         } else {
@@ -216,32 +211,37 @@ class ScomponiViewController: UIViewController {
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
-                    alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                     AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
         }
-        self.present(activityController, animated: true)
+        present(activityController, animated: true)
     }
     
     func enableUI(enabled: Bool) {
-        DispatchQueue.main.async {
-            if enabled {
-                self.activityIndicator.stopAnimating()
-                self.textfield.isEnabled = true
-                self.view.alpha = 1
-                self.shareButton.isEnabled = enabled
-            } else {
-                self.textfield.resignFirstResponder()
+        if enabled {
+            self.activityIndicator.stopAnimating()
+            self.textfield.isEnabled = true
+            self.view.alpha = 1
+        } else {
+            DispatchQueue.main.async {
                 self.activityIndicator.startAnimating()
                 self.view.endEditing(true)
                 self.resultLabel.text = ""
                 self.textfield.isEnabled = false
                 self.view.alpha = 0.5
-                self.shareButton.isEnabled = enabled
             }
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField.text?.isEmpty)! {
+            shareButton.isHidden = true
+            resultLabel.text = ""
+            arrayOfInts = []
+        }
+        
     }
 }
