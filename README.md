@@ -5,6 +5,7 @@
 - Factorize to primes a given number
 - View fun images with prime numbers in them
 - Share your results, like that huge prime number you found, which everyone must know about
+- Found a bug? Want a feature? Check [TODO.md](TODO.md) to see if it's already in the queue. If it is not, let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-7.jpg)
 
