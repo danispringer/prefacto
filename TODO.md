@@ -1,6 +1,8 @@
 # Known Bugs:
+- "Factorise" returns incorrect result sometimes, possibly depending on how fast "Factor" is pressed after entering number
+- Keyboard doesn't reopen after entering prime or non-prime number in checker.
 
-- [no known bugs. Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
+Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
 # Requested Features:
 
@@ -12,7 +14,6 @@
 - Add to description: app can handle multiple pages running simultaneusly
 - Fit collectionview images to fill more space
 - Improve screenshots crop
-- Reduce hangs on check/list/factorize
 - Improve design
 - Add abort option
 - Return all the numbers by which a non-prime number can be divided, and their amount
