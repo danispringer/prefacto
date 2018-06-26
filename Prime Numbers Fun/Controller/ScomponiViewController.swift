@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ScomponiViewController: UIViewController, UITextFieldDelegate {
+class ScomponiViewController: UIViewController {
     
     // MARK: Outlets
     
@@ -31,8 +31,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textfield.delegate = self
-        
         shareButton.isHidden = true
         let resignToolbar = UIToolbar()
         
@@ -50,26 +48,40 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     
     fileprivate func resetResults() {
-        shareButton.isHidden = true
-        resultLabel.text = ""
-        arrayOfInts = []
+        DispatchQueue.main.async {
+            self.shareButton.isHidden = true
+            self.resultLabel.text = ""
+            self.arrayOfInts = []
+        }
     }
     
+    
     @objc func cancelAndHideKeyboard() {
-        resetResults()
-        textfield.resignFirstResponder()
+        DispatchQueue.main.async {
+            self.resetResults()
+            self.textfield.resignFirstResponder()
+        }
     }
     
     
     @objc func checkButtonPressed() {
-        resetResults()
-        enableUI(enabled: false)
+        DispatchQueue.main.async {
+            //self.resetResults()
+            print("will disable UI")
+            self.enableUI(enabled: false)
+            
+        }
+        
         
         guard let text = textfield.text else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
+                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
+                
+                
             }
             return
         }
@@ -77,7 +89,8 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         guard !text.isEmpty else {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
+                alert.view.layoutIfNeeded()
+                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -88,7 +101,8 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         guard var number = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
+                alert.view.layoutIfNeeded()
+                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -99,18 +113,19 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         guard number != 0 else {
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
+                alert.view.layoutIfNeeded()
+                print("will disable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
             return
         }
-        
+
         guard !(number < 0) else {
             let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
+                alert.view.layoutIfNeeded()
+                print("will enable UI")
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
@@ -121,13 +136,13 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         var index = Int64(2)
         
         guard number != 1 else {
-            arrayOfInts.append(index)
+            let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
             DispatchQueue.main.async {
-                self.resultLabel.text = "[1]"
-                self.shareButton.isHidden = false
+                alert.view.layoutIfNeeded()
+                print("will enable UI")
                 self.enableUI(enabled: true)
+                self.present(alert, animated: true)
             }
-            
             return
         }
         
@@ -147,6 +162,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.resultLabel.text = "\(self.arrayOfInts)"
                 self.shareButton.isHidden = false
+                print("will enable UI")
                 self.enableUI(enabled: true)
             }
         }
@@ -165,18 +181,20 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         guard !text.isEmpty else {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
+                self.resetResults()
+                
             }
             return
         }
         guard var num = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1257))
+                self.resetResults()
+                
             }
             return
         }
@@ -221,27 +239,23 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     }
     
     func enableUI(enabled: Bool) {
-        if enabled {
-            self.activityIndicator.stopAnimating()
-            self.textfield.isEnabled = true
-            self.view.alpha = 1
-        } else {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if enabled {
+                print("will stop spinning")
+                self.activityIndicator.stopAnimating()
+                print("did stop spinning")
+                self.textfield.isEnabled = true
+                self.view.alpha = 1
+            } else {
+                self.textfield.resignFirstResponder()
+                print("will start spinning")
                 self.activityIndicator.startAnimating()
+                print("did start spinning")
                 self.view.endEditing(true)
                 self.resultLabel.text = ""
                 self.textfield.isEnabled = false
                 self.view.alpha = 0.5
             }
         }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField.text?.isEmpty)! {
-            shareButton.isHidden = true
-            resultLabel.text = ""
-            arrayOfInts = []
-        }
-        
     }
 }

@@ -44,7 +44,6 @@ class CheckerViewController: UIViewController {
     
     
     @objc func cancelAndHideKeyboard() {
-        textfield.text = ""
         textfield.resignFirstResponder()
     }
     
@@ -89,7 +88,6 @@ class CheckerViewController: UIViewController {
         guard number != 0 else {
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
-                self.textfield.text = ""
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -97,10 +95,20 @@ class CheckerViewController: UIViewController {
             return
         }
         
+        guard !(number < 0) else {
+            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
+            DispatchQueue.main.async {
+                alert.view.layoutIfNeeded()
+                self.enableUI(enabled: true)
+                self.present(alert, animated: true)
+                AudioServicesPlayAlertSound(SystemSoundID(1257))
+            }
+            return
+        }
+        
         guard number != 1 else {
             let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
             DispatchQueue.main.async {
-                self.textfield.text = ""
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -120,18 +128,6 @@ class CheckerViewController: UIViewController {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1023))
-            }
-            return
-        }
-        
-        guard !(number < 0) else {
-            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
-            DispatchQueue.main.async {
-                self.textfield.text = ""
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1257))
             }
             return
         }
@@ -212,16 +208,17 @@ class CheckerViewController: UIViewController {
     }
     
     func enableUI(enabled: Bool) {
-        if enabled {
-            self.activityIndicator.stopAnimating()
-            self.textfield.isEnabled = enabled
-            self.view.alpha = 1
-        } else {
-            self.activityIndicator.startAnimating()
-            self.view.endEditing(true)
-            //self.resultLabel.text = ""
-            self.textfield.isEnabled = false
-            self.view.alpha = 0.5
+        DispatchQueue.main.async {
+            if enabled {
+                self.activityIndicator.stopAnimating()
+                self.textfield.isEnabled = enabled
+                self.view.alpha = 1
+            } else {
+                self.activityIndicator.startAnimating()
+                self.view.endEditing(true)
+                self.textfield.isEnabled = false
+                self.view.alpha = 0.5
+            }
         }
     }
 }

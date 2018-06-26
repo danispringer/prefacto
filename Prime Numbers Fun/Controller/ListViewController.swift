@@ -260,20 +260,21 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     
     func enableUI(enabled: Bool) {
-        if enabled {
-            self.activityIndicator.stopAnimating()
-            self.firstTextField.isEnabled = enabled
-            self.secondTextField.isEnabled = enabled
-            self.view.alpha = 1
-            self.resultTableView.isScrollEnabled = true
-        } else {
-            self.activityIndicator.startAnimating()
-            self.view.endEditing(true)
-            //self.resultLabel.text = ""
-            self.firstTextField.isEnabled = false
-            self.secondTextField.isEnabled = false
-            self.view.alpha = 0.5
-            self.resultTableView.isScrollEnabled = false
+        DispatchQueue.main.async {
+            if enabled {
+                self.activityIndicator.stopAnimating()
+                self.firstTextField.isEnabled = enabled
+                self.secondTextField.isEnabled = enabled
+                self.view.alpha = 1
+                self.resultTableView.isScrollEnabled = true
+            } else {
+                self.activityIndicator.startAnimating()
+                self.view.endEditing(true)
+                self.firstTextField.isEnabled = false
+                self.secondTextField.isEnabled = false
+                self.view.alpha = 0.5
+                self.resultTableView.isScrollEnabled = false
+            }
         }
     }
     

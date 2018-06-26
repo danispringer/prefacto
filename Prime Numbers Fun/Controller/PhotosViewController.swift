@@ -100,20 +100,17 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
 private extension PhotosViewController {
     
     func setUIEnabled(_ enabled: Bool) {
-        
-        if enabled {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if enabled {
                 self.collectionView.alpha = 1.0
                 self.activityIndicator.stopAnimating()
-                self.refreshButton.isEnabled = true
+                self.refreshButton.isEnabled = enabled
                 self.refreshButton.title = "Get new images"
-            }
-            
-        } else {
-            DispatchQueue.main.async {
+                
+            } else {
                 self.collectionView.alpha = 0.5
                 self.activityIndicator.startAnimating()
-                self.refreshButton.isEnabled = false
+                self.refreshButton.isEnabled = enabled
                 self.refreshButton.title = "Loading..."
             }
         }
