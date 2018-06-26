@@ -52,7 +52,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.shareButton.isHidden = true // TODO: move to enableui and change to isEnabled
             self.resultLabel.text = ""
-            self.arrayOfInts = []
         }
     }
     
@@ -64,8 +63,9 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func checkButtonPressed() {
-        resetResults()
+        
         DispatchQueue.main.async {
+            self.resetResults()
             self.enableUI(enabled: false)
         }
         
@@ -139,13 +139,15 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         
         downloadQueue.async {
+            self.arrayOfInts = []
+            
             while index <= number {
                 while number % index == 0 {
                     number = number / index
                     self.arrayOfInts.append(index)
-                    DispatchQueue.main.async {
-                        self.resultLabel.text = "\(self.arrayOfInts)"
-                    }
+//                    DispatchQueue.main.async {
+//                        self.resultLabel.text = "\(self.arrayOfInts)"
+//                    }
                 }
                 index += 1
             }
@@ -233,7 +235,6 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
                 self.view.alpha = 1
             } else {
                 self.activityIndicator.startAnimating()
-                //self.view.endEditing(true)
                 self.resultLabel.text = ""
                 self.textfield.isEnabled = false
                 self.view.alpha = 0.5
@@ -243,11 +244,10 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField.text?.isEmpty)! {
-            shareButton.isHidden = true
-            resultLabel.text = ""
-            arrayOfInts = []
-        }
         
+        DispatchQueue.main.async {
+            self.shareButton.isHidden = true
+            self.resultLabel.text = ""
+        }
     }
 }

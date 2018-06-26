@@ -154,6 +154,7 @@ class CheckerViewController: UIViewController {
                         alert.view.layoutIfNeeded()
                         self.enableUI(enabled: true)
                         self.present(alert, animated: true)
+                        
                     }
                     isPrimeBool = false
                     break
