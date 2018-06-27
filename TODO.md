@@ -12,8 +12,10 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 # Developer notes:
 
-- Rifai da zero **senza cancellare il progetto** per tenere la verifica. Aggiungi e testa come qui sotto.
+- Rifai da zero **senza cancellare il progetto** per tenere il ID di verifica. Aggiungi e testa come qui sotto.
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
+- Add toolbar on top with share button always enabled. Check upon tap if there's what to share.
+- Fix lag: dispatch practice.
 - Aggiungi a descrizione store: app can handle multiple pages running simultaneusly.
 - Migliora collectionview cells per riempire più spazio.
 - Improve screenshots crop,
