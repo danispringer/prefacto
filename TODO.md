@@ -12,7 +12,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 # Developer notes:
 
-- Make available for iOS 11.x
 - Make modal like "prime-numbers-images-modal.PNG"
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
 - Add toolbar on top with share button always enabled. Check upon tap if there's what to share.
