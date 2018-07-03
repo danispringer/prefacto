@@ -2,16 +2,15 @@
 ‘Prime Numbers Fun’ lets you:
 - Check whether a number is prime
 - List the prime numbers in a given range
-- Factorize to primes a given number
+- Factorize to primes any given number
 - View fun images with prime numbers in them
 - Share your results, like that huge prime number you found, which everyone must know about
-- Found a bug? Want a feature? Check [TODO.md](TODO.md) to see if it's already in the queue. If it is not, let me know: [https://danispringer.github.io](https://danispringer.github.io)
+- Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-7.jpg)
 
-# How To Run
-- You need Xcode installed on your Computer (Xcode is available for Mac only).
-- Open `Prime Numbers Fun.xcodeproj` in Xcode, click on the "play" button.
+# How To Download
+- Go here: [https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8](https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8)
 
 
 # Dependencies
@@ -26,17 +25,3 @@ Want to help? You can:
 
 # License
 Copyright © 2018 Dani Springer. All rights reserved.
-
-###### App Store Description
-‘Prime Numbers Fun’ lets you:
-• Check whether a number is prime
-• List the prime numbers in a given range
-• Factorize to primes a given number
-• View fun images with prime numbers in them
-• Share your results, like that huge prime number you found, which everyone must know about
-
-Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
-
-Is there a feature you'd like to see? Leave a review!
-
-Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io

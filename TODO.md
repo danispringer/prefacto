@@ -12,7 +12,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 # Developer notes:
 
-- Rifai da zero **senza cancellare il progetto** per tenere il ID di verifica. Aggiungi e testa come qui sotto.
+- Make available for iOS 11.x
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
 - Add toolbar on top with share button always enabled. Check upon tap if there's what to share.
 - Fix lag: dispatch practice.
@@ -26,6 +26,12 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - iOS 12 support.
 - SiriKit: "Hey Siri, does Prime Numbers Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Prime Numbers Fun".
+- GCF
+- LCM
+- Find next or previous primes
+- Allow to copy to clipboard? Sharing already allows that?
+- [?] Find prime by index
+- [?] Find index by prime
 
 ---------------------------------------------------------------------------------------------------------------
 
@@ -37,3 +43,24 @@ UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 ~
 [?] App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+
+###### App Store Description
+‘Prime Numbers Fun’ lets you:
+• Check whether a number is prime
+• List the prime numbers in a given range
+• Factorize to primes any given number
+• View fun images with prime numbers in them
+• Share your results, like that huge prime number you found, which everyone must know about
+
+Get ‘Prime Numbers Fun’ today, and discover the Prime fun!
+
+Is there a feature you'd like to see? Leave a review!
+
+Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
+
+##### Update
+
+• This update brings some bug fixes.
+
+• Found a bug you would like gone? Let us know: DaniSpringer.GitHub.io
+• Love the app? Want a feature added? Leave a review!
