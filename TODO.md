@@ -50,9 +50,10 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 • Factorize to primes any given number
 • View fun images with prime numbers in them
 • Share your results, like that huge prime number you found, which everyone must know about
-- Aggiungi a descrizione store: app can handle multiple pages running simultaneusly.
 
-Get ‘Primes Fun’ today, and discover the Prime fun!
+Did you know? When running big calculations, you can navigate in between the app's different pages while they are loading, and come back to them later. Your initiated tasks won't be interrupted.
+
+Get ‘Primes Fun’ today, and discover the fun!
 
 Is there a feature you'd like to see? Leave a review!
 
