@@ -15,10 +15,10 @@
 		33378FC020DF4E6900DC9A42 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33378FBF20DF4E6900DC9A42 /* Number.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
-		33CB11C820DCB5D0003E7522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB11C720DCB5D0003E7522 /* AppDelegate.swift */; };
+		33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0F18020EF4F0A0013881A /* AppDelegate.swift */; };
+		33C0F18520EF4F180013881A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C0F18320EF4F180013881A /* Assets.xcassets */; };
 		33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CA20DCB5DB003E7522 /* LaunchScreen.storyboard */; };
 		33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CC20DCB5DB003E7522 /* Main.storyboard */; };
-		33CB11D320DCB5F7003E7522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11D120DCB5F7003E7522 /* Assets.xcassets */; };
 		33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11D520DCB607003E7522 /* Default-568h@2x.png */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */; };
 		33F6747D20DF7C7B0094BCBA /* ScomponiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */; };
@@ -34,13 +34,13 @@
 		33378FBF20DF4E6900DC9A42 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		33CB11C720DCB5D0003E7522 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Prime Numbers Fun/AppDelegate.swift"; sourceTree = "<group>"; };
+		33C0F18020EF4F0A0013881A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Primes Fun/AppDelegate.swift"; sourceTree = "<group>"; };
+		33C0F18320EF4F180013881A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33C0F18420EF4F180013881A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33CB11CB20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33CB11CD20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33CB11D120DCB5F7003E7522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		33CB11D220DCB5F7003E7522 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33CB11D520DCB607003E7522 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		33EE5BC720D996C4008FEAF2 /* Prime Numbers Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prime Numbers Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33EE5BC720D996C4008FEAF2 /* Primes Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Primes Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
 		33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScomponiViewController.swift; sourceTree = "<group>"; };
 		33FBA60120DF1167003303D2 /* NumberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberType.swift; sourceTree = "<group>"; };
@@ -97,6 +97,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		33C0F18220EF4F180013881A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				33C0F18320EF4F180013881A /* Assets.xcassets */,
+				33C0F18420EF4F180013881A /* Info.plist */,
+			);
+			name = Assets;
+			path = "Primes Fun/Assets";
+			sourceTree = "<group>";
+		};
 		33CB11C920DCB5DB003E7522 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,23 +117,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		33CB11D020DCB5F7003E7522 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				33CB11D120DCB5F7003E7522 /* Assets.xcassets */,
-				33CB11D220DCB5F7003E7522 /* Info.plist */,
-			);
-			name = Assets;
-			path = "Prime Numbers Fun/Assets";
-			sourceTree = "<group>";
-		};
 		33EE5BBE20D996C4008FEAF2 = {
 			isa = PBXGroup;
 			children = (
-				33CB11C720DCB5D0003E7522 /* AppDelegate.swift */,
-				33EE5BC920D996C4008FEAF2 /* Prime Numbers Fun */,
+				33C0F18020EF4F0A0013881A /* AppDelegate.swift */,
+				33EE5BC920D996C4008FEAF2 /* Primes Fun */,
 				33CB11C920DCB5DB003E7522 /* Storyboard */,
-				33CB11D020DCB5F7003E7522 /* Assets */,
+				33C0F18220EF4F180013881A /* Assets */,
 				33EE5BC820D996C4008FEAF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,27 +131,27 @@
 		33EE5BC820D996C4008FEAF2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33EE5BC720D996C4008FEAF2 /* Prime Numbers Fun.app */,
+				33EE5BC720D996C4008FEAF2 /* Primes Fun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33EE5BC920D996C4008FEAF2 /* Prime Numbers Fun */ = {
+		33EE5BC920D996C4008FEAF2 /* Primes Fun */ = {
 			isa = PBXGroup;
 			children = (
 				3317915C20DA042F00CA739F /* Model */,
 				3317916020DA07CC00CA739F /* View */,
 				3317915D20DA047E00CA739F /* Controller */,
 			);
-			path = "Prime Numbers Fun";
+			path = "Primes Fun";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33EE5BC620D996C4008FEAF2 /* Prime Numbers Fun */ = {
+		33EE5BC620D996C4008FEAF2 /* Primes Fun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33EE5BD920D996C7008FEAF2 /* Build configuration list for PBXNativeTarget "Prime Numbers Fun" */;
+			buildConfigurationList = 33EE5BD920D996C7008FEAF2 /* Build configuration list for PBXNativeTarget "Primes Fun" */;
 			buildPhases = (
 				33EE5BC320D996C4008FEAF2 /* Sources */,
 				33EE5BC420D996C4008FEAF2 /* Frameworks */,
@@ -161,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = "Prime Numbers Fun";
+			name = "Primes Fun";
 			productName = "Is It Prime";
-			productReference = 33EE5BC720D996C4008FEAF2 /* Prime Numbers Fun.app */;
+			productReference = 33EE5BC720D996C4008FEAF2 /* Primes Fun.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -181,7 +181,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 33EE5BC220D996C4008FEAF2 /* Build configuration list for PBXProject "Prime Numbers Fun" */;
+			buildConfigurationList = 33EE5BC220D996C4008FEAF2 /* Build configuration list for PBXProject "Primes Fun" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -194,7 +194,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33EE5BC620D996C4008FEAF2 /* Prime Numbers Fun */,
+				33EE5BC620D996C4008FEAF2 /* Primes Fun */,
 			);
 		};
 /* End PBXProject section */
@@ -206,8 +206,8 @@
 			files = (
 				33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */,
 				33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */,
-				33CB11D320DCB5F7003E7522 /* Assets.xcassets in Resources */,
 				33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */,
+				33C0F18520EF4F180013881A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,13 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				33378FC020DF4E6900DC9A42 /* Number.swift in Sources */,
-				33CB11C820DCB5D0003E7522 /* AppDelegate.swift in Sources */,
 				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
 				334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */,
 				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
 				3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */,
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,
 				33FBA60220DF1167003303D2 /* NumberType.swift in Sources */,
+				33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				33F6747D20DF7C7B0094BCBA /* ScomponiViewController.swift in Sources */,
@@ -375,7 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = "$(SRCROOT)/Prime Numbers Fun/Assets/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Primes Fun/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = "$(SRCROOT)/Prime Numbers Fun/Assets/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Primes Fun/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +412,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33EE5BC220D996C4008FEAF2 /* Build configuration list for PBXProject "Prime Numbers Fun" */ = {
+		33EE5BC220D996C4008FEAF2 /* Build configuration list for PBXProject "Primes Fun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33EE5BD720D996C7008FEAF2 /* Debug */,
@@ -421,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33EE5BD920D996C7008FEAF2 /* Build configuration list for PBXNativeTarget "Prime Numbers Fun" */ = {
+		33EE5BD920D996C7008FEAF2 /* Build configuration list for PBXNativeTarget "Primes Fun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33EE5BDA20D996C7008FEAF2 /* Debug */,

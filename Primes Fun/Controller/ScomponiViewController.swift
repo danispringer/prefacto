@@ -1,6 +1,6 @@
 //
 //  ScomponiViewController.swift
-//  Prime Numbers Fun
+//  Primes Fun
 //
 //  Created by Dani Springer on 19/06/2018.
 //  Copyright © 2018 Dani Springer. All rights reserved.
