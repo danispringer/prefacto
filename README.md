@@ -1,5 +1,5 @@
-# Prime Numbers Fun (iOS)
-‘Prime Numbers Fun’ lets you:
+# Primes Fun (iOS)
+‘Primes Fun’ lets you:
 - Check whether a number is prime
 - List the prime numbers in a given range
 - Factorize to primes any given number
