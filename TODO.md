@@ -23,7 +23,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - Add abort option.
 - Return all the numbers by which a non-prime number can be divided, and their count.
 - Minigame: tap the prime numbers. (collection view, reset on lives finished with alert, alert of lost life with alert or shake of tapped cell).
-- iOS 12 support.
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 - GCF
@@ -51,6 +50,7 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 • Factorize to primes any given number
 • View fun images with prime numbers in them
 • Share your results, like that huge prime number you found, which everyone must know about
+- Aggiungi a descrizione store: app can handle multiple pages running simultaneusly.
 
 Get ‘Primes Fun’ today, and discover the Prime fun!
 
