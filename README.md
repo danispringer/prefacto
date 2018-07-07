@@ -5,16 +5,10 @@
 - Factorize to primes any given number
 - View fun images with prime numbers in them
 - Share your results, like that huge prime number you found, which everyone must know about
+- Get it here: [https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8](https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8)
 - Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-7.jpg)
-
-# How To Download
-- Go here: [https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8](https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8)
-
-
-# Dependencies
-- You will need Xcode (a program available as a free download. Only available on Macbook) to run this program.
 
 # Contributing
 Want to help? You can:
