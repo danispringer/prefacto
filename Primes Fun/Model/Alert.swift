@@ -23,6 +23,10 @@ extension UIViewController {
         case notPrime = "notPrime"
         case sameTwice = "sameTwice"
         case noPrimesInRange = "noPrimesInRange"
+        case messageSaved = "messageSaved"
+        case messageCanceled = "messageCanceled"
+        case messageFailed = "messageFailed"
+        case messageSent = "messageSent"
         case unknown = "unknown"
     }
 
@@ -64,6 +68,18 @@ extension UIViewController {
         case alertReason.noPrimesInRange.rawValue:
             alertTitle = "Oops"
             alertMessage = "There are no prime numbers between '\(firstNum)' and '\(secondNum)'. Please enter different numbers."
+        case alertReason.messageSaved.rawValue:
+            alertTitle = "Message saved"
+            alertMessage = "Your message has been saved to drafts."
+        case alertReason.messageCanceled.rawValue:
+            alertTitle = "Action cancelled"
+            alertMessage = "Your message has not been sent."
+        case alertReason.messageFailed.rawValue:
+            alertTitle = "Action failed"
+            alertMessage = "Your message has not been sent. Please try again later, or contact us by visiting DaniSpringer.GitHub.io"
+        case alertReason.messageSent.rawValue:
+            alertTitle = "Success!"
+            alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
         default:
             alertTitle = "Unknown error"
             alertMessage = "An unknown error occurred. Please try again later."

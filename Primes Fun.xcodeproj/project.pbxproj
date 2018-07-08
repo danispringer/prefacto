@@ -13,6 +13,7 @@
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
 		33378FC020DF4E6900DC9A42 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33378FBF20DF4E6900DC9A42 /* Number.swift */; };
+		333F996420F2B273003774D4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996320F2B273003774D4 /* AboutViewController.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
 		33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0F18020EF4F0A0013881A /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		33378FBF20DF4E6900DC9A42 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		333F996320F2B273003774D4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		33C0F18020EF4F0A0013881A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Primes Fun/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */,
 				3317915120D9FD3D00CA739F /* PhotosViewController.swift */,
 				334C779D20E048EC00BE2C65 /* DetailViewController.swift */,
+				333F996320F2B273003774D4 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				33F6747D20DF7C7B0094BCBA /* ScomponiViewController.swift in Sources */,
+				333F996420F2B273003774D4 /* AboutViewController.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
