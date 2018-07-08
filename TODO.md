@@ -8,11 +8,11 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 [no requested features. Is there a feature you'd like? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
----------------------------------------------------------------------------------------------------------------
 
-# Developer notes:
+###### Developer notes:
 
 - Replace alerts with views presented in alert navigation. Smaller than the parent view. With a tableview, scrollable, and done and share buttons
+- add skip to top and bottom buttons
 - Add about page with version, contact, review method
 - Make modal like "prime-numbers-images-modal.PNG"
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
