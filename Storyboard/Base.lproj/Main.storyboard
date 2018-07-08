@@ -391,7 +391,7 @@ Find out!</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h0P-v1-rQN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" selectedImage="about" id="SLe-kk-oQR"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about" selectedImage="about" id="SLe-kk-oQR"/>
                     <connections>
                         <outlet property="emailButton" destination="tUO-wX-ycd" id="ve0-sK-Kt3"/>
                         <outlet property="reviewButton" destination="nkS-6g-Mov" id="vcw-fd-D57"/>
