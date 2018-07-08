@@ -10,15 +10,13 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Outlets
     
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var resultTableView: UITableView!
-    @IBOutlet weak var shareButton: UIButton!
     
     
     // MARK: Properties
@@ -37,7 +35,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         firstTextField.delegate = self
         secondTextField.delegate = self
         
-        shareButton.isHidden = true
         let resignToolbar = UIToolbar()
         
         let factorButton = UIBarButtonItem(title: "List", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
@@ -53,22 +50,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     // MARK: Helpers
     
-    
-    fileprivate func resetResults() {
-        shareButton.isHidden = true
-        arrayOfInts = []
-        resultTableView.reloadData()
-    }
-    
     @objc func cancelAndHideKeyboard() {
-        resetResults()
         firstTextField.resignFirstResponder()
         secondTextField.resignFirstResponder()
     }
     
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
-            self.resetResults()
             self.enableUI(enabled: false)
         }
         
@@ -85,7 +73,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         guard !firstText.isEmpty, !secondText.isEmpty else {
             let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
@@ -97,7 +84,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         guard var firstNumber = Int64(firstText), var secondNumber = Int64(secondText) else {
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
@@ -109,7 +95,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         guard firstNumber != 0, secondNumber != 0 else {
             let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
@@ -121,7 +106,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         guard !(firstNumber < 0), !(secondNumber < 0) else {
             let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
@@ -133,7 +117,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         guard !(firstNumber == secondNumber) else {
             let alert = createAlert(alertReasonParam: alertReason.sameTwice.rawValue)
             DispatchQueue.main.async {
-                self.resetResults()
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
@@ -153,22 +136,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             for n in firstNumber...secondNumber {
                 if self.isPrime(number: n) {
                     self.arrayOfInts.append(n)
-                    DispatchQueue.main.async {
-                        self.resultTableView.reloadData()
-                        // scroll to last cell
-                        let myIndexPath = IndexPath(row: self.resultTableView.numberOfRows(inSection: 0) - 1, section: 0)
-                        self.resultTableView.scrollToRow(at: myIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
-                    }
                 }
             }
             
             DispatchQueue.main.async {
-                self.resultTableView.reloadData()
-                
                 guard self.arrayOfInts.count > 0 else {
                     // no primes in range
                     let alert = self.createAlert(alertReasonParam: alertReason.noPrimesInRange.rawValue, firstNum: firstNumber, secondNum: secondNumber)
-                    self.resetResults()
                     self.enableUI(enabled: true)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
@@ -176,77 +150,17 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                     return
                 }
                 
-                self.shareButton.isHidden = false
-                let myIndexPath = IndexPath(row: self.resultTableView.numberOfRows(inSection: 0) - 1, section: 0)
-                self.resultTableView.scrollToRow(at: myIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
                 self.enableUI(enabled: true)
+                // present list results VC with array of ints
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "ListResultsViewController") as! ListResultsViewController
+                controller.source = self.arrayOfInts
+                controller.from = firstNumber
+                controller.to = secondNumber
+                self.present(controller, animated: true)
             }
         }
-    }
-    
-    
-    @IBAction func shareButtonPressed(_ sender: Any) {
-        guard let firstText = firstTextField.text, let secondtext = secondTextField.text else {
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
-            }
-            return
-        }
-        guard !firstText.isEmpty, !secondtext.isEmpty else {
-            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
-            DispatchQueue.main.async {
-                self.resetResults()
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
-            }
-            return
-        }
-        guard let firstNumber = Int64(firstText), let secondNumber = Int64(secondtext) else {
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
-            DispatchQueue.main.async {
-                self.resetResults()
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
-            }
-            return
-        }
-        
-        share(firstNumber: firstNumber, secondNumber: secondNumber, list: arrayOfInts)
-    }
-    
-    
-    func share(firstNumber: Int64, secondNumber: Int64, list: [Int64]) {
-        var message = ""
-        if list.count == 0 {
-            message = "Hey, did you know that there are no prime numbers between '\(firstNumber)' and '\(secondNumber)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
-        }
-        if list.count == 1 {
-            message = "Hey, did you know that the only prime number between '\(firstNumber)' and '\(secondNumber)' is '\(list[0])'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
-        } else {
-            message = "Hey, did you know that the prime numbers between '\(firstNumber)' and '\(secondNumber)' are '\(list)'? That's no less than '\(list.count)' numbers! I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
-        }
-        
-        
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
-        activityController.completionWithItemsHandler = {
-            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
-                DispatchQueue.main.async {
-                    alert.view.layoutIfNeeded()
-                    self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
-                }
-                return
-            }
-        }
-        self.present(activityController, animated: true)
     }
     
     
@@ -277,32 +191,14 @@ class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDele
                 self.firstTextField.isEnabled = enabled
                 self.secondTextField.isEnabled = enabled
                 self.view.alpha = 1
-                self.resultTableView.isScrollEnabled = true
             } else {
                 self.activityIndicator.startAnimating()
                 self.view.endEditing(true)
                 self.firstTextField.isEnabled = false
                 self.secondTextField.isEnabled = false
                 self.view.alpha = 0.5
-                self.resultTableView.isScrollEnabled = false
             }
         }
     }
     
-    
-    // MARK: TableView
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfInts.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        
-        cell.textLabel?.text = "\(arrayOfInts[(indexPath as NSIndexPath).row])"
-        cell.selectionStyle = .none
-        
-        return cell
-    }
 }
