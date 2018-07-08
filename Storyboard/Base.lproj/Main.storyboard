@@ -75,7 +75,7 @@
                                 <rect key="frame" x="150" y="259.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-Ni-Izz">
-                                <rect key="frame" x="85" y="76" width="151" height="41"/>
+                                <rect key="frame" x="84.5" y="76" width="151" height="41"/>
                                 <string key="text">Are all these prime?
 Find out!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -247,13 +247,13 @@ Find out!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factorize" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-BS-llH">
-                                <rect key="frame" x="8" y="111.5" width="304" height="31.5"/>
+                                <rect key="frame" x="8" y="112" width="304" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your number here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-hj-b9l">
-                                <rect key="frame" x="40" y="188" width="240" height="40"/>
+                                <rect key="frame" x="40" y="188.5" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3aW-L4-KEj"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="nmS-Kk-4U5"/>
@@ -353,7 +353,7 @@ Find out!</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-tP-g1Q">
-                                <rect key="frame" x="16" y="484" width="288" height="21"/>
+                                <rect key="frame" x="16" y="484.5" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -428,7 +428,7 @@ Find out!</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter second number here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-op-hSX">
-                                <rect key="frame" x="40.5" y="242" width="240" height="40"/>
+                                <rect key="frame" x="40" y="242" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JXA-aw-pHi"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="diu-Ui-Her"/>

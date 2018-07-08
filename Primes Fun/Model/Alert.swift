@@ -82,7 +82,7 @@ extension UIViewController {
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
         default:
             alertTitle = "Unknown error"
-            alertMessage = "An unknown error occurred. Please try again later."
+            alertMessage = "An unknown error occurred. Please try again later, or contact us by visiting DaniSpringer.GitHub.io"
         }
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
