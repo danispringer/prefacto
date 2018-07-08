@@ -36,7 +36,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func share(_ sender: Any) {
         var message = ""
         
-        guard let myFrom = from, let myTo = to, let mySource = source, let mySourceFirst = mySource.first else {
+        guard let myFrom = from, let myTo = to, let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = source.last else {
             // alert user: unknown
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             present(alert, animated: true)
@@ -49,7 +49,14 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         if mySource.count == 1 {
             message = "Hey, did you know that the only prime number between \(myFrom) and \(to!) is \(mySourceFirst)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         } else { // TODO: a, b, c, and d
-            message = "Hey, did you know that the prime numbers between \(myFrom) and \(myTo) are \(mySource)? That's no less than \(mySource.count) numbers! I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+            let mySourceDroppedLast = mySource.dropLast()
+            let stringMySourceDroppedLast = "\(mySourceDroppedLast)"
+            let start = stringMySourceDroppedLast.index(stringMySourceDroppedLast.startIndex, offsetBy: 1)
+            let end = stringMySourceDroppedLast.index(stringMySourceDroppedLast.endIndex, offsetBy: -1)
+            let range = start..<end
+            
+            let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
+            message = "Hey, did you know that the prime numbers between \(myFrom) and \(myTo) are \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \(mySource.count) numbers! I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         }
         
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
