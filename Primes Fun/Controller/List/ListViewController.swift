@@ -47,6 +47,12 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         secondTextField.inputAccessoryView = resignToolbar
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        arrayOfInts = []
+    }
+    
     
     // MARK: Helpers
     
