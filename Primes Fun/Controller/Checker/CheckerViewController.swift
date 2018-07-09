@@ -116,24 +116,18 @@ class CheckerViewController: UIViewController {
             return
         }
         
+        var isPrimeBool = true
+        var isDivisibleBy: Int64 = 0
+        
         guard number != 2 else {
-            let alert = createAlert(alertReasonParam: alertReason.two.rawValue)
-            let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
-                action in
-                self.share(number: number, isPrime: true)
-            })
-            alert.addAction(shareAction)
+            
             DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
-                self.present(alert, animated: true)
                 AudioServicesPlayAlertSound(SystemSoundID(1023))
+                self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
             }
             return
         }
-        
-        var isPrimeBool = true
-        var isDivisibleBy: Int64 = 0
 
         let range = 2...(number - 1)
         
@@ -144,68 +138,35 @@ class CheckerViewController: UIViewController {
                 if number % n == 0 {
                     // not prime
                     isDivisibleBy = n
-                    let alert = self.createAlert(alertReasonParam: alertReason.notPrime.rawValue, num: number, divisibleBy: n)
-                    let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
-                        action in
-                        self.share(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
-                    })
-                    alert.addAction(shareAction)
-                    DispatchQueue.main.async {
-                        alert.view.layoutIfNeeded()
-                        self.enableUI(enabled: true)
-                        self.present(alert, animated: true)
-                        
-                    }
                     isPrimeBool = false
                     break
                 }
             }
             
             if isPrimeBool {
+                AudioServicesPlayAlertSound(SystemSoundID(1023))
                 // prime
-                let alert = self.createAlert(alertReasonParam: alertReason.prime.rawValue, num: number)
-                let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
-                    action in
-                    self.share(number: number, isPrime: isPrimeBool)
-                })
-                alert.addAction(shareAction)
-                DispatchQueue.main.async {
-                    alert.view.layoutIfNeeded()
-                    self.enableUI(enabled: true)
-                    self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(1023))
-                }
+            }
+            DispatchQueue.main.async {
+                self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
             }
         }
     }
     
-    func share(number: Int64, isPrime: Bool, isDivisibleBy: Int64 = 0) {
-        var message = ""
+    
+    func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CheckerResultsViewController") as! CheckerResultsViewController
+        controller.number = number
+        controller.isPrime = isPrime
+        controller.isDivisibleBy = isDivisibleBy
         
-        if isPrime {
-            message = "Hey, did you know that '\(number)' is a prime number? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
-        } else {
-            message = "Hey, did you know that '\(number)' is not prime, because it's divisible by '\(isDivisibleBy)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        DispatchQueue.main.async {
+            self.enableUI(enabled: true)
+            self.present(controller, animated: true)
         }
-        
-        
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
-        activityController.completionWithItemsHandler = {
-            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
-                DispatchQueue.main.async {
-                    alert.view.layoutIfNeeded()
-                    self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
-                }
-                return
-            }
-        }
-        self.present(activityController, animated: true)
-        
     }
+    
     
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {

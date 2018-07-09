@@ -14,6 +14,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Outlets
     
+    @IBOutlet weak var noPrimesMessageLabel: UILabel!
+    @IBOutlet weak var resultsTableView: UITableView!
     
     
     // MARK: Properties
@@ -29,6 +31,21 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Life Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let myFrom = from, let myTo = to else {
+            // TODO alert user
+            return
+        }
+        
+        if source.count == 0 {
+            resultsTableView.isHidden = true
+            noPrimesMessageLabel.text = "There are no prime numbers between \(myFrom) and \(myTo)!"
+        } else {
+            noPrimesMessageLabel.isHidden = true
+        }
+    }
     
     
     // MARK: Helpers
@@ -36,19 +53,30 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func share(_ sender: Any) {
         var message = ""
         
-        guard let myFrom = from, let myTo = to, let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = source.last else {
+        guard let myFrom = from, let myTo = to else {
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            present(alert, animated: true)
+            return
+        }
+        
+        guard source.count != 0 else {
+            // no nums in range
+            message = "Hey, did you know that there are no prime numbers between \(myFrom) and \(myTo)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+            presentShareController(message: message)
+            return
+        }
+        
+        guard let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = source.last else {
             // alert user: unknown
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             present(alert, animated: true)
             return
         }
-
-        if mySource.count == 0 {
-            message = "Hey, did you know that there are no prime numbers between \(myFrom) and \(myTo)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
-        }
+        
         if mySource.count == 1 {
-            message = "Hey, did you know that the only prime number between \(myFrom) and \(to!) is \(mySourceFirst)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
-        } else { // TODO: a, b, c, and d
+            message = "Hey, did you know that the only prime number between \(myFrom) and \(myTo) is \(mySourceFirst)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+            presentShareController(message: message)
+        } else {
             let mySourceDroppedLast = mySource.dropLast()
             let stringMySourceDroppedLast = "\(mySourceDroppedLast)"
             let start = stringMySourceDroppedLast.index(stringMySourceDroppedLast.startIndex, offsetBy: 1)
@@ -57,7 +85,11 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             
             let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
             message = "Hey, did you know that the prime numbers between \(myFrom) and \(myTo) are \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \(mySource.count) numbers! I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+            presentShareController(message: message)
         }
+    }
+    
+    func presentShareController(message: String) {
         
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash

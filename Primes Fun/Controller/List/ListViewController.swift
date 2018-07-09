@@ -146,16 +146,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             
             DispatchQueue.main.async {
-                guard self.arrayOfInts.count > 0 else {
-                    // no primes in range
-                    let alert = self.createAlert(alertReasonParam: alertReason.noPrimesInRange.rawValue, firstNum: firstNumber, secondNum: secondNumber)
-                    self.enableUI(enabled: true)
-                    alert.view.layoutIfNeeded()
-                    self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
-                    return
-                }
-                
                 self.enableUI(enabled: true)
                 // present list results VC with array of ints
                 

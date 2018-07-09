@@ -11,10 +11,9 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- Replace alerts with views presented in alert navigation. With a tableview, and done and share buttons
-- add skip to top and bottom buttons
+- Replace alerts with views presented in alert navigation. With a tableview, and done, share, skip to top, skip to bottom buttons: Checker, Factor
 - Make alert bg transparent-ish
-- Add about page with version, contact, review method
+- Add review sdk
 - Make modal like "prime-numbers-images-modal.PNG"
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
 - Add toolbar on top with share button always enabled. Check upon tap if there's what to share.
@@ -22,7 +21,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - Aggiungi a descrizione store: app can handle multiple pages running simultaneusly.
 - Migliora collectionview cells per riempire più spazio.
 - Improve screenshots crop,
-- Improve design.
+- Improve design: blue and white
 - Add abort option.
 - Return all the numbers by which a non-prime number can be divided, and their count.
 - Minigame: tap the prime numbers. (collection view, reset on lives finished with alert, alert of lost life with alert or shake of tapped cell).
@@ -68,3 +67,7 @@ Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
 
 • Found a bug you would like gone? Let us know: DaniSpringer.GitHub.io
 • Love the app? Want a feature added? Leave a review!
+
+
+
+
