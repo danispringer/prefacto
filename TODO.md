@@ -11,7 +11,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- Replace alerts with views presented in alert navigation. With skip to top, skip to bottom buttons
+- Add skip to top, skip to bottom buttons to tableview alertVCs
 - Make alert bg transparent-ish
 - Add review sdk
 - add version num to email subject
