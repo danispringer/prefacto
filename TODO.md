@@ -11,9 +11,10 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- Replace alerts with views presented in alert navigation. With a tableview, and done, share, skip to top, skip to bottom buttons: Checker, Factor
+- Replace alerts with views presented in alert navigation. With skip to top, skip to bottom buttons
 - Make alert bg transparent-ish
 - Add review sdk
+- add version num to email subject
 - Make modal like "prime-numbers-images-modal.PNG"
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
 - Add toolbar on top with share button always enabled. Check upon tap if there's what to share.

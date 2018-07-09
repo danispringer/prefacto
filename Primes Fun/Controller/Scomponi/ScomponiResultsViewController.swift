@@ -43,7 +43,7 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func share(_ sender: Any) {
         var message = ""
         
-        guard let myNumber = number, let mySource = source else {
+        guard let myNumber = number, let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
             // TODO: alert user
             let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
             present(alert, animated: true)
@@ -52,10 +52,19 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
         
         if source.count == 1 {
             message = "Hey, did you know that \(myNumber) is a prime number? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        } else if source.count == 2 {
+            message = "Hey, did you know that the prime factors of \(myNumber) are \(mySourceFirst) and \(mySourceLast)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         } else {
-            message = "Hey, did you know that the prime factors of \(myNumber) are '\(mySource)'? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+            let mySourceDroppedLast = mySource.dropLast()
+            let stringMySourceDroppedLast = "\(mySourceDroppedLast)"
+            let start = stringMySourceDroppedLast.index(stringMySourceDroppedLast.startIndex, offsetBy: 1)
+            let end = stringMySourceDroppedLast.index(stringMySourceDroppedLast.endIndex, offsetBy: -1)
+            let range = start..<end
+            
+            let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
+
+            message = "Hey, did you know that the prime factors of \(myNumber) are \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \(mySource.count) numbers! I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         }
-        
         
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash

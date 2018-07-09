@@ -29,6 +29,10 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
+            versionButtonLabel.text = "Version \(version)"
+        }
+        
     }
     
     // MARK: Helpers
@@ -53,7 +57,10 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     
     @IBAction func launchEmail(sender: AnyObject) {
         
-        let emailTitle = "Feedback for Primes Fun"
+        var emailTitle = "Primes Fun"
+        if let version = versionButtonLabel.text {
+            emailTitle += " \(version)"
+        }
         let messageBody = "Hi. I have a feature request/bug report/question..."
         let toRecipents = ["musicbyds@icloud.com"]
         let mc: MFMailComposeViewController = MFMailComposeViewController()
