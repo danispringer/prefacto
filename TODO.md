@@ -11,8 +11,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- iPhone X screenshots
-- Remove support for iPad till is uses size classes
 - Add skip to top, skip to bottom buttons to tableview alertVCs
 - Make alert bg transparent-ish
 - Add review sdk
