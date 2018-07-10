@@ -11,6 +11,8 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
+- iPhone X screenshots
+- Remove support for iPad till is uses size classes
 - Add skip to top, skip to bottom buttons to tableview alertVCs
 - Make alert bg transparent-ish
 - Add review sdk
@@ -56,19 +58,15 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 
 Did you know? When running big calculations, you can navigate in between the app's different pages while they are loading, and come back to them later. Your initiated tasks won't be interrupted.
 
-Get ‘Primes Fun’ today, and discover the fun!
-
 Is there a feature you'd like to see? Leave a review!
 
-Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
+Is there a bug you'd like to go away? Let us know by opening the app and tapping on 'About' > 'Send us an email', or by visiting DaniSpringer.GitHub.io
 
 ##### Update
 
-• This update brings some bug fixes.
+• Version N.N.N brings some bug fixes.
 
-• Found a bug you would like gone? Let us know: DaniSpringer.GitHub.io
-• Love the app? Want a feature added? Leave a review!
-
-
+• Found a bug? Want a feature added? Let us know by opening the app and tapping on 'About' > 'Send us an email', or by visiting DaniSpringer.GitHub.io
+• Love the app? Leave a review!
 
 
