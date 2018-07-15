@@ -473,7 +473,7 @@ Find out!</string>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No primes in that range!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-To-rhb">
-                                <rect key="frame" x="16" y="285" width="288" height="21"/>
+                                <rect key="frame" x="16" y="285.5" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -494,18 +494,38 @@ Find out!</string>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
+                                <rect key="frame" x="118" y="101" width="84" height="30"/>
+                                <state key="normal" title="Jump to top"/>
+                                <connections>
+                                    <action selector="jumpToTopPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="P50-yM-qRC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
+                                <rect key="frame" x="105" y="457" width="110" height="30"/>
+                                <state key="normal" title="Jump to bottom"/>
+                                <connections>
+                                    <action selector="jumpToBottomPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="fdm-Jr-Gfz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" id="85F-i7-GH3"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="9X0-tU-cBa"/>
                             <constraint firstItem="Gno-To-rhb" firstAttribute="centerY" secondItem="IJQ-WZ-WUE" secondAttribute="centerY" constant="1.5" id="CAy-g3-DOD"/>
+                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="4HI-oU-hkH" secondAttribute="trailing" constant="105" id="Kry-9x-mkd"/>
+                            <constraint firstItem="cUP-pY-AOE" firstAttribute="top" secondItem="i8z-rE-tr8" secondAttribute="bottom" constant="10" id="SQR-4G-E39"/>
+                            <constraint firstItem="4HI-oU-hkH" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="105" id="UJ7-Me-N98"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="centerY" secondItem="IJQ-WZ-WUE" secondAttribute="centerY" id="cVc-S9-EBf"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="cUP-pY-AOE" secondAttribute="trailing" constant="16" id="egN-xt-Mg9"/>
+                            <constraint firstItem="4HI-oU-hkH" firstAttribute="top" secondItem="cUP-pY-AOE" secondAttribute="bottom" constant="10" id="kNg-Fe-qYW"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="Gno-To-rhb" secondAttribute="trailing" constant="16" id="kT9-iH-SQ8"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="pot-Xn-7oP" secondAttribute="trailing" id="mst-3e-PgU"/>
                             <constraint firstItem="Gno-To-rhb" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="r2w-fd-ddQ"/>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="top" secondItem="IJQ-WZ-WUE" secondAttribute="top" id="vdU-sm-yRv"/>
+                            <constraint firstItem="i8z-rE-tr8" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="118" id="wDi-nP-7E5"/>
+                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="i8z-rE-tr8" secondAttribute="trailing" constant="118" id="zde-Rz-T8D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IJQ-WZ-WUE"/>
                     </view>
@@ -535,7 +555,7 @@ Find out!</string>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xIy-kS-HyR"/>
-                                    <barButtonItem systemItem="done" id="Qyd-er-brp">
+                                    <barButtonItem style="plain" systemItem="done" id="Qyd-er-brp">
                                         <connections>
                                             <action selector="doneButtonPressed:" destination="gze-xP-mv9" id="Rnh-SL-D2N"/>
                                         </connections>
@@ -613,22 +633,33 @@ Find out!</string>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9223372036854775807" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xj-Fd-l5u">
-                                <rect key="frame" x="16" y="90.5" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
+                                <rect key="frame" x="118" y="101" width="84" height="30"/>
+                                <state key="normal" title="Jump to top"/>
+                                <connections>
+                                    <action selector="jumpToTopPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="Ock-dN-zZU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
+                                <rect key="frame" x="105" y="457" width="110" height="30"/>
+                                <state key="normal" title="Jump to bottom"/>
+                                <connections>
+                                    <action selector="jumpToBottomPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="IKv-RL-pX8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" id="1Ne-sA-8H4"/>
-                            <constraint firstItem="o0x-Ps-BCo" firstAttribute="top" secondItem="9Xj-Fd-l5u" secondAttribute="bottom" constant="30" id="OCn-AS-gff"/>
-                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="9Xj-Fd-l5u" secondAttribute="trailing" constant="16" id="RXk-zO-f4i"/>
+                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="lyv-wW-QU7" secondAttribute="trailing" constant="105" id="2ff-QL-hcB"/>
+                            <constraint firstItem="o0x-Ps-BCo" firstAttribute="top" secondItem="uvb-aY-8KG" secondAttribute="bottom" constant="10" id="86L-Vh-YoA"/>
+                            <constraint firstItem="lyv-wW-QU7" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="105" id="JfS-b9-zTD"/>
+                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="uvb-aY-8KG" secondAttribute="trailing" constant="118" id="NnX-tY-aJh"/>
+                            <constraint firstItem="lyv-wW-QU7" firstAttribute="top" secondItem="o0x-Ps-BCo" secondAttribute="bottom" constant="10" id="R0i-Km-HFR"/>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="top" secondItem="QOY-xE-4JJ" secondAttribute="top" id="TqB-PI-XtA"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="RU3-mS-M5k" secondAttribute="trailing" id="ZA8-Kn-Y1b"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="o0x-Ps-BCo" secondAttribute="trailing" constant="16" id="fJE-hP-XIO"/>
-                            <constraint firstItem="9Xj-Fd-l5u" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="gLF-RQ-F1e"/>
+                            <constraint firstItem="uvb-aY-8KG" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="118" id="jdl-Po-IP9"/>
                             <constraint firstItem="o0x-Ps-BCo" firstAttribute="centerY" secondItem="QOY-xE-4JJ" secondAttribute="centerY" id="o6V-6T-pk9"/>
                             <constraint firstItem="o0x-Ps-BCo" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="ve2-7f-B95"/>
                         </constraints>
@@ -636,7 +667,6 @@ Find out!</string>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="o0x-Ps-BCo" id="j0e-Vv-9T0"/>
-                        <outlet property="numberLabel" destination="9Xj-Fd-l5u" id="s2O-5U-Vh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taf-8r-ZgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
