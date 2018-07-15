@@ -80,9 +80,10 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     @IBAction func launchEmail(sender: AnyObject) {
         
         var emailTitle = "Primes Fun"
-        if let version = versionButtonLabel.text {
+        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
             emailTitle += " \(version)"
         }
+
         let messageBody = "Hi. I have a question..."
         let toRecipents = ["musicbyds@icloud.com"]
         let mc: MFMailComposeViewController = MFMailComposeViewController()

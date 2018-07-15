@@ -13,7 +13,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 - simulate "jump to top" button pressed on status bar tapped
 - Make alert bg transparent-ish
-- Add review sdk
 - add version num to email subject
 - Make modal like "prime-numbers-images-modal.PNG"
 - Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
