@@ -12,6 +12,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 ###### Developer notes:
 
 - Add skip to top, skip to bottom buttons to tableview alertVCs
+- Clarify done vs check button
 - Make alert bg transparent-ish
 - Add review sdk
 - add version num to email subject
