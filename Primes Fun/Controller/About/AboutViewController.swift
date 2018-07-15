@@ -38,7 +38,7 @@ class AboutViewController: UIViewController {
     // MARK: Helpers
     
     @IBAction func shareButtonPressed() {
-        let message = "Check this app out: 'Primes Fun' lets you check if a number is prime, list primes in range, factorize, and more! https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"
+        let message = "Check this app out: Primes Fun lets you check if a number is prime, list primes in a range, factorize, and more! https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
@@ -61,7 +61,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         if let version = versionButtonLabel.text {
             emailTitle += " \(version)"
         }
-        let messageBody = "Hi. I have a feature request/bug report/question..."
+        let messageBody = "Hi. I have a question..."
         let toRecipents = ["musicbyds@icloud.com"]
         let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
