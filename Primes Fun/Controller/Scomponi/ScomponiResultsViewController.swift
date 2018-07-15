@@ -15,7 +15,6 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: Outlets
     
     @IBOutlet weak var myTableView: UITableView!
-    @IBOutlet weak var numberLabel: UILabel!
     
     
     // MARK: Properties
@@ -30,15 +29,23 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: Life Cycle
     
     override func viewDidLoad() {
-        if let myNumber = number {
-            numberLabel.text = "\(myNumber)"
-        } else {
-            numberLabel.text = "Could not display chosen number. Please let the developers know."
-        }
+
     }
     
     
     // MARK: Helpers
+    
+    @IBAction func jumpToTopPressed(_ sender: Any) {
+        let indexPath = IndexPath(row: 0, section: 0)
+        myTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
+    
+    @IBAction func jumpToBottomPressed(_ sender: Any) {
+        let indexPath = IndexPath(row: myTableView.numberOfRows(inSection: 0) - 1, section: 0)
+        myTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
     
     @IBAction func share(_ sender: Any) {
         var message = ""
@@ -101,6 +108,15 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var toReturn = ""
+        if let number = number {
+            toReturn += "\(number)"
+        }
+        return toReturn
     }
     
     
