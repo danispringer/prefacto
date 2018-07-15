@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import StoreKit
 
 class ListResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -125,6 +126,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        SKStoreReviewController.requestReview()
     }
     
     

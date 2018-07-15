@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import StoreKit
 
 class DetailViewController: UIViewController {
     
@@ -42,6 +43,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        SKStoreReviewController.requestReview()
     }
     
     @IBAction func shareButtonPressed(_ sender: Any) {
