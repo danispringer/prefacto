@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MessageUI
+import AVFoundation
 
 class AboutViewController: UIViewController {
     
@@ -18,22 +19,43 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var versionButtonLabel: UILabel!
+    @IBOutlet weak var thanksLabel: UILabel!
     
     
     // MARK: Properties
     
+    let positiveSound: Int = 1023
+    let negativeSound: Int = 1257
     
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        thanksLabel.isHidden = true
         
         if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
             versionButtonLabel.text = "Version \(version)"
         }
         
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        thanksLabel.alpha = 0.0
+        thanksLabel.font = UIFont.systemFont(ofSize: 5.0)
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        thanksLabel.alpha = 0.0
+        thanksLabel.font = UIFont.systemFont(ofSize: 5.0)
+    }
+    
     
     // MARK: Helpers
     
@@ -96,11 +118,41 @@ extension AboutViewController {
     @IBAction func requestReviewManually() {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
-        guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1402417667?action=write-review")
-            else {
-                fatalError("Expected a valid URL")
-                
+        
+        sayThanks { error in
+            
+            if error != nil {
+                print("error is not nil")
+            }
+            
+            guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1402417667?action=write-review")
+                else {
+                    fatalError("Expected a valid URL")
+            }
+            
+            UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
         }
-        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+        
+        
+        
     }
+    
+    func sayThanks(completionHandler: @escaping (_ errorReason: String?) -> Void) {
+
+        AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
+        UIView.animate(withDuration: 2.0, animations: {
+            self.thanksLabel.font = UIFont.systemFont(ofSize: 50.0)
+        }, completion: { (finished: Bool) in
+            if finished {
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.thanksLabel.alpha = 0.0
+                    self.thanksLabel.isHidden = true
+                }, completion: { (finished: Bool) in
+                    completionHandler(nil)
+                })
+            }
+        })
+        completionHandler("error")
+    }
+    
 }

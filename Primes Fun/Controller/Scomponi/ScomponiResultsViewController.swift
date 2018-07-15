@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import StoreKit
 
 class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -92,6 +93,7 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        SKStoreReviewController.requestReview()
     }
     
     
