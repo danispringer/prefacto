@@ -341,6 +341,12 @@ Find out!</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ty" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C4-em-MNX">
+                                <rect key="frame" x="140" y="259.5" width="40" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -348,9 +354,11 @@ Find out!</string>
                             <constraint firstItem="TsF-ep-byg" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="DGk-ab-azf"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="tUO-wX-ycd" secondAttribute="trailing" constant="16" id="Etx-6J-604"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="nkS-6g-Mov" secondAttribute="trailing" constant="16" id="LXj-kW-16T"/>
+                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="8C4-em-MNX" secondAttribute="trailing" constant="140" id="MVN-Zi-T5X"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="Jgs-tP-g1Q" secondAttribute="trailing" constant="16" id="PZs-Av-fiO"/>
                             <constraint firstItem="tUO-wX-ycd" firstAttribute="top" secondItem="TsF-ep-byg" secondAttribute="bottom" constant="18" id="Szp-le-Pnp"/>
                             <constraint firstItem="tUO-wX-ycd" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="WT3-oB-C97"/>
+                            <constraint firstItem="8C4-em-MNX" firstAttribute="centerY" secondItem="h0P-v1-rQN" secondAttribute="centerY" id="Xjx-xH-aej"/>
                             <constraint firstItem="nkS-6g-Mov" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="YPe-lW-DUR"/>
                             <constraint firstItem="nkS-6g-Mov" firstAttribute="top" secondItem="8FE-mb-t9I" secondAttribute="bottom" constant="18" id="Ybl-gU-6GF"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="F04-AD-Mdv" secondAttribute="trailing" constant="16" id="ZtS-CO-YR3"/>
@@ -363,6 +371,7 @@ Find out!</string>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="wYa-Qr-Inb" secondAttribute="trailing" constant="16" id="oMa-hA-qE1"/>
                             <constraint firstItem="Jgs-tP-g1Q" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="siZ-r6-kuw"/>
                             <constraint firstItem="8FE-mb-t9I" firstAttribute="top" secondItem="h0P-v1-rQN" secondAttribute="top" constant="60" id="uOM-BH-1bU"/>
+                            <constraint firstItem="8C4-em-MNX" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="140" id="vTL-hl-67i"/>
                             <constraint firstItem="F04-AD-Mdv" firstAttribute="top" secondItem="tUO-wX-ycd" secondAttribute="bottom" constant="67" id="z5S-5j-CPV"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="8FE-mb-t9I" secondAttribute="trailing" constant="105" id="zzE-lz-zqN"/>
                         </constraints>
@@ -373,6 +382,7 @@ Find out!</string>
                         <outlet property="emailButton" destination="tUO-wX-ycd" id="ve0-sK-Kt3"/>
                         <outlet property="reviewButton" destination="nkS-6g-Mov" id="vcw-fd-D57"/>
                         <outlet property="shareButton" destination="wYa-Qr-Inb" id="SL3-XT-RoK"/>
+                        <outlet property="thanksLabel" destination="8C4-em-MNX" id="dGA-Qa-0my"/>
                         <outlet property="versionButtonLabel" destination="Jgs-tP-g1Q" id="vHh-MT-dHc"/>
                     </connections>
                 </viewController>
