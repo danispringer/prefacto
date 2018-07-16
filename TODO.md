@@ -12,27 +12,17 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 ###### Developer notes:
 
 - simulate "jump to top" button pressed on status bar tapped
+- simulate ios slowed scrolling on "jump to top" pressed
 - Make alert bg transparent-ish
-- add version num to email subject
+- add random prime generator
+- [?] add primes orderly generator (maybe with starting point). Must have stop button.
 - Make modal like "prime-numbers-images-modal.PNG"
-- Testa: hangs, correct responses, alerts, sharing per ogni pagina. fai lista.
-- Add toolbar on top with share button always enabled. Check upon tap if there's what to share.
-- Fix lag: dispatch practice.
-- Aggiungi a descrizione store: app can handle multiple pages running simultaneusly.
 - Migliora collectionview cells per riempire più spazio.
 - Improve screenshots crop,
 - Improve design: blue and white
-- Add abort option.
-- Return all the numbers by which a non-prime number can be divided, and their count.
-- Minigame: tap the prime numbers. (collection view, reset on lives finished with alert, alert of lost life with alert or shake of tapped cell).
+- [?]Add abort option.
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
-- GCF
-- LCM
-- Find next or previous primes
-- Allow to copy to clipboard? Sharing already allows that?
-- [?] Find prime by index
-- [?] Find index by prime
 
 ---------------------------------------------------------------------------------------------------------------
 
