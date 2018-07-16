@@ -106,10 +106,12 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
                 alert = self.createAlert(alertReasonParam: alertReason.messageSaved.rawValue)
             case MFMailComposeResult.sent:
                 alert = self.createAlert(alertReasonParam: alertReason.messageSent.rawValue)
-            case MFMailComposeResult.cancelled:
-                alert = self.createAlert(alertReasonParam: alertReason.messageCanceled.rawValue)
+            default:
+                break
             }
-            self.present(alert, animated: true)
+            if let _ = alert.title {
+                self.present(alert, animated: true)
+            }
         })
     }
 }
@@ -120,40 +122,14 @@ extension AboutViewController {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
         
-        sayThanks { error in
-            
-            if error != nil {
-                print("error is not nil")
-            }
-            
-            guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1402417667?action=write-review")
-                else {
-                    fatalError("Expected a valid URL")
-            }
-            
-            UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+        guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1402417667?action=write-review")
+            else {
+                fatalError("Expected a valid URL")
         }
         
+        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
         
         
-    }
-    
-    func sayThanks(completionHandler: @escaping (_ errorReason: String?) -> Void) {
-
-        AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
-        UIView.animate(withDuration: 2.0, animations: {
-            self.thanksLabel.font = UIFont.systemFont(ofSize: 50.0)
-        }, completion: { (finished: Bool) in
-            if finished {
-                UIView.animate(withDuration: 2.0, animations: {
-                    self.thanksLabel.alpha = 0.0
-                    self.thanksLabel.isHidden = true
-                }, completion: { (finished: Bool) in
-                    completionHandler(nil)
-                })
-            }
-        })
-        completionHandler("error")
     }
     
 }
