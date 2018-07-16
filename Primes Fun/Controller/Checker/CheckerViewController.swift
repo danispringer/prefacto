@@ -19,6 +19,7 @@ class CheckerViewController: UIViewController {
     
     // MARK: Properties
     
+    
     let positiveSound: Int = 1023
     let negativeSound: Int = 1257
     
@@ -50,111 +51,103 @@ class CheckerViewController: UIViewController {
     
     
     @objc func checkButtonPressed() {
+        
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
-        }
-        
-        guard let text = textfield.text else {
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return
-        }
-        
-        guard !text.isEmpty else {
-            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1257))
-            }
-            return
-        }
-        
-        guard let number = Int64(text) else {
-            let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1257))
-            }
-            return
-        }
-        
-        guard number != 0 else {
-            let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return
-        }
-        
-        guard !(number < 0) else {
-            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1257))
-            }
-            return
-        }
-        
-        guard number != 1 else {
-            let alert = createAlert(alertReasonParam: alertReason.one.rawValue)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return
-        }
-        
-        var isPrimeBool = true
-        var isDivisibleBy: Int64 = 0
-        
-        guard number != 2 else {
             
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                AudioServicesPlayAlertSound(SystemSoundID(1023))
-                self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
-            }
-            return
-        }
-
-        let range = 2...(number - 1)
-        
-        let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-        
-        downloadQueue.async {
-            for n in range {
-                if number % n == 0 {
-                    // not prime
-                    isDivisibleBy = n
-                    isPrimeBool = false
-                    break
+            guard let text = self.textfield.text, !text.isEmpty else {
+                let alert = self.createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
+                DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
+                    self.enableUI(enabled: true)
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(1257))
                 }
+                return
             }
             
-            if isPrimeBool {
-                AudioServicesPlayAlertSound(SystemSoundID(1023))
-                // prime
+            guard let number = Int64(text) else {
+                let alert = self.createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
+                DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
+                    self.enableUI(enabled: true)
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(1257))
+                }
+                return
             }
-            DispatchQueue.main.async {
-                self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
+            
+            guard number != 0 else {
+                let alert = self.createAlert(alertReasonParam: alertReason.zero.rawValue)
+                DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
+                    self.enableUI(enabled: true)
+                    self.present(alert, animated: true)
+                }
+                return
+            }
+            
+            guard !(number < 0) else {
+                let alert = self.createAlert(alertReasonParam: alertReason.negative.rawValue)
+                DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
+                    self.enableUI(enabled: true)
+                    self.present(alert, animated: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(1257))
+                }
+                return
+            }
+            
+            guard number != 1 else {
+                let alert = self.createAlert(alertReasonParam: alertReason.one.rawValue)
+                DispatchQueue.main.async {
+                    alert.view.layoutIfNeeded()
+                    self.enableUI(enabled: true)
+                    self.present(alert, animated: true)
+                }
+                return
+            }
+            
+            var isPrimeBool = true
+            var isDivisibleBy: Int64 = 0
+            
+            guard number != 2 else {
+                
+                DispatchQueue.main.async {
+                    self.enableUI(enabled: true)
+                    AudioServicesPlayAlertSound(SystemSoundID(1023))
+                    self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
+                }
+                return
+            }
+            
+            let range = 2...(number - 1)
+            
+            let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
+            
+            downloadQueue.async {
+                for n in range {
+                    if number % n == 0 {
+                        // not prime
+                        isDivisibleBy = n
+                        isPrimeBool = false
+                        break
+                    }
+                }
+                
+                if isPrimeBool {
+                    AudioServicesPlayAlertSound(SystemSoundID(1023))
+                    // prime
+                }
+                DispatchQueue.main.async {
+                    self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
+                }
+                
             }
         }
     }
-    
-    
+        
+        
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CheckerResultsViewController") as! CheckerResultsViewController
@@ -166,6 +159,7 @@ class CheckerViewController: UIViewController {
             self.enableUI(enabled: true)
             self.present(controller, animated: true)
         }
+        
     }
     
     
