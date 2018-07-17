@@ -11,13 +11,11 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- add random prime generator
 - [?] add primes orderly generator (maybe with starting point). Must have stop button.
 - Make modal like "prime-numbers-images-modal.PNG"
 - Migliora collectionview cells per riempire più spazio.
-- Improve screenshots crop,
+- Improve screenshots crop(? GF? CP?)
 - Improve design: blue and white
-- [?]Add abort option.
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 - persistence
