@@ -15,6 +15,7 @@ class CheckerResultsViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     
@@ -48,6 +49,12 @@ class CheckerResultsViewController: UIViewController {
             resultLabel.text = "\(myNumber) is not prime.\nIt is divisible by \(myIsDivisibleBy)."
             
         }
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
     }
     
     

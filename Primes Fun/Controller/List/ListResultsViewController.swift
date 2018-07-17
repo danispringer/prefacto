@@ -18,6 +18,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var noPrimesMessageLabel: UILabel!
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var jumpToTopButton: UIButton!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     
@@ -53,6 +54,12 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             noPrimesMessageLabel.isHidden = true
         }
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
         
     }
     

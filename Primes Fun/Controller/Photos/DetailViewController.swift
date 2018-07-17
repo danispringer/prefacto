@@ -26,9 +26,15 @@ class DetailViewController: UIViewController {
         
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         view.isOpaque = false
-        self.myToolbar.barTintColor = UIColor.black
+        //self.myToolbar.barTintColor = UIColor.black
         
         detailImage.image = myImage
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
     }
     
     

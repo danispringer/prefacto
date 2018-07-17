@@ -16,6 +16,7 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: Outlets
     
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     // MARK: Properties
@@ -30,6 +31,11 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: Life Cycle
     
     override func viewDidLoad() {
+
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
     }
     
