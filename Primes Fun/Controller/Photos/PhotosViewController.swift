@@ -123,20 +123,15 @@ private extension PhotosViewController {
     
     func setUIEnabled(_ enabled: Bool) {
         DispatchQueue.main.async {
-            if enabled {
-                self.collectionView.alpha = 1.0
-                self.activityIndicator.stopAnimating()
-                self.refreshButton.isEnabled = enabled
-                self.refreshButton.title = "Get new images"
-                self.headerLabel.text = "📸 Are all these prime? Find out!"
-                
-            } else {
-                self.collectionView.alpha = 0.5
+            self.refreshButton.isEnabled = enabled
+            self.collectionView.alpha = enabled ? 1.0 : 0.5
+            self.refreshButton.title = enabled ? "Get new images" : "Loading..."
+            self.headerLabel.text = enabled ? "📸 Are all these prime? Find out!" :
+            "🚂 Prime train is on the way. Get ready!"
+            
+            _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
-                self.refreshButton.isEnabled = enabled
-                self.refreshButton.title = "Loading..."
-                self.headerLabel.text = "🚂 Prime train is on the way. Get ready!"
-            }
+
         }
     }
 }

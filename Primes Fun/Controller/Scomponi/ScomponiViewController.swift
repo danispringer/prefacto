@@ -163,15 +163,10 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     func enableUI(enabled: Bool) {
         
         DispatchQueue.main.async {
-            if enabled {
-                self.activityIndicator.stopAnimating()
-                self.textfield.isEnabled = true
-                self.view.alpha = 1
-            } else {
+            self.textfield.isEnabled = enabled
+            self.view.alpha = enabled ? 1 : 0.5
+            _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
-                self.textfield.isEnabled = false
-                self.view.alpha = 0.5
-            }
         }
     }
     

@@ -96,20 +96,13 @@ class RandomViewController: UIViewController {
     
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
-            if enabled {
-                self.activityIndicator.stopAnimating()
-                self.randomizeButton.isHidden = !enabled
-                self.randomizeButton.isEnabled = enabled
-                self.randomizeLabel.text = "Random Prime"
-                self.view.alpha = 1
-            } else {
+            self.randomizeButton.isHidden = !enabled
+            self.randomizeButton.isEnabled = enabled
+            self.randomizeLabel.text = enabled ? "Random Prime" : "Randomizing..."
+            self.view.alpha = enabled ? 1 : 0.5
+            _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
-                //self.view.endEditing(true)
-                self.randomizeButton.isHidden = !enabled
-                self.randomizeButton.isEnabled = enabled
-                self.randomizeLabel.text = "Randomizing..."
-                self.view.alpha = 0.5
-            }
+            self.view.endEditing(!enabled)
         }
     }
     
