@@ -19,6 +19,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var versionButtonLabel: UILabel!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     // MARK: Properties
@@ -35,6 +36,11 @@ class AboutViewController: UIViewController {
         if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
             versionButtonLabel.text = "Version \(version)"
         }
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
     }
     

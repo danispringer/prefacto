@@ -15,6 +15,7 @@ class RandomResultsViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var randomNumberLabel: UILabel!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     // MARK: Properties
@@ -42,6 +43,11 @@ class RandomResultsViewController: UIViewController {
         
         randomNumberLabel.text = "\(myNumber)"
         
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
         
     }
 
