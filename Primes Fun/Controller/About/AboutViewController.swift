@@ -19,7 +19,6 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var versionButtonLabel: UILabel!
-    @IBOutlet weak var thanksLabel: UILabel!
     
     
     // MARK: Properties
@@ -32,7 +31,6 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        thanksLabel.isHidden = true
         
         if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
             versionButtonLabel.text = "Version \(version)"
@@ -41,23 +39,13 @@ class AboutViewController: UIViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        thanksLabel.alpha = 0.0
-        thanksLabel.font = UIFont.systemFont(ofSize: 5.0)
-    }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        thanksLabel.alpha = 0.0
-        thanksLabel.font = UIFont.systemFont(ofSize: 5.0)
-    }
-    
-    
     // MARK: Helpers
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func shareButtonPressed() {
         let message = "Check this app out: Primes Fun lets you check if a number is prime, list primes in a range, factorize, and more! https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"

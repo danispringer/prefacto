@@ -11,9 +11,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- simulate "jump to top" button pressed on status bar tapped
-- simulate ios slowed scrolling on "jump to top" pressed
-- Make alert bg transparent-ish
 - add random prime generator
 - [?] add primes orderly generator (maybe with starting point). Must have stop button.
 - Make modal like "prime-numbers-images-modal.PNG"
@@ -23,6 +20,10 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - [?]Add abort option.
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
+- persistence
+- hide jump to top and bottom buttons if all cells are visible
+- add option to turn off sound
+- optimize enableUI etc
 
 ---------------------------------------------------------------------------------------------------------------
 

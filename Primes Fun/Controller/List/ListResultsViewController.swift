@@ -17,6 +17,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var noPrimesMessageLabel: UILabel!
     @IBOutlet weak var resultsTableView: UITableView!
+    @IBOutlet weak var jumpToTopButton: UIButton!
+    
     
     
     // MARK: Properties
@@ -46,14 +48,21 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             noPrimesMessageLabel.isHidden = true
         }
+        
     }
     
     
     // MARK: Helpers
     
-    @IBAction func jumpToTopPressed(_ sender: Any) {
+    func jumpToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        
+    }
+    
+    
+    @IBAction func jumpToTopPressed(_ sender: Any) {
+        jumpToTop()
     }
     
     

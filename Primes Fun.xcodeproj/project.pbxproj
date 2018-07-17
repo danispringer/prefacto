@@ -19,6 +19,8 @@
 		333F996F20F3179F003774D4 /* ScomponiResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* ScomponiResultsViewController.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
+		33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */; };
+		33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */; };
 		33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0F18020EF4F0A0013881A /* AppDelegate.swift */; };
 		33C0F18520EF4F180013881A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C0F18320EF4F180013881A /* Assets.xcassets */; };
 		33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CA20DCB5DB003E7522 /* LaunchScreen.storyboard */; };
@@ -42,6 +44,8 @@
 		333F996E20F3179F003774D4 /* ScomponiResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScomponiResultsViewController.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
+		33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomResultsViewController.swift; sourceTree = "<group>"; };
 		33C0F18020EF4F0A0013881A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Primes Fun/AppDelegate.swift"; sourceTree = "<group>"; };
 		33C0F18320EF4F180013881A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C0F18420EF4F180013881A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				333F996820F2D8FF003774D4 /* Checker */,
 				333F996720F2BA4F003774D4 /* List */,
 				333F996B20F3173D003774D4 /* Scomponi */,
+				33A96A3D20FDFA71009E1DBA /* Random */,
 				333F996C20F3175C003774D4 /* Photos */,
 				333F996D20F3176E003774D4 /* About */,
 			);
@@ -147,6 +152,15 @@
 				333F996320F2B273003774D4 /* AboutViewController.swift */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		33A96A3D20FDFA71009E1DBA /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */,
+				33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */,
+			);
+			path = Random;
 			sourceTree = "<group>";
 		};
 		33C0F18220EF4F180013881A /* Assets */ = {
@@ -269,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */,
 				33378FC020DF4E6900DC9A42 /* Number.swift in Sources */,
 				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
 				334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */,
@@ -283,6 +298,7 @@
 				33F6747D20DF7C7B0094BCBA /* ScomponiViewController.swift in Sources */,
 				333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */,
 				333F996420F2B273003774D4 /* AboutViewController.swift in Sources */,
+				33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
 				333F996F20F3179F003774D4 /* ScomponiResultsViewController.swift in Sources */,
 			);

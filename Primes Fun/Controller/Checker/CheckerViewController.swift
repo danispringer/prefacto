@@ -17,6 +17,7 @@ class CheckerViewController: UIViewController {
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
     // MARK: Properties
     
     
