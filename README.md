@@ -3,6 +3,7 @@
 - Check whether a number is prime
 - List the prime numbers in a given range
 - Factorize to primes any given number
+- Generate random prime numbers
 - View fun images with prime numbers in them
 - Share your results, like that huge prime number you found, which everyone must know about
 - Get it here: [https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8](https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8)
