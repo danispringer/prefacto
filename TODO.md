@@ -11,9 +11,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- Migliora collectionview cells per riempire più spazio.
 - Improve design: blue and white
-- transparent top toolbar
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 - add option to turn off sound
@@ -23,9 +21,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
 - redo screenshots, update description
-
-###### Refactor:
-UICollectionView delegates could be put in a separate extension
+- UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 ~
 [?] App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
