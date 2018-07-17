@@ -31,19 +31,25 @@ class RandomViewController: UIViewController {
     // MARK: Helpers
     
     @IBAction func randomizeButtonPressed(_ sender: Any) {
-        enableUI(enabled: false)
-        
-        var randInt = Int(arc4random_uniform(1000000)+2)
-        
-        while !isPrime(number: randInt) {
-            randInt += 1
-        }
-        
-        enableUI(enabled: true)
-        
         DispatchQueue.main.async {
-            self.presentResult(number: randInt)
+            self.enableUI(enabled: false)
         }
+        
+        
+        var randInt = Int(arc4random_uniform(100000000)+2)
+        
+        let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
+        downloadQueue.async {
+            while !self.isPrime(number: randInt) {
+                randInt += 1
+            }
+            
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.presentResult(number: randInt)
+            }
+        }
+        
     }
     
     
@@ -84,12 +90,14 @@ class RandomViewController: UIViewController {
         DispatchQueue.main.async {
             if enabled {
                 self.activityIndicator.stopAnimating()
+                self.randomizeButton.isHidden = !enabled
                 self.randomizeButton.isEnabled = enabled
                 self.randomizeLabel.text = "Random Prime"
                 self.view.alpha = 1
             } else {
                 self.activityIndicator.startAnimating()
                 //self.view.endEditing(true)
+                self.randomizeButton.isHidden = !enabled
                 self.randomizeButton.isEnabled = enabled
                 self.randomizeLabel.text = "Randomizing..."
                 self.view.alpha = 0.5
