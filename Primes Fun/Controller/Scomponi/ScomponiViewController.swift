@@ -16,6 +16,8 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var myToolbar: UIToolbar!
+    
     
     // MARK: Properties
     
@@ -40,7 +42,13 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
         resignToolbar.items = [factorButton, space, cancelButton]
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

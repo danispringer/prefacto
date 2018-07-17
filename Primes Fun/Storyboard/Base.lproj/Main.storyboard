@@ -52,10 +52,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qhj-76-PO2">
                                                     <rect key="frame" x="0.0" y="0.0" width="132" height="128"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="Pf8-cF-ZCf"/>
-                                                        <constraint firstAttribute="width" constant="132" id="kUr-hJ-vjA"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -78,10 +74,8 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8iU-02-QdW">
                                 <rect key="frame" x="150" y="259.5" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-Ni-Izz">
-                                <rect key="frame" x="84.5" y="76" width="151" height="41"/>
-                                <string key="text">Are all these prime?
-Find out!</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📸 Are all these prime? Find out!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-Ni-Izz">
+                                <rect key="frame" x="20" y="76" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,15 +83,16 @@ Find out!</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5pw-g7-4gH" firstAttribute="width" secondItem="gj3-Mh-0H1" secondAttribute="width" id="D3c-nH-6jg"/>
+                            <constraint firstItem="5pw-g7-4gH" firstAttribute="leading" secondItem="QV4-uj-5sZ" secondAttribute="leading" id="3id-hI-6tD"/>
+                            <constraint firstItem="QV4-uj-5sZ" firstAttribute="trailing" secondItem="bOb-Ta-qMt" secondAttribute="trailing" id="GZe-ab-rxn"/>
                             <constraint firstItem="bOb-Ta-qMt" firstAttribute="top" secondItem="5pw-g7-4gH" secondAttribute="bottom" constant="86" id="IEU-z6-dbZ"/>
+                            <constraint firstItem="QV4-uj-5sZ" firstAttribute="trailing" secondItem="BJ5-Ni-Izz" secondAttribute="trailing" constant="20" id="MI5-kh-wU5"/>
                             <constraint firstItem="QV4-uj-5sZ" firstAttribute="bottom" secondItem="bOb-Ta-qMt" secondAttribute="bottom" id="T9N-E8-fTE"/>
                             <constraint firstItem="BJ5-Ni-Izz" firstAttribute="top" secondItem="QV4-uj-5sZ" secondAttribute="top" constant="56" id="W9J-aT-gAe"/>
+                            <constraint firstItem="QV4-uj-5sZ" firstAttribute="trailing" secondItem="5pw-g7-4gH" secondAttribute="trailing" id="bh1-vf-tY3"/>
                             <constraint firstItem="8iU-02-QdW" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="hCP-aP-onm"/>
-                            <constraint firstItem="5pw-g7-4gH" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="hLa-NV-xtS"/>
-                            <constraint firstItem="bOb-Ta-qMt" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="msu-jf-zyS"/>
-                            <constraint firstItem="BJ5-Ni-Izz" firstAttribute="centerX" secondItem="QV4-uj-5sZ" secondAttribute="centerX" id="r7t-5u-fKd"/>
-                            <constraint firstItem="bOb-Ta-qMt" firstAttribute="width" secondItem="gj3-Mh-0H1" secondAttribute="width" id="xMQ-eU-xe9"/>
+                            <constraint firstItem="BJ5-Ni-Izz" firstAttribute="leading" secondItem="QV4-uj-5sZ" secondAttribute="leading" constant="20" id="tzy-xU-WHQ"/>
+                            <constraint firstItem="bOb-Ta-qMt" firstAttribute="leading" secondItem="QV4-uj-5sZ" secondAttribute="leading" id="v2t-o1-0xG"/>
                             <constraint firstItem="8iU-02-QdW" firstAttribute="centerY" secondItem="QV4-uj-5sZ" secondAttribute="centerY" id="yI4-2D-n12"/>
                             <constraint firstItem="5pw-g7-4gH" firstAttribute="top" secondItem="QV4-uj-5sZ" secondAttribute="top" id="yqJ-i1-fIP"/>
                         </constraints>
@@ -107,6 +102,8 @@ Find out!</string>
                     <connections>
                         <outlet property="activityIndicator" destination="8iU-02-QdW" id="WtK-7l-cNG"/>
                         <outlet property="collectionView" destination="bOb-Ta-qMt" id="ZyF-j1-uTQ"/>
+                        <outlet property="headerLabel" destination="BJ5-Ni-Izz" id="RgN-fo-faa"/>
+                        <outlet property="myToolbar" destination="5pw-g7-4gH" id="TbE-AE-E2k"/>
                         <outlet property="refreshButton" destination="Cab-kh-Z1R" id="3LB-yf-ZZB"/>
                     </connections>
                 </viewController>
@@ -123,29 +120,26 @@ Find out!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-IL-DFL">
-                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="134" width="320" height="320"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="3hI-Ve-Ce5"/>
-                                    <constraint firstAttribute="height" constant="320" id="RwW-DH-WRF"/>
+                                    <constraint firstAttribute="height" constant="320" id="vdP-If-z58"/>
                                 </constraints>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaN-KP-W9A">
-                                <rect key="frame" x="0.0" y="80" width="320" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="uDQ-zZ-q7h"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.011262690355329896" green="0.0018358956966902731" blue="0.0015627779951433926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <barButtonItem title="Close" id="Gen-4n-Vy8">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="backButtonPressed:" destination="qBj-hI-XbB" id="MCH-kd-VhL"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="I0g-2Z-pdW"/>
                                     <barButtonItem systemItem="action" id="ZJ9-yd-OqS">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="shareButtonPressed:" destination="qBj-hI-XbB" id="pT9-8s-pGu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="I0g-2Z-pdW"/>
+                                    <barButtonItem title="Close" id="Gen-4n-Vy8">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="qBj-hI-XbB" id="MCH-kd-VhL"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -153,12 +147,12 @@ Find out!</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kaN-KP-W9A" firstAttribute="centerX" secondItem="gV0-b4-uOT" secondAttribute="centerX" id="FRo-qf-HMk"/>
-                            <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="MfW-eI-u9W"/>
-                            <constraint firstItem="MBl-IL-DFL" firstAttribute="top" secondItem="kaN-KP-W9A" secondAttribute="bottom" id="Ufa-FY-LCB"/>
-                            <constraint firstItem="kaN-KP-W9A" firstAttribute="width" secondItem="roB-W7-TNl" secondAttribute="width" id="ZBd-4P-fH7"/>
-                            <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" id="nKs-I4-gWd"/>
-                            <constraint firstItem="gV0-b4-uOT" firstAttribute="bottom" secondItem="MBl-IL-DFL" secondAttribute="bottom" constant="124" id="wYR-rc-7aA"/>
+                            <constraint firstItem="MBl-IL-DFL" firstAttribute="centerY" secondItem="gV0-b4-uOT" secondAttribute="centerY" id="075-kB-DIN"/>
+                            <constraint firstItem="kaN-KP-W9A" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="C21-Mj-gG6"/>
+                            <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="Nuv-X8-0oj"/>
+                            <constraint firstItem="kaN-KP-W9A" firstAttribute="top" secondItem="gV0-b4-uOT" secondAttribute="top" id="R4p-XC-Rq3"/>
+                            <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" id="n7q-Lo-iDu"/>
+                            <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="kaN-KP-W9A" secondAttribute="trailing" id="yLc-gp-ZWF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gV0-b4-uOT"/>
                     </view>
@@ -249,6 +243,7 @@ Find out!</string>
                     <navigationItem key="navigationItem" id="RoM-QN-z2j"/>
                     <connections>
                         <outlet property="activityIndicator" destination="2NI-Ma-ASa" id="TNC-Yp-8HM"/>
+                        <outlet property="myToolbar" destination="m7V-W8-Yvm" id="fSj-M9-Drm"/>
                         <outlet property="textfield" destination="m0x-Lr-7Xl" id="LsP-l7-Xxx"/>
                     </connections>
                 </viewController>
@@ -313,6 +308,7 @@ Find out!</string>
                     <tabBarItem key="tabBarItem" title="Factor" image="scomponi" id="ts3-jk-KCl"/>
                     <connections>
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
+                        <outlet property="myToolbar" destination="To0-HQ-Ycf" id="CwT-61-upa"/>
                         <outlet property="textfield" destination="ptO-hj-b9l" id="sHl-RG-VwR"/>
                     </connections>
                 </viewController>
@@ -496,6 +492,7 @@ Find out!</string>
                     <connections>
                         <outlet property="activityIndicator" destination="dhX-Mn-u5f" id="ZdQ-Zs-eJF"/>
                         <outlet property="firstTextField" destination="u8x-FV-42z" id="Dbv-ki-ZjY"/>
+                        <outlet property="myToolbar" destination="iUk-mx-5he" id="6JZ-as-kU7"/>
                         <outlet property="secondTextField" destination="yc2-op-hSX" id="h06-mI-7LD"/>
                     </connections>
                 </viewController>
@@ -789,6 +786,7 @@ Find out!</string>
                     <navigationItem key="navigationItem" id="N5f-P2-4fN"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Cjb-Z1-5xH" id="Yvu-R7-JZY"/>
+                        <outlet property="myToolbar" destination="Xwr-Tr-ST0" id="ov5-ms-5dj"/>
                         <outlet property="randomizeButton" destination="VWa-1q-r4D" id="Rob-RT-53Z"/>
                         <outlet property="randomizeLabel" destination="INr-Ds-DUI" id="Nv4-zE-zHr"/>
                     </connections>
@@ -866,6 +864,6 @@ Find out!</string>
         <image name="scomponi" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gff-bN-kRg"/>
+        <segue reference="crb-Qd-cqY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@ class RandomViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var randomizeButton: UIButton!
     @IBOutlet weak var randomizeLabel: UILabel!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     // MARK: Properties
@@ -25,7 +26,14 @@ class RandomViewController: UIViewController {
     
     // MARK: Life Cycle
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+    }
     
     
     // MARK: Helpers
