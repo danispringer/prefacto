@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -16,10 +17,17 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var myToolbar: UIToolbar!
+    
     
     // MARK: Properties
     
-    var imagesArray = [UIImage]() // to be removed
+    var imagesArray = [UIImage]() // TODO: to be removed
+    
+    let positiveSound: Int = 1023
+    let negativeSound: Int = 1257
+    
     
     // MARK: Life Cycle
     
@@ -27,6 +35,12 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         
         self.title = "Images"
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +54,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         return imagesArray.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
@@ -48,6 +63,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
@@ -55,6 +71,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         controller.modalPresentationStyle = .overCurrentContext
         present(controller, animated: true)
     }
+    
     
     // MARK: Helper functions
     
@@ -69,6 +86,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: errorReason!)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -78,6 +96,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -87,6 +106,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
+                AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
             }
         }
     }
@@ -108,12 +128,14 @@ private extension PhotosViewController {
                 self.activityIndicator.stopAnimating()
                 self.refreshButton.isEnabled = enabled
                 self.refreshButton.title = "Get new images"
+                self.headerLabel.text = "📸 Are all these prime? Find out!"
                 
             } else {
                 self.collectionView.alpha = 0.5
                 self.activityIndicator.startAnimating()
                 self.refreshButton.isEnabled = enabled
                 self.refreshButton.title = "Loading..."
+                self.headerLabel.text = "🚂 Prime train is on the way. Get ready!"
             }
         }
     }

@@ -17,6 +17,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     // MARK: Properties
@@ -46,6 +47,11 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         resignToolbar.sizeToFit()
         firstTextField.inputAccessoryView = resignToolbar
         secondTextField.inputAccessoryView = resignToolbar
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
     
     override func viewWillAppear(_ animated: Bool) {

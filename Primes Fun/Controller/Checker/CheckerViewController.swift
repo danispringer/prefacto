@@ -16,6 +16,7 @@ class CheckerViewController: UIViewController {
     
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var myToolbar: UIToolbar!
     
     
     // MARK: Properties
@@ -40,6 +41,11 @@ class CheckerViewController: UIViewController {
         resignToolbar.items = [checkButton, space, cancelButton]
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
     
     
@@ -62,7 +68,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(1257))
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
@@ -73,7 +79,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(1257))
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
@@ -94,7 +100,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(1257))
+                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
                 }
                 return
             }
@@ -116,7 +122,7 @@ class CheckerViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(1023))
+                    AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
                     self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
                 return
@@ -137,7 +143,7 @@ class CheckerViewController: UIViewController {
                 }
                 
                 if isPrimeBool {
-                    AudioServicesPlayAlertSound(SystemSoundID(1023))
+                    AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
                     // prime
                 }
                 DispatchQueue.main.async {
