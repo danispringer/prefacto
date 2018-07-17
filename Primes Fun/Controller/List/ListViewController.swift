@@ -189,18 +189,12 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
-            if enabled {
-                self.activityIndicator.stopAnimating()
-                self.firstTextField.isEnabled = enabled
-                self.secondTextField.isEnabled = enabled
-                self.view.alpha = 1
-            } else {
+            self.firstTextField.isEnabled = enabled
+            self.secondTextField.isEnabled = enabled
+            self.view.alpha = enabled ? 1 : 0.5
+            _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
-                self.view.endEditing(true)
-                self.firstTextField.isEnabled = false
-                self.secondTextField.isEnabled = false
-                self.view.alpha = 0.5
-            }
+            self.view.endEditing(!enabled)
         }
     }
     
