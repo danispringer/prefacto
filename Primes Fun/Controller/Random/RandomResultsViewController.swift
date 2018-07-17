@@ -31,7 +31,12 @@ class RandomResultsViewController: UIViewController {
         super.viewDidLoad()
         
         guard let myNumber = number else {
-            // TODO: alert user
+            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
             return
         }
         
@@ -49,7 +54,12 @@ class RandomResultsViewController: UIViewController {
         var message = ""
         
         guard let myNumber = number else {
-            // TODO: alert user
+            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
             return
         }
         

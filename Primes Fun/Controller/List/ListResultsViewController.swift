@@ -38,7 +38,12 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         guard let myFrom = from, let myTo = to else {
-            // TODO alert user
+            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
             return
         }
         

@@ -52,9 +52,12 @@ class ScomponiResultsViewController: UIViewController, UITableViewDelegate, UITa
         var message = ""
         
         guard let myNumber = number, let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
-            // TODO: alert user
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
-            present(alert, animated: true)
+            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
             return
         }
         

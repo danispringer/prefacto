@@ -17,7 +17,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - add option to turn off sound
 - persistence: sound on/off, last used view
 - hide jump to top and bottom buttons if all cells are visible
-- optimize enableUI etc
 - dismiss image on tap out of it
 - zoom image
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
