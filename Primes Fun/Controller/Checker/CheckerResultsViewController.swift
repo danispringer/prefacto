@@ -33,7 +33,12 @@ class CheckerResultsViewController: UIViewController {
         super.viewDidLoad()
         
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
-            // TODO alert user
+            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
             return
         }
         
