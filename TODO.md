@@ -11,16 +11,14 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- [?] add primes orderly generator (maybe with starting point). Must have stop button.
-- Make modal like "prime-numbers-images-modal.PNG"
+- [? - Must have stop button] add primes orderly generator (maybe with starting point).
 - Migliora collectionview cells per riempire più spazio.
-- Improve screenshots crop(? GF? CP?)
 - Improve design: blue and white
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
-- persistence
-- hide jump to top and bottom buttons if all cells are visible
 - add option to turn off sound
+- persistence: sound on/off, last used view
+- hide jump to top and bottom buttons if all cells are visible
 - optimize enableUI etc
 
 ---------------------------------------------------------------------------------------------------------------
