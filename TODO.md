@@ -11,46 +11,47 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-- [? - Must have stop button] add primes orderly generator (maybe with starting point).
 - Migliora collectionview cells per riempire più spazio.
 - Improve design: blue and white
+- transparent top toolbar
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 - add option to turn off sound
 - persistence: sound on/off, last used view
 - hide jump to top and bottom buttons if all cells are visible
 - optimize enableUI etc
+- OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
+- [? - Must have stop button] add primes orderly generator (maybe with starting point).
+- redo screenshots, update description
 
----------------------------------------------------------------------------------------------------------------
-
-[after significant change] redo screenshots, update description
-
----------------------------------------------------------------------------------------------------------------
-# Refactor:
+###### Refactor:
 UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 ~
 [?] App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 
 ###### App Store Description
-‘Primes Fun’ lets you:
+Primes Fun lets you:
 • Check whether a number is prime
 • List the prime numbers in a given range
 • Factorize to primes any given number
+• Generate random prime numbers
 • View fun images with prime numbers in them
 • Share your results, like that huge prime number you found, which everyone must know about
 
 Did you know? When running big calculations, you can navigate in between the app's different pages while they are loading, and come back to them later. Your initiated tasks won't be interrupted.
 
+Get ‘Primes Fun’ today, and discover the fun!
+
 Is there a feature you'd like to see? Leave a review!
 
-Is there a bug you'd like to go away? Let us know by opening the app and tapping on 'About' > 'Send us an email', or by visiting DaniSpringer.GitHub.io
+Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
 
 ##### Update
 
-• Version N.N.N brings some bug fixes.
+• Lorem
 
-• Found a bug? Want a feature added? Let us know by opening the app and tapping on 'About' > 'Send us an email', or by visiting DaniSpringer.GitHub.io
+• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top right 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
 • Love the app? Leave a review!
 
 
