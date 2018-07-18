@@ -20,15 +20,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-g7-4gH">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Get new images" id="Cab-kh-Z1R">
-                                        <connections>
-                                            <action selector="refreshButtonPressed" destination="DBJ-ld-CGN" id="TQ8-NT-uU1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fBT-0w-rnw"/>
                                     <barButtonItem title="About" image="about" id="Q1F-A9-cyi">
                                         <connections>
                                             <segue destination="851-uW-ykd" kind="presentation" id="gff-bN-kRg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fBT-0w-rnw"/>
+                                    <barButtonItem title="Get new images" id="Cab-kh-Z1R">
+                                        <connections>
+                                            <action selector="refreshButtonPressed" destination="DBJ-ld-CGN" id="TQ8-NT-uU1"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -133,15 +133,15 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.011262690355329896" green="0.0018358956966902731" blue="0.0015627779951433926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="ZJ9-yd-OqS">
+                                    <barButtonItem title="Done" id="Gen-4n-Vy8">
                                         <connections>
-                                            <action selector="shareButtonPressed:" destination="qBj-hI-XbB" id="pT9-8s-pGu"/>
+                                            <action selector="backButtonPressed:" destination="qBj-hI-XbB" id="MCH-kd-VhL"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="I0g-2Z-pdW"/>
-                                    <barButtonItem title="Close" id="Gen-4n-Vy8">
+                                    <barButtonItem systemItem="action" id="ZJ9-yd-OqS">
                                         <connections>
-                                            <action selector="backButtonPressed:" destination="qBj-hI-XbB" id="MCH-kd-VhL"/>
+                                            <action selector="shareButtonPressed:" destination="qBj-hI-XbB" id="pT9-8s-pGu"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -218,12 +218,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-EQ-e9X">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oRf-mV-45V"/>
                                     <barButtonItem title="About" image="about" id="axt-Z7-Yq3">
                                         <connections>
                                             <segue destination="851-uW-ykd" kind="presentation" id="4s3-Nk-qWc"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oRf-mV-45V"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -287,12 +287,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To0-HQ-Ycf">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sdH-dN-SpW"/>
                                     <barButtonItem title="About" image="about" id="5Vi-CK-cNB">
                                         <connections>
                                             <segue destination="851-uW-ykd" kind="presentation" id="wiT-Qd-Yqp"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sdH-dN-SpW"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -374,12 +374,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74f-k1-Vq3">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNI-vd-DhY"/>
-                                    <barButtonItem title="Close" id="opn-MJ-2iV">
+                                    <barButtonItem title="Done" id="opn-MJ-2iV">
                                         <connections>
                                             <action selector="closeButtonPressed:" destination="851-uW-ykd" id="W5K-qQ-FR5"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNI-vd-DhY"/>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkS-6g-Mov">
@@ -474,12 +474,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-mx-5he">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3eV-pn-0r0"/>
                                     <barButtonItem title="About" image="about" id="mjO-YZ-2qc">
                                         <connections>
                                             <segue destination="851-uW-ykd" kind="presentation" id="crb-Qd-cqY"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3eV-pn-0r0"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -556,15 +556,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pot-Xn-7oP">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="Ahw-gk-FOH">
-                                        <connections>
-                                            <action selector="share:" destination="JVg-gq-MAH" id="ZSU-kX-xAD"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FJh-jC-ycq"/>
                                     <barButtonItem systemItem="done" id="s2f-gl-MAe">
                                         <connections>
                                             <action selector="doneButtonPressed:" destination="JVg-gq-MAH" id="Q4v-Vc-b0V"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FJh-jC-ycq"/>
+                                    <barButtonItem systemItem="action" id="Ahw-gk-FOH">
+                                        <connections>
+                                            <action selector="share:" destination="JVg-gq-MAH" id="ZSU-kX-xAD"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -629,15 +629,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEg-Xb-Lgt">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="E7H-Ry-hi3">
-                                        <connections>
-                                            <action selector="share" destination="gze-xP-mv9" id="Yuo-rF-7tz"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xIy-kS-HyR"/>
                                     <barButtonItem style="plain" systemItem="done" id="Qyd-er-brp">
                                         <connections>
                                             <action selector="doneButtonPressed:" destination="gze-xP-mv9" id="Rnh-SL-D2N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xIy-kS-HyR"/>
+                                    <barButtonItem systemItem="action" id="E7H-Ry-hi3">
+                                        <connections>
+                                            <action selector="share" destination="gze-xP-mv9" id="Yuo-rF-7tz"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -705,15 +705,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU3-mS-M5k">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="AMw-Pt-ueC">
-                                        <connections>
-                                            <action selector="share:" destination="qan-ov-WlY" id="fHV-2W-oX9"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EX6-QO-vWE"/>
                                     <barButtonItem systemItem="done" id="LPe-8S-KCX">
                                         <connections>
                                             <action selector="doneButtonPressed:" destination="qan-ov-WlY" id="0Wg-61-geY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EX6-QO-vWE"/>
+                                    <barButtonItem systemItem="action" id="AMw-Pt-ueC">
+                                        <connections>
+                                            <action selector="share:" destination="qan-ov-WlY" id="fHV-2W-oX9"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -790,12 +790,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-Tr-ST0">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5Hc-4o-OkV"/>
                                     <barButtonItem title="About" image="about" id="xYd-uu-DqX">
                                         <connections>
                                             <segue destination="851-uW-ykd" kind="presentation" id="J3A-ih-rQz"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5Hc-4o-OkV"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -839,15 +839,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-Zc-OR8">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="8wG-x3-FZT">
-                                        <connections>
-                                            <action selector="share" destination="7sC-Ww-chD" id="Ktg-X6-fEy"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wVS-WD-BGj"/>
                                     <barButtonItem style="plain" systemItem="done" id="l06-Bo-KPU">
                                         <connections>
                                             <action selector="doneButtonPressed:" destination="7sC-Ww-chD" id="TIv-d3-86p"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wVS-WD-BGj"/>
+                                    <barButtonItem systemItem="action" id="8wG-x3-FZT">
+                                        <connections>
+                                            <action selector="share" destination="7sC-Ww-chD" id="Ktg-X6-fEy"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -898,6 +898,6 @@
         <image name="scomponi" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="crb-Qd-cqY"/>
+        <segue reference="gff-bN-kRg"/>
     </inferredMetricsTieBreakers>
 </document>

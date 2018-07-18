@@ -39,7 +39,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         cancelButton.tintColor = UIColor.red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
-        resignToolbar.items = [factorButton, space, cancelButton]
+        resignToolbar.items = [cancelButton, space, factorButton]
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
         
