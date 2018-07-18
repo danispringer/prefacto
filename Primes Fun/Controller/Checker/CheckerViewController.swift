@@ -38,7 +38,7 @@ class CheckerViewController: UIViewController {
         cancelButton.tintColor = UIColor.red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
-        resignToolbar.items = [checkButton, space, cancelButton]
+        resignToolbar.items = [cancelButton, space, checkButton]
         resignToolbar.sizeToFit()
         textfield.inputAccessoryView = resignToolbar
         
