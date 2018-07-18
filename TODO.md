@@ -17,6 +17,8 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
   clearer spinning icon
   launchscreen
   app icon
+  differ tableview header from body more
+
 
 
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
@@ -31,6 +33,8 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 - redo screenshots, update description
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
+
+- Palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
 ~
 [?] App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 
