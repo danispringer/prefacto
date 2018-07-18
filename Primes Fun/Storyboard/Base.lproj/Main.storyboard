@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="PhotosViewController" id="DBJ-ld-CGN" customClass="PhotosViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gj3-Mh-0H1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-g7-4gH">
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiT-tg-2Zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="1441"/>
+            <point key="canvasLocation" x="2424" y="1442"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="exh-ri-xyw">
@@ -165,18 +165,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-hk-dL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="2186"/>
+            <point key="canvasLocation" x="2423" y="2187"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gPC-s5-p8M">
             <objects>
                 <tabBarController id="msv-77-b15" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OQ6-qC-O7b">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="OQ6-qC-O7b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.94117647059999998" green="0.17581422569999999" blue="0.1675189949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="1t2-Bt-9xD" kind="relationship" relationship="viewControllers" id="PcD-sI-ABf"/>
@@ -195,7 +192,7 @@
             <objects>
                 <viewController storyboardIdentifier="CheckerViewController" id="1t2-Bt-9xD" customClass="CheckerViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yAl-ue-BIR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
@@ -257,14 +254,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87F-1e-3ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1016" y="1441"/>
+            <point key="canvasLocation" x="-1028" y="1439"/>
         </scene>
         <!--Factor-->
         <scene sceneID="Old-7D-uru">
             <objects>
-                <viewController id="GDH-dL-aVw" customClass="ScomponiViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GDH-dL-aVw" customClass="FactorizeViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rfk-CT-EXo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factorize" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-BS-llH">
@@ -324,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkA-y2-vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="1441"/>
+            <point key="canvasLocation" x="671" y="1442"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="jHa-zk-WBr">
@@ -434,14 +431,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQv-jL-HUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="636"/>
+            <point key="canvasLocation" x="1558" y="636"/>
         </scene>
         <!--List-->
         <scene sceneID="CXi-cY-2n2">
             <objects>
                 <viewController id="enb-lg-n27" customClass="ListViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiV-bV-0HS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Prime List" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-0K-8CX">
@@ -525,7 +522,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
                                 <rect key="frame" x="10" y="141" width="300" height="306"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -538,7 +535,7 @@
                                         <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H6G-mI-jWo" id="bVR-LQ-lpl">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
@@ -551,8 +548,8 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No primes in that range!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-To-rhb">
-                                <rect key="frame" x="16" y="285.5" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="261.5" width="288" height="69.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -610,6 +607,7 @@
                         <viewLayoutGuide key="safeArea" id="IJQ-WZ-WUE"/>
                     </view>
                     <connections>
+                        <outlet property="jumpToBottomButton" destination="4HI-oU-hkH" id="JwS-vr-6Ee"/>
                         <outlet property="jumpToTopButton" destination="i8z-rE-tr8" id="fQb-nh-FhC"/>
                         <outlet property="myToolbar" destination="pot-Xn-7oP" id="jG4-E8-MB2"/>
                         <outlet property="noPrimesMessageLabel" destination="Gno-To-rhb" id="ftF-8T-QRQ"/>
@@ -669,17 +667,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONJ-yy-NgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1016.25" y="2185.5633802816901"/>
+            <point key="canvasLocation" x="-1028" y="2182"/>
         </scene>
-        <!--Scomponi Results View Controller-->
+        <!--Factorize Results View Controller-->
         <scene sceneID="LNP-S7-1hI">
             <objects>
-                <viewController storyboardIdentifier="ScomponiResultsViewController" id="qan-ov-WlY" customClass="ScomponiResultsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScomponiResultsViewController" id="qan-ov-WlY" customClass="FactorizeResultsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlJ-vu-o2F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
                                 <rect key="frame" x="10" y="141" width="300" height="306"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -692,7 +690,7 @@
                                         <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsJ-X1-QkV" id="cRd-m7-bIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
@@ -761,17 +759,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taf-8r-ZgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637.5" y="2185.5633802816901"/>
+            <point key="canvasLocation" x="669" y="2186"/>
         </scene>
         <!--Random-->
         <scene sceneID="bAn-d8-3GN">
             <objects>
                 <viewController storyboardIdentifier="RandomViewController" id="rtL-8v-6Jg" customClass="RandomViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gH-MG-fXP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Prime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Ds-DUI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Ds-DUI">
                                 <rect key="frame" x="10" y="108.5" width="300" height="35"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -805,11 +803,11 @@
                         <constraints>
                             <constraint firstItem="VWa-1q-r4D" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="10" id="Dp4-U7-tel"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="JAd-wu-aHm"/>
-                            <constraint firstItem="INr-Ds-DUI" firstAttribute="top" secondItem="yjZ-am-8J6" secondAttribute="top" constant="88" id="OwC-vg-5g9"/>
                             <constraint firstItem="Xwr-Tr-ST0" firstAttribute="top" secondItem="yjZ-am-8J6" secondAttribute="top" id="SOv-wp-egV"/>
                             <constraint firstItem="VWa-1q-r4D" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="Smh-Z4-oJb"/>
                             <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="Xwr-Tr-ST0" secondAttribute="trailing" id="Sni-By-OmA"/>
                             <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="INr-Ds-DUI" secondAttribute="trailing" constant="10" id="aFK-1b-oa2"/>
+                            <constraint firstItem="INr-Ds-DUI" firstAttribute="top" secondItem="yjZ-am-8J6" secondAttribute="top" constant="88" id="aw4-WW-dYo"/>
                             <constraint firstItem="INr-Ds-DUI" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="10" id="e55-LJ-ZiR"/>
                             <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="VWa-1q-r4D" secondAttribute="trailing" constant="10" id="hgy-tX-n18"/>
                             <constraint firstItem="Xwr-Tr-ST0" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" id="mZm-1z-Mip"/>
@@ -828,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFL-N0-H7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="1441"/>
+            <point key="canvasLocation" x="1558" y="1441"/>
         </scene>
         <!--Random Results View Controller-->
         <scene sceneID="Ejf-cZ-lNr">
@@ -854,7 +852,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checker Result label will be here and this is what it will look like" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeM-Ws-wtQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Result label will be here and this is what it will look like" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeM-Ws-wtQ">
                                 <rect key="frame" x="15" y="225" width="290" height="138.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -888,7 +886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lc-oO-aJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="2186"/>
+            <point key="canvasLocation" x="1558" y="2186"/>
         </scene>
     </scenes>
     <resources>
@@ -900,6 +898,6 @@
         <image name="scomponi" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J3A-ih-rQz"/>
+        <segue reference="crb-Qd-cqY"/>
     </inferredMetricsTieBreakers>
 </document>

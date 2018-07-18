@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
+        
     }
     
     
