@@ -16,7 +16,7 @@
 		333F996420F2B273003774D4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996320F2B273003774D4 /* AboutViewController.swift */; };
 		333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996520F2BA33003774D4 /* ListResultsViewController.swift */; };
 		333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */; };
-		333F996F20F3179F003774D4 /* ScomponiResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* ScomponiResultsViewController.swift */; };
+		333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
 		33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */; };
@@ -27,7 +27,7 @@
 		33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11CC20DCB5DB003E7522 /* Main.storyboard */; };
 		33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11D520DCB607003E7522 /* Default-568h@2x.png */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */; };
-		33F6747D20DF7C7B0094BCBA /* ScomponiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */; };
+		33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */; };
 		33FBA60220DF1167003303D2 /* NumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBA60120DF1167003303D2 /* NumberType.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		333F996320F2B273003774D4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		333F996520F2BA33003774D4 /* ListResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerResultsViewController.swift; sourceTree = "<group>"; };
-		333F996E20F3179F003774D4 /* ScomponiResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScomponiResultsViewController.swift; sourceTree = "<group>"; };
+		333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeResultsViewController.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		33CB11D520DCB607003E7522 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		33EE5BC720D996C4008FEAF2 /* Primes Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Primes Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
-		33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScomponiViewController.swift; sourceTree = "<group>"; };
+		33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeViewController.swift; sourceTree = "<group>"; };
 		33FBA60120DF1167003303D2 /* NumberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 			children = (
 				333F996820F2D8FF003774D4 /* Checker */,
 				333F996720F2BA4F003774D4 /* List */,
-				333F996B20F3173D003774D4 /* Scomponi */,
+				333F996B20F3173D003774D4 /* Factorize */,
 				33A96A3D20FDFA71009E1DBA /* Random */,
 				333F996C20F3175C003774D4 /* Photos */,
 				333F996D20F3176E003774D4 /* About */,
@@ -128,13 +128,13 @@
 			path = Checker;
 			sourceTree = "<group>";
 		};
-		333F996B20F3173D003774D4 /* Scomponi */ = {
+		333F996B20F3173D003774D4 /* Factorize */ = {
 			isa = PBXGroup;
 			children = (
-				33F6747C20DF7C7B0094BCBA /* ScomponiViewController.swift */,
-				333F996E20F3179F003774D4 /* ScomponiResultsViewController.swift */,
+				33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */,
+				333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */,
 			);
-			path = Scomponi;
+			path = Factorize;
 			sourceTree = "<group>";
 		};
 		333F996C20F3175C003774D4 /* Photos */ = {
@@ -295,12 +295,12 @@
 				33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
-				33F6747D20DF7C7B0094BCBA /* ScomponiViewController.swift in Sources */,
+				33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */,
 				333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */,
 				333F996420F2B273003774D4 /* AboutViewController.swift in Sources */,
 				33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
-				333F996F20F3179F003774D4 /* ScomponiResultsViewController.swift in Sources */,
+				333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var noPrimesMessageLabel: UILabel!
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var jumpToTopButton: UIButton!
+    @IBOutlet weak var jumpToBottomButton: UIButton!
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
@@ -50,6 +51,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         
         if source.count == 0 {
             resultsTableView.isHidden = true
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
             noPrimesMessageLabel.text = "There are no prime numbers between \(myFrom) and \(myTo)!"
         } else {
             noPrimesMessageLabel.isHidden = true
@@ -163,8 +166,21 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.textLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell.selectionStyle = .none
+        cell.textLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+        cell.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = UIColor(red: 0.00, green: 0.16, blue: 0.21, alpha: 1.0)
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+        header.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 30)
+        
     }
     
     

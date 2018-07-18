@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ScomponiViewController: UIViewController, UITextFieldDelegate {
+class FactorizeViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Outlets
     
@@ -153,7 +153,7 @@ class ScomponiViewController: UIViewController, UITextFieldDelegate {
     
     func presentResults(number: Int64) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ScomponiResultsViewController") as! ScomponiResultsViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "ScomponiResultsViewController") as! FactorizeResultsViewController
         controller.number = number
         controller.source = arrayOfInts
         present(controller, animated: true)
