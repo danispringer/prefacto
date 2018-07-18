@@ -11,11 +11,14 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 ###### Developer notes:
 
-bg:      #89d2dc
-headers: #101d42
+- Improve design:
+  tabbar should be same exact color
+  random prime header label should have equal position of rest of header labels
+  clearer spinning icon
+  launchscreen
+  app icon
 
 
-- Improve design: blue and white
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 - add option to turn off sound
