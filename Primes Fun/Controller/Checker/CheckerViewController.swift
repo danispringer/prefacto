@@ -130,19 +130,13 @@ class CheckerViewController: UIViewController {
                 return
             }
             
-            let range = 2...(number - 1)
-            
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             
             downloadQueue.async {
-                for n in range {
-                    if number % n == 0 {
-                        // not prime
-                        isDivisibleBy = n
-                        isPrimeBool = false
-                        break
-                    }
-                }
+                let results = self.isPrime(number: number)
+                
+                isPrimeBool = results.0
+                isDivisibleBy = results.1
                 
                 if isPrimeBool {
                     AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
@@ -154,6 +148,40 @@ class CheckerViewController: UIViewController {
                 
             }
         }
+    }
+    
+    
+    func isPrime(number: Int64) -> (Bool, Int64) {
+        
+        var isDivisibleBy = Int64(0)
+        
+        guard number != 1 else {
+            return (true, isDivisibleBy)
+        }
+        
+        guard number != 2 else {
+            return (true, isDivisibleBy)
+        }
+        
+        guard !(number % 2 == 0) else {
+            return (false, 2)
+        }
+        
+        let highLimit: Int64 = (number - 1) / 2
+        
+        let range = 2...(highLimit)
+        
+        var isPrimeBool = true
+        
+        for n in range {
+            if number % n == 0 {
+                // not prime
+                isPrimeBool = false
+                isDivisibleBy = n
+                break
+            }
+        }
+        return (isPrimeBool, isDivisibleBy)
     }
         
         
