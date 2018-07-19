@@ -9,7 +9,6 @@
 
 ###### Developer notes (feel free to peek)
 
-- redo screenshots (including x), update description
 - once 1.0.4 is live: update app icon in places
 - add option to turn off sound
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
