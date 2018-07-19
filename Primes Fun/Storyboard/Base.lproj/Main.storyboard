@@ -714,6 +714,10 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EX6-QO-vWE"/>
+                                    <barButtonItem title="Error getting title" id="CQZ-dS-Nvl">
+                                        <color key="tintColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RiP-mz-sDx"/>
                                     <barButtonItem systemItem="action" id="AMw-Pt-ueC">
                                         <connections>
                                             <action selector="share:" destination="qan-ov-WlY" id="fHV-2W-oX9"/>
@@ -756,6 +760,7 @@
                         <viewLayoutGuide key="safeArea" id="QOY-xE-4JJ"/>
                     </view>
                     <connections>
+                        <outlet property="factorFatherLabelButton" destination="CQZ-dS-Nvl" id="GWq-Dq-Eqr"/>
                         <outlet property="myTableView" destination="o0x-Ps-BCo" id="j0e-Vv-9T0"/>
                         <outlet property="myToolbar" destination="RU3-mS-M5k" id="ga6-pq-vCp"/>
                     </connections>

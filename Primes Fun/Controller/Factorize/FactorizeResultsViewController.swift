@@ -17,6 +17,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var factorFatherLabelButton: UIBarButtonItem!
     
     
     // MARK: Properties
@@ -36,6 +37,17 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
+        factorFatherLabelButton.isEnabled = false
+        
+        factorFatherLabelButton.setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: UIFont.systemFontSize)!
+                ], for: .disabled)
+        
+        if let myNumber = number {
+            factorFatherLabelButton.title = "\(myNumber)"
+        }
 
     }
     
@@ -124,27 +136,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var toReturn = ""
-        if let number = number {
-            toReturn += "\(number)"
-        }
-        
-        return toReturn
-    }
-    
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        view.tintColor = UIColor(red: 0.00, green: 0.16, blue: 0.21, alpha: 1.0)
-        
-        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        header.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 30)
-        
-    }
-    
-    
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -153,6 +144,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return action == #selector(copy(_:))
     }
+    
     
     func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
         if action == #selector(copy(_:)) {
