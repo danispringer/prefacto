@@ -153,35 +153,33 @@ class CheckerViewController: UIViewController {
     
     func isPrime(number: Int64) -> (Bool, Int64) {
         
-        var isDivisibleBy = Int64(0)
-        
         guard number != 1 else {
-            return (true, isDivisibleBy)
+            return (true, 0)
         }
         
         guard number != 2 else {
-            return (true, isDivisibleBy)
+            return (true, 0)
         }
         
         guard !(number % 2 == 0) else {
             return (false, 2)
         }
         
-        let highLimit: Int64 = (number - 1) / 2
-        
-        let range = 2...(highLimit)
-        
-        var isPrimeBool = true
-        
-        for n in range {
-            if number % n == 0 {
-                // not prime
-                isPrimeBool = false
-                isDivisibleBy = n
-                break
-            }
+        guard !(number % 3 == 0) else {
+            return (false, 3)
         }
-        return (isPrimeBool, isDivisibleBy)
+        
+        var i: Int64 = 5
+        var w: Int64 = 2
+        
+        while i * i <= number {
+            if number % i == 0 {
+                return (false, i)
+            }
+            i += w
+            w = 6 - w
+        }
+        return (true, 0)
     }
         
         
