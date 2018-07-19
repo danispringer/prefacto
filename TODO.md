@@ -10,8 +10,7 @@
 ###### Developer notes (feel free to peek)
 
 - Improve design:
-  launchscreen
-  app icon
+  support orientations (x?)
   differ tableview header from body more clearly
 
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
