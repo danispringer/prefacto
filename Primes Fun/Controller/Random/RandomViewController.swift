@@ -44,7 +44,7 @@ class RandomViewController: UIViewController {
         }
         
         
-        var randInt = Int(arc4random_uniform(100000000)+2)
+        var randInt = Int(arc4random_uniform(100000007)+2)
         
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
