@@ -20,7 +20,7 @@ class RandomResultsViewController: UIViewController {
     
     // MARK: Properties
     
-    var number: Int!
+    var number: Int64!
     
     let positiveSound: Int = 1023
     let negativeSound: Int = 1257
