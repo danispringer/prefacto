@@ -169,12 +169,27 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     
     func isPrime(number: Int64) -> Bool {
         
-        guard number != 1, number != 2, number != 3 else {
+        guard number != 1 else {
             return true
         }
         
+        guard number != 2 else {
+            return true
+        }
+        
+        guard number != 3 else {
+            return true
+        }
+        
+        guard !(number % 2 == 0) else {
+            return false
+        }
+        
+        let highLimit: Int64 = (number - 1) / 2
+        
+        let range = 2...(highLimit)
+        
         var isPrimeBool = true
-        let range = 2...(number - 1)
         
         for n in range {
             if number % n == 0 {
@@ -185,6 +200,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         return isPrimeBool
     }
+
     
     
     func enableUI(enabled: Bool) {
