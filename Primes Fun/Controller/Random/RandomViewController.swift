@@ -44,7 +44,7 @@ class RandomViewController: UIViewController {
         }
         
         
-        var randInt = Int(arc4random_uniform(100000007)+2)
+        var randInt = Int64(arc4random_uniform(4294967292)+2)
         
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
@@ -61,7 +61,7 @@ class RandomViewController: UIViewController {
     }
     
     
-    func presentResult(number: Int) {
+    func presentResult(number: Int64) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "RandomResultsViewController") as! RandomResultsViewController
         controller.number = number
@@ -74,7 +74,7 @@ class RandomViewController: UIViewController {
     }
     
     
-    func isPrime(number: Int) -> Bool {
+    func isPrime(number: Int64) -> Bool {
         
         guard number != 1 else {
             return true
@@ -84,28 +84,25 @@ class RandomViewController: UIViewController {
             return true
         }
         
-        guard number != 3 else {
-            return true
-        }
-        
         guard !(number % 2 == 0) else {
             return false
         }
         
-        let highLimit = (number - 1) / 2
-        
-        let range = 2...(highLimit)
-        
-        var isPrimeBool = true
-        
-        for n in range {
-            if number % n == 0 {
-                // not prime
-                isPrimeBool = false
-                break
-            }
+        guard !(number % 3 == 0) else {
+            return false
         }
-        return isPrimeBool
+        
+        var i: Int64 = 5
+        var w: Int64 = 2
+        
+        while i * i <= number {
+            if number % i == 0 {
+                return false
+            }
+            i += w
+            w = 6 - w
+        }
+        return true
     }
 
     
