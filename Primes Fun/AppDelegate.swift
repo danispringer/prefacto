@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBar.backgroundImage = UIImage.from(color: .clear)
         tabBar.shadowImage = UIImage.from(color: .clear)
         
+        
         UITableView.appearance().backgroundColor = UIColor(red: 0.00, green: 0.16, blue: 0.21, alpha: 1.0)
         
         UIBarButtonItem.appearance().setTitleTextAttributes(
