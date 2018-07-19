@@ -32,12 +32,15 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 ~
 ###### App Store Description
 Primes Fun lets you:
-• Check whether a number is prime
-• List the prime numbers in a given range
-• Factorize to primes any given number
-• Generate random prime numbers
+• Check whether any* number is prime
+• List the prime numbers in any* given range
+• Factorize to primes any* given number
+• Generate random** prime numbers
 • View fun images with prime numbers in them
 • Share your results, like that huge prime number you found, which everyone must know about
+
+\*A 64 bit device, like the one in your hand, can calculate up to 9,223,372,036,854,775,807 (or 2^63 − 1)
+\*\*Random primes will be generated up to 100,000,007 (or the first prime above 100M)
 
 Did you know? When running big calculations, you can navigate in between the app's different pages while they are loading, and come back to them later. Your initiated tasks won't be interrupted.
 
@@ -51,5 +54,5 @@ Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
 
 • Lorem
 
-• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
-• Love the app? Leave a review!
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
+Love the app? Leave a review!
