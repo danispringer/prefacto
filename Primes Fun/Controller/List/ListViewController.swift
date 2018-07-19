@@ -177,28 +177,25 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             return true
         }
         
-        guard number != 3 else {
-            return true
-        }
-        
         guard !(number % 2 == 0) else {
             return false
         }
         
-        let highLimit: Int64 = (number - 1) / 2
-        
-        let range = 2...(highLimit)
-        
-        var isPrimeBool = true
-        
-        for n in range {
-            if number % n == 0 {
-                // not prime
-                isPrimeBool = false
-                break
-            }
+        guard !(number % 3 == 0) else {
+            return false
         }
-        return isPrimeBool
+        
+        var i: Int64 = 5
+        var w: Int64 = 2
+        
+        while i * i <= number {
+            if number % i == 0 {
+                return false
+            }
+            i += w
+            w = 6 - w
+        }
+        return true
     }
 
     
