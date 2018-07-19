@@ -40,7 +40,7 @@ Primes Fun lets you:
 
 Did you know? When running big calculations, you can navigate in between the app's different pages while they are loading, and come back to them later. Your initiated tasks won't be interrupted.
 
-Get ‘Primes Fun’ today, and discover the fun!
+Get Primes Fun today, and discover the fun!
 
 Is there a feature you'd like to see? Leave a review!
 
