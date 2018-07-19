@@ -11,7 +11,6 @@
 
 - Improve design:
   support orientations (x?)
-  differ tableview header from body more clearly
 
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
