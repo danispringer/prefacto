@@ -9,26 +9,26 @@
 
 ###### Developer notes (feel free to peek)
 
-- Improve design:
-  support orientations (x?)
-
-- SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
-- SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
+- redo screenshots (including x), update description
 - add option to turn off sound
-- persistence: sound on/off, last used view
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
-- dismiss image on tap out of it
-- zoom image
+- zoomable image
+- persistence: sound on/off, last used view(?)
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
-- redo screenshots, update description
+
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
+- Improve design:
+  support orientations (x?)
+- SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
+- SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 
-- Palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
 ~
-[?] App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-
+Palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
+~
+App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+~
 ###### App Store Description
 Primes Fun lets you:
 • Check whether a number is prime
@@ -50,5 +50,5 @@ Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
 
 • Lorem
 
-• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top right 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
+• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
 • Love the app? Leave a review!
