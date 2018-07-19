@@ -10,8 +10,6 @@
 ###### Developer notes (feel free to peek)
 
 - Improve design:
-  tabbar should be same exact color as bg
-  random prime header label should have equal position of rest of header labels
   launchscreen
   app icon
   differ tableview header from body more clearly
