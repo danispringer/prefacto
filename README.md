@@ -9,7 +9,8 @@
 - Get it here: [https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8](https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8)
 - Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime-numbers-fun/master/i/iphone-7.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i81.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i82.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i83.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i84.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i85.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i86.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i87.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i88.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i89.jpg)
 
 # Contributing
 Want to help? You can:
