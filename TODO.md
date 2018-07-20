@@ -9,8 +9,13 @@
 
 ###### Developer notes (feel free to peek)
 
+- amount of numbers in list of factors
+- amount of numbers in list from range
+- present results faster.
+- icon bg color
 - update app icon in places
 - add option to turn off sound
+- Add option for light/dark mode
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
 - persistence: sound on/off, last used view(?)

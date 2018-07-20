@@ -15,7 +15,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Outlets
     
-    @IBOutlet weak var noPrimesMessageLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var jumpToTopButton: UIButton!
     @IBOutlet weak var jumpToBottomButton: UIButton!
@@ -53,9 +53,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
-            noPrimesMessageLabel.text = "There are no prime numbers between \(myFrom) and \(myTo)!"
+            messageLabel.text = "There are no prime numbers between \(myFrom) and \(myTo)."
         } else {
-            noPrimesMessageLabel.isHidden = true
+            messageLabel.text = "From: \(myFrom)\nTo: \(myTo)\nPrimes: \(source.count)"
         }
         
         myToolbar.setBackgroundImage(UIImage(),

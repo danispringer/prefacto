@@ -17,7 +17,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var myToolbar: UIToolbar!
-    @IBOutlet weak var factorFatherLabelButton: UIBarButtonItem!
+    @IBOutlet weak var messageLabel: UILabel!
     
     
     // MARK: Properties
@@ -38,15 +38,9 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
-        factorFatherLabelButton.isEnabled = false
-        
-        factorFatherLabelButton.setTitleTextAttributes(
-            [
-                NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: UIFont.systemFontSize)!
-                ], for: .disabled)
-        
         if let myNumber = number {
-            factorFatherLabelButton.title = "\(myNumber)"
+            messageLabel.text = "N: \(myNumber)\nFactors: \(source.count)"
+            
         }
 
     }
