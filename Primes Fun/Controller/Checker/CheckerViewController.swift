@@ -192,7 +192,7 @@ class CheckerViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
-            self.present(controller, animated: true)
+            self.present(controller, animated: false)
         }
         
     }
