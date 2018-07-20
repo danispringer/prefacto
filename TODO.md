@@ -9,9 +9,9 @@
 
 ###### Developer notes (feel free to peek)
 
-- amount of numbers in list of factors
-- amount of numbers in list from range
 - present results faster.
+- fix launchscreen white
+- hide keyboard without animation (disrupts loading or other stuff?)
 - icon bg color
 - update app icon in places
 - add option to turn off sound
