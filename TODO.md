@@ -9,7 +9,6 @@
 
 ###### Developer notes (feel free to peek)
 
-- present results faster.
 - fix launchscreen white
 - hide keyboard without animation (disrupts loading or other stuff?)
 - icon bg color
