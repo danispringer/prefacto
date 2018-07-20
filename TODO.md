@@ -7,12 +7,10 @@
 [no requested features. Is there a feature you'd like? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
 
 
-###### Developer notes (feel free to peek)
+###### Developer notes
 
-- fix launchscreen white
-- icon bg color
-- update app icon in places
 - add option to turn off sound
+- add tutorial
 - Add option for light/dark mode
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
