@@ -10,13 +10,13 @@
 ###### Developer notes (feel free to peek)
 
 - fix launchscreen white
-- hide keyboard without animation (disrupts loading or other stuff?)
 - icon bg color
 - update app icon in places
 - add option to turn off sound
 - Add option for light/dark mode
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
+- hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: sound on/off, last used view(?)
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
