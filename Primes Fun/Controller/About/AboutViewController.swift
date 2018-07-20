@@ -54,7 +54,7 @@ class AboutViewController: UIViewController {
     
     
     @IBAction func shareButtonPressed() {
-        let message = "Check this app out: Primes Fun lets you check if a number is prime, list primes in a range, factorize, and more! https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"
+        let message = "Check this app out: Primes Fun lets you check if a number is prime, list primes in a range, factorize, generate a random prime, and more! https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {

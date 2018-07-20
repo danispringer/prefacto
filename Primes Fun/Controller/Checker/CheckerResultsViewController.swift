@@ -44,9 +44,9 @@ class CheckerResultsViewController: UIViewController {
         }
         
         if isPrime {
-            resultLabel.text = "\(myNumber) is prime!"
+            resultLabel.text = "\(myNumber): prime."
         } else {
-            resultLabel.text = "\(myNumber) is not prime.\nIt is divisible by \(myIsDivisibleBy)."
+            resultLabel.text = "\(myNumber): not prime.\nDivisible by: \(myIsDivisibleBy)."
             
         }
         
