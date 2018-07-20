@@ -161,7 +161,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 controller.source = self.arrayOfInts
                 controller.from = firstNumber
                 controller.to = secondNumber
-                self.present(controller, animated: true)
+                self.present(controller, animated: false)
             }
         }
     }
