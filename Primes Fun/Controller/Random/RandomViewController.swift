@@ -84,6 +84,10 @@ class RandomViewController: UIViewController {
             return true
         }
         
+        guard number != 3 else {
+            return true
+        }
+        
         guard !(number % 2 == 0) else {
             return false
         }

@@ -161,6 +161,10 @@ class CheckerViewController: UIViewController {
             return (true, 0)
         }
         
+        guard number != 3 else {
+            return (true, 0)
+        }
+        
         guard !(number % 2 == 0) else {
             return (false, 2)
         }
