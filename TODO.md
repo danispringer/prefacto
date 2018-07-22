@@ -30,6 +30,8 @@ Palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074,
 ~
 App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 ~
+
+
 ###### App Store Description
 Primes Fun lets you:
 • Check whether any* number is prime
@@ -49,6 +51,7 @@ Get Primes Fun today, and discover the fun!
 Is there a feature you'd like to see? Leave a review!
 
 Is there a bug you'd like to go away? Let us know: DaniSpringer.GitHub.io
+
 
 ##### Update
 
