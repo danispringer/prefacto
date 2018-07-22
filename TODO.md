@@ -10,7 +10,6 @@
 ###### Developer notes
 
 - add option to turn off sound
-- add tutorial
 - Add option for light/dark mode
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
@@ -41,7 +40,7 @@ Primes Fun lets you:
 • Share your results, like that huge prime number you found, which everyone must know about
 
 \*A 64 bit device, like the one in your hand, can calculate up to 9,223,372,036,854,775,807 (or 2^63 − 1)
-\*\*Random primes will be generated up to 100,000,007 (or the first prime above 100M)
+\*\*Random primes will be generated up to 4,000,000,000 (and some more)
 
 Did you know? When running big calculations, you can navigate in between the app's different pages while they are loading, and come back to them later. Your initiated tasks won't be interrupted.
 
