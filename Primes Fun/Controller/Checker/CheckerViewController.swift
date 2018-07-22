@@ -75,7 +75,10 @@ class CheckerViewController: UIViewController {
                 return
             }
             
-            guard let number = Int64(text) else {
+            // remove spaces
+            let trimmedText = text.trimmingCharacters(in: .whitespaces)
+            
+            guard let number = Int64(trimmedText) else {
                 let alert = self.createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
