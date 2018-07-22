@@ -402,7 +402,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcw-bR-S0b">
                                 <rect key="frame" x="10" y="153" width="300" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="Read tutorial"/>
+                                <state key="normal" title="View tutorial"/>
                                 <connections>
                                     <segue destination="R8a-aQ-82M" kind="presentation" id="87s-8v-4v1"/>
                                 </connections>
