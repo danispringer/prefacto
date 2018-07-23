@@ -84,7 +84,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -94,7 +94,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -104,7 +104,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -114,7 +114,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }

@@ -14,6 +14,7 @@
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
 		33378FC020DF4E6900DC9A42 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33378FBF20DF4E6900DC9A42 /* Number.swift */; };
 		333AD7E4210573F70010D446 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E3210573F70010D446 /* AppData.swift */; };
+		333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E6210581160010D446 /* SettingsViewControlller.swift */; };
 		333F996420F2B273003774D4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996320F2B273003774D4 /* AboutViewController.swift */; };
 		333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996520F2BA33003774D4 /* ListResultsViewController.swift */; };
 		333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */; };
@@ -42,6 +43,7 @@
 		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		33378FBF20DF4E6900DC9A42 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		333AD7E3210573F70010D446 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		333AD7E6210581160010D446 /* SettingsViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControlller.swift; sourceTree = "<group>"; };
 		333F996320F2B273003774D4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		333F996520F2BA33003774D4 /* ListResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerResultsViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				333F996C20F3175C003774D4 /* Photos */,
 				333F996D20F3176E003774D4 /* About */,
 				335FD4A0210401C300B34DC9 /* Tutorial */,
+				333AD7E5210581020010D446 /* Settings */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -117,6 +120,14 @@
 				3317915E20DA071600CA739F /* CollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		333AD7E5210581020010D446 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				333AD7E6210581160010D446 /* SettingsViewControlller.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		333F996720F2BA4F003774D4 /* List */ = {
@@ -302,6 +313,7 @@
 			files = (
 				33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */,
 				33378FC020DF4E6900DC9A42 /* Number.swift in Sources */,
+				333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */,
 				335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */,
 				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
 				334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */,

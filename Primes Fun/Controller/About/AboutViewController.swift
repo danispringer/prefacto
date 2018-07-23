@@ -20,7 +20,6 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var versionButtonLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
-    @IBOutlet weak var soundSwitch: UISwitch!
     
     
     // MARK: Properties
@@ -43,18 +42,12 @@ class AboutViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
-        soundSwitch.isOn = UserDefaults.standard.bool(forKey: "soundEnabled")
+        
         
     }
     
     
     // MARK: Helpers
-    
-    @IBAction func soundToggled(_ sender: Any) {
-        UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundEnabled")
-    }
-    
-    
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

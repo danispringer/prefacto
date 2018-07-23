@@ -86,7 +86,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: errorReason!)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -96,7 +96,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -106,7 +106,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
+                AppData.getSoundEnabledSettings(sound: self.positiveSound)
             }
         }
     }
