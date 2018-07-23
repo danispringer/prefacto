@@ -22,10 +22,6 @@ class CheckerViewController: UIViewController {
     // MARK: Properties
     
     
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
-    
-    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -70,7 +66,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }
@@ -84,7 +80,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }
@@ -105,7 +101,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }
@@ -127,7 +123,7 @@ class CheckerViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
-                    AppData.getSoundEnabledSettings(sound: self.positiveSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.positive)
                     self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
                 return
@@ -142,7 +138,7 @@ class CheckerViewController: UIViewController {
                 isDivisibleBy = results.1
                 
                 if isPrimeBool {
-                    AppData.getSoundEnabledSettings(sound: self.positiveSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.positive)
                     // prime
                 }
                 DispatchQueue.main.async {

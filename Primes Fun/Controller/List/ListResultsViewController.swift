@@ -28,10 +28,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     var source: [Int64]!
     var from: Int64!
     var to: Int64!
-    
-    
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
+
     
     
     // MARK: Life Cycle
@@ -42,7 +39,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         guard let myFrom = from, let myTo = to else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -139,7 +136,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }

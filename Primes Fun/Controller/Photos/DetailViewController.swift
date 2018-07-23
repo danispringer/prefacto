@@ -41,7 +41,6 @@ class DetailViewController: UIViewController {
     // MARK: Properties
     
     var myImage: UIImage! = nil
-    let negativeSound: Int = 1257
     
     
     // MARK: Actions
@@ -61,7 +60,7 @@ class DetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }

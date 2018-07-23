@@ -25,9 +25,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     var source: [Int64]!
     var number: Int64!
     
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
-    
     
     // MARK: Life Cycle
     
@@ -66,7 +63,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         guard let myNumber = number, let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -97,7 +94,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }

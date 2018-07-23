@@ -18,6 +18,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
+    // MARK: Properties
+    
+    let toggleSound = 1104
+    
+    
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +41,11 @@ class SettingsViewController: UIViewController {
     
     @IBAction func soundToggled(_ sender: Any) {
         UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundEnabled")
+        if soundSwitch.isOn {
+            // play tock 1104
+            AppData.getSoundEnabledSettings(sound: self.toggleSound)
+            
+        }
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {

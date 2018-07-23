@@ -22,8 +22,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
     
     var arrayOfInts = [Int64]()
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
+    
     
     // MARK: Life Cycle
     
@@ -84,7 +83,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -94,7 +93,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -104,7 +103,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -114,7 +113,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
