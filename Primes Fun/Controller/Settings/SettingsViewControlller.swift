@@ -27,7 +27,6 @@ class SettingsViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
         soundSwitch.isOn = UserDefaults.standard.bool(forKey: "soundEnabled")
-        soundStateLabel.text = soundSwitch.isOn ? "Turn sound off:" : "Turn sound on:"
     }
     
     
@@ -35,7 +34,6 @@ class SettingsViewController: UIViewController {
     
     @IBAction func soundToggled(_ sender: Any) {
         UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundEnabled")
-        soundStateLabel.text = soundSwitch.isOn ? "Turn sound off:" : "Turn sound on:"
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
