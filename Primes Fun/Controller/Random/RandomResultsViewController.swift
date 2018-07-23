@@ -48,7 +48,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         guard let myNumber = number else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -67,7 +67,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 }
                 return
             }
@@ -93,7 +93,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         guard let myNumber = number else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }

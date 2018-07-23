@@ -61,7 +61,7 @@ class DetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 }
                 return
             }

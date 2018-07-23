@@ -89,7 +89,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -100,7 +100,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -111,7 +111,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -122,7 +122,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
@@ -133,7 +133,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                AppData.getSoundEnabledSettings(sound: self.negativeSound)
             }
             return
         }
