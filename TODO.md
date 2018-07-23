@@ -13,7 +13,7 @@
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
 - hide keyboard without animation (disrupts loading or other stuff?)
-- persistence: sound on/off, last used view(?)
+- persistence: last used view(?)
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
 
@@ -25,7 +25,9 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
 
 ~
-Palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
+Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
+Dark mode palette: black, white, maybe pirate black
+light mode palette: default colors
 ~
 App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 ~
