@@ -10,6 +10,7 @@
 ###### Developer notes
 
 - Add option for light/dark mode
+- Async images
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
 - hide keyboard without animation (disrupts loading or other stuff?)
