@@ -24,9 +24,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     
     var arrayOfInts = [Int64]()
     
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
-    
     
     // MARK: Life Cycle
     
@@ -89,7 +86,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -100,7 +97,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -111,7 +108,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -122,7 +119,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }
@@ -133,7 +130,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
             }
             return
         }

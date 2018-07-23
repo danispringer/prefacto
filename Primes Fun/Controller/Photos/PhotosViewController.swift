@@ -25,9 +25,6 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var imagesArray = [UIImage]() // TODO: to be removed
     
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
-    
     
     // MARK: Life Cycle
     
@@ -86,7 +83,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: errorReason!)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -96,7 +93,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -106,7 +103,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
-                AppData.getSoundEnabledSettings(sound: self.positiveSound)
+                AppData.getSoundEnabledSettings(sound: Sound.positive)
             }
         }
     }

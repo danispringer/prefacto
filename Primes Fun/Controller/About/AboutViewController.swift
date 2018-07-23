@@ -24,9 +24,6 @@ class AboutViewController: UIViewController {
     
     // MARK: Properties
     
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
-    
     
     // MARK: Life Cycle
     

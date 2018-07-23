@@ -17,12 +17,10 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var randomNumberTableView: UITableView!
     @IBOutlet weak var myToolbar: UIToolbar!
     
+    
     // MARK: Properties
     
     var number: Int64!
-    
-    let positiveSound: Int = 1023
-    let negativeSound: Int = 1257
     
     
     // MARK: Life Cycle
@@ -36,7 +34,6 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
     }
-
     
     
     // MARK: Helpers
@@ -48,7 +45,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         guard let myNumber = number else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -67,7 +64,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }
@@ -93,7 +90,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         guard let myNumber = number else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }

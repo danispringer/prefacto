@@ -25,8 +25,6 @@ class CheckerResultsViewController: UIViewController {
     var isPrime: Bool!
     var isDivisibleBy: Int64!
     
-    let negativeSound: Int = 1257
-    
     
     // MARK: Life Cycle
     
@@ -36,7 +34,7 @@ class CheckerResultsViewController: UIViewController {
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
             let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -85,7 +83,7 @@ class CheckerResultsViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
+                    AppData.getSoundEnabledSettings(sound: Sound.negative)
                 }
                 return
             }
