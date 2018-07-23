@@ -70,7 +70,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 }
                 return
             }
@@ -84,7 +84,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 }
                 return
             }
@@ -105,7 +105,7 @@ class CheckerViewController: UIViewController {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
                     self.present(alert, animated: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.negativeSound))
+                    AppData.getSoundEnabledSettings(sound: self.negativeSound)
                 }
                 return
             }
@@ -127,7 +127,7 @@ class CheckerViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
-                    AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
+                    AppData.getSoundEnabledSettings(sound: self.positiveSound)
                     self.presentResult(number: number, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
                 return
@@ -142,7 +142,7 @@ class CheckerViewController: UIViewController {
                 isDivisibleBy = results.1
                 
                 if isPrimeBool {
-                    AudioServicesPlayAlertSound(SystemSoundID(self.positiveSound))
+                    AppData.getSoundEnabledSettings(sound: self.positiveSound)
                     // prime
                 }
                 DispatchQueue.main.async {

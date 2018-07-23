@@ -349,16 +349,21 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hNI-vd-DhY"/>
+                                    <barButtonItem title="Tutorial" id="4Il-qi-Vx7">
+                                        <connections>
+                                            <segue destination="R8a-aQ-82M" kind="presentation" id="6Eb-W5-Atq"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love this app?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FE-mb-t9I">
-                                <rect key="frame" x="10" y="210" width="300" height="23.5"/>
+                                <rect key="frame" x="10" y="179.5" width="300" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUO-wX-ycd">
-                                <rect key="frame" x="10" y="324" width="300" height="32"/>
+                                <rect key="frame" x="10" y="293.5" width="300" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Send us an email"/>
                                 <connections>
@@ -366,13 +371,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell your friends about Primes Fun" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F04-AD-Mdv">
-                                <rect key="frame" x="10" y="381" width="300" height="46.5"/>
+                                <rect key="frame" x="10" y="350.5" width="300" height="46.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-Qr-Inb">
-                                <rect key="frame" x="10" y="433" width="300" height="32"/>
+                                <rect key="frame" x="10" y="402.5" width="300" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Share"/>
                                 <connections>
@@ -380,44 +385,41 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found a bug? Have a question?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsF-ep-byg">
-                                <rect key="frame" x="10" y="296" width="300" height="23.5"/>
+                                <rect key="frame" x="10" y="265.5" width="300" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkS-6g-Mov">
-                                <rect key="frame" x="10" y="239" width="300" height="32"/>
+                                <rect key="frame" x="10" y="208.5" width="300" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Leave us a review"/>
                                 <connections>
                                     <action selector="requestReviewManually" destination="851-uW-ykd" eventType="touchUpInside" id="Q23-4Y-voB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need some help?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bro-jx-UKw">
-                                <rect key="frame" x="10" y="124" width="300" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn sound on/off" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bro-jx-UKw">
+                                <rect key="frame" x="10" y="90" width="300" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.8980392157" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcw-bR-S0b">
-                                <rect key="frame" x="10" y="153" width="300" height="32"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="View tutorial"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-xS-jgf">
+                                <rect key="frame" x="136" y="123.5" width="51" height="31"/>
                                 <connections>
-                                    <segue destination="R8a-aQ-82M" kind="presentation" id="87s-8v-4v1"/>
+                                    <action selector="soundToggled:" destination="851-uW-ykd" eventType="valueChanged" id="NOS-o6-JjI"/>
                                 </connections>
-                            </button>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8FE-mb-t9I" firstAttribute="top" secondItem="Lcw-bR-S0b" secondAttribute="bottom" constant="25" id="0E5-C3-6id"/>
+                            <constraint firstItem="hkf-xS-jgf" firstAttribute="centerX" secondItem="h0P-v1-rQN" secondAttribute="centerX" id="0Da-SJ-DEx"/>
                             <constraint firstItem="F04-AD-Mdv" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="BdB-BB-j3a"/>
-                            <constraint firstItem="Lcw-bR-S0b" firstAttribute="top" secondItem="Bro-jx-UKw" secondAttribute="bottom" constant="5" id="BxE-m9-jNp"/>
                             <constraint firstItem="TsF-ep-byg" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="DGk-ab-azf"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="tUO-wX-ycd" secondAttribute="trailing" constant="10" id="Etx-6J-604"/>
+                            <constraint firstItem="hkf-xS-jgf" firstAttribute="top" secondItem="Bro-jx-UKw" secondAttribute="bottom" constant="10" id="JJC-Ha-Kri"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="74f-k1-Vq3" secondAttribute="trailing" id="KED-cD-osd"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="nkS-6g-Mov" secondAttribute="trailing" constant="10" id="LXj-kW-16T"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="Lcw-bR-S0b" secondAttribute="trailing" constant="10" id="NxY-fa-4WI"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="Jgs-tP-g1Q" secondAttribute="trailing" constant="10" id="PZs-Av-fiO"/>
                             <constraint firstItem="tUO-wX-ycd" firstAttribute="top" secondItem="TsF-ep-byg" secondAttribute="bottom" constant="5" id="Szp-le-Pnp"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="Bro-jx-UKw" secondAttribute="trailing" constant="10" id="TDg-UM-jw5"/>
@@ -429,16 +431,15 @@
                             <constraint firstItem="Bro-jx-UKw" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="aWc-oi-iSA"/>
                             <constraint firstItem="wYa-Qr-Inb" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="fv9-qy-eMW"/>
                             <constraint firstItem="wYa-Qr-Inb" firstAttribute="top" secondItem="F04-AD-Mdv" secondAttribute="bottom" constant="5" id="fyG-ep-9RX"/>
-                            <constraint firstItem="Lcw-bR-S0b" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="gES-X1-5JV"/>
                             <constraint firstItem="TsF-ep-byg" firstAttribute="top" secondItem="nkS-6g-Mov" secondAttribute="bottom" constant="25" id="gu3-fv-oro"/>
-                            <constraint firstItem="Lcw-bR-S0b" firstAttribute="top" secondItem="Bro-jx-UKw" secondAttribute="bottom" constant="5" id="hSE-HU-AtA"/>
+                            <constraint firstItem="8FE-mb-t9I" firstAttribute="top" secondItem="hkf-xS-jgf" secondAttribute="bottom" constant="25" id="ldx-sz-40V"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="bottom" secondItem="Jgs-tP-g1Q" secondAttribute="bottom" constant="30" id="mTI-Sq-ahD"/>
                             <constraint firstItem="8FE-mb-t9I" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="n2M-vS-3fg"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="TsF-ep-byg" secondAttribute="trailing" constant="10" id="n67-sp-QjH"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="wYa-Qr-Inb" secondAttribute="trailing" constant="10" id="oMa-hA-qE1"/>
                             <constraint firstItem="74f-k1-Vq3" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" id="sXl-uk-DJP"/>
                             <constraint firstItem="Jgs-tP-g1Q" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="10" id="siZ-r6-kuw"/>
-                            <constraint firstItem="Bro-jx-UKw" firstAttribute="top" secondItem="h0P-v1-rQN" secondAttribute="top" constant="104" id="tCy-L6-Ens"/>
+                            <constraint firstItem="Bro-jx-UKw" firstAttribute="top" secondItem="h0P-v1-rQN" secondAttribute="top" constant="70" id="tCy-L6-Ens"/>
                             <constraint firstItem="F04-AD-Mdv" firstAttribute="top" secondItem="tUO-wX-ycd" secondAttribute="bottom" constant="25" id="z5S-5j-CPV"/>
                             <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="8FE-mb-t9I" secondAttribute="trailing" constant="10" id="zzE-lz-zqN"/>
                         </constraints>
@@ -450,12 +451,28 @@
                         <outlet property="myToolbar" destination="74f-k1-Vq3" id="lG0-Qw-23p"/>
                         <outlet property="reviewButton" destination="nkS-6g-Mov" id="vcw-fd-D57"/>
                         <outlet property="shareButton" destination="wYa-Qr-Inb" id="SL3-XT-RoK"/>
+                        <outlet property="soundSwitch" destination="hkf-xS-jgf" id="i0Q-9E-BKM"/>
                         <outlet property="versionButtonLabel" destination="Jgs-tP-g1Q" id="vHh-MT-dHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQv-jL-HUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1558" y="692"/>
+            <point key="canvasLocation" x="1558" y="360"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RXM-9H-pex">
+            <objects>
+                <viewController id="EGf-9u-VfO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vp4-zW-nbr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-q0-kOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2441" y="692"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="koQ-9e-pBq">
@@ -669,7 +686,7 @@ Not sure whether a number you see is prime? I think you know what to do by now. 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEs-6E-Q5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439.375" y="691.90140845070425"/>
+            <point key="canvasLocation" x="2438" y="-60"/>
         </scene>
         <!--List-->
         <scene sceneID="CXi-cY-2n2">
