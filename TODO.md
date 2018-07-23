@@ -9,7 +9,6 @@
 
 ###### Developer notes
 
-- if never set before, set sound to true
 - Add option for light/dark mode
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
