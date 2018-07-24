@@ -45,15 +45,10 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+        
     }
     
     
@@ -78,9 +73,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     // MARK: CollectionViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let indicator = scrollView.subviews.last as? UIImageView
-        indicator?.image = nil
-        indicator?.backgroundColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+        DispatchQueue.main.async {
+            let indicator = scrollView.subviews.last as? UIImageView
+            indicator?.image = nil
+            indicator?.backgroundColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+        }
     }
     
     
@@ -107,6 +104,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 (data, error) in
                 
                 guard error == nil else {
+                    // TODO: alert
                     print("error")
                     return
                 }
@@ -116,11 +114,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                     imageUI =  UIImage(data: imageData)
                 }
                 
-                self.fetchedResultsController.fetchedObjects![indexPath.row].imageData = data
-                
-                try? self.dataController.viewContext.save()
                 
                 DispatchQueue.main.async {
+                    self.fetchedResultsController.fetchedObjects![indexPath.row].imageData = data
+                    try? self.dataController.viewContext.save()
+                    
                     cell.cellImageView.image = imageUI
                 }
             }
@@ -135,7 +133,10 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
         controller.myImage = UIImage(data: fetchedResultsController.fetchedObjects![indexPath.row].imageData!)
         controller.modalPresentationStyle = .overCurrentContext
-        present(controller, animated: true)
+        DispatchQueue.main.async {
+            self.present(controller, animated: true)
+        }
+        
     }
     
     
@@ -169,14 +170,16 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             
-            for imageUrl in safeData {
-                let dataToSave = Photo(context: self.dataController.viewContext)
-                dataToSave.url = imageUrl
-                try? self.dataController.viewContext.save()
-            }
-            self.setupFetchedResultsController()
+            
             
             DispatchQueue.main.async {
+                for imageUrl in safeData {
+                    let dataToSave = Photo(context: self.dataController.viewContext)
+                    dataToSave.url = imageUrl
+                    try? self.dataController.viewContext.save()
+                }
+                self.setupFetchedResultsController()
+                
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
                 AppData.getSoundEnabledSettings(sound: Sound.positive)
@@ -213,7 +216,6 @@ private extension PhotosViewController {
             
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
-
         }
     }
 }
