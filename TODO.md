@@ -9,10 +9,10 @@
 
 ###### Developer notes
 
-- update description with tutorialV?
 - Add option for light, true dark, blue dark mode
 - add option for how often to save images to app (1-? seconds)
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
+- hide jump to top/bottom when on top/bottom
 - zoomable image
 - hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: last used view(?)
@@ -22,6 +22,7 @@
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 - Improve design:
+  iPad custom
   support orientations (x?)
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
