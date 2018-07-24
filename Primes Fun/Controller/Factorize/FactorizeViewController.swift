@@ -1,5 +1,5 @@
 //
-//  ScomponiViewController.swift
+//  FactorizeViewController.swift
 //  Primes Fun
 //
 //  Created by Dani Springer on 19/06/2018.
@@ -152,7 +152,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     
     func presentResults(number: Int64) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ScomponiResultsViewController") as! FactorizeResultsViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "FactorizeResultsViewController") as! FactorizeResultsViewController
         controller.number = number
         controller.source = arrayOfInts
         present(controller, animated: false)
