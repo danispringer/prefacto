@@ -21,7 +21,7 @@ class FlickrClient: NSObject {
     
     // MARK: GET
     
-    static func getPhotosAbstracted(completion: @escaping (_ data: [UIImage]?, _ errorReason: String?) -> Void) {
+    static func getPhotosAbstracted(completion: @escaping (_ data: [URL]?, _ errorReason: String?) -> Void) {
         
         let session = URLSession.shared
         let url = flickrURLFromParameters()
@@ -64,12 +64,12 @@ class FlickrClient: NSObject {
                 return
             }
             
-            guard let photoArray = photosDictionary[Constants.FlickrResponseKeys.Photo] as? [[String:AnyObject]] else {
+            guard let photoArray = photosDictionary[Constants.FlickrResponseKeys.FlickrPhoto] as? [[String:AnyObject]] else {
                 completion(nil, "unknown")
                 return
             }
             
-            var images = [UIImage]()
+            var imagesUrls = [URL]()
             
             for _ in 1...20 {
                 let randomPhotoIndex = Int(arc4random_uniform(UInt32(photoArray.count)))
@@ -80,27 +80,38 @@ class FlickrClient: NSObject {
                     return
                 }
                 
-                let imageURL = URL(string: imageUrlString)
-                
-                if let imageData = try? Data(contentsOf: imageURL!) {
-                    
-                    if let actualImage = UIImage(data: imageData) {
-                        
-                        images.append(actualImage)
-                    }
-                    
+                guard let imageURL = URL(string: imageUrlString) else {
+                    print("cannot convert string to URL:\(imageUrlString)")
+                    return
                 }
+                
+                imagesUrls.append(imageURL)
+                
             }
-            
-            
-            completion(images, nil)
-            
+            completion(imagesUrls, nil)
         }
         
         task.resume()
     }
     
     // MARK: Helpers
+    
+    static func downloadSingleImage( imgUrl: URL, completion: @escaping (_ imageData: Data?, _ errorString: String?) -> Void) {
+        let session = URLSession.shared
+        let request: NSURLRequest = NSURLRequest(url: imgUrl)
+        
+        let task = session.dataTask(with: request as URLRequest) {data, response, errorString in
+            
+            if errorString != nil {
+                completion(nil, "Could not download image \(imgUrl)")
+            } else {
+                completion(data, nil)
+            }
+        }
+        task.resume()
+    }
+
+    
     
     static func flickrURLFromParameters() -> URL {
         

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import CoreData
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -23,13 +24,19 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     // MARK: Properties
     
-    var imagesArray = [UIImage]() // TODO: to be removed
+    var photo: Photo!
+    
+    var dataController: DataController!
+    
+    var fetchedResultsController: NSFetchedResultsController<Photo>!
     
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupFetchedResultsController()
         
         self.title = "Images"
         
@@ -40,22 +47,84 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if fetchedResultsController.fetchedObjects?.count == 0 {
+            print("count is 0")
+            //getImagesURLs()
+        } else {
+            print("count is not 0")
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
+    
+    
+    // MARK: Core Data
+    
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest:NSFetchRequest<Photo> = Photo.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "url", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "url")
+        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
+    }
+    
     
     // MARK: CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imagesArray.count
+        return fetchedResultsController.fetchedObjects!.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        cell.cellImageView.image = imagesArray[(indexPath as NSIndexPath).row]
+        var imageUI = UIImage(named: "VirtualTourist_500.png")
+        
+        if let data = fetchedResultsController.fetchedObjects![indexPath.row].imageData {
+            imageUI = UIImage(data: data)
+            DispatchQueue.main.async {
+                cell.cellImageView.image = imageUI
+            }
+            return cell
+        }
+        
+        if let urlString = fetchedResultsController.fetchedObjects![indexPath.row].url {
+            FlickrClient.downloadSingleImage(imgUrl: urlString) {
+                (data, error) in
+                
+                guard error == nil else {
+                    print("error")
+                    return
+                }
+                
+                imageUI = UIImage(data: data!)
+                if let imageData = data {
+                    imageUI =  UIImage(data: imageData)
+                }
+                
+                self.fetchedResultsController.fetchedObjects![indexPath.row].imageData = data
+                
+                try? self.dataController.viewContext.save()
+                
+                DispatchQueue.main.async {
+                    cell.cellImageView.image = imageUI
+                }
+            }
+        }
         
         return cell
     }
@@ -64,7 +133,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-        controller.myImage = imagesArray[(indexPath as NSIndexPath).row]
+        controller.myImage = UIImage(data: fetchedResultsController.fetchedObjects![indexPath.row].imageData!)
         controller.modalPresentationStyle = .overCurrentContext
         present(controller, animated: true)
     }
@@ -72,7 +141,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     // MARK: Helper functions
     
-    func getPhotos() {
+    func getImagesUrls() {
         DispatchQueue.main.async {
             self.setUIEnabled(false)
         }
@@ -89,7 +158,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 }
                 return
             }
-            guard let data = data else {
+            guard let safeData = data else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
@@ -99,7 +168,14 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 }
                 return
             }
-            self.imagesArray = data
+            
+            for imageUrl in safeData {
+                let dataToSave = Photo(context: self.dataController.viewContext)
+                dataToSave.url = imageUrl
+                try? self.dataController.viewContext.save()
+            }
+            self.setupFetchedResultsController()
+            
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
@@ -109,7 +185,16 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     @IBAction func refreshButtonPressed() {
-        getPhotos()
+//        for (index, _) in fetchedResultsController.fetchedObjects!.enumerated() {
+//            let indexPath = IndexPath(row: index, section: 0)
+//            let toDelete = fetchedResultsController.object(at: indexPath)
+//            dataController.viewContext.delete(toDelete)
+//
+//        }
+//        try? dataController.viewContext.save()
+//        print("count after emptying: \(String(describing: fetchedResultsController.fetchedObjects?.count))")
+        
+        getImagesUrls()
     }
 
 }

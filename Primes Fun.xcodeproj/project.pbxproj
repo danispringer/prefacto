@@ -19,6 +19,8 @@
 		333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996520F2BA33003774D4 /* ListResultsViewController.swift */; };
 		333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */; };
 		333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */; };
+		3349CF7B2106A2E000FCF4E5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */; };
+		3349CF7D2106A34500FCF4E5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349CF7C2106A34500FCF4E5 /* DataController.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
 		335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FD4A1210401E300B34DC9 /* TutorialViewController.swift */; };
@@ -49,6 +51,8 @@
 		333F996520F2BA33003774D4 /* ListResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerResultsViewController.swift; sourceTree = "<group>"; };
 		333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeResultsViewController.swift; sourceTree = "<group>"; };
+		3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3349CF7C2106A34500FCF4E5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		335FD4A1210401E300B34DC9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		3317915C20DA042F00CA739F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */,
 				3317915520D9FE3600CA739F /* Flickr */,
 				3376A51321000688001431C8 /* UIImage+Extension.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
@@ -98,6 +103,7 @@
 				33378FBF20DF4E6900DC9A42 /* Number.swift */,
 				333AD7E3210573F70010D446 /* AppData.swift */,
 				33ECA6382105B90A00E1264A /* Sounds.swift */,
+				3349CF7C2106A34500FCF4E5 /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,7 +330,9 @@
 				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
 				3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */,
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,
+				3349CF7D2106A34500FCF4E5 /* DataController.swift in Sources */,
 				33ECA6392105B90A00E1264A /* Sounds.swift in Sources */,
+				3349CF7B2106A2E000FCF4E5 /* Model.xcdatamodeld in Sources */,
 				33FBA60220DF1167003303D2 /* NumberType.swift in Sources */,
 				33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
@@ -538,6 +546,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 33EE5BBF20D996C4008FEAF2 /* Project object */;
 }
