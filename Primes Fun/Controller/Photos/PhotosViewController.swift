@@ -51,15 +51,8 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if fetchedResultsController.fetchedObjects?.count == 0 {
-            print("count is 0")
-            //getImagesURLs()
-        } else {
-            print("count is not 0")
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
     }
     
@@ -185,14 +178,14 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     @IBAction func refreshButtonPressed() {
-//        for (index, _) in fetchedResultsController.fetchedObjects!.enumerated() {
-//            let indexPath = IndexPath(row: index, section: 0)
-//            let toDelete = fetchedResultsController.object(at: indexPath)
-//            dataController.viewContext.delete(toDelete)
-//
-//        }
-//        try? dataController.viewContext.save()
-//        print("count after emptying: \(String(describing: fetchedResultsController.fetchedObjects?.count))")
+        for (index, _) in fetchedResultsController.fetchedObjects!.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+            let toDelete = fetchedResultsController.object(at: indexPath)
+            dataController.viewContext.delete(toDelete)
+
+        }
+        try? dataController.viewContext.save()
+        print("count after emptying: \(String(describing: fetchedResultsController.fetchedObjects?.count))")
         
         getImagesUrls()
     }
