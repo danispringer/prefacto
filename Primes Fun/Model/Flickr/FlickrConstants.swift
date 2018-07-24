@@ -53,7 +53,7 @@ struct Constants {
     struct FlickrResponseKeys {
         static let Status = "stat"
         static let Photos = "photos"
-        static let Photo = "photo"
+        static let FlickrPhoto = "photo"
         static let Title = "title"
         static let MediumURL = "url_m"
         static let Pages = "pages"
