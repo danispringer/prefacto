@@ -46,7 +46,7 @@ extension UIViewController {
             alertMessage = "No text allowed. Just numbers.\nMax number: 9223372036854775807\nOr (2^63 − 1)"
         case alertReason.zero.rawValue:
             alertTitle = "Oops"
-            alertMessage = "Is seems like you entered no value. Or actually, 0 value. Please enter a different number."
+            alertMessage = "It seems like you entered no value. Or actually, 0 value. Please enter a different number."
         case alertReason.one.rawValue:
             alertTitle = "Hmm..."
             alertMessage = "Is 1 prime? Nobody knows! Please enter a different number."
