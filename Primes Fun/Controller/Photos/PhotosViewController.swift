@@ -85,7 +85,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        var imageUI = UIImage(named: "VirtualTourist_500.png")
+        var imageUI = UIImage(named: "refresh.png")
         
         if let data = fetchedResultsController.fetchedObjects![indexPath.row].imageData {
             imageUI = UIImage(data: data)
@@ -185,7 +185,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         }
         try? dataController.viewContext.save()
-        print("count after emptying: \(String(describing: fetchedResultsController.fetchedObjects?.count))")
+        print("count after emptying: \(String(describing: fetchedResultsController.fetchedObjects!.count))")
         
         getImagesUrls()
     }
