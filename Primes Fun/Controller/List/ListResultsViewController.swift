@@ -55,6 +55,12 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             messageLabel.text = "From: \(myFrom)\nTo: \(myTo)\nPrimes: \(source.count)"
         }
         
+        if resultsTableView.numberOfRows(inSection: 0) <= 3 {
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
+            resultsTableView.isScrollEnabled = false
+        }
+        
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -173,17 +179,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
         
         return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        view.tintColor = UIColor(red: 0.00, green: 0.16, blue: 0.21, alpha: 1.0)
-        
-        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        header.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 30)
-        
     }
     
     

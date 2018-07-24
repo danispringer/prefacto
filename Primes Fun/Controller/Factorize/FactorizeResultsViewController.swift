@@ -1,5 +1,5 @@
 //
-//  ScomponiResultsViewController.swift
+//  FactorizeResultsViewController.swift
 //  Primes Fun
 //
 //  Created by Dani Springer on 09/07/2018.
@@ -15,9 +15,11 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: Outlets
     
-    @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var jumpToTopButton: UIButton!
+    @IBOutlet weak var jumpToBottomButton: UIButton!
     
     
     // MARK: Properties
@@ -39,6 +41,12 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             messageLabel.text = "N: \(myNumber)\nFactors: \(source.count)"
             
         }
+        
+        if resultsTableView.numberOfRows(inSection: 0) <= 3 {
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
+            resultsTableView.isScrollEnabled = false
+        }
 
     }
     
@@ -47,13 +55,13 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBAction func jumpToTopPressed(_ sender: Any) {
         let indexPath = IndexPath(row: 0, section: 0)
-        myTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
     
     @IBAction func jumpToBottomPressed(_ sender: Any) {
-        let indexPath = IndexPath(row: myTableView.numberOfRows(inSection: 0) - 1, section: 0)
-        myTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
+        resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     
