@@ -9,7 +9,6 @@
 
 ###### Developer notes
 
-- update description and tutorial with core data feats
 - update description with tutorialV?
 - Add option for light, true dark, blue dark mode
 - add option for how often to save images to app (1-? seconds)
