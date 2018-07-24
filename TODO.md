@@ -10,7 +10,9 @@
 ###### Developer notes
 
 - update description and tutorial with core data feats
-- Add option for light/dark mode
+- update description with tutorialV?
+- Add option for light, true dark, blue dark mode
+- add option for how often to save images to app (1-? seconds)
 - hide jump to top and bottom buttons if all cells are visible (or if 'no primes in range')
 - zoomable image
 - hide keyboard without animation (disrupts loading or other stuff?)
