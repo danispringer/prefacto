@@ -17,20 +17,21 @@ class DataController {
         return persistentContainer.viewContext
     }
     
-    let backgroundContext:NSManagedObjectContext!
-    
+//    let backgroundContext:NSManagedObjectContext!
+
     init(modelName:String) {
         persistentContainer = NSPersistentContainer(name: modelName)
-        
-        backgroundContext = persistentContainer.newBackgroundContext()
+
+//        backgroundContext = persistentContainer.newBackgroundContext()
     }
     
     func configureContexts() {
         viewContext.automaticallyMergesChangesFromParent = true
-        backgroundContext.automaticallyMergesChangesFromParent = true
-        
-        backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+        
+//        backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+//        backgroundContext.automaticallyMergesChangesFromParent = true
+        
     }
     
     func load(completion: (() -> Void)? = nil) {

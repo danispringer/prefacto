@@ -111,9 +111,17 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: Delegates
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let indicator = scrollView.subviews.last as? UIImageView
+        indicator?.image = nil
+        indicator?.backgroundColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FactorCell")!

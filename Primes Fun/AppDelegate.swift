@@ -58,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: 20)!,
                 //NSAttributedStringKey.foregroundColor : view.tintColor,
             ], for: .disabled)
-
         
         return true
     }
