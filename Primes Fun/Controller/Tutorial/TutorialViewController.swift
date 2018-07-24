@@ -39,8 +39,6 @@ class TutorialViewController: UIViewController {
     }
     
     
-    
-    
     @IBAction func closeButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
