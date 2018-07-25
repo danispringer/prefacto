@@ -13,6 +13,7 @@
 - add option for how often to save images to app (1-? seconds)
 - hide jump to top/bottom when on top/bottom
 - zoomable image
+- tap out of image to dismiss
 - hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: last used view(?)
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)

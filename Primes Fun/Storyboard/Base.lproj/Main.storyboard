@@ -122,12 +122,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-IL-DFL">
-                                <rect key="frame" x="0.0" y="134" width="320" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="vdP-If-z58"/>
-                                </constraints>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaN-KP-W9A">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.011262690355329896" green="0.0018358956966902731" blue="0.0015627779951433926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,26 +141,49 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhM-fs-6im">
+                                <rect key="frame" x="0.0" y="134" width="320" height="320"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-IL-DFL">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="5P9-4l-md9"/>
+                                            <constraint firstAttribute="height" constant="320" id="Y1S-HM-pyL"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="lhM-fs-6im" secondAttribute="leading" id="1vb-MC-3SK"/>
+                                    <constraint firstAttribute="height" constant="320" id="FcJ-yH-a84"/>
+                                    <constraint firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" constant="-61" id="Gbb-jw-SXP"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="top" secondItem="lhM-fs-6im" secondAttribute="top" id="Q2Z-tH-aSO"/>
+                                    <constraint firstAttribute="bottom" secondItem="MBl-IL-DFL" secondAttribute="bottom" id="Qs4-MC-CLE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="qBj-hI-XbB" id="h4n-QR-tLE"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MBl-IL-DFL" firstAttribute="centerY" secondItem="gV0-b4-uOT" secondAttribute="centerY" id="075-kB-DIN"/>
+                            <constraint firstItem="lhM-fs-6im" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="A9f-Oz-Tpn"/>
                             <constraint firstItem="kaN-KP-W9A" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="C21-Mj-gG6"/>
-                            <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="Nuv-X8-0oj"/>
+                            <constraint firstItem="lhM-fs-6im" firstAttribute="centerY" secondItem="gV0-b4-uOT" secondAttribute="centerY" id="Ktn-mX-ljE"/>
                             <constraint firstItem="kaN-KP-W9A" firstAttribute="top" secondItem="gV0-b4-uOT" secondAttribute="top" id="R4p-XC-Rq3"/>
-                            <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" id="n7q-Lo-iDu"/>
+                            <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="lhM-fs-6im" secondAttribute="trailing" id="YEE-GX-NS8"/>
                             <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="kaN-KP-W9A" secondAttribute="trailing" id="yLc-gp-ZWF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gV0-b4-uOT"/>
                     </view>
                     <connections>
                         <outlet property="detailImage" destination="MBl-IL-DFL" id="1cn-I7-Fd3"/>
+                        <outlet property="myScrollView" destination="lhM-fs-6im" id="THw-yh-Mc2"/>
                         <outlet property="myToolbar" destination="kaN-KP-W9A" id="Zvl-cU-jo3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-hk-dL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="2177"/>
+            <point key="canvasLocation" x="2437.5" y="2176.0563380281692"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gPC-s5-p8M">

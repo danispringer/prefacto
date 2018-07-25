@@ -11,12 +11,18 @@ import UIKit
 import AVFoundation
 import StoreKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: Outlets
     
+    @IBOutlet weak var myScrollView: UIScrollView!
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var myToolbar: UIToolbar!
+    
+    
+    // MARK: Properties
+    
+    var myImage: UIImage! = nil
     
     
     // MARK: Life Cycle
@@ -35,12 +41,10 @@ class DetailViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
+        myScrollView.minimumZoomScale = 1.0
+        myScrollView.maximumZoomScale = 6.0
+        
     }
-    
-    
-    // MARK: Properties
-    
-    var myImage: UIImage! = nil
     
     
     // MARK: Actions
@@ -66,5 +70,12 @@ class DetailViewController: UIViewController {
             }
         }
         self.present(activityController, animated: true)
+    }
+    
+    
+    // MARK: ScrollView Delegates
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return detailImage
     }
 }
