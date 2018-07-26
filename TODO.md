@@ -13,6 +13,8 @@
 - add option for how often to save images to app (1-? seconds)
 - hide jump to top/bottom when on top/bottom
 - zoomable image
+- link to GitHub (also add to Guess Fun)
+- Link to Guess Fun (also add to Guess Fun)
 - tap out of image to dismiss
 - hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: last used view(?)
