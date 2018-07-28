@@ -171,7 +171,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListTableViewCell
         
         cell.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell.selectionStyle = .none
@@ -197,9 +197,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
         if action == #selector(copy(_:)) {
-            let cell = tableView.cellForRow(at: indexPath)
+            let cell = tableView.cellForRow(at: indexPath) as! ListTableViewCell
             let pasteboard = UIPasteboard.general
-            pasteboard.string = cell?.textLabel?.text
+            pasteboard.string = cell.numberLabel?.text
         }
     }
     

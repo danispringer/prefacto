@@ -1,20 +1,19 @@
 //
-//  TableViewCell.swift
+//  FactorizeTableViewCell.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 28/07/2018.
+//  Created by Dani Springer on 29/07/2018.
 //  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class FactorizeTableViewCell: UITableViewCell {
     
     // MARK: Outlets
     
     @IBOutlet weak var indexLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    
     
 }
