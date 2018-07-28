@@ -9,6 +9,9 @@
 
 ###### Developer notes
 
+- numbered results, Skip to N
+- double tap to zoom in/out image
+- group by: same N, none
 - Add option for light, true dark, blue dark mode
 - add option for how often to save images to app (1-? seconds)
 - hide jump to top/bottom when on top/bottom
