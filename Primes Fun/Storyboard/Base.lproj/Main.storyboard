@@ -1027,7 +1027,7 @@ Primes: 123456890</string>
                                 <color key="sectionIndexColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="TableViewCell" customModule="Primes_Fun" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Primes_Fun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H6G-mI-jWo" id="bVR-LQ-lpl">
@@ -1055,7 +1055,7 @@ Primes: 123456890</string>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="lns-Po-Sqc" firstAttribute="leading" secondItem="Vzb-yw-AMK" secondAttribute="trailing" constant="12.5" id="ROX-Dw-B0h"/>
+                                                <constraint firstItem="lns-Po-Sqc" firstAttribute="leading" secondItem="Vzb-yw-AMK" secondAttribute="trailing" constant="12" id="ROX-Dw-B0h"/>
                                                 <constraint firstItem="Vzb-yw-AMK" firstAttribute="leading" secondItem="bVR-LQ-lpl" secondAttribute="leading" constant="10" id="Sb1-cT-2qx"/>
                                                 <constraint firstItem="lns-Po-Sqc" firstAttribute="centerY" secondItem="bVR-LQ-lpl" secondAttribute="centerY" id="h4Z-Ai-jPN"/>
                                                 <constraint firstAttribute="trailing" secondItem="lns-Po-Sqc" secondAttribute="trailing" constant="10" id="sfy-cg-9dE"/>
@@ -1121,7 +1121,7 @@ Primes: 123456890</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT3-YB-X1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="2177"/>
+            <point key="canvasLocation" x="-204.375" y="2176.0563380281692"/>
         </scene>
         <!--Checker Results View Controller-->
         <scene sceneID="CW1-WH-5aG">
@@ -1209,15 +1209,46 @@ Divisible by: 857.</string>
                                 <color key="sectionIndexColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Primes_Fun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsJ-X1-QkV" id="cRd-m7-bIe">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8l-rz-Rbw" userLabel="Index Label">
+                                                    <rect key="frame" x="10" y="5" width="78.5" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="H3k-zA-mui"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-YK-Szs" userLabel="Number Label">
+                                                    <rect key="frame" x="100.5" y="5" width="189.5" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="kQQ-5j-MEI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Ira-YK-Szs" firstAttribute="leading" secondItem="T8l-rz-Rbw" secondAttribute="trailing" constant="12" id="GzP-IA-xbV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ira-YK-Szs" secondAttribute="trailing" constant="10" id="fps-cZ-Nki"/>
+                                                <constraint firstItem="Ira-YK-Szs" firstAttribute="centerY" secondItem="cRd-m7-bIe" secondAttribute="centerY" id="jjZ-4R-n2k"/>
+                                                <constraint firstItem="T8l-rz-Rbw" firstAttribute="leading" secondItem="cRd-m7-bIe" secondAttribute="leading" constant="10" id="opw-Pf-aTx"/>
+                                                <constraint firstItem="T8l-rz-Rbw" firstAttribute="centerY" secondItem="cRd-m7-bIe" secondAttribute="centerY" id="ul3-aY-7J5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="indexLabel" destination="T8l-rz-Rbw" id="hhB-eO-IzM"/>
+                                            <outlet property="numberLabel" destination="Ira-YK-Szs" id="nzP-tg-B6L"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
