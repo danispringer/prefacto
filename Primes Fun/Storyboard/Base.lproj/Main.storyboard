@@ -1035,7 +1035,7 @@ Primes: 123456890</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lns-Po-Sqc" userLabel="Number Label">
-                                                    <rect key="frame" x="100.5" y="5" width="189.5" height="35"/>
+                                                    <rect key="frame" x="100" y="5" width="189.5" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="9se-nT-z3F"/>
                                                     </constraints>
