@@ -9,7 +9,8 @@
 
 ###### Developer notes
 
-- numbered results, Skip to N
+- Skip to N
+- swipe to share row? Did you know N is the Xth prime / factor between A and B / of A?
 - double tap to zoom in/out image
 - group by: same N, none
 - Add option for light, true dark, blue dark mode
