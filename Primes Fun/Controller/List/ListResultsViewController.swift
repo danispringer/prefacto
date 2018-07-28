@@ -171,12 +171,16 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! TableViewCell
         
-        cell.textLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
+        cell.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell.selectionStyle = .none
-        cell.textLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        cell.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
+        cell.numberLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+        cell.numberLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
+        
+        cell.indexLabel?.text = "\(indexPath.row + 1)."
+        cell.indexLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
+        cell.indexLabel?.font = UIFont(name: "AmericanTypewriter", size: 16)
         
         return cell
     }
