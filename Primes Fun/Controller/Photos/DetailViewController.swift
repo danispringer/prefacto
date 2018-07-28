@@ -44,6 +44,24 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         myScrollView.minimumZoomScale = 1.0
         myScrollView.maximumZoomScale = 6.0
         
+        detailImage.isUserInteractionEnabled = true
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        
+        doubleTap.delegate = self as? UIGestureRecognizerDelegate
+        doubleTap.numberOfTapsRequired = 2
+        detailImage.addGestureRecognizer(doubleTap)
+    }
+    
+    
+    // MARK: Helpers
+    
+    @objc func doubleTapped() {
+        if myScrollView.zoomScale == myScrollView.minimumZoomScale {
+            myScrollView.setZoomScale(myScrollView.maximumZoomScale, animated: true)
+        } else {
+            myScrollView.setZoomScale(myScrollView.minimumZoomScale, animated: true)
+        }
     }
     
     
