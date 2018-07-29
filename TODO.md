@@ -22,6 +22,7 @@
 - hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: last used view(?)
 - center random prime result
+- avoid user entering an obviously too long/big number to be checked
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
 
