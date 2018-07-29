@@ -159,10 +159,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         let halfLocalNumber = localNumber / 2
         
         while index <= halfLocalNumber {
-//            while localNumber % index == 0 {
-//                localNumber = localNumber / index
-//                self.arrayOfInts.append(index)
-//            }
             var results: (Bool, Int64)
             results = isPrimeOrDivisibleBy(number: localNumber)
             
