@@ -88,7 +88,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        guard var number = Int64(text) else {
+        guard let number = Int64(text) else {
             let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
@@ -118,8 +118,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        var index = Int64(2)
-        
         guard number != 1 else {
             DispatchQueue.main.async {
                 self.arrayOfInts = [1]
@@ -129,26 +127,21 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let userNumber = number
+        let savedUserNumber = number
         
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         
         downloadQueue.async {
             self.arrayOfInts = []
+            self.isPrimeFactorizeVariant(number: number)
             
-            while index <= number {
-                while number % index == 0 {
-                    number = number / index
-                    self.arrayOfInts.append(index)
-                }
-                index += 1
-            }
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
-                self.presentResults(number: userNumber)
+                self.presentResults(number: savedUserNumber)
             }
         }
     }
+    
     
     func presentResults(number: Int64) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -156,6 +149,68 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         controller.number = number
         controller.source = arrayOfInts
         present(controller, animated: false)
+    }
+    
+    
+    func isPrimeFactorizeVariant(number: Int64) {
+        
+        var index = Int64(2)
+        var localNumber = number
+        let halfLocalNumber = localNumber / 2
+        
+        while index <= halfLocalNumber {
+//            while localNumber % index == 0 {
+//                localNumber = localNumber / index
+//                self.arrayOfInts.append(index)
+//            }
+            var results: (Bool, Int64)
+            results = isPrimeOrDivisibleBy(number: localNumber)
+            
+            if results.0 {
+                self.arrayOfInts.append(localNumber)
+                break
+            } else {
+                arrayOfInts.append(results.1)
+                localNumber = localNumber / results.1
+            }
+            index += 1
+        }
+    }
+    
+    
+    func isPrimeOrDivisibleBy(number: Int64) -> (Bool, Int64) {
+        
+        guard number != 1 else {
+            return (true, 0)
+        }
+        
+        guard number != 2 else {
+            return (true, 0)
+        }
+        
+        guard number != 3 else {
+            return (true, 0)
+        }
+        
+        guard !(number % 2 == 0) else {
+            return (false, 2)
+        }
+        
+        guard !(number % 3 == 0) else {
+            return (false, 3)
+        }
+        
+        var i: Int64 = 5
+        var w: Int64 = 2
+        
+        while i * i <= number {
+            if number % i == 0 {
+                return (false, i)
+            }
+            i += w
+            w = 6 - w
+        }
+        return (true, 0)
     }
 
     
