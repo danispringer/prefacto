@@ -11,15 +11,14 @@
 
 - Skip to N
 - swipe to share row? Did you know N is the Xth prime / factor between A and B / of A?
-- double tap to zoom in/out image
 - group by: same N, none
 - Add option for light, true dark, blue dark mode
 - add option for how often to save images to app (1-? seconds)
 - hide jump to top/bottom when on top/bottom
-- zoomable image
 - link to GitHub (also add to Guess Fun)
 - Link to Guess Fun (also add to Guess Fun)
 - tap out of image to dismiss
+- long tap to copy image (with copy menu)
 - hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: last used view(?)
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
