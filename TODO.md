@@ -21,6 +21,7 @@
 - long tap to copy image (with copy menu)
 - hide keyboard without animation (disrupts loading or other stuff?)
 - persistence: last used view(?)
+- center random prime result
 - OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
 
