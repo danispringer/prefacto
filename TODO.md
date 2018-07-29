@@ -23,7 +23,7 @@
 - persistence: last used view(?)
 - center random prime result
 - [?] avoid user entering an obviously too long/big number to be checked
-- OCR: Do images have their number in their Flickr description? How hard is it to find a number in an image? (OCR)
+- OCR: Do images have their number in their Flickr description? https://github.com/garnele007/SwiftOCR
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
 
 - UICollectionView delegates could be put in a separate extension
