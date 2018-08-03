@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TutorialViewController: UIViewController {
+class TutorialViewController: UIViewController, UITextViewDelegate {
     
     // MARK: Outlets
     
@@ -25,10 +25,25 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myTextView.delegate = self
+        
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
+        myTextView.isScrollEnabled = true
+        myTextView.indicatorStyle = .white
+        
+        myTextView.flashScrollIndicators()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        myTextView.flashScrollIndicators()
+        
     }
     
     
@@ -41,6 +56,11 @@ class TutorialViewController: UIViewController {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let verticalIndicator = scrollView.subviews.last as? UIImageView
+        verticalIndicator?.backgroundColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
     }
     
 }
