@@ -10,7 +10,7 @@
 ###### Developer notes
 
 - Skip to N
-- swipe to share row? Did you know N is the Xth prime / factor between A and B / of A?
+- swipe to share row? Did you know X is the nth prime / factor between A and B / of A?
 - group by: same N, none
 - Add option for light, true dark, blue dark mode
 - add option for how often to save images to app (1-? seconds)
