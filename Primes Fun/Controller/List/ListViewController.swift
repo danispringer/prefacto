@@ -35,8 +35,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         
         let resignToolbar = UIToolbar()
         
-        let listButton = UIBarButtonItem(title: "List", style: UIBarButtonItemStyle.plain, target: self, action: #selector(checkButtonPressed))
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(cancelAndHideKeyboard))
+        let listButton = UIBarButtonItem(title: "List", style: UIBarButtonItem.Style.plain, target: self, action: #selector(checkButtonPressed))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelAndHideKeyboard))
         cancelButton.tintColor = UIColor.red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
