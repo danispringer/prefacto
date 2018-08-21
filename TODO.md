@@ -25,6 +25,7 @@
 - [?] avoid user entering an obviously too long/big number to be checked
 - OCR: Do images have their number in their Flickr description? https://github.com/garnele007/SwiftOCR
 - [? - Must have stop button] add primes orderly generator (maybe with starting point).
+- PF: warn about permission denied if image saving fails
 
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
