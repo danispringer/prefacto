@@ -9,12 +9,7 @@
 
 ###### Developer notes
 
-- Skip to N
-- swipe to share row? Did you know X is the nth prime / factor between A and B / of A?
-- group by: same N, none
 - Add option for light, true dark, blue dark mode
-- add option for how often to save images to app (1-? seconds)
-- hide jump to top/bottom when on top/bottom
 - link to GitHub (also add to Guess Fun)
 - Link to Guess Fun (also add to Guess Fun)
 - tap out of image to dismiss
