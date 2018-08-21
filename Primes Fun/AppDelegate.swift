@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // Helpers
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         dataController.load()
@@ -40,22 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: 20)!,
+                NSAttributedString.Key.font : UIFont(name: "AmericanTypewriter", size: 20)!,
                 //NSAttributedStringKey.foregroundColor : view.tintColor,
             ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: 20)!,
+                NSAttributedString.Key.font : UIFont(name: "AmericanTypewriter", size: 20)!,
                 //NSAttributedStringKey.foregroundColor : view.tintColor,
             ], for: .selected)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: 20)!,
+                NSAttributedString.Key.font : UIFont(name: "AmericanTypewriter", size: 20)!,
                 //NSAttributedStringKey.foregroundColor : view.tintColor,
                 ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont(name: "AmericanTypewriter", size: 20)!,
+                NSAttributedString.Key.font : UIFont(name: "AmericanTypewriter", size: 20)!,
                 //NSAttributedStringKey.foregroundColor : view.tintColor,
             ], for: .disabled)
         
