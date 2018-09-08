@@ -6,7 +6,7 @@
 - Generate random prime numbers
 - View fun images with prime numbers in them
 - Share your results, like that huge prime number you found, which everyone must know about
-- Get it here: [https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8](https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8)
+- Get it here: https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8
 - Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 
@@ -17,7 +17,10 @@ Want to help? You can:
 - Suggest changes by creating an Issue.
 - Submit your own fix or improvements by creating a Pull Request.
 - Share this project to spread the word.
-- Contact me: [https://danispringer.github.io/](https://danispringer.github.io/)
+- Contact me: https://danispringer.github.io/
+
+# Credits
+- Screenshots: https://mockuphone.com
 
 # License
 Copyright © 2018 Dani Springer. All rights reserved.
