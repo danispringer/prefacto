@@ -102,6 +102,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         cell.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
         
         cell.textLabel?.text = "\(myNumber)"
+        cell.textLabel?.frame = CGRect(x: 0, y: (cell.textLabel?.frame.origin.y)!, width: cell.frame.size.width, height: (cell.textLabel?.frame.size.height)!)
         cell.textLabel?.textAlignment = .center
         
         return cell
