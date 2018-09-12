@@ -1,13 +1,15 @@
 # Primes Fun (iOS)
-‘Primes Fun’ lets you:
 - Check whether a number is prime
-- List the prime numbers in a given range
-- Factorize to primes any given number
-- Generate random prime numbers
-- View fun images with prime numbers in them
-- Share your results, like that huge prime number you found, which everyone must know about
+- List the prime numbers in a range
+- Factorize a number
+- Generate random primes
+- Share or save your results
+- And more
 - Get it here: https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8
-- Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
+
+Is there a feature you'd like to see? A bug you'd like to go away? Let us know: www.DaniSpringer.GitHub.io
+
+Love the app? Please consider leaving a 5-star review!
 
 
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i81.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i82.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i83.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i84.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i85.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i86.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i87.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i88.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i89.jpg)
