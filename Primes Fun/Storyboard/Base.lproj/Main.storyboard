@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msv-77-b15">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msv-77-b15">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="PhotosViewController" id="DBJ-ld-CGN" customClass="PhotosViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gj3-Mh-0H1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-g7-4gH">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="About" image="about" id="Q1F-A9-cyi">
                                         <connections>
@@ -34,7 +34,7 @@
                                 </items>
                             </toolbar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-Ta-qMt">
-                                <rect key="frame" x="0.0" y="140.5" width="320" height="378.5"/>
+                                <rect key="frame" x="0.0" y="117.5" width="375" height="500.5"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OeT-cN-Jyq">
                                     <size key="itemSize" width="132" height="128"/>
@@ -74,11 +74,11 @@
                                 </connections>
                             </collectionView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8iU-02-QdW">
-                                <rect key="frame" x="150" y="259.5" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="309" width="20" height="20"/>
                                 <color key="color" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📸 Are all these prime? Find out!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-Ni-Izz">
-                                <rect key="frame" x="10" y="79" width="300" height="46.5"/>
+                                <rect key="frame" x="10" y="79" width="355" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -119,11 +119,11 @@
             <objects>
                 <viewController storyboardIdentifier="Detail" id="qBj-hI-XbB" customClass="DetailViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="roB-W7-TNl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaN-KP-W9A">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.011262690355329896" green="0.0018358956966902731" blue="0.0015627779951433926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <barButtonItem title="Done" id="Gen-4n-Vy8">
@@ -142,22 +142,20 @@
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhM-fs-6im">
-                                <rect key="frame" x="0.0" y="134" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="93.5" width="375" height="500"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-IL-DFL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="5P9-4l-md9"/>
-                                            <constraint firstAttribute="height" constant="320" id="Y1S-HM-pyL"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="lhM-fs-6im" secondAttribute="leading" id="1vb-MC-3SK"/>
-                                    <constraint firstAttribute="height" constant="320" id="FcJ-yH-a84"/>
-                                    <constraint firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" constant="-61" id="Gbb-jw-SXP"/>
+                                    <constraint firstAttribute="height" constant="500" id="FcJ-yH-a84"/>
+                                    <constraint firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" id="Gbb-jw-SXP"/>
                                     <constraint firstItem="MBl-IL-DFL" firstAttribute="top" secondItem="lhM-fs-6im" secondAttribute="top" id="Q2Z-tH-aSO"/>
                                     <constraint firstAttribute="bottom" secondItem="MBl-IL-DFL" secondAttribute="bottom" id="Qs4-MC-CLE"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="width" secondItem="lhM-fs-6im" secondAttribute="width" id="c1o-0j-Z7P"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="height" secondItem="lhM-fs-6im" secondAttribute="height" id="zMM-fW-toQ"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="qBj-hI-XbB" id="h4n-QR-tLE"/>
@@ -212,17 +210,17 @@
             <objects>
                 <viewController storyboardIdentifier="CheckerViewController" id="1t2-Bt-9xD" customClass="CheckerViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yAl-ue-BIR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="77" y="90" width="166.5" height="35"/>
+                                <rect key="frame" x="104.5" y="90" width="166.5" height="35"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter any number here" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl">
-                                <rect key="frame" x="10" y="170" width="300" height="40"/>
+                                <rect key="frame" x="10" y="170" width="355" height="40"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="S7O-Dy-kzA"/>
@@ -232,11 +230,11 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-Ma-ASa">
-                                <rect key="frame" x="150" y="240" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="240" width="20" height="20"/>
                                 <color key="color" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-EQ-e9X">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="About" image="about" id="axt-Z7-Yq3">
                                         <connections>
@@ -281,17 +279,17 @@
             <objects>
                 <viewController id="GDH-dL-aVw" customClass="FactorizeViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rfk-CT-EXo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factorize" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-BS-llH">
-                                <rect key="frame" x="10" y="90" width="300" height="35"/>
+                                <rect key="frame" x="10" y="90" width="355" height="35"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter any number here" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-hj-b9l">
-                                <rect key="frame" x="10" y="170" width="300" height="40"/>
+                                <rect key="frame" x="10" y="170" width="355" height="40"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3aW-L4-KEj"/>
@@ -301,11 +299,11 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
-                                <rect key="frame" x="150" y="240" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="240" width="20" height="20"/>
                                 <color key="color" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To0-HQ-Ycf">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="About" image="about" id="5Vi-CK-cNB">
                                         <connections>
@@ -348,17 +346,17 @@
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" id="851-uW-ykd" customClass="AboutViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtE-AI-CET">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error showing version. Please let the devs know." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-tP-g1Q">
-                                <rect key="frame" x="10" y="491.5" width="300" height="46.5"/>
+                                <rect key="frame" x="10" y="590.5" width="355" height="46.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74f-k1-Vq3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Done" id="opn-MJ-2iV">
                                         <connections>
@@ -374,13 +372,13 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love this app?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FE-mb-t9I">
-                                <rect key="frame" x="10" y="162" width="300" height="23.5"/>
+                                <rect key="frame" x="10" y="162" width="355" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUO-wX-ycd">
-                                <rect key="frame" x="10" y="276" width="300" height="32"/>
+                                <rect key="frame" x="10" y="276" width="355" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Send us an email"/>
                                 <connections>
@@ -388,13 +386,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell your friends about Primes Fun" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F04-AD-Mdv">
-                                <rect key="frame" x="10" y="333" width="300" height="46.5"/>
+                                <rect key="frame" x="10" y="333" width="355" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-Qr-Inb">
-                                <rect key="frame" x="10" y="385" width="300" height="32"/>
+                                <rect key="frame" x="10" y="361.5" width="355" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Share"/>
                                 <connections>
@@ -402,13 +400,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found a bug? Have a question?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsF-ep-byg">
-                                <rect key="frame" x="10" y="248" width="300" height="23.5"/>
+                                <rect key="frame" x="10" y="247.5" width="355" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkS-6g-Mov">
-                                <rect key="frame" x="10" y="191" width="300" height="32"/>
+                                <rect key="frame" x="10" y="190.5" width="355" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Leave us a review"/>
                                 <connections>
@@ -416,7 +414,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twb-W1-owe">
-                                <rect key="frame" x="10" y="90" width="300" height="32"/>
+                                <rect key="frame" x="10" y="90" width="355" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
@@ -475,11 +473,11 @@
             <objects>
                 <viewController id="EGf-9u-VfO" customClass="SettingsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vp4-zW-nbr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52V-Jx-G3u">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Done" id="usU-Tl-SiH">
                                         <connections>
@@ -489,13 +487,13 @@
                                 </items>
                             </toolbar>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-xS-jgf">
-                                <rect key="frame" x="255" y="86" width="51" height="31"/>
+                                <rect key="frame" x="255" y="86" width="106" height="31"/>
                                 <connections>
                                     <action selector="soundToggled:" destination="EGf-9u-VfO" eventType="valueChanged" id="G2Q-Lp-xHt"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bro-jx-UKw">
-                                <rect key="frame" x="10" y="90" width="80" height="23.5"/>
+                                <rect key="frame" x="10" y="90" width="135" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.8980392157" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -530,11 +528,11 @@
             <objects>
                 <viewController id="R8a-aQ-82M" customClass="TutorialViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mfy-L1-8AS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jb-tv-VdS">
-                                <rect key="frame" x="10" y="64" width="300" height="494"/>
+                                <rect key="frame" x="10" y="64" width="355" height="593"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -870,7 +868,7 @@ Cgo
                                 </connections>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brq-yh-L5h">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Done" id="yAH-KG-5Sv">
                                         <connections>
@@ -912,17 +910,17 @@ Cgo
             <objects>
                 <viewController id="enb-lg-n27" customClass="ListViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiV-bV-0HS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Prime List" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-0K-8CX">
-                                <rect key="frame" x="10" y="90" width="300" height="35"/>
+                                <rect key="frame" x="10" y="90" width="355" height="35"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter first number here" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-FV-42z">
-                                <rect key="frame" x="10" y="170" width="300" height="40"/>
+                                <rect key="frame" x="10" y="170" width="355" height="40"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="yEi-Ba-BEA"/>
@@ -932,7 +930,7 @@ Cgo
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter second number here" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-op-hSX">
-                                <rect key="frame" x="10" y="225" width="300" height="40"/>
+                                <rect key="frame" x="10" y="225" width="355" height="40"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JXA-aw-pHi"/>
@@ -942,7 +940,7 @@ Cgo
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-mx-5he">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="About" image="about" id="mjO-YZ-2qc">
                                         <connections>
@@ -953,7 +951,7 @@ Cgo
                                 </items>
                             </toolbar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
-                                <rect key="frame" x="150" y="295" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="295" width="20" height="20"/>
                                 <color key="color" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -993,11 +991,11 @@ Cgo
             <objects>
                 <viewController storyboardIdentifier="ListResultsViewController" id="JVg-gq-MAH" customClass="ListResultsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hfp-05-dJl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pot-Xn-7oP">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="done" id="s2f-gl-MAe">
                                         <connections>
@@ -1013,7 +1011,7 @@ Cgo
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-To-rhb">
-                                <rect key="frame" x="10" y="90" width="300" height="69.5"/>
+                                <rect key="frame" x="10" y="90" width="355" height="69.5"/>
                                 <string key="text">From: 1234567890
 To: 1234567890
 Primes: 123456890</string>
@@ -1022,7 +1020,7 @@ Primes: 123456890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
-                                <rect key="frame" x="10" y="275" width="300" height="200"/>
+                                <rect key="frame" x="10" y="324.5" width="355" height="200"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="eXV-rT-4xx"/>
@@ -1031,14 +1029,14 @@ Primes: 123456890</string>
                                 <color key="sectionIndexBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Primes_Fun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H6G-mI-jWo" id="bVR-LQ-lpl">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lns-Po-Sqc" userLabel="Number Label">
-                                                    <rect key="frame" x="100" y="5" width="189.5" height="35"/>
+                                                    <rect key="frame" x="100.5" y="4.5" width="283.5" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="9se-nT-z3F"/>
                                                     </constraints>
@@ -1047,7 +1045,7 @@ Primes: 123456890</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzb-yw-AMK" userLabel="Index Label">
-                                                    <rect key="frame" x="10" y="5" width="78.5" height="35"/>
+                                                    <rect key="frame" x="10" y="4.5" width="78.5" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="aeO-EB-z3z"/>
                                                     </constraints>
@@ -1078,7 +1076,7 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="14" y="224" width="290" height="36"/>
+                                <rect key="frame" x="14" y="273.5" width="345" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to top"/>
                                 <connections>
@@ -1086,7 +1084,7 @@ Primes: 123456890</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
-                                <rect key="frame" x="14" y="490" width="290" height="36"/>
+                                <rect key="frame" x="14" y="539.5" width="345" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to bottom"/>
                                 <connections>
@@ -1131,11 +1129,11 @@ Primes: 123456890</string>
             <objects>
                 <viewController storyboardIdentifier="CheckerResultsViewController" id="gze-xP-mv9" customClass="CheckerResultsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dop-lv-uoq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEg-Xb-Lgt">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="done" id="Qyd-er-brp">
                                         <connections>
@@ -1151,7 +1149,7 @@ Primes: 123456890</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHh-na-Oah">
-                                <rect key="frame" x="10" y="271" width="300" height="46.5"/>
+                                <rect key="frame" x="10" y="320.5" width="355" height="46.5"/>
                                 <string key="text">12345678901: not prime.
 Divisible by: 857.</string>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
@@ -1184,11 +1182,11 @@ Divisible by: 857.</string>
             <objects>
                 <viewController storyboardIdentifier="FactorizeResultsViewController" id="qan-ov-WlY" customClass="FactorizeResultsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlJ-vu-o2F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU3-mS-M5k">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="done" id="LPe-8S-KCX">
                                         <connections>
@@ -1204,7 +1202,7 @@ Divisible by: 857.</string>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
-                                <rect key="frame" x="10" y="275" width="300" height="200"/>
+                                <rect key="frame" x="10" y="324.5" width="355" height="200"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ejN-QS-6cu"/>
@@ -1213,14 +1211,14 @@ Divisible by: 857.</string>
                                 <color key="sectionIndexBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Primes_Fun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsJ-X1-QkV" id="cRd-m7-bIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-YK-Szs" userLabel="Number Label">
-                                                    <rect key="frame" x="100" y="5" width="189.5" height="35"/>
+                                                    <rect key="frame" x="100.5" y="4.5" width="283.5" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="kQQ-5j-MEI"/>
                                                     </constraints>
@@ -1229,7 +1227,7 @@ Divisible by: 857.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8l-rz-Rbw" userLabel="Index Label">
-                                                    <rect key="frame" x="10" y="5" width="78.5" height="35"/>
+                                                    <rect key="frame" x="10" y="4.5" width="78.5" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="H3k-zA-mui"/>
                                                     </constraints>
@@ -1260,7 +1258,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="15" y="226" width="290" height="36"/>
+                                <rect key="frame" x="15" y="275.5" width="345" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to top"/>
                                 <connections>
@@ -1268,7 +1266,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
-                                <rect key="frame" x="15" y="492" width="290" height="36"/>
+                                <rect key="frame" x="15" y="541.5" width="345" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to bottom"/>
                                 <connections>
@@ -1276,7 +1274,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtG-MD-Tnd">
-                                <rect key="frame" x="10" y="90" width="300" height="46.5"/>
+                                <rect key="frame" x="10" y="90" width="355" height="46.5"/>
                                 <string key="text">N: 1234567890
 Factors: 1234567890</string>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
@@ -1321,21 +1319,21 @@ Factors: 1234567890</string>
             <objects>
                 <viewController storyboardIdentifier="RandomViewController" id="rtL-8v-6Jg" customClass="RandomViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gH-MG-fXP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Ds-DUI">
-                                <rect key="frame" x="10" y="90" width="300" height="35"/>
+                                <rect key="frame" x="10" y="90" width="355" height="35"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-Z1-5xH">
-                                <rect key="frame" x="150" y="259.5" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="309" width="20" height="20"/>
                                 <color key="color" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="10" y="251.5" width="300" height="36"/>
+                                <rect key="frame" x="10" y="301" width="355" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Randomize"/>
                                 <connections>
@@ -1343,7 +1341,7 @@ Factors: 1234567890</string>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-Tr-ST0">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="About" image="about" id="xYd-uu-DqX">
                                         <connections>
@@ -1388,11 +1386,11 @@ Factors: 1234567890</string>
             <objects>
                 <viewController storyboardIdentifier="RandomResultsViewController" id="7sC-Ww-chD" customClass="RandomResultsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tUT-Up-DS9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-Zc-OR8">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="done" id="l06-Bo-KPU">
                                         <connections>
@@ -1408,23 +1406,23 @@ Factors: 1234567890</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h7-fu-4TW">
-                                <rect key="frame" x="15" y="90" width="290" height="23.5"/>
+                                <rect key="frame" x="15" y="90" width="345" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n3b-lg-XVV">
-                                <rect key="frame" x="40" y="230" width="240" height="128"/>
+                                <rect key="frame" x="40" y="279.5" width="295" height="128"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="iAV-fA-Mai"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RandomCell" id="t6k-gc-YxU">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="295" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6k-gc-YxU" id="DLQ-V3-AlY">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="295" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
