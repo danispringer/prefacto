@@ -37,7 +37,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         guard let myFrom = from, let myTo = to else {
-            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
@@ -93,21 +93,19 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         var message = ""
         
         guard let myFrom = from, let myTo = to else {
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
         
         guard source.count != 0 else {
-            // no nums in range
             message = "Hey, did you know that there are no prime numbers between \(myFrom) and \(myTo)? I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
             presentShareController(message: message)
             return
         }
         
         guard let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
-            // alert user: unknown
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
@@ -137,7 +135,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)

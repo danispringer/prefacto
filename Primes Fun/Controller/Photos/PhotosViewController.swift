@@ -104,8 +104,6 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 (data, error) in
                 
                 guard error == nil else {
-                    // TODO: alert
-                    print("error")
                     return
                 }
                 
@@ -143,14 +141,16 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     // MARK: Helper functions
     
     func getImagesUrls() {
+        
         DispatchQueue.main.async {
             self.setUIEnabled(false)
         }
         
         FlickrClient.getPhotosAbstracted { data, errorReason in
-            guard errorReason == nil else {
+            
+            guard errorReason == .noError else {
                 
-                let alert = self.createAlert(alertReasonParam: errorReason!)
+                let alert = self.createAlert(alertReasonParam: errorReason)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     AppData.getSoundEnabledSettings(sound: Sound.negative)
@@ -160,7 +160,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             guard let safeData = data else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     AppData.getSoundEnabledSettings(sound: Sound.negative)
@@ -195,8 +195,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         }
         try? dataController.viewContext.save()
-        print("count after emptying: \(String(describing: fetchedResultsController.fetchedObjects!.count))")
-        
+                
         getImagesUrls()
     }
 

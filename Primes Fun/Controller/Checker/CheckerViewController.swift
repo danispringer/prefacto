@@ -61,7 +61,7 @@ class CheckerViewController: UIViewController {
             self.enableUI(enabled: false)
             
             guard let text = self.textfield.text, !text.isEmpty else {
-                let alert = self.createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
+                let alert = self.createAlert(alertReasonParam: .textfieldEmpty)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
@@ -75,7 +75,7 @@ class CheckerViewController: UIViewController {
             let trimmedText = text.trimmingCharacters(in: .whitespaces)
             
             guard let number = Int64(trimmedText) else {
-                let alert = self.createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
+                let alert = self.createAlert(alertReasonParam: .notNumberOrTooBig)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
@@ -86,7 +86,7 @@ class CheckerViewController: UIViewController {
             }
             
             guard number != 0 else {
-                let alert = self.createAlert(alertReasonParam: alertReason.zero.rawValue)
+                let alert = self.createAlert(alertReasonParam: .zero)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
@@ -96,7 +96,7 @@ class CheckerViewController: UIViewController {
             }
             
             guard !(number < 0) else {
-                let alert = self.createAlert(alertReasonParam: alertReason.negative.rawValue)
+                let alert = self.createAlert(alertReasonParam: .negative)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)
@@ -107,7 +107,7 @@ class CheckerViewController: UIViewController {
             }
             
             guard number != 1 else {
-                let alert = self.createAlert(alertReasonParam: alertReason.one.rawValue)
+                let alert = self.createAlert(alertReasonParam: .one)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.enableUI(enabled: true)

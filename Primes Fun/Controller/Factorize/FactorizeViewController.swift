@@ -70,7 +70,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard let text = textfield.text else {
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -79,7 +79,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !text.isEmpty else {
-            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: .textfieldEmpty)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -89,7 +89,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard let number = Int64(text) else {
-            let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
+            let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -99,7 +99,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard number != 0 else {
-            let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
+            let alert = createAlert(alertReasonParam: .zero)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -109,7 +109,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !(number < 0) else {
-            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
+            let alert = createAlert(alertReasonParam: .negative)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)

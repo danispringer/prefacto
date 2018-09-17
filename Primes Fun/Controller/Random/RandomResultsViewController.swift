@@ -43,7 +43,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         var message = ""
         
         guard let myNumber = number else {
-            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
@@ -60,7 +60,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
@@ -88,7 +88,7 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "RandomCell")!
         
         guard let myNumber = number else {
-            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
