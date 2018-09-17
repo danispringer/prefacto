@@ -69,7 +69,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         var message = ""
         
         guard let myNumber = number, let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
-            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
@@ -99,7 +99,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
                     AppData.getSoundEnabledSettings(sound: Sound.negative)

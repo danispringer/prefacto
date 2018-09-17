@@ -42,7 +42,6 @@ class SettingsViewController: UIViewController {
     @IBAction func soundToggled(_ sender: Any) {
         UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundEnabled")
         if soundSwitch.isOn {
-            // play tock 1104
             AppData.getSoundEnabledSettings(sound: self.toggleSound)
             
         }

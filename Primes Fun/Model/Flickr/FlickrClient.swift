@@ -21,7 +21,7 @@ class FlickrClient: NSObject {
     
     // MARK: GET
     
-    static func getPhotosAbstracted(completion: @escaping (_ data: [URL]?, _ errorReason: String?) -> Void) {
+    static func getPhotosAbstracted(completion: @escaping (_ data: [URL]?, _ errorReason: UIViewController.alertReason) -> Void) {
         
         let session = URLSession.shared
         let url = flickrURLFromParameters()
@@ -30,17 +30,17 @@ class FlickrClient: NSObject {
         let task = session.dataTask(with: request) { (data, response, error) in
             
             guard error == nil else {
-                completion(nil, "network")
+                completion(nil, .network)
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                completion(nil, "unknown")
+                completion(nil, .unknown)
                 return
             }
             
             guard let data = data else {
-                completion(nil, "unknown")
+                completion(nil, .unknown)
                 return
             }
             
@@ -48,24 +48,24 @@ class FlickrClient: NSObject {
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:AnyObject]
             } catch {
-                completion(nil, "unknown")
+                completion(nil, .unknown)
                 return
             }
             
             guard let stat = parsedResult[Constants.FlickrResponseKeys.Status] as? String, stat == Constants.FlickrResponseValues.OKStatus else {
-                completion(nil, "unknown")
+                completion(nil, .unknown)
                 return
             }
             
             
             guard let photosDictionary = parsedResult[Constants.FlickrResponseKeys.Photos] as? [String:AnyObject] else {
                 
-                completion(nil, "unknown")
+                completion(nil, .unknown)
                 return
             }
             
             guard let photoArray = photosDictionary[Constants.FlickrResponseKeys.FlickrPhoto] as? [[String:AnyObject]] else {
-                completion(nil, "unknown")
+                completion(nil, .unknown)
                 return
             }
             
@@ -76,19 +76,18 @@ class FlickrClient: NSObject {
                 let photoDictionary = photoArray[randomPhotoIndex] as [String:AnyObject]
                 
                 guard let imageUrlString = photoDictionary[Constants.FlickrResponseKeys.MediumURL] as? String else {
-                    completion(nil, "unknown")
+                    completion(nil, .unknown)
                     return
                 }
                 
                 guard let imageURL = URL(string: imageUrlString) else {
-                    print("cannot convert string to URL:\(imageUrlString)")
                     return
                 }
                 
                 imagesUrls.append(imageURL)
                 
             }
-            completion(imagesUrls, nil)
+            completion(imagesUrls, .noError)
         }
         
         task.resume()

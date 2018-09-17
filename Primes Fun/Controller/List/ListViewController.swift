@@ -71,7 +71,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -81,7 +81,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !firstText.isEmpty, !secondText.isEmpty else {
-            let alert = createAlert(alertReasonParam: alertReason.textfieldEmpty.rawValue)
+            let alert = createAlert(alertReasonParam: .textfieldEmpty)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -92,7 +92,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard var firstNumber = Int64(firstText), var secondNumber = Int64(secondText) else {
-            let alert = createAlert(alertReasonParam: alertReason.notNumberOrTooBig.rawValue)
+            let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -103,7 +103,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard firstNumber != 0, secondNumber != 0 else {
-            let alert = createAlert(alertReasonParam: alertReason.zero.rawValue)
+            let alert = createAlert(alertReasonParam: .zero)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -114,7 +114,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !(firstNumber < 0), !(secondNumber < 0) else {
-            let alert = createAlert(alertReasonParam: alertReason.negative.rawValue)
+            let alert = createAlert(alertReasonParam: .negative)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -125,7 +125,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         
         guard !(firstNumber == secondNumber) else {
-            let alert = createAlert(alertReasonParam: alertReason.sameTwice.rawValue)
+            let alert = createAlert(alertReasonParam: .sameTwice)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()

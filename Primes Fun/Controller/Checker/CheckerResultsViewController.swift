@@ -32,7 +32,7 @@ class CheckerResultsViewController: UIViewController {
         super.viewDidLoad()
         
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
-            let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 AppData.getSoundEnabledSettings(sound: Sound.negative)
                 alert.view.layoutIfNeeded()
@@ -63,7 +63,11 @@ class CheckerResultsViewController: UIViewController {
         var message = ""
         
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
-            // alert user
+            DispatchQueue.main.async {
+                let alert = self.createAlert(alertReasonParam: .unknown)
+                self.present(alert, animated: true)
+            }
+            
             return
         }
         
@@ -79,7 +83,7 @@ class CheckerResultsViewController: UIViewController {
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
