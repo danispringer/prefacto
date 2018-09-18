@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-class RandomResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RandomResultsViewController: UIViewController {
     
     // MARK: Outlets
-    
-    @IBOutlet weak var randomNumberTableView: UITableView!
+
+    @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
@@ -32,6 +32,8 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
+        myLabel.text = "\(number!)"
+        
     }
     
     
@@ -72,58 +74,16 @@ class RandomResultsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+    @IBAction func copyPressed(_ sender: Any) {
+        if let myNumber = number {
+            UIPasteboard.general.string = String(myNumber)
+        }
+    }
+    
+    
+    
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    // Delegates:
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RandomCell")!
-        
-        guard let myNumber = number else {
-            let alert = self.createAlert(alertReasonParam: .unknown)
-            DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-            }
-            return cell
-        }
-        
-        cell.selectionStyle = .none
-        cell.textLabel?.textColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
-        cell.textLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
-        
-        cell.textLabel?.text = "\(myNumber)"
-        cell.textLabel?.frame = CGRect(x: 0, y: (cell.textLabel?.frame.origin.y)!, width: cell.frame.size.width, height: (cell.textLabel?.frame.size.height)!)
-        cell.textLabel?.textAlignment = .center
-        
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    
-    func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return action == #selector(copy(_:))
-    }
-    
-    
-    func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-        if action == #selector(copy(_:)) {
-            let cell = tableView.cellForRow(at: indexPath)
-            let pasteboard = UIPasteboard.general
-            pasteboard.string = cell?.textLabel?.text
-        }
     }
     
 }
