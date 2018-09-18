@@ -13,7 +13,6 @@
 		3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915720D9FE3600CA739F /* FlickrConstants.swift */; };
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
-		33378FC020DF4E6900DC9A42 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33378FBF20DF4E6900DC9A42 /* Number.swift */; };
 		333AD7E4210573F70010D446 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E3210573F70010D446 /* AppData.swift */; };
 		333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E6210581160010D446 /* SettingsViewControlller.swift */; };
 		333F996420F2B273003774D4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996320F2B273003774D4 /* AboutViewController.swift */; };
@@ -37,7 +36,6 @@
 		33ECA6392105B90A00E1264A /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ECA6382105B90A00E1264A /* Sounds.swift */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */; };
 		33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */; };
-		33FBA60220DF1167003303D2 /* NumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBA60120DF1167003303D2 /* NumberType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +45,6 @@
 		3317915720D9FE3600CA739F /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		33378FBF20DF4E6900DC9A42 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		333AD7E3210573F70010D446 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		333AD7E6210581160010D446 /* SettingsViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControlller.swift; sourceTree = "<group>"; };
 		333F996320F2B273003774D4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +70,6 @@
 		33EE5BC720D996C4008FEAF2 /* Primes Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Primes Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
 		33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeViewController.swift; sourceTree = "<group>"; };
-		33FBA60120DF1167003303D2 /* NumberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +99,6 @@
 				3317915520D9FE3600CA739F /* Flickr */,
 				3376A51321000688001431C8 /* UIImage+Extension.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
-				33FBA60120DF1167003303D2 /* NumberType.swift */,
-				33378FBF20DF4E6900DC9A42 /* Number.swift */,
 				333AD7E3210573F70010D446 /* AppData.swift */,
 				33ECA6382105B90A00E1264A /* Sounds.swift */,
 				3349CF7C2106A34500FCF4E5 /* DataController.swift */,
@@ -328,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */,
-				33378FC020DF4E6900DC9A42 /* Number.swift in Sources */,
 				333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */,
 				335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */,
 				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
@@ -341,7 +334,6 @@
 				33ECA6392105B90A00E1264A /* Sounds.swift in Sources */,
 				3349CF7B2106A2E000FCF4E5 /* Model.xcdatamodeld in Sources */,
 				3357A329210D18290011965D /* ListTableViewCell.swift in Sources */,
-				33FBA60220DF1167003303D2 /* NumberType.swift in Sources */,
 				33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
