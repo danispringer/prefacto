@@ -10,16 +10,6 @@
 ###### Developer notes
 
 - Add option for light, true dark, blue dark mode
-- link to GitHub (also add to Guess Fun)
-- Link to Guess Fun (also add to Guess Fun)
-- tap out of image to dismiss
-- long tap to copy image (with copy menu)
-- hide keyboard without animation (disrupts loading or other stuff?)
-- persistence: last used view(?)
-- center random prime result
-- [?] avoid user entering an obviously too long/big number to be checked
-- OCR: Do images have their number in their Flickr description? https://github.com/garnele007/SwiftOCR
-- [? - Must have stop button] add primes orderly generator (maybe with starting point).
 - PF: warn about permission denied if image saving fails
 
 - UICollectionView delegates could be put in a separate extension
