@@ -22,7 +22,7 @@ Want to help? You can:
 - Contact me: https://danispringer.github.io/
 
 # Credits
-- Screenshots: https://mockuphone.com
+- App Store Screenshots: https://mockuphone.com
 
 # License
 Copyright © 2018 Dani Springer. All rights reserved.
