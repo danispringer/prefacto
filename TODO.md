@@ -19,6 +19,7 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
   support orientations (x?)
 - SiriKit: "Hey Siri, does Primes Fun think 2341 is prime?".
 - SiriKit: "Hey Siri, note the prime numbers between 1 and 50 using Primes Fun".
+- Siri Shortcuts.
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
