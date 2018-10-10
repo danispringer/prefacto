@@ -9,6 +9,7 @@
 
 ###### Developer notes
 
+- PF generate random on same page
 - Add option for light, true dark, blue dark mode
 - PF: warn about permission denied if image saving fails
 
