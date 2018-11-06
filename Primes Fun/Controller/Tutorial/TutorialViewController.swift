@@ -33,8 +33,6 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         
         myTextView.isScrollEnabled = true
         myTextView.indicatorStyle = .white
-        
-        myTextView.flashScrollIndicators()
     }
     
     
@@ -42,6 +40,7 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         super.viewDidAppear(animated)
         
         myTextView.flashScrollIndicators()
+        myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         
     }
     
