@@ -34,4 +34,4 @@ Love the app? Please consider leaving a 5-star review!
 • Lorem
 
 Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
-Love the app? Leave a review!
+Love the app? Please consider leaving a review!
