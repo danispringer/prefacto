@@ -12,7 +12,7 @@ Is there a feature you'd like to see? A bug you'd like to go away? Let us know: 
 Love the app? Please consider leaving a 5-star review!
 
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i81.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i82.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i83.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i84.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i85.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i86.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i87.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i88.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/primes-fun/master/i/i8-readme/i89.jpg)
+PUT SCREENSHOTS HERE
 
 # Contributing
 Want to help? You can:
