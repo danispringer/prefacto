@@ -8,7 +8,6 @@
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 - Siri Shortcuts.
-- [?] black status bar
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
