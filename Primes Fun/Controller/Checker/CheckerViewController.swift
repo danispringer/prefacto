@@ -18,9 +18,6 @@ class CheckerViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
-    // MARK: Properties
-    
-    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -47,7 +44,6 @@ class CheckerViewController: UIViewController {
     
     
     // MARK: Helpers
-    
     
     @objc func cancelAndHideKeyboard() {
         textfield.resignFirstResponder()
