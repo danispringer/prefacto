@@ -40,12 +40,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             messageLabel.text = "N: \(myNumber)\nFactors: \(source.count)"
             
         }
-        
-        if resultsTableView.numberOfRows(inSection: 0) <= 3 {
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
-            resultsTableView.isScrollEnabled = false
-        }
 
     }
     
