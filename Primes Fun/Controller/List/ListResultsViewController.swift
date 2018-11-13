@@ -54,12 +54,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             messageLabel.text = "From: \(myFrom)\nTo: \(myTo)\nPrimes: \(source.count)"
         }
         
-        if resultsTableView.numberOfRows(inSection: 0) <= 3 {
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
-            resultsTableView.isScrollEnabled = false
-        }
-        
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
