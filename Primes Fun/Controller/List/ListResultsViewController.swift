@@ -49,7 +49,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
-            messageLabel.text = "There are no prime numbers between \(myFrom) and \(myTo)."
+            messageLabel.text = "There are no prime numbers between\n\n\(myFrom)\n\nand\n\n\(myTo)."
         } else {
             messageLabel.text = "From: \(myFrom)\nTo: \(myTo)\nPrimes: \(source.count)"
         }
