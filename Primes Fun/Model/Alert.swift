@@ -28,6 +28,8 @@ extension UIViewController {
         case messageSent
         case unknown
         case noError
+        case permissionDenied
+        case imageSaved
     }
 
     func createAlert(alertReasonParam: alertReason, num: Int64 = 0, divisibleBy: Int64 = 0, firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
@@ -80,6 +82,12 @@ extension UIViewController {
         case .messageSent:
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
+        case .permissionDenied:
+            alertTitle = "Permission denied"
+            alertMessage = "Primes Fun needs access to your gallery in order to save your image. Please allow access in Settings."
+        case .imageSaved:
+            alertTitle = "Success!"
+            alertMessage = "Your image has been saved to your library."
         default:
             alertTitle = "Unknown error"
             alertMessage = "An unknown error occurred. Please try again later, or contact us by visiting DaniSpringer.GitHub.io"

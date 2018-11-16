@@ -12,6 +12,7 @@ import StoreKit
 
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
+    
     // MARK: Outlets
     
     @IBOutlet weak var myScrollView: UIScrollView!
@@ -71,6 +72,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         SKStoreReviewController.requestReview()
     }
     
+    
     @IBAction func shareButtonPressed(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [detailImage.image!], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
@@ -90,9 +92,47 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
+    @IBAction func downloadPressed(_ sender: Any) {
+        
+        guard detailImage.image != nil else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            present(alert, animated: true)
+            return
+        }
+        
+        let image = detailImage.image!
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(_:didFinishSavingWithError:contextInfo:)), nil)
+
+    }
+    
+    
+    @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        guard error == nil else {
+            let alert = createAlert(alertReasonParam: .permissionDenied)
+            let goToSettingsButton = UIAlertAction(title: "Open Settings", style: .default, handler: {
+                action in
+                if let url = NSURL(string: UIApplication.openSettingsURLString) as URL? {
+                    UIApplication.shared.open(url)
+                }
+            })
+            alert.addAction(goToSettingsButton)
+            present(alert, animated: true)
+            return
+        }
+        let alert = createAlert(alertReasonParam: .imageSaved)
+        let goToLibraryButton = UIAlertAction(title: "Open Gallery", style: .default, handler: {
+            action in
+            UIApplication.shared.open(URL(string:"photos-redirect://")!)
+        })
+        alert.addAction(goToLibraryButton)
+        present(alert, animated: true)
+    }
+    
+    
     // MARK: ScrollView Delegates
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return detailImage
     }
+    
 }
