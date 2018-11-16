@@ -26,14 +26,13 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 • Share or save your results
 • And more
 
-Is there a feature you'd like to see? A bug you'd like to go away? Let us know: www.DaniSpringer.GitHub.io
-
-Love the app? Please consider leaving a 5-star review!
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting www.DaniSpringer.GitHub.io
+Love the app? Please consider leaving a review! It would mean the world to us.
 
 
 ##### Update
 
 • Lorem
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting DaniSpringer.GitHub.io
-Love the app? Please consider leaving a review!
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting www.DaniSpringer.GitHub.io
+Love the app? Please consider leaving a review! It would mean the world to us.
