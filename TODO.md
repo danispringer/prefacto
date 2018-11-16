@@ -9,7 +9,6 @@
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
 - Siri Shortcuts.
-- How does CP warn when permission denied? Apply to PF images
 - improve collection view design
 
 ~
