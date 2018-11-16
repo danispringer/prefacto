@@ -5,6 +5,7 @@
 ###### Dev notes
 
 - support orientations on ipad
+- improve for ipad
 - Dark mode
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
