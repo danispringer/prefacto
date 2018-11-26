@@ -15,10 +15,10 @@
 		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
 		333AD7E4210573F70010D446 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E3210573F70010D446 /* AppData.swift */; };
 		333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E6210581160010D446 /* SettingsViewControlller.swift */; };
-		333F996420F2B273003774D4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996320F2B273003774D4 /* AboutViewController.swift */; };
 		333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996520F2BA33003774D4 /* ListResultsViewController.swift */; };
 		333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */; };
 		333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */; };
+		33428EE921AB6A810074F538 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33428EE821AB6A810074F538 /* Constants.swift */; };
 		3349CF7B2106A2E000FCF4E5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */; };
 		3349CF7D2106A34500FCF4E5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349CF7C2106A34500FCF4E5 /* DataController.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
@@ -47,10 +47,10 @@
 		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		333AD7E3210573F70010D446 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		333AD7E6210581160010D446 /* SettingsViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControlller.swift; sourceTree = "<group>"; };
-		333F996320F2B273003774D4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		333F996520F2BA33003774D4 /* ListResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerResultsViewController.swift; sourceTree = "<group>"; };
 		333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeResultsViewController.swift; sourceTree = "<group>"; };
+		33428EE821AB6A810074F538 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3349CF7C2106A34500FCF4E5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +102,7 @@
 				333AD7E3210573F70010D446 /* AppData.swift */,
 				33ECA6382105B90A00E1264A /* Sounds.swift */,
 				3349CF7C2106A34500FCF4E5 /* DataController.swift */,
+				33428EE821AB6A810074F538 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 				333F996B20F3173D003774D4 /* Factorize */,
 				33A96A3D20FDFA71009E1DBA /* Random */,
 				333F996C20F3175C003774D4 /* Photos */,
-				333F996D20F3176E003774D4 /* About */,
 				335FD4A0210401C300B34DC9 /* Tutorial */,
 				333AD7E5210581020010D446 /* Settings */,
 			);
@@ -173,14 +173,6 @@
 				334C779D20E048EC00BE2C65 /* DetailViewController.swift */,
 			);
 			path = Photos;
-			sourceTree = "<group>";
-		};
-		333F996D20F3176E003774D4 /* About */ = {
-			isa = PBXGroup;
-			children = (
-				333F996320F2B273003774D4 /* AboutViewController.swift */,
-			);
-			path = About;
 			sourceTree = "<group>";
 		};
 		335FD4A0210401C300B34DC9 /* Tutorial */ = {
@@ -321,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33428EE921AB6A810074F538 /* Constants.swift in Sources */,
 				33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */,
 				333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */,
 				335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */,
@@ -339,7 +332,6 @@
 				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */,
 				333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */,
-				333F996420F2B273003774D4 /* AboutViewController.swift in Sources */,
 				33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */,
 				3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */,
 				3312262A210D233500802138 /* FactorizeTableViewCell.swift in Sources */,

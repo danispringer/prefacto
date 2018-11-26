@@ -23,7 +23,7 @@
                                 <items>
                                     <barButtonItem title="About" image="about" id="Q1F-A9-cyi">
                                         <connections>
-                                            <segue destination="851-uW-ykd" kind="presentation" id="gff-bN-kRg"/>
+                                            <action selector="aboutPressed:" destination="DBJ-ld-CGN" id="HzF-GD-eOo"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fBT-0w-rnw"/>
@@ -104,6 +104,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Images" image="photos" id="8O1-bp-Tky"/>
                     <connections>
+                        <outlet property="aboutButton" destination="Q1F-A9-cyi" id="67s-hC-K0h"/>
                         <outlet property="activityIndicator" destination="8iU-02-QdW" id="WtK-7l-cNG"/>
                         <outlet property="collectionView" destination="bOb-Ta-qMt" id="ZyF-j1-uTQ"/>
                         <outlet property="headerLabel" destination="BJ5-Ni-Izz" id="RgN-fo-faa"/>
@@ -118,7 +119,7 @@
         <!--Detail View Controller-->
         <scene sceneID="exh-ri-xyw">
             <objects>
-                <viewController storyboardIdentifier="Detail" id="qBj-hI-XbB" customClass="DetailViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="qBj-hI-XbB" customClass="DetailViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="roB-W7-TNl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +250,7 @@
                                 <items>
                                     <barButtonItem title="About" image="about" id="axt-Z7-Yq3">
                                         <connections>
-                                            <segue destination="851-uW-ykd" kind="presentation" id="4s3-Nk-qWc"/>
+                                            <action selector="aboutPressed:" destination="1t2-Bt-9xD" id="pKB-Nm-xYS"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oRf-mV-45V"/>
@@ -276,6 +277,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="RoM-QN-z2j"/>
                     <connections>
+                        <outlet property="aboutButton" destination="axt-Z7-Yq3" id="pBl-KC-GVq"/>
                         <outlet property="activityIndicator" destination="2NI-Ma-ASa" id="TNC-Yp-8HM"/>
                         <outlet property="myToolbar" destination="3ap-EQ-e9X" id="8wY-xW-fIJ"/>
                         <outlet property="textfield" destination="m0x-Lr-7Xl" id="LsP-l7-Xxx"/>
@@ -318,7 +320,7 @@
                                 <items>
                                     <barButtonItem title="About" image="about" id="5Vi-CK-cNB">
                                         <connections>
-                                            <segue destination="851-uW-ykd" kind="presentation" id="wiT-Qd-Yqp"/>
+                                            <action selector="aboutPressed:" destination="GDH-dL-aVw" id="iRp-73-Jqz"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sdH-dN-SpW"/>
@@ -343,6 +345,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Factor" image="scomponi" id="ts3-jk-KCl"/>
                     <connections>
+                        <outlet property="aboutButton" destination="5Vi-CK-cNB" id="ria-EO-LCl"/>
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
                         <outlet property="myToolbar" destination="To0-HQ-Ycf" id="CwT-61-upa"/>
                         <outlet property="textfield" destination="ptO-hj-b9l" id="sHl-RG-VwR"/>
@@ -352,137 +355,10 @@
             </objects>
             <point key="canvasLocation" x="682" y="1436"/>
         </scene>
-        <!--About View Controller-->
-        <scene sceneID="jHa-zk-WBr">
-            <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="851-uW-ykd" customClass="AboutViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jtE-AI-CET">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error showing version. Please let the devs know." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-tP-g1Q">
-                                <rect key="frame" x="16" y="799.66666666666663" width="382" height="46.333333333333371"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74f-k1-Vq3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="Done" id="opn-MJ-2iV">
-                                        <connections>
-                                            <action selector="closeButtonPressed:" destination="851-uW-ykd" id="W5K-qQ-FR5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNI-vd-DhY"/>
-                                    <barButtonItem title="Tutorial" id="4Il-qi-Vx7">
-                                        <connections>
-                                            <segue destination="R8a-aQ-82M" kind="presentation" id="6Eb-W5-Atq"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love this app?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FE-mb-t9I">
-                                <rect key="frame" x="16" y="186" width="382" height="23.333333333333343"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUO-wX-ycd">
-                                <rect key="frame" x="16" y="336.66666666666669" width="382" height="32"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="Send us an email"/>
-                                <connections>
-                                    <action selector="launchEmailWithSender:" destination="851-uW-ykd" eventType="touchUpInside" id="XMD-17-b3K"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell your friends about Primes Fun" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F04-AD-Mdv">
-                                <rect key="frame" x="16" y="408.66666666666669" width="382" height="23.333333333333314"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-Qr-Inb">
-                                <rect key="frame" x="16" y="448" width="382" height="32"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="shareButtonPressed" destination="851-uW-ykd" eventType="touchUpInside" id="hGV-TF-EpO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found a bug? Have a question?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsF-ep-byg">
-                                <rect key="frame" x="16" y="297.33333333333331" width="382" height="23.333333333333314"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkS-6g-Mov">
-                                <rect key="frame" x="16" y="225.33333333333334" width="382" height="32.000000000000028"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="Leave us a review"/>
-                                <connections>
-                                    <action selector="requestReviewManually" destination="851-uW-ykd" eventType="touchUpInside" id="Q23-4Y-voB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twb-W1-owe">
-                                <rect key="frame" x="16" y="114" width="382" height="32"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="EGf-9u-VfO" kind="presentation" id="TnY-KR-7JI"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="F04-AD-Mdv" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="BdB-BB-j3a"/>
-                            <constraint firstItem="TsF-ep-byg" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="DGk-ab-azf"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="tUO-wX-ycd" secondAttribute="trailing" constant="16" id="Etx-6J-604"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="twb-W1-owe" secondAttribute="trailing" constant="16" id="GNZ-2D-Sc3"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="74f-k1-Vq3" secondAttribute="trailing" id="KED-cD-osd"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="nkS-6g-Mov" secondAttribute="trailing" constant="16" id="LXj-kW-16T"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="Jgs-tP-g1Q" secondAttribute="trailing" constant="16" id="PZs-Av-fiO"/>
-                            <constraint firstItem="tUO-wX-ycd" firstAttribute="top" secondItem="TsF-ep-byg" secondAttribute="bottom" constant="16" id="Szp-le-Pnp"/>
-                            <constraint firstItem="tUO-wX-ycd" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="WT3-oB-C97"/>
-                            <constraint firstItem="nkS-6g-Mov" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="YPe-lW-DUR"/>
-                            <constraint firstItem="74f-k1-Vq3" firstAttribute="top" secondItem="h0P-v1-rQN" secondAttribute="top" id="YT4-12-CCl"/>
-                            <constraint firstItem="nkS-6g-Mov" firstAttribute="top" secondItem="8FE-mb-t9I" secondAttribute="bottom" constant="16" id="Ybl-gU-6GF"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="F04-AD-Mdv" secondAttribute="trailing" constant="16" id="ZtS-CO-YR3"/>
-                            <constraint firstItem="twb-W1-owe" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="be0-eC-yLc"/>
-                            <constraint firstItem="8FE-mb-t9I" firstAttribute="top" secondItem="twb-W1-owe" secondAttribute="bottom" constant="40" id="elR-YB-tBU"/>
-                            <constraint firstItem="wYa-Qr-Inb" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="fv9-qy-eMW"/>
-                            <constraint firstItem="wYa-Qr-Inb" firstAttribute="top" secondItem="F04-AD-Mdv" secondAttribute="bottom" constant="16" id="fyG-ep-9RX"/>
-                            <constraint firstItem="TsF-ep-byg" firstAttribute="top" secondItem="nkS-6g-Mov" secondAttribute="bottom" constant="40" id="gu3-fv-oro"/>
-                            <constraint firstItem="twb-W1-owe" firstAttribute="top" secondItem="h0P-v1-rQN" secondAttribute="top" constant="70" id="igU-cN-gFC"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="bottom" secondItem="Jgs-tP-g1Q" secondAttribute="bottom" constant="16" id="mTI-Sq-ahD"/>
-                            <constraint firstItem="8FE-mb-t9I" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="n2M-vS-3fg"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="TsF-ep-byg" secondAttribute="trailing" constant="16" id="n67-sp-QjH"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="wYa-Qr-Inb" secondAttribute="trailing" constant="16" id="oMa-hA-qE1"/>
-                            <constraint firstItem="74f-k1-Vq3" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" id="sXl-uk-DJP"/>
-                            <constraint firstItem="Jgs-tP-g1Q" firstAttribute="leading" secondItem="h0P-v1-rQN" secondAttribute="leading" constant="16" id="siZ-r6-kuw"/>
-                            <constraint firstItem="F04-AD-Mdv" firstAttribute="top" secondItem="tUO-wX-ycd" secondAttribute="bottom" constant="40" id="z5S-5j-CPV"/>
-                            <constraint firstItem="h0P-v1-rQN" firstAttribute="trailing" secondItem="8FE-mb-t9I" secondAttribute="trailing" constant="16" id="zzE-lz-zqN"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="h0P-v1-rQN"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="about" id="SLe-kk-oQR"/>
-                    <connections>
-                        <outlet property="emailButton" destination="tUO-wX-ycd" id="ve0-sK-Kt3"/>
-                        <outlet property="myToolbar" destination="74f-k1-Vq3" id="lG0-Qw-23p"/>
-                        <outlet property="reviewButton" destination="nkS-6g-Mov" id="vcw-fd-D57"/>
-                        <outlet property="shareButton" destination="wYa-Qr-Inb" id="SL3-XT-RoK"/>
-                        <outlet property="soundSwitch" destination="hkf-xS-jgf" id="i0Q-9E-BKM"/>
-                        <outlet property="versionButtonLabel" destination="Jgs-tP-g1Q" id="vHh-MT-dHc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GQv-jL-HUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1558" y="360"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="RXM-9H-pex">
             <objects>
-                <viewController id="EGf-9u-VfO" customClass="SettingsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="EGf-9u-VfO" customClass="SettingsViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vp4-zW-nbr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,12 +408,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-q0-kOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439.375" y="691.90140845070425"/>
+            <point key="canvasLocation" x="3307" y="2178"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="koQ-9e-pBq">
             <objects>
-                <viewController id="R8a-aQ-82M" customClass="TutorialViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="R8a-aQ-82M" customClass="TutorialViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mfy-L1-8AS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -914,7 +790,7 @@ Cgo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEs-6E-Q5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2438" y="-60"/>
+            <point key="canvasLocation" x="3307" y="1438"/>
         </scene>
         <!--List-->
         <scene sceneID="CXi-cY-2n2">
@@ -955,7 +831,7 @@ Cgo
                                 <items>
                                     <barButtonItem title="About" image="about" id="mjO-YZ-2qc">
                                         <connections>
-                                            <segue destination="851-uW-ykd" kind="presentation" id="crb-Qd-cqY"/>
+                                            <action selector="aboutPressed:" destination="enb-lg-n27" id="Nw1-yP-XK4"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3eV-pn-0r0"/>
@@ -987,6 +863,7 @@ Cgo
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="range" id="Lod-4U-CQj"/>
                     <connections>
+                        <outlet property="aboutButton" destination="mjO-YZ-2qc" id="g7R-lf-aZp"/>
                         <outlet property="activityIndicator" destination="dhX-Mn-u5f" id="ZdQ-Zs-eJF"/>
                         <outlet property="firstTextField" destination="u8x-FV-42z" id="Dbv-ki-ZjY"/>
                         <outlet property="myToolbar" destination="iUk-mx-5he" id="6JZ-as-kU7"/>
@@ -1352,7 +1229,7 @@ Factors: 1234567890</string>
                                 <items>
                                     <barButtonItem title="About" image="about" id="xYd-uu-DqX">
                                         <connections>
-                                            <segue destination="851-uW-ykd" kind="presentation" id="J3A-ih-rQz"/>
+                                            <action selector="aboutPressed:" destination="rtL-8v-6Jg" id="hxm-TE-G3L"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5Hc-4o-OkV"/>
@@ -1378,6 +1255,7 @@ Factors: 1234567890</string>
                     <tabBarItem key="tabBarItem" title="Random" image="random" id="yIw-R4-UNX"/>
                     <navigationItem key="navigationItem" id="N5f-P2-4fN"/>
                     <connections>
+                        <outlet property="aboutButton" destination="xYd-uu-DqX" id="vtn-wU-ovF"/>
                         <outlet property="activityIndicator" destination="Cjb-Z1-5xH" id="Yvu-R7-JZY"/>
                         <outlet property="myToolbar" destination="Xwr-Tr-ST0" id="ov5-ms-5dj"/>
                         <outlet property="randomizeButton" destination="VWa-1q-r4D" id="Rob-RT-53Z"/>
@@ -1467,7 +1345,4 @@ Factors: 1234567890</string>
         <image name="range" width="37.5" height="37.5"/>
         <image name="scomponi" width="37.5" height="37.5"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="gff-bN-kRg"/>
-    </inferredMetricsTieBreakers>
 </document>

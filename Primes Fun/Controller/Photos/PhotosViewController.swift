@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 import CoreData
+import MessageUI
+import StoreKit
+
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -19,6 +22,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var aboutButton: UIBarButtonItem!
     
     
     // MARK: Properties
@@ -28,6 +32,8 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     var dataController: DataController!
     
     var fetchedResultsController: NSFetchedResultsController<Photo>!
+    
+    let cellID = "Cell"
     
     
     // MARK: Life Cycle
@@ -86,7 +92,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CollectionViewCell
         
         var imageUI = UIImage(named: "refresh.png")
         
@@ -126,8 +132,8 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+        let storyboard = UIStoryboard(name: Constants.storyboardID.main, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: Constants.storyboardID.detail) as! DetailViewController
         controller.myImage = UIImage(data: fetchedResultsController.fetchedObjects![indexPath.row].imageData!)
         controller.modalPresentationStyle = .overCurrentContext
         DispatchQueue.main.async {
@@ -169,8 +175,6 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             
-            
-            
             DispatchQueue.main.async {
                 for imageUrl in safeData {
                     let dataToSave = Photo(context: self.dataController.viewContext)
@@ -186,6 +190,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
+    
     @IBAction func refreshButtonPressed() {
         for (index, _) in fetchedResultsController.fetchedObjects!.enumerated() {
             let indexPath = IndexPath(row: index, section: 0)
@@ -197,12 +202,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 
         getImagesUrls()
     }
-
-}
-
-// Mark: PhotosViewController (Configure UI)
-
-private extension PhotosViewController {
+    
     
     func setUIEnabled(_ enabled: Bool) {
         DispatchQueue.main.async {
@@ -216,4 +216,145 @@ private extension PhotosViewController {
                 self.activityIndicator.startAnimating()
         }
     }
+    
+    
+    @IBAction func aboutPressed(_ sender: Any) {
+        
+        let version: String? = Bundle.main.infoDictionary![Constants.messages.appVersion] as? String
+        let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if let version = version {
+            infoAlert.message = "\(Constants.messages.version) \(version)"
+            infoAlert.title = Constants.messages.appName
+        }
+        
+        infoAlert.modalPresentationStyle = .popover
+        
+        let cancelAction = UIAlertAction(title: Constants.messages.cancel, style: .cancel) {
+            _ in
+            self.dismiss(animated: true, completion: {
+                SKStoreReviewController.requestReview()
+            })
+        }
+        
+        let shareAppAction = UIAlertAction(title: Constants.messages.shareApp, style: .default) {
+            _ in
+            self.shareApp()
+        }
+        
+        let mailAction = UIAlertAction(title: Constants.messages.sendFeedback, style: .default) {
+            _ in
+            self.launchEmail()
+        }
+        
+        let reviewAction = UIAlertAction(title: Constants.messages.leaveReview, style: .default) {
+            _ in
+            self.requestReviewManually()
+        }
+        
+        let tutorialAction = UIAlertAction(title: Constants.messages.tutorial, style: .default) {
+            _ in
+            let storyboard = UIStoryboard(name: Constants.storyboardID.main, bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.storyboardID.tutorial)
+            self.present(controller, animated: true)
+        }
+        
+        let settingsAction = UIAlertAction(title: Constants.messages.settings, style: .default) {
+            _ in
+            let storyboard = UIStoryboard(name: Constants.storyboardID.main, bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.storyboardID.settings)
+            self.present(controller, animated: true)
+        }
+        
+        for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
+            infoAlert.addAction(action)
+        }
+        
+        if let presenter = infoAlert.popoverPresentationController {
+            presenter.barButtonItem = aboutButton
+        }
+        
+        present(infoAlert, animated: true)
+    }
+    
+    
+    func shareApp() {
+        let message = Constants.messages.shareMessage
+        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.completionWithItemsHandler = {
+            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: .unknown)
+                self.present(alert, animated: true)
+                return
+            }
+        }
+        present(activityController, animated: true)
+    }
+
+}
+
+
+extension PhotosViewController: MFMailComposeViewControllerDelegate {
+    
+    func launchEmail() {
+        
+        var emailTitle = Constants.messages.appName
+        if let version = Bundle.main.infoDictionary![Constants.messages.appVersion] {
+            emailTitle += " \(version)"
+        }
+        
+        let messageBody = Constants.messages.emailSample
+        let toRecipents = [Constants.messages.emailAddress]
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setMessageBody(messageBody, isHTML: false)
+        mc.setToRecipients(toRecipents)
+        
+        self.present(mc, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        var alert = UIAlertController()
+        
+        dismiss(animated: true, completion: {
+            switch result {
+            case MFMailComposeResult.failed:
+                alert = self.createAlert(alertReasonParam: .messageFailed)
+            case MFMailComposeResult.saved:
+                alert = self.createAlert(alertReasonParam: .messageSaved)
+            case MFMailComposeResult.sent:
+                alert = self.createAlert(alertReasonParam: .messageSent)
+            default:
+                break
+            }
+            if let _ = alert.title {
+                self.present(alert, animated: true)
+            }
+        })
+    }
+}
+
+extension PhotosViewController {
+    
+    func requestReviewManually() {
+        // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
+        //       You can find the App Store ID in your app's product URL
+        
+        guard let writeReviewURL = URL(string: Constants.messages.appReviewLink)
+            else {
+                fatalError("Expected a valid URL")
+        }
+        
+        UIApplication.shared.open(writeReviewURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        
+        
+    }
+    
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import StoreKit
 
+
 class ListResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Outlets
@@ -27,7 +28,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     var source: [Int64]!
     var from: Int64!
     var to: Int64!
-
+    let listCell = "ListCell"
     
     
     // MARK: Life Cycle
@@ -124,7 +125,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     func presentShareController(message: String) {
         
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
+        activityController.popoverPresentationController?.sourceView = self.view
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
@@ -162,16 +163,16 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as! ListTableViewCell
         
         cell.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell.selectionStyle = .none
         cell.numberLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        cell.numberLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
+        cell.numberLabel?.font = UIFont(name: Constants.messages.fontAmericanTypewriter, size: 25)
         
         cell.indexLabel?.text = "\(indexPath.row + 1)."
         cell.indexLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        cell.indexLabel?.font = UIFont(name: "AmericanTypewriter", size: 16)
+        cell.indexLabel?.font = UIFont(name: Constants.messages.fontAmericanTypewriter, size: 16)
         
         return cell
     }

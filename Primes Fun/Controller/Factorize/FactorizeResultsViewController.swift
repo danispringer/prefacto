@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import StoreKit
 
+
 class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Outlets
@@ -25,6 +26,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     var source: [Int64]!
     var number: Int64!
+    let factorCell = "FactorCell"
     
     
     // MARK: Life Cycle
@@ -125,16 +127,16 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FactorCell") as! FactorizeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as! FactorizeTableViewCell
         
         cell.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell.selectionStyle = .none
         cell.numberLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        cell.numberLabel?.font = UIFont(name: "AmericanTypewriter", size: 25)
+        cell.numberLabel?.font = UIFont(name: Constants.messages.fontAmericanTypewriter, size: 25)
         
         cell.indexLabel?.text = "\(indexPath.row + 1)."
         cell.indexLabel?.textColor = UIColor(red:0.93, green:0.90, blue:0.94, alpha:1.0)
-        cell.indexLabel?.font = UIFont(name: "AmericanTypewriter", size: 16)
+        cell.indexLabel?.font = UIFont(name: Constants.messages.fontAmericanTypewriter, size: 16)
         
         return cell
     }
@@ -157,5 +159,5 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             pasteboard.string = cell.numberLabel?.text
         }
     }
-    
+
 }

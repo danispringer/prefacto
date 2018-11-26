@@ -51,19 +51,19 @@ class FlickrClient: NSObject {
                 return
             }
             
-            guard let stat = parsedResult[Constants.FlickrResponseKeys.Status] as? String, stat == Constants.FlickrResponseValues.OKStatus else {
+            guard let stat = parsedResult[FlickrConstants.FlickrResponseKeys.Status] as? String, stat == FlickrConstants.FlickrResponseValues.OKStatus else {
                 completion(nil, .unknown)
                 return
             }
             
             
-            guard let photosDictionary = parsedResult[Constants.FlickrResponseKeys.Photos] as? [String:AnyObject] else {
+            guard let photosDictionary = parsedResult[FlickrConstants.FlickrResponseKeys.Photos] as? [String:AnyObject] else {
                 
                 completion(nil, .unknown)
                 return
             }
             
-            guard let photoArray = photosDictionary[Constants.FlickrResponseKeys.FlickrPhoto] as? [[String:AnyObject]] else {
+            guard let photoArray = photosDictionary[FlickrConstants.FlickrResponseKeys.FlickrPhoto] as? [[String:AnyObject]] else {
                 completion(nil, .unknown)
                 return
             }
@@ -74,7 +74,7 @@ class FlickrClient: NSObject {
                 let randomPhotoIndex = Int(arc4random_uniform(UInt32(photoArray.count)))
                 let photoDictionary = photoArray[randomPhotoIndex] as [String:AnyObject]
                 
-                guard let imageUrlString = photoDictionary[Constants.FlickrResponseKeys.MediumURL] as? String else {
+                guard let imageUrlString = photoDictionary[FlickrConstants.FlickrResponseKeys.MediumURL] as? String else {
                     completion(nil, .unknown)
                     return
                 }
@@ -114,18 +114,18 @@ class FlickrClient: NSObject {
     static func flickrURLFromParameters() -> URL {
         
         let parameters = [
-            Constants.FlickrParameterKeys.Method: Constants.FlickrParameterValues.SearchMethod,
-            Constants.FlickrParameterKeys.APIKey: Constants.FlickrParameterValues.APIKey,
-            Constants.FlickrParameterKeys.SafeSearch: Constants.FlickrParameterValues.UseSafeSearch,
-            Constants.FlickrParameterKeys.Extras: Constants.FlickrParameterValues.MediumURL,
-            Constants.FlickrParameterKeys.Format: Constants.FlickrParameterValues.ResponseFormat,
-            Constants.FlickrParameterKeys.NoJSONCallback: Constants.FlickrParameterValues.DisableJSONCallback, Constants.FlickrParameterKeys.PerPage: Constants.FlickrParameterValues.PerPage, Constants.FlickrParameterKeys.GroupID: Constants.FlickrParameterValues.GroupID
+            FlickrConstants.FlickrParameterKeys.Method: FlickrConstants.FlickrParameterValues.SearchMethod,
+            FlickrConstants.FlickrParameterKeys.APIKey: FlickrConstants.FlickrParameterValues.APIKey,
+            FlickrConstants.FlickrParameterKeys.SafeSearch: FlickrConstants.FlickrParameterValues.UseSafeSearch,
+            FlickrConstants.FlickrParameterKeys.Extras: FlickrConstants.FlickrParameterValues.MediumURL,
+            FlickrConstants.FlickrParameterKeys.Format: FlickrConstants.FlickrParameterValues.ResponseFormat,
+            FlickrConstants.FlickrParameterKeys.NoJSONCallback: FlickrConstants.FlickrParameterValues.DisableJSONCallback, FlickrConstants.FlickrParameterKeys.PerPage: FlickrConstants.FlickrParameterValues.PerPage, FlickrConstants.FlickrParameterKeys.GroupID: FlickrConstants.FlickrParameterValues.GroupID
         ]
         
         var components = URLComponents()
-        components.scheme = Constants.Flickr.APIScheme
-        components.host = Constants.Flickr.APIHost
-        components.path = Constants.Flickr.APIPath
+        components.scheme = FlickrConstants.Flickr.APIScheme
+        components.host = FlickrConstants.Flickr.APIHost
+        components.path = FlickrConstants.Flickr.APIPath
         components.queryItems = [URLQueryItem]()
         
         for (key, value) in parameters {
