@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Constants
 
-struct Constants {
+struct FlickrConstants {
     
     // MARK: Flickr
     struct Flickr {

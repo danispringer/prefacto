@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SettingsViewController: UIViewController {
     
     // MARK: Outlets
@@ -32,14 +33,14 @@ class SettingsViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
-        soundSwitch.isOn = UserDefaults.standard.bool(forKey: "soundEnabled")
+        soundSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.messages.soundEnabled)
     }
     
     
     // Helpers
     
     @IBAction func soundToggled(_ sender: Any) {
-        UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundEnabled")
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: Constants.messages.soundEnabled)
         if soundSwitch.isOn {
             AppData.getSoundEnabledSettings(sound: self.toggleSound)
             

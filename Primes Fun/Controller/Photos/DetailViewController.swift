@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import StoreKit
 
+
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     
@@ -109,7 +110,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         guard error == nil else {
             let alert = createAlert(alertReasonParam: .permissionDenied)
-            let goToSettingsButton = UIAlertAction(title: "Open Settings", style: .default, handler: {
+            let goToSettingsButton = UIAlertAction(title: Constants.messages.openSettings, style: .default, handler: {
                 action in
                 if let url = NSURL(string: UIApplication.openSettingsURLString) as URL? {
                     UIApplication.shared.open(url)
@@ -120,9 +121,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         let alert = createAlert(alertReasonParam: .imageSaved)
-        let goToLibraryButton = UIAlertAction(title: "Open Gallery", style: .default, handler: {
+        let goToLibraryButton = UIAlertAction(title: Constants.messages.openGallery, style: .default, handler: {
             action in
-            UIApplication.shared.open(URL(string:"photos-redirect://")!)
+            UIApplication.shared.open(URL(string: Constants.messages.galleryLink)!)
         })
         alert.addAction(goToLibraryButton)
         present(alert, animated: true)

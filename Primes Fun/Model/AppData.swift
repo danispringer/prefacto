@@ -11,10 +11,10 @@ import AVFoundation
 
 class AppData: UIViewController {
     
-    static var soundEnabled: Bool = UserDefaults.standard.bool(forKey: "soundEnabled")
+    static var soundEnabled: Bool = UserDefaults.standard.bool(forKey: Constants.messages.soundEnabled)
     
     static func getSoundEnabledSettings(sound: Int) {
-        soundEnabled = UserDefaults.standard.bool(forKey: "soundEnabled")
+        soundEnabled = UserDefaults.standard.bool(forKey: Constants.messages.soundEnabled)
         
         if soundEnabled {
             playSound(sound: sound)
@@ -22,7 +22,7 @@ class AppData: UIViewController {
     }
     
     static func setSoundEnabledSettings() {
-        UserDefaults.standard.set(!soundEnabled, forKey: "soundEnabled")
+        UserDefaults.standard.set(!soundEnabled, forKey: Constants.messages.soundEnabled)
     }
     
     static func playSound(sound: Int) {
