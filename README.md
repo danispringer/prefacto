@@ -21,8 +21,5 @@ Want to help? You can:
 - Share this project to spread the word.
 - Contact me: https://danispringer.github.io/
 
-# Credits
-- App Store Screenshots: https://mockuphone.com
-
 # License
 Copyright © 2018 Dani Springer. All rights reserved.
