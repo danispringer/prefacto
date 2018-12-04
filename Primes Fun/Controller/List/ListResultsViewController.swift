@@ -94,8 +94,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
         guard source.count != 0 else {
             message = """
-            Hey, did you know that there are no prime numbers between \(myFrom) and \(myTo)?
-            I just found out, using this app:
+            Hey, did you know that there are no prime numbers between \(myFrom) and \(myTo)? \
+            I just found out, using this app: \
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
             """
             presentShareController(message: message)
@@ -110,14 +110,14 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
         if mySource.count == 1 {
             message = """
-            Hey, did you know that the only prime number between \(myFrom) and \(myTo) is
-            \(mySourceFirst)? I just found out, using this app:
+            Hey, did you know that the only prime number between \(myFrom) and \(myTo) is \
+            \(mySourceFirst)? I just found out, using this app: \
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
             """
         } else if mySource.count == 2 {
             message = """
-            Hey, did you know that the only two prime numbers between \(myFrom) and \(myTo) are
-            \(mySourceFirst) and \(mySourceLast)? I just found out, using this app:
+            Hey, did you know that the only two prime numbers between \(myFrom) and \(myTo) are \
+            \(mySourceFirst) and \(mySourceLast)? I just found out, using this app: \
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
             """
         } else {
@@ -129,9 +129,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
             let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
             message = """
-            Hey, did you know that the prime numbers between \(myFrom) and \(myTo) are
-            \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than
-            \(mySource.count) numbers! I just found out, using this app:
+            Hey, did you know that the prime numbers between \(myFrom) and \(myTo) are \
+            \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \
+            \(mySource.count) numbers! I just found out, using this app: \
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
             """
         }

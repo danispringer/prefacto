@@ -76,13 +76,14 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
         if source.count == 1 {
             message = """
-                      Hey, did you know that \(myNumber) is a prime number? I just found out, using
-                      this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
+                      Hey, did you know that \(myNumber) is a prime number? I just found out, using \
+                      this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - \
+                      it's really cool!
                       """
         } else if source.count == 2 {
             message = """
-                      Hey, did you know that the prime factors of \(myNumber) are \(mySourceFirst)
-                      and \(mySourceLast)? I just found out, using this app:
+                      Hey, did you know that the prime factors of \(myNumber) are \(mySourceFirst) \
+                      and \(mySourceLast)? I just found out, using this app: \
                       https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
                       """
         } else {
@@ -95,9 +96,9 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
 
             message = """
-                      Hey, did you know that the prime factors of \(myNumber) are
-                      \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than
-                      \(mySource.count) numbers! I just found out, using this app:
+                      Hey, did you know that the prime factors of \(myNumber) are \
+                      \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \
+                      \(mySource.count) numbers! I just found out, using this app: \
                       https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
                       """
         }

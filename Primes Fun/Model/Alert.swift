@@ -71,7 +71,7 @@ extension UIViewController {
         case .noPrimesInRange:
             alertTitle = "Oops"
             alertMessage = """
-            There are no prime numbers between '\(firstNum)' and '\(secondNum)'.
+            There are no prime numbers between '\(firstNum)' and '\(secondNum)'. \
             Please enter different numbers.
             """
         case .messageSaved:
@@ -83,7 +83,7 @@ extension UIViewController {
         case .messageFailed:
             alertTitle = "Action failed"
             alertMessage = """
-            Your message has not been sent. Please try again later, or contact us by visiting
+            Your message has not been sent. Please try again later, or contact us by visiting \
             DaniSpringer.GitHub.io
             """
         case .messageSent:
@@ -92,7 +92,7 @@ extension UIViewController {
         case .permissionDenied:
             alertTitle = "Permission denied"
             alertMessage = """
-            Primes Fun needs access to your gallery in order to save your image. Please allow access
+            Primes Fun needs access to your gallery in order to save your image. Please allow access \
             in Settings.
             """
         case .imageSaved:
@@ -101,7 +101,7 @@ extension UIViewController {
         default:
             alertTitle = "Unknown error"
             alertMessage = """
-            An unknown error occurred. Please try again later, or contact us by visiting
+            An unknown error occurred. Please try again later, or contact us by visiting \
             DaniSpringer.GitHub.io
             """
         }
