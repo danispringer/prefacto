@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
 
-    enum alertReason {
+    enum AlertReason {
         case textfieldEmpty
         case network
         case notNumberOrTooBig
@@ -32,8 +32,9 @@ extension UIViewController {
         case imageSaved
     }
 
-    func createAlert(alertReasonParam: alertReason, num: Int64 = 0, divisibleBy: Int64 = 0, firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
-        
+    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, divisibleBy: Int64 = 0,
+                     firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
+
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
@@ -69,7 +70,10 @@ extension UIViewController {
             alertMessage = "Cannot make a list from a single number. Please enter different numbers."
         case .noPrimesInRange:
             alertTitle = "Oops"
-            alertMessage = "There are no prime numbers between '\(firstNum)' and '\(secondNum)'. Please enter different numbers."
+            alertMessage = """
+            There are no prime numbers between '\(firstNum)' and '\(secondNum)'.
+            Please enter different numbers.
+            """
         case .messageSaved:
             alertTitle = "Message saved"
             alertMessage = "Your message has been saved to drafts."
@@ -78,25 +82,34 @@ extension UIViewController {
             alertMessage = "Your message has not been sent."
         case .messageFailed:
             alertTitle = "Action failed"
-            alertMessage = "Your message has not been sent. Please try again later, or contact us by visiting DaniSpringer.GitHub.io"
+            alertMessage = """
+            Your message has not been sent. Please try again later, or contact us by visiting
+            DaniSpringer.GitHub.io
+            """
         case .messageSent:
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
         case .permissionDenied:
             alertTitle = "Permission denied"
-            alertMessage = "Primes Fun needs access to your gallery in order to save your image. Please allow access in Settings."
+            alertMessage = """
+            Primes Fun needs access to your gallery in order to save your image. Please allow access
+            in Settings.
+            """
         case .imageSaved:
             alertTitle = "Success!"
             alertMessage = "Your image has been saved to your library."
         default:
             alertTitle = "Unknown error"
-            alertMessage = "An unknown error occurred. Please try again later, or contact us by visiting DaniSpringer.GitHub.io"
+            alertMessage = """
+            An unknown error occurred. Please try again later, or contact us by visiting
+            DaniSpringer.GitHub.io
+            """
         }
-        
+
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(alertAction)
-        
+
         return alert
     }
 }

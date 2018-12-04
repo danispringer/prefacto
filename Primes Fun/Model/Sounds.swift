@@ -9,12 +9,11 @@
 import UIKit
 
 extension UIViewController {
-    
+
     enum Sound {
         static let positive = 1023
         static let negative = 1257
         static let toggle = 1104
     }
-    
-}
 
+}

@@ -9,8 +9,8 @@
 import Foundation
 
 struct Constants {
-    
-    struct storyboardID {
+
+    struct StoryboardID {
         static let main = "Main"
         static let checkerResults = "CheckerResultsViewController"
         static let tutorial = "TutorialViewController"
@@ -20,8 +20,8 @@ struct Constants {
         static let randomResults = "RandomResultsViewController"
         static let detail = "DetailViewController"
     }
-    
-    struct messages {
+
+    struct Messages {
         static let check = "Check"
         static let list = "List"
         static let factor = "Factor"
@@ -31,7 +31,11 @@ struct Constants {
         static let appVersion = "CFBundleShortVersionString"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
         static let shareApp = "Share App with friends"
-        static let shareMessage = "Check this app out: Primes Fun lets you check if a number is prime, list primes in a range, factorize, generate a random prime, and more! https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!"
+        static let shareMessage = """
+                   Check this app out: Primes Fun lets you check if a number is prime, list primes in
+                   a range, factorize, generate a random prime, and more!
+                   https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
+                   """
         static let sendFeedback = "Send feedback or question"
         static let leaveReview = "Leave a review"
         static let tutorial = "Tutorial"
