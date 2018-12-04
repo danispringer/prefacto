@@ -1,12 +1,7 @@
-# Known Bugs:
-
-# Requested Features:
-
-###### Dev notes
-
 - Notifications: random prime (Siri Shortcuts?)
 - support orientations on ipad
 - improve for ipad
+- Add Multiple options for languages in apps.
 - Dark mode
 - UICollectionView delegates could be put in a separate extension
 https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
