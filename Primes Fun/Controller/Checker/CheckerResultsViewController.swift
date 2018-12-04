@@ -73,13 +73,13 @@ class CheckerResultsViewController: UIViewController {
 
         if isPrime {
             message = """
-            Hey, did you know that \(myNumber) is a prime number? I just found out, using this
+            Hey, did you know that \(myNumber) is a prime number? I just found out, using this \
             app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
             """
         } else {
             message = """
-            Hey, did you know that \(myNumber) is not prime, because it is divisible by
-            \(myIsDivisibleBy)? I just found out, using this app:
+            Hey, did you know that \(myNumber) is not prime, because it is divisible by \
+            \(myIsDivisibleBy)? I just found out, using this app: \
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
             """
         }

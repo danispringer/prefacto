@@ -55,7 +55,7 @@ class RandomResultsViewController: UIViewController {
         }
 
         message = """
-        Hey, did you know that \(myNumber) is a prime number? I just found out, using this app:
+        Hey, did you know that \(myNumber) is a prime number? I just found out, using this app: \
         https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
         """
 
