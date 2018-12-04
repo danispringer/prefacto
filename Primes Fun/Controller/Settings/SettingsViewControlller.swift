@@ -10,45 +10,45 @@ import UIKit
 
 
 class SettingsViewController: UIViewController {
-    
+
     // MARK: Outlets
-    
+
     @IBOutlet weak var soundSwitch: UISwitch!
     @IBOutlet weak var soundStateLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
-    
-    
+
+
     // MARK: Properties
-    
+
     let toggleSound = 1104
-    
-    
+
+
     // MARK: Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        
-        soundSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.messages.soundEnabled)
+
+        soundSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.Messages.soundEnabled)
     }
-    
-    
+
+
     // Helpers
-    
+
     @IBAction func soundToggled(_ sender: Any) {
-        UserDefaults.standard.set(soundSwitch.isOn, forKey: Constants.messages.soundEnabled)
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: Constants.Messages.soundEnabled)
         if soundSwitch.isOn {
             AppData.getSoundEnabledSettings(sound: self.toggleSound)
-            
+
         }
     }
-    
+
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
 }
