@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 
-
 class CheckerResultsViewController: UIViewController {
 
     // MARK: Outlets
@@ -17,20 +16,16 @@ class CheckerResultsViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
 
-
-
     // MARK: Properties
 
     var number: Int64!
     var isPrime: Bool!
     var isDivisibleBy: Int64!
 
-
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -40,37 +35,28 @@ class CheckerResultsViewController: UIViewController {
             }
             return
         }
-
         if isPrime {
             resultLabel.text = "\(myNumber): prime."
         } else {
             resultLabel.text = "\(myNumber): not prime.\nDivisible by: \(myIsDivisibleBy)."
-
         }
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
     }
-
 
     // MARK: Helpers
 
     @IBAction func share() {
-
         var message = ""
-
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
             DispatchQueue.main.async {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 self.present(alert, animated: true)
             }
-
             return
         }
-
         if isPrime {
             message = """
             Hey, did you know that \(myNumber) is a prime number? I just found out, using this \
@@ -83,8 +69,6 @@ class CheckerResultsViewController: UIViewController {
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
-
-
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
@@ -105,6 +89,5 @@ class CheckerResultsViewController: UIViewController {
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
 
 }

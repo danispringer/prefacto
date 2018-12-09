@@ -15,7 +15,6 @@ class AppData: UIViewController {
 
     static func getSoundEnabledSettings(sound: Int) {
         soundEnabled = UserDefaults.standard.bool(forKey: Constants.Messages.soundEnabled)
-
         if soundEnabled {
             playSound(sound: sound)
         }

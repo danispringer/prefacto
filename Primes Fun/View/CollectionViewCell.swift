@@ -14,5 +14,4 @@ class CollectionViewCell: UICollectionViewCell, UICollectionViewDelegateFlowLayo
 
     @IBOutlet weak var cellImageView: UIImageView!
 
-
 }

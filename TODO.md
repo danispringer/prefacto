@@ -9,6 +9,7 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - Add back screenshots in READMEs.
 - Add iOS-like Splash screen: link to tutorial.
 - with 2 textfields, if one is empty, more focus to it when check fails with empty.
+- apply constants file everywhere
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554

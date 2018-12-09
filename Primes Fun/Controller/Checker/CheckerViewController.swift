@@ -11,9 +11,7 @@ import AVFoundation
 import MessageUI
 import StoreKit
 
-
 class CheckerViewController: UIViewController {
-
 
     // MARK: Outlets
 
@@ -22,38 +20,30 @@ class CheckerViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
-
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let resignToolbar = UIToolbar()
-
         let checkButton = UIBarButtonItem()
         checkButton.title = Constants.Messages.check
         checkButton.style = .plain
         checkButton.target = self
         checkButton.action = #selector(checkButtonPressed)
-
         let cancelButton = UIBarButtonItem(title: Constants.Messages.cancel,
                                            style: .plain,
                                            target: self,
                                            action: #selector(cancelAndHideKeyboard))
         cancelButton.tintColor = UIColor.red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-
         resignToolbar.items = [cancelButton, space, checkButton]
         resignToolbar.sizeToFit()
         myTextField.inputAccessoryView = resignToolbar
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
     }
-
 
     // MARK: Helpers
 
@@ -61,33 +51,20 @@ class CheckerViewController: UIViewController {
         myTextField.resignFirstResponder()
     }
 
-
     @objc func checkButtonPressed() {
-
-        // check if 2
-        // calls isPrime in background queue
-        // calls presentResult in main queue
-
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
-
-
         DispatchQueue.main.async {
-
             guard let userNumber = self.isNumberOrNil(textfield: self.myTextField) else {
                 return
             }
-
             guard self.isNotEdgeCaseNumber(number: userNumber) else {
                 return
             }
-
             var isPrimeBool = true
             var isDivisibleBy: Int64 = 0
-
             guard userNumber != 2 else {
-
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
                     AppData.getSoundEnabledSettings(sound: Sound.positive)
@@ -95,30 +72,22 @@ class CheckerViewController: UIViewController {
                 }
                 return
             }
-
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-
             downloadQueue.async {
                 let results = self.isPrime(number: userNumber)
-
                 isPrimeBool = results.0
                 isDivisibleBy = results.1
-
                 if isPrimeBool {
                     AppData.getSoundEnabledSettings(sound: Sound.positive)
-                    // prime
                 }
                 DispatchQueue.main.async {
                     self.presentResult(number: userNumber, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
-
             }
         }
     }
 
-
     func isNumberOrNil(textfield: UITextField) -> Int64? {
-
         guard let myTextFieldText = textfield.text else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -129,7 +98,6 @@ class CheckerViewController: UIViewController {
             }
             return nil
         }
-
         guard !myTextFieldText.isEmpty else {
             let alert = self.createAlert(alertReasonParam: .textfieldEmpty)
             DispatchQueue.main.async {
@@ -140,9 +108,7 @@ class CheckerViewController: UIViewController {
             }
             return nil
         }
-
         let trimmedText = myTextFieldText.trimmingCharacters(in: .whitespaces)
-
         guard let number = Int64(trimmedText) else {
             let alert = self.createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
@@ -153,14 +119,10 @@ class CheckerViewController: UIViewController {
             }
             return nil
         }
-
         return number
-
     }
 
-
     func isNotEdgeCaseNumber(number: Int64) -> Bool {
-
         guard number != 0 else {
             let alert = self.createAlert(alertReasonParam: .zero)
             DispatchQueue.main.async {
@@ -170,7 +132,6 @@ class CheckerViewController: UIViewController {
             }
             return false
         }
-
         guard !(number < 0) else {
             let alert = self.createAlert(alertReasonParam: .negative)
             DispatchQueue.main.async {
@@ -181,7 +142,6 @@ class CheckerViewController: UIViewController {
             }
             return false
         }
-
         guard number != 1 else {
             let alert = self.createAlert(alertReasonParam: .one)
             DispatchQueue.main.async {
@@ -191,36 +151,28 @@ class CheckerViewController: UIViewController {
             }
             return false
         }
-
         return true
     }
 
-
     func isPrime(number: Int64) -> (Bool, Int64) {
-
+        // TODO: optimize
         guard number != 1 else {
             return (true, 0)
         }
-
         guard number != 2 else {
             return (true, 0)
         }
-
         guard number != 3 else {
             return (true, 0)
         }
-
         guard !(number % 2 == 0) else {
             return (false, 2)
         }
-
         guard !(number % 3 == 0) else {
             return (false, 3)
         }
-
         var divisor: Int64 = 5
         var lever: Int64 = 2
-
         while divisor * divisor <= number {
             if number % divisor == 0 {
                 return (false, divisor)
@@ -231,7 +183,6 @@ class CheckerViewController: UIViewController {
         return (true, 0)
     }
 
-
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.checkerResults)
@@ -239,17 +190,13 @@ class CheckerViewController: UIViewController {
         controller?.number = number
         controller?.isPrime = isPrime
         controller?.isDivisibleBy = isDivisibleBy
-
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {
                 self.present(toPresent, animated: false)
             }
-
         }
-
     }
-
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
@@ -261,24 +208,19 @@ class CheckerViewController: UIViewController {
         }
     }
 
-
     @IBAction func aboutPressed(_ sender: Any) {
-
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
             infoAlert.message = "\(Constants.Messages.version) \(version)"
             infoAlert.title = Constants.Messages.appName
         }
-
         infoAlert.modalPresentationStyle = .popover
-
         let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
         }
-
         let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in
             self.shareApp()
         }
@@ -298,18 +240,14 @@ class CheckerViewController: UIViewController {
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-
         for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
             infoAlert.addAction(action)
         }
-
         if let presenter = infoAlert.popoverPresentationController {
             presenter.barButtonItem = aboutButton
         }
-
         present(infoAlert, animated: true)
     }
-
 
     func shareApp() {
         let message = Constants.Messages.shareMessage
@@ -325,19 +263,15 @@ class CheckerViewController: UIViewController {
         }
         present(activityController, animated: true)
     }
-
 }
-
 
 extension CheckerViewController: MFMailComposeViewControllerDelegate {
 
     func launchEmail() {
-
         var emailTitle = Constants.Messages.appName
         if let version = Bundle.main.infoDictionary![Constants.Messages.appVersion] {
             emailTitle += " \(version)"
         }
-
         let messageBody = Constants.Messages.emailSample
         let toRecipents = [Constants.Messages.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
@@ -345,14 +279,12 @@ extension CheckerViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setSubject(emailTitle)
         mailComposer.setMessageBody(messageBody, isHTML: false)
         mailComposer.setToRecipients(toRecipents)
-
         self.present(mailComposer, animated: true, completion: nil)
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         var alert = UIAlertController()
-
         dismiss(animated: true, completion: {
             switch result {
             case MFMailComposeResult.failed:
@@ -371,20 +303,16 @@ extension CheckerViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
-
 extension CheckerViewController {
 
     func requestReviewManually() {
-
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
             else {
                 fatalError("Expected a valid URL")
         }
-
         UIApplication.shared.open(writeReviewURL, options:
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                                   completionHandler: nil)
-
     }
 
 }

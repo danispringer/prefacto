@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 var localFrom: Int64 = 0
 var localTo: Int64 = 0
 var localSourceFirst: Int64 = 0
@@ -24,9 +23,7 @@ var localRange: Range<String.Index> = " ".index(
     " ".startIndex, offsetBy: 0)..<" ".index(" ".startIndex, offsetBy: 1)
 var localNumber: Int64 = 0
 
-
 struct Constants {
-
     struct StoryboardID {
         static let main = "Main"
         static let checkerResults = "CheckerResultsViewController"
@@ -37,7 +34,6 @@ struct Constants {
         static let randomResults = "RandomResultsViewController"
         static let detail = "DetailViewController"
     }
-
     struct Messages {
         static let check = "Check"
         static let list = "List"

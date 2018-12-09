@@ -11,7 +11,6 @@ import AVFoundation
 import MessageUI
 import StoreKit
 
-
 class ListViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
@@ -22,28 +21,22 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
-
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
-
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         firstTextField.delegate = self
         secondTextField.delegate = self
-
         let resignToolbar = UIToolbar()
-
         let listButton = UIBarButtonItem()
         listButton.title = Constants.Messages.list
         listButton.style = .plain
         listButton.target = self
         listButton.action = #selector(checkButtonPressed)
-
         let cancelButton = UIBarButtonItem()
         cancelButton.title = Constants.Messages.cancel
         cancelButton.style = .plain
@@ -51,12 +44,10 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         cancelButton.action = #selector(cancelAndHideKeyboard)
         cancelButton.tintColor = UIColor.red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-
         resignToolbar.items = [cancelButton, space, listButton]
         resignToolbar.sizeToFit()
         firstTextField.inputAccessoryView = resignToolbar
         secondTextField.inputAccessoryView = resignToolbar
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -65,10 +56,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         arrayOfInts = []
     }
-
 
     // MARK: Helpers
 
@@ -77,40 +66,29 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         secondTextField.resignFirstResponder()
     }
 
-
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
-
         let results = isNumberOrNil()
-
         guard var firstNumber = results?.0, var secondNumber = results?.1 else {
             return
         }
-
         guard isNotEdgeCase(firstNum: firstNumber, secondNum: secondNumber) else {
             return
         }
-
         if firstNumber > secondNumber {
             swap(&firstNumber, &secondNumber)
         }
-
-
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-
         downloadQueue.async {
             for number in firstNumber...secondNumber {
                 if self.isPrime(number: number) {
                     self.arrayOfInts.append(number)
                 }
             }
-
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
-                // present list results VC with array of ints
-
                 let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Constants.StoryboardID.listResults) as? ListResultsViewController
@@ -120,14 +98,11 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 if let toPresent = controller {
                     self.present(toPresent, animated: false)
                 }
-
             }
         }
     }
 
-
     func isNumberOrNil() -> (Int64, Int64)? {
-
         guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
             let alert = createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -137,7 +112,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             return nil
         }
-
         guard !firstText.isEmpty, !secondText.isEmpty else {
             let alert = createAlert(alertReasonParam: .textfieldEmpty)
             DispatchQueue.main.async {
@@ -148,10 +122,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             return nil
         }
-
         let firstTextTrimmed = firstText.trimmingCharacters(in: .whitespaces)
         let secondTextTrimmed = secondText.trimmingCharacters(in: .whitespaces)
-
         guard let firstNumber = Int64(firstTextTrimmed), let secondNumber = Int64(secondTextTrimmed) else {
             let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
@@ -162,13 +134,10 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             return nil
         }
-
         return (firstNumber, secondNumber)
     }
 
-
     func isNotEdgeCase(firstNum: Int64, secondNum: Int64) -> Bool {
-
         guard ([firstNum, secondNum].allSatisfy { $0 != 0 }) else {
             let alert = createAlert(alertReasonParam: .zero)
             DispatchQueue.main.async {
@@ -179,7 +148,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-
         guard ([firstNum, secondNum].allSatisfy { $0 > 0 }) else {
             let alert = createAlert(alertReasonParam: .negative)
             DispatchQueue.main.async {
@@ -190,7 +158,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
             DispatchQueue.main.async {
@@ -201,37 +168,27 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-
-
         return true
     }
 
-
     func isPrime(number: Int64) -> Bool {
-
         guard number != 1 else {
             return true
         }
-
         guard number != 2 else {
             return true
         }
-
         guard number != 3 else {
             return true
         }
-
         guard !(number % 2 == 0) else {
             return false
         }
-
         guard !(number % 3 == 0) else {
             return false
         }
-
         var divisor: Int64 = 5
         var lever: Int64 = 2
-
         while divisor * divisor <= number {
             if number % divisor == 0 {
                 return false
@@ -241,8 +198,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
-
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
@@ -255,56 +210,44 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-
     @IBAction func aboutPressed(_ sender: Any) {
-
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
             infoAlert.message = "\(Constants.Messages.version) \(version)"
             infoAlert.title = Constants.Messages.appName
         }
-
         infoAlert.modalPresentationStyle = .popover
-
         let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
         }
-
         let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in
             self.shareApp()
         }
-
         let mailAction = UIAlertAction(title: Constants.Messages.sendFeedback, style: .default) { _ in
             self.launchEmail()
         }
-
         let reviewAction = UIAlertAction(title: Constants.Messages.leaveReview, style: .default) { _ in
             self.requestReviewManually()
         }
-
         let tutorialAction = UIAlertAction(title: Constants.Messages.tutorial, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.tutorial)
             self.present(controller, animated: true)
         }
-
         let settingsAction = UIAlertAction(title: Constants.Messages.settings, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-
         for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
             infoAlert.addAction(action)
         }
-
         if let presenter = infoAlert.popoverPresentationController {
             presenter.barButtonItem = aboutButton
         }
-
         present(infoAlert, animated: true)
     }
 
@@ -325,16 +268,13 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
 }
 
-
 extension ListViewController: MFMailComposeViewControllerDelegate {
 
     func launchEmail() {
-
         var emailTitle = Constants.Messages.appName
         if let version = Bundle.main.infoDictionary![Constants.Messages.appVersion] {
             emailTitle += " \(version)"
         }
-
         let messageBody = Constants.Messages.emailSample
         let toRecipents = [Constants.Messages.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
@@ -342,14 +282,12 @@ extension ListViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setSubject(emailTitle)
         mailComposer.setMessageBody(messageBody, isHTML: false)
         mailComposer.setToRecipients(toRecipents)
-
         self.present(mailComposer, animated: true, completion: nil)
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         var alert = UIAlertController()
-
         dismiss(animated: true, completion: {
             switch result {
             case MFMailComposeResult.failed:
@@ -371,18 +309,12 @@ extension ListViewController: MFMailComposeViewControllerDelegate {
 extension ListViewController {
 
     func requestReviewManually() {
-        // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
-        //       You can find the App Store ID in your app's product URL
-
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
             else {
                 fatalError("Expected a valid URL")
         }
-
         UIApplication.shared.open(writeReviewURL, options:
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-
-
     }
 
 }

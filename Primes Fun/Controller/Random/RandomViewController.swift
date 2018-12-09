@@ -10,7 +10,6 @@ import UIKit
 import MessageUI
 import StoreKit
 
-
 class RandomViewController: UIViewController {
 
     // MARK: Outlets
@@ -21,23 +20,17 @@ class RandomViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
-
     // MARK: Properties
-
-
-
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
-
 
     // MARK: Helpers
 
@@ -45,10 +38,8 @@ class RandomViewController: UIViewController {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
-
-
+        // TODO: optimize
         var randInt = Int64(arc4random_uniform(4294967292)+2)
-
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
             while !self.isPrime(number: randInt) {
@@ -63,49 +54,37 @@ class RandomViewController: UIViewController {
 
     }
 
-
     func presentResult(number: Int64) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
             withIdentifier: Constants.StoryboardID.randomResults) as? RandomResultsViewController
         controller?.number = number
-
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {
                 self.present(toPresent, animated: false)
             }
-
         }
-
     }
 
-
     func isPrime(number: Int64) -> Bool {
-
         guard number != 1 else {
             return true
         }
-
         guard number != 2 else {
             return true
         }
-
         guard number != 3 else {
             return true
         }
-
         guard !(number % 2 == 0) else {
             return false
         }
-
         guard !(number % 3 == 0) else {
             return false
         }
-
         var divisor: Int64 = 5
         var lever: Int64 = 2
-
         while divisor * divisor <= number {
             if number % divisor == 0 {
                 return false
@@ -115,8 +94,6 @@ class RandomViewController: UIViewController {
         }
         return true
     }
-
-
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
@@ -130,56 +107,44 @@ class RandomViewController: UIViewController {
         }
     }
 
-
     @IBAction func aboutPressed(_ sender: Any) {
-
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
             infoAlert.message = "\(Constants.Messages.version) \(version)"
             infoAlert.title = Constants.Messages.appName
         }
-
         infoAlert.modalPresentationStyle = .popover
-
         let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
         }
-
         let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in
             self.shareApp()
         }
-
         let mailAction = UIAlertAction(title: Constants.Messages.sendFeedback, style: .default) { _ in
             self.launchEmail()
         }
-
         let reviewAction = UIAlertAction(title: Constants.Messages.leaveReview, style: .default) { _ in
             self.requestReviewManually()
         }
-
         let tutorialAction = UIAlertAction(title: Constants.Messages.tutorial, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.tutorial)
             self.present(controller, animated: true)
         }
-
         let settingsAction = UIAlertAction(title: Constants.Messages.settings, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-
         for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
             infoAlert.addAction(action)
         }
-
         if let presenter = infoAlert.popoverPresentationController {
             presenter.barButtonItem = aboutButton
         }
-
         present(infoAlert, animated: true)
     }
 
@@ -200,16 +165,13 @@ class RandomViewController: UIViewController {
 
 }
 
-
 extension RandomViewController: MFMailComposeViewControllerDelegate {
 
     func launchEmail() {
-
         var emailTitle = Constants.Messages.appName
         if let version = Bundle.main.infoDictionary![Constants.Messages.appVersion] {
             emailTitle += " \(version)"
         }
-
         let messageBody = Constants.Messages.emailSample
         let toRecipents = [Constants.Messages.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
@@ -217,14 +179,12 @@ extension RandomViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setSubject(emailTitle)
         mailComposer.setMessageBody(messageBody, isHTML: false)
         mailComposer.setToRecipients(toRecipents)
-
         self.present(mailComposer, animated: true, completion: nil)
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         var alert = UIAlertController()
-
         dismiss(animated: true, completion: {
             switch result {
             case MFMailComposeResult.failed:
@@ -243,13 +203,9 @@ extension RandomViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
-
 extension RandomViewController {
 
     func requestReviewManually() {
-        // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
-        //       You can find the App Store ID in your app's product URL
-
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
             else {
                 fatalError("Expected a valid URL")
@@ -257,8 +213,6 @@ extension RandomViewController {
 
         UIApplication.shared.open(writeReviewURL, options:
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-
-
     }
 
 }

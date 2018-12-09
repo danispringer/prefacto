@@ -11,7 +11,6 @@ import AVFoundation
 import MessageUI
 import StoreKit
 
-
 class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
@@ -21,11 +20,9 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
-
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
-
 
     // MARK: Life Cycle
 
@@ -54,19 +51,16 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
 
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arrayOfInts = []
     }
-
 
     // MARK: Helpers
 
     @objc func cancelAndHideKeyboard() {
         myTextField.resignFirstResponder()
     }
-
 
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
@@ -83,14 +77,12 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         downloadQueue.async {
             self.arrayOfInts = []
             self.primeFactors(number: number)
-
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.presentResults(number: savedUserNumber)
             }
         }
     }
-
 
     func isNumberOrNil() -> Int64? {
         guard let text = myTextField.text else {
@@ -123,7 +115,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         return number
     }
 
-
     func isNotEdgeCase(number: Int64) -> Bool {
         guard number != 0 else {
             let alert = createAlert(alertReasonParam: .zero)
@@ -153,7 +144,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
 
     func presentResults(number: Int64) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
@@ -218,7 +208,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-
     @IBAction func aboutPressed(_ sender: Any) {
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -277,7 +266,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 }
 
-
 extension FactorizeViewController: MFMailComposeViewControllerDelegate {
 
     func launchEmail() {
@@ -316,7 +304,6 @@ extension FactorizeViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
-
 extension FactorizeViewController {
 
     func requestReviewManually() {
@@ -327,6 +314,7 @@ extension FactorizeViewController {
         UIApplication.shared.open(writeReviewURL, options:
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
+
 }
 
 // Helper function inserted by Swift 4.2 migrator.
