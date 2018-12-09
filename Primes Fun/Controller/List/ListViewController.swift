@@ -77,73 +77,19 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         secondTextField.resignFirstResponder()
     }
 
+
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
 
-        guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
-            let alert = createAlert(alertReasonParam: .unknown)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-            }
+        let results = isNumberOrNil()
+
+        guard var firstNumber = results?.0, var secondNumber = results?.1 else {
             return
         }
 
-        guard !firstText.isEmpty, !secondText.isEmpty else {
-            let alert = createAlert(alertReasonParam: .textfieldEmpty)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard var firstNumber = Int64(firstText), var secondNumber = Int64(secondText) else {
-            let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard firstNumber != 0, secondNumber != 0 else {
-            let alert = createAlert(alertReasonParam: .zero)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard !(firstNumber < 0), !(secondNumber < 0) else {
-            let alert = createAlert(alertReasonParam: .negative)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard !(firstNumber == secondNumber) else {
-            let alert = createAlert(alertReasonParam: .sameTwice)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
+        guard isNotEdgeCase(firstNum: firstNumber, secondNum: secondNumber) else {
             return
         }
 
@@ -177,6 +123,87 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
             }
         }
+    }
+
+
+    func isNumberOrNil() -> (Int64, Int64)? {
+
+        guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
+            return nil
+        }
+
+        guard !firstText.isEmpty, !secondText.isEmpty else {
+            let alert = createAlert(alertReasonParam: .textfieldEmpty)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return nil
+        }
+
+        let firstTextTrimmed = firstText.trimmingCharacters(in: .whitespaces)
+        let secondTextTrimmed = secondText.trimmingCharacters(in: .whitespaces)
+
+        guard let firstNumber = Int64(firstTextTrimmed), let secondNumber = Int64(secondTextTrimmed) else {
+            let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return nil
+        }
+
+        return (firstNumber, secondNumber)
+    }
+
+
+    func isNotEdgeCase(firstNum: Int64, secondNum: Int64) -> Bool {
+
+        guard ([firstNum, secondNum].allSatisfy { $0 != 0 }) else {
+            let alert = createAlert(alertReasonParam: .zero)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return false
+        }
+
+        guard ([firstNum, secondNum].allSatisfy { $0 > 0 }) else {
+            let alert = createAlert(alertReasonParam: .negative)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return false
+        }
+
+        guard !(firstNum == secondNum) else {
+            let alert = createAlert(alertReasonParam: .sameTwice)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return false
+        }
+
+
+        return true
     }
 
 
