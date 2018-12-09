@@ -46,7 +46,7 @@ extension UIViewController {
             alertMessage = "Textfield is empty. Please enter a number and try again."
         case .notNumberOrTooBig:
             alertTitle = "Oops"
-            alertMessage = "No text allowed. Just numbers.\nMax number: 9223372036854775807\nOr (2^63 − 1)"
+            alertMessage = "No text allowed. Just numbers.\nMax number: 9223372036854775807\n(A.K.A.: 2^63 − 1)"
         case .zero:
             alertTitle = "Oops"
             alertMessage = "It seems like you entered no value. Or actually, 0 value. Please enter a different number."

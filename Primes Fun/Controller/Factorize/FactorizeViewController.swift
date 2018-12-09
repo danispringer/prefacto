@@ -31,17 +31,13 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         myTextField.delegate = self
-
         let resignToolbar = UIToolbar()
-
         let factorButton = UIBarButtonItem()
         factorButton.title = Constants.Messages.factor
         factorButton.style = .plain
         factorButton.target = self
         factorButton.action = #selector(checkButtonPressed)
-
         let cancelButton = UIBarButtonItem()
         cancelButton.title = Constants.Messages.cancel
         cancelButton.style = .plain
@@ -49,11 +45,9 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         cancelButton.action = #selector(cancelAndHideKeyboard)
         cancelButton.tintColor = UIColor.red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-
         resignToolbar.items = [cancelButton, space, factorButton]
         resignToolbar.sizeToFit()
         myTextField.inputAccessoryView = resignToolbar
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -63,7 +57,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         arrayOfInts = []
     }
 
@@ -76,23 +69,17 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 
     @objc func checkButtonPressed() {
-
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
-
         guard let number = isNumberOrNil() else {
             return
         }
-
         guard isNotEdgeCase(number: number) else {
             return
         }
-
         let savedUserNumber = number
-
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-
         downloadQueue.async {
             self.arrayOfInts = []
             self.primeFactors(number: number)
@@ -106,7 +93,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 
     func isNumberOrNil() -> Int64? {
-
         guard let text = myTextField.text else {
             let alert = createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -115,7 +101,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
             return nil
         }
-
         guard !text.isEmpty else {
             let alert = createAlert(alertReasonParam: .textfieldEmpty)
             DispatchQueue.main.async {
@@ -125,9 +110,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
             return nil
         }
-
         let trimmedText = text.trimmingCharacters(in: .whitespaces)
-
         guard let number = Int64(trimmedText) else {
             let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
@@ -137,7 +120,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
             return nil
         }
-
         return number
     }
 
@@ -152,7 +134,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-
         guard !(number < 0) else {
             let alert = createAlert(alertReasonParam: .negative)
             DispatchQueue.main.async {
@@ -162,7 +143,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-
         guard number != 1 else {
             DispatchQueue.main.async {
                 self.arrayOfInts = [1]
@@ -171,7 +151,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
             return false
         }
-
         return true
     }
 
@@ -185,34 +164,10 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         if let toPresent = controller {
             present(toPresent, animated: false)
         }
-
     }
-
-
-//    func isPrimeFactorizeVariant(number: Int64) {
-//
-//        var index = Int64(2)
-//        var localNumber = number
-//        let halfLocalNumber = localNumber / 2
-//
-//        while index <= halfLocalNumber {
-//            var results: (Bool, Int64)
-//            results = isPrimeOrDivisibleBy(number: localNumber)
-//
-//            if results.0 {
-//                self.arrayOfInts.append(localNumber)
-//                break
-//            } else {
-//                arrayOfInts.append(results.1)
-//                localNumber /= results.1
-//            }
-//            index += 1
-//        }
-//    }
 
     func primeFactors(number: Int64) {
         var localNumber = number
-
         var divisor: Int64 = 2
         while divisor * divisor <= localNumber {
             while localNumber % divisor == 0 {
@@ -226,32 +181,24 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-
     func isPrimeOrDivisibleBy(number: Int64) -> (Bool, Int64) {
-
         guard number != 1 else {
             return (true, 0)
         }
-
         guard number != 2 else {
             return (true, 0)
         }
-
         guard number != 3 else {
             return (true, 0)
         }
-
         guard !(number % 2 == 0) else {
             return (false, 2)
         }
-
         guard !(number % 3 == 0) else {
             return (false, 3)
         }
-
         var divisor: Int64 = 5
         var lever: Int64 = 2
-
         while divisor * divisor <= number {
             if number % divisor == 0 {
                 return (false, divisor)
@@ -262,9 +209,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         return (true, 0)
     }
 
-
     func enableUI(enabled: Bool) {
-
         DispatchQueue.main.async {
             self.myTextField.isEnabled = enabled
             self.view.alpha = enabled ? 1 : 0.5
@@ -275,54 +220,43 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBAction func aboutPressed(_ sender: Any) {
-
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
             infoAlert.message = "\(Constants.Messages.version) \(version)"
             infoAlert.title = Constants.Messages.appName
         }
-
         infoAlert.modalPresentationStyle = .popover
-
         let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
         }
-
         let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in
             self.shareApp()
         }
-
         let mailAction = UIAlertAction(title: Constants.Messages.sendFeedback, style: .default) { _ in
             self.launchEmail()
         }
-
         let reviewAction = UIAlertAction(title: Constants.Messages.leaveReview, style: .default) { _ in
             self.requestReviewManually()
         }
-
         let tutorialAction = UIAlertAction(title: Constants.Messages.tutorial, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.tutorial)
             self.present(controller, animated: true)
         }
-
         let settingsAction = UIAlertAction(title: Constants.Messages.settings, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-
         for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
             infoAlert.addAction(action)
         }
-
         if let presenter = infoAlert.popoverPresentationController {
             presenter.barButtonItem = aboutButton
         }
-
         present(infoAlert, animated: true)
     }
 
@@ -347,12 +281,10 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 extension FactorizeViewController: MFMailComposeViewControllerDelegate {
 
     func launchEmail() {
-
         var emailTitle = Constants.Messages.appName
         if let version = Bundle.main.infoDictionary![Constants.Messages.appVersion] {
             emailTitle += " \(version)"
         }
-
         let messageBody = Constants.Messages.emailSample
         let toRecipents = [Constants.Messages.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
@@ -360,14 +292,12 @@ extension FactorizeViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setSubject(emailTitle)
         mailComposer.setMessageBody(messageBody, isHTML: false)
         mailComposer.setToRecipients(toRecipents)
-
         self.present(mailComposer, animated: true, completion: nil)
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         var alert = UIAlertController()
-
         dismiss(animated: true, completion: {
             switch result {
             case MFMailComposeResult.failed:
@@ -386,23 +316,17 @@ extension FactorizeViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
+
 extension FactorizeViewController {
 
     func requestReviewManually() {
-        // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
-        //       You can find the App Store ID in your app's product URL
-
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
             else {
                 fatalError("Expected a valid URL")
         }
-
         UIApplication.shared.open(writeReviewURL, options:
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-
-
     }
-
 }
 
 // Helper function inserted by Swift 4.2 migrator.
