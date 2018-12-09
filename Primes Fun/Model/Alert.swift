@@ -34,7 +34,6 @@ extension UIViewController {
 
     func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, divisibleBy: Int64 = 0,
                      firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
-
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
@@ -105,11 +104,9 @@ extension UIViewController {
             DaniSpringer.GitHub.io
             """
         }
-
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(alertAction)
-
         return alert
     }
 }

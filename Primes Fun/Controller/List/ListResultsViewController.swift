@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import StoreKit
 
-
 class ListResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Outlets
@@ -21,8 +20,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var jumpToBottomButton: UIButton!
     @IBOutlet weak var myToolbar: UIToolbar!
 
-
-
     // MARK: Properties
 
     var source: [Int64]!
@@ -30,12 +27,10 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     var rangeTo: Int64!
     let listCell = "ListCell"
 
-
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         guard let myFrom = rangeFrom, let myTo = rangeTo else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -45,7 +40,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
-
         if source.count == 0 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
@@ -54,63 +48,50 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             messageLabel.text = "From: \(myFrom)\nTo: \(myTo)\nPrimes: \(source.count)"
         }
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
     }
-
 
     // MARK: Helpers
 
     func jumpToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
-
     }
-
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
         jumpToTop()
     }
-
 
     @IBAction func jumpToBottomPressed(_ sender: Any) {
         let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 
-
     @IBAction func share(_ sender: Any) {
         var message = ""
-
         guard rangeFrom != nil, rangeTo != nil else {
             let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
-
         localFrom = rangeFrom
         localTo = rangeTo
-
         guard source.count != 0 else {
             message = Constants.Messages.noPrimesInRangeMessage
             presentShareController(message: message)
             return
         }
-
         guard let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
             let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
-
         localSourceFirst = mySourceFirst
         localSourceLast = mySourceLast
         localSource = mySource
-
         if mySource.count == 1 {
             message = Constants.Messages.singlePrimeInRangeMessage
         } else if mySource.count == 2 {
@@ -126,12 +107,10 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             message = Constants.Messages.manyPrimesInrange
             print(message)
         }
-
         presentShareController(message: message)
     }
 
     func presentShareController(message: String) {
-
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view
         activityController.completionWithItemsHandler = {
@@ -149,12 +128,10 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         self.present(activityController, animated: true)
     }
 
-
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         SKStoreReviewController.requestReview()
     }
-
 
     // MARK: Delegates
 
@@ -164,32 +141,25 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         indicator?.backgroundColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
     }
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
 
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
-
         cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.numberLabel?.textColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
         cell?.numberLabel?.font = UIFont(name: Constants.Messages.fontAmericanTypewriter, size: 25)
-
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
         cell?.indexLabel?.textColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
         cell?.indexLabel?.font = UIFont(name: Constants.Messages.fontAmericanTypewriter, size: 16)
-
         return cell ?? UITableViewCell()
     }
-
 
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {

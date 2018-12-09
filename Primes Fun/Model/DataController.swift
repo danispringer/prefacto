@@ -28,7 +28,6 @@ class DataController {
     func configureContexts() {
         viewContext.automaticallyMergesChangesFromParent = true
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
-
         //        backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         //        backgroundContext.automaticallyMergesChangesFromParent = true
 
@@ -50,15 +49,12 @@ class DataController {
 
 extension DataController {
     func autoSaveViewContext(interval: TimeInterval = 5) {
-
         guard interval > 0 else {
             return
         }
-
         if viewContext.hasChanges {
             try? viewContext.save()
         }
-
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
             self.autoSaveViewContext(interval: interval)
         }
