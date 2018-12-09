@@ -44,7 +44,7 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

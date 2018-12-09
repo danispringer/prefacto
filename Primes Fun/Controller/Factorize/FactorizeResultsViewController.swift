@@ -98,7 +98,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
         SKStoreReviewController.requestReview()
     }
 

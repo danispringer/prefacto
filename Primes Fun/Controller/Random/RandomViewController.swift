@@ -22,6 +22,14 @@ class RandomViewController: UIViewController {
 
     // MARK: Properties
 
+    enum SizeOptions: String, CaseIterable {
+        case xSmall = "x-small"
+        case small = "small"
+        case medium = "medium"
+        case large = "large"
+        case xLarge = "x-large"
+    }
+
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -35,22 +43,74 @@ class RandomViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func randomizeButtonPressed(_ sender: Any) {
+        showOptions()
+    }
+
+    func makeRandom(size: SizeOptions) {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
-        // TODO: optimize
-        var randInt = Int64(arc4random_uniform(4294967292)+2)
+        var limit = Int64.max / 2
+        switch size {
+        case .xSmall:
+            limit /= 10000000000000000
+        case .small:
+            limit /= 100000000000
+        case .medium:
+            limit /= 1000000
+        case .large:
+            limit /= 10
+        case .xLarge:
+            break
+        }
+        var randInt = Int64.random(in: 1...limit)
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
             while !self.isPrime(number: randInt) {
                 randInt += 1
             }
-
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.presentResult(number: randInt)
             }
         }
+    }
+
+    func showOptions() {
+        var userChoice = SizeOptions.xSmall
+        let alert = UIAlertController(title: "Choose size",
+                                      message: "Choose your random number's size",
+                                      preferredStyle: .actionSheet)
+        alert.modalPresentationStyle = .popover
+        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel)
+        let xSmallAction = UIAlertAction(title: SizeOptions.xSmall.rawValue, style: .default) { _ in
+            userChoice = .xSmall
+            self.makeRandom(size: userChoice)
+        }
+        let smallAction = UIAlertAction(title: SizeOptions.small.rawValue, style: .default) { _ in
+            userChoice = .small
+            self.makeRandom(size: userChoice)
+        }
+        let mediumAction = UIAlertAction(title: SizeOptions.medium.rawValue, style: .default) { _ in
+            userChoice = .medium
+            self.makeRandom(size: userChoice)
+        }
+        let largeAction = UIAlertAction(title: SizeOptions.large.rawValue, style: .default) { _ in
+            userChoice = .large
+            self.makeRandom(size: userChoice)
+        }
+        let xLargeAction = UIAlertAction(title: SizeOptions.xLarge.rawValue, style: .default) { _ in
+            userChoice = .xLarge
+            self.makeRandom(size: userChoice)
+        }
+        for action in [cancelAction, xSmallAction, smallAction, mediumAction, largeAction, xLargeAction] {
+            alert.addAction(action)
+        }
+        #warning("test on ipad")
+        if let presenter = alert.popoverPresentationController {
+            presenter.sourceView = self.view
+        }
+        present(alert, animated: true)
 
     }
 

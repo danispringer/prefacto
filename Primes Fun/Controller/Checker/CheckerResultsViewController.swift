@@ -36,9 +36,9 @@ class CheckerResultsViewController: UIViewController {
             return
         }
         if isPrime {
-            resultLabel.text = "\(myNumber): prime."
+            resultLabel.text = "\(myNumber)\nis prime."
         } else {
-            resultLabel.text = "\(myNumber): not prime.\nDivisible by: \(myIsDivisibleBy)."
+            resultLabel.text = "\(myNumber)\nis not prime.\nIt is divisible by\n\(myIsDivisibleBy)"
         }
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -87,7 +87,7 @@ class CheckerResultsViewController: UIViewController {
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
 
 }
