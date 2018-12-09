@@ -155,21 +155,11 @@ class CheckerViewController: UIViewController {
     }
 
     func isPrime(number: Int64) -> (Bool, Int64) {
-        // TODO: optimize
-        guard number != 1 else {
+        guard !(1...3).contains(number) else {
             return (true, 0)
         }
-        guard number != 2 else {
-            return (true, 0)
-        }
-        guard number != 3 else {
-            return (true, 0)
-        }
-        guard !(number % 2 == 0) else {
-            return (false, 2)
-        }
-        guard !(number % 3 == 0) else {
-            return (false, 3)
+        for intruder: Int64 in [2, 3] where number % intruder == 0 {
+            return (false, intruder)
         }
         var divisor: Int64 = 5
         var lever: Int64 = 2

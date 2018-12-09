@@ -55,7 +55,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: Actions
 
     @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
         SKStoreReviewController.requestReview()
     }
 
