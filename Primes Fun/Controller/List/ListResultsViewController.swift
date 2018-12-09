@@ -86,18 +86,17 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func share(_ sender: Any) {
         var message = ""
 
-        guard let myFrom = rangeFrom, let myTo = rangeTo else {
+        guard rangeFrom != nil, rangeTo != nil else {
             let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
 
+        localFrom = rangeFrom
+        localTo = rangeTo
+
         guard source.count != 0 else {
-            message = """
-            Hey, did you know that there are no prime numbers between \(myFrom) and \(myTo)? \
-            I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
-            """
+            message = Constants.Messages.noPrimesInRangeMessage
             presentShareController(message: message)
             return
         }
@@ -108,32 +107,24 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
 
-        if mySource.count == 1 {
-            message = """
-            Hey, did you know that the only prime number between \(myFrom) and \(myTo) is \
-            \(mySourceFirst)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
-            """
-        } else if mySource.count == 2 {
-            message = """
-            Hey, did you know that the only two prime numbers between \(myFrom) and \(myTo) are \
-            \(mySourceFirst) and \(mySourceLast)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
-            """
-        } else {
-            let mySourceDroppedLast = mySource.dropLast()
-            let stringMySourceDroppedLast = "\(mySourceDroppedLast)"
-            let start = stringMySourceDroppedLast.index(stringMySourceDroppedLast.startIndex, offsetBy: 1)
-            let end = stringMySourceDroppedLast.index(stringMySourceDroppedLast.endIndex, offsetBy: -1)
-            let range = start..<end
+        localSourceFirst = mySourceFirst
+        localSourceLast = mySourceLast
+        localSource = mySource
 
-            let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
-            message = """
-            Hey, did you know that the prime numbers between \(myFrom) and \(myTo) are \
-            \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \
-            \(mySource.count) numbers! I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
-            """
+        if mySource.count == 1 {
+            message = Constants.Messages.singlePrimeInRangeMessage
+        } else if mySource.count == 2 {
+            message = Constants.Messages.twoPrimesInRange
+        } else {
+            localSourceDroppedLastArray = Array(mySource.dropLast())
+            localStringSourceDroppedLast = "\(localSourceDroppedLastArray)"
+            localStart = localStringSourceDroppedLast.index(localStringSourceDroppedLast.startIndex, offsetBy: 1)
+            localEnd = localStringSourceDroppedLast.index(localStringSourceDroppedLast.endIndex, offsetBy: -1)
+            localRange = localStart..<localEnd
+
+            localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
+            message = Constants.Messages.manyPrimesInrange
+            print(message)
         }
 
         presentShareController(message: message)

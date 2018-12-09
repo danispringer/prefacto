@@ -16,7 +16,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
 
-    @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
@@ -32,7 +32,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textfield.delegate = self
+        myTextField.delegate = self
 
         let resignToolbar = UIToolbar()
 
@@ -52,7 +52,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
         resignToolbar.items = [cancelButton, space, factorButton]
         resignToolbar.sizeToFit()
-        textfield.inputAccessoryView = resignToolbar
+        myTextField.inputAccessoryView = resignToolbar
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -71,7 +71,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     // MARK: Helpers
 
     @objc func cancelAndHideKeyboard() {
-        textfield.resignFirstResponder()
+        myTextField.resignFirstResponder()
     }
 
 
@@ -81,61 +81,11 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             self.enableUI(enabled: false)
         }
 
-        guard let text = textfield.text else {
-            let alert = createAlert(alertReasonParam: .unknown)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
+        guard let number = isNumberOrNil() else {
             return
         }
 
-        guard !text.isEmpty else {
-            let alert = createAlert(alertReasonParam: .textfieldEmpty)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard let number = Int64(text) else {
-            let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard number != 0 else {
-            let alert = createAlert(alertReasonParam: .zero)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard !(number < 0) else {
-            let alert = createAlert(alertReasonParam: .negative)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
-            }
-            return
-        }
-
-        guard number != 1 else {
-            DispatchQueue.main.async {
-                self.arrayOfInts = [1]
-                self.enableUI(enabled: true)
-                self.presentResults(number: number)
-            }
+        guard isNotEdgeCase(number: number) else {
             return
         }
 
@@ -145,13 +95,84 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
         downloadQueue.async {
             self.arrayOfInts = []
-            self.isPrimeFactorizeVariant(number: number)
+            self.primeFactors(number: number)
 
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.presentResults(number: savedUserNumber)
             }
         }
+    }
+
+
+    func isNumberOrNil() -> Int64? {
+
+        guard let text = myTextField.text else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.present(alert, animated: true)
+            }
+            return nil
+        }
+
+        guard !text.isEmpty else {
+            let alert = createAlert(alertReasonParam: .textfieldEmpty)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return nil
+        }
+
+        let trimmedText = text.trimmingCharacters(in: .whitespaces)
+
+        guard let number = Int64(trimmedText) else {
+            let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return nil
+        }
+
+        return number
+    }
+
+
+    func isNotEdgeCase(number: Int64) -> Bool {
+        guard number != 0 else {
+            let alert = createAlert(alertReasonParam: .zero)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return false
+        }
+
+        guard !(number < 0) else {
+            let alert = createAlert(alertReasonParam: .negative)
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Sound.negative)
+            }
+            return false
+        }
+
+        guard number != 1 else {
+            DispatchQueue.main.async {
+                self.arrayOfInts = [1]
+                self.enableUI(enabled: true)
+                self.presentResults(number: number)
+            }
+            return false
+        }
+
+        return true
     }
 
 
@@ -168,24 +189,40 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func isPrimeFactorizeVariant(number: Int64) {
+//    func isPrimeFactorizeVariant(number: Int64) {
+//
+//        var index = Int64(2)
+//        var localNumber = number
+//        let halfLocalNumber = localNumber / 2
+//
+//        while index <= halfLocalNumber {
+//            var results: (Bool, Int64)
+//            results = isPrimeOrDivisibleBy(number: localNumber)
+//
+//            if results.0 {
+//                self.arrayOfInts.append(localNumber)
+//                break
+//            } else {
+//                arrayOfInts.append(results.1)
+//                localNumber /= results.1
+//            }
+//            index += 1
+//        }
+//    }
 
-        var index = Int64(2)
+    func primeFactors(number: Int64) {
         var localNumber = number
-        let halfLocalNumber = localNumber / 2
 
-        while index <= halfLocalNumber {
-            var results: (Bool, Int64)
-            results = isPrimeOrDivisibleBy(number: localNumber)
-
-            if results.0 {
-                self.arrayOfInts.append(localNumber)
-                break
-            } else {
-                arrayOfInts.append(results.1)
-                localNumber /= results.1
+        var divisor: Int64 = 2
+        while divisor * divisor <= localNumber {
+            while localNumber % divisor == 0 {
+                arrayOfInts.append(divisor)
+                localNumber /= divisor
             }
-            index += 1
+            divisor += divisor == 2 ? 1 : 2
+        }
+        if localNumber > 1 {
+            arrayOfInts.append(localNumber)
         }
     }
 
@@ -229,7 +266,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     func enableUI(enabled: Bool) {
 
         DispatchQueue.main.async {
-            self.textfield.isEnabled = enabled
+            self.myTextField.isEnabled = enabled
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()

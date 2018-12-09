@@ -63,8 +63,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     @IBAction func share(_ sender: Any) {
         var message = ""
 
-        guard let myNumber = number, let mySource = source,
-              let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
+        guard number != nil, source != nil, let mySourceFirst = source.first, let mySourceLast = source.last else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 AppData.getSoundEnabledSettings(sound: Sound.negative)
@@ -74,33 +73,25 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             return
         }
 
+        localNumber = number
+        localSource = source
+        localSourceFirst = mySourceFirst
+        localSourceLast = mySourceLast
+
         if source.count == 1 {
-            message = """
-                      Hey, did you know that \(myNumber) is a prime number? I just found out, using \
-                      this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - \
-                      it's really cool!
-                      """
+            message = Constants.Messages.isPrimeMessage
         } else if source.count == 2 {
-            message = """
-                      Hey, did you know that the prime factors of \(myNumber) are \(mySourceFirst) \
-                      and \(mySourceLast)? I just found out, using this app: \
-                      https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
-                      """
+            message = Constants.Messages.twoPrimeFactorsMessage
         } else {
-            let mySourceDroppedLast = mySource.dropLast()
-            let stringMySourceDroppedLast = "\(mySourceDroppedLast)"
-            let start = stringMySourceDroppedLast.index(stringMySourceDroppedLast.startIndex, offsetBy: 1)
-            let end = stringMySourceDroppedLast.index(stringMySourceDroppedLast.endIndex, offsetBy: -1)
-            let range = start..<end
+            localSourceDroppedLastArray = Array(source.dropLast())
+            localStringSourceDroppedLast = "\(localSourceDroppedLastArray)"
+            localStart = localStringSourceDroppedLast.index(localStringSourceDroppedLast.startIndex, offsetBy: 1)
+            localEnd = localStringSourceDroppedLast.index(localStringSourceDroppedLast.endIndex, offsetBy: -1)
+            localRange = localStart..<localEnd
 
-            let cleanedMySourceDroppedLast = String(stringMySourceDroppedLast[range])
+            localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
 
-            message = """
-                      Hey, did you know that the prime factors of \(myNumber) are \
-                      \(cleanedMySourceDroppedLast), and \(mySourceLast)? That's no less than \
-                      \(mySource.count) numbers! I just found out, using this app: \
-                      https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
-                      """
+            message = Constants.Messages.manyPrimeFactorsMessage
         }
 
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)

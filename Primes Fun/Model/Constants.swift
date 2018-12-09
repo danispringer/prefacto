@@ -8,6 +8,23 @@
 
 import Foundation
 
+
+var localFrom: Int64 = 0
+var localTo: Int64 = 0
+var localSourceFirst: Int64 = 0
+var localSourceLast: Int64 = 0
+var localSource: [Int64] = []
+var localCleanedSourceDroppedLast: [Int64] = []
+var localSourceDroppedLastArray: [Int64] = []
+var localStringSourceDroppedLast: String = ""
+var localStringCleanedSourceDroppedLast: String = ""
+var localStart: String.Index = String.Index(encodedOffset: 0)
+var localEnd: String.Index = String.Index(encodedOffset: 0)
+var localRange: Range<String.Index> = " ".index(
+    " ".startIndex, offsetBy: 0)..<" ".index(" ".startIndex, offsetBy: 1)
+var localNumber: Int64 = 0
+
+
 struct Constants {
 
     struct StoryboardID {
@@ -34,7 +51,7 @@ struct Constants {
         static let shareMessage = """
                    Check this app out: Primes Fun lets you check if a number is prime, \
                    list primes in a range, factorize, generate a random prime, and more! \
-                   https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667 - it's really cool!
+                   https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
                    """
         static let sendFeedback = "Send feedback or question"
         static let leaveReview = "Leave a review"
@@ -47,5 +64,41 @@ struct Constants {
         static let emailAddress = "musicbyds@icloud.com"
         static let soundEnabled = "soundEnabled"
         static let fontAmericanTypewriter = "AmericanTypewriter"
+        static let noPrimesInRangeMessage = """
+        Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
+        I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let singlePrimeInRangeMessage = """
+        Hey, did you know that the only prime number between \(localFrom) and \(localTo) is \
+        \(localSourceFirst)? I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let twoPrimesInRange = """
+        Hey, did you know that the only prime numbers between \(localFrom) and \(localTo) are \
+        \(localSourceFirst) and \(localSourceLast)? I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let manyPrimesInrange = """
+        Hey, did you know that the prime numbers between \(localFrom) and \(localTo) are \
+        \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
+        \(localSource.count) numbers! I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let isPrimeMessage = """
+        Hey, did you know that \(localNumber) is a prime number? I just found out, using \
+        this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let twoPrimeFactorsMessage = """
+        Hey, did you know that the prime factors of \(localNumber) are \(localSourceFirst) \
+        and \(localSourceLast)? I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let manyPrimeFactorsMessage = """
+        Hey, did you know that the prime factors of \(localNumber) are \
+        \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
+        \(localSource.count) numbers! I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
     }
 }
