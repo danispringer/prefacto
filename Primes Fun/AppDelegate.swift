@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 19/06/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 19/06/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let dataController = DataController(modelName: "Model")
+    let dataController = DataController(modelName: Constants.Model.name)
 
     // Helpers
 
@@ -25,26 +25,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tab = window?.rootViewController as? UITabBarController
         let photosVC = tab?.viewControllers?.last as? PhotosViewController
         photosVC?.dataController = dataController
-        UserDefaults.standard.register(defaults: ["soundEnabled": true])
+        UserDefaults.standard.register(defaults: [Constants.UserDefaultsStrings.soundEnabled: true])
         let tabBar = UITabBar.appearance()
         tabBar.backgroundImage = UIImage.from(color: .clear)
         tabBar.shadowImage = UIImage.from(color: .clear)
         UITableView.appearance().backgroundColor = UIColor(red: 0.00, green: 0.16, blue: 0.21, alpha: 1.0)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter", size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
             ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter", size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
             ], for: .selected)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter", size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
             ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter", size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
             ], for: .disabled)
         return true
     }
