@@ -2,8 +2,8 @@
 //  DataController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 24/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 24/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import Foundation
@@ -17,20 +17,13 @@ class DataController {
         return persistentContainer.viewContext
     }
 
-    //    let backgroundContext:NSManagedObjectContext!
-
     init(modelName: String) {
         persistentContainer = NSPersistentContainer(name: modelName)
-
-        //        backgroundContext = persistentContainer.newBackgroundContext()
     }
 
     func configureContexts() {
         viewContext.automaticallyMergesChangesFromParent = true
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
-        //        backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
-        //        backgroundContext.automaticallyMergesChangesFromParent = true
-
     }
 
     func load(completion: (() -> Void)? = nil) {

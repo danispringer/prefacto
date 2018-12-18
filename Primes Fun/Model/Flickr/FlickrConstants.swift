@@ -2,8 +2,8 @@
 //  FlickrConstants.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 20/06/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 20/06/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
