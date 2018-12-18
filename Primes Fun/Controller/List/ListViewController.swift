@@ -2,8 +2,8 @@
 //  ListViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 24/06/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 24/06/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -118,7 +118,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -130,7 +130,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -144,7 +144,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -154,7 +154,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -164,7 +164,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -172,19 +172,10 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     }
 
     func isPrime(number: Int64) -> Bool {
-        guard number != 1 else {
+        guard !(1...3).contains(number) else {
             return true
         }
-        guard number != 2 else {
-            return true
-        }
-        guard number != 3 else {
-            return true
-        }
-        guard !(number % 2 == 0) else {
-            return false
-        }
-        guard !(number % 3 == 0) else {
+        for intruder: Int64 in [2, 3] where number % intruder == 0 {
             return false
         }
         var divisor: Int64 = 5
@@ -254,7 +245,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {

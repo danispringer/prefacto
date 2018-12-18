@@ -2,8 +2,8 @@
 //  TutorialViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 22/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 22/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -14,8 +14,6 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextView: UITextView!
-
-    // MARK: Properties
 
     // MARK: Life Cycle
 

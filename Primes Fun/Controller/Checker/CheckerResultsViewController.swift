@@ -2,8 +2,8 @@
 //  CheckerResultsViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 09/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 09/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,7 @@ class CheckerResultsViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
 
     // MARK: Properties
 
@@ -29,7 +30,7 @@ class CheckerResultsViewController: UIViewController {
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -70,7 +71,7 @@ class CheckerResultsViewController: UIViewController {
             """
         }
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
+        activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
@@ -78,7 +79,7 @@ class CheckerResultsViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: Sound.negative)
+                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 }
                 return
             }

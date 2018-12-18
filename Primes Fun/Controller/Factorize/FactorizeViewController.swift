@@ -2,8 +2,8 @@
 //  FactorizeViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 19/06/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 19/06/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -98,7 +98,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -108,7 +108,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -121,7 +121,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -130,7 +130,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -252,7 +252,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
