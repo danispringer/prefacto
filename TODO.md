@@ -10,8 +10,8 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - Add iOS-like Splash screen: link to tutorial.
 - with 2 textfields, if one is empty, more focus to it when check fails with empty.
 - apply constants file everywhere
-- let user choose random number: small, medium, etc
 - refactor like "too long funcs" all files
+- move share controller on results pages to toolbar button if possible, otherwise center of screen and arrowless.
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
@@ -28,7 +28,7 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 • Share or save your results
 • And more
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting www.DaniSpringer.GitHub.io
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email'.
 Love the app? Please consider leaving a review! It would mean the world to us.
 
 
@@ -36,5 +36,5 @@ Love the app? Please consider leaving a review! It would mean the world to us.
 
 • Lorem
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email', or by visiting www.DaniSpringer.GitHub.io
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email'.
 Love the app? Please consider leaving a review! It would mean the world to us.
