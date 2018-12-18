@@ -2,8 +2,8 @@
 //  SettingsViewControlller.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 23/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 23/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -16,10 +16,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var soundStateLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
 
-    // MARK: Properties
-
-    let toggleSound = 1104
-
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -28,15 +24,15 @@ class SettingsViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        soundSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.Messages.soundEnabled)
+        soundSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaultsStrings.soundEnabled)
     }
 
     // Helpers
 
     @IBAction func soundToggled(_ sender: Any) {
-        UserDefaults.standard.set(soundSwitch.isOn, forKey: Constants.Messages.soundEnabled)
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: Constants.UserDefaultsStrings.soundEnabled)
         if soundSwitch.isOn {
-            AppData.getSoundEnabledSettings(sound: self.toggleSound)
+            AppData.getSoundEnabledSettings(sound: Constants.Sound.toggle)
         }
     }
 

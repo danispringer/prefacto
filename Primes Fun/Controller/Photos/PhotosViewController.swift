@@ -2,8 +2,8 @@
 //  PhotosViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 20/06/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 20/06/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -35,7 +35,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFetchedResultsController()
-        self.title = "Images"
+        self.title = Constants.Title.images
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -49,11 +49,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     fileprivate func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "url", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: Constants.Model.url, ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                               managedObjectContext: dataController.viewContext,
-                                                              sectionNameKeyPath: nil, cacheName: "url")
+                                                              sectionNameKeyPath: nil, cacheName: Constants.Model.url)
         fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
         do {
             try fetchedResultsController.performFetch()
@@ -80,7 +80,8 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID,
                                                       for: indexPath) as? CollectionViewCell
-        var imageUI = UIImage(named: "refresh.png")
+        // TODO: fix image not showing
+        var imageUI = UIImage(named: Constants.Image.refresh)
         if let data = fetchedResultsController.fetchedObjects![indexPath.row].imageData {
             imageUI = UIImage(data: data)
             DispatchQueue.main.async {
@@ -133,7 +134,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: errorReason)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    AppData.getSoundEnabledSettings(sound: Sound.negative)
+                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -143,7 +144,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    AppData.getSoundEnabledSettings(sound: Sound.negative)
+                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
                 }
@@ -159,7 +160,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
 
                 self.collectionView.reloadData()
                 self.setUIEnabled(true)
-                AppData.getSoundEnabledSettings(sound: Sound.positive)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.positive)
             }
         }
     }
@@ -230,7 +231,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {

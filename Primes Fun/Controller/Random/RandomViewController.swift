@@ -2,8 +2,8 @@
 //  RandomViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 17/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 17/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -22,12 +22,12 @@ class RandomViewController: UIViewController {
 
     // MARK: Properties
 
-    enum SizeOptions: String, CaseIterable {
-        case xSmall = "x-small"
-        case small = "small"
-        case medium = "medium"
-        case large = "large"
-        case xLarge = "x-large"
+    enum SizeOptions: String {
+        case xSmall = "Extra-Small"
+        case small = "Small"
+        case medium = "Medium"
+        case large = "Large"
+        case xLarge = "Extra-Large"
     }
 
     // MARK: Life Cycle
@@ -71,7 +71,7 @@ class RandomViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
-                self.presentResult(number: randInt)
+                self.presentResult(number: randInt, size: size)
             }
         }
     }
@@ -106,19 +106,21 @@ class RandomViewController: UIViewController {
         for action in [cancelAction, xSmallAction, smallAction, mediumAction, largeAction, xLargeAction] {
             alert.addAction(action)
         }
-        #warning("test on ipad")
         if let presenter = alert.popoverPresentationController {
             presenter.sourceView = self.view
+            presenter.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            presenter.permittedArrowDirections = []
         }
         present(alert, animated: true)
 
     }
 
-    func presentResult(number: Int64) {
+    func presentResult(number: Int64, size: SizeOptions) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
             withIdentifier: Constants.StoryboardID.randomResults) as? RandomResultsViewController
-        controller?.number = number
+        controller?.myNumber = number
+        controller?.myTitle = "Your Random \(size.rawValue) Prime"
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {
@@ -128,19 +130,10 @@ class RandomViewController: UIViewController {
     }
 
     func isPrime(number: Int64) -> Bool {
-        guard number != 1 else {
+        guard !(1...3).contains(number) else {
             return true
         }
-        guard number != 2 else {
-            return true
-        }
-        guard number != 3 else {
-            return true
-        }
-        guard !(number % 2 == 0) else {
-            return false
-        }
-        guard !(number % 3 == 0) else {
+        for intruder: Int64 in [2, 3] where number % intruder == 0 {
             return false
         }
         var divisor: Int64 = 5
@@ -211,7 +204,7 @@ class RandomViewController: UIViewController {
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {

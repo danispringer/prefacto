@@ -2,8 +2,8 @@
 //  FactorizeResultsViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 09/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 09/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -16,6 +16,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var shareButtonItem: UIBarButtonItem!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var jumpToTopButton: UIButton!
     @IBOutlet weak var jumpToBottomButton: UIButton!
@@ -56,7 +57,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         guard number != nil, source != nil, let mySourceFirst = source.first, let mySourceLast = source.last else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -82,14 +83,14 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             message = Constants.Messages.manyPrimeFactorsMessage
         }
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.barButtonItem = shareButtonItem
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: Sound.negative)
+                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 }
                 return
             }
@@ -118,10 +119,10 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.numberLabel?.textColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
-        cell?.numberLabel?.font = UIFont(name: Constants.Messages.fontAmericanTypewriter, size: 25)
+        cell?.numberLabel?.font = UIFont(name: Constants.Font.AmericanTypewriter, size: 25)
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
         cell?.indexLabel?.textColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
-        cell?.indexLabel?.font = UIFont(name: Constants.Messages.fontAmericanTypewriter, size: 16)
+        cell?.indexLabel?.font = UIFont(name: Constants.Font.AmericanTypewriter, size: 16)
         return cell ?? UITableViewCell()
     }
 

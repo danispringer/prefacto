@@ -2,8 +2,8 @@
 //  RandomResultsViewController.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 17/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 17/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -13,12 +13,15 @@ class RandomResultsViewController: UIViewController {
 
     // MARK: Outlets
 
-    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
 
     // MARK: Properties
 
-    var number: Int64!
+    var myNumber: Int64!
+    var myTitle: String!
 
     // MARK: Life Cycle
 
@@ -28,17 +31,18 @@ class RandomResultsViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        myLabel.text = "\(number!)"
+        resultLabel.text = "\(myNumber!)"
+        titleLabel.text = myTitle
     }
 
     // MARK: Helpers
 
     @IBAction func share() {
         var message = ""
-        guard let myNumber = number else {
+        guard let myNumber = myNumber else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: Sound.negative)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -49,7 +53,7 @@ class RandomResultsViewController: UIViewController {
         https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
         """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
+        activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
@@ -57,7 +61,7 @@ class RandomResultsViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: Sound.negative)
+                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 }
                 return
             }
@@ -66,7 +70,7 @@ class RandomResultsViewController: UIViewController {
     }
 
     @IBAction func copyPressed(_ sender: Any) {
-        if let myNumber = number {
+        if let myNumber = myNumber {
             UIPasteboard.general.string = String(myNumber)
         }
     }
