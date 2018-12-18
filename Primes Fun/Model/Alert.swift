@@ -2,8 +2,8 @@
 //  Alert.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 20/06/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 20/06/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -18,8 +18,6 @@ extension UIViewController {
         case one
         case two
         case negative
-        case prime
-        case notPrime
         case sameTwice
         case noPrimesInRange
         case messageSaved
@@ -58,12 +56,6 @@ extension UIViewController {
         case .negative:
             alertTitle = "Oops"
             alertMessage = "No negative numbers allowed. Please enter a different number."
-        case .prime:
-            alertTitle = "Prime"
-            alertMessage = "\(num) is a prime number!"
-        case .notPrime:
-            alertTitle = "Not prime"
-            alertMessage = "\(num) is not a prime number.\nIs it divisible by \(divisibleBy)."
         case .sameTwice:
             alertTitle = "Oops"
             alertMessage = "Cannot make a list from a single number. Please enter different numbers."
@@ -82,8 +74,7 @@ extension UIViewController {
         case .messageFailed:
             alertTitle = "Action failed"
             alertMessage = """
-            Your message has not been sent. Please try again later, or contact us by visiting \
-            DaniSpringer.GitHub.io
+            Your message has not been sent. Please try again later, or contact us by leaving a review.
             """
         case .messageSent:
             alertTitle = "Success!"
@@ -100,8 +91,7 @@ extension UIViewController {
         default:
             alertTitle = "Unknown error"
             alertMessage = """
-            An unknown error occurred. Please try again later, or contact us by visiting \
-            DaniSpringer.GitHub.io
+            An unknown error occurred. Please try again later, or contact us by leaving a review.
             """
         }
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)

@@ -2,8 +2,8 @@
 //  Constants.swift
 //  Primes Fun
 //
-//  Created by Dani Springer on 11/26/18.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 11/26/18.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import Foundation
@@ -58,8 +58,6 @@ struct Constants {
         static let galleryLink = "photos-redirect://"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "musicbyds@icloud.com"
-        static let soundEnabled = "soundEnabled"
-        static let fontAmericanTypewriter = "AmericanTypewriter"
         static let noPrimesInRangeMessage = """
         Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
         I just found out, using this app: \
@@ -96,5 +94,26 @@ struct Constants {
         \(localSource.count) numbers! I just found out, using this app: \
         https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
         """
+    }
+    struct Model {
+        static let name = "Model"
+        static let url = "url"
+    }
+    struct UserDefaultsStrings {
+        static let soundEnabled = "soundEnabled"
+    }
+    struct Font {
+        static let AmericanTypewriter = "AmericanTypewriter"
+    }
+    struct Title {
+        static let images = "Images"
+    }
+    struct Image {
+        static let refresh = "refresh.png"
+    }
+    struct Sound {
+        static let positive = 1023
+        static let negative = 1257
+        static let toggle = 1104
     }
 }
