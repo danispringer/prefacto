@@ -80,7 +80,6 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID,
                                                       for: indexPath) as? CollectionViewCell
-        // TODO: fix image not showing
         var imageUI = UIImage(named: Constants.Image.refresh)
         if let data = fetchedResultsController.fetchedObjects![indexPath.row].imageData {
             imageUI = UIImage(data: data)
