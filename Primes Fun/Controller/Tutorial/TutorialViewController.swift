@@ -39,6 +39,7 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
 
     @IBAction func backToTop(_ sender: Any) {
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
+        myTextView.flashScrollIndicators()
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
