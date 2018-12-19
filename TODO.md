@@ -12,6 +12,7 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - apply constants file everywhere
 - refactor like "too long funcs" all files
 - move share controller on results pages to toolbar button if possible, otherwise center of screen and arrowless.
+- fix image not showing
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
