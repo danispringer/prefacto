@@ -45,8 +45,9 @@ struct Constants {
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
         static let shareApp = "Share App with friends"
         static let shareMessage = """
-                   Check this app out: Primes Fun lets you check if a number is prime, \
-                   list primes in a range, factorize, generate a random prime, and more! \
+                   This app lets you check if a number is prime, \
+                   list primes in a range, factorize, generate a random prime, and more. It's called \
+                   Primes Fun. Check it out: \
                    https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
                    """
         static let sendFeedback = "Send feedback or question"
