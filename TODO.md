@@ -15,6 +15,7 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - fix image not showing
 - [?] add share button under prime numbers (if prime).
 - make images unique.
+- improve factors results design/phrasing.
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
