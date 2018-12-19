@@ -35,7 +35,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         if let myNumber = number {
-            messageLabel.text = "N: \(myNumber)\nFactors: \(source.count)"
+            messageLabel.text = "Number:\n\(myNumber)\n\nFactors:\n\(source.count)"
         }
 
     }
