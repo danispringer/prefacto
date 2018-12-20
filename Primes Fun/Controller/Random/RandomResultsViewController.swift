@@ -48,10 +48,8 @@ class RandomResultsViewController: UIViewController {
             }
             return
         }
-        message = """
-        Hey, did you know that \(myNumber) is a prime number? I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
+        localNumber = myNumber
+        message = Constants.Messages.isPrimeMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = {
