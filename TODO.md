@@ -14,7 +14,7 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - move share controller on results pages to toolbar button if possible, otherwise center of screen and arrowless.
 - fix image not showing
 - [?] add share button under prime numbers (if prime).
-- make images unique.
+- make images unique: maybe more flickr pages are needed.
 - improve factors results design/phrasing.
 
 ~
@@ -28,11 +28,11 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 • Check whether a number is prime
 • List the prime numbers in a range
 • Factorize a number
-• Generate random primes
+• Generate random primes of a size of your choosing
 • Share or save your results
 • And more
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email'.
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send feedback or question'.
 Love the app? Please consider leaving a review! It would mean the world to us.
 
 
@@ -40,5 +40,5 @@ Love the app? Please consider leaving a review! It would mean the world to us.
 
 • Lorem
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send us an email'.
+Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send feedback or question'.
 Love the app? Please consider leaving a review! It would mean the world to us.
