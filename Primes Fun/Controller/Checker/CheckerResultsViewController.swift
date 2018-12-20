@@ -58,17 +58,12 @@ class CheckerResultsViewController: UIViewController {
             }
             return
         }
+        localNumber = myNumber
+        localIsDivisibleBy = myIsDivisibleBy
         if isPrime {
-            message = """
-            Hey, did you know that \(myNumber) is a prime number? I just found out, using this \
-            app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-            """
+            message = Constants.Messages.isPrimeMessage
         } else {
-            message = """
-            Hey, did you know that \(myNumber) is not prime, because it is divisible by \
-            \(myIsDivisibleBy)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-            """
+            message = Constants.Messages.isNotPrimeMessage
         }
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
