@@ -50,16 +50,16 @@ class RandomViewController: UIViewController {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
-        var limit = Int64.max / 2
+        var limit = Int64.max / 10 * 9
         switch size {
         case .xSmall:
-            limit /= 10000000000000000
+            limit /= powerUp(value: 10, toPower: 16)
         case .small:
-            limit /= 100000000000
+            limit /= powerUp(value: 10, toPower: 15)
         case .medium:
-            limit /= 1000000
+            limit /= powerUp(value: 10, toPower: 12)
         case .large:
-            limit /= 10
+            limit /= powerUp(value: 10, toPower: 7)
         case .xLarge:
             break
         }
@@ -74,6 +74,14 @@ class RandomViewController: UIViewController {
                 self.presentResult(number: randInt, size: size)
             }
         }
+    }
+
+    func powerUp(value: Int64, toPower: Int64) -> Int64 {
+        var initialValue = value
+        for _ in 1...toPower {
+            initialValue *= value
+        }
+        return initialValue
     }
 
     func showOptions() {
