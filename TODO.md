@@ -9,8 +9,6 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - Add back screenshots in READMEs.
 - Add iOS-like Splash screen: link to tutorial.
 - with 2 textfields, if one is empty, more focus to it when check fails with empty.
-- apply constants file everywhere
-- refactor like "too long funcs" all files
 - move share controller on results pages to toolbar button if possible, otherwise center of screen and arrowless.
 - fix image not showing
 - [?] add share button under prime numbers (if prime).
