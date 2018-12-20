@@ -60,47 +60,63 @@ struct Constants {
         static let galleryLink = "photos-redirect://"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "musicbyds@icloud.com"
-        static let noPrimesInRangeMessage = """
-        Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
-        I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let singlePrimeInRangeMessage = """
-        Hey, did you know that the only prime number between \(localFrom) and \(localTo) is \
-        \(localSourceFirst)? I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let twoPrimesInRange = """
-        Hey, did you know that the only prime numbers between \(localFrom) and \(localTo) are \
-        \(localSourceFirst) and \(localSourceLast)? I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let manyPrimesInrange = """
-        Hey, did you know that the prime numbers between \(localFrom) and \(localTo) are \
-        \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
-        \(localSource.count) numbers! I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let isPrimeMessage = """
-        Hey, did you know that \(localNumber) is a prime number? I just found out, using \
-        this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let isNotPrimeMessage = """
-        Hey, did you know that \(localNumber) is not prime, because it is divisible by \
-        \(localIsDivisibleBy)? I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let twoPrimeFactorsMessage = """
-        Hey, did you know that the prime factors of \(localNumber) are \(localSourceFirst) \
-        and \(localSourceLast)? I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
-        static let manyPrimeFactorsMessage = """
-        Hey, did you know that the prime factors of \(localNumber) are \
-        \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
-        \(localSource.count) numbers! I just found out, using this app: \
-        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-        """
+        static var noPrimesInRangeMessage: String {
+            return """
+            Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
+            I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var singlePrimeInRangeMessage: String {
+            return """
+            Hey, did you know that the only prime number between \(localFrom) and \(localTo) is \
+            \(localSourceFirst)? I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var twoPrimesInRange: String {
+            return """
+            Hey, did you know that the only prime numbers between \(localFrom) and \(localTo) are \
+            \(localSourceFirst) and \(localSourceLast)? I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var manyPrimesInrange: String {
+            return """
+            Hey, did you know that the prime numbers between \(localFrom) and \(localTo) are \
+            \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
+            \(localSource.count) numbers! I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var isPrimeMessage: String {
+            return """
+            Hey, did you know that \(localNumber) is a prime number? I just found out, using \
+            this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var isNotPrimeMessage: String {
+            return """
+            Hey, did you know that \(localNumber) is not prime, because it is divisible by \
+            \(localIsDivisibleBy)? I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var twoPrimeFactorsMessage: String {
+            return """
+            Hey, did you know that the prime factors of \(localNumber) are \(localSourceFirst) \
+            and \(localSourceLast)? I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var manyPrimeFactorsMessage: String {
+            return """
+            Hey, did you know that the prime factors of \(localNumber) are \
+            \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
+            \(localSource.count) numbers! I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
     }
     struct Model {
         static let name = "Model"
