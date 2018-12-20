@@ -22,6 +22,7 @@ var localEnd: String.Index = String.Index(encodedOffset: 0)
 var localRange: Range<String.Index> = " ".index(
     " ".startIndex, offsetBy: 0)..<" ".index(" ".startIndex, offsetBy: 1)
 var localNumber: Int64 = 0
+var localIsDivisibleBy: Int64 = 0
 
 struct Constants {
     struct StoryboardID {
@@ -83,6 +84,11 @@ struct Constants {
         static let isPrimeMessage = """
         Hey, did you know that \(localNumber) is a prime number? I just found out, using \
         this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+        """
+        static let isNotPrimeMessage = """
+        Hey, did you know that \(localNumber) is not prime, because it is divisible by \
+        \(localIsDivisibleBy)? I just found out, using this app: \
+        https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
         """
         static let twoPrimeFactorsMessage = """
         Hey, did you know that the prime factors of \(localNumber) are \(localSourceFirst) \
