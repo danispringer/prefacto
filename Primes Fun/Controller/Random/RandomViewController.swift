@@ -53,13 +53,13 @@ class RandomViewController: UIViewController {
         var limit = Int64.max / 10 * 9
         switch size {
         case .xSmall:
-            limit /= powerUp(value: 10, toPower: 16)
+            limit /= power(coeff: 10, exp: 16)
         case .small:
-            limit /= powerUp(value: 10, toPower: 15)
+            limit /= power(coeff: 10, exp: 15)
         case .medium:
-            limit /= powerUp(value: 10, toPower: 12)
+            limit /= power(coeff: 10, exp: 12)
         case .large:
-            limit /= powerUp(value: 10, toPower: 7)
+            limit /= power(coeff: 10, exp: 7)
         case .xLarge:
             break
         }
@@ -76,10 +76,10 @@ class RandomViewController: UIViewController {
         }
     }
 
-    func powerUp(value: Int64, toPower: Int64) -> Int64 {
-        var initialValue = value
-        for _ in 1...toPower {
-            initialValue *= value
+    func power(coeff: Int64, exp: Int64) -> Int64 {
+        var initialValue = coeff
+        for _ in 1...exp {
+            initialValue *= coeff
         }
         return initialValue
     }
