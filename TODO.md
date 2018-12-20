@@ -10,10 +10,10 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - Add iOS-like Splash screen: link to tutorial.
 - with 2 textfields, if one is empty, more focus to it when check fails with empty.
 - move share controller on results pages to toolbar button if possible, otherwise center of screen and arrowless.
-- fix image not showing
-- [?] add share button under prime numbers (if prime).
-- make images unique: maybe more flickr pages are needed.
+- fix placeholder image not showing
+- make images unique: prefer less total over dupes.
 - improve factors results design/phrasing.
+- add exponent to prime factors
 
 ~
 Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
