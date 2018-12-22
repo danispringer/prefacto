@@ -1,4 +1,5 @@
-- Notifications: random prime (Siri Shortcuts?)
+- Notifications: daily random prime (Siri Shortcuts?)
+- Siri Shortcuts: random prime
 - support orientations on ipad
 - improve for ipad
 - Add Multiple options for languages in apps.
