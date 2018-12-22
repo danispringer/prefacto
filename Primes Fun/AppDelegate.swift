@@ -49,6 +49,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+
+    func application(_ application: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+
+        let viewController = window?.rootViewController as? RandomViewController
+        viewController?.makeRandomShortcut()
+
+        let tab = window?.rootViewController as? UITabBarController
+        let randomVC = tab?.viewControllers?[3] as? RandomViewController
+        randomVC?.makeRandomShortcut()
+
+        return true
+    }
+
+    
     func saveViewContext() {
         try? dataController.viewContext.save()
     }

@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import StoreKit
+import Intents
 
 class RandomViewController: UIViewController {
 
@@ -43,7 +44,40 @@ class RandomViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func randomizeButtonPressed(_ sender: Any) {
+        let activity = NSUserActivity(activityType: Constants.Messages.bundleAndRandom)
+        activity.title = "Get random prime"
+        activity.isEligibleForSearch = true
+
+        if #available(iOS 12.0, *) {
+            activity.isEligibleForPrediction = true
+            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Constants.Messages.bundleAndRandom)
+            activity.suggestedInvocationPhrase = "Show me a Random Prime"
+        } else {
+            print("not ios 12")
+        }
+        view.userActivity = activity
+        activity.becomeCurrent()
+
         showOptions()
+    }
+
+    func makeRandomShortcut() {
+        DispatchQueue.main.async {
+            self.enableUI(enabled: false)
+        }
+        var limit = Int64.max / 10 * 9
+        limit /= power(coeff: 10, exp: 12)
+        var randInt = Int64.random(in: 1...limit)
+        let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
+        downloadQueue.async {
+            while !self.isPrime(number: randInt) {
+                randInt += 1
+            }
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+                self.presentResult(number: randInt, size: SizeOptions.medium)
+            }
+        }
     }
 
     func makeRandom(size: SizeOptions) {
