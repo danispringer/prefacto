@@ -38,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3303491521CEF3A100FD1E23 /* Primes Fun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Primes Fun.entitlements"; sourceTree = "<group>"; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		3317915120D9FD3D00CA739F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		3317915620D9FE3600CA739F /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
@@ -228,6 +229,7 @@
 		33EE5BC920D996C4008FEAF2 /* Primes Fun */ = {
 			isa = PBXGroup;
 			children = (
+				3303491521CEF3A100FD1E23 /* Primes Fun.entitlements */,
 				3317915C20DA042F00CA739F /* Model */,
 				3317916020DA07CC00CA739F /* View */,
 				3317915D20DA047E00CA739F /* Controller */,
@@ -271,6 +273,11 @@
 					33EE5BC620D996C4008FEAF2 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -498,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Primes Fun/Primes Fun.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.0.7;
 				DEVELOPMENT_TEAM = JMVGHP3288;
@@ -520,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Primes Fun/Primes Fun.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.0.7;
 				DEVELOPMENT_TEAM = JMVGHP3288;
