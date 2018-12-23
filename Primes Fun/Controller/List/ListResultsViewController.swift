@@ -198,5 +198,5 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
-    
+
 }

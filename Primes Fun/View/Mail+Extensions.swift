@@ -12,7 +12,7 @@ import MessageUI
 
 extension MFMailComposeViewController {
 
-    
+
     // MARK: Life Cycle
 
     override open func viewDidLoad() {

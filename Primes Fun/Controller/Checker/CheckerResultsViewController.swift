@@ -93,5 +93,5 @@ class CheckerResultsViewController: UIViewController {
         dismiss(animated: false, completion: nil)
     }
 
-    
+
 }
