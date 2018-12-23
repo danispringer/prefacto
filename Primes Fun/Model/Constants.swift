@@ -40,6 +40,7 @@ struct Constants {
         static let list = "List"
         static let factor = "Factor"
         static let cancel = "Cancel"
+        static let enterAnyNumber = "Enter any number here"
         static let version = "Version"
         static let appName = "Primes Fun"
         static let appVersion = "CFBundleShortVersionString"
