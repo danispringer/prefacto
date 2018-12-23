@@ -12,7 +12,9 @@ import CoreData
 import MessageUI
 import StoreKit
 
+
 class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
 
     // MARK: Outlets
 
@@ -23,12 +25,14 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
+
     // MARK: Properties
 
     var photo: Photo!
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<Photo>!
     let cellID = "Cell"
+
 
     // MARK: Life Cycle
 
@@ -44,6 +48,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.collectionView.reloadData()
         }
     }
+
 
     // MARK: Core Data
 
@@ -62,6 +67,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
 
+
     // MARK: CollectionViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -72,9 +78,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
 
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController.fetchedObjects!.count
     }
+
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -108,6 +116,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell ?? UICollectionViewCell()
     }
 
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
@@ -121,6 +130,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
 
     }
+
 
     // MARK: Helper functions
 
@@ -164,6 +174,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
 
+
     @IBAction func refreshButtonPressed() {
         for index in fetchedResultsController.fetchedObjects!.indices {
             let indexPath = IndexPath(row: index, section: 0)
@@ -173,6 +184,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         try? dataController.viewContext.save()
         getImagesUrls()
     }
+
 
     func setUIEnabled(_ enabled: Bool) {
         DispatchQueue.main.async {
@@ -185,6 +197,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self.activityIndicator.startAnimating()
         }
     }
+
 
     @IBAction func aboutPressed(_ sender: Any) {
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
@@ -227,6 +240,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         present(infoAlert, animated: true)
     }
 
+
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
@@ -243,7 +257,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
 }
 
+
 extension PhotosViewController: MFMailComposeViewControllerDelegate {
+
+
+    // MARK: Helpers
 
     func launchEmail() {
         var emailTitle = Constants.Messages.appName
@@ -259,6 +277,7 @@ extension PhotosViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setToRecipients(toRecipents)
         self.present(mailComposer, animated: true, completion: nil)
     }
+
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -279,9 +298,15 @@ extension PhotosViewController: MFMailComposeViewControllerDelegate {
             }
         })
     }
+
+
 }
 
+
 extension PhotosViewController {
+
+
+    // MARK: Helpers
 
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
@@ -293,9 +318,12 @@ extension PhotosViewController {
                                   completionHandler: nil)
     }
 
+
 }
 
+
 // Helper function inserted by Swift 4.2 migrator.
+
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in

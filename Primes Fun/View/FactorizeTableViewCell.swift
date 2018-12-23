@@ -10,6 +10,7 @@ import UIKit
 
 class FactorizeTableViewCell: UITableViewCell {
 
+    
     // MARK: Outlets
 
     @IBOutlet weak var indexLabel: UILabel!

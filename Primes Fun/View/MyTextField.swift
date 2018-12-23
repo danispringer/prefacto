@@ -8,9 +8,16 @@
 
 import UIKit
 
+
 class MyTextField: UITextField {
 
+
+    // MARK: Properties
+
     var bottomBorder = UIView()
+
+
+    // MARK: Life Cycle
 
     override func awakeFromNib() {
 
@@ -36,4 +43,6 @@ class MyTextField: UITextField {
         bottomBorder.heightAnchor.constraint(equalToConstant: 1).isActive = true // Set Border-Strength
 
     }
+
+    
 }

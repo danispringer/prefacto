@@ -9,9 +9,15 @@
 import UIKit
 import MessageUI
 
+
 extension MFMailComposeViewController {
+
+    
+    // MARK: Life Cycle
+
     override open func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.tintColor = Constants.View.goldColor
     }
+
 }

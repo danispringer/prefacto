@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
+
 class CheckerResultsViewController: UIViewController {
+
 
     // MARK: Outlets
 
@@ -17,11 +19,13 @@ class CheckerResultsViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
 
+
     // MARK: Properties
 
     var number: Int64!
     var isPrime: Bool!
     var isDivisibleBy: Int64!
+
 
     // MARK: Life Cycle
 
@@ -46,6 +50,7 @@ class CheckerResultsViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
+
 
     // MARK: Helpers
 
@@ -82,8 +87,11 @@ class CheckerResultsViewController: UIViewController {
         self.present(activityController, animated: true)
     }
 
+
+    // MARK: Done Pressed
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
 
+    
 }

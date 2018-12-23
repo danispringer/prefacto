@@ -11,7 +11,9 @@ import AVFoundation
 import MessageUI
 import StoreKit
 
+
 class ListViewController: UIViewController, UITextFieldDelegate {
+
 
     // MARK: Outlets
 
@@ -22,9 +24,11 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var aboutButton: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
 
+
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
+
 
     // MARK: Life Cycle
 
@@ -55,10 +59,13 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
 
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arrayOfInts = []
+
     }
+
 
     // MARK: Helpers
 
@@ -66,6 +73,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         firstTextField.resignFirstResponder()
         secondTextField.resignFirstResponder()
     }
+
 
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
@@ -103,6 +111,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+
     func isNumberOrNil() -> (Int64, Int64)? {
         guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
             let alert = createAlert(alertReasonParam: .unknown)
@@ -138,6 +147,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         return (firstNumber, secondNumber)
     }
 
+
     func isNotEdgeCase(firstNum: Int64, secondNum: Int64) -> Bool {
         guard ([firstNum, secondNum].allSatisfy { $0 != 0 }) else {
             let alert = createAlert(alertReasonParam: .zero)
@@ -172,6 +182,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+
     func isPrime(number: Int64) -> Bool {
         guard !(1...3).contains(number) else {
             return true
@@ -191,6 +202,9 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+
+    // MARK: Toggle UI
+
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             self.firstTextField.isEnabled = enabled
@@ -202,6 +216,9 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             self.titleLabel.text = enabled ? "The Prime List" : "Listing..."
         }
     }
+
+
+    // MARK: About Pressed
 
     @IBAction func aboutPressed(_ sender: Any) {
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
@@ -244,6 +261,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         present(infoAlert, animated: true)
     }
 
+
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
@@ -261,7 +279,10 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
 }
 
+
 extension ListViewController: MFMailComposeViewControllerDelegate {
+
+    // MARK: Helpers
 
     func launchEmail() {
         var emailTitle = Constants.Messages.appName
@@ -277,6 +298,7 @@ extension ListViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setToRecipients(toRecipents)
         self.present(mailComposer, animated: true, completion: nil)
     }
+
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -297,9 +319,15 @@ extension ListViewController: MFMailComposeViewControllerDelegate {
             }
         })
     }
+
+
 }
 
+
 extension ListViewController {
+
+
+    // MARK: Helpers
 
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
@@ -310,9 +338,12 @@ extension ListViewController {
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 
+
 }
 
+
 // Helper function inserted by Swift 4.2 migrator.
+
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in
