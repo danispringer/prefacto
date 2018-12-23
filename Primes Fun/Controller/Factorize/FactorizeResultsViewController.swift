@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 import StoreKit
 
+
 class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
 
     // MARK: Outlets
 
@@ -42,7 +44,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     }
 
-    
+
     // MARK: Helpers
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
@@ -50,10 +52,12 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 
+
     @IBAction func jumpToBottomPressed(_ sender: Any) {
         let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
+
 
     @IBAction func share(_ sender: Any) {
         var message = ""
@@ -101,21 +105,26 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         present(activityController, animated: true)
     }
 
+
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
         SKStoreReviewController.requestReview()
     }
 
+
     // MARK: Delegates
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let indicator = scrollView.subviews.last as? UIImageView
         indicator?.image = nil
         indicator?.backgroundColor = .white
     }
 
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
+
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
@@ -129,14 +138,17 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         return cell ?? UITableViewCell()
     }
 
+
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return action == #selector(copy(_:))
     }
+
 
     func tableView(_ tableView: UITableView, performAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) {
@@ -146,5 +158,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             pasteboard.string = cell?.numberLabel?.text
         }
     }
+
 
 }
