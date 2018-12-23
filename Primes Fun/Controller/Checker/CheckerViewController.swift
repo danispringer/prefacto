@@ -13,6 +13,7 @@ import StoreKit
 
 class CheckerViewController: UIViewController {
 
+
     // MARK: Outlets
 
     @IBOutlet weak var myTextField: UITextField!
@@ -20,6 +21,7 @@ class CheckerViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
+
 
     // MARK: Life Cycle
 
@@ -52,6 +54,7 @@ class CheckerViewController: UIViewController {
     @objc func cancelAndHideKeyboard() {
         myTextField.resignFirstResponder()
     }
+
 
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
@@ -89,6 +92,7 @@ class CheckerViewController: UIViewController {
         }
     }
 
+
     func isNumberOrNil(textfield: UITextField) -> Int64? {
         guard let myTextFieldText = textfield.text else {
             let alert = self.createAlert(alertReasonParam: .unknown)
@@ -124,6 +128,7 @@ class CheckerViewController: UIViewController {
         return number
     }
 
+
     func isNotEdgeCaseNumber(number: Int64) -> Bool {
         guard number != 0 else {
             let alert = self.createAlert(alertReasonParam: .zero)
@@ -156,6 +161,7 @@ class CheckerViewController: UIViewController {
         return true
     }
 
+
     func isPrime(number: Int64) -> (Bool, Int64) {
         guard !(1...3).contains(number) else {
             return (true, 0)
@@ -175,6 +181,7 @@ class CheckerViewController: UIViewController {
         return (true, 0)
     }
 
+
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.checkerResults)
@@ -190,6 +197,7 @@ class CheckerViewController: UIViewController {
         }
     }
 
+
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             self.myTextField.isEnabled = enabled
@@ -200,6 +208,7 @@ class CheckerViewController: UIViewController {
             self.titleLabel.text = enabled ? "Is It Prime?" : "Checking..."
         }
     }
+
 
     @IBAction func aboutPressed(_ sender: Any) {
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
@@ -242,6 +251,7 @@ class CheckerViewController: UIViewController {
         present(infoAlert, animated: true)
     }
 
+
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
@@ -256,9 +266,15 @@ class CheckerViewController: UIViewController {
         }
         present(activityController, animated: true)
     }
+
+
 }
 
+
 extension CheckerViewController: MFMailComposeViewControllerDelegate {
+
+
+    // MARK: Helpers
 
     func launchEmail() {
         var emailTitle = Constants.Messages.appName
@@ -274,6 +290,7 @@ extension CheckerViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setToRecipients(toRecipents)
         self.present(mailComposer, animated: true, completion: nil)
     }
+
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -294,9 +311,15 @@ extension CheckerViewController: MFMailComposeViewControllerDelegate {
             }
         })
     }
+
+
 }
 
+
 extension CheckerViewController {
+
+
+    // MARK: Helpers
 
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
@@ -308,9 +331,12 @@ extension CheckerViewController {
                                   completionHandler: nil)
     }
 
+
 }
 
+
 // Helper function inserted by Swift 4.2 migrator.
+
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in
