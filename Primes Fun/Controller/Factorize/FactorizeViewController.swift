@@ -41,7 +41,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         cancelButton.style = .plain
         cancelButton.target = self
         cancelButton.action = #selector(cancelAndHideKeyboard)
-        cancelButton.tintColor = UIColor.red
+        cancelButton.tintColor = UIColor.white
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         resignToolbar.items = [cancelButton, space, factorButton]
         resignToolbar.sizeToFit()
