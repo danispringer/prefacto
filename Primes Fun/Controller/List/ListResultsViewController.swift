@@ -144,7 +144,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let indicator = scrollView.subviews.last as? UIImageView
         indicator?.image = nil
-        indicator?.backgroundColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
+        indicator?.backgroundColor = .white
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -169,6 +169,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+
         return action == #selector(copy(_:))
     }
 
