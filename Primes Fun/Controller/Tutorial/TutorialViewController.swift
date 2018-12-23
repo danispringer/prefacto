@@ -48,7 +48,7 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let verticalIndicator = scrollView.subviews.last as? UIImageView
-        verticalIndicator?.backgroundColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
+        verticalIndicator?.backgroundColor = .white
     }
 
 }
