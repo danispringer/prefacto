@@ -20,6 +20,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
+    @IBOutlet weak var titleLabel: UILabel!
 
     // MARK: Properties
 
@@ -198,6 +199,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
+            self.titleLabel.text = enabled ? "The Prime List" : "Listing..."
         }
     }
 

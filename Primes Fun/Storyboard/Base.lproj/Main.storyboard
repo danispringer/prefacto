@@ -226,8 +226,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it prime?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="104.5" y="90" width="166.5" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is It Prime?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
+                                <rect key="frame" x="103" y="90" width="169.5" height="35"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -282,6 +282,7 @@
                         <outlet property="activityIndicator" destination="2NI-Ma-ASa" id="TNC-Yp-8HM"/>
                         <outlet property="myTextField" destination="m0x-Lr-7Xl" id="LsP-l7-Xxx"/>
                         <outlet property="myToolbar" destination="3ap-EQ-e9X" id="8wY-xW-fIJ"/>
+                        <outlet property="titleLabel" destination="O3R-2E-fho" id="ZsR-sQ-f02"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87F-1e-3ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,6 +351,7 @@
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
                         <outlet property="myTextField" destination="ptO-hj-b9l" id="sHl-RG-VwR"/>
                         <outlet property="myToolbar" destination="To0-HQ-Ycf" id="CwT-61-upa"/>
+                        <outlet property="titleLabel" destination="Whi-BS-llH" id="kVB-rS-TTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkA-y2-vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,12 +490,12 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">• If a page is calculating or images are downloading, switching to a different page won't interrupt that.
+                                        <string key="content">• If a page is calculating or images are downloading, switching to a different page won't interrupt that.
 
 • You can tap on the share button to share a result or image with friends, or save it to your phone's files or gallery.
 
 • Tapping on 'Get new images' deletes the downloaded images and replaces them with new ones. If you want to keep any of them, save them to your phone's gallery, using the share button, before getting new images.
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -810,6 +812,7 @@ Cgo
                         <outlet property="firstTextField" destination="u8x-FV-42z" id="Dbv-ki-ZjY"/>
                         <outlet property="myToolbar" destination="iUk-mx-5he" id="6JZ-as-kU7"/>
                         <outlet property="secondTextField" destination="yc2-op-hSX" id="h06-mI-7LD"/>
+                        <outlet property="titleLabel" destination="p7b-0K-8CX" id="U9N-Kk-dkD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeD-BW-QCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -850,7 +853,7 @@ Primes: 123456890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
-                                <rect key="frame" x="16" y="227.5" width="343" height="371.5"/>
+                                <rect key="frame" x="16" y="243.5" width="343" height="339.5"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -902,16 +905,16 @@ Primes: 123456890</string>
                                     <outlet property="delegate" destination="JVg-gq-MAH" id="27T-Ik-ExJ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="16" y="175.5" width="343" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8" customClass="MyButton" customModule="Primes_Fun" customModuleProvider="target">
+                                <rect key="frame" x="130" y="191.5" width="115" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to top"/>
                                 <connections>
                                     <action selector="jumpToTopPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="P50-yM-qRC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
-                                <rect key="frame" x="16" y="615" width="343" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH" customClass="MyButton" customModule="Primes_Fun" customModuleProvider="target">
+                                <rect key="frame" x="111.5" y="599" width="152" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to bottom"/>
                                 <connections>
@@ -923,20 +926,18 @@ Primes: 123456890</string>
                         <constraints>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" id="85F-i7-GH3"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="9X0-tU-cBa"/>
-                            <constraint firstItem="i8z-rE-tr8" firstAttribute="top" secondItem="Gno-To-rhb" secondAttribute="bottom" constant="16" id="CTR-pR-3Qb"/>
-                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="4HI-oU-hkH" secondAttribute="trailing" constant="16" id="Kry-9x-mkd"/>
+                            <constraint firstItem="i8z-rE-tr8" firstAttribute="top" secondItem="Gno-To-rhb" secondAttribute="bottom" constant="32" id="CTR-pR-3Qb"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="top" secondItem="i8z-rE-tr8" secondAttribute="bottom" constant="16" id="SQR-4G-E39"/>
-                            <constraint firstItem="4HI-oU-hkH" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="UJ7-Me-N98"/>
+                            <constraint firstItem="4HI-oU-hkH" firstAttribute="centerX" secondItem="IJQ-WZ-WUE" secondAttribute="centerX" id="Su8-W6-TSH"/>
                             <constraint firstItem="Gno-To-rhb" firstAttribute="top" secondItem="IJQ-WZ-WUE" secondAttribute="top" constant="70" id="aSg-7H-HBi"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="cUP-pY-AOE" secondAttribute="trailing" constant="16" id="egN-xt-Mg9"/>
                             <constraint firstItem="4HI-oU-hkH" firstAttribute="top" secondItem="cUP-pY-AOE" secondAttribute="bottom" constant="16" id="kNg-Fe-qYW"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="Gno-To-rhb" secondAttribute="trailing" constant="16" id="kT9-iH-SQ8"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="pot-Xn-7oP" secondAttribute="trailing" id="mst-3e-PgU"/>
-                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="bottom" secondItem="4HI-oU-hkH" secondAttribute="bottom" constant="16" id="oCh-xu-F3d"/>
+                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="bottom" secondItem="4HI-oU-hkH" secondAttribute="bottom" constant="32" id="oCh-xu-F3d"/>
                             <constraint firstItem="Gno-To-rhb" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="r2w-fd-ddQ"/>
+                            <constraint firstItem="i8z-rE-tr8" firstAttribute="centerX" secondItem="IJQ-WZ-WUE" secondAttribute="centerX" id="rwM-yp-TdK"/>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="top" secondItem="IJQ-WZ-WUE" secondAttribute="top" id="vdU-sm-yRv"/>
-                            <constraint firstItem="i8z-rE-tr8" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="wDi-nP-7E5"/>
-                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="i8z-rE-tr8" secondAttribute="trailing" constant="16" id="zde-Rz-T8D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IJQ-WZ-WUE"/>
                     </view>
@@ -1032,7 +1033,7 @@ Divisible by: 857.</string>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
-                                <rect key="frame" x="16" y="204.5" width="343" height="394.5"/>
+                                <rect key="frame" x="16" y="220.5" width="343" height="362.5"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1084,16 +1085,16 @@ Divisible by: 857.</string>
                                     <outlet property="delegate" destination="qan-ov-WlY" id="OGb-TV-GzV"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="16" y="152.5" width="343" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG" customClass="MyButton" customModule="Primes_Fun" customModuleProvider="target">
+                                <rect key="frame" x="130" y="168.5" width="115" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to top"/>
                                 <connections>
                                     <action selector="jumpToTopPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="Ock-dN-zZU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
-                                <rect key="frame" x="16" y="615" width="343" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7" customClass="MyButton" customModule="Primes_Fun" customModuleProvider="target">
+                                <rect key="frame" x="111.5" y="599" width="152" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Jump to bottom"/>
                                 <connections>
@@ -1112,20 +1113,18 @@ Factors: 1234567890</string>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" id="1Ne-sA-8H4"/>
-                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="lyv-wW-QU7" secondAttribute="trailing" constant="16" id="2ff-QL-hcB"/>
                             <constraint firstItem="vtG-MD-Tnd" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="5kF-aa-7cP"/>
                             <constraint firstItem="o0x-Ps-BCo" firstAttribute="top" secondItem="uvb-aY-8KG" secondAttribute="bottom" constant="16" id="86L-Vh-YoA"/>
+                            <constraint firstItem="uvb-aY-8KG" firstAttribute="centerX" secondItem="QOY-xE-4JJ" secondAttribute="centerX" id="C9o-3i-CDx"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="vtG-MD-Tnd" secondAttribute="trailing" constant="16" id="G18-gq-xqI"/>
-                            <constraint firstItem="uvb-aY-8KG" firstAttribute="top" secondItem="vtG-MD-Tnd" secondAttribute="bottom" constant="16" id="ImK-bk-XeH"/>
-                            <constraint firstItem="lyv-wW-QU7" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="JfS-b9-zTD"/>
-                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="uvb-aY-8KG" secondAttribute="trailing" constant="16" id="NnX-tY-aJh"/>
+                            <constraint firstItem="uvb-aY-8KG" firstAttribute="top" secondItem="vtG-MD-Tnd" secondAttribute="bottom" constant="32" id="ImK-bk-XeH"/>
+                            <constraint firstItem="lyv-wW-QU7" firstAttribute="centerX" secondItem="QOY-xE-4JJ" secondAttribute="centerX" id="QIA-Hd-1WW"/>
                             <constraint firstItem="lyv-wW-QU7" firstAttribute="top" secondItem="o0x-Ps-BCo" secondAttribute="bottom" constant="16" id="R0i-Km-HFR"/>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="top" secondItem="QOY-xE-4JJ" secondAttribute="top" id="TqB-PI-XtA"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="RU3-mS-M5k" secondAttribute="trailing" id="ZA8-Kn-Y1b"/>
-                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="bottom" secondItem="lyv-wW-QU7" secondAttribute="bottom" constant="16" id="ZdC-Q9-WQc"/>
+                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="bottom" secondItem="lyv-wW-QU7" secondAttribute="bottom" constant="32" id="ZdC-Q9-WQc"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="o0x-Ps-BCo" secondAttribute="trailing" constant="16" id="fJE-hP-XIO"/>
                             <constraint firstItem="vtG-MD-Tnd" firstAttribute="top" secondItem="QOY-xE-4JJ" secondAttribute="top" constant="70" id="j1Q-C9-BMd"/>
-                            <constraint firstItem="uvb-aY-8KG" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="jdl-Po-IP9"/>
                             <constraint firstItem="o0x-Ps-BCo" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="ve2-7f-B95"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QOY-xE-4JJ"/>
@@ -1161,8 +1160,8 @@ Factors: 1234567890</string>
                                 <rect key="frame" x="177.5" y="309" width="20" height="20"/>
                                 <color key="color" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="16" y="301" width="343" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D" customClass="MyButton" customModule="Primes_Fun" customModuleProvider="target">
+                                <rect key="frame" x="133.5" y="301" width="108" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Randomize"/>
                                 <connections>
@@ -1183,7 +1182,6 @@ Factors: 1234567890</string>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VWa-1q-r4D" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="16" id="Dp4-U7-tel"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="JAd-wu-aHm"/>
                             <constraint firstItem="Xwr-Tr-ST0" firstAttribute="top" secondItem="yjZ-am-8J6" secondAttribute="top" id="SOv-wp-egV"/>
                             <constraint firstItem="VWa-1q-r4D" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="Smh-Z4-oJb"/>
@@ -1191,7 +1189,7 @@ Factors: 1234567890</string>
                             <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="INr-Ds-DUI" secondAttribute="trailing" constant="16" id="aFK-1b-oa2"/>
                             <constraint firstItem="INr-Ds-DUI" firstAttribute="top" secondItem="yjZ-am-8J6" secondAttribute="top" constant="70" id="aw4-WW-dYo"/>
                             <constraint firstItem="INr-Ds-DUI" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="16" id="e55-LJ-ZiR"/>
-                            <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="VWa-1q-r4D" secondAttribute="trailing" constant="16" id="hgy-tX-n18"/>
+                            <constraint firstItem="VWa-1q-r4D" firstAttribute="centerX" secondItem="yjZ-am-8J6" secondAttribute="centerX" id="igF-Z6-AsQ"/>
                             <constraint firstItem="Xwr-Tr-ST0" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" id="mZm-1z-Mip"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerX" secondItem="yjZ-am-8J6" secondAttribute="centerX" id="zVg-fx-AzR"/>
                         </constraints>
@@ -1241,8 +1239,8 @@ Factors: 1234567890</string>
                                 <color key="textColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="163.5" y="371.5" width="48" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ" customClass="MyButton" customModule="Primes_Fun" customModuleProvider="target">
+                                <rect key="frame" x="163.5" y="387.5" width="48" height="36"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Copy"/>
                                 <connections>
@@ -1267,7 +1265,7 @@ Factors: 1234567890</string>
                             <constraint firstItem="9h7-fu-4TW" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="W35-dO-orM"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="PX3-Zc-OR8" secondAttribute="trailing" id="fMf-sR-HuJ"/>
                             <constraint firstItem="9h7-fu-4TW" firstAttribute="top" secondItem="Vmc-Bm-u6I" secondAttribute="top" constant="70" id="kbn-m0-b5L"/>
-                            <constraint firstItem="DqT-zL-LYQ" firstAttribute="top" secondItem="KsD-1r-mwL" secondAttribute="bottom" constant="16" id="wiu-Qj-uJ2"/>
+                            <constraint firstItem="DqT-zL-LYQ" firstAttribute="top" secondItem="KsD-1r-mwL" secondAttribute="bottom" constant="32" id="wiu-Qj-uJ2"/>
                             <constraint firstItem="KsD-1r-mwL" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="ywr-qh-Cfs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vmc-Bm-u6I"/>

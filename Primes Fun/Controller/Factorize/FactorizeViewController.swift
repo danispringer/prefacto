@@ -19,6 +19,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
+    @IBOutlet weak var titleLabel: UILabel!
 
     // MARK: Properties
 
@@ -205,6 +206,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
+            self.titleLabel.text = enabled ? "Factorize" : "Factorizing..."
         }
     }
 
