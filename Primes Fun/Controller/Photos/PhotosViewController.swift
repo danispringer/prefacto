@@ -68,7 +68,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         DispatchQueue.main.async {
             let indicator = scrollView.subviews.last as? UIImageView
             indicator?.image = nil
-            indicator?.backgroundColor = UIColor(red: 0.93, green: 0.90, blue: 0.94, alpha: 1.0)
+            indicator?.backgroundColor = .white
         }
     }
 
