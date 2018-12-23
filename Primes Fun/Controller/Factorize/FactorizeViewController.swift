@@ -11,7 +11,9 @@ import AVFoundation
 import MessageUI
 import StoreKit
 
+
 class FactorizeViewController: UIViewController, UITextFieldDelegate {
+
 
     // MARK: Outlets
 
@@ -21,9 +23,11 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var aboutButton: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
 
+
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
+
 
     // MARK: Life Cycle
 
@@ -52,16 +56,19 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
 
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arrayOfInts = []
     }
+
 
     // MARK: Helpers
 
     @objc func cancelAndHideKeyboard() {
         myTextField.resignFirstResponder()
     }
+
 
     @objc func checkButtonPressed() {
         DispatchQueue.main.async {
@@ -84,6 +91,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+
 
     func isNumberOrNil() -> Int64? {
         guard let text = myTextField.text else {
@@ -116,6 +124,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         return number
     }
 
+
     func isNotEdgeCase(number: Int64) -> Bool {
         guard number != 0 else {
             let alert = createAlert(alertReasonParam: .zero)
@@ -146,6 +155,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+
     func presentResults(number: Int64) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
@@ -156,6 +166,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             present(toPresent, animated: false)
         }
     }
+
 
     func primeFactors(number: Int64) {
         var localNumber = number
@@ -171,6 +182,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             arrayOfInts.append(localNumber)
         }
     }
+
 
     func isPrimeOrDivisibleBy(number: Int64) -> (Bool, Int64) {
         guard number != 1 else {
@@ -200,6 +212,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         return (true, 0)
     }
 
+
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             self.myTextField.isEnabled = enabled
@@ -209,6 +222,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             self.titleLabel.text = enabled ? "Factorize" : "Factorizing..."
         }
     }
+
 
     @IBAction func aboutPressed(_ sender: Any) {
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
@@ -251,6 +265,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         present(infoAlert, animated: true)
     }
 
+
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
@@ -268,7 +283,11 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 }
 
+
 extension FactorizeViewController: MFMailComposeViewControllerDelegate {
+
+
+    // MARK: Helpers
 
     func launchEmail() {
         var emailTitle = Constants.Messages.appName
@@ -284,6 +303,7 @@ extension FactorizeViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setToRecipients(toRecipents)
         self.present(mailComposer, animated: true, completion: nil)
     }
+
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -304,9 +324,15 @@ extension FactorizeViewController: MFMailComposeViewControllerDelegate {
             }
         })
     }
+
+
 }
 
+
 extension FactorizeViewController {
+
+
+    // MARK: Helpers
 
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
@@ -317,9 +343,12 @@ extension FactorizeViewController {
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 
+
 }
 
+
 // Helper function inserted by Swift 4.2 migrator.
+
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in
