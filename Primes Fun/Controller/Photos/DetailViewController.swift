@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 import StoreKit
 
+
 class DetailViewController: UIViewController, UIScrollViewDelegate {
+
 
     // MARK: Outlets
 
@@ -19,9 +21,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareButtonItem: UIBarButtonItem!
 
+
     // MARK: Properties
 
     var myImage: UIImage! = nil
+
 
     // MARK: Life Cycle
 
@@ -48,6 +52,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         detailImage.addGestureRecognizer(doubleTap)
     }
 
+
     // MARK: Helpers
 
     @objc func doubleTapped() {
@@ -58,12 +63,14 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
+
     // MARK: Actions
 
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
         SKStoreReviewController.requestReview()
     }
+
 
     @IBAction func shareButtonPressed(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [detailImage.image!],
@@ -85,6 +92,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         self.present(activityController, animated: true)
     }
 
+
     @IBAction func downloadPressed(_ sender: Any) {
         guard detailImage.image != nil else {
             let alert = createAlert(alertReasonParam: .unknown)
@@ -94,6 +102,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         let image = detailImage.image!
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(_:didFinishSavingWithError:contextInfo:)), nil)
     }
+
 
     @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         guard error == nil else {
@@ -116,10 +125,12 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         present(alert, animated: true)
     }
 
+
     // MARK: ScrollView Delegates
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return detailImage
     }
+
 
 }

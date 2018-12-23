@@ -8,7 +8,9 @@
 
 import UIKit
 
+
 extension UIImage {
+
     static func from(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
@@ -19,6 +21,8 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return img!
     }
+
+    
 }
 
 // Usage:

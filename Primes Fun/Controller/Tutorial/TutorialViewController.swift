@@ -8,12 +8,15 @@
 
 import UIKit
 
+
 class TutorialViewController: UIViewController, UITextViewDelegate {
+
 
     // MARK: Outlets
 
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextView: UITextView!
+
 
     // MARK: Life Cycle
 
@@ -28,12 +31,14 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         myTextView.indicatorStyle = .white
     }
 
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myTextView.flashScrollIndicators()
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
 
     }
+
 
     // Helpers
 
@@ -42,13 +47,16 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         myTextView.flashScrollIndicators()
     }
 
+
     @IBAction func closeButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
+
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let verticalIndicator = scrollView.subviews.last as? UIImageView
         verticalIndicator?.backgroundColor = .white
     }
 
+    
 }

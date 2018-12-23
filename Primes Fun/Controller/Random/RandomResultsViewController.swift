@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
+
 class RandomResultsViewController: UIViewController {
+
 
     // MARK: Outlets
 
@@ -18,10 +20,12 @@ class RandomResultsViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
 
+
     // MARK: Properties
 
     var myNumber: Int64!
     var myTitle: String!
+
 
     // MARK: Life Cycle
 
@@ -34,6 +38,7 @@ class RandomResultsViewController: UIViewController {
         resultLabel.text = "\(myNumber!)"
         titleLabel.text = myTitle
     }
+
 
     // MARK: Helpers
 
@@ -67,14 +72,17 @@ class RandomResultsViewController: UIViewController {
         self.present(activityController, animated: true)
     }
 
+
     @IBAction func copyPressed(_ sender: Any) {
         if let myNumber = myNumber {
             UIPasteboard.general.string = String(myNumber)
         }
     }
 
+
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
+
 
 }

@@ -9,9 +9,12 @@
 import UIKit
 import AVFoundation
 
+
 class AppData: UIViewController {
 
+
     static var soundEnabled: Bool = UserDefaults.standard.bool(forKey: Constants.UserDefaultsStrings.soundEnabled)
+
 
     static func getSoundEnabledSettings(sound: Int) {
         soundEnabled = UserDefaults.standard.bool(forKey: Constants.UserDefaultsStrings.soundEnabled)
@@ -20,11 +23,15 @@ class AppData: UIViewController {
         }
     }
 
+
     static func setSoundEnabledSettings() {
         UserDefaults.standard.set(!soundEnabled, forKey: Constants.UserDefaultsStrings.soundEnabled)
     }
 
+
     static func playSound(sound: Int) {
         AudioServicesPlayAlertSound(SystemSoundID(sound))
     }
+
+
 }

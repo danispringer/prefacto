@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 import StoreKit
 
+
 class ListResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
 
     // MARK: Outlets
 
@@ -21,12 +23,14 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
 
+
     // MARK: Properties
 
     var source: [Int64]!
     var rangeFrom: Int64!
     var rangeTo: Int64!
     let listCell = "ListCell"
+
 
     // MARK: Life Cycle
 
@@ -60,6 +64,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
 
+
     // MARK: Helpers
 
     func jumpToTop() {
@@ -67,14 +72,17 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 
+
     @IBAction func jumpToTopPressed(_ sender: Any) {
         jumpToTop()
     }
+
 
     @IBAction func jumpToBottomPressed(_ sender: Any) {
         let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
+
 
     @IBAction func share(_ sender: Any) {
         var message = ""
@@ -116,6 +124,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         presentShareController(message: message)
     }
 
+
     func presentShareController(message: String) {
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
@@ -134,10 +143,12 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         self.present(activityController, animated: true)
     }
 
+
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
         SKStoreReviewController.requestReview()
     }
+
 
     // MARK: Delegates
 
@@ -147,9 +158,11 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         indicator?.backgroundColor = .white
     }
 
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
+
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
@@ -163,15 +176,18 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         return cell ?? UITableViewCell()
     }
 
+
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
 
         return action == #selector(copy(_:))
     }
+
 
     func tableView(_ tableView: UITableView, performAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) {
@@ -182,4 +198,5 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
+    
 }

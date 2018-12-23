@@ -11,7 +11,9 @@ import MessageUI
 import StoreKit
 import Intents
 
+
 class RandomViewController: UIViewController {
+
 
     // MARK: Outlets
 
@@ -20,6 +22,7 @@ class RandomViewController: UIViewController {
     @IBOutlet weak var randomizeLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
+
 
     // MARK: Properties
 
@@ -31,6 +34,7 @@ class RandomViewController: UIViewController {
         case xLarge = "Extra-Large"
     }
 
+
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -40,6 +44,7 @@ class RandomViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
+
 
     // MARK: Helpers
 
@@ -61,6 +66,7 @@ class RandomViewController: UIViewController {
         showOptions()
     }
 
+
     func makeRandomShortcut() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
@@ -79,6 +85,7 @@ class RandomViewController: UIViewController {
             }
         }
     }
+
 
     func makeRandom(size: SizeOptions) {
 
@@ -109,6 +116,7 @@ class RandomViewController: UIViewController {
         }
     }
 
+
     func power(coeff: Int64, exp: Int64) -> Int64 {
         var initialValue = coeff
         for _ in 1...exp {
@@ -116,6 +124,7 @@ class RandomViewController: UIViewController {
         }
         return initialValue
     }
+
 
     func showOptions() {
         var userChoice = SizeOptions.xSmall
@@ -171,6 +180,7 @@ class RandomViewController: UIViewController {
 
     }
 
+
     func presentResult(number: Int64, size: SizeOptions) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
@@ -184,6 +194,7 @@ class RandomViewController: UIViewController {
             }
         }
     }
+
 
     func isPrime(number: Int64) -> Bool {
         guard !(1...3).contains(number) else {
@@ -204,6 +215,7 @@ class RandomViewController: UIViewController {
         return true
     }
 
+
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             self.randomizeButton.isHidden = !enabled
@@ -215,6 +227,7 @@ class RandomViewController: UIViewController {
             self.view.endEditing(!enabled)
         }
     }
+
 
     @IBAction func aboutPressed(_ sender: Any) {
         let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
@@ -257,6 +270,7 @@ class RandomViewController: UIViewController {
         present(infoAlert, animated: true)
     }
 
+
     func shareApp() {
         let message = Constants.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
@@ -272,9 +286,14 @@ class RandomViewController: UIViewController {
         present(activityController, animated: true)
     }
 
+
 }
 
+
 extension RandomViewController: MFMailComposeViewControllerDelegate {
+
+
+    // MARK: Helpers
 
     func launchEmail() {
         var emailTitle = Constants.Messages.appName
@@ -290,6 +309,7 @@ extension RandomViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setToRecipients(toRecipents)
         self.present(mailComposer, animated: true, completion: nil)
     }
+
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -310,9 +330,15 @@ extension RandomViewController: MFMailComposeViewControllerDelegate {
             }
         })
     }
+
+
 }
 
+
 extension RandomViewController {
+
+
+    // MARK: Helpers
 
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
@@ -324,9 +350,12 @@ extension RandomViewController {
             convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 
+
 }
 
+
 // Helper function inserted by Swift 4.2 migrator.
+
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in

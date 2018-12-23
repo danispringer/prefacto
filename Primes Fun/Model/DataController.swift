@@ -9,22 +9,31 @@
 import Foundation
 import CoreData
 
+
 class DataController {
 
-    let persistentContainer: NSPersistentContainer
 
+    // MARK: Properties
+
+    let persistentContainer: NSPersistentContainer
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
+
+    // MARK: Life Cycle
 
     init(modelName: String) {
         persistentContainer = NSPersistentContainer(name: modelName)
     }
 
+
+    // MARK: Helpers
+
     func configureContexts() {
         viewContext.automaticallyMergesChangesFromParent = true
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
     }
+
 
     func load(completion: (() -> Void)? = nil) {
         persistentContainer.loadPersistentStores { _, error in
@@ -36,11 +45,16 @@ class DataController {
             completion?()
         }
     }
+
+
 }
+
 
 // MARK: - Autosaving
 
 extension DataController {
+
+
     func autoSaveViewContext(interval: TimeInterval = 5) {
         guard interval > 0 else {
             return
@@ -52,4 +66,6 @@ extension DataController {
             self.autoSaveViewContext(interval: interval)
         }
     }
+
+
 }

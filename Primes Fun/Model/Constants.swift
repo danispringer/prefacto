@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: Properties
+
 var localFrom: Int64 = 0
 var localTo: Int64 = 0
 var localSourceFirst: Int64 = 0
@@ -24,7 +26,12 @@ var localRange: Range<String.Index> = " ".index(
 var localNumber: Int64 = 0
 var localIsDivisibleBy: Int64 = 0
 
+
+// MARK: Constants Struct
+
 struct Constants {
+
+
     struct StoryboardID {
         static let main = "Main"
         static let checkerResults = "CheckerResultsViewController"
@@ -35,6 +42,8 @@ struct Constants {
         static let randomResults = "RandomResultsViewController"
         static let detail = "DetailViewController"
     }
+
+
     struct Messages {
         static let check = "Check"
         static let list = "List"
@@ -120,29 +129,45 @@ struct Constants {
             """
         }
     }
+
+
     struct Model {
         static let name = "Model"
         static let url = "url"
     }
+
+
     struct UserDefaultsStrings {
         static let soundEnabled = "soundEnabled"
     }
+
+
     struct Font {
         static let AmericanTypewriter = "AmericanTypewriter"
     }
+
+
     struct Title {
         static let images = "Images"
     }
+
+
     struct Image {
         static let refresh = "refresh.png"
     }
+
+
     struct Sound {
         static let positive = 1023
         static let negative = 1257
         static let toggle = 1104
     }
+
+
     struct View {
         static let goldColor = UIColor(red: 0.99, green: 0.78, blue: 0.00, alpha: 1.0)
         static let grayColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0)
     }
+
+
 }
