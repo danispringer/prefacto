@@ -81,25 +81,24 @@ class RandomViewController: UIViewController {
     }
 
     func makeRandom(size: SizeOptions) {
-        DispatchQueue.main.async {
-            self.enableUI(enabled: false)
-        }
-        var limit = Int64.max / 10 * 9
-        switch size {
-        case .xSmall:
-            limit /= power(coeff: 10, exp: 16)
-        case .small:
-            limit /= power(coeff: 10, exp: 15)
-        case .medium:
-            limit /= power(coeff: 10, exp: 12)
-        case .large:
-            limit /= power(coeff: 10, exp: 7)
-        case .xLarge:
-            break
-        }
-        var randInt = Int64.random(in: 1...limit)
+
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
+            var limit = Int64.max / 10 * 9
+            switch size {
+            case .xSmall:
+                limit /= self.power(coeff: 10, exp: 16)
+            case .small:
+                limit /= self.power(coeff: 10, exp: 15)
+            case .medium:
+                limit /= self.power(coeff: 10, exp: 12)
+            case .large:
+                limit /= self.power(coeff: 10, exp: 7)
+            case .xLarge:
+                break
+            }
+            var randInt = Int64.random(in: 1...limit)
+
             while !self.isPrime(number: randInt) {
                 randInt += 1
             }
@@ -121,28 +120,43 @@ class RandomViewController: UIViewController {
     func showOptions() {
         var userChoice = SizeOptions.xSmall
         let alert = UIAlertController(title: "Choose size",
-                                      message: "Choose your random number's size",
+                                      message: "Choose your random prime's size",
                                       preferredStyle: .actionSheet)
         alert.modalPresentationStyle = .popover
         let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel)
         let xSmallAction = UIAlertAction(title: SizeOptions.xSmall.rawValue, style: .default) { _ in
             userChoice = .xSmall
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
             self.makeRandom(size: userChoice)
         }
         let smallAction = UIAlertAction(title: SizeOptions.small.rawValue, style: .default) { _ in
             userChoice = .small
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
             self.makeRandom(size: userChoice)
         }
         let mediumAction = UIAlertAction(title: SizeOptions.medium.rawValue, style: .default) { _ in
             userChoice = .medium
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
             self.makeRandom(size: userChoice)
         }
         let largeAction = UIAlertAction(title: SizeOptions.large.rawValue, style: .default) { _ in
             userChoice = .large
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
             self.makeRandom(size: userChoice)
         }
         let xLargeAction = UIAlertAction(title: SizeOptions.xLarge.rawValue, style: .default) { _ in
             userChoice = .xLarge
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
             self.makeRandom(size: userChoice)
         }
         for action in [cancelAction, xSmallAction, smallAction, mediumAction, largeAction, xLargeAction] {

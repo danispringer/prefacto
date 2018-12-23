@@ -19,6 +19,7 @@ class CheckerViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
+    @IBOutlet weak var titleLabel: UILabel!
 
     // MARK: Life Cycle
 
@@ -195,6 +196,7 @@ class CheckerViewController: UIViewController {
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
+            self.titleLabel.text = enabled ? "Is It Prime?" : "Checking..."
         }
     }
 
