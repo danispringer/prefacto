@@ -8,7 +8,9 @@
 
 import UIKit
 
+
 extension UIViewController {
+
 
     enum AlertReason {
         case textfieldEmpty
@@ -29,6 +31,7 @@ extension UIViewController {
         case permissionDenied
         case imageSaved
     }
+
 
     func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, divisibleBy: Int64 = 0,
                      firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
@@ -99,4 +102,6 @@ extension UIViewController {
         alert.addAction(alertAction)
         return alert
     }
+
+    
 }
