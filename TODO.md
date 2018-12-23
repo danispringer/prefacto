@@ -1,5 +1,4 @@
-- update colors: actionsheet, alert, copy popup
-- make textfield background color black with white underline
+- update colors: textfield clear button: custom image, actionsheet, alert, 'copy' popup, follow text width for border wisth.
 - Notifications: daily random prime (Siri Shortcuts?)
 - support orientations on ipad
 - improve for ipad
