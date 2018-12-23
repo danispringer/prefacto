@@ -1,3 +1,5 @@
+- update colors: actionsheet, alert, copy popup
+- make textfield background color black with white underline
 - Notifications: daily random prime (Siri Shortcuts?)
 - support orientations on ipad
 - improve for ipad
@@ -17,9 +19,11 @@ https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift
 - [?] make exponent view user choice
 
 ~
-Blue mode palette: dark blue: #012a36, off-white: #ece5f0, silver: #c0c0c0, blue: #134074, brown: #444554
-Dark mode palette: black, white, maybe pirate black
-light mode palette: default colors
+Colors:
+- black: #000
+- white: #fff
+- gold: #fdc600 / UIColor(red: 0.99, green: 0.78, blue: 0.00, alpha: 1.0)
+- gray: #9a9a9a / UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0)
 ~
 App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 ~
