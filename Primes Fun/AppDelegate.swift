@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,7 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBar = UITabBar.appearance()
         tabBar.backgroundImage = UIImage.from(color: .clear)
         tabBar.shadowImage = UIImage.from(color: .clear)
-        UITableView.appearance().backgroundColor = UIColor(red: 0.00, green: 0.16, blue: 0.21, alpha: 1.0)
+        tabBar.tintColor = Constants.View.goldColor
+        tabBar.unselectedItemTintColor = Constants.View.grayColor
+        UITextField.appearance().backgroundColor = .white
+        UIToolbar.appearance().tintColor = Constants.View.goldColor
+        UIToolbar.appearance().barTintColor = .black
+        UINavigationBar.appearance().isOpaque = false
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = .black
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
@@ -44,7 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!,
+                NSAttributedString.Key.foregroundColor: Constants.View.grayColor
             ], for: .disabled)
         return true
     }
