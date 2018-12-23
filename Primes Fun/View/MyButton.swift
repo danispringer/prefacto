@@ -27,7 +27,7 @@ class MyButton: UIButton {
 
 
     // MARK: Helpers
-    
+
     private func setup() {
         self.layer.cornerRadius = 7
         self.layer.masksToBounds = true

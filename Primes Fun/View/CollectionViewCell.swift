@@ -11,7 +11,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell, UICollectionViewDelegateFlowLayout {
 
-    
+
     // MARK: Outlets
 
     @IBOutlet weak var cellImageView: UIImageView!

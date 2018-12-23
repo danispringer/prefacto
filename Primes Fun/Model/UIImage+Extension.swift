@@ -22,7 +22,7 @@ extension UIImage {
         return img!
     }
 
-    
+
 }
 
 // Usage:

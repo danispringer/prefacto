@@ -58,5 +58,5 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         verticalIndicator?.backgroundColor = .white
     }
 
-    
+
 }

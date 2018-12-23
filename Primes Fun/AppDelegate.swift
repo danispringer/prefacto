@@ -100,5 +100,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveViewContext() {
         try? dataController.viewContext.save()
     }
-    
+
 }
