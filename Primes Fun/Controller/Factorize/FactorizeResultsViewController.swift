@@ -21,11 +21,13 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var jumpToTopButton: UIButton!
     @IBOutlet weak var jumpToBottomButton: UIButton!
 
+
     // MARK: Properties
 
     var source: [Int64]!
     var number: Int64!
     let factorCell = "FactorCell"
+
 
     // MARK: Life Cycle
 
@@ -40,6 +42,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     }
 
+    
     // MARK: Helpers
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
