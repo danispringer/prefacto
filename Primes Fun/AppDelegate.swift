@@ -12,13 +12,14 @@ import MessageUI
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+
     // MARK: Properties
 
     var window: UIWindow?
-
     let dataController = DataController(modelName: Constants.Model.name)
 
-    // Helpers
+
+    // Life Cycle
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -73,10 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-    func saveViewContext() {
-        try? dataController.viewContext.save()
-    }
-
     func applicationDidEnterBackground(_ application: UIApplication) {
         /*
          Use this method to release shared resources, save user data,
@@ -89,10 +86,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         saveViewContext()
     }
 
+
     func applicationWillTerminate(_ application: UIApplication) {
         /* Called when the application is about to terminate.
          Save data if appropriate. See also applicationDidEnterBackground:.
          */
         saveViewContext()
     }
+
+
+    // MARK: Helpers
+
+    func saveViewContext() {
+        try? dataController.viewContext.save()
+    }
+    
 }
