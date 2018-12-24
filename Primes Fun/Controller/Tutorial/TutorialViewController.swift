@@ -53,7 +53,7 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
     func scrollTextViewToBottom(textView: UITextView) {
         if textView.text.count > 0 {
             let location = textView.text.count - 1
-            let bottom = NSMakeRange(location, 1)
+            let bottom = NSRange(location: location, length: 1)
             textView.scrollRangeToVisible(bottom)
         }
     }
