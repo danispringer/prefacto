@@ -74,11 +74,13 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
+        resultsTableView.flashScrollIndicators()
         jumpToTop()
     }
 
 
     @IBAction func jumpToBottomPressed(_ sender: Any) {
+        resultsTableView.flashScrollIndicators()
         let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
