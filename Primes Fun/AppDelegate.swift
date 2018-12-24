@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = Constants.View.goldColor
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = Constants.View.goldColor
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
