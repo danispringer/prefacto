@@ -37,7 +37,7 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
 }
