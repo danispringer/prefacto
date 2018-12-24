@@ -55,6 +55,8 @@ struct Constants {
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
+        static let showAppsButtonTitle = "More by Daniel Springer"
+        static let devID = "1402417666"
         static let shareApp = "Share App with friends"
         static let shareMessage = """
                    This app lets you check if a number is prime, \

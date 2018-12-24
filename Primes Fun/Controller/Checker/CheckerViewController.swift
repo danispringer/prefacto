@@ -11,7 +11,7 @@ import AVFoundation
 import MessageUI
 import StoreKit
 
-class CheckerViewController: UIViewController {
+class CheckerViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -50,6 +50,22 @@ class CheckerViewController: UIViewController {
 
 
     // MARK: Helpers
+
+    func showapps() {
+
+        let controller = SKStoreProductViewController()
+        controller.delegate = self
+        controller.loadProduct(
+            withParameters: [SKStoreProductParameterITunesItemIdentifier: Constants.Messages.devID],
+            completionBlock: nil)
+        present(controller, animated: true)
+    }
+
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
 
     @objc func cancelAndHideKeyboard() {
         myTextField.resignFirstResponder()
@@ -242,7 +258,11 @@ class CheckerViewController: UIViewController {
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-        for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
+        let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
+            self.showapps()
+        }
+        for action in [tutorialAction, settingsAction, mailAction, reviewAction,
+                       shareAppAction, showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
         if let presenter = infoAlert.popoverPresentationController {

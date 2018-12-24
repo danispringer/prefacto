@@ -12,7 +12,7 @@ import MessageUI
 import StoreKit
 
 
-class ListViewController: UIViewController, UITextFieldDelegate {
+class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -68,6 +68,22 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
 
     // MARK: Helpers
+
+    func showapps() {
+
+        let controller = SKStoreProductViewController()
+        controller.delegate = self
+        controller.loadProduct(
+            withParameters: [SKStoreProductParameterITunesItemIdentifier: Constants.Messages.devID],
+            completionBlock: nil)
+        present(controller, animated: true)
+    }
+
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
 
     @objc func cancelAndHideKeyboard() {
         firstTextField.resignFirstResponder()
@@ -252,7 +268,11 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-        for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
+        let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
+            self.showapps()
+        }
+        for action in [tutorialAction, settingsAction, mailAction, reviewAction,
+                       shareAppAction, showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
         if let presenter = infoAlert.popoverPresentationController {

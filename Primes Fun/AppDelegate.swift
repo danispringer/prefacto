@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().barTintColor = .black
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .black
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font: UIFont(name: Constants.Font.AmericanTypewriter, size: 20)!
