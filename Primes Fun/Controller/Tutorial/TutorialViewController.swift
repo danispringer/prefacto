@@ -60,7 +60,7 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
 
 
     @IBAction func closeButtonPressed(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
 
