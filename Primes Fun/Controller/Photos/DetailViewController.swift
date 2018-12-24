@@ -31,12 +31,17 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.clear
-        let blur = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blur)
-        blurView.frame = myScrollView.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        myScrollView.insertSubview(blurView, at: 0)
+
+        if !UIAccessibility.isReduceTransparencyEnabled {
+            view.backgroundColor = .clear
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.insertSubview(blurEffectView, at: 0)
+        } else {
+            view.backgroundColor = .black
+        }
 
         detailImage.image = myImage
         myToolbar.setBackgroundImage(UIImage(),
