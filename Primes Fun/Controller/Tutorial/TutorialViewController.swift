@@ -29,6 +29,8 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         myTextView.isScrollEnabled = true
         myTextView.indicatorStyle = .white
+
+        scrollTextViewToBottom(textView: myTextView)
     }
 
 
@@ -45,6 +47,15 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
     @IBAction func backToTop(_ sender: Any) {
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         myTextView.flashScrollIndicators()
+    }
+
+
+    func scrollTextViewToBottom(textView: UITextView) {
+        if textView.text.count > 0 {
+            let location = textView.text.count - 1
+            let bottom = NSMakeRange(location, 1)
+            textView.scrollRangeToVisible(bottom)
+        }
     }
 
 
