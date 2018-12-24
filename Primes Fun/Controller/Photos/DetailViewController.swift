@@ -37,7 +37,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             let blurEffect = UIBlurEffect(style: .dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             blurEffectView.frame = CGRect(x: 0,
-                                          y: myToolbar.frame.maxY,
+                                          y: myToolbar.frame.midY,
                                           width: view.bounds.width, height: view.bounds.height)
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
