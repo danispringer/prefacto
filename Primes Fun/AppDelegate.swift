@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBar.unselectedItemTintColor = Constants.View.grayColor
         UIToolbar.appearance().tintColor = Constants.View.goldColor
         UIToolbar.appearance().barTintColor = .black
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().backgroundColor = Constants.View.goldColor
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
         UIBarButtonItem.appearance().setTitleTextAttributes(
