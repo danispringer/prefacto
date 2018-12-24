@@ -73,7 +73,7 @@ SKStoreProductViewControllerDelegate {
 
     // MARK: Show Apps
 
-    func showapps() {
+    func showApps() {
 
         let controller = SKStoreProductViewController()
         controller.delegate = self
@@ -253,7 +253,7 @@ SKStoreProductViewControllerDelegate {
             self.present(controller, animated: true)
         }
         let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
-            self.showapps()
+            self.showApps()
         }
         for action in [tutorialAction, settingsAction, mailAction, reviewAction,
                        shareAppAction, showAppsAction, cancelAction] {
