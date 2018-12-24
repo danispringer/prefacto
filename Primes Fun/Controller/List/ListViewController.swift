@@ -69,7 +69,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
     // MARK: Helpers
 
-    func showapps() {
+    func showApps() {
 
         let controller = SKStoreProductViewController()
         controller.delegate = self
@@ -269,7 +269,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             self.present(controller, animated: true)
         }
         let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
-            self.showapps()
+            self.showApps()
         }
         for action in [tutorialAction, settingsAction, mailAction, reviewAction,
                        shareAppAction, showAppsAction, cancelAction] {
