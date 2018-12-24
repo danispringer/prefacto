@@ -128,16 +128,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-IL-DFL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="64" y="64" width="286" height="646"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="top" secondItem="lhM-fs-6im" secondAttribute="top" id="0gn-2Y-6oS"/>
-                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="lhM-fs-6im" secondAttribute="leading" id="1vb-MC-3SK"/>
-                                    <constraint firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" id="Gbb-jw-SXP"/>
-                                    <constraint firstAttribute="bottom" secondItem="MBl-IL-DFL" secondAttribute="bottom" id="Qs4-MC-CLE"/>
-                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="width" secondItem="lhM-fs-6im" secondAttribute="width" id="c1o-0j-Z7P"/>
-                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="height" secondItem="lhM-fs-6im" secondAttribute="height" id="zMM-fW-toQ"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="top" secondItem="lhM-fs-6im" secondAttribute="top" constant="64" id="0gn-2Y-6oS"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="leading" secondItem="lhM-fs-6im" secondAttribute="leading" constant="64" id="1vb-MC-3SK"/>
+                                    <constraint firstAttribute="trailing" secondItem="MBl-IL-DFL" secondAttribute="trailing" constant="64" id="Gbb-jw-SXP"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="centerY" secondItem="lhM-fs-6im" secondAttribute="centerY" id="Q2i-iZ-l8X"/>
+                                    <constraint firstAttribute="bottom" secondItem="MBl-IL-DFL" secondAttribute="bottom" constant="64" id="Qs4-MC-CLE"/>
+                                    <constraint firstItem="MBl-IL-DFL" firstAttribute="centerX" secondItem="lhM-fs-6im" secondAttribute="centerX" id="jEZ-M1-N4u"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="qBj-hI-XbB" id="h4n-QR-tLE"/>
@@ -177,6 +177,7 @@
                         <constraints>
                             <constraint firstItem="lhM-fs-6im" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="A9f-Oz-Tpn"/>
                             <constraint firstItem="kaN-KP-W9A" firstAttribute="leading" secondItem="gV0-b4-uOT" secondAttribute="leading" id="C21-Mj-gG6"/>
+                            <constraint firstItem="lhM-fs-6im" firstAttribute="centerX" secondItem="gV0-b4-uOT" secondAttribute="centerX" id="Q3g-lS-hea"/>
                             <constraint firstItem="kaN-KP-W9A" firstAttribute="top" secondItem="gV0-b4-uOT" secondAttribute="top" id="R4p-XC-Rq3"/>
                             <constraint firstItem="lhM-fs-6im" firstAttribute="top" secondItem="kaN-KP-W9A" secondAttribute="bottom" id="To3-xX-CNn"/>
                             <constraint firstItem="gV0-b4-uOT" firstAttribute="trailing" secondItem="lhM-fs-6im" secondAttribute="trailing" id="YEE-GX-NS8"/>
