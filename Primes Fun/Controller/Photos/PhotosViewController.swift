@@ -13,7 +13,10 @@ import MessageUI
 import StoreKit
 
 
-class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PhotosViewController: UIViewController,
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
+SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -65,6 +68,24 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
         } catch {
             fatalError("The fetch could not be performed: \(error.localizedDescription)")
         }
+    }
+
+
+    // MARK: Show Apps
+
+    func showapps() {
+
+        let controller = SKStoreProductViewController()
+        controller.delegate = self
+        controller.loadProduct(
+            withParameters: [SKStoreProductParameterITunesItemIdentifier: Constants.Messages.devID],
+            completionBlock: nil)
+        present(controller, animated: true)
+    }
+
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        dismiss(animated: true, completion: nil)
     }
 
 
@@ -231,7 +252,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollec
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-        for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
+        let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
+            self.showapps()
+        }
+        for action in [tutorialAction, settingsAction, mailAction, reviewAction,
+                       shareAppAction, showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
         if let presenter = infoAlert.popoverPresentationController {

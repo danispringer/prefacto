@@ -12,7 +12,7 @@ import StoreKit
 import Intents
 
 
-class RandomViewController: UIViewController {
+class RandomViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -47,6 +47,22 @@ class RandomViewController: UIViewController {
 
 
     // MARK: Helpers
+
+    func showapps() {
+
+        let controller = SKStoreProductViewController()
+        controller.delegate = self
+        controller.loadProduct(
+            withParameters: [SKStoreProductParameterITunesItemIdentifier: Constants.Messages.devID],
+            completionBlock: nil)
+        present(controller, animated: true)
+    }
+
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
 
     @IBAction func randomizeButtonPressed(_ sender: Any) {
         let activity = NSUserActivity(activityType: Constants.Messages.bundleAndRandom)
@@ -261,7 +277,11 @@ class RandomViewController: UIViewController {
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-        for action in [tutorialAction, settingsAction, mailAction, reviewAction, shareAppAction, cancelAction] {
+        let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
+            self.showapps()
+        }
+        for action in [tutorialAction, settingsAction, mailAction, reviewAction,
+                       shareAppAction, showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
         if let presenter = infoAlert.popoverPresentationController {
