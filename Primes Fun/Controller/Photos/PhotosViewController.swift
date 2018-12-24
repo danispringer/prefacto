@@ -16,7 +16,7 @@ import StoreKit
 class PhotosViewController: UIViewController,
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-SKStoreProductViewControllerDelegate {
+    SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
