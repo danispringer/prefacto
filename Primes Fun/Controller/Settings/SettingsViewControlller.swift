@@ -31,9 +31,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        myTableView.backgroundColor = .black
-        myTableView.delegate = self
-        myTableView.dataSource = self
     }
 
 
@@ -61,7 +58,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 100
     }
 
 
