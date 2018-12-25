@@ -229,7 +229,7 @@ struct Constants {
 
 
     struct Font {
-        static let AmericanTypewriter = "AmericanTypewriter"
+        static let math = "LatinModernMath-Regular"
     }
 
 
