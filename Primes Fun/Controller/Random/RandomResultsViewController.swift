@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
 
 
 class RandomResultsViewController: UIViewController {
@@ -82,6 +83,7 @@ class RandomResultsViewController: UIViewController {
 
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
+        SKStoreReviewController.requestReview()
     }
 
 
