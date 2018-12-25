@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
 
 
 class CheckerResultsViewController: UIViewController {
@@ -91,6 +92,7 @@ class CheckerResultsViewController: UIViewController {
     // MARK: Done Pressed
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: false, completion: nil)
+        SKStoreReviewController.requestReview()
     }
 
 
