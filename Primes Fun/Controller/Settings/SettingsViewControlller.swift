@@ -66,7 +66,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: settingsCell)
         cell?.selectionStyle = .none
         cell?.textLabel?.textColor = .white
-        cell?.textLabel?.font = UIFont(name: Constants.Font.math, size: 25)
+        cell?.textLabel?.font = UIFont(name: Constants.Font.math, size: 30)
 
         // TODO: improve design
         switch indexPath.row {
