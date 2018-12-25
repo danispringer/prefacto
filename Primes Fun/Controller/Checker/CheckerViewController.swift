@@ -148,6 +148,10 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
     func isNotEdgeCaseNumber(number: Int64) -> Bool {
         guard number != 0 else {
             let alert = self.createAlert(alertReasonParam: .zero)
+            let shareAction = UIAlertAction(title: "Share", style: .default) { _ in
+                self.shareIsZeroPrime()
+            }
+            alert.addAction(shareAction)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
@@ -157,16 +161,23 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         }
         guard !(number < 0) else {
             let alert = self.createAlert(alertReasonParam: .negative)
+            let shareAction = UIAlertAction(title: "Share", style: .default) { _ in
+                self.shareIsNegativePrime()
+            }
+            alert.addAction(shareAction)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
         guard number != 1 else {
             let alert = self.createAlert(alertReasonParam: .one)
+            let shareAction = UIAlertAction(title: "Share", style: .default) { _ in
+                self.shareIsOnePrime()
+            }
+            alert.addAction(shareAction)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
@@ -285,6 +296,66 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
             }
         }
         present(activityController, animated: true)
+    }
+
+
+    // TODO: unite with isZeroPrime etc
+    func shareIsOnePrime() {
+        let message = Constants.Messages.isOnePrimeMessage
+        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceRect = CGRect(
+            x: view.center.x, y: view.center.y, width: 0, height: 0)
+        activityController.popoverPresentationController?.sourceView = view
+        activityController.popoverPresentationController?.permittedArrowDirections = []
+        activityController.completionWithItemsHandler = {
+            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: .unknown)
+                self.present(alert, animated: true)
+                return
+            }
+        }
+        present(activityController, animated: true)
+    }
+
+
+    func shareIsZeroPrime() {
+        let message = Constants.Messages.isZeroPrimeMessage
+        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceRect = CGRect(
+            x: view.center.x, y: view.center.y, width: 0, height: 0)
+        activityController.popoverPresentationController?.sourceView = view
+        activityController.popoverPresentationController?.permittedArrowDirections = []
+        activityController.completionWithItemsHandler = {
+            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: .unknown)
+                self.present(alert, animated: true)
+                return
+            }
+        }
+        present(activityController, animated: true)
+
+    }
+
+
+    func shareIsNegativePrime() {
+        let message = Constants.Messages.isNegativePrimeMessage
+        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceRect = CGRect(
+            x: view.center.x, y: view.center.y, width: 0, height: 0)
+        activityController.popoverPresentationController?.sourceView = view
+        activityController.popoverPresentationController?.permittedArrowDirections = []
+        activityController.completionWithItemsHandler = {
+            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: .unknown)
+                self.present(alert, animated: true)
+                return
+            }
+        }
+        present(activityController, animated: true)
+
     }
 
 
