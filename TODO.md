@@ -1,5 +1,5 @@
-- update colors: textfield clear button: custom image, actionsheet, alert, 'copy' popup, follow text width for border width.
-- Notifications: daily random prime (Siri Shortcuts?)
+- update colors: actionsheet, alert, 'copy' popup, follow text width for border width.
+- Notifications: daily random prime
 - support orientations on ipad
 - improve for ipad
 - Add Multiple options for languages in apps.
