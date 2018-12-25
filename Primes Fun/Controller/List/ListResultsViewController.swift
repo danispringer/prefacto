@@ -121,7 +121,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
             localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
             message = Constants.Messages.manyPrimesInrange
-            print(message)
         }
         presentShareController(message: message)
     }
