@@ -73,8 +73,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             activity.isEligibleForPrediction = true
             activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Constants.Messages.bundleAndRandom)
             activity.suggestedInvocationPhrase = "Show me a Random Prime"
-        } else {
-            print("not ios 12")
         }
         view.userActivity = activity
         activity.becomeCurrent()
