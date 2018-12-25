@@ -52,7 +52,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         myScrollView.minimumZoomScale = 1.0
-        myScrollView.maximumZoomScale = 6.0
+        myScrollView.maximumZoomScale = 5.0
         detailImage.isUserInteractionEnabled = true
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.delegate = self as? UIGestureRecognizerDelegate
