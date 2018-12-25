@@ -26,7 +26,7 @@
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
 		335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FD4A1210401E300B34DC9 /* TutorialViewController.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
-		336DBCE621D2D1A70008F408 /* latinmodern-math.otf in Resources */ = {isa = PBXBuildFile; fileRef = 336DBCE521D2D19F0008F408 /* latinmodern-math.otf */; };
+		336DBCEC21D2D9710008F408 /* latinmodern-math.otf in Resources */ = {isa = PBXBuildFile; fileRef = 336DBCEB21D2D9710008F408 /* latinmodern-math.otf */; };
 		3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376A51321000688001431C8 /* UIImage+Extension.swift */; };
 		3385A5D121CF4413009D199C /* Mail+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A5D021CF4413009D199C /* Mail+Extensions.swift */; };
 		33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */; };
@@ -62,7 +62,7 @@
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		335FD4A1210401E300B34DC9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
-		336DBCE421D2D19F0008F408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/latinmodern-math.otf"; sourceTree = "<group>"; };
+		336DBCEB21D2D9710008F408 /* latinmodern-math.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "latinmodern-math.otf"; sourceTree = "<group>"; };
 		3376A51321000688001431C8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3385A5D021CF4413009D199C /* Mail+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mail+Extensions.swift"; sourceTree = "<group>"; };
 		33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		336DBCE221D2D0B40008F408 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				336DBCE521D2D19F0008F408 /* latinmodern-math.otf */,
+				336DBCEB21D2D9710008F408 /* latinmodern-math.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -325,8 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */,
+				336DBCEC21D2D9710008F408 /* latinmodern-math.otf in Resources */,
 				33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */,
-				336DBCE621D2D1A70008F408 /* latinmodern-math.otf in Resources */,
 				33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */,
 				33C0F18520EF4F180013881A /* Assets.xcassets in Resources */,
 			);
@@ -392,15 +392,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		336DBCE521D2D19F0008F408 /* latinmodern-math.otf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				336DBCE421D2D19F0008F408 /* Base */,
-			);
-			name = "latinmodern-math.otf";
-			path = ../../../Library/Fonts;
-			sourceTree = SOURCE_ROOT;
-		};
 		33CB11CA20DCB5DB003E7522 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
