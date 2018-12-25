@@ -42,19 +42,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Constants.View.goldColor
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
             ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
             ], for: .selected)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 20)!
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
             ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 20)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!,
                 NSAttributedString.Key.foregroundColor: Constants.View.grayColor
             ], for: .disabled)
         return true
