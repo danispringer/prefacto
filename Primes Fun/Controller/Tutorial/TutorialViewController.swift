@@ -30,7 +30,81 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         myTextView.isScrollEnabled = true
         myTextView.indicatorStyle = .white
 
+        let myTitleAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 30)!]
+        let myTextAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25),
+            NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        let longString = """
+Intro
+
+• Primes Fun lets you work with prime numbers in 5 different  ways: \
+Checker, List, Factorize, Randomize, and Images.
+
+
+Some Tips
+
+• In addition to using the Randomize page of the app, you can use Siri to get random primes. \
+To do so: open Settings > Siri & Search > All Shortcuts > Get random prime, then record the phrase \
+you want to tell Siri whenever you want Siri to get you a random prime.
+Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in \
+order to see the 'Get random prime' shortcut available, you must first generated at least 1 random \
+prime in the app itself.
+
+• If a page is calculating or images are downloading, switching to a different page will not \
+interrupt that.
+
+• You can tap on the share button to share a result or image with friends, or save it to your \
+phone's files or gallery.
+
+• Tapping on 'Get new images' deletes the downloaded images and replaces them with new ones. \
+If you want to keep any of them, save them to your phone's gallery, using the share button, before \
+getting new images.
+
+• You can turn the app's sounds on or off in the app's settings.
+
+
+Checker
+
+• Check whether any number is prime, and if it is not, what it is divisible by. \
+• Type or paste a number, and tap on 'Check'.
+• Find a prime number to hear a satisfying 'Choo'!
+
+
+List
+
+• Create a list with all the prime numbers in a given range: for example, type 1 in the first \
+text box, 10 in the second, then tap on List, and you will get 1, 2, 3, 5, and 7.
+
+
+Factor
+
+• Generate a list of the prime factors for any number: for example, type 12, and you will get \
+2, 3, and 3.
+
+
+Random
+
+• Generate a random prime of a size of your choice.
+
+
+Images
+
+• Download random (clean) images from the internet - all with one thing in common: prime numbers.
+\n\n\n\n\n\n\n
+"""
+        let longAttributedString = NSAttributedString(string: longString, attributes: myTextAttributes)
+        myTextView.attributedText = longAttributedString
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // TODO: fix not scrolling to bottom
         scrollTextViewToBottom(textView: myTextView)
+
     }
 
 
@@ -52,9 +126,9 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
 
     func scrollTextViewToBottom(textView: UITextView) {
         if textView.text.count > 0 {
-            let location = textView.text.count - 1
-            let bottom = NSRange(location: location, length: 1)
-            textView.scrollRangeToVisible(bottom)
+            print("ok")
+            let bottomOffset = CGPoint(x: 0, y: textView.contentSize.height - textView.bounds.size.height)
+            textView.setContentOffset(bottomOffset, animated: true)
         }
     }
 
