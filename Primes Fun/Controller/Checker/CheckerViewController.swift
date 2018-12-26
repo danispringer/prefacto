@@ -299,7 +299,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
     }
 
 
-    // TODO: unite with isZeroPrime etc
     func shareIsOnePrime() {
         let message = Constants.Messages.isOnePrimeMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)

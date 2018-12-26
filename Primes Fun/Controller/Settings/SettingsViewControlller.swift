@@ -68,7 +68,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell?.textLabel?.textColor = .white
         cell?.textLabel?.font = UIFont(name: Constants.Font.math, size: 30)
 
-        // TODO: improve design
         switch indexPath.row {
         case 0:
             let mySoundSwitch = UISwitch()
