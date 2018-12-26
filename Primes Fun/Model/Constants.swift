@@ -266,7 +266,7 @@ struct Constants {
         static let title7 = "Images\n\n"
         static let body7 = """
                            • Get random (clean) images from the internet - all with one thing in \
-                           common: prime numbers.\n\n\n
+                           common: prime numbers.\n\n\n\n\n\n\n\n\n
                            """
     }
 
