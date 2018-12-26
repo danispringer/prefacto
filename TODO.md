@@ -1,3 +1,4 @@
+- fix tutorial not scrolling to bottom
 - update colors: actionsheet, alert, 'copy' popup, follow text width for border width.
 - Notifications: daily random prime
 - support orientations on ipad
