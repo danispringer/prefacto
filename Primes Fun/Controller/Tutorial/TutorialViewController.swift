@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 
 class TutorialViewController: UIViewController, UITextViewDelegate {
@@ -29,12 +30,6 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         myTextView.isScrollEnabled = true
         myTextView.indicatorStyle = .white
-
-        let myTitleAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 30)!]
-        let myTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25),
-            NSAttributedString.Key.foregroundColor: UIColor.white]
 
         let longString = """
 Intro
@@ -94,8 +89,34 @@ Images
 • Download random (clean) images from the internet - all with one thing in common: prime numbers.
 \n\n\n\n\n\n\n
 """
-        let longAttributedString = NSAttributedString(string: longString, attributes: myTextAttributes)
+
+        let myTitleAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 40)!
+        ]
+
+        let myTextAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        let longAttributedString = NSMutableAttributedString(string: longString, attributes: myTextAttributes)
+
+        let myRanges: [NSRange] = [
+            NSRange(location: 0, length: 5),
+            NSRange(location: 126, length: 9),
+            NSRange(location: 1134, length: 7),
+            NSRange(location: 1322, length: 4),
+            NSRange(location: 1506, length: 6),
+            NSRange(location: 1623, length: 6),
+            NSRange(location: 1685, length: 6)
+        ]
+
+        for range in myRanges {
+            longAttributedString.addAttributes(myTitleAttributes, range: range)
+        }
+
         myTextView.attributedText = longAttributedString
+
+
     }
 
 
