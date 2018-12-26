@@ -70,9 +70,8 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myTextView.flashScrollIndicators()
-        // TODO: fix not scrolling to bottom
+
         scrollTextViewToBottom(textView: myTextView)
-        // TODO: wait
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
 
     }
