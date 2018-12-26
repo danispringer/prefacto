@@ -30,100 +30,39 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         myTextView.isScrollEnabled = true
         myTextView.indicatorStyle = .white
 
-        let longString = """
-Intro
-
-• Primes Fun lets you work with prime numbers in 5 different  ways: \
-Checker, List, Factorize, Randomize, and Images.
-
-
-Some Tips
-
-• In addition to using the Randomize page of the app, you can use Siri to get random primes. \
-To do so: open Settings > Siri & Search > All Shortcuts > Get random prime, then record the phrase \
-you want to tell Siri whenever you want Siri to get you a random prime.
-Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in \
-order to see the 'Get random prime' shortcut available, you must first generated at least 1 random \
-prime in the app itself.
-
-• If a page is calculating or images are downloading, switching to a different page will not \
-interrupt that.
-
-• You can tap on the share button to share a result or image with friends, or save it to your \
-phone's files or gallery.
-
-• Tapping on 'Get new images' deletes the downloaded images and replaces them with new ones. \
-If you want to keep any of them, save them to your phone's gallery, using the share button, before \
-getting new images.
-
-• You can turn the app's sounds on or off in the app's settings.
-
-
-Checker
-
-• Check whether any number is prime, and if it is not, what it is divisible by. \
-• Type or paste a number, and tap on 'Check'.
-• Find a prime number to hear a satisfying 'Choo'!
-
-
-List
-
-• Create a list with all the prime numbers in a given range: for example, type 1 in the first \
-text box, 10 in the second, then tap on List, and you will get 1, 2, 3, 5, and 7.
-
-
-Factor
-
-• Generate a list of the prime factors for any number: for example, type 12, and you will get \
-2, 3, and 3.
-
-
-Random
-
-• Generate a random prime of a size of your choice.
-
-
-Images
-
-• Download random (clean) images from the internet - all with one thing in common: prime numbers.
-\n\n\n\n\n\n\n
-"""
-
         let myTitleAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 40)!
+            NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 40)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
         ]
 
         let myTextAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!,
             NSAttributedString.Key.foregroundColor: UIColor.white]
 
-        let longAttributedString = NSMutableAttributedString(string: longString, attributes: myTextAttributes)
+        let title1 = NSAttributedString(string: Constants.Tutorial.title1, attributes: myTitleAttributes)
+        let body1 = NSAttributedString(string: Constants.Tutorial.body1, attributes: myTextAttributes)
+        let title2 = NSAttributedString(string: Constants.Tutorial.title2, attributes: myTitleAttributes)
+        let body2 = NSAttributedString(string: Constants.Tutorial.body2, attributes: myTextAttributes)
+        let title3 = NSAttributedString(string: Constants.Tutorial.title3, attributes: myTitleAttributes)
+        let body3 = NSAttributedString(string: Constants.Tutorial.body3, attributes: myTextAttributes)
+        let title4 = NSAttributedString(string: Constants.Tutorial.title4, attributes: myTitleAttributes)
+        let body4 = NSAttributedString(string: Constants.Tutorial.body4, attributes: myTextAttributes)
+        let title5 = NSAttributedString(string: Constants.Tutorial.title5, attributes: myTitleAttributes)
+        let body5 = NSAttributedString(string: Constants.Tutorial.body5, attributes: myTextAttributes)
+        let title6 = NSAttributedString(string: Constants.Tutorial.title6, attributes: myTitleAttributes)
+        let body6 = NSAttributedString(string: Constants.Tutorial.body6, attributes: myTextAttributes)
+        let title7 = NSAttributedString(string: Constants.Tutorial.title7, attributes: myTitleAttributes)
+        let body7 = NSAttributedString(string: Constants.Tutorial.body7, attributes: myTextAttributes)
 
-        let myRanges: [NSRange] = [
-            NSRange(location: 0, length: 5),
-            NSRange(location: 126, length: 9),
-            NSRange(location: 1134, length: 7),
-            NSRange(location: 1322, length: 4),
-            NSRange(location: 1506, length: 6),
-            NSRange(location: 1623, length: 6),
-            NSRange(location: 1685, length: 6)
-        ]
 
-        for range in myRanges {
-            longAttributedString.addAttributes(myTitleAttributes, range: range)
+        let longAttributedString = NSMutableAttributedString()
+
+        for attributedString in [title1, body1, title2, body2, title3, body3, title4, body4,
+                                 title5, body5, title6, body6, title7, body7] {
+            longAttributedString.append(attributedString)
         }
 
         myTextView.attributedText = longAttributedString
-
-
-    }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // TODO: fix not scrolling to bottom
-        scrollTextViewToBottom(textView: myTextView)
 
     }
 
@@ -131,6 +70,9 @@ Images
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myTextView.flashScrollIndicators()
+        // TODO: fix not scrolling to bottom
+        scrollTextViewToBottom(textView: myTextView)
+        // TODO: wait
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
 
     }
@@ -145,7 +87,7 @@ Images
 
 
     func scrollTextViewToBottom(textView: UITextView) {
-        if textView.text.count > 0 {
+        if textView.attributedText.length > 0 {
             print("ok")
             let bottomOffset = CGPoint(x: 0, y: textView.contentSize.height - textView.bounds.size.height)
             textView.setContentOffset(bottomOffset, animated: true)
