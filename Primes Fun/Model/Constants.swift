@@ -216,6 +216,59 @@ struct Constants {
         }
     }
 
+    struct Tutorial {
+        static let title1 = "Intro\n\n"
+        static let body1 = """
+                           • Primes Fun lets you work with prime numbers in 5 different ways: \
+                           Checker, List, Factorize, Randomize, and Images.\n\n\n
+                           """
+        static let title2 = "Some Tips\n\n"
+        static let body2 = """
+                           • In addition to using the Randomize page of the app, you can use Siri to \
+                           get random primes. To do so: open Settings > Siri & Search > All Shortcuts \
+                           > Get random prime, then record the phrase you want to tell Siri whenever \
+                           you want Siri to get you a random prime.\nNote: In order to set up Siri \
+                           Shortcuts, your device needs to be running iOS 12 or later, and in order to \
+                           see the 'Get random prime' shortcut available, you must first have generated \
+                           at least 1 random prime in the app itself.\n\n• If a page is calculating or \
+                           images are downloading, switching to a different page will not interrupt \
+                           that.\n\n• You can tap on the share button to share a result or image with \
+                           friends, or save it to your phone's files or gallery.\n\n• Tapping on 'Get \
+                           new images' downloads new images and deletes the already downloaded ones. \
+                           If you want to keep any of them, save them to your phone's gallery - using \
+                           the share button - before getting new images.\n\n• You can turn the app's \
+                           sounds on or off in the app's settings. With the app's sound set to 'On', \
+                           sounds play when you find a prime number, download new images, or enter \
+                           invalid text in a textfield.\n\n\n
+                           """
+        static let title3 = "Checker\n\n"
+        static let body3 = """
+                           • Check whether any number is prime, and if it is not, what it is divisible \
+                           by.\n\n• Type or paste a number, and tap on 'Check'.\n\n• Find a prime \
+                           number to hear a satisfying 'Choo'!\n\n\n
+                           """
+        static let title4 = "List\n\n"
+        static let body4 = """
+                           • Generate a list with all the prime numbers in a given range: for example, \
+                           type 1 in the first text box, 10 in the second, tap on List, and you will \
+                           get 1, 2, 3, 5, and 7.\n\n\n
+                           """
+        static let title5 = "Factor\n\n"
+        static let body5 = """
+                           • Generate a list of the prime factors for any number: for example, type 12, \
+                           and you will get 2, 3, and 3.\n\n\n
+                           """
+        static let title6 = "Random\n\n"
+        static let body6 = """
+                           • Generate a random prime of a size of your choice. This can also be done \
+                           using Siri Shortcuts (see 'Some Tips' above for instructions).\n\n\n
+                           """
+        static let title7 = "Images\n\n"
+        static let body7 = """
+                           • Get random (clean) images from the internet - all with one thing in \
+                           common: prime numbers.\n\n\n
+                           """
+    }
 
     struct Model {
         static let name = "Model"
