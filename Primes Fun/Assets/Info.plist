@@ -28,8 +28,6 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>...to save your prime number image.</string>
 	<key>NSUserActivityTypes</key>
 	<array/>
 	<key>UILaunchStoryboardName</key>
