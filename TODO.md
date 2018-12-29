@@ -6,15 +6,10 @@
 - support orientations on ipad
 - improve for ipad
 - Add Multiple options for languages in apps.
-- UICollectionView delegates could be put in a separate extension
-https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151
-- improve collection view design
 - Add back screenshots in README.
 - Add iOS-like Splash screen: link to tutorial, or tutorial itself (maybe shortened)?
 - with 2 textfields, if one is empty, move focus to it when check fails with empty.
 - add arrows to switch to next textfield
-- fixme: placeholder image not showing
-- make images unique: prefer less total over dupes.
 - improve factors results design/phrasing.
 - add exponent to prime factors
 - [?] make exponent view user choice
@@ -34,7 +29,6 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 • Factorize a number
 • Generate random primes of a size of your choosing
 • Share or save your results
-• And more
 
 
 INTRO
@@ -47,13 +41,11 @@ SOME TIPS
  • In addition to using the Randomize page of the app, you can use Siri to get random primes. To do so: open Settings > Siri & Search > All Shortcuts > Get random prime, then record the phrase you want to tell Siri whenever you want Siri to get you a random prime.
 Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in order to see the 'Get random prime' shortcut available, you must first have generated at least 1 random prime in the app itself.
 
-• If a page is calculating or  images are downloading, switching to a different page will not interrupt that.
+• If a page is calculating, switching to a different page will not interrupt that.
 
-• You can tap on the share button to share a result or image with friends, or save it to your phone's files or gallery.
+• You can tap on the share button to share a result or save it to your phone's files.
 
-• Tapping on 'Get new images' downloads new images and deletes the already downloaded ones. If you want to keep any of them, save them to your phone's gallery - using the share button - before getting new images.
-
-• You can turn the app's sounds on or off in the app's settings. With the app's sound set to 'On', sounds play when you find a prime number, download new images, or enter invalid text in a textfield.
+• You can turn the app's sounds on or off in the app's settings. With the app's sound set to 'On', sounds play when you find a prime number or enter invalid text in a textfield.
 
 
 CHECKER
@@ -78,11 +70,6 @@ FACTOR
 RANDOM
 
 • Generate a random prime of a size of your choice. This can also be done using Siri Shortcuts (see 'Some Tips' above for instructions).
-
-
-IMAGES
-
-• Get random (clean) images from the internet - all with one thing in common: prime numbers.
 
 
 OUTRO
