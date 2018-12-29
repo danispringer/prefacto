@@ -28,8 +28,6 @@ extension UIViewController {
         case messageSent
         case unknown
         case noError
-        case permissionDenied
-        case imageSaved
     }
 
 
@@ -143,15 +141,6 @@ extension UIViewController {
         case .messageSent:
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
-        case .permissionDenied:
-            alertTitle = "Allow Primes Fun access to your gallery"
-            alertMessage = """
-            Primes Fun needs access to your gallery in order to save your image. Please allow \
-            access in Settings.
-            """
-        case .imageSaved:
-            alertTitle = "Success!"
-            alertMessage = "Your image has been saved to your library."
         default:
             alertTitle = "Unknown error"
             alertMessage = """

@@ -51,14 +51,11 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
         let body5 = NSAttributedString(string: Constants.Tutorial.body5, attributes: myTextAttributes)
         let title6 = NSAttributedString(string: Constants.Tutorial.title6, attributes: myTitleAttributes)
         let body6 = NSAttributedString(string: Constants.Tutorial.body6, attributes: myTextAttributes)
-        let title7 = NSAttributedString(string: Constants.Tutorial.title7, attributes: myTitleAttributes)
-        let body7 = NSAttributedString(string: Constants.Tutorial.body7, attributes: myTextAttributes)
-
 
         let longAttributedString = NSMutableAttributedString()
 
         for attributedString in [title1, body1, title2, body2, title3, body3, title4, body4,
-                                 title5, body5, title6, body6, title7, body7] {
+                                 title5, body5, title6, body6] {
             longAttributedString.append(attributedString)
         }
 

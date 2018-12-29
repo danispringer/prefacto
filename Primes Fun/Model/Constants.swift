@@ -68,9 +68,6 @@ struct Constants {
         static let leaveReview = "Leave a review"
         static let tutorial = "Tutorial"
         static let settings = "Settings"
-        static let openSettings = "Open Settings"
-        static let openGallery = "Open Gallery"
-        static let galleryLink = "photos-redirect://"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "musicbyds@icloud.com"
         static let isOnePrimeMessage = """
@@ -219,8 +216,8 @@ struct Constants {
     struct Tutorial {
         static let title1 = "Intro\n\n"
         static let body1 = """
-                           • Primes Fun lets you work with prime numbers in 5 different ways: \
-                           Checker, List, Factorize, Randomize, and Images.\n\n\n
+                           • Primes Fun lets you work with prime numbers in 4 different ways: \
+                           Checker, List, Factorize and Randomize.\n\n\n
                            """
         static let title2 = "Some Tips\n\n"
         static let body2 = """
@@ -230,15 +227,12 @@ struct Constants {
                            you want Siri to get you a random prime.\nNote: In order to set up Siri \
                            Shortcuts, your device needs to be running iOS 12 or later, and in order to \
                            see the 'Get random prime' shortcut available, you must first have generated \
-                           at least 1 random prime in the app itself.\n\n• If a page is calculating or \
-                           images are downloading, switching to a different page will not interrupt \
-                           that.\n\n• You can tap on the share button to share a result or image with \
-                           friends, or save it to your phone's files or gallery.\n\n• Tapping on 'Get \
-                           new images' downloads new images and deletes the already downloaded ones. \
-                           If you want to keep any of them, save them to your phone's gallery - using \
-                           the share button - before getting new images.\n\n• You can turn the app's \
-                           sounds on or off in the app's settings. With the app's sound set to 'On', \
-                           sounds play when you find a prime number, download new images, or enter \
+                           at least 1 random prime in the app itself.\n\n• If a page is calculating, \
+                           switching to a different page will not interrupt that.\n\n• You can tap on \
+                           the share button to share a result with friends, or save it to your phone's \
+                           files.\n
+                           • You can turn the app's sounds on or off in the app's settings. With the \
+                           app's sound set to 'On', sounds play when you find a prime number or enter \
                            invalid text in a textfield.\n\n\n
                            """
         static let title3 = "Checker\n\n"
@@ -263,11 +257,6 @@ struct Constants {
                            • Generate a random prime of a size of your choice. This can also be done \
                            using Siri Shortcuts (see 'Some Tips' above for instructions).\n\n\n
                            """
-        static let title7 = "Images\n\n"
-        static let body7 = """
-                           • Get random (clean) images from the internet - all with one thing in \
-                           common: prime numbers.\n\n\n\n\n\n\n\n\n
-                           """
     }
 
     struct Model {
@@ -283,16 +272,6 @@ struct Constants {
 
     struct Font {
         static let math = "LatinModernMath-Regular"
-    }
-
-
-    struct Title {
-        static let images = "Images"
-    }
-
-
-    struct Image {
-        static let refresh = "refresh.png"
     }
 
 

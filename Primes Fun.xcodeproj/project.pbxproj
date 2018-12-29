@@ -8,21 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3312262A210D233500802138 /* FactorizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33122629210D233500802138 /* FactorizeTableViewCell.swift */; };
-		3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915120D9FD3D00CA739F /* PhotosViewController.swift */; };
-		3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915620D9FE3600CA739F /* FlickrClient.swift */; };
-		3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915720D9FE3600CA739F /* FlickrConstants.swift */; };
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
-		3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915E20DA071600CA739F /* CollectionViewCell.swift */; };
 		333AD7E4210573F70010D446 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E3210573F70010D446 /* AppData.swift */; };
 		333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E6210581160010D446 /* SettingsViewControlller.swift */; };
 		333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996520F2BA33003774D4 /* ListResultsViewController.swift */; };
 		333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */; };
 		333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */; };
 		33428EE921AB6A810074F538 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33428EE821AB6A810074F538 /* Constants.swift */; };
-		3349CF7B2106A2E000FCF4E5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */; };
-		3349CF7D2106A34500FCF4E5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349CF7C2106A34500FCF4E5 /* DataController.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
-		334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779D20E048EC00BE2C65 /* DetailViewController.swift */; };
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
 		335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FD4A1210401E300B34DC9 /* TutorialViewController.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
@@ -44,21 +37,14 @@
 /* Begin PBXFileReference section */
 		3303491521CEF3A100FD1E23 /* Primes Fun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Primes Fun.entitlements"; sourceTree = "<group>"; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
-		3317915120D9FD3D00CA739F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		3317915620D9FE3600CA739F /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
-		3317915720D9FE3600CA739F /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		3317915E20DA071600CA739F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		333AD7E3210573F70010D446 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		333AD7E6210581160010D446 /* SettingsViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControlller.swift; sourceTree = "<group>"; };
 		333F996520F2BA33003774D4 /* ListResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		333F996920F2D91F003774D4 /* CheckerResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerResultsViewController.swift; sourceTree = "<group>"; };
 		333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeResultsViewController.swift; sourceTree = "<group>"; };
 		33428EE821AB6A810074F538 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		3349CF7C2106A34500FCF4E5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		334C779D20E048EC00BE2C65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		335FD4A1210401E300B34DC9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
@@ -93,8 +79,6 @@
 		3317915520D9FE3600CA739F /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
-				3317915620D9FE3600CA739F /* FlickrClient.swift */,
-				3317915720D9FE3600CA739F /* FlickrConstants.swift */,
 			);
 			path = Flickr;
 			sourceTree = "<group>";
@@ -102,12 +86,10 @@
 		3317915C20DA042F00CA739F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */,
 				3317915520D9FE3600CA739F /* Flickr */,
 				3376A51321000688001431C8 /* UIImage+Extension.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
 				333AD7E3210573F70010D446 /* AppData.swift */,
-				3349CF7C2106A34500FCF4E5 /* DataController.swift */,
 				33428EE821AB6A810074F538 /* Constants.swift */,
 			);
 			path = Model;
@@ -120,7 +102,6 @@
 				333F996720F2BA4F003774D4 /* List */,
 				333F996B20F3173D003774D4 /* Factorize */,
 				33A96A3D20FDFA71009E1DBA /* Random */,
-				333F996C20F3175C003774D4 /* Photos */,
 				335FD4A0210401C300B34DC9 /* Tutorial */,
 				333AD7E5210581020010D446 /* Settings */,
 			);
@@ -130,7 +111,6 @@
 		3317916020DA07CC00CA739F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3317915E20DA071600CA739F /* CollectionViewCell.swift */,
 				3357A328210D18290011965D /* ListTableViewCell.swift */,
 				33122629210D233500802138 /* FactorizeTableViewCell.swift */,
 				3385A5D021CF4413009D199C /* Mail+Extensions.swift */,
@@ -173,15 +153,6 @@
 				333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */,
 			);
 			path = Factorize;
-			sourceTree = "<group>";
-		};
-		333F996C20F3175C003774D4 /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				3317915120D9FD3D00CA739F /* PhotosViewController.swift */,
-				334C779D20E048EC00BE2C65 /* DetailViewController.swift */,
-			);
-			path = Photos;
 			sourceTree = "<group>";
 		};
 		335FD4A0210401C300B34DC9 /* Tutorial */ = {
@@ -364,19 +335,12 @@
 				333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */,
 				335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */,
 				3368773221CF65A900D31C18 /* MyTextField.swift in Sources */,
-				3317915920D9FE3600CA739F /* FlickrConstants.swift in Sources */,
-				334C779E20E048EC00BE2C65 /* DetailViewController.swift in Sources */,
 				333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */,
-				3317915F20DA071600CA739F /* CollectionViewCell.swift in Sources */,
-				3317915220D9FD3D00CA739F /* PhotosViewController.swift in Sources */,
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,
-				3349CF7D2106A34500FCF4E5 /* DataController.swift in Sources */,
-				3349CF7B2106A2E000FCF4E5 /* Model.xcdatamodeld in Sources */,
 				33F2807021CF14D70074CD8D /* MyButton.swift in Sources */,
 				3357A329210D18290011965D /* ListTableViewCell.swift in Sources */,
 				33C0F18120EF4F0A0013881A /* AppDelegate.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
-				3317915820D9FE3600CA739F /* FlickrClient.swift in Sources */,
 				33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */,
 				333F996A20F2D91F003774D4 /* CheckerResultsViewController.swift in Sources */,
 				33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */,
@@ -593,19 +557,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3349CF792106A2E000FCF4E5 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */,
-			);
-			currentVersion = 3349CF7A2106A2E000FCF4E5 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 33EE5BBF20D996C4008FEAF2 /* Project object */;
 }
