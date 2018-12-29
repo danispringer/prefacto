@@ -40,12 +40,12 @@ extension UIViewController {
         switch alertReasonParam {
         case .network:
             alertTitle = "Network error"
-            alertMessage = "Please check your network connection and try again."
+            alertMessage = "Please check your network connection"
         case .textfieldEmpty:
-            alertTitle = "Oops"
-            alertMessage = "Textfield is empty. Please enter a number and try again."
+            alertTitle = "Textfield empty"
+            alertMessage = "Textfield is empty. Please enter a number."
         case .notNumberOrTooBig:
-            alertTitle = "Oops"
+            alertTitle = "Number too big or contains text"
             alertMessage = "No text allowed. Just numbers.\nMax number: 9223372036854775807\n(A.K.A.: 2^63 − 1)"
         case .zero:
             alertTitle = "Is 0 prime?"
@@ -77,9 +77,6 @@ extension UIViewController {
             Some say 1 is prime, as its positive divisors are 1 and itself.
             Others disagree, as it doesn't have exactly two positive divisors.
             """
-        case .two:
-            alertTitle = "Prime"
-            alertMessage = "2 is a prime number!"
         case .negative:
             alertTitle = "Can negative numbers be prime?"
             alertMessage = """
@@ -128,13 +125,9 @@ extension UIViewController {
             -3 and 3 then generate exactly the same prime ideal.
             """
         case .sameTwice:
-            alertTitle = "Oops"
-            alertMessage = "Cannot make a list from a single number. Please enter different numbers."
-        case .noPrimesInRange:
-            alertTitle = "Oops"
+            alertTitle = "Same number entered twice"
             alertMessage = """
-            There are no prime numbers between '\(firstNum)' and '\(secondNum)'. \
-            Please enter different numbers.
+            Cannot make a list from a single number. Please enter two different numbers.
             """
         case .messageSaved:
             alertTitle = "Message saved"
@@ -151,10 +144,10 @@ extension UIViewController {
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
         case .permissionDenied:
-            alertTitle = "Permission denied"
+            alertTitle = "Allow Primes Fun access to your gallery"
             alertMessage = """
-            Primes Fun needs access to your gallery in order to save your image. Please allow access \
-            in Settings.
+            Primes Fun needs access to your gallery in order to save your image. Please allow \
+            access in Settings.
             """
         case .imageSaved:
             alertTitle = "Success!"
