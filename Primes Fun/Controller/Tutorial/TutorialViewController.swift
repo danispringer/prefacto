@@ -84,7 +84,6 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
 
     func scrollTextViewToBottom(textView: UITextView) {
         if textView.attributedText.length > 0 {
-            print("ok")
             let bottomOffset = CGPoint(x: 0, y: textView.contentSize.height - textView.bounds.size.height)
             textView.setContentOffset(bottomOffset, animated: true)
         }
