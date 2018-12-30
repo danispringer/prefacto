@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBar.backgroundImage = UIImage.from(color: .clear)
         tabBar.shadowImage = UIImage.from(color: .clear)
         tabBar.tintColor = Constants.View.goldColor
-        tabBar.unselectedItemTintColor = Constants.View.grayColor
+        tabBar.unselectedItemTintColor = Constants.View.goldColor
         UIToolbar.appearance().tintColor = Constants.View.goldColor
         UIToolbar.appearance().barTintColor = .black
         UINavigationBar.appearance().barTintColor = .black
