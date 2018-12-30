@@ -65,9 +65,9 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-EQ-e9X">
-                                <rect key="frame" x="0.0" y="44" width="414" height="375"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
                                 <items>
-                                    <barButtonItem title="About" image="Info" id="axt-Z7-Yq3">
+                                    <barButtonItem title="About" image="Info-Unselected" id="axt-Z7-Yq3">
                                         <connections>
                                             <action selector="aboutPressed:" destination="1t2-Bt-9xD" id="pKB-Nm-xYS"/>
                                         </connections>
@@ -91,7 +91,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iu7-ta-hZk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Checker" image="Checker" selectedImage="Checker" id="ZgU-OI-oa4"/>
+                    <tabBarItem key="tabBarItem" title="Checker" image="Checker-Unselected" selectedImage="Checker-Selected" id="ZgU-OI-oa4"/>
                     <navigationItem key="navigationItem" id="RoM-QN-z2j"/>
                     <connections>
                         <outlet property="aboutButton" destination="axt-Z7-Yq3" id="pBl-KC-GVq"/>
@@ -134,9 +134,9 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To0-HQ-Ycf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="375"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
                                 <items>
-                                    <barButtonItem title="About" image="Info" id="5Vi-CK-cNB">
+                                    <barButtonItem title="About" image="Info-Unselected" id="5Vi-CK-cNB">
                                         <connections>
                                             <action selector="aboutPressed:" destination="GDH-dL-aVw" id="iRp-73-Jqz"/>
                                         </connections>
@@ -161,7 +161,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DGV-fo-RV1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Factor" image="Factorize" selectedImage="Factorize" id="ts3-jk-KCl"/>
+                    <tabBarItem key="tabBarItem" title="Factor" image="Factorize-Unselected" selectedImage="Factorize-Selected" id="ts3-jk-KCl"/>
                     <connections>
                         <outlet property="aboutButton" destination="5Vi-CK-cNB" id="ria-EO-LCl"/>
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
@@ -325,9 +325,9 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-mx-5he">
-                                <rect key="frame" x="0.0" y="44" width="414" height="375"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
                                 <items>
-                                    <barButtonItem title="About" image="Info" id="mjO-YZ-2qc">
+                                    <barButtonItem title="About" image="Info-Unselected" id="mjO-YZ-2qc">
                                         <connections>
                                             <action selector="aboutPressed:" destination="enb-lg-n27" id="Nw1-yP-XK4"/>
                                         </connections>
@@ -359,7 +359,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TF9-a1-dCQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" image="List" selectedImage="List" id="Lod-4U-CQj"/>
+                    <tabBarItem key="tabBarItem" title="List" image="List-Unselected" selectedImage="List-Selected" id="Lod-4U-CQj"/>
                     <connections>
                         <outlet property="aboutButton" destination="mjO-YZ-2qc" id="g7R-lf-aZp"/>
                         <outlet property="activityIndicator" destination="dhX-Mn-u5f" id="ZdQ-Zs-eJF"/>
@@ -721,9 +721,9 @@ Factors: 1234567890</string>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-Tr-ST0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="375"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
                                 <items>
-                                    <barButtonItem title="About" image="Info" id="xYd-uu-DqX">
+                                    <barButtonItem title="About" image="Info-Unselected" id="xYd-uu-DqX">
                                         <connections>
                                             <action selector="aboutPressed:" destination="rtL-8v-6Jg" id="hxm-TE-G3L"/>
                                         </connections>
@@ -747,7 +747,7 @@ Factors: 1234567890</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yjZ-am-8J6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Random" image="Random" selectedImage="Random" id="yIw-R4-UNX"/>
+                    <tabBarItem key="tabBarItem" title="Random" image="Random-Unselected" selectedImage="Random-Selected" id="yIw-R4-UNX"/>
                     <navigationItem key="navigationItem" id="N5f-P2-4fN"/>
                     <connections>
                         <outlet property="aboutButton" destination="xYd-uu-DqX" id="vtn-wU-ovF"/>
@@ -835,10 +835,14 @@ Factors: 1234567890</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Checker" width="375" height="375"/>
-        <image name="Factorize" width="375" height="375"/>
-        <image name="Info" width="375" height="375"/>
-        <image name="List" width="75" height="75"/>
-        <image name="Random" width="375" height="375"/>
+        <image name="Checker-Selected" width="75" height="75"/>
+        <image name="Checker-Unselected" width="75" height="75"/>
+        <image name="Factorize-Selected" width="75" height="75"/>
+        <image name="Factorize-Unselected" width="67.5" height="67.5"/>
+        <image name="Info-Unselected" width="75" height="75"/>
+        <image name="List-Selected" width="75" height="75"/>
+        <image name="List-Unselected" width="67.5" height="67.5"/>
+        <image name="Random-Selected" width="75" height="75"/>
+        <image name="Random-Unselected" width="67.5" height="67.5"/>
     </resources>
 </document>
