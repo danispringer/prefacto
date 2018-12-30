@@ -37,7 +37,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     // Helpers
 
     @objc func soundToggled(sender: UISwitch) {
-        print("soundToggled Called")
         UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDefaultsStrings.soundEnabled)
         if sender.isOn {
             AppData.getSoundEnabledSettings(sound: Constants.Sound.toggle)
