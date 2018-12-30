@@ -3,7 +3,7 @@
 //  Primes Fun
 //
 //  Created by Daniel Springer on 12/23/18.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Copyright © 2019 Dani Springer. All rights reserved.
 //
 
 import UIKit
