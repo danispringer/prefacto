@@ -1,5 +1,7 @@
-- PF: Once update is live: update description in places with Siri Shortcuts and NO IMAGES.
-- PF: display checker edge results in results page with scrollView.
+- Once update is live: update description in places with Siri Shortcuts and NO IMAGES.
+- add more content and context in results pages.
+- See other prime sites.
+- display checker edge results in results page with scrollView.
 - unite shareIsOnePrime with isZeroPrime etc
 - update colors:'copy' popup, follow text width for border width.
 - Notifications: daily random prime
