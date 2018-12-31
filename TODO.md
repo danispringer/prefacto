@@ -74,7 +74,7 @@ RANDOM
 
 OUTRO
 
-• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send feedback or question'.
+• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Contact Us'.
 
 • Love the app? Please consider leaving a review! It would mean the world to us.
 
@@ -83,5 +83,6 @@ OUTRO
 
 • Lorem
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Send feedback or question'.
-Love the app? Please consider leaving a review! It would mean the world to us.
+• Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Contact Us'.
+
+• Love the app? Please consider leaving a review! It would mean the world to us.
