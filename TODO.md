@@ -13,6 +13,9 @@
 - improve factors results design/phrasing.
 - add exponent to prime factors
 - [?] make exponent view user choice
+- let user choose to add thousands separator in results
+- [?] add page to find prime by its index. I.E. the first prime is 2, so the second one is.
+- [?] add page to find the next prime after a given number. I.E: input: 4, output: 5.
 
 ~
 Colors:
