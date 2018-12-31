@@ -65,7 +65,7 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-EQ-e9X">
-                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="67"/>
                                 <items>
                                     <barButtonItem title="About" image="Info-Unselected" id="axt-Z7-Yq3">
                                         <connections>
@@ -134,7 +134,7 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To0-HQ-Ycf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="67"/>
                                 <items>
                                     <barButtonItem title="About" image="Info-Unselected" id="5Vi-CK-cNB">
                                         <connections>
@@ -325,7 +325,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-mx-5he">
-                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="67"/>
                                 <items>
                                     <barButtonItem title="About" image="Info-Unselected" id="mjO-YZ-2qc">
                                         <connections>
@@ -721,7 +721,7 @@ Factors: 1234567890</string>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-Tr-ST0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="67"/>
                                 <items>
                                     <barButtonItem title="About" image="Info-Unselected" id="xYd-uu-DqX">
                                         <connections>
@@ -835,14 +835,14 @@ Factors: 1234567890</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Checker-Selected" width="75" height="75"/>
-        <image name="Checker-Unselected" width="75" height="75"/>
-        <image name="Factorize-Selected" width="75" height="75"/>
+        <image name="Checker-Selected" width="67.5" height="67.5"/>
+        <image name="Checker-Unselected" width="67.5" height="67.5"/>
+        <image name="Factorize-Selected" width="67.5" height="67.5"/>
         <image name="Factorize-Unselected" width="67.5" height="67.5"/>
-        <image name="Info-Unselected" width="75" height="75"/>
-        <image name="List-Selected" width="75" height="75"/>
+        <image name="Info-Unselected" width="67.5" height="67.5"/>
+        <image name="List-Selected" width="67.5" height="67.5"/>
         <image name="List-Unselected" width="67.5" height="67.5"/>
-        <image name="Random-Selected" width="75" height="75"/>
+        <image name="Random-Selected" width="67.5" height="67.5"/>
         <image name="Random-Unselected" width="67.5" height="67.5"/>
     </resources>
 </document>
