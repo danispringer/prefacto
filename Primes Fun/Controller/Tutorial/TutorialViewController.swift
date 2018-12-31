@@ -64,6 +64,13 @@ class TutorialViewController: UIViewController, UITextViewDelegate {
     }
 
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
+        myTextView.flashScrollIndicators()
+    }
+
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myTextView.flashScrollIndicators()
