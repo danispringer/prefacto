@@ -28,7 +28,7 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 • Check whether a number is prime
 • List the prime numbers in a range
 • Factorize a number
-• Generate random primes of a size of your choosing
+• Generate random primes of a size of your choosing (now with Siri Shortcuts)
 • Share or save your results
 
 
