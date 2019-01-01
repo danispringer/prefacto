@@ -232,9 +232,9 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
-            self.randomizeButton.isHidden = !enabled
-            self.randomizeButton.isEnabled = enabled
-            self.randomizeLabel.text = enabled ? "Random Prime" : "Randomizing..."
+            self.randomizeButton?.isHidden = !enabled
+            self.randomizeButton?.isEnabled = enabled
+            self.randomizeLabel?.text = enabled ? "Random Prime" : "Randomizing..."
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
