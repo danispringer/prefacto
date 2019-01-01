@@ -1,6 +1,7 @@
 subito:
 - Once update is live: update description in places with Siri Shortcuts and NO IMAGES.
 - Add back screenshots in README.
+- update tutorial from TODO app description
 
 dopo:
 - See other prime sites.
@@ -34,26 +35,25 @@ App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 
 INTRO
 
-• Primes Fun lets you work with prime numbers in 5 different ways: Checker, List, Factorize, Randomize, and Images.
+• Primes Fun lets you work with prime numbers in 4 different ways: Checker, List, Factorize, and Randomize.
 
 
 SOME TIPS
 
  • In addition to using the Randomize page of the app, you can use Siri to get random primes. To do so: open Settings > Siri & Search > All Shortcuts > Get random prime, then record the phrase you want to tell Siri whenever you want Siri to get you a random prime.
-Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in order to see the 'Get random prime' shortcut available, you must first have generated at least 1 random prime in the app itself.
+Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in order to see the 'Get random prime' shortcut available, you must first have generated at least 1 random prime in the app itself, using the "Randomize" button.
 
 • If a page is calculating, switching to a different page will not interrupt that.
 
-• You can tap on the share button to share a result or save it to your phone's files.
+• You can tap on the top right button to share or save a result.
 
-• You can turn the app's sounds on or off in the app's settings. With the app's sound set to 'On', sounds play when you find a prime number or enter invalid text in a textfield.
-
+• You can turn the app's sounds on or off in the app's settings. With the app's sound set to 'On', sounds play when you find a prime number, or if you accidentally enter invalid text in a textfield.
 
 CHECKER
 
-• Check whether any number is prime, and if it is not, what it is divisible by.
+• Check whether any number is prime, and if it is not, see a number it is divisible by.
 
-• Type or paste a number, and tap on 'Check'.
+• Type or paste a number, then tap on 'Check'.
 
 • Find a prime number to hear a satisfying 'Choo'!
 
@@ -65,7 +65,7 @@ LIST
 
 FACTOR
 
-• Generate a list of the prime factors for any number: for example, type 12, and you will get 2, 3, and 3.
+• Get the prime factors for a number: for example, type 12, and you will get 2, 3, and 3.
 
 
 RANDOM
