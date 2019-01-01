@@ -49,14 +49,47 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
-            messageLabel.text = "There are no prime numbers between\n\(myFrom)\nand\n\(myTo)"
+            messageLabel.text = """
+            There are no primes between
+            \(myFrom)
+            and
+            \(myTo)
+            """
         } else if source.count == 1 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
-            messageLabel.text = "The only prime number between\n\(myFrom)\nand\n\(myTo)\nis\n\(source[0])"
+            messageLabel.text = """
+            The only prime between
+            \(myFrom)
+            and
+            \(myTo)
+            is
+            \(source[0])
+            """
+        } else if source.count == 2 {
+            resultsTableView.isHidden = true
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
+            messageLabel.text = """
+            The primes between
+            \(myFrom)
+            and
+            \(myTo)
+            are
+            \(source.first!)
+            and
+            \(source.last!)
+            """
         } else {
-            messageLabel.text = "There are\n\(source.count)\nprime numbers between\n\(myFrom)\nand\n\(myTo)"
+            messageLabel.text = """
+            There are
+            \(source.count)
+            primes between
+            \(myFrom)
+            and
+            \(myTo)
+            """
         }
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,

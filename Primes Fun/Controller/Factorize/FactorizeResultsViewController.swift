@@ -38,8 +38,39 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        if let myNumber = number {
-            messageLabel.text = "Number:\n\(myNumber)\n\nFactors:\n\(source.count)"
+
+        guard let myNumber = number else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            present(alert, animated: true)
+            return
+        }
+        if source.count == 1 {
+            messageLabel.text = """
+            \(myNumber)
+            is prime, therefore its only factor is itself
+            """
+            resultsTableView.isHidden = true
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
+        } else if source.count == 2 {
+            messageLabel.text = """
+            The prime factors of
+            \(myNumber)
+            are
+            \(source.first!)
+            and
+            \(source.last!)
+            """
+            resultsTableView.isHidden = true
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
+        } else {
+            messageLabel.text = """
+            \(myNumber)
+            has
+            \(source.count)
+            prime factors
+            """
         }
 
     }
