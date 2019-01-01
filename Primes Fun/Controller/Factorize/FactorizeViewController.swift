@@ -161,10 +161,12 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             return false
         }
         guard number != 1 else {
+            let alert = self.createAlert(alertReasonParam: .one)
             DispatchQueue.main.async {
-                self.arrayOfInts = [1]
+                alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
-                self.presentResults(number: number)
+                self.present(alert, animated: true)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
