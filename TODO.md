@@ -1,20 +1,16 @@
-passati:
+subito:
 - Once update is live: update description in places with Siri Shortcuts and NO IMAGES.
+- Add back screenshots in README.
 
-controlla:
+dopo:
 - See other prime sites.
-- follow text width for border width.
 - Notifications: daily random prime
 - support orientations on ipad
 - improve for ipad
 - Add Multiple options for languages in apps.
-- Add back screenshots in README.
-- Add iOS-like Splash screen: link to tutorial, or tutorial itself (maybe shortened)?
 - with 2 textfields, if one is empty, move focus to it when check fails with empty.
+- follow text width for border width.
 - add arrows to switch to next textfield
-- improve factors results design/phrasing.
-- add exponent to prime factors
-- [?] make exponent view user choice
 - let user choose to add thousands separator in results
 - [?] add page to find prime by its index. I.E. the first prime is 2, so the second one is.
 - [?] add page to find the next prime after a given number. I.E: input: 4, output: 5.
