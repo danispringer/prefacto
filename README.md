@@ -10,8 +10,7 @@ Is there a feature you'd like to see? A bug you'd like to go away? Let us know!
 
 Love the app? Please consider leaving a 5-star review!
 
-
-PUT SCREENSHOTS HERE
+![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK) ![Screenshot](LINK)
 
 # Contributing
 Want to help? You can:
