@@ -1,9 +1,11 @@
 subito:
-- Once update is live: update description in places with Siri Shortcuts and NO IMAGES.
 - Add back screenshots in README.
 - update tutorial from TODO app description
 
 dopo:
+- PF: bug: if on random results, shortcut does nothing
+- PF: [?] darkMode, lightMode
+- PF: [?]scan number via camera
 - See other prime sites.
 - Notifications: daily random prime
 - support orientations on ipad
