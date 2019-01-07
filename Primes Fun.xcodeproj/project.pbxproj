@@ -17,7 +17,6 @@
 		33428EE921AB6A810074F538 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33428EE821AB6A810074F538 /* Constants.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
-		335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FD4A1210401E300B34DC9 /* TutorialViewController.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
 		336DBCEC21D2D9710008F408 /* latinmodern-math.otf in Resources */ = {isa = PBXBuildFile; fileRef = 336DBCEB21D2D9710008F408 /* latinmodern-math.otf */; };
 		3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376A51321000688001431C8 /* UIImage+Extension.swift */; };
@@ -46,7 +45,6 @@
 		33428EE821AB6A810074F538 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		335FD4A1210401E300B34DC9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		336DBCEB21D2D9710008F408 /* latinmodern-math.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "latinmodern-math.otf"; sourceTree = "<group>"; };
 		3376A51321000688001431C8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				333F996720F2BA4F003774D4 /* List */,
 				333F996B20F3173D003774D4 /* Factorize */,
 				33A96A3D20FDFA71009E1DBA /* Random */,
-				335FD4A0210401C300B34DC9 /* Tutorial */,
 				333AD7E5210581020010D446 /* Settings */,
 			);
 			path = Controller;
@@ -153,14 +150,6 @@
 				333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */,
 			);
 			path = Factorize;
-			sourceTree = "<group>";
-		};
-		335FD4A0210401C300B34DC9 /* Tutorial */ = {
-			isa = PBXGroup;
-			children = (
-				335FD4A1210401E300B34DC9 /* TutorialViewController.swift */,
-			);
-			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		336DBCE221D2D0B40008F408 /* Fonts */ = {
@@ -333,7 +322,6 @@
 				33428EE921AB6A810074F538 /* Constants.swift in Sources */,
 				33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */,
 				333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */,
-				335FD4A2210401E300B34DC9 /* TutorialViewController.swift in Sources */,
 				3368773221CF65A900D31C18 /* MyTextField.swift in Sources */,
 				333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */,
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,

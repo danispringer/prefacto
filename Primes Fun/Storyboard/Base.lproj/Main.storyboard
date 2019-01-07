@@ -234,62 +234,6 @@
             </objects>
             <point key="canvasLocation" x="2442" y="2178"/>
         </scene>
-        <!--Tutorial View Controller-->
-        <scene sceneID="koQ-9e-pBq">
-            <objects>
-                <viewController storyboardIdentifier="TutorialViewController" id="R8a-aQ-82M" customClass="TutorialViewController" customModule="Primes_Fun" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mfy-L1-8AS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jb-tv-VdS">
-                                <rect key="frame" x="16" y="104" width="382" height="742"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="R8a-aQ-82M" id="NPn-Ef-H0k"/>
-                                </connections>
-                            </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brq-yh-L5h">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="Done" id="yAH-KG-5Sv">
-                                        <connections>
-                                            <action selector="closeButtonPressed:" destination="R8a-aQ-82M" id="zRx-rj-bT4"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2qe-Za-e1x"/>
-                                    <barButtonItem title="Back to top" id="F5i-eR-54X">
-                                        <connections>
-                                            <action selector="backToTop:" destination="R8a-aQ-82M" id="Kgd-HL-HrT"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="brq-yh-L5h" firstAttribute="leading" secondItem="BXs-lb-LzX" secondAttribute="leading" id="0ey-lw-Zwv"/>
-                            <constraint firstItem="BXs-lb-LzX" firstAttribute="bottom" secondItem="9jb-tv-VdS" secondAttribute="bottom" constant="16" id="AUq-ej-6mY"/>
-                            <constraint firstItem="BXs-lb-LzX" firstAttribute="trailing" secondItem="brq-yh-L5h" secondAttribute="trailing" id="aIY-Ox-6TE"/>
-                            <constraint firstItem="BXs-lb-LzX" firstAttribute="trailing" secondItem="9jb-tv-VdS" secondAttribute="trailing" constant="16" id="bHU-Aa-ekD"/>
-                            <constraint firstItem="9jb-tv-VdS" firstAttribute="top" secondItem="brq-yh-L5h" secondAttribute="bottom" constant="16" id="eLM-96-CtG"/>
-                            <constraint firstItem="9jb-tv-VdS" firstAttribute="leading" secondItem="BXs-lb-LzX" secondAttribute="leading" constant="16" id="joO-vx-qhO"/>
-                            <constraint firstItem="brq-yh-L5h" firstAttribute="top" secondItem="BXs-lb-LzX" secondAttribute="top" id="nvg-WW-hIo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="BXs-lb-LzX"/>
-                    </view>
-                    <connections>
-                        <outlet property="myTextView" destination="9jb-tv-VdS" id="rZX-cc-mB0"/>
-                        <outlet property="myToolbar" destination="brq-yh-L5h" id="gVc-WT-pWQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pEs-6E-Q5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2442" y="1438"/>
-        </scene>
         <!--List-->
         <scene sceneID="CXi-cY-2n2">
             <objects>
