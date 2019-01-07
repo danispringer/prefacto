@@ -250,11 +250,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         let reviewAction = UIAlertAction(title: Constants.Messages.leaveReview, style: .default) { _ in
             self.requestReviewManually()
         }
-        let tutorialAction = UIAlertAction(title: Constants.Messages.tutorial, style: .default) { _ in
-            let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.tutorial)
-            self.present(controller, animated: true)
-        }
         let settingsAction = UIAlertAction(title: Constants.Messages.settings, style: .default) { _ in
             let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
@@ -263,7 +258,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
             self.showApps()
         }
-        for action in [tutorialAction, settingsAction, mailAction, reviewAction,
+        for action in [settingsAction, mailAction, reviewAction,
                        shareAppAction, showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
