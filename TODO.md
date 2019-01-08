@@ -1,4 +1,3 @@
-- PF: [?] darkMode, lightMode
 - PF: [?]scan number via camera
 - See other prime sites.
 - Notifications: daily random prime
