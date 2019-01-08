@@ -17,8 +17,8 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
     // MARK: Outlets
 
-    @IBOutlet weak var firstTextField: UITextField!
-    @IBOutlet weak var secondTextField: UITextField!
+    @IBOutlet weak var firstTextField: MyTextField!
+    @IBOutlet weak var secondTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
@@ -32,37 +32,67 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        firstTextField.delegate = self
-        secondTextField.delegate = self
-        let resignToolbar = UIToolbar()
-        let listButton = UIBarButtonItem()
-        listButton.title = Constants.Messages.list
-        listButton.style = .plain
-        listButton.target = self
-        listButton.action = #selector(checkButtonPressed)
-        let cancelButton = UIBarButtonItem()
-        cancelButton.title = Constants.Messages.cancel
-        cancelButton.style = .plain
-        cancelButton.target = self
-        cancelButton.action = #selector(cancelAndHideKeyboard)
-        cancelButton.tintColor = UIColor.white
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        resignToolbar.items = [cancelButton, space, listButton]
-        resignToolbar.sizeToFit()
-        firstTextField.inputAccessoryView = resignToolbar
-        secondTextField.inputAccessoryView = resignToolbar
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-    }
-
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arrayOfInts = []
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        firstTextField.delegate = self
+        secondTextField.delegate = self
+
+        let resignToolbar = UIToolbar()
+        let listButton = UIBarButtonItem(
+            title: Constants.Messages.list,
+            style: .plain,
+            target: self,
+            action: #selector(checkButtonPressed))
+        let cancelButton = UIBarButtonItem(
+            title: Constants.Messages.cancel,
+            style: .plain,
+            target: self,
+            action: #selector(cancelAndHideKeyboard))
+
+        cancelButton.tintColor = darkMode ? .white : .red
+
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+
+        resignToolbar.items = [cancelButton, space, listButton]
+        resignToolbar.sizeToFit()
+
+        resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+
+        for toolbar in [myToolbar, resignToolbar] {
+            toolbar?.setBackgroundImage(UIImage(),
+                                        forToolbarPosition: .any,
+                                        barMetrics: .default)
+            toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
+        }
+
+        firstTextField.inputAccessoryView = resignToolbar
+        secondTextField.inputAccessoryView = resignToolbar
+
+        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        titleLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.tintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+
+        let firstColor: UIColor = darkMode ? .white : .black
+        let secondColor: UIColor = darkMode ? .black : .white
+
+        for textField in [firstTextField, secondTextField] {
+            textField?.backgroundColor = secondColor
+            textField?.textColor = firstColor
+            textField?.tintColor = firstColor
+            textField?.bottomBorder.backgroundColor = firstColor
+        }
+
+        activityIndicator.color = darkMode ? .white : .black
+
 
     }
 

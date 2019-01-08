@@ -19,7 +19,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareButtonItem: UIBarButtonItem!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var jumpToTopButton: UIButton!
     @IBOutlet weak var jumpToBottomButton: UIButton!
 
@@ -45,7 +45,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             return
         }
         if source.count == 1 {
-            messageLabel.text = """
+            resultLabel.text = """
             \(myNumber)
             is prime, therefore its only factor is itself
             """
@@ -53,7 +53,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
         } else if source.count == 2 {
-            messageLabel.text = """
+            resultLabel.text = """
             The prime factors of
             \(myNumber)
             are
@@ -65,7 +65,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
         } else {
-            messageLabel.text = """
+            resultLabel.text = """
             \(myNumber)
             has
             \(source.count)
@@ -73,6 +73,21 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             """
         }
 
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        resultLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+        resultsTableView.backgroundColor = darkMode ? .black : .white
+        for button in [jumpToTopButton, jumpToBottomButton] {
+            button?.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        }
     }
 
 
@@ -148,9 +163,10 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: Delegates
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
         let indicator = scrollView.subviews.last as? UIImageView
         indicator?.image = nil
-        indicator?.backgroundColor = .white
+        indicator?.backgroundColor = darkMode ? .white : .black
     }
 
 
@@ -160,14 +176,19 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
         cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
-        cell?.numberLabel?.textColor = .white
+        cell?.numberLabel?.textColor = darkMode ? .white : .black
         cell?.numberLabel?.font = UIFont(name: Constants.Font.math, size: 30)
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
-        cell?.indexLabel?.textColor = .white
+        cell?.indexLabel?.textColor = darkMode ? .white : .black
         cell?.indexLabel?.font = UIFont(name: Constants.Font.math, size: 20)
+        cell?.backgroundColor = darkMode ? .black : .white
+        cell?.contentView.backgroundColor = darkMode ? .black : .white
         return cell ?? UITableViewCell()
     }
 

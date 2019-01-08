@@ -17,7 +17,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
     // MARK: Outlets
 
-    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
@@ -31,35 +31,60 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        myTextField.delegate = self
-        let resignToolbar = UIToolbar()
-        let factorButton = UIBarButtonItem()
-        factorButton.title = Constants.Messages.factor
-        factorButton.style = .plain
-        factorButton.target = self
-        factorButton.action = #selector(checkButtonPressed)
-        let cancelButton = UIBarButtonItem()
-        cancelButton.title = Constants.Messages.cancel
-        cancelButton.style = .plain
-        cancelButton.target = self
-        cancelButton.action = #selector(cancelAndHideKeyboard)
-        cancelButton.tintColor = UIColor.white
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        resignToolbar.items = [cancelButton, space, factorButton]
-        resignToolbar.sizeToFit()
-        myTextField.inputAccessoryView = resignToolbar
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-    }
-
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arrayOfInts = []
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        myTextField.delegate = self
+
+        let resignToolbar = UIToolbar()
+        let factorButton = UIBarButtonItem(
+            title: Constants.Messages.factor,
+            style: .plain,
+            target: self,
+            action: #selector(checkButtonPressed))
+        let cancelButton = UIBarButtonItem(
+            title: Constants.Messages.cancel,
+            style: .plain,
+            target: self,
+            action: #selector(cancelAndHideKeyboard))
+        cancelButton.tintColor = darkMode ? .white : .red
+
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        resignToolbar.items = [cancelButton, space, factorButton]
+        resignToolbar.sizeToFit()
+
+        resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+
+        for toolbar in [myToolbar, resignToolbar] {
+            toolbar?.setBackgroundImage(UIImage(),
+                                        forToolbarPosition: .any,
+                                        barMetrics: .default)
+            toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
+        }
+
+        myTextField.inputAccessoryView = resignToolbar
+
+        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        titleLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.tintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+
+        let firstColor: UIColor = darkMode ? .white : .black
+        let secondColor: UIColor = darkMode ? .black : .white
+        myTextField.backgroundColor = secondColor
+        myTextField.textColor = firstColor
+        myTextField.tintColor = firstColor
+        myTextField.bottomBorder.backgroundColor = firstColor
+
+        activityIndicator.color = darkMode ? .white : .black
+
     }
 
 

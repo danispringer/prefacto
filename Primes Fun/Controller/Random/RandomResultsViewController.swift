@@ -20,6 +20,7 @@ class RandomResultsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var copyButton: MyButton!
 
 
     // MARK: Properties
@@ -38,6 +39,20 @@ class RandomResultsViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         resultLabel.text = "\(myNumber!)"
         titleLabel.text = myTitle
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        for label in [resultLabel, titleLabel] {
+            label?.textColor = darkMode ? .white : .black
+        }
+        view.backgroundColor = darkMode ? .black : .white
+        copyButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
     }
 
 
