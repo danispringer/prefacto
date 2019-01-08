@@ -19,7 +19,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var randomizeButton: UIButton!
-    @IBOutlet weak var randomizeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
@@ -37,12 +37,28 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        titleLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.tintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+
+        activityIndicator.color = darkMode ? .white : .black
+        randomizeButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
     }
 
 
@@ -234,7 +250,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         DispatchQueue.main.async {
             self.randomizeButton?.isHidden = !enabled
             self.randomizeButton?.isEnabled = enabled
-            self.randomizeLabel?.text = enabled ? "Random Prime" : "Randomizing..."
+            self.titleLabel?.text = enabled ? "Random Prime" : "Randomizing..."
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()

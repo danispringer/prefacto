@@ -22,36 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UserDefaults.standard.register(defaults: [Constants.UserDefaultsStrings.soundEnabled: true])
+
+        UserDefaults.standard.register(defaults: [
+            Constants.UserDef.soundEnabled: true,
+            Constants.UserDef.darkModeEnabled: true])
+
         let tabBar = UITabBar.appearance()
         tabBar.backgroundImage = UIImage.from(color: .clear)
         tabBar.shadowImage = UIImage.from(color: .clear)
-        tabBar.tintColor = Constants.View.goldColor
-        tabBar.unselectedItemTintColor = Constants.View.goldColor
-        UIToolbar.appearance().tintColor = Constants.View.goldColor
-        UIToolbar.appearance().barTintColor = .black
-        UINavigationBar.appearance().barTintColor = .black
-        UINavigationBar.appearance().backgroundColor = Constants.View.goldColor
+
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = Constants.View.goldColor
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
-            ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
-            ], for: .selected)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
-            ], for: .highlighted)
+
+        for state: UIControl.State in [.normal, .selected, .highlighted] {
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
+                ], for: state)
+        }
+
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!,
                 NSAttributedString.Key.foregroundColor: Constants.View.grayColor
             ], for: .disabled)
+
         return true
     }
 

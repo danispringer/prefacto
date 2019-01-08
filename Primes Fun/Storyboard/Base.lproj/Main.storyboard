@@ -76,7 +76,6 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Iu7-ta-hZk" firstAttribute="trailing" secondItem="m0x-Lr-7Xl" secondAttribute="trailing" constant="16" id="9qw-tB-l1r"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="leading" secondItem="Iu7-ta-hZk" secondAttribute="leading" constant="16" id="B4W-3Q-SFQ"/>
@@ -145,7 +144,6 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fXB-4V-786" firstAttribute="top" secondItem="ptO-hj-b9l" secondAttribute="bottom" constant="40" id="68O-UR-nMy"/>
                             <constraint firstItem="fXB-4V-786" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="6FS-JH-z40"/>
@@ -194,7 +192,7 @@
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-GM-f5H">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" id="stW-q4-TUs">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -202,9 +200,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="stW-q4-TUs" id="jCr-6b-DyQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -284,7 +280,6 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yc2-op-hSX" firstAttribute="leading" secondItem="TF9-a1-dCQ" secondAttribute="leading" constant="16" id="0Hs-Et-WM1"/>
                             <constraint firstItem="TF9-a1-dCQ" firstAttribute="trailing" secondItem="yc2-op-hSX" secondAttribute="trailing" constant="16" id="6fg-L5-4j1"/>
@@ -353,8 +348,6 @@ Primes: 123456890</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
                                 <rect key="frame" x="16" y="275.5" width="382" height="500.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Primes_Fun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="44"/>
@@ -382,7 +375,6 @@ Primes: 123456890</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="lns-Po-Sqc" firstAttribute="leading" secondItem="Vzb-yw-AMK" secondAttribute="trailing" constant="12" id="ROX-Dw-B0h"/>
                                                 <constraint firstItem="Vzb-yw-AMK" firstAttribute="leading" secondItem="bVR-LQ-lpl" secondAttribute="leading" constant="10" id="Sb1-cT-2qx"/>
@@ -391,7 +383,6 @@ Primes: 123456890</string>
                                                 <constraint firstItem="Vzb-yw-AMK" firstAttribute="centerY" secondItem="bVR-LQ-lpl" secondAttribute="centerY" id="w9x-zt-94i"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="indexLabel" destination="Vzb-yw-AMK" id="VuW-6D-Jgk"/>
                                             <outlet property="numberLabel" destination="lns-Po-Sqc" id="6a9-u9-zOg"/>
@@ -420,7 +411,6 @@ Primes: 123456890</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" id="85F-i7-GH3"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="9X0-tU-cBa"/>
@@ -442,8 +432,8 @@ Primes: 123456890</string>
                     <connections>
                         <outlet property="jumpToBottomButton" destination="4HI-oU-hkH" id="JwS-vr-6Ee"/>
                         <outlet property="jumpToTopButton" destination="i8z-rE-tr8" id="fQb-nh-FhC"/>
-                        <outlet property="messageLabel" destination="Gno-To-rhb" id="ftF-8T-QRQ"/>
                         <outlet property="myToolbar" destination="pot-Xn-7oP" id="jG4-E8-MB2"/>
+                        <outlet property="resultLabel" destination="Gno-To-rhb" id="ftF-8T-QRQ"/>
                         <outlet property="resultsTableView" destination="cUP-pY-AOE" id="Otl-tY-T0x"/>
                         <outlet property="shareBarButtonItem" destination="Ahw-gk-FOH" id="EQt-hn-zWD"/>
                     </connections>
@@ -485,7 +475,6 @@ Divisible by: 857.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dEg-Xb-Lgt" firstAttribute="leading" secondItem="bGw-3h-5fu" secondAttribute="leading" id="G9W-ai-tvB"/>
                             <constraint firstItem="bGw-3h-5fu" firstAttribute="trailing" secondItem="dEg-Xb-Lgt" secondAttribute="trailing" id="XRV-cf-bXv"/>
@@ -533,8 +522,6 @@ Divisible by: 857.</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
                                 <rect key="frame" x="16" y="250.5" width="382" height="525.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Primes_Fun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="44"/>
@@ -560,7 +547,6 @@ Divisible by: 857.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Ira-YK-Szs" firstAttribute="leading" secondItem="T8l-rz-Rbw" secondAttribute="trailing" constant="12" id="GzP-IA-xbV"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ira-YK-Szs" secondAttribute="trailing" constant="10" id="fps-cZ-Nki"/>
@@ -569,7 +555,6 @@ Divisible by: 857.</string>
                                                 <constraint firstItem="T8l-rz-Rbw" firstAttribute="centerY" secondItem="cRd-m7-bIe" secondAttribute="centerY" id="ul3-aY-7J5"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="indexLabel" destination="T8l-rz-Rbw" id="hhB-eO-IzM"/>
                                             <outlet property="numberLabel" destination="Ira-YK-Szs" id="nzP-tg-B6L"/>
@@ -606,7 +591,6 @@ Factors: 1234567890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" id="1Ne-sA-8H4"/>
                             <constraint firstItem="vtG-MD-Tnd" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="5kF-aa-7cP"/>
@@ -628,8 +612,8 @@ Factors: 1234567890</string>
                     <connections>
                         <outlet property="jumpToBottomButton" destination="lyv-wW-QU7" id="MRJ-dg-QXw"/>
                         <outlet property="jumpToTopButton" destination="uvb-aY-8KG" id="H9b-Yc-7Wr"/>
-                        <outlet property="messageLabel" destination="vtG-MD-Tnd" id="KxA-su-rwa"/>
                         <outlet property="myToolbar" destination="RU3-mS-M5k" id="ga6-pq-vCp"/>
+                        <outlet property="resultLabel" destination="vtG-MD-Tnd" id="KxA-su-rwa"/>
                         <outlet property="resultsTableView" destination="o0x-Ps-BCo" id="j0e-Vv-9T0"/>
                         <outlet property="shareButtonItem" destination="AMw-Pt-ueC" id="zc3-EE-8FI"/>
                     </connections>
@@ -676,7 +660,6 @@ Factors: 1234567890</string>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="JAd-wu-aHm"/>
                             <constraint firstItem="Xwr-Tr-ST0" firstAttribute="top" secondItem="yjZ-am-8J6" secondAttribute="top" id="SOv-wp-egV"/>
@@ -698,7 +681,7 @@ Factors: 1234567890</string>
                         <outlet property="activityIndicator" destination="Cjb-Z1-5xH" id="Yvu-R7-JZY"/>
                         <outlet property="myToolbar" destination="Xwr-Tr-ST0" id="ov5-ms-5dj"/>
                         <outlet property="randomizeButton" destination="VWa-1q-r4D" id="Rob-RT-53Z"/>
-                        <outlet property="randomizeLabel" destination="INr-Ds-DUI" id="Nv4-zE-zHr"/>
+                        <outlet property="titleLabel" destination="INr-Ds-DUI" id="Nv4-zE-zHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFL-N0-H7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -750,7 +733,6 @@ Factors: 1234567890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KsD-1r-mwL" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="0h5-2H-U3h"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="KsD-1r-mwL" secondAttribute="trailing" constant="16" id="7YW-XT-hsP"/>
@@ -767,6 +749,7 @@ Factors: 1234567890</string>
                         <viewLayoutGuide key="safeArea" id="Vmc-Bm-u6I"/>
                     </view>
                     <connections>
+                        <outlet property="copyButton" destination="DqT-zL-LYQ" id="xkw-vd-w32"/>
                         <outlet property="myToolbar" destination="PX3-Zc-OR8" id="lP5-OH-3uD"/>
                         <outlet property="resultLabel" destination="KsD-1r-mwL" id="fAa-qe-bzY"/>
                         <outlet property="shareBarButtonItem" destination="8wG-x3-FZT" id="4zZ-8Q-uO5"/>

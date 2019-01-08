@@ -53,6 +53,18 @@ class CheckerResultsViewController: UIViewController {
     }
 
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        resultLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+
+    }
+
+
     // MARK: Helpers
 
     @IBAction func share() {

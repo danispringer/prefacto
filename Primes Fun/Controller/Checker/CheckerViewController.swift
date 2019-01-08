@@ -16,7 +16,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
 
     // MARK: Outlets
 
-    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
@@ -25,10 +25,32 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        titleLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.tintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+
+        let firstColor: UIColor = darkMode ? .white : .black
+        let secondColor: UIColor = darkMode ? .black : .white
+        myTextField.backgroundColor = secondColor
+        myTextField.textColor = firstColor
+        myTextField.tintColor = firstColor
+        myTextField.bottomBorder.backgroundColor = firstColor
+
+        activityIndicator.color = darkMode ? .white : .black
+
         let resignToolbar = UIToolbar()
         let checkButton = UIBarButtonItem()
+
         checkButton.title = Constants.Messages.check
         checkButton.style = .plain
         checkButton.target = self
@@ -37,15 +59,21 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                                            style: .plain,
                                            target: self,
                                            action: #selector(cancelAndHideKeyboard))
-        cancelButton.tintColor = UIColor.white
+        cancelButton.tintColor = darkMode ? .white : .red
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         resignToolbar.items = [cancelButton, space, checkButton]
         resignToolbar.sizeToFit()
+        resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+
+        for toolbar in [myToolbar, resignToolbar] {
+            toolbar?.setBackgroundImage(UIImage(),
+                                             forToolbarPosition: .any,
+                                             barMetrics: .default)
+            toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
+        }
+
         myTextField.inputAccessoryView = resignToolbar
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
     }
 
 

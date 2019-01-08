@@ -21,18 +21,20 @@ class MyTextField: UITextField {
 
     override func awakeFromNib() {
 
-        self.backgroundColor = .black
-        self.textColor = .white
-        self.tintColor = .white
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let firstColor: UIColor = darkMode ? .white : .black
+
+        self.borderStyle = .none
         self.translatesAutoresizingMaskIntoConstraints = false
         self.attributedPlaceholder = NSAttributedString(
             string: Constants.Messages.enterAnyNumber,
             attributes: [
-                NSAttributedString.Key.foregroundColor: Constants.View.grayColor
+                NSAttributedString.Key.foregroundColor:
+                    darkMode ? Constants.View.grayColor : UIColor.lightGray
             ])
 
         bottomBorder = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        bottomBorder.backgroundColor = .white // Set Border-Color
+        bottomBorder.backgroundColor = firstColor
         bottomBorder.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(bottomBorder)
@@ -40,7 +42,7 @@ class MyTextField: UITextField {
         bottomBorder.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         bottomBorder.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         bottomBorder.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        bottomBorder.heightAnchor.constraint(equalToConstant: 1).isActive = true // Set Border-Strength
+        bottomBorder.heightAnchor.constraint(equalToConstant: 1).isActive = true // Set Border thickness
 
     }
 
