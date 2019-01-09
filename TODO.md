@@ -1,22 +1,12 @@
-- PF: [?]scan number via camera
-- See other prime sites.
 - Notifications: daily random prime
 - support orientations on ipad
 - improve for ipad
 - Add Multiple options for languages in apps.
-- with 2 textfields, if one is empty, move focus to it when check fails with empty.
 - follow text width for border width.
 - add arrows to switch to next textfield
 - let user choose to add thousands separator in results
-- [?] add page to find prime by its index. I.E. the first prime is 2, so the second one is.
-- [?] add page to find the next prime after a given number. I.E: input: 4, output: 5.
+- find first prime above (or below) N.
 
-~
-Colors:
-- black: #000
-- white: #fff
-- gold: #fdc600 / UIColor(red: 0.99, green: 0.78, blue: 0.00, alpha: 1.0)
-- gray: #9a9a9a / UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0)
 ~
 App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
 ~
