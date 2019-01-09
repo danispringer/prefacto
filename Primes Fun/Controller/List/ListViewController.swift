@@ -173,6 +173,11 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
+                if firstText.isEmpty {
+                    self.firstTextField.becomeFirstResponder()
+                } else {
+                    self.secondTextField.becomeFirstResponder()
+                }
                 self.present(alert, animated: true)
                 AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
