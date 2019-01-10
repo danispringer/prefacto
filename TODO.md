@@ -6,10 +6,8 @@
 - add arrows to switch to next textfield
 - let user choose to add thousands separator in results
 - find first prime above (or below) N.
+- Update description with dark mode and more feats from git log in 'places'
 
-~
-App store link https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-~
 ###### App Store Description
 • Check whether a number is prime
 • List the prime numbers in a range
