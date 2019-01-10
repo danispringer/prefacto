@@ -5,7 +5,7 @@
 - add arrows to switch to next textfield
 - let user choose to add thousands separator in results
 - find first prime above (or below) N.
-- Update description in 'places'
+- Update description in 'places' once live
 
 
 ###### App Store Description
