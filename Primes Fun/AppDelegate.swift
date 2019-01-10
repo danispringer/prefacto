@@ -66,14 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         content.body = "\(randomVC?.makeRandomNotification() ?? 1)"
         content.categoryIdentifier = "RANDOM"
 
-        /*
-         TODO:
-         - make notification work even if app is open
-         */
-
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "choo.caf"))
 
 
+        // TODO: uncommment and comment out test
 //        var date = DateComponents()
 //        date.hour = 9
 //        date.minute = 00
@@ -86,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         center.add(request)
         // end of notifications
+
 
         UserDefaults.standard.register(defaults: [
             Constants.UserDef.soundEnabled: true,
