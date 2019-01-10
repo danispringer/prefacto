@@ -1,4 +1,3 @@
-- Notifications: daily random prime
 - support orientations on ipad
 - improve for ipad
 - Add Multiple options for languages in apps.
@@ -6,7 +5,7 @@
 - add arrows to switch to next textfield
 - let user choose to add thousands separator in results
 - find first prime above (or below) N.
-- Update description with dark mode and more feats from git log in 'places'
+- Update description with dark mode, notifications, and more feats from git log in 'places'
 
 ###### App Store Description
 • Check whether a number is prime
