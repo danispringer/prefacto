@@ -32,8 +32,23 @@
 		33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		330F2BF321E70E9E0012E38D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3303491521CEF3A100FD1E23 /* Primes Fun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Primes Fun.entitlements"; sourceTree = "<group>"; };
+		330F2BE221E70E9E0012E38D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		330F2BE421E70E9E0012E38D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		333AD7E3210573F70010D446 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -72,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330F2BE121E70E9E0012E38D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				330F2BE221E70E9E0012E38D /* UserNotifications.framework */,
+				330F2BE421E70E9E0012E38D /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3317915520D9FE3600CA739F /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +215,7 @@
 			children = (
 				33C0F18020EF4F0A0013881A /* AppDelegate.swift */,
 				33EE5BC920D996C4008FEAF2 /* Primes Fun */,
+				330F2BE121E70E9E0012E38D /* Frameworks */,
 				33EE5BC820D996C4008FEAF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -227,6 +252,7 @@
 				33EE5BC420D996C4008FEAF2 /* Frameworks */,
 				33EE5BC520D996C4008FEAF2 /* Resources */,
 				334E931221B627A400C6CEDD /* ShellScript */,
+				330F2BF321E70E9E0012E38D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -251,6 +277,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -476,6 +505,7 @@
 		33EE5BDA20D996C7008FEAF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Primes Fun/Primes Fun.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +529,7 @@
 		33EE5BDB20D996C7008FEAF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Primes Fun/Primes Fun.entitlements";
 				CODE_SIGN_STYLE = Automatic;

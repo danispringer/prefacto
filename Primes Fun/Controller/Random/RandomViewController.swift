@@ -117,6 +117,16 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     }
 
 
+    func makeRandomNotification() -> Int64 {
+        let limit = Int64.max / 10 * 9
+        var randInt = Int64.random(in: 1...limit)
+        while !self.isPrime(number: randInt) {
+            randInt += 1
+        }
+        return randInt
+    }
+
+
     func makeRandom(size: SizeOptions) {
 
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
