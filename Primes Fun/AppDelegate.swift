@@ -68,15 +68,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "choo.caf"))
 
-
-        // TODO: uncommment and comment out test
-//        var date = DateComponents()
-//        date.hour = 9
-//        date.minute = 00
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-
+        var date = DateComponents()
+        date.hour = 9
+        date.minute = 00
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         // For testing: comment out date and uncomment this manual trigger:
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
 
         let request = UNNotificationRequest(identifier: "RANDOM", content: content, trigger: trigger)
 
