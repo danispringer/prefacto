@@ -67,13 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         content.categoryIdentifier = "RANDOM"
 
         /*
-         TODO: use choo sound,
-         extract sound with sounds-extract app,
-         make notification work even if app is open
-         allow user to copy alla "accept/decline"
+         TODO:
+         - make notification work even if app is open
          */
 
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "choo.caf")) // TODO: fix?
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "choo.caf"))
 
 
 //        var date = DateComponents()
@@ -127,6 +125,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             break
         }
         completionHandler()
+    }
+
+
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+        completionHandler([.alert, .sound])
     }
 
 
