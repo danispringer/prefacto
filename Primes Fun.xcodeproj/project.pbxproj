@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330F2BF621E734A00012E38D /* choo.caf in Resources */ = {isa = PBXBuildFile; fileRef = 330F2BF521E734A00012E38D /* choo.caf */; };
 		3312262A210D233500802138 /* FactorizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33122629210D233500802138 /* FactorizeTableViewCell.swift */; };
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
 		333AD7E4210573F70010D446 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E3210573F70010D446 /* AppData.swift */; };
@@ -49,6 +50,7 @@
 		3303491521CEF3A100FD1E23 /* Primes Fun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Primes Fun.entitlements"; sourceTree = "<group>"; };
 		330F2BE221E70E9E0012E38D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		330F2BE421E70E9E0012E38D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		330F2BF521E734A00012E38D /* choo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = choo.caf; sourceTree = "<group>"; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		333AD7E3210573F70010D446 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				330F2BE421E70E9E0012E38D /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		330F2BF421E7341D0012E38D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				330F2BF521E734A00012E38D /* choo.caf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3317915520D9FE3600CA739F /* Flickr */ = {
@@ -237,6 +247,7 @@
 				3317915D20DA047E00CA739F /* Controller */,
 				33CB11C920DCB5DB003E7522 /* Storyboard */,
 				33C0F18220EF4F180013881A /* Assets */,
+				330F2BF421E7341D0012E38D /* Resources */,
 			);
 			path = "Primes Fun";
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 				33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */,
 				336DBCEC21D2D9710008F408 /* latinmodern-math.otf in Resources */,
 				33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */,
+				330F2BF621E734A00012E38D /* choo.caf in Resources */,
 				33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */,
 				33C0F18520EF4F180013881A /* Assets.xcassets in Resources */,
 			);

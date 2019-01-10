@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          allow user to copy alla "accept/decline"
          */
 
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "choo.caf")) // TODO: fix?
 
 
 //        var date = DateComponents()
