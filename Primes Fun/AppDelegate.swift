@@ -29,13 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         // MARK: Notification
 
+        // Create notification object
         let center = UNUserNotificationCenter.current()
+
+        // Set the delegate of the Notification to be AppDelegate file
         center.delegate = self
 
+        // Create action allowing user to copy number from notification
         let copyAction = UNNotificationAction(identifier: "COPY_ACTION",
                                               title: "Copy",
                                               options: UNNotificationActionOptions(rawValue: 0))
 
+        // Create category with a copy action
         let myCategory = UNNotificationCategory(identifier: "RANDOM",
                                                 actions: [copyAction],
                                                 intentIdentifiers: [],
@@ -58,52 +63,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
 
+        // Access view controller containing function that generates random prime numbers
         let tab = window?.rootViewController as? UITabBarController
         let randomVC = tab?.viewControllers?[3] as? RandomViewController
 
         let content = UNMutableNotificationContent()
         content.title = "Your daily prime is:"
-        content.body = "\(randomVC?.makeRandomNotification() ?? 1)"
-        content.categoryIdentifier = "RANDOM"
 
+        // Set body to random prime, or 1 if returned value is nil
+        content.body = "\(randomVC?.makeRandomNotification() ?? 1)"
+
+        content.categoryIdentifier = "RANDOM"
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "choo.caf"))
 
         var date = DateComponents()
         date.hour = 9
         date.minute = 00
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+
         // For testing: comment out date and uncomment this manual trigger:
-        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
 
         let request = UNNotificationRequest(identifier: "RANDOM", content: content, trigger: trigger)
 
         center.add(request)
-        // end of notifications
-
-
-        UserDefaults.standard.register(defaults: [
-            Constants.UserDef.soundEnabled: true,
-            Constants.UserDef.darkModeEnabled: true])
-
-        let tabBar = UITabBar.appearance()
-        tabBar.backgroundImage = UIImage.from(color: .clear)
-        tabBar.shadowImage = UIImage.from(color: .clear)
-
-        UINavigationBar.appearance().isOpaque = false
-        UINavigationBar.appearance().isTranslucent = false
-
-        for state: UIControl.State in [.normal, .selected, .highlighted] {
-            UIBarButtonItem.appearance().setTitleTextAttributes(
-                [
-                    NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!
-                ], for: state)
-        }
-
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont(name: Constants.Font.math, size: 25)!,
-                NSAttributedString.Key.foregroundColor: Constants.View.grayColor
-            ], for: .disabled)
 
         return true
     }
@@ -129,21 +112,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         completionHandler([.alert, .sound])
     }
-
-
-    // MARK: Shortcuts
-
-    func application(_ application: UIApplication,
-                     continue userActivity: NSUserActivity,
-                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-
-        let tab = window?.rootViewController as? UITabBarController
-        let randomVC = tab?.viewControllers?[3] as? RandomViewController
-        randomVC?.makeRandomShortcut()
-
-
-        return true
-    }
-
 
 }
