@@ -6,6 +6,7 @@
 - let user choose to add thousands separator in results
 - find first prime above (or below) N.
 - Update description in 'places' once live
+- keyboard dark/light
 
 
 ###### App Store Description
