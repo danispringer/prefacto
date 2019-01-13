@@ -88,6 +88,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         center.add(request)
 
+        /*
+         TODO:
+         1. clear all pending notifications
+
+         2. get current date and time
+         3. schedule 64 notifications for: current date at 9 AM, then add 1 to date
+         */
+
+        // 1
+        center.removeAllPendingNotificationRequests()
+
+        // 2
+        let currentDate = Date()
+        print(currentDate)
+
         return true
     }
 
