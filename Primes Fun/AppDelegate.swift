@@ -38,10 +38,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         center.removeAllPendingNotificationRequests()
 
         let now = Date()
-        print("now: \(now)")
         let calendar = Calendar.current
-        let components = DateComponents(calendar: calendar, hour: 9)
-        let next9AM = calendar.nextDate(after: now, matching: components, matchingPolicy: .nextTime)!
+        /*
+         To test:
+         let components = DateComponents(
+             calendar: calendar,
+             hour: CURRENT_HOUR,
+             minute: CURRENT_MINUTE + 3)
+
+         Production:
+
+
+         */
+        let components = DateComponents(calendar: calendar, hour: 11, weekday: 1)
+        let nextSunday11AM = calendar.nextDate(
+            after: now,
+            matching: components,
+            matchingPolicy: .nextTime)!
 
         let copyAction = UNNotificationAction(identifier: "COPY_ACTION",
                                               title: "Copy",
@@ -60,15 +73,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         center.requestAuthorization(options: options) { (granted, error) in
 
             guard granted else {
-                print("Something went wrong: \(String(describing: error))")
                 return
             }
 
             for number in 0...63 {
-                print("number: \(number)")
-                // For testing, replace .day with .second, number with 3, and next9AM with now
-                let newDate = Calendar.current.date(byAdding: .day, value: number, to: next9AM)
-                print("newDate: \(String(describing: newDate))")
+                /*
+                 To test:
+                 let newDate = Calendar.current.date(byAdding: .second, value: (number * 10), to: nextSunday11AM)
+                 Change range to 1...63
+
+                 Production:
+                 let newDate = Calendar.current.date(
+                 byAdding: .day,
+                 value: (number * 7),
+                 to: nextSunday11AM)
+                 Change range to 0...63
+                 */
+                let newDate = Calendar.current.date(
+                    byAdding: .day,
+                    value: (number * 7),
+                    to: nextSunday11AM)
                 let calendar = Calendar.current
                 let components = DateComponents(
                     calendar: calendar,
@@ -78,12 +102,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     hour: calendar.component(.hour, from: newDate!),
                     minute: calendar.component(.minute, from: newDate!),
                     second: calendar.component(.second, from: newDate!))
-                print("components: \(components)")
 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
 
                 let content = UNMutableNotificationContent()
-                content.title = "Your daily prime is:"
+                content.title = "Your weekly prime is:"
                 content.body = "\(randomVC?.makeRandomNotification() ?? 1)"
                 content.categoryIdentifier = "RANDOM-\(number)"
 
@@ -100,7 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         center.getNotificationSettings { (settings) in
 
             guard settings.authorizationStatus == .authorized else {
-                print("notifications not allowed")
                 return
             }
 
