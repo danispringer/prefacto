@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         let options: UNAuthorizationOptions = [.alert, .sound]
 
-        center.requestAuthorization(options: options) { (granted, error) in
+        center.requestAuthorization(options: options) { (granted, _) in
 
             guard granted else {
                 return
