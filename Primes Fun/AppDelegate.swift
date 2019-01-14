@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          let components = DateComponents(
              calendar: calendar,
              hour: CURRENT_HOUR,
-             minute: CURRENT_MINUTE + 3)
+             minute: CURRENT_MINUTE + 5)
 
          Production:
 
