@@ -4,6 +4,8 @@
 - Factorize a number
 - Generate random primes
 - Share or save your results
+- Light or Dark Mode
+- Sound on/off
 - Get it here: https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8
 
 Is there a feature you'd like to see? A bug you'd like to go away? Let us know!
