@@ -28,6 +28,8 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
+    var previousButton = UIBarButtonItem()
+    var nextButton = UIBarButtonItem()
 
 
     // MARK: Life Cycle
@@ -42,22 +44,44 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         secondTextField.delegate = self
 
         let resignToolbar = UIToolbar()
+
         let listButton = UIBarButtonItem(
             title: Constants.Messages.list,
             style: .plain,
             target: self,
             action: #selector(checkButtonPressed))
-        let cancelButton = UIBarButtonItem(
-            title: Constants.Messages.cancel,
+
+        let doneButton = UIBarButtonItem(
+            title: Constants.Messages.done,
             style: .plain,
             target: self,
             action: #selector(cancelAndHideKeyboard))
 
-        cancelButton.tintColor = darkMode ? .white : .red
+        previousButton = UIBarButtonItem(
+            title: "<",
+            style: .plain,
+            target: self,
+            action: #selector(previousTextField))
 
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        nextButton = UIBarButtonItem(
+            title: ">",
+            style: .plain,
+            target: self,
+            action: #selector(nextTextField))
 
-        resignToolbar.items = [cancelButton, space, listButton]
+        let spaceFlexible = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: self,
+            action: nil)
+
+        let spaceFix = UIBarButtonItem(
+            barButtonSystemItem: .fixedSpace,
+            target: self,
+            action: nil)
+
+        resignToolbar.items = [
+            previousButton, spaceFix, nextButton, spaceFlexible, doneButton, listButton
+        ]
         resignToolbar.sizeToFit()
 
         resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
@@ -93,11 +117,24 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
         activityIndicator.color = darkMode ? .white : .black
 
-
     }
 
 
     // MARK: Helpers
+    @objc func previousTextField() {
+        firstTextField.becomeFirstResponder()
+    }
+
+
+    @objc func nextTextField() {
+        secondTextField.becomeFirstResponder()
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        previousButton.isEnabled = !(textField.tag == 0)
+        nextButton.isEnabled = (textField.tag == 0)
+    }
+
 
     func showApps() {
 
@@ -118,6 +155,19 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     @objc func cancelAndHideKeyboard() {
         firstTextField.resignFirstResponder()
         secondTextField.resignFirstResponder()
+    }
+
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case firstTextField:
+            secondTextField.becomeFirstResponder()
+        case secondTextField:
+            secondTextField.resignFirstResponder()
+        default:
+            fatalError()
+        }
+        return true
     }
 
 
@@ -279,7 +329,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             infoAlert.title = Constants.Messages.appName
         }
         infoAlert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Constants.Messages.done, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })

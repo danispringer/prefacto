@@ -222,10 +222,10 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.numberLabel?.textColor = darkMode ? .white : .black
-        cell?.numberLabel?.font = UIFont(name: Constants.Font.math, size: 30)
+        cell?.numberLabel?.font = UIFont.systemFont(ofSize: 30)
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
         cell?.indexLabel?.textColor = darkMode ? .white : .black
-        cell?.indexLabel?.font = UIFont(name: Constants.Font.math, size: 20)
+        cell?.indexLabel?.font = UIFont.systemFont(ofSize: 20)
         cell?.backgroundColor = darkMode ? .black : .white
         cell?.contentView.backgroundColor = darkMode ? .black : .white
         return cell ?? UITableViewCell()

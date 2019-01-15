@@ -1,7 +1,4 @@
-- support orientations on ipad
-- improve for ipad
 - Add Multiple options for languages in apps.
-- follow text width for border width.
 - add arrows to switch to next textfield
 - let user choose to add thousands separator in results
 - find first prime above (or below) N.

@@ -45,15 +45,14 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             style: .plain,
             target: self,
             action: #selector(checkButtonPressed))
-        let cancelButton = UIBarButtonItem(
-            title: Constants.Messages.cancel,
+        let doneButton = UIBarButtonItem(
+            title: Constants.Messages.done,
             style: .plain,
             target: self,
             action: #selector(cancelAndHideKeyboard))
-        cancelButton.tintColor = darkMode ? .white : .red
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        resignToolbar.items = [cancelButton, space, factorButton]
+        resignToolbar.items = [doneButton, space, factorButton]
         resignToolbar.sizeToFit()
 
         resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
@@ -275,7 +274,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             infoAlert.title = Constants.Messages.appName
         }
         infoAlert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Constants.Messages.done, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
