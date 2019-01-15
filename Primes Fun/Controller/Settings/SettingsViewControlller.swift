@@ -86,7 +86,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell?.textLabel?.textColor = darkMode ? .white : .black
         cell?.backgroundColor = darkMode ? .black : .white
         cell?.contentView.backgroundColor = darkMode ? .black : .white
-        cell?.textLabel?.font = UIFont(name: Constants.Font.math, size: 30)
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: 30)
 
         switch indexPath.row {
         case 0:

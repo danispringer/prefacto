@@ -47,7 +47,7 @@ struct Constants {
         static let check = "Check"
         static let list = "List"
         static let factor = "Factor"
-        static let cancel = "Cancel"
+        static let done = "Done"
         static let enterAnyNumber = "Enter any number here"
         static let version = "Version"
         static let appName = "Primes Fun"
@@ -137,11 +137,6 @@ struct Constants {
     struct UserDef {
         static let soundEnabled = "soundEnabled"
         static let darkModeEnabled = "darkModeEnabled"
-    }
-
-
-    struct Font {
-        static let math = "LatinModernMath-Regular"
     }
 
 
