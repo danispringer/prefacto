@@ -55,7 +55,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             title: Constants.Messages.done,
             style: .plain,
             target: self,
-            action: #selector(cancelAndHideKeyboard))
+            action: #selector(donePressed))
 
         previousButton = UIBarButtonItem(
             title: "<",
@@ -152,7 +152,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     }
 
 
-    @objc func cancelAndHideKeyboard() {
+    @objc func donePressed() {
         firstTextField.resignFirstResponder()
         secondTextField.resignFirstResponder()
     }

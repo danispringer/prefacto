@@ -59,7 +59,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         let doneButton = UIBarButtonItem(title: Constants.Messages.done,
                                            style: .plain,
                                            target: self,
-                                           action: #selector(cancelAndHideKeyboard))
+                                           action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         resignToolbar.items = [doneButton, space, checkButton]
         resignToolbar.sizeToFit()
@@ -95,7 +95,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
     }
 
 
-    @objc func cancelAndHideKeyboard() {
+    @objc func donePressed() {
         myTextField.resignFirstResponder()
     }
 

@@ -49,7 +49,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             title: Constants.Messages.done,
             style: .plain,
             target: self,
-            action: #selector(cancelAndHideKeyboard))
+            action: #selector(donePressed))
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         resignToolbar.items = [doneButton, space, factorButton]
@@ -105,7 +105,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
     }
 
 
-    @objc func cancelAndHideKeyboard() {
+    @objc func donePressed() {
         myTextField.resignFirstResponder()
     }
 
