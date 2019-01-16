@@ -2,10 +2,12 @@
 - Check whether a number is prime
 - List the prime numbers in a range
 - Factorize a number
-- Generate random primes
+- Get random primes of a size of your choosing
+- Get random medium sized primes using Siri
+- Get weekly HUGE random primes as a notification. 3D Touch on the notification to get the 'Copy' option
 - Share or save your results
-- Light or Dark Mode
-- Sound on/off
+- Choose between light and dark mode
+- Choose whether to have sounds on or off
 - Get it here: https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8
 
 - Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Contact Us'.
