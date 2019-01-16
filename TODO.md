@@ -3,6 +3,7 @@
 - find first prime above (or below) N.
 - Update description in 'places' once live
 - keyboard dark/light
+- update screenshots: app store connect, readme
 
 
 ###### App Store Description
@@ -11,7 +12,7 @@
 • Factorize a number
 • Get random primes of a size of your choosing
 • Get random medium sized primes using Siri
-• Get daily HUGE random primes as a notification. 3D Touch on the notification to get the 'Copy' option
+• Get weekly HUGE random primes as a notification. 3D Touch on the notification to get the 'Copy' option
 • Share or save your results
 
 
@@ -57,7 +58,7 @@ RANDOM
 
 • Get a random prime of a size of your choice.
 • This can be done using Siri Shortcuts as well (see 'Some Tips' above for instructions).
-• You can also get a daily HUGE prime right delivered right to you as a notification. Long press on the notification for a handy 'Copy' button.
+• You can also get a weekly HUGE prime right delivered right to you as a notification. Long press on the notification for a handy 'Copy' button.
 
 
 OUTRO
