@@ -14,6 +14,8 @@
 • Get random medium sized primes using Siri
 • Get weekly HUGE random primes as a notification. 3D Touch on the notification to get the 'Copy' option
 • Share or save your results
+• Choose between light and dark mode
+• Choose whether to have sounds on or off
 
 
 INTRO
