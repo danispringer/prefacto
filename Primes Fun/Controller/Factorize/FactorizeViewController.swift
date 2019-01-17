@@ -65,6 +65,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         }
 
         myTextField.inputAccessoryView = resignToolbar
+        myTextField.keyboardAppearance = darkMode ? .dark : .light
 
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         titleLabel.textColor = darkMode ? .white : .black
