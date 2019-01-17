@@ -13,7 +13,7 @@
 - Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Contact Us'.
 - Love the app? Please consider leaving a review! It would mean the world to us.
 
-SCREENSHOTS
+# Screenshots
 
 ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s1.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s2.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s3.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s4.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s5.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s6.png)
 
