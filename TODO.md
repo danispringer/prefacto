@@ -1,6 +1,5 @@
 - Add Multiple options for languages in apps.
-- find first prime above (or below) N.
-- Update description in 'places' once live (separator?)
+- Update description in 'places' once live from TODO
 - update screenshots: app store connect, readme
 
 
@@ -14,6 +13,7 @@
 • Share or save your results
 • Choose between light and dark mode
 • Choose whether to have sounds on or off
+• Optionally display the thousands separator
 
 
 INTRO
@@ -33,6 +33,8 @@ Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 
 • You can turn the app's sounds on or off in the app's settings. With the app's sound set to 'On', sounds play when you find a prime number, or if you accidentally enter invalid text in a textfield.
 
 • You can set the app's theme to dark or light in the app's settings.
+
+• You can choose whether results use the thousands separator in the app's settings.
 
 
 CHECKER
