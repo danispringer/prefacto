@@ -45,50 +45,61 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
+        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let myFromFormatted = showSeparator ? separate(number: myFrom) : "\(myFrom)"
+        let myToFormatted = showSeparator ? separate(number: myTo) : "\(myTo)"
         if source.count == 0 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
             resultLabel.text = """
             There are no primes between
-            \(myFrom)
+            \(myFromFormatted)
             and
-            \(myTo)
+            \(myToFormatted)
             """
         } else if source.count == 1 {
+            let sourceFormatted = showSeparator ? separate(number: source[0]) : "\(source[0])"
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
             resultLabel.text = """
             The only prime between
-            \(myFrom)
+            \(myFromFormatted)
             and
-            \(myTo)
+            \(myToFormatted)
             is
-            \(source[0])
+            \(sourceFormatted)
             """
         } else if source.count == 2 {
+            let sourceFirstFormatted = showSeparator ?
+                separate(number: source.first!)
+                : "\(source.first!)"
+            let sourceLastFormatted = showSeparator ? separate(number: source.last!) : "\(source.last!)"
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
             resultLabel.text = """
             The primes between
-            \(myFrom)
+            \(myFromFormatted)
             and
-            \(myTo)
+            \(myToFormatted)
             are
-            \(source.first!)
+            \(sourceFirstFormatted)
             and
-            \(source.last!)
+            \(sourceLastFormatted)
             """
         } else {
+            let sourceCountFormatted = showSeparator ?
+                separate(number: Int64(source!.count))
+                : "\(source.count)"
             resultLabel.text = """
             There are
-            \(source.count)
+            \(sourceCountFormatted)
             primes between
-            \(myFrom)
+            \(myFromFormatted)
             and
-            \(myTo)
+            \(myToFormatted)
             """
         }
         myToolbar.setBackgroundImage(UIImage(),
@@ -114,6 +125,14 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     // MARK: Helpers
+
+    func separate(number: Int64) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let myNSNumber = NSNumber(value: number)
+        return formatter.string(from: myNSNumber)!
+    }
+
 
     func jumpToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
@@ -216,10 +235,13 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
 
-        cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
+        cell?.numberLabel?.text = showSeparator ?
+            separate(number: source[(indexPath as NSIndexPath).row])
+            : "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.numberLabel?.textColor = darkMode ? .white : .black
         cell?.numberLabel?.font = UIFont.systemFont(ofSize: 30)
