@@ -1,9 +1,7 @@
 - Add Multiple options for languages in apps.
-- let user choose to add thousands separator in results
 - find first prime above (or below) N.
-- Update description in 'places' once live
+- Update description in 'places' once live (separator?)
 - update screenshots: app store connect, readme
-- PF: Print scheduled notifications
 
 
 ###### App Store Description
