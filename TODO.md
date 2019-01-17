@@ -4,9 +4,6 @@
 - Update description in 'places' once live
 - update screenshots: app store connect, readme
 - PF: Print scheduled notifications
-- PF: focus on correct textfield in list, not just for empty, but for 0 etc
-- PF: get random prime even if on results page: set active page to different one, then continue
-- PF: Test X-large number with shortcuts.
 
 
 ###### App Store Description
@@ -29,7 +26,7 @@ INTRO
 SOME TIPS
 
  • In addition to using the Randomize page of the app, you can use Siri to get random primes. To do so: open Settings > Siri & Search > All Shortcuts > Get random prime, then record the phrase you want to tell Siri whenever you want Siri to get you a random prime.
-Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in order to see the 'Get random prime' shortcut available, you must first have generated at least 1 random prime in the app itself, using the 'Randomize' button.
+Note: In order to set up Siri Shortcuts, your device needs to be running iOS 12 or later, and in order to see the 'Get random prime' shortcut available, you must first have generated at least 1 random prime in the app itself, using the 'Randomize' button. Also, if the app is already showing a random prime, make sure you close the page, using the top left 'Done' button, before asking Siri for another prime.
 
 • If a page is calculating, switching to a different page will not interrupt that.
 
