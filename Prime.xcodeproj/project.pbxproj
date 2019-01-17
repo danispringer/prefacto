@@ -47,8 +47,6 @@
 
 /* Begin PBXFileReference section */
 		3303491521CEF3A100FD1E23 /* Prime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prime.entitlements; sourceTree = "<group>"; };
-		330F2BE221E70E9E0012E38D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		330F2BE421E70E9E0012E38D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		330F2BF521E734A00012E38D /* choo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = choo.caf; sourceTree = "<group>"; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -87,15 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		330F2BE121E70E9E0012E38D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				330F2BE221E70E9E0012E38D /* UserNotifications.framework */,
-				330F2BE421E70E9E0012E38D /* UserNotificationsUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		330F2BF421E7341D0012E38D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +195,6 @@
 			children = (
 				33DBFE5021F0790E00B864AA /* AppDelegate.swift */,
 				33EE5BC920D996C4008FEAF2 /* Prime */,
-				330F2BE121E70E9E0012E38D /* Frameworks */,
 				33EE5BC820D996C4008FEAF2 /* Products */,
 			);
 			sourceTree = "<group>";
