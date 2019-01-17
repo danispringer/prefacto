@@ -15,6 +15,8 @@
 
 SCREENSHOTS
 
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s1.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s2.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s3.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s4.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s5.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s6.png)
+
 # Contributing
 Want to help? You can:
 - Suggest changes by creating an Issue.
