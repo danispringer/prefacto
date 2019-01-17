@@ -44,31 +44,38 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             present(alert, animated: true)
             return
         }
+        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
+        let sourceFirstFormatted = showSeparator ? separate(number: source.first!) : "\(source.first!)"
+        let sourceLastFormatted = showSeparator ? separate(number: source.last!) : "\(source.last!)"
+        let sourceCountFormatted = showSeparator ?
+            separate(number: Int64(source!.count)) : "\(source.count)"
+
         if source.count == 1 {
+            resultsTableView.isHidden = true
+            jumpToTopButton.isHidden = true
+            jumpToBottomButton.isHidden = true
             resultLabel.text = """
-            \(myNumber)
+            \(myNumberFormatted)
             is prime, therefore its only factor is itself
             """
+        } else if source.count == 2 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
-        } else if source.count == 2 {
             resultLabel.text = """
             The prime factors of
-            \(myNumber)
+            \(myNumberFormatted)
             are
-            \(source.first!)
+            \(sourceFirstFormatted)
             and
-            \(source.last!)
+            \(sourceLastFormatted)
             """
-            resultsTableView.isHidden = true
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
         } else {
             resultLabel.text = """
-            \(myNumber)
+            \(myNumberFormatted)
             has
-            \(source.count)
+            \(sourceCountFormatted)
             prime factors
             """
         }
@@ -92,6 +99,14 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
 
     // MARK: Helpers
+
+    func separate(number: Int64) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let myNSNumber = NSNumber(value: number)
+        return formatter.string(from: myNSNumber)!
+    }
+
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
@@ -178,9 +193,12 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
-        cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
+        cell?.numberLabel?.text = showSeparator ?
+            separate(number: source[(indexPath as NSIndexPath).row])
+            : "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.numberLabel?.textColor = darkMode ? .white : .black
         cell?.numberLabel?.font = UIFont.systemFont(ofSize: 30)

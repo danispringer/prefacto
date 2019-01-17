@@ -52,6 +52,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 
+    @objc func showSeparatorToggled(sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.showSeparator)
+    }
+
+
     func setTheme() {
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
         view.backgroundColor = darkMode ? .black : .white
@@ -68,7 +73,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
 
@@ -107,6 +112,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                                     action: #selector(themeToggled(sender:)),
                                     for: .valueChanged)
             cell?.textLabel?.text = "Dark Mode:"
+        case 2:
+            let mySeparatorSwitch = UISwitch()
+            mySeparatorSwitch.onTintColor = darkMode ?
+                Constants.View.goldColor : Constants.View.greenColor
+            mySeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+            cell?.accessoryView = mySeparatorSwitch
+            mySeparatorSwitch.addTarget(self,
+                                        action: #selector(showSeparatorToggled(sender:)),
+                                        for: .valueChanged)
+            cell?.textLabel?.text = "Thousands separator:"
         default:
             break
         }

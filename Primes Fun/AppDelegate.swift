@@ -130,7 +130,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         UserDefaults.standard.register(defaults: [
             Constants.UserDef.soundEnabled: true,
-            Constants.UserDef.darkModeEnabled: true])
+            Constants.UserDef.darkModeEnabled: true,
+            Constants.UserDef.showSeparator: false])
 
         let tabBar = UITabBar.appearance()
         tabBar.backgroundImage = UIImage.from(color: .clear)

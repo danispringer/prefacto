@@ -41,10 +41,23 @@ class CheckerResultsViewController: UIViewController {
             }
             return
         }
+        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
+        let myIsDivisibleByFormatted = showSeparator ?
+            separate(number: myIsDivisibleBy)
+            : "\(myIsDivisibleBy)"
         if isPrime {
-            resultLabel.text = "\(myNumber)\nis prime."
+            resultLabel.text = """
+            \(myNumberFormatted)
+            is prime.
+            """
         } else {
-            resultLabel.text = "\(myNumber)\nis not prime.\nIt is divisible by\n\(myIsDivisibleBy)"
+            resultLabel.text = """
+            \(myNumberFormatted)
+            is not prime.
+            It is divisible by
+            \(myIsDivisibleByFormatted)
+            """
         }
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -66,6 +79,14 @@ class CheckerResultsViewController: UIViewController {
 
 
     // MARK: Helpers
+
+    func separate(number: Int64) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let myNSNumber = NSNumber(value: number)
+        return formatter.string(from: myNSNumber)!
+    }
+
 
     @IBAction func share() {
         var message = ""
