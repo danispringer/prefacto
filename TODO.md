@@ -2,8 +2,11 @@
 - let user choose to add thousands separator in results
 - find first prime above (or below) N.
 - Update description in 'places' once live
-- keyboard dark/light
 - update screenshots: app store connect, readme
+- PF: Print scheduled notifications
+- PF: focus on correct textfield in list, not just for empty, but for 0 etc
+- PF: get random prime even if on results page: set active page to different one, then continue
+- PF: Test X-large number with shortcuts.
 
 
 ###### App Store Description
