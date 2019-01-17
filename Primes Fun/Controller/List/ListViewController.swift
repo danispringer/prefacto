@@ -242,6 +242,12 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
+                if Int64(firstTextTrimmed) == nil {
+                    self.firstTextField.becomeFirstResponder()
+                } else {
+                    self.secondTextField.becomeFirstResponder()
+                }
+
                 self.present(alert, animated: true)
                 AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
@@ -257,6 +263,11 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
+                if firstNum == 0 {
+                    self.firstTextField.becomeFirstResponder()
+                } else {
+                    self.secondTextField.becomeFirstResponder()
+                }
                 self.present(alert, animated: true)
                 AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
@@ -267,6 +278,12 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
+                if !(firstNum > 0) {
+                    self.firstTextField.becomeFirstResponder()
+                } else {
+                    self.secondTextField.becomeFirstResponder()
+                }
+
                 self.present(alert, animated: true)
                 AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
