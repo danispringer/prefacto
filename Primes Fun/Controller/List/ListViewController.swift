@@ -95,6 +95,8 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
         firstTextField.inputAccessoryView = resignToolbar
         secondTextField.inputAccessoryView = resignToolbar
+        firstTextField.keyboardAppearance = darkMode ? .dark : .light
+        secondTextField.keyboardAppearance = darkMode ? .dark : .light
 
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         titleLabel.textColor = darkMode ? .white : .black

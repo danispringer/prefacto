@@ -73,6 +73,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         }
 
         myTextField.inputAccessoryView = resignToolbar
+        myTextField.keyboardAppearance = darkMode ? .dark : .light
 
     }
 
