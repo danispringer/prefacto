@@ -1,8 +1,8 @@
-- update screenshots: app store connect, readme
-- Update description in 'places' once live from TODO
+- Update description from TODO in 'places' once live
 
 
 ###### App Store Description
+
 • Check whether a number is prime
 • List the prime numbers in a range
 • Factorize a number
