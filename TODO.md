@@ -1,4 +1,3 @@
-- Add Multiple options for languages in apps.
 - Update description in 'places' once live from TODO
 - update screenshots: app store connect, readme
 
