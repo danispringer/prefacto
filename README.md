@@ -15,7 +15,7 @@
 
 # Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s1.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s2.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s3.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s4.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s5.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s6.png)
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s1.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s2.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s3.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s4.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s5.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s6.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s7.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s8.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/prime/master/sc/s9.png)
 
 # Contributing
 Want to help? You can:
