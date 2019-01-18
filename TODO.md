@@ -1,5 +1,5 @@
-- Update description in 'places' once live from TODO
 - update screenshots: app store connect, readme
+- Update description in 'places' once live from TODO
 
 
 ###### App Store Description
