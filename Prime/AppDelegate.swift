@@ -143,13 +143,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         for state: UIControl.State in [.normal, .selected, .highlighted] {
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)
+                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
                 ], for: state)
         }
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: Constants.View.grayColor
             ], for: .disabled)
 

@@ -32,6 +32,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
+        myTableView.rowHeight = UITableView.automaticDimension
+
         setTheme()
     }
 
@@ -77,11 +79,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
@@ -91,7 +88,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell?.textLabel?.textColor = darkMode ? .white : .black
         cell?.backgroundColor = darkMode ? .black : .white
         cell?.contentView.backgroundColor = darkMode ? .black : .white
-        cell?.textLabel?.font = UIFont.systemFont(ofSize: 30)
+        cell?.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
 
         switch indexPath.row {
         case 0:
@@ -102,7 +99,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             mySoundSwitch.addTarget(self,
                                     action: #selector(soundToggled(sender:)),
                                     for: .valueChanged)
-            cell?.textLabel?.text = "Sound:"
+            cell?.textLabel?.text = "Sound"
         case 1:
             let myThemeSwitch = UISwitch()
             myThemeSwitch.onTintColor = darkMode ? Constants.View.goldColor : Constants.View.greenColor
@@ -111,7 +108,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             myThemeSwitch.addTarget(self,
                                     action: #selector(themeToggled(sender:)),
                                     for: .valueChanged)
-            cell?.textLabel?.text = "Dark Mode:"
+            cell?.textLabel?.text = "Dark Mode"
         case 2:
             let mySeparatorSwitch = UISwitch()
             mySeparatorSwitch.onTintColor = darkMode ?
@@ -121,7 +118,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             mySeparatorSwitch.addTarget(self,
                                         action: #selector(showSeparatorToggled(sender:)),
                                         for: .valueChanged)
-            cell?.textLabel?.text = "Thousands separator:"
+            cell?.textLabel?.text = "Thousands separator"
         default:
             break
         }
