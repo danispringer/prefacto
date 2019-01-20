@@ -46,7 +46,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3303491521CEF3A100FD1E23 /* Prime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prime.entitlements; sourceTree = "<group>"; };
 		330F2BF521E734A00012E38D /* choo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = choo.caf; sourceTree = "<group>"; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		33CB11CD20DCB5DB003E7522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33CB11D520DCB607003E7522 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		33DBFE5021F0790E00B864AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Prime/AppDelegate.swift; sourceTree = "<group>"; };
+		33E3F34C21F50CF200EC5529 /* Prime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prime.entitlements; sourceTree = "<group>"; };
 		33EE5BC720D996C4008FEAF2 /* Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
 		33F2806F21CF14D70074CD8D /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		33EE5BC920D996C4008FEAF2 /* Prime */ = {
 			isa = PBXGroup;
 			children = (
-				3303491521CEF3A100FD1E23 /* Prime.entitlements */,
+				33E3F34C21F50CF200EC5529 /* Prime.entitlements */,
 				3317915C20DA042F00CA739F /* Model */,
 				3317916020DA07CC00CA739F /* View */,
 				3317915D20DA047E00CA739F /* Controller */,
@@ -258,7 +258,7 @@
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Siri = {
 								enabled = 1;
