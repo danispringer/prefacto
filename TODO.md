@@ -1,6 +1,5 @@
 - Update description from TODO in 'places' once live
 
-
 ###### App Store Description
 
 • Check whether a number is prime
@@ -8,7 +7,6 @@
 • Factorize a number
 • Get random primes of a size of your choosing
 • Get random medium sized primes using Siri
-• Get weekly HUGE random primes as a notification
 • Share or save your results
 • Choose between light and dark mode
 • Choose whether to have sounds on or off
@@ -59,7 +57,6 @@ RANDOM
 
 • Get a random prime of a size of your choice.
 • This can be done using Siri Shortcuts as well (see 'Some Tips' above for instructions).
-• You can also get a weekly HUGE prime right delivered right to you as a notification.
 
 
 OUTRO
