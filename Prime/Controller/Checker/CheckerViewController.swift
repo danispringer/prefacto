@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import MessageUI
 import StoreKit
-import UserNotifications
 
 class CheckerViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
