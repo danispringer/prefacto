@@ -56,12 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             matching: components,
             matchingPolicy: .nextTime)!
 
-        let copyAction = UNNotificationAction(identifier: "COPY_ACTION",
-                                              title: "Copy",
-                                              options: UNNotificationActionOptions(rawValue: 0))
 
         let myCategory = UNNotificationCategory(identifier: "RANDOM",
-                                                actions: [copyAction],
+                                                actions: [],
                                                 intentIdentifiers: [],
                                                 hiddenPreviewsBodyPlaceholder: "",
                                                 options: .customDismissAction)
@@ -154,19 +151,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             ], for: .disabled)
 
         return true
-    }
-
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        switch response.actionIdentifier {
-        case "COPY_ACTION":
-            UIPasteboard.general.string = response.notification.request.content.body
-        default:
-            break
-        }
-        completionHandler()
     }
 
 
