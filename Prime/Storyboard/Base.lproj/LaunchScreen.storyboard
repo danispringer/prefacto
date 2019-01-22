@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fWH-pE-Rmt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OGS-QP-J5X">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,27 +10,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checker-->
-        <scene sceneID="KZZ-YK-Pdw">
+        <!--View Controller-->
+        <scene sceneID="k7j-ta-Jha">
             <objects>
-                <viewController id="fWH-pE-Rmt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w2x-B3-mxS">
+                <viewController id="OGS-QP-J5X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pix-yg-kbj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is It Prime?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zij-pO-JAr">
+                                <rect key="frame" x="90" y="90" width="140.5" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gEf-mO-mdA"/>
+                        <constraints>
+                            <constraint firstItem="zij-pO-JAr" firstAttribute="top" secondItem="kiQ-Tv-c4c" secondAttribute="top" constant="70" id="PGy-lk-vLv"/>
+                            <constraint firstItem="zij-pO-JAr" firstAttribute="centerX" secondItem="kiQ-Tv-c4c" secondAttribute="centerX" id="tRV-uT-nY5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kiQ-Tv-c4c"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Checker" image="checker" id="5Wk-qV-CoY">
-                        <color key="badgeColor" red="0.39607843139999999" green="0.3921568627" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" id="9N8-Mk-8dl"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="laI-oR-3TE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N28-kE-PWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1012" y="334"/>
+            <point key="canvasLocation" x="-487" y="261"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checker" width="39" height="39"/>
-    </resources>
 </document>
