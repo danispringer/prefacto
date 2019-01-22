@@ -1,4 +1,4 @@
-- are selected and unselected tabbar icon images both needed?
+are selected and unselected tabbar icon images both needed?
 
 ###### App Store Description
 
