@@ -1,11 +1,11 @@
-- Update description from TODO in 'places' once live
+- are selected and unselected tabbar icon images both needed?
 
 ###### App Store Description
 
 • Check whether a number is prime
-• List the prime numbers in a range
-• Factorize a number
-• Get random primes of a size of your choosing
+• List the primes in a range
+• Decompose a number to its prime factors
+• Create random primes of a size of your choosing
 • Get random medium sized primes using Siri
 • Share or save your results
 • Choose between light and dark mode
