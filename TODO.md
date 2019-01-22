@@ -48,7 +48,7 @@ CHECKER
 
 LIST
 
-• List with all the prime numbers in a given range: for example, type 1 in the first text box, 10 in the second, tap on List, and you will get 1, 2, 3, 5, and 7.
+• List all prime numbers in a given range: for example, type 1 in the first text box, 10 in the second, then tap on List, and you will get 1, 2, 3, 5, and 7.
 
 
 FACTOR
