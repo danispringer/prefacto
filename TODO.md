@@ -15,7 +15,7 @@
 
 INTRO
 
-• Primes Fun lets you work with prime numbers in 4 different ways: Checker, List, Factorize, and Randomize.
+• Prime lets you work with prime numbers in 4 different ways: Checker, List, Factorize, and Randomize.
 
 
 SOME TIPS
