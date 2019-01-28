@@ -24,5 +24,15 @@ Want to help? You can:
 - Share this project to spread the word.
 - Contact: https://github.com/DaniSpringer/docs/blob/master/README.md
 
+# Colors (light & dark mode)
+- Black: #000
+- White: #fff
+- Blue: #007aff
+- Gold: #fdc600
+- Gray: #9a9a9a
+- Credits:
+  - Dark mode: https://www.juventus.com
+  - Light mode: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
+
 # License
 Copyright © 2019 Daniel Springer. All rights reserved.
