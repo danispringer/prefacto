@@ -492,7 +492,7 @@
 				CURRENT_PROJECT_VERSION = 2.0.7;
 				DEVELOPMENT_TEAM = JMVGHP3288;
 				INFOPLIST_FILE = "$(SRCROOT)/Prime/Assets/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,7 +516,7 @@
 				CURRENT_PROJECT_VERSION = 2.0.7;
 				DEVELOPMENT_TEAM = JMVGHP3288;
 				INFOPLIST_FILE = "$(SRCROOT)/Prime/Assets/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
