@@ -19,8 +19,8 @@ var localCleanedSourceDroppedLast: [Int64] = []
 var localSourceDroppedLastArray: [Int64] = []
 var localStringSourceDroppedLast: String = ""
 var localStringCleanedSourceDroppedLast: String = ""
-var localStart: String.Index = String.Index(encodedOffset: 0)
-var localEnd: String.Index = String.Index(encodedOffset: 0)
+var localStart: String.Index = String.Index(utf16Offset: 0, in: "") //String.Index(encodedOffset: 0)
+var localEnd: String.Index = String.Index(utf16Offset: 0, in: "") //String.Index(encodedOffset: 0)
 var localRange: Range<String.Index> = " ".index(
     " ".startIndex, offsetBy: 0)..<" ".index(" ".startIndex, offsetBy: 1)
 var localNumber: Int64 = 0
