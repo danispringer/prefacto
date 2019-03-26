@@ -14,7 +14,6 @@ extension UIViewController {
 
     enum AlertReason {
         case textfieldEmpty
-        case network
         case notNumberOrTooBig
         case zero
         case one
@@ -27,7 +26,6 @@ extension UIViewController {
         case messageFailed
         case messageSent
         case unknown
-        case noError
     }
 
 
@@ -36,20 +34,14 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-        case .network:
-            alertTitle = "Network error"
-            alertMessage = "Please check your network connection"
         case .textfieldEmpty:
             alertTitle = "Textfield empty"
             alertMessage = "Please enter a number."
         case .notNumberOrTooBig:
             alertTitle = "Invalid entry"
             alertMessage = """
-            No text allowed.
-            No spaces allowed.
-            Only numbers.
+            Only numbers allowed.
             Max number: 9223372036854775807
-            (2^63 − 1)
             """
         case .zero:
             alertTitle = "0 not allowed here"
