@@ -76,7 +76,7 @@ extension UIViewController {
             """
         case .messageSent:
             alertTitle = "Success!"
-            alertMessage = "Message sent. You should hear from us within 24 working hours."
+            alertMessage = "Message sent. You should hear from us within 24 hours."
         default:
             alertTitle = "Unknown error"
             alertMessage = """
