@@ -59,6 +59,31 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 
+    @objc func iconSetterToggled(sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.iconIsDark)
+        setIcon()
+    }
+
+
+    func setIcon() {
+        let newIcon = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark) ?
+            Constants.UserDef.dark : Constants.UserDef.light
+
+        guard UIApplication.shared.supportsAlternateIcons else {
+            print("NOTE: alternate icons not supported")
+            return
+        }
+
+        UIApplication.shared.setAlternateIconName(newIcon) { error in
+            if let error = error {
+                print("App icon failed to change due to \(error.localizedDescription)")
+            } else {
+                print("app icon should now be updated")
+            }
+        }
+    }
+
+
     func setTheme() {
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
         view.backgroundColor = darkMode ? .black : .white
@@ -75,7 +100,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
 
 
@@ -118,7 +143,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             mySeparatorSwitch.addTarget(self,
                                         action: #selector(showSeparatorToggled(sender:)),
                                         for: .valueChanged)
-            cell?.textLabel?.text = "Thousands separator"
+            cell?.textLabel?.text = "Thousands Separator"
+        case 3:
+            let myIconSwitch = UISwitch()
+            myIconSwitch.onTintColor = darkMode ?
+                Constants.View.goldColor : Constants.View.greenColor
+            myIconSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
+            cell?.accessoryView = myIconSwitch
+            myIconSwitch.addTarget(self, action: #selector(iconSetterToggled(sender:)), for: .valueChanged)
+            cell?.textLabel?.text = "App Icon (Light/Dark)"
+
         default:
             break
         }
