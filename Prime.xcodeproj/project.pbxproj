@@ -20,6 +20,10 @@
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
 		3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376A51321000688001431C8 /* UIImage+Extension.swift */; };
+		3379E90E229C578C00308708 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3379E90A229C578C00308708 /* dark@3x.png */; };
+		3379E90F229C578C00308708 /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3379E90B229C578C00308708 /* light@2x.png */; };
+		3379E910229C578C00308708 /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3379E90C229C578C00308708 /* dark@2x.png */; };
+		3379E911229C578C00308708 /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3379E90D229C578C00308708 /* light@3x.png */; };
 		33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */; };
 		33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */; };
 		33C0F18520EF4F180013881A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C0F18320EF4F180013881A /* Assets.xcassets */; };
@@ -59,6 +63,10 @@
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		3376A51321000688001431C8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		3379E90A229C578C00308708 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
+		3379E90B229C578C00308708 /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
+		3379E90C229C578C00308708 /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
+		3379E90D229C578C00308708 /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
 		33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomResultsViewController.swift; sourceTree = "<group>"; };
 		33C0F18320EF4F180013881A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +170,17 @@
 			path = Factorize;
 			sourceTree = "<group>";
 		};
+		3379E8FD229C4CD500308708 /* AlternateIcon */ = {
+			isa = PBXGroup;
+			children = (
+				3379E90C229C578C00308708 /* dark@2x.png */,
+				3379E90A229C578C00308708 /* dark@3x.png */,
+				3379E90B229C578C00308708 /* light@2x.png */,
+				3379E90D229C578C00308708 /* light@3x.png */,
+			);
+			path = AlternateIcon;
+			sourceTree = "<group>";
+		};
 		33A96A3D20FDFA71009E1DBA /* Random */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				33E3F34C21F50CF200EC5529 /* Prime.entitlements */,
+				3379E8FD229C4CD500308708 /* AlternateIcon */,
 				3317915C20DA042F00CA739F /* Model */,
 				3317916020DA07CC00CA739F /* View */,
 				3317915D20DA047E00CA739F /* Controller */,
@@ -291,6 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				33CB11CF20DCB5DB003E7522 /* Main.storyboard in Resources */,
+				3379E90E229C578C00308708 /* dark@3x.png in Resources */,
+				3379E911229C578C00308708 /* light@3x.png in Resources */,
+				3379E910229C578C00308708 /* dark@2x.png in Resources */,
+				3379E90F229C578C00308708 /* light@2x.png in Resources */,
 				33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */,
 				330F2BF621E734A00012E38D /* choo.caf in Resources */,
 				33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */,
