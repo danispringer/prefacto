@@ -138,6 +138,9 @@ struct Constants {
         static let soundEnabled = "soundEnabled"
         static let darkModeEnabled = "darkModeEnabled"
         static let showSeparator = "showSeparator"
+        static let iconIsDark = "iconIsDark"
+        static let light = "light"
+        static let dark = "dark"
     }
 
 
