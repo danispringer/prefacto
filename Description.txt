@@ -6,6 +6,7 @@
 • Share or save your results
 • Choose between light and dark mode
 • Choose whether to have sounds on or off
+• Choose between a light or a dark app icon
 • Optionally display the thousands separator
 
 
