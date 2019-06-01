@@ -1,0 +1,1 @@
+add alternate icons for ipad
