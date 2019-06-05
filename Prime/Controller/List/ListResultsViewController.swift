@@ -112,7 +112,15 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        setTheme()
+
+    }
+
+
+    // MARK: Helpers
+
+    func setTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
 
         myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         resultLabel.textColor = darkMode ? .white : .black
@@ -121,10 +129,16 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         for button in [jumpToTopButton, jumpToBottomButton] {
             button?.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         }
+        resultsTableView.reloadData()
     }
 
 
-    // MARK: Helpers
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        setTheme()
+    }
+
 
     func separate(number: Int64) -> String {
         let formatter = NumberFormatter()
@@ -221,7 +235,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Delegates
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let darkMode = traitCollection.userInterfaceStyle == .dark
         let indicator = scrollView.subviews.last as? UIImageView
         indicator?.image = nil
         indicator?.backgroundColor = darkMode ? .white : .black
@@ -234,7 +248,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let darkMode = traitCollection.userInterfaceStyle == .dark
         let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell

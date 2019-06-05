@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UserDefaults.standard.register(defaults: [
             Constants.UserDef.soundEnabled: true,
-            Constants.UserDef.darkModeEnabled: true,
             Constants.UserDef.showSeparator: false,
             Constants.UserDef.iconIsDark: true])
 

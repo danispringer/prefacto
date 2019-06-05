@@ -40,7 +40,20 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        setTheme()
+
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
+    }
+
+
+    // MARK: Helpers
+
+    func setTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
 
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         titleLabel.textColor = darkMode ? .white : .black
@@ -53,16 +66,15 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
         activityIndicator.color = darkMode ? .white : .black
         randomizeButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
     }
 
 
-    // MARK: Helpers
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        setTheme()
+    }
+
 
     func showApps() {
 
