@@ -27,19 +27,22 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
+    var myResignToolbar: UIToolbar! = nil
 
 
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        arrayOfInts = []
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        myResignToolbar = UIToolbar()
+
+        setTheme()
+
+        arrayOfInts = []
 
         myTextField.delegate = self
 
-        let resignToolbar = UIToolbar()
         let factorButton = UIBarButtonItem(
             title: Constants.Messages.factor,
             style: .plain,
@@ -52,19 +55,28 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             action: #selector(donePressed))
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        resignToolbar.items = [doneButton, space, factorButton]
-        resignToolbar.sizeToFit()
+        myResignToolbar.items = [doneButton, space, factorButton]
+        myResignToolbar.sizeToFit()
 
-        resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-
-        for toolbar in [myToolbar, resignToolbar] {
+        for toolbar in [myToolbar, myResignToolbar] {
             toolbar?.setBackgroundImage(UIImage(),
                                         forToolbarPosition: .any,
                                         barMetrics: .default)
             toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
         }
 
-        myTextField.inputAccessoryView = resignToolbar
+        myTextField.inputAccessoryView = myResignToolbar
+
+    }
+
+
+    // MARK: Helpers
+
+    func setTheme() {
+
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         myTextField.keyboardAppearance = darkMode ? .dark : .light
 
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
@@ -84,11 +96,15 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         myTextField.bottomBorder.backgroundColor = firstColor
 
         activityIndicator.color = darkMode ? .white : .black
-
     }
 
 
-    // MARK: Helpers
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        setTheme()
+    }
+
 
     func showApps() {
 

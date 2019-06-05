@@ -21,7 +21,7 @@ class MyTextField: UITextField {
 
     override func awakeFromNib() {
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let darkMode = traitCollection.userInterfaceStyle == .dark
         let firstColor: UIColor = darkMode ? .white : .black
 
         self.borderStyle = .none

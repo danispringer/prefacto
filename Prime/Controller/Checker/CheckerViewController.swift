@@ -23,32 +23,19 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
     @IBOutlet weak var titleLabel: UILabel!
 
 
+    // MARK: Properties
+
+    var myResignToolBar: UIToolbar! = nil
+
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        myResignToolBar = UIToolbar()
 
-        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = darkMode ? .white : .black
-        view.backgroundColor = darkMode ? .black : .white
-        tabBarController?.tabBar.tintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
-        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
+        setTheme()
 
-        let firstColor: UIColor = darkMode ? .white : .black
-        let secondColor: UIColor = darkMode ? .black : .white
-        myTextField.backgroundColor = secondColor
-        myTextField.textColor = firstColor
-        myTextField.tintColor = firstColor
-        myTextField.bottomBorder.backgroundColor = firstColor
-
-        activityIndicator.color = darkMode ? .white : .black
-
-        let resignToolbar = UIToolbar()
         let checkButton = UIBarButtonItem()
 
         checkButton.title = Constants.Messages.check
@@ -60,24 +47,58 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                                            target: self,
                                            action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        resignToolbar.items = [doneButton, space, checkButton]
-        resignToolbar.sizeToFit()
-        resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        myResignToolBar.items = [doneButton, space, checkButton]
+        myResignToolBar.sizeToFit()
 
-        for toolbar in [myToolbar, resignToolbar] {
+        for toolbar in [myToolbar, myResignToolBar] {
             toolbar?.setBackgroundImage(UIImage(),
                                              forToolbarPosition: .any,
                                              barMetrics: .default)
             toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
         }
 
-        myTextField.inputAccessoryView = resignToolbar
-        myTextField.keyboardAppearance = darkMode ? .dark : .light
-
+        myTextField.inputAccessoryView = myResignToolBar
     }
 
 
     // MARK: Helpers
+
+    func setTheme() {
+
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        let firstColor: UIColor = darkMode ? .white : .black
+        let secondColor: UIColor = darkMode ? .black : .white
+
+        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        titleLabel.textColor = darkMode ? .white : .black
+        view.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.tintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+
+
+        myTextField.backgroundColor = secondColor
+        myTextField.textColor = firstColor
+        myTextField.tintColor = firstColor
+        myTextField.bottomBorder.backgroundColor = firstColor
+
+        activityIndicator.color = darkMode ? .white : .black
+
+        myResignToolBar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        myTextField.keyboardAppearance = darkMode ? .dark : .light
+
+
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        setTheme()
+    }
+
 
     func showApps() {
 

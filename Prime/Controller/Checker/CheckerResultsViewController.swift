@@ -69,7 +69,15 @@ class CheckerResultsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        setTheme()
+
+    }
+
+
+    // MARK: Helpers
+
+    func setTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
 
         myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         resultLabel.textColor = darkMode ? .white : .black
@@ -78,7 +86,12 @@ class CheckerResultsViewController: UIViewController {
     }
 
 
-    // MARK: Helpers
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        setTheme()
+    }
+
 
     func separate(number: Int64) -> String {
         let formatter = NumberFormatter()

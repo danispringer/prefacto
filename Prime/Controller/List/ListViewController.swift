@@ -30,20 +30,22 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     var arrayOfInts = [Int64]()
     var previousButton = UIBarButtonItem()
     var nextButton = UIBarButtonItem()
+    var myResignToolbar: UIToolbar! = nil
 
 
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        arrayOfInts = []
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        myResignToolbar = UIToolbar()
+
+        setTheme()
+
+        arrayOfInts = []
 
         firstTextField.delegate = self
         secondTextField.delegate = self
-
-        let resignToolbar = UIToolbar()
 
         let listButton = UIBarButtonItem(
             title: Constants.Messages.list,
@@ -79,22 +81,31 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             target: self,
             action: nil)
 
-        resignToolbar.items = [
+        myResignToolbar.items = [
             previousButton, spaceFix, nextButton, spaceFlexible, doneButton, listButton
         ]
-        resignToolbar.sizeToFit()
+        myResignToolbar.sizeToFit()
 
-        resignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-
-        for toolbar in [myToolbar, resignToolbar] {
+        for toolbar in [myToolbar, myResignToolbar] {
             toolbar?.setBackgroundImage(UIImage(),
                                         forToolbarPosition: .any,
                                         barMetrics: .default)
             toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
         }
 
-        firstTextField.inputAccessoryView = resignToolbar
-        secondTextField.inputAccessoryView = resignToolbar
+        firstTextField.inputAccessoryView = myResignToolbar
+        secondTextField.inputAccessoryView = myResignToolbar
+
+    }
+
+
+    // MARK: Helpers
+
+    func setTheme() {
+
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         firstTextField.keyboardAppearance = darkMode ? .dark : .light
         secondTextField.keyboardAppearance = darkMode ? .dark : .light
 
@@ -122,7 +133,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     }
 
 
-    // MARK: Helpers
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        setTheme()
+    }
+
+
     @objc func previousTextField() {
         firstTextField.becomeFirstResponder()
     }
