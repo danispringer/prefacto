@@ -351,6 +351,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
             self.titleLabel.text = enabled ? "The Prime List" : "Listing..."
+            self.aboutButton.isEnabled = enabled
         }
     }
 

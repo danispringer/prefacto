@@ -279,6 +279,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.titleLabel.text = enabled ? "Factorize" : "Factorizing..."
+            self.aboutButton.isEnabled = enabled
         }
     }
 
