@@ -273,6 +273,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
             self.titleLabel.text = enabled ? "Is It Prime?" : "Checking..."
+            self.aboutButton.isEnabled = enabled
         }
     }
 

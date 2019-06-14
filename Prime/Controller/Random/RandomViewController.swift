@@ -265,6 +265,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
+            self.aboutButton.isEnabled = enabled
         }
     }
 
