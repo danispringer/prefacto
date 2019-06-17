@@ -30,7 +30,6 @@
 		33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CB11D520DCB607003E7522 /* Default-568h@2x.png */; };
 		33DBFE5121F0790E00B864AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBFE5021F0790E00B864AA /* AppDelegate.swift */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */; };
-		33F2807021CF14D70074CD8D /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2806F21CF14D70074CD8D /* MyButton.swift */; };
 		33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +73,6 @@
 		33E3F34C21F50CF200EC5529 /* Prime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prime.entitlements; sourceTree = "<group>"; };
 		33EE5BC720D996C4008FEAF2 /* Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerViewController.swift; sourceTree = "<group>"; };
-		33F2806F21CF14D70074CD8D /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +114,6 @@
 			children = (
 				3357A328210D18290011965D /* ListTableViewCell.swift */,
 				33122629210D233500802138 /* FactorizeTableViewCell.swift */,
-				33F2806F21CF14D70074CD8D /* MyButton.swift */,
 				3368773121CF65A900D31C18 /* MyTextField.swift */,
 			);
 			path = View;
@@ -341,7 +338,6 @@
 				3368773221CF65A900D31C18 /* MyTextField.swift in Sources */,
 				333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */,
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,
-				33F2807021CF14D70074CD8D /* MyButton.swift in Sources */,
 				3357A329210D18290011965D /* ListTableViewCell.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckerViewController.swift in Sources */,
 				33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */,
