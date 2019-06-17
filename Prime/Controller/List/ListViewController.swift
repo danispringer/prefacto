@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import MessageUI
 import StoreKit
 
@@ -252,7 +251,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                     self.secondTextField.becomeFirstResponder()
                 }
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -270,7 +268,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 }
 
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -290,7 +287,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                     self.secondTextField.becomeFirstResponder()
                 }
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -306,7 +302,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 }
 
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -316,7 +311,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }

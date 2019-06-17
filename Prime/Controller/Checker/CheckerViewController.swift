@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import MessageUI
 import StoreKit
 
@@ -137,7 +136,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
             guard userNumber != 2 else {
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
-                    AppData.getSoundEnabledSettings(sound: Constants.Sound.positive)
                     self.presentResult(number: userNumber, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
                 return
@@ -147,9 +145,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 let results = self.isPrime(number: userNumber)
                 isPrimeBool = results.0
                 isDivisibleBy = results.1
-                if isPrimeBool {
-                    AppData.getSoundEnabledSettings(sound: Constants.Sound.positive)
-                }
                 DispatchQueue.main.async {
                     self.presentResult(number: userNumber, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
@@ -165,7 +160,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -175,7 +169,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -186,7 +179,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -201,7 +193,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -211,7 +202,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -221,7 +211,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
