@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         UserDefaults.standard.register(defaults: [
-            Constants.UserDef.soundEnabled: true,
             Constants.UserDef.showSeparator: false,
             Constants.UserDef.iconIsDark: true])
 

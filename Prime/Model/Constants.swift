@@ -135,18 +135,10 @@ struct Constants {
 
 
     struct UserDef {
-        static let soundEnabled = "soundEnabled"
         static let showSeparator = "showSeparator"
         static let iconIsDark = "iconIsDark"
         static let light = "light"
         static let dark = "dark"
-    }
-
-
-    struct Sound {
-        static let positive = 1023
-        static let negative = 1257
-        static let toggle = 1104
     }
 
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import StoreKit
 
 
@@ -85,7 +84,6 @@ class RandomResultsViewController: UIViewController {
         guard let myNumber = myNumber else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -102,7 +100,6 @@ class RandomResultsViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 }
                 return
             }

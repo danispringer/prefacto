@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import StoreKit
 
 
@@ -35,7 +34,6 @@ class CheckerResultsViewController: UIViewController {
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
@@ -126,7 +124,6 @@ class CheckerResultsViewController: UIViewController {
                 DispatchQueue.main.async {
                     alert.view.layoutIfNeeded()
                     self.present(alert, animated: true)
-                    AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
                 }
                 return
             }

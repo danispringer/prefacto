@@ -47,14 +47,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 
-    @objc func soundToggled(sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.soundEnabled)
-        if sender.isOn {
-            AppData.getSoundEnabledSettings(sound: Constants.Sound.toggle)
-        }
-    }
-
-
     @objc func showSeparatorToggled(sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.showSeparator)
     }
@@ -103,7 +95,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
 
 
@@ -120,15 +112,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
         switch indexPath.row {
         case 0:
-            let mySoundSwitch = UISwitch()
-            mySoundSwitch.onTintColor = darkMode ? Constants.View.goldColor : Constants.View.greenColor
-            mySoundSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
-            cell?.accessoryView = mySoundSwitch
-            mySoundSwitch.addTarget(self,
-                                    action: #selector(soundToggled(sender:)),
-                                    for: .valueChanged)
-            cell?.textLabel?.text = "Sound"
-        case 1:
             let mySeparatorSwitch = UISwitch()
             mySeparatorSwitch.onTintColor = darkMode ?
                 Constants.View.goldColor : Constants.View.greenColor
@@ -138,7 +121,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                                         action: #selector(showSeparatorToggled(sender:)),
                                         for: .valueChanged)
             cell?.textLabel?.text = "Thousands Separator"
-        case 2:
+        case 1:
             let myIconSwitch = UISwitch()
             myIconSwitch.onTintColor = darkMode ?
                 Constants.View.goldColor : Constants.View.greenColor

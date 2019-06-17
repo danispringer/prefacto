@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import MessageUI
 import StoreKit
 
@@ -168,7 +167,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -178,7 +176,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return nil
         }
@@ -192,7 +189,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -201,7 +197,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
@@ -211,7 +206,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.negative)
             }
             return false
         }
