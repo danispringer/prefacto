@@ -71,11 +71,10 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         let secondColor: UIColor = darkMode ? .black : .white
 
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = darkMode ? .white : .black
-        view.backgroundColor = darkMode ? .black : .white
+        titleLabel.textColor = firstColor
+        view.backgroundColor = secondColor
         tabBarController?.tabBar.tintColor = darkMode ?
             Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
         tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
             Constants.View.goldColor : Constants.View.blueColor
 
@@ -85,12 +84,13 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         myTextField.tintColor = firstColor
         myTextField.bottomBorder.backgroundColor = firstColor
 
-        activityIndicator.color = darkMode ? .white : .black
+        activityIndicator.color = firstColor
 
         myResignToolBar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         myTextField.keyboardAppearance = darkMode ? .dark : .light
 
-
+        tabBarController?.tabBar.barTintColor = secondColor
+        tabBarController?.tabBar.backgroundColor = secondColor
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
