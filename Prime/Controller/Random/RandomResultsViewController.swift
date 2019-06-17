@@ -19,7 +19,7 @@ class RandomResultsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var copyButton: MyButton!
+    @IBOutlet weak var copyButton: UIButton!
 
 
     // MARK: Properties
