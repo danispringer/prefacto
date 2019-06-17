@@ -59,13 +59,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             action: #selector(donePressed))
 
         previousButton = UIBarButtonItem(
-            title: "<",
+            image: UIImage(systemName: "chevron.up.circle"),
             style: .plain,
             target: self,
             action: #selector(previousTextField))
 
         nextButton = UIBarButtonItem(
-            title: ">",
+            image: UIImage(systemName: "chevron.down.circle"),
             style: .plain,
             target: self,
             action: #selector(nextTextField))
@@ -92,8 +92,9 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             toolbar?.setShadowImage(UIImage(), forToolbarPosition: .any)
         }
 
-        firstTextField.inputAccessoryView = myResignToolbar
-        secondTextField.inputAccessoryView = myResignToolbar
+        for textfield in [firstTextField, secondTextField] {
+            textfield?.inputAccessoryView = myResignToolbar
+        }
 
     }
 
