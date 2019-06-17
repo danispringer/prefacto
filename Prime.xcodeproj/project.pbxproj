@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330F2BF621E734A00012E38D /* choo.caf in Resources */ = {isa = PBXBuildFile; fileRef = 330F2BF521E734A00012E38D /* choo.caf */; };
 		3312262A210D233500802138 /* FactorizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33122629210D233500802138 /* FactorizeTableViewCell.swift */; };
 		3317915B20DA03CD00CA739F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317915A20DA03CD00CA739F /* Alert.swift */; };
 		333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333AD7E6210581160010D446 /* SettingsViewControlller.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		330F2BF521E734A00012E38D /* choo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = choo.caf; sourceTree = "<group>"; };
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		3317915A20DA03CD00CA739F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		333AD7E6210581160010D446 /* SettingsViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControlller.swift; sourceTree = "<group>"; };
@@ -91,14 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		330F2BF421E7341D0012E38D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				330F2BF521E734A00012E38D /* choo.caf */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		3317915C20DA042F00CA739F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +223,6 @@
 				3317915D20DA047E00CA739F /* Controller */,
 				33CB11C920DCB5DB003E7522 /* Storyboard */,
 				33C0F18220EF4F180013881A /* Assets */,
-				330F2BF421E7341D0012E38D /* Resources */,
 			);
 			path = Prime;
 			sourceTree = "<group>";
@@ -313,7 +302,6 @@
 				3379E910229C578C00308708 /* dark@2x.png in Resources */,
 				3379E90F229C578C00308708 /* light@2x.png in Resources */,
 				33CB11CE20DCB5DB003E7522 /* LaunchScreen.storyboard in Resources */,
-				330F2BF621E734A00012E38D /* choo.caf in Resources */,
 				33CB11D620DCB607003E7522 /* Default-568h@2x.png in Resources */,
 				33C0F18520EF4F180013881A /* Assets.xcassets in Resources */,
 			);
