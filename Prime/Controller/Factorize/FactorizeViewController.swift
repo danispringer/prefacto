@@ -76,26 +76,30 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
         let darkMode = traitCollection.userInterfaceStyle == .dark
 
+        let firstColor: UIColor = darkMode ? .white : .black
+        let secondColor: UIColor = darkMode ? .black : .white
+
         myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
         myTextField.keyboardAppearance = darkMode ? .dark : .light
 
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = darkMode ? .white : .black
-        view.backgroundColor = darkMode ? .black : .white
+        titleLabel.textColor = firstColor
+        view.backgroundColor = secondColor
         tabBarController?.tabBar.tintColor = darkMode ?
             Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.backgroundColor = secondColor
         tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
             Constants.View.goldColor : Constants.View.blueColor
 
-        let firstColor: UIColor = darkMode ? .white : .black
-        let secondColor: UIColor = darkMode ? .black : .white
         myTextField.backgroundColor = secondColor
         myTextField.textColor = firstColor
         myTextField.tintColor = firstColor
         myTextField.bottomBorder.backgroundColor = firstColor
 
-        activityIndicator.color = darkMode ? .white : .black
+        activityIndicator.color = firstColor
+
+        tabBarController?.tabBar.barTintColor = secondColor
+        tabBarController?.tabBar.backgroundColor = secondColor
     }
 
 

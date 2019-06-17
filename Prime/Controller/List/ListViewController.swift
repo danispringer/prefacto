@@ -104,22 +104,23 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     func setTheme() {
 
         let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        firstTextField.keyboardAppearance = darkMode ? .dark : .light
-        secondTextField.keyboardAppearance = darkMode ? .dark : .light
-
-        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = darkMode ? .white : .black
-        view.backgroundColor = darkMode ? .black : .white
-        tabBarController?.tabBar.tintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
-        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-
         let firstColor: UIColor = darkMode ? .white : .black
         let secondColor: UIColor = darkMode ? .black : .white
+
+        myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+
+        for textfield in [firstTextField, secondTextField] {
+            textfield?.keyboardAppearance = darkMode ? .dark : .light
+        }
+
+        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+        titleLabel.textColor = firstColor
+        view.backgroundColor = secondColor
+        tabBarController?.tabBar.tintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
+        tabBarController?.tabBar.backgroundColor = secondColor
+        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
+            Constants.View.goldColor : Constants.View.blueColor
 
         for textField in [firstTextField, secondTextField] {
             textField?.backgroundColor = secondColor
@@ -128,7 +129,10 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             textField?.bottomBorder.backgroundColor = firstColor
         }
 
-        activityIndicator.color = darkMode ? .white : .black
+        activityIndicator.color = firstColor
+
+        tabBarController?.tabBar.barTintColor = secondColor
+        tabBarController?.tabBar.backgroundColor = secondColor
 
     }
 

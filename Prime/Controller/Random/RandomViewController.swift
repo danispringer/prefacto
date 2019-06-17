@@ -55,17 +55,23 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     func setTheme() {
         let darkMode = traitCollection.userInterfaceStyle == .dark
 
+        let firstColor: UIColor = darkMode ? .white : .black
+        let secondColor: UIColor = darkMode ? .black : .white
+
         aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = darkMode ? .white : .black
-        view.backgroundColor = darkMode ? .black : .white
+        titleLabel.textColor = firstColor
+        view.backgroundColor = secondColor
         tabBarController?.tabBar.tintColor = darkMode ?
             Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = darkMode ? .black : .white
+        tabBarController?.tabBar.backgroundColor = secondColor
         tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
             Constants.View.goldColor : Constants.View.blueColor
 
-        activityIndicator.color = darkMode ? .white : .black
+        activityIndicator.color = firstColor
         randomizeButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
+
+        tabBarController?.tabBar.barTintColor = secondColor
+        tabBarController?.tabBar.backgroundColor = secondColor
     }
 
 

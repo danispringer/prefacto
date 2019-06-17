@@ -32,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.UserDef.iconIsDark: true])
 
         let tabBar = UITabBar.appearance()
-        tabBar.backgroundImage = UIImage.from(color: .clear)
-        tabBar.shadowImage = UIImage.from(color: .clear)
+        tabBar.clipsToBounds = true
 
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
