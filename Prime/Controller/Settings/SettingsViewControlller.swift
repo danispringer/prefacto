@@ -34,17 +34,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
         myTableView.rowHeight = UITableView.automaticDimension
 
-        setTheme()
+        //setTheme()
     }
 
 
     // Helpers
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        setTheme()
+//    }
 
 
     @objc func showSeparatorToggled(sender: UISwitch) {
@@ -77,14 +77,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 
-    func setTheme() {
-
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        view.backgroundColor = darkMode ? .black : .white
-        myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        myTableView.reloadData()
-    }
+//    func setTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
     @IBAction func doneButtonPressed(_ sender: Any) {
@@ -101,20 +96,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-        tableView.backgroundColor = darkMode ? .black : .white
+        tableView.backgroundColor = UIColor.systemBackground
         let cell = tableView.dequeueReusableCell(withIdentifier: settingsCell)
         cell?.selectionStyle = .none
-        cell?.textLabel?.textColor = darkMode ? .white : .black
-        cell?.backgroundColor = darkMode ? .black : .white
-        cell?.contentView.backgroundColor = darkMode ? .black : .white
+        cell?.textLabel?.textColor = UIColor.label
+        cell?.backgroundColor = UIColor.systemBackground
+        cell?.contentView.backgroundColor = UIColor.systemBackground
         cell?.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
 
         switch indexPath.row {
         case 0:
             let mySeparatorSwitch = UISwitch()
-            mySeparatorSwitch.onTintColor = darkMode ?
-                Constants.View.goldColor : Constants.View.greenColor
             mySeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
             cell?.accessoryView = mySeparatorSwitch
             mySeparatorSwitch.addTarget(self,
@@ -123,8 +115,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             cell?.textLabel?.text = "Thousands Separator"
         case 1:
             let myIconSwitch = UISwitch()
-            myIconSwitch.onTintColor = darkMode ?
-                Constants.View.goldColor : Constants.View.greenColor
             myIconSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
             cell?.accessoryView = myIconSwitch
             myIconSwitch.addTarget(self, action: #selector(iconSetterToggled(sender:)), for: .valueChanged)

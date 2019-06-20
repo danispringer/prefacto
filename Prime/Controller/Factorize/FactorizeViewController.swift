@@ -73,32 +73,13 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
     func setTheme() {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
+        //let darkMode = traitCollection.userInterfaceStyle == .dark
 
-        let firstColor: UIColor = darkMode ? .white : .black
-        let secondColor: UIColor = darkMode ? .black : .white
+        let firstColor: UIColor = UIColor.label
+        //let secondColor: UIColor = UIColor.systemBackground
 
-        myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        myTextField.keyboardAppearance = darkMode ? .dark : .light
-
-        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = firstColor
-        view.backgroundColor = secondColor
-        tabBarController?.tabBar.tintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = secondColor
-        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-
-        myTextField.backgroundColor = secondColor
         myTextField.textColor = firstColor
-        myTextField.tintColor = firstColor
-        myTextField.bottomBorder.backgroundColor = firstColor
 
-        activityIndicator.color = firstColor
-
-        tabBarController?.tabBar.barTintColor = secondColor
-        tabBarController?.tabBar.backgroundColor = secondColor
     }
 
 

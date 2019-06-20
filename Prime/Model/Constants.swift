@@ -142,12 +142,4 @@ struct Constants {
     }
 
 
-    struct View {
-        static let goldColor = UIColor(red: 0.99, green: 0.78, blue: 0.00, alpha: 1.0)
-        static let grayColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0)
-        static let blueColor = UIColor(red: 0.00/255, green: 122.00/255, blue: 255.00/255, alpha: 1.0)
-        static let greenColor = UIColor(red: 76.00/255, green: 217.00/255, blue: 100.00/255, alpha: 1.0)
-    }
-
-
 }

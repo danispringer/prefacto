@@ -103,36 +103,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
     func setTheme() {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-        let firstColor: UIColor = darkMode ? .white : .black
-        let secondColor: UIColor = darkMode ? .black : .white
-
-        myResignToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-
-        for textfield in [firstTextField, secondTextField] {
-            textfield?.keyboardAppearance = darkMode ? .dark : .light
-        }
-
-        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = firstColor
-        view.backgroundColor = secondColor
-        tabBarController?.tabBar.tintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = secondColor
-        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
+        //let darkMode = traitCollection.userInterfaceStyle == .dark
+        let firstColor: UIColor = UIColor.label
 
         for textField in [firstTextField, secondTextField] {
-            textField?.backgroundColor = secondColor
             textField?.textColor = firstColor
-            textField?.tintColor = firstColor
-            textField?.bottomBorder.backgroundColor = firstColor
         }
 
-        activityIndicator.color = firstColor
-
-        tabBarController?.tabBar.barTintColor = secondColor
-        tabBarController?.tabBar.backgroundColor = secondColor
 
     }
 

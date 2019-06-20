@@ -40,7 +40,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        setTheme()
+        //setTheme()
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -52,34 +52,16 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     // MARK: Helpers
 
-    func setTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        let firstColor: UIColor = darkMode ? .white : .black
-        let secondColor: UIColor = darkMode ? .black : .white
-
-        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = firstColor
-        view.backgroundColor = secondColor
-        tabBarController?.tabBar.tintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.backgroundColor = secondColor
-        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-
-        activityIndicator.color = firstColor
-        randomizeButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-
-        tabBarController?.tabBar.barTintColor = secondColor
-        tabBarController?.tabBar.backgroundColor = secondColor
-    }
+//    func setTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        setTheme()
+//    }
 
 
     func showApps() {
