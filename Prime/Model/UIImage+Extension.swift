@@ -26,4 +26,4 @@ extension UIImage {
 }
 
 // Usage:
-// let img = UIImage.from(color: .black)
+// let img = UIImage.from(color: .red)

@@ -32,22 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let tabBar = UITabBar.appearance()
         tabBar.clipsToBounds = true
+        tabBar.unselectedItemTintColor = UIColor.systemBlue
 
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().isTranslucent = false
 
-        for state: UIControl.State in [.normal, .selected, .highlighted] {
+        for state: UIControl.State in [.normal, .selected, .highlighted, .disabled] {
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
                     NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
                 ], for: state)
         }
-
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: Constants.View.grayColor
-            ], for: .disabled)
 
         return true
     }

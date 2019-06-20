@@ -21,17 +21,11 @@ class MyTextField: UITextField {
 
     override func awakeFromNib() {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-        let firstColor: UIColor = darkMode ? .white : .black
+        //let darkMode = traitCollection.userInterfaceStyle == .dark
+        let firstColor: UIColor = UIColor.label
 
         self.borderStyle = .none
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.attributedPlaceholder = NSAttributedString(
-            string: Constants.Messages.enterAnyNumber,
-            attributes: [
-                NSAttributedString.Key.foregroundColor:
-                    darkMode ? Constants.View.grayColor : UIColor.lightGray
-            ])
 
         bottomBorder = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         bottomBorder.backgroundColor = firstColor

@@ -64,32 +64,13 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
 
     func setTheme() {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
+        //let darkMode = traitCollection.userInterfaceStyle == .dark
 
-        let firstColor: UIColor = darkMode ? .white : .black
-        let secondColor: UIColor = darkMode ? .black : .white
+        let firstColor: UIColor = UIColor.label
+        //let secondColor: UIColor = UIColor.systemBackground
 
-        aboutButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        titleLabel.textColor = firstColor
-        view.backgroundColor = secondColor
-        tabBarController?.tabBar.tintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-        tabBarController?.tabBar.unselectedItemTintColor = darkMode ?
-            Constants.View.goldColor : Constants.View.blueColor
-
-
-        myTextField.backgroundColor = secondColor
         myTextField.textColor = firstColor
-        myTextField.tintColor = firstColor
-        myTextField.bottomBorder.backgroundColor = firstColor
 
-        activityIndicator.color = firstColor
-
-        myResignToolBar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        myTextField.keyboardAppearance = darkMode ? .dark : .light
-
-        tabBarController?.tabBar.barTintColor = secondColor
-        tabBarController?.tabBar.backgroundColor = secondColor
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

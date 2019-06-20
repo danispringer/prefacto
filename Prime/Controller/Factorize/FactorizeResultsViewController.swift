@@ -82,33 +82,26 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
 
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        setTheme()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        setTheme()
+//    }
 
 
     // MARK: Helpers
 
-    func setTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-        myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        resultLabel.textColor = darkMode ? .white : .black
-        view.backgroundColor = darkMode ? .black : .white
-        resultsTableView.backgroundColor = darkMode ? .black : .white
-        for button in [jumpToTopButton, jumpToBottomButton] {
-            button?.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        }
-        resultsTableView.reloadData()
-    }
+//    func setTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//
+//    }
 
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        setTheme()
+//    }
 
 
     func separate(number: Int64) -> String {
@@ -186,14 +179,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     // MARK: Delegates
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-        let indicator = scrollView.subviews.last as? UIImageView
-        indicator?.image = nil
-        indicator?.backgroundColor = darkMode ? .white : .black
-    }
-
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
@@ -201,7 +186,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
         let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
@@ -209,11 +193,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             separate(number: source[(indexPath as NSIndexPath).row])
             : "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
-        cell?.numberLabel?.textColor = darkMode ? .white : .black
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
-        cell?.indexLabel?.textColor = darkMode ? .white : .black
-        cell?.backgroundColor = darkMode ? .black : .white
-        cell?.contentView.backgroundColor = darkMode ? .black : .white
         return cell ?? UITableViewCell()
     }
 

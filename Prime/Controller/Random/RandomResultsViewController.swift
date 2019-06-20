@@ -43,32 +43,26 @@ class RandomResultsViewController: UIViewController {
     }
 
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        setTheme()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        setTheme()
+//    }
 
 
     // MARK: Helpers
 
-    func setTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        myToolbar.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-        for label in [resultLabel, titleLabel] {
-            label?.textColor = darkMode ? .white : .black
-        }
-        view.backgroundColor = darkMode ? .black : .white
-        copyButton.tintColor = darkMode ? Constants.View.goldColor : Constants.View.blueColor
-    }
+//    func setTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//
+//    }
 
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        setTheme()
+//    }
 
 
     func separate(number: Int64) -> String {
