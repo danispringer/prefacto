@@ -40,8 +40,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        //setTheme()
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -51,18 +49,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
 
     // MARK: Helpers
-
-//    func setTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        setTheme()
-//    }
-
 
     func showApps() {
 
@@ -218,7 +204,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {
-                self.present(toPresent, animated: false)
+                self.present(toPresent, animated: true)
             }
         }
     }
@@ -248,7 +234,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         DispatchQueue.main.async {
             self.randomizeButton?.isHidden = !enabled
             self.randomizeButton?.isEnabled = enabled
-            self.titleLabel?.text = enabled ? "Random Prime" : "Randomizing..."
+            self.titleLabel?.text = enabled ? "Randomize" : "Randomizing..."
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()

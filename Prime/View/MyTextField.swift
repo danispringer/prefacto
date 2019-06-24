@@ -21,7 +21,6 @@ class MyTextField: UITextField {
 
     override func awakeFromNib() {
 
-        //let darkMode = traitCollection.userInterfaceStyle == .dark
         let firstColor: UIColor = UIColor.label
 
         self.borderStyle = .none
@@ -38,7 +37,8 @@ class MyTextField: UITextField {
         bottomBorder.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         bottomBorder.heightAnchor.constraint(equalToConstant: 1).isActive = true // Set Border thickness
 
-    }
+        self.textColor = firstColor
 
+    }
 
 }

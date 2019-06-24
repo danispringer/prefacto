@@ -55,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
         let tab = window?.rootViewController as? UITabBarController
+
+        // TODO: make cleaer
         let randomVC = tab?.viewControllers?[3] as? RandomViewController
         randomVC?.makeRandomShortcut()
 

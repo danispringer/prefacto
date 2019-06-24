@@ -39,8 +39,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
         myResignToolbar = UIToolbar()
 
-        setTheme()
-
         arrayOfInts = []
 
         firstTextField.delegate = self
@@ -100,26 +98,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
 
     // MARK: Helpers
-
-    func setTheme() {
-
-        //let darkMode = traitCollection.userInterfaceStyle == .dark
-        let firstColor: UIColor = UIColor.label
-
-        for textField in [firstTextField, secondTextField] {
-            textField?.textColor = firstColor
-        }
-
-
-    }
-
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
-
 
     @objc func previousTextField() {
         firstTextField.becomeFirstResponder()
@@ -201,7 +179,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 controller?.rangeFrom = firstNumber
                 controller?.rangeTo = secondNumber
                 if let toPresent = controller {
-                    self.present(toPresent, animated: false)
+                    self.present(toPresent, animated: true)
                 }
             }
         }
@@ -326,7 +304,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
-            self.titleLabel.text = enabled ? "The Prime List" : "Listing..."
+            self.titleLabel.text = enabled ? "List" : "Listing..."
             self.aboutButton.isEnabled = enabled
         }
     }

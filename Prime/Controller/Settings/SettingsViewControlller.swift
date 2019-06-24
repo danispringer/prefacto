@@ -13,7 +13,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     // MARK: Outlets
 
-    @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTableView: UITableView!
 
 
@@ -21,31 +20,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     let settingsCell = "SettingsCell"
 
+    let dataSourceTitles = ["Thousands Separator", "App Icon (Light/Dark)"]
+
 
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
         myTableView.rowHeight = UITableView.automaticDimension
 
-        //setTheme()
     }
 
 
     // Helpers
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        setTheme()
-//    }
-
 
     @objc func showSeparatorToggled(sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.showSeparator)
@@ -77,20 +65,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 
-//    func setTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
-
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-
-
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return dataSourceTitles.count
     }
 
 
@@ -112,13 +90,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             mySeparatorSwitch.addTarget(self,
                                         action: #selector(showSeparatorToggled(sender:)),
                                         for: .valueChanged)
-            cell?.textLabel?.text = "Thousands Separator"
+            cell?.textLabel?.text = dataSourceTitles[0]
         case 1:
             let myIconSwitch = UISwitch()
             myIconSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
             cell?.accessoryView = myIconSwitch
             myIconSwitch.addTarget(self, action: #selector(iconSetterToggled(sender:)), for: .valueChanged)
-            cell?.textLabel?.text = "App Icon (Light/Dark)"
+            cell?.textLabel?.text = dataSourceTitles[1]
 
         default:
             break
