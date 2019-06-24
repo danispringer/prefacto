@@ -43,27 +43,7 @@ class RandomResultsViewController: UIViewController {
     }
 
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        setTheme()
-//    }
-
-
     // MARK: Helpers
-
-//    func setTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//
-//    }
-
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        setTheme()
-//    }
-
 
     func separate(number: Int64) -> String {
         let formatter = NumberFormatter()
@@ -108,11 +88,7 @@ class RandomResultsViewController: UIViewController {
         }
     }
 
-
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
-        SKStoreReviewController.requestReview()
-    }
-
+    // TODO: implement
+    // SKStoreReviewController.requestReview()
 
 }

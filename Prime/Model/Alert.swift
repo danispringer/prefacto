@@ -61,7 +61,7 @@ extension UIViewController {
         case .sameTwice:
             alertTitle = "Same number entered twice"
             alertMessage = """
-            Please enter two different numbers. To check if a single number is prime, use Checker.
+            Please enter two different numbers. To check if a single number is prime, use Check.
             """
         case .messageSaved:
             alertTitle = "Message saved"

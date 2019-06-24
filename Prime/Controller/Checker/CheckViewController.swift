@@ -1,5 +1,5 @@
 //
-//  CheckerViewController.swift
+//  CheckViewController.swift
 //  Prime
 //
 //  Created by Daniel Springer on 19/06/2018.
@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import StoreKit
 
-class CheckerViewController: UIViewController, SKStoreProductViewControllerDelegate {
+class CheckViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -32,8 +32,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
         super.viewWillAppear(animated)
 
         myResignToolBar = UIToolbar()
-
-        setTheme()
 
         let checkButton = UIBarButtonItem()
 
@@ -61,24 +59,6 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
 
 
     // MARK: Helpers
-
-    func setTheme() {
-
-        //let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        let firstColor: UIColor = UIColor.label
-        //let secondColor: UIColor = UIColor.systemBackground
-
-        myTextField.textColor = firstColor
-
-    }
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
-
 
     func showApps() {
 
@@ -221,15 +201,15 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
 
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.checkerResults)
-            as? CheckerResultsViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.checkResults)
+            as? CheckResultsViewController
         controller?.number = number
         controller?.isPrime = isPrime
         controller?.isDivisibleBy = isDivisibleBy
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {
-                self.present(toPresent, animated: false)
+                self.present(toPresent, animated: true)
             }
         }
     }
@@ -242,7 +222,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
-            self.titleLabel.text = enabled ? "Is It Prime?" : "Checking..."
+            self.titleLabel.text = enabled ? "Check" : "Checking..."
             self.aboutButton.isEnabled = enabled
         }
     }
@@ -306,7 +286,7 @@ class CheckerViewController: UIViewController, SKStoreProductViewControllerDeleg
 }
 
 
-extension CheckerViewController: MFMailComposeViewControllerDelegate {
+extension CheckViewController: MFMailComposeViewControllerDelegate {
 
 
     // MARK: Helpers
@@ -351,7 +331,7 @@ extension CheckerViewController: MFMailComposeViewControllerDelegate {
 }
 
 
-extension CheckerViewController {
+extension CheckViewController {
 
 
     // MARK: Helpers

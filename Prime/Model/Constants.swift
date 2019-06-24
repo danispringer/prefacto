@@ -34,7 +34,7 @@ struct Constants {
 
     struct StoryboardID {
         static let main = "Main"
-        static let checkerResults = "CheckerResultsViewController"
+        static let checkResults = "CheckResultsViewController"
         static let settings = "SettingsViewController"
         static let listResults = "ListResultsViewController"
         static let factorizeResults = "FactorizeResultsViewController"
@@ -46,7 +46,7 @@ struct Constants {
     struct Messages {
         static let check = "Check"
         static let list = "List"
-        static let factor = "Factor"
+        static let factorize = "Factorize"
         static let done = "Done"
         static let enterAnyNumber = "Enter any number here"
         static let version = "Version"

@@ -36,14 +36,12 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
         myResignToolbar = UIToolbar()
 
-        setTheme()
-
         arrayOfInts = []
 
         myTextField.delegate = self
 
         let factorButton = UIBarButtonItem(
-            title: Constants.Messages.factor,
+            title: Constants.Messages.factorize,
             style: .plain,
             target: self,
             action: #selector(checkButtonPressed))
@@ -70,25 +68,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
 
     // MARK: Helpers
-
-    func setTheme() {
-
-        //let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        let firstColor: UIColor = UIColor.label
-        //let secondColor: UIColor = UIColor.systemBackground
-
-        myTextField.textColor = firstColor
-
-    }
-
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        setTheme()
-    }
-
 
     func showApps() {
 
@@ -201,7 +180,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         controller?.number = number
         controller?.source = arrayOfInts
         if let toPresent = controller {
-            present(toPresent, animated: false)
+            present(toPresent, animated: true)
         }
     }
 

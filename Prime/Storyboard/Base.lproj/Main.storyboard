@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msv-77-b15">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,8 +17,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="1t2-Bt-9xD" kind="relationship" relationship="viewControllers" id="PcD-sI-ABf"/>
-                        <segue destination="enb-lg-n27" kind="relationship" relationship="viewControllers" id="zco-l8-1Up"/>
                         <segue destination="GDH-dL-aVw" kind="relationship" relationship="viewControllers" id="oRt-C6-7lD"/>
+                        <segue destination="enb-lg-n27" kind="relationship" relationship="viewControllers" id="zco-l8-1Up"/>
                         <segue destination="rtL-8v-6Jg" kind="relationship" relationship="viewControllers" id="m7Q-B8-E8c"/>
                     </connections>
                 </tabBarController>
@@ -26,16 +26,16 @@
             </objects>
             <point key="canvasLocation" x="-1034" y="692"/>
         </scene>
-        <!--Checker-->
+        <!--Check-->
         <scene sceneID="tGJ-3b-H2M">
             <objects>
-                <viewController storyboardIdentifier="CheckerViewController" id="1t2-Bt-9xD" customClass="CheckerViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckViewController" id="1t2-Bt-9xD" customClass="CheckViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yAl-ue-BIR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is It Prime?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="137" y="114" width="140.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
+                                <rect key="frame" x="165" y="114" width="84" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -82,7 +82,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iu7-ta-hZk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Checker" image="checkmark.circle" catalog="system" selectedImage="checkmark.circle.fill" id="ZgU-OI-oa4"/>
+                    <tabBarItem key="tabBarItem" title="Check" image="c.circle" catalog="system" selectedImage="c.circle.fill" id="ZgU-OI-oa4"/>
                     <navigationItem key="navigationItem" id="RoM-QN-z2j"/>
                     <connections>
                         <outlet property="aboutButton" destination="axt-Z7-Yq3" id="pBl-KC-GVq"/>
@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="-1028" y="1436"/>
         </scene>
-        <!--Factor-->
+        <!--Factorize-->
         <scene sceneID="Old-7D-uru">
             <objects>
                 <viewController id="GDH-dL-aVw" customClass="FactorizeViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DGV-fo-RV1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Factor" image="divide.circle" catalog="system" selectedImage="divide.circle.fill" id="ts3-jk-KCl"/>
+                    <tabBarItem key="tabBarItem" title="Factorize" image="f.circle" catalog="system" selectedImage="f.circle.fill" id="ts3-jk-KCl"/>
                     <connections>
                         <outlet property="aboutButton" destination="5Vi-CK-cNB" id="ria-EO-LCl"/>
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkA-y2-vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="1436"/>
+            <point key="canvasLocation" x="-174" y="1436"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="RXM-9H-pex">
@@ -174,20 +174,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52V-Jx-G3u">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qXS-Sb-2sn"/>
-                                    <barButtonItem title="Done" id="usU-Tl-SiH">
-                                        <connections>
-                                            <action selector="doneButtonPressed:" destination="EGf-9u-VfO" id="D65-rR-m62"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-GM-f5H">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" id="stW-q4-TUs">
@@ -204,27 +192,32 @@
                                     <outlet property="delegate" destination="EGf-9u-VfO" id="mln-X2-DJF"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-4I-Eqv">
+                                <rect key="frame" x="16" y="60" width="382" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="bottom" secondItem="W7B-GM-f5H" secondAttribute="bottom" id="1Qf-9o-9WW"/>
-                            <constraint firstItem="W7B-GM-f5H" firstAttribute="top" secondItem="52V-Jx-G3u" secondAttribute="bottom" id="5li-Q5-9Y2"/>
-                            <constraint firstItem="52V-Jx-G3u" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" id="T1U-Dl-0nS"/>
+                            <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="16" id="25d-WL-cQA"/>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="bottom" secondItem="W7B-GM-f5H" secondAttribute="bottom" id="AHe-6d-6DI"/>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="16" id="BMQ-7M-d4V"/>
+                            <constraint firstItem="W7B-GM-f5H" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="32" id="ISG-2F-NY3"/>
                             <constraint firstItem="W7B-GM-f5H" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" id="d03-7c-61Y"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="W7B-GM-f5H" secondAttribute="trailing" id="hru-M8-noa"/>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="52V-Jx-G3u" secondAttribute="trailing" id="tQQ-3h-WA2"/>
-                            <constraint firstItem="52V-Jx-G3u" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" id="xhD-hq-MhW"/>
+                            <constraint firstItem="cAh-4I-Eqv" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="16" id="lwt-bf-1uO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="W7B-GM-f5H" id="Vz6-8i-n62"/>
-                        <outlet property="myToolbar" destination="52V-Jx-G3u" id="i6V-aY-ZX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-q0-kOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="2178"/>
+            <point key="canvasLocation" x="2450.7246376811595" y="2175"/>
         </scene>
         <!--List-->
         <scene sceneID="CXi-cY-2n2">
@@ -234,7 +227,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Prime List" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-0K-8CX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-0K-8CX">
                                 <rect key="frame" x="16" y="114" width="382" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
@@ -296,7 +289,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TF9-a1-dCQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" image="table" catalog="system" selectedImage="table.fill" id="Lod-4U-CQj"/>
+                    <tabBarItem key="tabBarItem" title="List" image="l.circle" catalog="system" selectedImage="l.circle.fill" id="Lod-4U-CQj"/>
                     <connections>
                         <outlet property="aboutButton" destination="mjO-YZ-2qc" id="g7R-lf-aZp"/>
                         <outlet property="activityIndicator" destination="dhX-Mn-u5f" id="ZdQ-Zs-eJF"/>
@@ -308,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeD-BW-QCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-200" y="1437"/>
+            <point key="canvasLocation" x="748" y="1436"/>
         </scene>
         <!--List Results View Controller-->
         <scene sceneID="6kG-TA-njk">
@@ -321,11 +314,6 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pot-Xn-7oP">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="done" id="s2f-gl-MAe">
-                                        <connections>
-                                            <action selector="doneButtonPressed:" destination="JVg-gq-MAH" id="Q4v-Vc-b0V"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="FJh-jC-ycq"/>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="Ahw-gk-FOH">
                                         <connections>
@@ -442,12 +430,12 @@ Primes: 123456890</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT3-YB-X1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204.375" y="2176.0563380281692"/>
+            <point key="canvasLocation" x="748" y="2175"/>
         </scene>
-        <!--Checker Results View Controller-->
+        <!--Check Results View Controller-->
         <scene sceneID="CW1-WH-5aG">
             <objects>
-                <viewController storyboardIdentifier="CheckerResultsViewController" id="gze-xP-mv9" customClass="CheckerResultsViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckResultsViewController" id="gze-xP-mv9" customClass="CheckResultsViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dop-lv-uoq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -456,11 +444,6 @@ Primes: 123456890</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="done" id="Qyd-er-brp">
-                                        <connections>
-                                            <action selector="doneButtonPressed:" destination="gze-xP-mv9" id="Rnh-SL-D2N"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xIy-kS-HyR"/>
                                     <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="E7H-Ry-hi3">
                                         <connections>
@@ -469,7 +452,7 @@ Primes: 123456890</string>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHh-na-Oah">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHh-na-Oah">
                                 <rect key="frame" x="16" y="432" width="382" height="42.5"/>
                                 <string key="text">12345678901: not prime.
 Divisible by: 857.</string>
@@ -509,11 +492,6 @@ Divisible by: 857.</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU3-mS-M5k">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="done" id="LPe-8S-KCX">
-                                        <connections>
-                                            <action selector="doneButtonPressed:" destination="qan-ov-WlY" id="0Wg-61-geY"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RiP-mz-sDx"/>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="AMw-Pt-ueC">
                                         <connections>
@@ -633,9 +611,9 @@ Factors: 1234567890</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taf-8r-ZgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="2177"/>
+            <point key="canvasLocation" x="-174" y="2175"/>
         </scene>
-        <!--Random-->
+        <!--Randomize-->
         <scene sceneID="bAn-d8-3GN">
             <objects>
                 <viewController storyboardIdentifier="RandomViewController" id="rtL-8v-6Jg" customClass="RandomViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
@@ -643,7 +621,7 @@ Factors: 1234567890</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Ds-DUI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomize" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Ds-DUI">
                                 <rect key="frame" x="16" y="114" width="382" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
@@ -690,7 +668,7 @@ Factors: 1234567890</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yjZ-am-8J6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Random" image="questionmark.circle" catalog="system" selectedImage="questionmark.circle.fill" id="yIw-R4-UNX"/>
+                    <tabBarItem key="tabBarItem" title="Randomize" image="r.circle" catalog="system" selectedImage="r.circle.fill" id="yIw-R4-UNX"/>
                     <navigationItem key="navigationItem" id="N5f-P2-4fN"/>
                     <connections>
                         <outlet property="aboutButton" destination="xYd-uu-DqX" id="vtn-wU-ovF"/>
@@ -702,7 +680,7 @@ Factors: 1234567890</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFL-N0-H7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="1436"/>
+            <point key="canvasLocation" x="1616" y="1436"/>
         </scene>
         <!--Random Results View Controller-->
         <scene sceneID="Ejf-cZ-lNr">
@@ -715,11 +693,6 @@ Factors: 1234567890</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-Zc-OR8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="done" id="l06-Bo-KPU">
-                                        <connections>
-                                            <action selector="doneButtonPressed:" destination="7sC-Ww-chD" id="TIv-d3-86p"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wVS-WD-BGj"/>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="8wG-x3-FZT">
                                         <connections>
@@ -729,7 +702,7 @@ Factors: 1234567890</string>
                                 </items>
                                 <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h7-fu-4TW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h7-fu-4TW">
                                 <rect key="frame" x="16" y="114" width="382" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
@@ -776,21 +749,21 @@ Factors: 1234567890</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lc-oO-aJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="2178"/>
+            <point key="canvasLocation" x="1616" y="2175"/>
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.circle" catalog="system" width="64" height="62"/>
-        <image name="checkmark.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="c.circle" catalog="system" width="64" height="62"/>
+        <image name="c.circle.fill" catalog="system" width="64" height="62"/>
         <image name="chevron.down.circle" catalog="system" width="64" height="62"/>
         <image name="chevron.up.circle" catalog="system" width="64" height="62"/>
-        <image name="divide.circle" catalog="system" width="64" height="62"/>
-        <image name="divide.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="f.circle" catalog="system" width="64" height="62"/>
+        <image name="f.circle.fill" catalog="system" width="64" height="62"/>
         <image name="info.circle" catalog="system" width="64" height="62"/>
-        <image name="questionmark.circle" catalog="system" width="64" height="62"/>
-        <image name="questionmark.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="l.circle" catalog="system" width="64" height="62"/>
+        <image name="l.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="r.circle" catalog="system" width="64" height="62"/>
+        <image name="r.circle.fill" catalog="system" width="64" height="62"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-        <image name="table" catalog="system" width="64" height="48"/>
-        <image name="table.fill" catalog="system" width="64" height="48"/>
     </resources>
 </document>

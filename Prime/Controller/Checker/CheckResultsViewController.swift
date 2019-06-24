@@ -1,5 +1,5 @@
 //
-//  CheckerResultsViewController.swift
+//  CheckResultsViewController.swift
 //  Prime
 //
 //  Created by Daniel Springer on 09/07/2018.
@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 
 
-class CheckerResultsViewController: UIViewController {
+class CheckResultsViewController: UIViewController {
 
 
     // MARK: Outlets
@@ -64,26 +64,7 @@ class CheckerResultsViewController: UIViewController {
     }
 
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        setTheme()
-//
-//    }
-
-
     // MARK: Helpers
-
-//    func setTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        setTheme()
-//    }
 
 
     func separate(number: Int64) -> String {
@@ -126,12 +107,7 @@ class CheckerResultsViewController: UIViewController {
         self.present(activityController, animated: true)
     }
 
-
-    // MARK: Done Pressed
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
-        SKStoreReviewController.requestReview()
-    }
-
+    // TODO: implement
+    // SKStoreReviewController.requestReview()
 
 }

@@ -107,28 +107,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        setTheme()
-//
-//    }
-
-
     // MARK: Helpers
-
-//    func setTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//
-//    }
-
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        setTheme()
-//    }
-
 
     func separate(number: Int64) -> String {
         let formatter = NumberFormatter()
@@ -214,11 +193,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         self.present(activityController, animated: true)
     }
 
-
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
-        SKStoreReviewController.requestReview()
-    }
+    // TODO: implement
+    // SKStoreReviewController.requestReview()
 
 
     // MARK: Delegates
@@ -262,6 +238,5 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             pasteboard.string = cell?.numberLabel?.text
         }
     }
-
 
 }
