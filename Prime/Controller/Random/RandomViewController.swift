@@ -121,7 +121,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
                 randInt += 1
             }
             DispatchQueue.main.async {
-                self.enableUI(enabled: true)
                 self.presentResult(number: randInt, size: size, fromShortcut: false)
             }
         }
@@ -241,6 +240,10 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
             self.aboutButton.isEnabled = enabled
+            self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
+            for item in (self.tabBarController?.tabBar.items)! {
+                item.isEnabled = enabled
+            }
         }
     }
 

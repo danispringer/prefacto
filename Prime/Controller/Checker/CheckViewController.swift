@@ -224,6 +224,10 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
             self.view.endEditing(!enabled)
             self.titleLabel.text = enabled ? "Check" : "Checking..."
             self.aboutButton.isEnabled = enabled
+            self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
+            for item in (self.tabBarController?.tabBar.items)! {
+                item.isEnabled = enabled
+            }
         }
     }
 
