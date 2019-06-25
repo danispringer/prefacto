@@ -51,15 +51,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             Constants.UserDef.dark : Constants.UserDef.light
 
         guard UIApplication.shared.supportsAlternateIcons else {
-            print("NOTE: alternate icons not supported")
+            print("Alternate icons not supported")
             return
         }
 
         UIApplication.shared.setAlternateIconName(newIcon) { error in
             if let error = error {
                 print("App icon failed to change due to \(error.localizedDescription)")
-            } else {
-                print("app icon should now be updated")
             }
         }
     }
