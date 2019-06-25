@@ -75,7 +75,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.backgroundColor = UIColor.systemBackground
         let cell = tableView.dequeueReusableCell(withIdentifier: settingsCell)
         cell?.selectionStyle = .none
-        cell?.textLabel?.textColor = UIColor.label
         cell?.backgroundColor = UIColor.systemBackground
         cell?.contentView.backgroundColor = UIColor.systemBackground
         cell?.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
