@@ -64,7 +64,7 @@ struct Constants {
                    https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
                    """
         static let sendFeedback = "Contact Us"
-        static let leaveReview = "Leave a review"
+        static let leaveReview = "Leave a Review"
         static let settings = "Settings"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "***REMOVED***"
