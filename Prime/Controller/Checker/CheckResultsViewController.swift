@@ -63,6 +63,11 @@ class CheckResultsViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+
+        SKStoreReviewController.requestReview()
+    }
 
     // MARK: Helpers
 
@@ -106,8 +111,5 @@ class CheckResultsViewController: UIViewController {
         }
         self.present(activityController, animated: true)
     }
-
-    // TODO: implement
-    // SKStoreReviewController.requestReview()
 
 }
