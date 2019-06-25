@@ -43,6 +43,12 @@ class RandomResultsViewController: UIViewController {
     }
 
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+
+        SKStoreReviewController.requestReview()
+    }
+
     // MARK: Helpers
 
     func separate(number: Int64) -> String {
@@ -87,8 +93,5 @@ class RandomResultsViewController: UIViewController {
             UIPasteboard.general.string = String(myNumber)
         }
     }
-
-    // TODO: implement
-    // SKStoreReviewController.requestReview()
 
 }

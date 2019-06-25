@@ -107,6 +107,13 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+
+        SKStoreReviewController.requestReview()
+    }
+
+
     // MARK: Helpers
 
     func separate(number: Int64) -> String {
@@ -192,9 +199,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         }
         self.present(activityController, animated: true)
     }
-
-    // TODO: implement
-    // SKStoreReviewController.requestReview()
 
 
     // MARK: Delegates
