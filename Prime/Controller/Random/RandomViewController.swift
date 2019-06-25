@@ -82,9 +82,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
 
     func makeRandomShortcut() {
-        DispatchQueue.main.async {
-            self.enableUI(enabled: false)
-        }
+
         var limit = Int64.max / 10 * 9
         limit /= power(coeff: 10, exp: 12)
         var randInt = Int64.random(in: 1...limit)
@@ -94,8 +92,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
                 randInt += 1
             }
             DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.presentResult(number: randInt, size: SizeOptions.medium)
+                self.presentResult(number: randInt, size: SizeOptions.medium, fromShortcut: true)
             }
         }
     }
@@ -125,7 +122,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             }
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
-                self.presentResult(number: randInt, size: size)
+                self.presentResult(number: randInt, size: size, fromShortcut: false)
             }
         }
     }
@@ -195,16 +192,20 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     }
 
 
-    func presentResult(number: Int64, size: SizeOptions) {
+    func presentResult(number: Int64, size: SizeOptions, fromShortcut: Bool) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
             withIdentifier: Constants.StoryboardID.randomResults) as? RandomResultsViewController
         controller?.myNumber = number
         controller?.myTitle = "Your Random \(size.rawValue) Prime"
         DispatchQueue.main.async {
-            self.enableUI(enabled: true)
+            if !fromShortcut {
+                self.enableUI(enabled: true)
+            }
             if let toPresent = controller {
-                self.present(toPresent, animated: true)
+                self.dismiss(animated: false, completion: {
+                    self.present(toPresent, animated: true)
+                })
             }
         }
     }
@@ -232,9 +233,9 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
-            self.randomizeButton?.isHidden = !enabled
-            self.randomizeButton?.isEnabled = enabled
-            self.titleLabel?.text = enabled ? "Randomize" : "Randomizing..."
+            self.randomizeButton.isHidden = !enabled
+            self.randomizeButton.isEnabled = enabled
+            self.titleLabel.text = enabled ? "Randomize" : "Randomizing..."
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
