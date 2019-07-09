@@ -48,7 +48,6 @@ struct Constants {
         static let list = "List"
         static let factorize = "Factorize"
         static let done = "Done"
-        static let enterAnyNumber = "Enter any number here"
         static let version = "Version"
         static let appName = "Prime"
         static let appVersion = "CFBundleShortVersionString"
