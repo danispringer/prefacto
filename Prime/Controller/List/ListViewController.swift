@@ -62,11 +62,15 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             target: self,
             action: #selector(previousTextField))
 
+        previousButton.accessibilityLabel = "Go up"
+
         nextButton = UIBarButtonItem(
             image: UIImage(systemName: "chevron.down.circle"),
             style: .plain,
             target: self,
             action: #selector(nextTextField))
+
+        nextButton.accessibilityLabel = "Go down"
 
         let spaceFlexible = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,

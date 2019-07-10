@@ -94,4 +94,10 @@ class RandomResultsViewController: UIViewController {
         }
     }
 
+
+    @IBAction func donePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+
 }

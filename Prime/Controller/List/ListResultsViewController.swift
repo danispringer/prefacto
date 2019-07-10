@@ -201,6 +201,11 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 
+    @IBAction func donePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
