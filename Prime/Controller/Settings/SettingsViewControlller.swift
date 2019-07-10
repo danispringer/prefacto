@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     let settingsCell = "SettingsCell"
 
-    let dataSourceTitles = ["Thousands Separator", "App Icon (Light/Dark)"]
+    let dataSourceTitles = ["Thousands Separator", "App Icon"]
 
 
     // MARK: Life Cycle
@@ -60,6 +60,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 print("App icon failed to change due to \(error.localizedDescription)")
             }
         }
+    }
+
+
+    @IBAction func donePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
 

@@ -112,4 +112,10 @@ class CheckResultsViewController: UIViewController {
         self.present(activityController, animated: true)
     }
 
+
+    @IBAction func donePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+
 }
