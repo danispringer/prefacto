@@ -35,12 +35,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-2E-fho">
-                                <rect key="frame" x="181.5" y="114" width="51" height="20.5"/>
+                                <rect key="frame" x="16" y="104" width="51" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check if a number is prime" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl" customClass="MyTextField" customModule="Prime" customModuleProvider="target">
-                                <rect key="frame" x="16" y="174.5" width="382" height="40"/>
+                                <rect key="frame" x="16" y="164.5" width="382" height="40"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
@@ -57,12 +57,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-EQ-e9X">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="About" image="ellipsis.circle" catalog="system" id="axt-Z7-Yq3">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oRf-mV-45V"/>
+                                    <barButtonItem title="Menu" image="ellipsis.circle" catalog="system" id="axt-Z7-Yq3">
                                         <connections>
                                             <action selector="aboutPressed:" destination="1t2-Bt-9xD" id="pKB-Nm-xYS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oRf-mV-45V"/>
                                 </items>
                                 <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
@@ -71,10 +71,10 @@
                         <constraints>
                             <constraint firstItem="Iu7-ta-hZk" firstAttribute="trailing" secondItem="m0x-Lr-7Xl" secondAttribute="trailing" constant="16" id="9qw-tB-l1r"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="leading" secondItem="Iu7-ta-hZk" secondAttribute="leading" constant="16" id="B4W-3Q-SFQ"/>
-                            <constraint firstItem="O3R-2E-fho" firstAttribute="centerX" secondItem="Iu7-ta-hZk" secondAttribute="centerX" id="LcD-qH-xwE"/>
-                            <constraint firstItem="O3R-2E-fho" firstAttribute="top" secondItem="Iu7-ta-hZk" secondAttribute="top" constant="70" id="Rgy-Nl-RdJ"/>
+                            <constraint firstItem="O3R-2E-fho" firstAttribute="leading" secondItem="Iu7-ta-hZk" secondAttribute="leading" constant="16" id="Jyc-WQ-Y5O"/>
                             <constraint firstItem="3ap-EQ-e9X" firstAttribute="trailing" secondItem="Iu7-ta-hZk" secondAttribute="trailing" id="TWA-q5-9a4"/>
                             <constraint firstItem="2NI-Ma-ASa" firstAttribute="centerY" secondItem="Iu7-ta-hZk" secondAttribute="centerY" id="coe-Dt-fbp"/>
+                            <constraint firstItem="O3R-2E-fho" firstAttribute="top" secondItem="3ap-EQ-e9X" secondAttribute="bottom" constant="16" id="dHL-E8-0z7"/>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="O3R-2E-fho" secondAttribute="bottom" constant="40" id="m1j-Kr-f5r"/>
                             <constraint firstItem="3ap-EQ-e9X" firstAttribute="leading" secondItem="Iu7-ta-hZk" secondAttribute="leading" id="qkD-rh-ql9"/>
                             <constraint firstItem="3ap-EQ-e9X" firstAttribute="top" secondItem="Iu7-ta-hZk" secondAttribute="top" id="xaD-cg-9Dd"/>
@@ -127,12 +127,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To0-HQ-Ycf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="About" image="ellipsis.circle" catalog="system" id="5Vi-CK-cNB">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sdH-dN-SpW"/>
+                                    <barButtonItem title="Menu" image="ellipsis.circle" catalog="system" id="5Vi-CK-cNB">
                                         <connections>
                                             <action selector="aboutPressed:" destination="GDH-dL-aVw" id="iRp-73-Jqz"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sdH-dN-SpW"/>
                                 </items>
                                 <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
@@ -202,21 +202,31 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-4I-Eqv">
-                                <rect key="frame" x="16" y="60" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="60" width="67" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHW-2U-LrT">
+                                <rect key="frame" x="357" y="54" width="41" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="EGf-9u-VfO" eventType="touchUpInside" id="rFU-ZV-kWX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="16" id="25d-WL-cQA"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="bottom" secondItem="W7B-GM-f5H" secondAttribute="bottom" id="AHe-6d-6DI"/>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="16" id="BMQ-7M-d4V"/>
                             <constraint firstItem="W7B-GM-f5H" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="32" id="ISG-2F-NY3"/>
+                            <constraint firstItem="wHW-2U-LrT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="16" id="W9V-St-OUE"/>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="wHW-2U-LrT" secondAttribute="trailing" constant="16" id="bFj-tI-IWk"/>
                             <constraint firstItem="W7B-GM-f5H" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" id="d03-7c-61Y"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="W7B-GM-f5H" secondAttribute="trailing" id="hru-M8-noa"/>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="16" id="lwt-bf-1uO"/>
+                            <constraint firstItem="wHW-2U-LrT" firstAttribute="centerY" secondItem="cAh-4I-Eqv" secondAttribute="centerY" id="oWp-iJ-8wm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
                     </view>
@@ -265,12 +275,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-mx-5he">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="About" image="ellipsis.circle" catalog="system" id="mjO-YZ-2qc">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3eV-pn-0r0"/>
+                                    <barButtonItem title="Menu" image="ellipsis.circle" catalog="system" id="mjO-YZ-2qc">
                                         <connections>
                                             <action selector="aboutPressed:" destination="enb-lg-n27" id="Nw1-yP-XK4"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3eV-pn-0r0"/>
                                 </items>
                                 <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
@@ -323,10 +333,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pot-Xn-7oP">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FJh-jC-ycq"/>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="Ahw-gk-FOH">
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="Ahw-gk-FOH">
                                         <connections>
                                             <action selector="share:" destination="JVg-gq-MAH" id="ZSU-kX-xAD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FJh-jC-ycq"/>
+                                    <barButtonItem systemItem="done" id="Pds-pq-x0c">
+                                        <connections>
+                                            <action selector="donePressed:" destination="JVg-gq-MAH" id="7x2-Cg-ddG"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -389,8 +404,9 @@ Primes: 123456890</string>
                                     <outlet property="delegate" destination="JVg-gq-MAH" id="27T-Ik-ExJ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
                                 <rect key="frame" x="192" y="211.5" width="30" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i8z-rE-tr8" secondAttribute="height" multiplier="1:1" id="OOa-l9-ayj"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="zE3-qf-cUg"/>
@@ -401,8 +417,9 @@ Primes: 123456890</string>
                                     <action selector="jumpToTopPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="P50-yM-qRC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
                                 <rect key="frame" x="192" y="801" width="30" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4HI-oU-hkH" secondAttribute="height" multiplier="1:1" id="8fn-T3-HjB"/>
                                     <constraint firstAttribute="width" constant="30" id="LXu-Pz-zkZ"/>
@@ -458,10 +475,15 @@ Primes: 123456890</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xIy-kS-HyR"/>
-                                    <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="E7H-Ry-hi3">
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="E7H-Ry-hi3">
                                         <connections>
                                             <action selector="share" destination="gze-xP-mv9" id="Yuo-rF-7tz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xIy-kS-HyR"/>
+                                    <barButtonItem systemItem="done" id="k3s-sk-rYO">
+                                        <connections>
+                                            <action selector="donePressed:" destination="gze-xP-mv9" id="dU3-wi-uDP"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -506,10 +528,15 @@ Divisible by: 857.</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU3-mS-M5k">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RiP-mz-sDx"/>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="AMw-Pt-ueC">
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="AMw-Pt-ueC">
                                         <connections>
                                             <action selector="share:" destination="qan-ov-WlY" id="fHV-2W-oX9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RiP-mz-sDx"/>
+                                    <barButtonItem systemItem="done" id="MDo-Dg-Oki">
+                                        <connections>
+                                            <action selector="donePressed:" destination="qan-ov-WlY" id="0Bg-7W-TDi"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -562,8 +589,9 @@ Divisible by: 857.</string>
                                     <outlet property="delegate" destination="qan-ov-WlY" id="OGb-TV-GzV"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
                                 <rect key="frame" x="192" y="189.5" width="30" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="hWc-rC-abA"/>
                                     <constraint firstAttribute="width" secondItem="uvb-aY-8KG" secondAttribute="height" multiplier="1:1" id="k4B-Ej-Dem"/>
@@ -574,8 +602,9 @@ Divisible by: 857.</string>
                                     <action selector="jumpToTopPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="Ock-dN-zZU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
                                 <rect key="frame" x="192" y="801" width="30" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lyv-wW-QU7" secondAttribute="height" multiplier="1:1" id="BRu-BW-g3l"/>
                                     <constraint firstAttribute="width" constant="30" id="Hgq-t7-4Xh"/>
@@ -657,12 +686,12 @@ Factors: 1234567890</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
-                                    <barButtonItem title="About" image="ellipsis.circle" catalog="system" id="xYd-uu-DqX">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5Hc-4o-OkV"/>
+                                    <barButtonItem title="Menu" image="ellipsis.circle" catalog="system" id="xYd-uu-DqX">
                                         <connections>
                                             <action selector="aboutPressed:" destination="rtL-8v-6Jg" id="hxm-TE-G3L"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5Hc-4o-OkV"/>
                                 </items>
                                 <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
@@ -707,10 +736,15 @@ Factors: 1234567890</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-Zc-OR8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wVS-WD-BGj"/>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="8wG-x3-FZT">
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="8wG-x3-FZT">
                                         <connections>
                                             <action selector="share" destination="7sC-Ww-chD" id="Ktg-X6-fEy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wVS-WD-BGj"/>
+                                    <barButtonItem systemItem="done" id="LJ6-5C-vwG">
+                                        <connections>
+                                            <action selector="donePressed:" destination="7sC-Ww-chD" id="f0Y-7f-lxF"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -722,8 +756,9 @@ Factors: 1234567890</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="196" y="495.5" width="22.5" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
+                                <rect key="frame" x="193.5" y="495.5" width="27.5" height="30.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Copy"/>
                                 <state key="normal" image="doc.on.doc" catalog="system"/>
                                 <connections>
                                     <action selector="copyPressed:" destination="7sC-Ww-chD" eventType="touchUpInside" id="Nol-tB-Siz"/>
