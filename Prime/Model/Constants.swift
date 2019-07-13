@@ -50,6 +50,7 @@ struct Constants {
         static let done = "Done"
         static let version = "Version"
         static let appName = "Prime"
+        static let placeholderText = "Enter number here"
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"

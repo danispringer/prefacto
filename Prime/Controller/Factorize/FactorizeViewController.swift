@@ -20,7 +20,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    @IBOutlet weak var titleLabel: UILabel!
 
 
     // MARK: Properties
@@ -63,6 +62,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         }
 
         myTextField.inputAccessoryView = myResignToolbar
+        myTextField.placeholder = Constants.Messages.placeholderText
 
     }
 
@@ -236,7 +236,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
-            self.titleLabel.text = enabled ? "Factorize" : "Factorizing..."
             self.aboutButton.isEnabled = enabled
             self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
             for item in (self.tabBarController?.tabBar.items)! {

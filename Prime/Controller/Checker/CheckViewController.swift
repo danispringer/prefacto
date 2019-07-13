@@ -19,7 +19,6 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    @IBOutlet weak var titleLabel: UILabel!
 
 
     // MARK: Properties
@@ -55,6 +54,7 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
         }
 
         myTextField.inputAccessoryView = myResignToolBar
+        myTextField.placeholder = Constants.Messages.placeholderText
     }
 
 
@@ -222,7 +222,6 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
-            self.titleLabel.text = enabled ? "Check" : "Checking..."
             self.aboutButton.isEnabled = enabled
             self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
             for item in (self.tabBarController?.tabBar.items)! {
