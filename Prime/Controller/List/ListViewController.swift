@@ -21,7 +21,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    @IBOutlet weak var titleLabel: UILabel!
 
 
     // MARK: Properties
@@ -57,7 +56,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             action: #selector(donePressed))
 
         previousButton = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.up.circle"),
+            image: UIImage(systemName: "chevron.up"),
             style: .plain,
             target: self,
             action: #selector(previousTextField))
@@ -65,7 +64,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         previousButton.accessibilityLabel = "Go up"
 
         nextButton = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.down.circle"),
+            image: UIImage(systemName: "chevron.down"),
             style: .plain,
             target: self,
             action: #selector(nextTextField))
@@ -96,6 +95,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
         for textfield in [firstTextField, secondTextField] {
             textfield?.inputAccessoryView = myResignToolbar
+            textfield?.placeholder = Constants.Messages.placeholderText
         }
 
     }
@@ -308,7 +308,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
-            self.titleLabel.text = enabled ? "List" : "Listing..."
             self.aboutButton.isEnabled = enabled
             self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
             for item in (self.tabBarController?.tabBar.items)! {

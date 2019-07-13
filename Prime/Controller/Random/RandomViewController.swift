@@ -19,7 +19,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var randomizeButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
 
@@ -234,7 +233,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         DispatchQueue.main.async {
             self.randomizeButton.isHidden = !enabled
             self.randomizeButton.isEnabled = enabled
-            self.titleLabel.text = enabled ? "Randomize" : "Randomizing..."
             self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
