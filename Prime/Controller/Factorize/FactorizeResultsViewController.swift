@@ -162,7 +162,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
 
 
-
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
