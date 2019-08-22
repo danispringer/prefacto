@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msv-77-b15">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msv-77-b15">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,18 +36,17 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="blah blah blah" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl" customClass="MyTextField" customModule="Prime" customModuleProvider="target">
                                 <rect key="frame" x="20" y="128" width="374" height="40"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="S7O-Dy-kzA"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-Ma-ASa">
                                 <rect key="frame" x="188.5" y="410" width="37" height="37"/>
-                                <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-EQ-e9X">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -59,10 +58,10 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="m0x-Lr-7Xl" firstAttribute="top" secondItem="3ap-EQ-e9X" secondAttribute="bottom" constant="40" id="8Zk-9Y-8Yk"/>
                             <constraint firstItem="Iu7-ta-hZk" firstAttribute="trailing" secondItem="m0x-Lr-7Xl" secondAttribute="trailing" constant="20" id="9qw-tB-l1r"/>
@@ -98,8 +97,8 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="blah blah blah" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-hj-b9l" customClass="MyTextField" customModule="Prime" customModuleProvider="target">
                                 <rect key="frame" x="20" y="128" width="374" height="40"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3aW-L4-KEj"/>
                                 </constraints>
@@ -108,7 +107,7 @@
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
                                 <rect key="frame" x="188.5" y="410" width="37" height="37"/>
-                                <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To0-HQ-Ycf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -120,10 +119,10 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ptO-hj-b9l" firstAttribute="top" secondItem="To0-HQ-Ycf" secondAttribute="bottom" constant="40" id="3Sg-nq-7Db"/>
                             <constraint firstItem="fXB-4V-786" firstAttribute="centerX" secondItem="DGV-fo-RV1" secondAttribute="centerX" id="6FS-JH-z40"/>
@@ -158,7 +157,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-GM-f5H">
                                 <rect key="frame" x="0.0" y="124.5" width="414" height="737.5"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" textLabel="Be4-7D-h1P" style="IBUITableViewCellStyleDefault" id="stW-q4-TUs">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -198,7 +197,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="20" id="25d-WL-cQA"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="bottom" secondItem="W7B-GM-f5H" secondAttribute="bottom" id="AHe-6d-6DI"/>
@@ -230,8 +229,8 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="blah blah blah" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-FV-42z" customClass="MyTextField" customModule="Prime" customModuleProvider="target">
                                 <rect key="frame" x="20" y="128" width="374" height="40"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="yEi-Ba-BEA"/>
                                 </constraints>
@@ -240,8 +239,8 @@
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="blah blah blah" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-op-hSX" customClass="MyTextField" customModule="Prime" customModuleProvider="target">
                                 <rect key="frame" x="20" y="188" width="374" height="40"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JXA-aw-pHi"/>
                                 </constraints>
@@ -258,14 +257,14 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
                                 <rect key="frame" x="188.5" y="410" width="37" height="37"/>
-                                <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yc2-op-hSX" firstAttribute="leading" secondItem="TF9-a1-dCQ" secondAttribute="leading" constant="20" id="0Hs-Et-WM1"/>
                             <constraint firstItem="TF9-a1-dCQ" firstAttribute="trailing" secondItem="yc2-op-hSX" secondAttribute="trailing" constant="20" id="6fg-L5-4j1"/>
@@ -317,7 +316,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-To-rhb">
                                 <rect key="frame" x="20" y="108" width="374" height="64.5"/>
@@ -329,7 +328,7 @@ Primes: 123456890</string>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
                                 <rect key="frame" x="20" y="262.5" width="374" height="509.5"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Prime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
@@ -377,7 +376,7 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="192" y="217.16666666666666" width="30" height="20.333333333333343"/>
+                                <rect key="frame" x="192" y="217" width="30" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i8z-rE-tr8" secondAttribute="height" multiplier="1:1" id="OOa-l9-ayj"/>
@@ -390,7 +389,7 @@ Primes: 123456890</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
-                                <rect key="frame" x="192" y="797.33333333333337" width="30" height="20.333333333333371"/>
+                                <rect key="frame" x="192" y="797" width="30" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4HI-oU-hkH" secondAttribute="height" multiplier="1:1" id="8fn-T3-HjB"/>
@@ -403,7 +402,7 @@ Primes: 123456890</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" id="85F-i7-GH3"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="20" id="9X0-tU-cBa"/>
@@ -445,7 +444,7 @@ Primes: 123456890</string>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEg-Xb-Lgt">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="E7H-Ry-hi3">
                                         <connections>
@@ -468,7 +467,7 @@ Divisible by: 857.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dEg-Xb-Lgt" firstAttribute="leading" secondItem="bGw-3h-5fu" secondAttribute="leading" id="G9W-ai-tvB"/>
                             <constraint firstItem="bGw-3h-5fu" firstAttribute="trailing" secondItem="dEg-Xb-Lgt" secondAttribute="trailing" id="XRV-cf-bXv"/>
@@ -512,11 +511,11 @@ Divisible by: 857.</string>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
                                 <rect key="frame" x="20" y="240.5" width="374" height="531.5"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Prime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
@@ -562,7 +561,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="192" y="195.16666666666666" width="30" height="20.333333333333343"/>
+                                <rect key="frame" x="192" y="195" width="30" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="hWc-rC-abA"/>
@@ -575,7 +574,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
-                                <rect key="frame" x="192" y="797.33333333333337" width="30" height="20.333333333333371"/>
+                                <rect key="frame" x="192" y="797" width="30" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lyv-wW-QU7" secondAttribute="height" multiplier="1:1" id="BRu-BW-g3l"/>
@@ -596,7 +595,7 @@ Factors: 1234567890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" id="1Ne-sA-8H4"/>
                             <constraint firstItem="vtG-MD-Tnd" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="20" id="5kF-aa-7cP"/>
@@ -638,7 +637,7 @@ Factors: 1234567890</string>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-Z1-5xH">
                                 <rect key="frame" x="188.5" y="410" width="37" height="37"/>
-                                <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
                                 <rect key="frame" x="20" y="412" width="374" height="33"/>
@@ -650,7 +649,7 @@ Factors: 1234567890</string>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-Tr-ST0">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5Hc-4o-OkV"/>
                                     <barButtonItem title="Menu" image="ellipsis" catalog="system" id="xYd-uu-DqX">
@@ -659,10 +658,10 @@ Factors: 1234567890</string>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="VWa-1q-r4D" secondAttribute="trailing" constant="20" id="GcN-W9-bvE"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="JAd-wu-aHm"/>
@@ -711,7 +710,7 @@ Factors: 1234567890</string>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h7-fu-4TW">
                                 <rect key="frame" x="20" y="108" width="374" height="20.5"/>
@@ -720,7 +719,7 @@ Factors: 1234567890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="20" y="503.5" width="374" height="30.5"/>
+                                <rect key="frame" x="20" y="503.5" width="374" height="29.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Copy"/>
                                 <state key="normal" image="doc.on.doc" catalog="system"/>
                                 <connections>
@@ -734,7 +733,7 @@ Factors: 1234567890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KsD-1r-mwL" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="0h5-2H-U3h"/>
                             <constraint firstItem="9h7-fu-4TW" firstAttribute="top" secondItem="PX3-Zc-OR8" secondAttribute="bottom" constant="20" id="1oC-gT-HDb"/>
@@ -772,7 +771,7 @@ Factors: 1234567890</string>
         <image name="doc.on.doc" catalog="system" width="58" height="64"/>
         <image name="ellipsis" catalog="system" width="64" height="20"/>
         <image name="list.dash" catalog="system" width="64" height="44"/>
-        <image name="shuffle" catalog="system" width="64" height="44"/>
+        <image name="shuffle" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>
