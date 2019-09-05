@@ -103,9 +103,9 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
             }
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             downloadQueue.async {
-                let results = self.isPrime(number: userNumber)
-                isPrimeBool = results.0
-                isDivisibleBy = results.1
+                let results = Int64.IsPrime(number: userNumber)
+                isPrimeBool = results.isPrime
+                isDivisibleBy = results.divisor
                 DispatchQueue.main.async {
                     self.presentResult(number: userNumber, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
                 }
@@ -176,26 +176,6 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
             return false
         }
         return true
-    }
-
-
-    func isPrime(number: Int64) -> (Bool, Int64) {
-        guard !(1...3).contains(number) else {
-            return (true, 0)
-        }
-        for intruder: Int64 in [2, 3] where number % intruder == 0 {
-            return (false, intruder)
-        }
-        var divisor: Int64 = 5
-        var lever: Int64 = 2
-        while divisor * divisor <= number {
-            if number % divisor == 0 {
-                return (false, divisor)
-            }
-            divisor += lever
-            lever = 6 - lever
-        }
-        return (true, 0)
     }
 
 
