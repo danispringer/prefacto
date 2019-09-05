@@ -16,6 +16,7 @@
 		33428EE921AB6A810074F538 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33428EE821AB6A810074F538 /* Constants.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
+		336646DB2321A53900674340 /* Int64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336646DA2321A53900674340 /* Int64+Extension.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
 		3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376A51321000688001431C8 /* UIImage+Extension.swift */; };
 		3379E90E229C578C00308708 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3379E90A229C578C00308708 /* dark@3x.png */; };
@@ -56,6 +57,7 @@
 		33428EE821AB6A810074F538 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		336646DA2321A53900674340 /* Int64+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Extension.swift"; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		3376A51321000688001431C8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3379E90A229C578C00308708 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				3376A51321000688001431C8 /* UIImage+Extension.swift */,
 				3317915A20DA03CD00CA739F /* Alert.swift */,
 				33428EE821AB6A810074F538 /* Constants.swift */,
+				336646DA2321A53900674340 /* Int64+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,
 				3357A329210D18290011965D /* ListTableViewCell.swift in Sources */,
 				33EE5BDD20D99F23008FEAF2 /* CheckViewController.swift in Sources */,
+				336646DB2321A53900674340 /* Int64+Extension.swift in Sources */,
 				33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */,
 				333F996A20F2D91F003774D4 /* CheckResultsViewController.swift in Sources */,
 				33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */,

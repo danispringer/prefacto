@@ -110,7 +110,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
 
-        SKStoreReviewController.requestReview()
+        if !Constants.Testing.testing {
+            SKStoreReviewController.requestReview()
+        }
     }
 
 
