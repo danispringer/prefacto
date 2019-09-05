@@ -87,7 +87,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         var randInt = Int64.random(in: 1...limit)
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
-            //while !self.isPrime(number: randInt) {
+
             while !Int64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
@@ -117,7 +117,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             }
             var randInt = Int64.random(in: 1...limit)
 
-            //while !self.isPrime(number: randInt) {
             while !Int64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
@@ -209,26 +208,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             }
         }
     }
-
-
-//    func isPrime(number: Int64) -> Bool {
-//        guard !(1...3).contains(number) else {
-//            return true
-//        }
-//        for intruder: Int64 in [2, 3] where number % intruder == 0 {
-//            return false
-//        }
-//        var divisor: Int64 = 5
-//        var lever: Int64 = 2
-//        while divisor * divisor <= number {
-//            if number % divisor == 0 {
-//                return false
-//            }
-//            divisor += lever
-//            lever = 6 - lever
-//        }
-//        return true
-//    }
 
 
     func enableUI(enabled: Bool) {
