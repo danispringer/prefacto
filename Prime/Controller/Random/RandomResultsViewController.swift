@@ -46,7 +46,9 @@ class RandomResultsViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
 
-        SKStoreReviewController.requestReview()
+        if !Constants.Testing.testing {
+            SKStoreReviewController.requestReview()
+        }
     }
 
     // MARK: Helpers
