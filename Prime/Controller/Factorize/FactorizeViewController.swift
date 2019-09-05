@@ -201,35 +201,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
     }
 
 
-    func isPrimeOrDivisibleBy(number: Int64) -> (Bool, Int64) {
-        guard number != 1 else {
-            return (true, 0)
-        }
-        guard number != 2 else {
-            return (true, 0)
-        }
-        guard number != 3 else {
-            return (true, 0)
-        }
-        guard !(number % 2 == 0) else {
-            return (false, 2)
-        }
-        guard !(number % 3 == 0) else {
-            return (false, 3)
-        }
-        var divisor: Int64 = 5
-        var lever: Int64 = 2
-        while divisor * divisor <= number {
-            if number % divisor == 0 {
-                return (false, divisor)
-            }
-            divisor += lever
-            lever = 6 - lever
-        }
-        return (true, 0)
-    }
-
-
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             self.myTextField.isEnabled = enabled

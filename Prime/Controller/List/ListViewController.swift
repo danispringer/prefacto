@@ -154,6 +154,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
 
     @objc func checkButtonPressed() {
+
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
@@ -169,17 +170,24 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         }
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
+
             for number in firstNumber...secondNumber {
-                if self.isPrime(number: number) {
+                if Int64.IsPrime(number: number).isPrime {
                     self.arrayOfInts.append(number)
                 }
             }
+
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Constants.StoryboardID.listResults) as? ListResultsViewController
                 controller?.source = self.arrayOfInts
+
+                // below line avoids bug that let old results get added to next ones
+                // bug seems to have begun only once Int.isPrime extension was implemented
+                self.arrayOfInts = []
+
                 controller?.rangeFrom = firstNumber
                 controller?.rangeTo = secondNumber
                 if let toPresent = controller {
@@ -278,24 +286,24 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     }
 
 
-    func isPrime(number: Int64) -> Bool {
-        guard !(1...3).contains(number) else {
-            return true
-        }
-        for intruder: Int64 in [2, 3] where number % intruder == 0 {
-            return false
-        }
-        var divisor: Int64 = 5
-        var lever: Int64 = 2
-        while divisor * divisor <= number {
-            if number % divisor == 0 {
-                return false
-            }
-            divisor += lever
-            lever = 6 - lever
-        }
-        return true
-    }
+//    func isPrime(number: Int64) -> Bool {
+//        guard !(1...3).contains(number) else {
+//            return true
+//        }
+//        for intruder: Int64 in [2, 3] where number % intruder == 0 {
+//            return false
+//        }
+//        var divisor: Int64 = 5
+//        var lever: Int64 = 2
+//        while divisor * divisor <= number {
+//            if number % divisor == 0 {
+//                return false
+//            }
+//            divisor += lever
+//            lever = 6 - lever
+//        }
+//        return true
+//    }
 
 
     // MARK: Toggle UI
