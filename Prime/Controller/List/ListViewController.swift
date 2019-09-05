@@ -286,26 +286,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     }
 
 
-//    func isPrime(number: Int64) -> Bool {
-//        guard !(1...3).contains(number) else {
-//            return true
-//        }
-//        for intruder: Int64 in [2, 3] where number % intruder == 0 {
-//            return false
-//        }
-//        var divisor: Int64 = 5
-//        var lever: Int64 = 2
-//        while divisor * divisor <= number {
-//            if number % divisor == 0 {
-//                return false
-//            }
-//            divisor += lever
-//            lever = 6 - lever
-//        }
-//        return true
-//    }
-
-
     // MARK: Toggle UI
 
     func enableUI(enabled: Bool) {
