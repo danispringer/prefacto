@@ -43,7 +43,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             title: Constants.Messages.factorize,
             style: .plain,
             target: self,
-            action: #selector(checkButtonPressed))
+            action: #selector(factorizeButtonPressed))
         let doneButton = UIBarButtonItem(
             title: Constants.Messages.done,
             style: .plain,
@@ -90,7 +90,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
     }
 
 
-    @objc func checkButtonPressed() {
+    @objc func factorizeButtonPressed() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
