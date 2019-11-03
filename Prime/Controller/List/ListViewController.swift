@@ -275,6 +275,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         }
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
+            // TODO: add button to "Check" page of app
+            let goToCheckAction = UIAlertAction(
+            title: "\(Constants.Messages.check)",
+            style: .default) { _ in
+                self.tabBarController?.selectedIndex = 0
+            }
+            alert.addAction(goToCheckAction)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
