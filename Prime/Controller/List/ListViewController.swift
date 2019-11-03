@@ -47,7 +47,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             title: Constants.Messages.list,
             style: .plain,
             target: self,
-            action: #selector(checkButtonPressed))
+            action: #selector(listButtonPressed))
 
         let doneButton = UIBarButtonItem(
             title: Constants.Messages.done,
@@ -146,6 +146,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             secondTextField.becomeFirstResponder()
         case secondTextField:
             secondTextField.resignFirstResponder()
+            listButtonPressed()
         default:
             fatalError()
         }
@@ -153,7 +154,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     }
 
 
-    @objc func checkButtonPressed() {
+    @objc func listButtonPressed() {
 
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
@@ -275,7 +276,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         }
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
-            // TODO: add button to "Check" page of app
             let goToCheckAction = UIAlertAction(
             title: "\(Constants.Messages.check)",
             style: .default) { _ in
