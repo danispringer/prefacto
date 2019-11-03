@@ -39,7 +39,6 @@ struct Constants {
         static let listResults = "ListResultsViewController"
         static let factorizeResults = "FactorizeResultsViewController"
         static let randomResults = "RandomResultsViewController"
-        static let detail = "DetailViewController"
     }
 
 
