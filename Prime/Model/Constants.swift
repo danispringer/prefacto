@@ -135,6 +135,7 @@ struct Constants {
 
     struct View {
         static let specialButtonColor = "SpecialButtonColor"
+        static let specialSwitchColor = "SpecialSwitchColor"
     }
 
 
