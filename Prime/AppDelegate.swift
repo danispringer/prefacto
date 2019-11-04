@@ -33,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBar = UITabBar.appearance()
         tabBar.clipsToBounds = true
         tabBar.unselectedItemTintColor = UIColor.systemGray
+        UIView.appearance(
+            whenContainedInInstancesOf: [
+                UIAlertController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+        UIView.appearance(
+            whenContainedInInstancesOf: [
+                UITabBarController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+        UIView.appearance(
+            whenContainedInInstancesOf: [
+                UIToolbar.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+        UISwitch.appearance().onTintColor = UIColor(named: Constants.View.specialButtonColor)
 
         for state: UIControl.State in [.normal, .selected, .highlighted, .disabled] {
             UIBarButtonItem.appearance().setTitleTextAttributes(

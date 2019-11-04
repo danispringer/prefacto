@@ -133,6 +133,11 @@ struct Constants {
     }
 
 
+    struct View {
+        static let specialButtonColor = "SpecialButtonColor"
+    }
+
+
     struct UserDef {
         static let showSeparator = "showSeparator"
         static let iconIsDark = "iconIsDark"

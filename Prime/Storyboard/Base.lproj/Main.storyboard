@@ -774,4 +774,5 @@ Factors: 1234567890</string>
         <image name="shuffle" catalog="system" width="64" height="46"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
+    <color key="tintColor" name="SpecialButtonColor"/>
 </document>
