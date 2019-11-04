@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				333F996820F2D8FF003774D4 /* Checker */,
-				333F996720F2BA4F003774D4 /* List */,
 				333F996B20F3173D003774D4 /* Factorize */,
+				333F996720F2BA4F003774D4 /* List */,
 				33A96A3D20FDFA71009E1DBA /* Random */,
 				333AD7E5210581020010D446 /* Settings */,
 			);

@@ -270,6 +270,15 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         present(activityController, animated: true)
     }
 
+
+    // MARK: TextField Delegate
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        factorizeButtonPressed()
+
+        return true
+    }
+
 }
 
 
