@@ -184,8 +184,8 @@
                                     <action selector="showSeparatorToggledWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="sEU-mR-9S5"/>
                                 </connections>
                             </switch>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
-                                <rect key="frame" x="293" y="160" width="101" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
+                                <rect key="frame" x="128" y="160" width="266" height="32"/>
                                 <segments>
                                     <segment title="Dark"/>
                                     <segment title="Light"/>
@@ -210,7 +210,7 @@
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="6zn-5I-jYs" secondAttribute="trailing" constant="20" id="K2h-BI-hO0"/>
                             <constraint firstItem="Lfo-qf-z7j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V5L-ML-EPG" secondAttribute="trailing" constant="20" id="L01-lH-Ymc"/>
                             <constraint firstItem="DeZ-f8-8RI" firstAttribute="top" secondItem="V5L-ML-EPG" secondAttribute="bottom" constant="20" id="N9b-3S-hSt"/>
-                            <constraint firstItem="6zn-5I-jYs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DeZ-f8-8RI" secondAttribute="trailing" constant="20" id="Rr2-p2-Hot"/>
+                            <constraint firstItem="6zn-5I-jYs" firstAttribute="leading" secondItem="DeZ-f8-8RI" secondAttribute="trailing" constant="40" id="Rr2-p2-Hot"/>
                             <constraint firstItem="wHW-2U-LrT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="20" id="W9V-St-OUE"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="wHW-2U-LrT" secondAttribute="trailing" constant="20" id="bFj-tI-IWk"/>
                             <constraint firstItem="V5L-ML-EPG" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="cZD-4c-7BC"/>
@@ -222,7 +222,7 @@
                         <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
                     </view>
                     <connections>
-                        <outlet property="appIconSegmentedControl" destination="6zn-5I-jYs" id="63f-qB-KRd"/>
+                        <outlet property="iconSegmentedControl" destination="6zn-5I-jYs" id="63f-qB-KRd"/>
                         <outlet property="thousandsSeparatorSwitch" destination="Lfo-qf-z7j" id="ihC-f8-fmC"/>
                     </connections>
                 </viewController>

@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
     // MARK: Outlets
 
     @IBOutlet weak var thousandsSeparatorSwitch: UISwitch!
-    @IBOutlet weak var appIconSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var iconSegmentedControl: UISegmentedControl!
 
 
     // MARK: Properties
@@ -28,7 +28,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         thousandsSeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
-        appIconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: Constants.UserDef.selectedIcon)
+        iconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(
+            forKey: Constants.UserDef.selectedIcon)
 
     }
 
