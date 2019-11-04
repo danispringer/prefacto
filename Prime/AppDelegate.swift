@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIView.appearance(
             whenContainedInInstancesOf: [
                 UIToolbar.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+
+        UIButton.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
+
         UISwitch.appearance().onTintColor = UIColor(named: Constants.View.specialSwitchColor)
 
         for state: UIControl.State in [.normal, .selected, .highlighted, .disabled] {
