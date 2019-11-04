@@ -10,7 +10,8 @@ import UIKit
 import MessageUI
 import StoreKit
 
-class CheckViewController: UIViewController, SKStoreProductViewControllerDelegate {
+class CheckViewController: UIViewController, SKStoreProductViewControllerDelegate,
+UITextFieldDelegate {
 
 
     // MARK: Outlets
@@ -263,6 +264,15 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
             }
         }
         present(activityController, animated: true)
+    }
+
+
+    // MARK: TextField Delegate
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        checkButtonPressed()
+
+        return true
     }
 
 
