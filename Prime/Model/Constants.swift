@@ -141,7 +141,7 @@ struct Constants {
 
     struct UserDef {
         static let showSeparator = "showSeparator"
-        static let iconIsDark = "iconIsDark"
+        static let selectedIcon = "selectedIcon"
         static let light = "light"
         static let dark = "dark"
     }

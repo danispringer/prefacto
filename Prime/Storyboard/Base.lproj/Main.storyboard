@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -156,33 +157,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-GM-f5H">
-                                <rect key="frame" x="0.0" y="124.5" width="414" height="737.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" textLabel="Be4-7D-h1P" style="IBUITableViewCellStyleDefault" id="stW-q4-TUs">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="stW-q4-TUs" id="jCr-6b-DyQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="Be4-7D-h1P">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="EGf-9u-VfO" id="kVj-fw-gas"/>
-                                    <outlet property="delegate" destination="EGf-9u-VfO" id="mln-X2-DJF"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-4I-Eqv" userLabel="Settings Label">
                                 <rect key="frame" x="20" y="64" width="67" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -197,23 +171,59 @@
                                     <action selector="donePressed:" destination="EGf-9u-VfO" eventType="touchUpInside" id="rFU-ZV-kWX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thousands Separator" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5L-ML-EPG">
+                                <rect key="frame" x="20" y="124.5" width="164.5" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-qf-z7j">
+                                <rect key="frame" x="345" y="119.5" width="51" height="31"/>
+                                <color key="onTintColor" name="SpecialSwitchColor"/>
+                                <connections>
+                                    <action selector="showSeparatorToggledWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="sEU-mR-9S5"/>
+                                </connections>
+                            </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
+                                <rect key="frame" x="293" y="160" width="101" height="32"/>
+                                <segments>
+                                    <segment title="Dark"/>
+                                    <segment title="Light"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateIconWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="Auq-vT-IaT"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-f8-8RI">
+                                <rect key="frame" x="20" y="165" width="68" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="Lfo-qf-z7j" secondAttribute="trailing" constant="20" id="0Us-Rj-knO"/>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="20" id="25d-WL-cQA"/>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="bottom" secondItem="W7B-GM-f5H" secondAttribute="bottom" id="AHe-6d-6DI"/>
-                            <constraint firstItem="W7B-GM-f5H" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="40" id="ISG-2F-NY3"/>
+                            <constraint firstItem="V5L-ML-EPG" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="40" id="EVA-q1-pH6"/>
+                            <constraint firstItem="Lfo-qf-z7j" firstAttribute="centerY" secondItem="V5L-ML-EPG" secondAttribute="centerY" id="HrT-tH-3MW"/>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="6zn-5I-jYs" secondAttribute="trailing" constant="20" id="K2h-BI-hO0"/>
+                            <constraint firstItem="Lfo-qf-z7j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V5L-ML-EPG" secondAttribute="trailing" constant="20" id="L01-lH-Ymc"/>
+                            <constraint firstItem="DeZ-f8-8RI" firstAttribute="top" secondItem="V5L-ML-EPG" secondAttribute="bottom" constant="20" id="N9b-3S-hSt"/>
+                            <constraint firstItem="6zn-5I-jYs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DeZ-f8-8RI" secondAttribute="trailing" constant="20" id="Rr2-p2-Hot"/>
                             <constraint firstItem="wHW-2U-LrT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="20" id="W9V-St-OUE"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="wHW-2U-LrT" secondAttribute="trailing" constant="20" id="bFj-tI-IWk"/>
-                            <constraint firstItem="W7B-GM-f5H" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" id="d03-7c-61Y"/>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="W7B-GM-f5H" secondAttribute="trailing" id="hru-M8-noa"/>
+                            <constraint firstItem="V5L-ML-EPG" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="cZD-4c-7BC"/>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="lwt-bf-1uO"/>
                             <constraint firstItem="wHW-2U-LrT" firstAttribute="centerY" secondItem="cAh-4I-Eqv" secondAttribute="centerY" id="oWp-iJ-8wm"/>
+                            <constraint firstItem="6zn-5I-jYs" firstAttribute="centerY" secondItem="DeZ-f8-8RI" secondAttribute="centerY" id="rnI-cF-SEL"/>
+                            <constraint firstItem="DeZ-f8-8RI" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="xNq-RN-T4U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
                     </view>
                     <connections>
-                        <outlet property="myTableView" destination="W7B-GM-f5H" id="Vz6-8i-n62"/>
+                        <outlet property="appIconSegmentedControl" destination="6zn-5I-jYs" id="63f-qB-KRd"/>
+                        <outlet property="thousandsSeparatorSwitch" destination="Lfo-qf-z7j" id="ihC-f8-fmC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-q0-kOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -773,5 +783,8 @@ Factors: 1234567890</string>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="shuffle" catalog="system" width="64" height="46"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <namedColor name="SpecialSwitchColor">
+            <color red="0.18799999356269836" green="0.81999999284744263" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

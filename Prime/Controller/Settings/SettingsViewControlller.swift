@@ -8,54 +8,63 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController {
 
 
     // MARK: Outlets
 
-    @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var thousandsSeparatorSwitch: UISwitch!
+    @IBOutlet weak var appIconSegmentedControl: UISegmentedControl!
 
 
     // MARK: Properties
 
     let settingsCell = "SettingsCell"
 
-    let dataSourceTitles = ["Thousands Separator", "App Icon"]
-
 
     // MARK: Life Cycle
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        myTableView.rowHeight = UITableView.automaticDimension
+        thousandsSeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        appIconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: Constants.UserDef.selectedIcon)
 
     }
 
 
     // Helpers
 
-    @objc func showSeparatorToggled(sender: UISwitch) {
+    @IBAction func showSeparatorToggled(sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.showSeparator)
     }
 
 
-    @objc func iconSetterToggled(sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.iconIsDark)
+    @IBAction func updateIcon(sender: UISegmentedControl) {
+        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: Constants.UserDef.selectedIcon)
         setIcon()
     }
 
 
     func setIcon() {
-        let newIcon = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark) ?
-            Constants.UserDef.dark : Constants.UserDef.light
+
+        var myIcon = ""
+
+        switch UserDefaults.standard.integer(forKey: Constants.UserDef.selectedIcon) {
+        case 0:
+            myIcon = Constants.UserDef.dark
+        case 1:
+            myIcon = Constants.UserDef.light
+        default:
+            myIcon = Constants.UserDef.dark
+        }
 
         guard UIApplication.shared.supportsAlternateIcons else {
             print("Alternate icons not supported")
             return
         }
 
-        UIApplication.shared.setAlternateIconName(newIcon) { error in
+        UIApplication.shared.setAlternateIconName(myIcon) { error in
             if let error = error {
                 print("App icon failed to change due to \(error.localizedDescription)")
             }
@@ -67,44 +76,5 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         dismiss(animated: true, completion: nil)
     }
 
-
-    // MARK: Delegates
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourceTitles.count
-    }
-
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        tableView.backgroundColor = UIColor.systemBackground
-        let cell = tableView.dequeueReusableCell(withIdentifier: settingsCell)
-        cell?.selectionStyle = .none
-        cell?.backgroundColor = UIColor.systemBackground
-        cell?.contentView.backgroundColor = UIColor.systemBackground
-        cell?.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-
-        switch indexPath.row {
-        case 0:
-            let mySeparatorSwitch = UISwitch()
-            mySeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
-            cell?.accessoryView = mySeparatorSwitch
-            mySeparatorSwitch.addTarget(self,
-                                        action: #selector(showSeparatorToggled(sender:)),
-                                        for: .valueChanged)
-            cell?.textLabel?.text = dataSourceTitles[0]
-        case 1:
-            let myIconSwitch = UISwitch()
-            myIconSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
-            cell?.accessoryView = myIconSwitch
-            myIconSwitch.addTarget(self, action: #selector(iconSetterToggled(sender:)), for: .valueChanged)
-            cell?.textLabel?.text = dataSourceTitles[1]
-
-        default:
-            break
-        }
-
-        return cell ?? UITableViewCell()
-    }
 
 }

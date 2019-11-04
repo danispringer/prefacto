@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UserDefaults.standard.register(defaults: [
             Constants.UserDef.showSeparator: false,
-            Constants.UserDef.iconIsDark: true])
+            Constants.UserDef.selectedIcon: 0])
 
         let tabBar = UITabBar.appearance()
         tabBar.clipsToBounds = true
