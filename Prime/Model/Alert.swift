@@ -40,7 +40,7 @@ extension UIViewController {
         case .notNumberOrTooBig:
             alertTitle = "Invalid entry"
             alertMessage = """
-            Only numbers allowed.
+            Only numbers allowed. No decimals.
             Max number: 9223372036854775807
             """
         case .zero:
