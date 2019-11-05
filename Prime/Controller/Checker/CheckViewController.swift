@@ -305,14 +305,14 @@ extension CheckViewController: MFMailComposeViewControllerDelegate {
         var alert = UIAlertController()
         dismiss(animated: true, completion: {
             switch result {
-            case MFMailComposeResult.failed:
-                alert = self.createAlert(alertReasonParam: .messageFailed)
-            case MFMailComposeResult.saved:
-                alert = self.createAlert(alertReasonParam: .messageSaved)
-            case MFMailComposeResult.sent:
-                alert = self.createAlert(alertReasonParam: .messageSent)
-            default:
-                break
+                case MFMailComposeResult.failed:
+                    alert = self.createAlert(alertReasonParam: .messageFailed)
+                case MFMailComposeResult.saved:
+                    alert = self.createAlert(alertReasonParam: .messageSaved)
+                case MFMailComposeResult.sent:
+                    alert = self.createAlert(alertReasonParam: .messageSent)
+                default:
+                    break
             }
             if alert.title != nil {
                 self.present(alert, animated: true)

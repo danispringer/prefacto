@@ -52,12 +52,12 @@ class SettingsViewController: UIViewController {
         var myIcon = ""
 
         switch UserDefaults.standard.integer(forKey: Constants.UserDef.selectedIcon) {
-        case 0:
-            myIcon = Constants.UserDef.dark
-        case 1:
-            myIcon = Constants.UserDef.light
-        default:
-            myIcon = Constants.UserDef.dark
+            case 0:
+                myIcon = Constants.UserDef.dark
+            case 1:
+                myIcon = Constants.UserDef.light
+            default:
+                myIcon = Constants.UserDef.dark
         }
 
         guard UIApplication.shared.supportsAlternateIcons else {

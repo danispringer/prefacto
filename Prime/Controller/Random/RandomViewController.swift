@@ -104,16 +104,16 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         downloadQueue.async {
             var limit = Int64.max / 10 * 9
             switch size {
-            case .xSmall:
-                limit /= self.power(coeff: 10, exp: 16)
-            case .small:
-                limit /= self.power(coeff: 10, exp: 15)
-            case .medium:
-                limit /= self.power(coeff: 10, exp: 12)
-            case .large:
-                limit /= self.power(coeff: 10, exp: 7)
-            case .xLarge:
-                break
+                case .xSmall:
+                    limit /= self.power(coeff: 10, exp: 16)
+                case .small:
+                    limit /= self.power(coeff: 10, exp: 15)
+                case .medium:
+                    limit /= self.power(coeff: 10, exp: 12)
+                case .large:
+                    limit /= self.power(coeff: 10, exp: 7)
+                case .xLarge:
+                    break
             }
             var randInt = Int64.random(in: 1...limit)
 
@@ -311,14 +311,14 @@ extension RandomViewController: MFMailComposeViewControllerDelegate {
         var alert = UIAlertController()
         dismiss(animated: true, completion: {
             switch result {
-            case MFMailComposeResult.failed:
-                alert = self.createAlert(alertReasonParam: .messageFailed)
-            case MFMailComposeResult.saved:
-                alert = self.createAlert(alertReasonParam: .messageSaved)
-            case MFMailComposeResult.sent:
-                alert = self.createAlert(alertReasonParam: .messageSent)
-            default:
-                break
+                case MFMailComposeResult.failed:
+                    alert = self.createAlert(alertReasonParam: .messageFailed)
+                case MFMailComposeResult.saved:
+                    alert = self.createAlert(alertReasonParam: .messageSaved)
+                case MFMailComposeResult.sent:
+                    alert = self.createAlert(alertReasonParam: .messageSent)
+                default:
+                    break
             }
             if alert.title != nil {
                 self.present(alert, animated: true)
