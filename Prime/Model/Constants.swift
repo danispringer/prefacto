@@ -47,6 +47,7 @@ struct Constants {
         static let list = "List"
         static let factorize = "Factorize"
         static let done = "Done"
+        static let cancel = "Cancel"
         static let version = "Version"
         static let appName = "Prime"
         static let placeholderText = "Enter number here"

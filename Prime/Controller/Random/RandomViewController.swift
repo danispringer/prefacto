@@ -142,7 +142,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
                                       message: "Choose your random prime's size",
                                       preferredStyle: .actionSheet)
         alert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.done, style: .cancel)
+        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel)
         let xSmallAction = UIAlertAction(title: SizeOptions.xSmall.rawValue, style: .default) { _ in
             userChoice = .xSmall
             DispatchQueue.main.async {
@@ -235,7 +235,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             infoAlert.title = Constants.Messages.appName
         }
         infoAlert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.done, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true)
         }
         let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in

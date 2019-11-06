@@ -224,7 +224,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
             infoAlert.title = Constants.Messages.appName
         }
         infoAlert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.done, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true)
         }
         let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in
