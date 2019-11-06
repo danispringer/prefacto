@@ -138,7 +138,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     func showOptions() {
         var userChoice = SizeOptions.xSmall
-        let alert = UIAlertController(title: "Choose size",
+        let alert = UIAlertController(title: "Choose Size",
                                       message: "Choose your random prime's size",
                                       preferredStyle: .actionSheet)
         alert.modalPresentationStyle = .popover
