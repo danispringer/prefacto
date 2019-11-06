@@ -58,9 +58,34 @@ struct Constants {
         static let devID = "1402417666"
         static let shareApp = "Tell a Friend"
         static let shareMessage = """
-                   This app lets you check if a number is prime, \
-                   list primes in a range, factorize, generate a random prime, and more. It's called \
-                   Prime. Check it out: \
+                   Hello,
+
+                   • Meet Prime, the only prime numbers app you need
+                   • Check whether any number is prime (example input: 13. Output: Is prime)
+                   • List the primes in any range (example input: 1-10. Output: 1, 2, 3, 5, 7)
+                   • Decompose any number to its prime factors (example input: 15. Output: 3, 5)
+                   • Generate random primes, with choices of Extra-Small, Small, Medium, Large, \
+                   and Extra-Large
+                   • Generate medium primes using Siri
+                   • Share or save any of your results
+
+
+                   SETTINGS
+                   • Choose between a light or dark app icon
+                   • Choose to show or hide the thousands separator (1.234 VS 1234). \
+                   Note that although the example here uses a period ("."), the app's \
+                   separator will adapt based on your device's settings.
+
+
+                   TIPS
+                   • Long press on a number from a resulting list for an option to copy it
+                   • Copy random primes using the copy button
+
+
+                   • Ask us anything: ***REMOVED***
+                   • Enjoying Prime? Please consider leaving a 5-star review. It would mean the \
+                   world to us!
+
                    https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
                    """
         static let sendFeedback = "Contact Us"
