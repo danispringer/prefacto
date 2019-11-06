@@ -148,9 +148,8 @@ struct Constants {
     }
 
 
-    // TODO: set to false when shipping
     struct Testing {
-        static let testing = true
+        static let testing = false
     }
 
 }
