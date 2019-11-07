@@ -185,8 +185,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
                                 <rect key="frame" x="128" y="180" width="266" height="32"/>
                                 <segments>
-                                    <segment title="Dark"/>
-                                    <segment title="Light"/>
+                                    <segment title="Item 1"/>
+                                    <segment title="Item 2"/>
                                 </segments>
                                 <connections>
                                     <action selector="updateIconWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="Auq-vT-IaT"/>

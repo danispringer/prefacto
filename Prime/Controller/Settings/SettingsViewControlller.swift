@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     // MARK: Properties
 
     let settingsCell = "SettingsCell"
+    let options = ["Light", "Dark"]
 
 
     // MARK: Life Cycle
@@ -30,6 +31,10 @@ class SettingsViewController: UIViewController {
         thousandsSeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
         iconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(
             forKey: Constants.UserDef.selectedIcon)
+
+        for (index, title) in options.enumerated() {
+            iconSegmentedControl.setTitle(title, forSegmentAt: index)
+        }
 
     }
 
@@ -53,11 +58,11 @@ class SettingsViewController: UIViewController {
 
         switch UserDefaults.standard.integer(forKey: Constants.UserDef.selectedIcon) {
             case 0:
-                myIcon = Constants.UserDef.dark
-            case 1:
                 myIcon = Constants.UserDef.light
-            default:
+            case 1:
                 myIcon = Constants.UserDef.dark
+            default:
+                myIcon = Constants.UserDef.light
         }
 
         guard UIApplication.shared.supportsAlternateIcons else {
