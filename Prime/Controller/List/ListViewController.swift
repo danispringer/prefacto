@@ -301,12 +301,10 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         DispatchQueue.main.async {
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
-            self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
             self.aboutButton.isEnabled = enabled
-            self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
             for item in (self.tabBarController?.tabBar.items)! {
                 item.isEnabled = enabled
             }

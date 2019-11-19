@@ -214,12 +214,10 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         DispatchQueue.main.async {
             self.randomizeButton.isHidden = !enabled
             self.randomizeButton.isEnabled = enabled
-            self.view.alpha = enabled ? 1 : 0.5
             _ = enabled ? self.activityIndicator.stopAnimating() :
                 self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
             self.aboutButton.isEnabled = enabled
-            self.tabBarController?.tabBar.alpha = enabled ? 1 : 0.5
             for item in (self.tabBarController?.tabBar.items)! {
                 item.isEnabled = enabled
             }
