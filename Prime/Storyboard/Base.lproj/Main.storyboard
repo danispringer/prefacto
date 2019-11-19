@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msv-77-b15">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -156,34 +156,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-4I-Eqv" userLabel="Settings Label">
-                                <rect key="frame" x="20" y="64" width="67" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHW-2U-LrT">
-                                <rect key="frame" x="353" y="58" width="41" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="donePressed:" destination="EGf-9u-VfO" eventType="touchUpInside" id="rFU-ZV-kWX"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thousands Separator" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5L-ML-EPG">
-                                <rect key="frame" x="20" y="124.5" width="164.5" height="20.5"/>
+                                <rect key="frame" x="20" y="168.5" width="164.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-qf-z7j">
-                                <rect key="frame" x="345" y="119.5" width="51" height="31"/>
+                                <rect key="frame" x="345" y="163.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="showSeparatorToggledWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="sEU-mR-9S5"/>
                                 </connections>
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
-                                <rect key="frame" x="128" y="180" width="266" height="32"/>
+                                <rect key="frame" x="128" y="224" width="266" height="32"/>
                                 <segments>
                                     <segment title="Item 1"/>
                                     <segment title="Item 2"/>
@@ -193,8 +179,26 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-f8-8RI">
-                                <rect key="frame" x="20" y="185" width="68" height="20.5"/>
+                                <rect key="frame" x="20" y="229" width="68" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q39-6A-PZp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qAZ-yU-ndx"/>
+                                    <barButtonItem systemItem="done" id="JYZ-Rb-aUM">
+                                        <connections>
+                                            <action selector="donePressed:" destination="EGf-9u-VfO" id="mZl-Ur-EEL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-4I-Eqv" userLabel="Settings Label">
+                                <rect key="frame" x="20" y="108" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -202,20 +206,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="Lfo-qf-z7j" secondAttribute="trailing" constant="20" id="0Us-Rj-knO"/>
-                            <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="20" id="25d-WL-cQA"/>
-                            <constraint firstItem="V5L-ML-EPG" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="40" id="EVA-q1-pH6"/>
                             <constraint firstItem="Lfo-qf-z7j" firstAttribute="centerY" secondItem="V5L-ML-EPG" secondAttribute="centerY" id="HrT-tH-3MW"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="6zn-5I-jYs" secondAttribute="trailing" constant="20" id="K2h-BI-hO0"/>
                             <constraint firstItem="Lfo-qf-z7j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V5L-ML-EPG" secondAttribute="trailing" constant="20" id="L01-lH-Ymc"/>
                             <constraint firstItem="DeZ-f8-8RI" firstAttribute="top" secondItem="V5L-ML-EPG" secondAttribute="bottom" constant="40" id="N9b-3S-hSt"/>
+                            <constraint firstItem="Q39-6A-PZp" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" id="PKJ-6k-pCO"/>
                             <constraint firstItem="6zn-5I-jYs" firstAttribute="leading" secondItem="DeZ-f8-8RI" secondAttribute="trailing" constant="40" id="Rr2-p2-Hot"/>
-                            <constraint firstItem="wHW-2U-LrT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="20" id="W9V-St-OUE"/>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="wHW-2U-LrT" secondAttribute="trailing" constant="20" id="bFj-tI-IWk"/>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="Q39-6A-PZp" secondAttribute="trailing" id="U3E-cs-Ddu"/>
+                            <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="Q39-6A-PZp" secondAttribute="bottom" constant="20" id="aS1-q9-HeL"/>
                             <constraint firstItem="V5L-ML-EPG" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="cZD-4c-7BC"/>
+                            <constraint firstItem="V5L-ML-EPG" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="40" id="dMU-cb-T8r"/>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="lwt-bf-1uO"/>
-                            <constraint firstItem="wHW-2U-LrT" firstAttribute="centerY" secondItem="cAh-4I-Eqv" secondAttribute="centerY" id="oWp-iJ-8wm"/>
                             <constraint firstItem="6zn-5I-jYs" firstAttribute="centerY" secondItem="DeZ-f8-8RI" secondAttribute="centerY" id="rnI-cF-SEL"/>
+                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="20" id="rrI-Vj-mFJ"/>
                             <constraint firstItem="DeZ-f8-8RI" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="20" id="xNq-RN-T4U"/>
+                            <constraint firstItem="Q39-6A-PZp" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" id="yW1-Eb-TpB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
                     </view>
@@ -729,6 +734,7 @@ Factors: 1234567890</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
                                 <rect key="frame" x="20" y="503.5" width="374" height="29"/>
                                 <accessibility key="accessibilityConfiguration" label="Copy"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" image="doc.on.doc" catalog="system"/>
                                 <connections>
                                     <action selector="copyPressed:" destination="7sC-Ww-chD" eventType="touchUpInside" id="Nol-tB-Siz"/>

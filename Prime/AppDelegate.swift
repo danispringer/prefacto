@@ -47,13 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UISwitch.appearance().onTintColor = UIColor(named: Constants.View.specialSwitchColor)
 
-        for state: UIControl.State in [.normal, .selected, .highlighted, .disabled] {
-            UIBarButtonItem.appearance().setTitleTextAttributes(
-                [
-                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                ], for: state)
-        }
-
         return true
     }
 
