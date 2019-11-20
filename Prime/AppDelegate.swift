@@ -30,15 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.UserDef.showSeparator: false,
             Constants.UserDef.selectedIcon: 0])
 
-        let tabBar = UITabBar.appearance()
-        tabBar.clipsToBounds = true
-        tabBar.unselectedItemTintColor = UIColor.systemGray
+        // TODO: maybe needed to write similar tableview/navigation code
+        //let tabar = UITabar.appearance()
+//        UIView.appearance(
+//            whenContainedInInstancesOf: [
+//                UITabarController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+        UINavigationBar.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
         UIView.appearance(
             whenContainedInInstancesOf: [
                 UIAlertController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
-        UIView.appearance(
-            whenContainedInInstancesOf: [
-                UITabBarController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
         UIView.appearance(
             whenContainedInInstancesOf: [
                 UIToolbar.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
@@ -46,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIButton.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
 
         UISwitch.appearance().onTintColor = UIColor(named: Constants.View.specialSwitchColor)
+
+        for state: UIControl.State in [.application, .highlighted, .normal, .selected] {
+            UIBarButtonItem.appearance().setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: UIColor(
+                    named: Constants.View.specialButtonColor)!
+            ], for: state)
+        }
+
 
         return true
     }
@@ -57,10 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
-        let tab = window?.rootViewController as? UITabBarController
-        let randomVC = tab?.viewControllers?[3] as? RandomViewController
-        randomVC?.makeRandomShortcut()
-        tab?.selectedViewController = tab?.viewControllers?[3]
+        // TODO: fix for nav
+        
+        let navC = window?.rootViewController as? UINavigationController
+        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let randomVC = (storyboard.instantiateViewController(
+            withIdentifier: Constants.StoryboardID.random) as? RandomViewController)!
+        navC?.pushViewController(randomVC, animated: false)
+        randomVC.makeRandomShortcut()
 
         return true
     }

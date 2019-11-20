@@ -34,11 +34,15 @@ struct Constants {
 
     struct StoryboardID {
         static let main = "Main"
+        static let check = "CheckViewController"
         static let checkResults = "CheckResultsViewController"
-        static let settings = "SettingsViewController"
-        static let listResults = "ListResultsViewController"
+        static let factorize = "FactorizeViewController"
         static let factorizeResults = "FactorizeResultsViewController"
+        static let list = "ListViewController"
+        static let listResults = "ListResultsViewController"
+        static let random = "RandomViewController"
         static let randomResults = "RandomResultsViewController"
+        static let settings = "SettingsViewController"
     }
 
 
