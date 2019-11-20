@@ -164,17 +164,17 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     func presentResult(number: Int64, size: SizeOptions, fromShortcut: Bool) {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(
+        let randomResultsVC = storyboard.instantiateViewController(
             withIdentifier: Constants.StoryboardID.randomResults) as? RandomResultsViewController
-        controller?.myNumber = number
-        controller?.myTitle = "Your Random \(size.rawValue) Prime"
+        randomResultsVC?.myNumber = number
+        randomResultsVC?.myTitle = "Your Random \(size.rawValue) Prime"
         DispatchQueue.main.async {
             if !fromShortcut {
                 self.enableUI(enabled: true)
             }
-            if let toPresent = controller {
+            if let toPresent = randomResultsVC {
                 self.dismiss(animated: false, completion: {
-                    self.present(toPresent, animated: true)
+                    self.present(toPresent, animated: !fromShortcut)
                 })
             }
         }
