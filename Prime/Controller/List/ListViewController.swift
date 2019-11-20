@@ -262,7 +262,12 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             title: "\(Constants.Messages.check)",
             style: .default) { _ in
                 // TODO: fix for nav
-                self.tabBarController?.selectedIndex = 0
+                self.navigationController?.popToRootViewController(animated: true)
+                let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+                let checkVC = storyboard.instantiateViewController(
+                    withIdentifier: Constants.StoryboardID.check) as? CheckViewController
+                self.navigationController?.pushViewController(checkVC!, animated: true)
+                
             }
             alert.addAction(goToCheckAction)
             DispatchQueue.main.async {
