@@ -65,9 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
-        // TODO: fix for nav
-        
         let navC = window?.rootViewController as? UINavigationController
+        navC?.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let randomVC = (storyboard.instantiateViewController(
             withIdentifier: Constants.StoryboardID.random) as? RandomViewController)!
