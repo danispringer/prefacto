@@ -32,6 +32,8 @@
 		33DBFE5121F0790E00B864AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBFE5021F0790E00B864AA /* AppDelegate.swift */; };
 		33EE5BDD20D99F23008FEAF2 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE5BDC20D99F23008FEAF2 /* CheckViewController.swift */; };
 		33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */; };
+		652FAD8523838BB700E3B06E /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FAD8423838BB700E3B06E /* MainMenuTableViewCell.swift */; };
+		652FAD8723838CA500E3B06E /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FAD8623838CA500E3B06E /* MainMenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +78,8 @@
 		33EE5BC720D996C4008FEAF2 /* Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE5BDC20D99F23008FEAF2 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		33F6747C20DF7C7B0094BCBA /* FactorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeViewController.swift; sourceTree = "<group>"; };
+		652FAD8423838BB700E3B06E /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
+		652FAD8623838CA500E3B06E /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,8 @@
 		3317915D20DA047E00CA739F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				333F996820F2D8FF003774D4 /* Checker */,
+				652FAD812383856300E3B06E /* Menu */,
+				333F996820F2D8FF003774D4 /* Check */,
 				333F996B20F3173D003774D4 /* Factorize */,
 				333F996720F2BA4F003774D4 /* List */,
 				33A96A3D20FDFA71009E1DBA /* Random */,
@@ -118,6 +123,7 @@
 				3357A328210D18290011965D /* ListTableViewCell.swift */,
 				33122629210D233500802138 /* FactorizeTableViewCell.swift */,
 				3368773121CF65A900D31C18 /* MyTextField.swift */,
+				652FAD8423838BB700E3B06E /* MainMenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,13 +145,13 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		333F996820F2D8FF003774D4 /* Checker */ = {
+		333F996820F2D8FF003774D4 /* Check */ = {
 			isa = PBXGroup;
 			children = (
 				33EE5BDC20D99F23008FEAF2 /* CheckViewController.swift */,
 				333F996920F2D91F003774D4 /* CheckResultsViewController.swift */,
 			);
-			path = Checker;
+			path = Check;
 			sourceTree = "<group>";
 		};
 		333F996B20F3173D003774D4 /* Factorize */ = {
@@ -225,6 +231,14 @@
 				33C0F18220EF4F180013881A /* Assets */,
 			);
 			path = Prime;
+			sourceTree = "<group>";
+		};
+		652FAD812383856300E3B06E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				652FAD8623838CA500E3B06E /* MainMenuTableViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,7 @@
 				33DBFE5121F0790E00B864AA /* AppDelegate.swift in Sources */,
 				333AD7E7210581160010D446 /* SettingsViewControlller.swift in Sources */,
 				3368773221CF65A900D31C18 /* MyTextField.swift in Sources */,
+				652FAD8523838BB700E3B06E /* MainMenuTableViewCell.swift in Sources */,
 				333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */,
 				334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */,
 				3357A329210D18290011965D /* ListTableViewCell.swift in Sources */,
@@ -351,6 +366,7 @@
 				3312262A210D233500802138 /* FactorizeTableViewCell.swift in Sources */,
 				3317915B20DA03CD00CA739F /* Alert.swift in Sources */,
 				333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */,
+				652FAD8723838CA500E3B06E /* MainMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
