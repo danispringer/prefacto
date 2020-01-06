@@ -35,4 +35,4 @@ Want to help? You can:
   - Light mode: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
 
 # License
-Copyright © 2019 Daniel Springer. All rights reserved.
+Copyright © 2020 Daniel Springer. All rights reserved.
