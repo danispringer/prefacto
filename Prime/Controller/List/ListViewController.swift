@@ -112,7 +112,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         previousButton.isEnabled = !(textField.tag == 0)
         nextButton.isEnabled = (textField.tag == 0)
     }
-    
+
 
     @objc func donePressed() {
         firstTextField.resignFirstResponder()
@@ -267,7 +267,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 let checkVC = storyboard.instantiateViewController(
                     withIdentifier: Constants.StoryboardID.check) as? CheckViewController
                 self.navigationController?.pushViewController(checkVC!, animated: true)
-                
+
             }
             alert.addAction(goToCheckAction)
             DispatchQueue.main.async {

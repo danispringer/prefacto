@@ -24,7 +24,7 @@ UITextFieldDelegate {
 
     var myResignToolBar: UIToolbar! = nil
 
-    
+
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
