@@ -30,11 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.UserDef.showSeparator: false,
             Constants.UserDef.selectedIcon: 0])
 
-        // TODO: maybe needed to write similar tableview/navigation code
-        //let tabar = UITabar.appearance()
-//        UIView.appearance(
-//            whenContainedInInstancesOf: [
-//                UITabarController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
         UINavigationBar.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
         UIView.appearance(
             whenContainedInInstancesOf: [

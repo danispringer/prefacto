@@ -35,12 +35,6 @@ class MainMenuTableViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO: needed?
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-
-
         if let selectedRow = myTableView.indexPathForSelectedRow {
             myTableView.deselectRow(at: selectedRow, animated: true)
         }
