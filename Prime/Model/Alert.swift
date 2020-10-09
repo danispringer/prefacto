@@ -53,6 +53,11 @@ extension UIViewController {
                 alertMessage = """
                 Please enter a different number.
                 """
+        case .two:
+            alertTitle = "2 not allowed here"
+            alertMessage = """
+            Please enter a different number.
+            """
             case .negative:
                 alertTitle = "Negative numbers not allowed here"
                 alertMessage = """

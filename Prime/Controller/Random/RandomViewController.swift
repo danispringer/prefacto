@@ -33,6 +33,11 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     // MARK: Life Cycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        randomizeButton.setTitle(Constants.Messages.randomize, for: .normal)
+    }
+
 
     // MARK: Helpers
 
