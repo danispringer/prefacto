@@ -25,6 +25,9 @@ var localRange: Range<String.Index> = " ".index(
     " ".startIndex, offsetBy: 0)..<" ".index(" ".startIndex, offsetBy: 1)
 var localNumber: Int64 = 0
 var localIsDivisibleBy: Int64 = 0
+var localOriginalNumber: Int64 = 0
+var localNextPrime: Int64 = 0
+var localPreviousPrime: Int64 = 0
 
 
 // MARK: Constants Struct
@@ -42,6 +45,10 @@ struct Constants {
         static let listResults = "ListResultsViewController"
         static let random = "RandomViewController"
         static let randomResults = "RandomResultsViewController"
+        static let next = "NextViewController"
+        static let nextResults = "NextResultsViewController"
+        static let previous = "PreviousViewController"
+        static let previousResults = "PreviousResultsViewController"
         static let settings = "SettingsViewController"
     }
 
@@ -49,7 +56,10 @@ struct Constants {
     struct Messages {
         static let check = "Check"
         static let list = "List"
+        static let next = "Next"
+        static let previous = "Previous"
         static let factorize = "Factorize"
+        static let randomize = "Create Random Prime"
         static let done = "Done"
         static let cancel = "Cancel"
         static let version = "Version"
@@ -151,6 +161,20 @@ struct Constants {
             Hey, did you know that the prime factors of \(localNumber) are \
             \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
             \(localSource.count) numbers! I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var nextPrimeMessage: String {
+            return """
+            Hey, did you know that the next prime after \(localOriginalNumber) is \(localNextPrime)? \
+            I just found out, using this app: \
+            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            """
+        }
+        static var previousPrimeMessage: String {
+            return """
+            Hey, did you know that the previous prime before \(localOriginalNumber) is \(localPreviousPrime)? \
+            I just found out, using this app: \
             https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }

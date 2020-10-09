@@ -24,8 +24,8 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["Check", "Factorize", "List", "Randomize"]
-    let myImageSource = ["checkmark", "divide", "list.dash", "shuffle"]
+    let myDataSource = ["Check", "Factorize", "List", "Randomize", "Next", "Previous"]
+    let myImageSource = ["checkmark", "divide", "list.dash", "shuffle", "plus", "minus"]
 
     let menuCell = "MenuCell"
 
@@ -162,12 +162,18 @@ class MainMenuTableViewController: UIViewController,
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-//        case myDataSource[4]:
-//            let controller = storyboard.instantiateViewController(
-//                withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
-//            if let toPresent = controller {
-//                self.navigationController?.pushViewController(toPresent, animated: true)
-//            }
+        case myDataSource[4]:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.next) as? NextViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case myDataSource[5]:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.previous) as? PreviousViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
         default:
             let alert = createAlert(alertReasonParam: AlertReason.unknown)
             alert.view.layoutIfNeeded()

@@ -261,7 +261,6 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
             let goToCheckAction = UIAlertAction(
             title: "\(Constants.Messages.check)",
             style: .default) { _ in
-                // TODO: fix for nav
                 self.navigationController?.popToRootViewController(animated: true)
                 let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
                 let checkVC = storyboard.instantiateViewController(
