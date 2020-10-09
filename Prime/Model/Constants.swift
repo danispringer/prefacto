@@ -200,9 +200,4 @@ struct Constants {
         static let dark = "dark"
     }
 
-
-    struct Testing {
-        static let testing = false
-    }
-
 }
