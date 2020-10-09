@@ -63,13 +63,6 @@ class CheckResultsViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-
-        if !Constants.Testing.testing {
-            SKStoreReviewController.requestReview()
-        }
-    }
 
     // MARK: Helpers
 

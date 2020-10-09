@@ -107,15 +107,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-
-        if !Constants.Testing.testing {
-            SKStoreReviewController.requestReview()
-        }
-    }
-
-
     // MARK: Helpers
 
     func separate(number: Int64) -> String {
