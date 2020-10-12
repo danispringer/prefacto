@@ -211,21 +211,20 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
         var alert = UIAlertController()
         dismiss(animated: true, completion: {
             switch result {
-                case MFMailComposeResult.failed:
-                    alert = self.createAlert(alertReasonParam: .messageFailed)
-                case MFMailComposeResult.saved:
-                    alert = self.createAlert(alertReasonParam: .messageSaved)
-                case MFMailComposeResult.sent:
-                    alert = self.createAlert(alertReasonParam: .messageSent)
-                default:
-                    break
+            case MFMailComposeResult.failed:
+                alert = self.createAlert(alertReasonParam: .messageFailed)
+            case MFMailComposeResult.saved:
+                alert = self.createAlert(alertReasonParam: .messageSaved)
+            case MFMailComposeResult.sent:
+                alert = self.createAlert(alertReasonParam: .messageSent)
+            default:
+                break
             }
             if alert.title != nil {
                 self.present(alert, animated: true)
             }
         })
     }
-
 
 }
 
@@ -237,11 +236,11 @@ extension MainMenuTableViewController {
 
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
-            else {
-                fatalError("Expected a valid URL")
+        else {
+            fatalError("Expected a valid URL")
         }
         UIApplication.shared.open(writeReviewURL, options:
-            convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
+                                    convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                                   completionHandler: nil)
     }
 
@@ -254,5 +253,5 @@ extension MainMenuTableViewController {
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in
-        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

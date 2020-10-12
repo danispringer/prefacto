@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [
-        UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+            UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         UserDefaults.standard.register(defaults: [
-            Constants.UserDef.showSeparator: false,
-            Constants.UserDef.selectedIcon: 0])
+                                        Constants.UserDef.showSeparator: false,
+                                        Constants.UserDef.selectedIcon: 0])
 
         UINavigationBar.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
         UIView.appearance(
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-
+    
 
     // MARK: Shortcuts
 
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navC?.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let randomVC = (storyboard.instantiateViewController(
-            withIdentifier: Constants.StoryboardID.random) as? RandomViewController)!
+                            withIdentifier: Constants.StoryboardID.random) as? RandomViewController)!
         navC?.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
 
