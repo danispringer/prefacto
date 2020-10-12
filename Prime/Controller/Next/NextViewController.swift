@@ -34,11 +34,11 @@ class NextViewController: UIViewController, SKStoreProductViewControllerDelegate
 
         let nextButton = UIBarButtonItem()
 
-        nextButton.title = Constants.Messages.next
+        nextButton.title = Const.Messages.next
         nextButton.style = .plain
         nextButton.target = self
         nextButton.action = #selector(nextButtonPressed)
-        let doneButton = UIBarButtonItem(title: Constants.Messages.done,
+        let doneButton = UIBarButtonItem(title: Const.Messages.done,
                                          style: .plain,
                                          target: self,
                                          action: #selector(donePressed))
@@ -51,7 +51,8 @@ class NextViewController: UIViewController, SKStoreProductViewControllerDelegate
         myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolBar
-        myTextField.placeholder = Constants.Messages.placeholderText
+        myTextField.placeholder = Const.Messages.placeholderText
+        self.title = Const.Title.next
     }
 
 
@@ -162,8 +163,8 @@ class NextViewController: UIViewController, SKStoreProductViewControllerDelegate
 
 
     func presentResult(originalNumber: Int64, nextPrime: Int64) {
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.nextResults)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.nextResults)
             as? NextResultsViewController
         controller?.originalNumber = originalNumber
         controller?.nextPrime = nextPrime

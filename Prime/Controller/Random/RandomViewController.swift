@@ -33,21 +33,23 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        randomizeButton.setTitle(Constants.Messages.randomize, for: .normal)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        randomizeButton.setTitle(Const.Messages.randomize, for: .normal)
+        self.title = Const.Title.random
     }
 
 
     // MARK: Helpers
 
     @IBAction func randomizeButtonPressed(_ sender: Any) {
-        let activity = NSUserActivity(activityType: Constants.Messages.bundleAndRandom)
+        let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
         activity.title = "Get random prime"
         activity.isEligibleForSearch = true
 
         activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Constants.Messages.bundleAndRandom)
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
         activity.suggestedInvocationPhrase = "Show me a Random Prime"
         view.userActivity = activity
         activity.becomeCurrent()
@@ -118,7 +120,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
                                       message: "Choose your random prime's size",
                                       preferredStyle: .actionSheet)
         alert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel)
+        let cancelAction = UIAlertAction(title: Const.Messages.cancel, style: .cancel)
         let xSmallAction = UIAlertAction(title: SizeOptions.xSmall.rawValue, style: .default) { _ in
             userChoice = .xSmall
             DispatchQueue.main.async {
@@ -168,9 +170,9 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
 
     func presentResult(number: Int64, size: SizeOptions, fromShortcut: Bool) {
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let randomResultsVC = storyboard.instantiateViewController(
-            withIdentifier: Constants.StoryboardID.randomResults) as? RandomResultsViewController
+            withIdentifier: Const.StoryboardID.randomResults) as? RandomResultsViewController
         randomResultsVC?.myNumber = number
         randomResultsVC?.myTitle = "Your Random \(size.rawValue) Prime"
         DispatchQueue.main.async {
@@ -185,7 +187,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         }
     }
 
-    
+
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             self.randomizeButton.isHidden = !enabled

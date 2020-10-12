@@ -39,7 +39,7 @@ class PreviousResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
         let myOriginalNumberFormatted = showSeparator ? separate(number: myOriginalNumber) : "\(myOriginalNumber)"
         let myPreviousPrimeFormatted = showSeparator ?
             separate(number: myPreviousPrime)
@@ -79,7 +79,7 @@ class PreviousResultsViewController: UIViewController {
         }
         localOriginalNumber = myOriginalNumber
         localPreviousPrime = myPreviousPrime
-        message = Constants.Messages.previousPrimeMessage
+        message = Const.Messages.previousPrimeMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = {

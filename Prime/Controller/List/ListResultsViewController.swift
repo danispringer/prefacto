@@ -43,7 +43,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
         let myFromFormatted = showSeparator ? separate(number: myFrom) : "\(myFrom)"
         let myToFormatted = showSeparator ? separate(number: myTo) : "\(myTo)"
         if source.count == 0 {
@@ -146,7 +146,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         localFrom = rangeFrom
         localTo = rangeTo
         guard source.count != 0 else {
-            message = Constants.Messages.noPrimesInRangeMessage
+            message = Const.Messages.noPrimesInRangeMessage
             presentShareController(message: message)
             return
         }
@@ -159,9 +159,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         localSourceLast = mySourceLast
         localSource = mySource
         if mySource.count == 1 {
-            message = Constants.Messages.singlePrimeInRangeMessage
+            message = Const.Messages.singlePrimeInRangeMessage
         } else if mySource.count == 2 {
-            message = Constants.Messages.twoPrimesInRange
+            message = Const.Messages.twoPrimesInRange
         } else {
             localSourceDroppedLastArray = Array(mySource.dropLast())
             localStringSourceDroppedLast = "\(localSourceDroppedLastArray)"
@@ -170,7 +170,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             localRange = localStart..<localEnd
 
             localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
-            message = Constants.Messages.manyPrimesInrange
+            message = Const.Messages.manyPrimesInrange
         }
         presentShareController(message: message)
     }
@@ -207,7 +207,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
 
@@ -227,7 +227,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        
+
         return action == #selector(copy(_:))
     }
 

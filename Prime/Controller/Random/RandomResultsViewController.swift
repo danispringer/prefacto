@@ -36,7 +36,7 @@ class RandomResultsViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber!)"
         resultLabel.text = "\(myNumberFormatted)"
         titleLabel.text = myTitle
@@ -64,7 +64,7 @@ class RandomResultsViewController: UIViewController {
             return
         }
         localNumber = myNumber
-        message = Constants.Messages.isPrimeMessage
+        message = Const.Messages.isPrimeMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = {
@@ -80,7 +80,7 @@ class RandomResultsViewController: UIViewController {
         }
         self.present(activityController, animated: true)
     }
-    
+
 
     @IBAction func copyPressed(_ sender: Any) {
         if let myNumber = myNumber {

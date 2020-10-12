@@ -22,7 +22,7 @@ class MyTextField: UITextField {
     override func awakeFromNib() {
 
         let firstColor: UIColor = UIColor.label
-        
+
         self.borderStyle = .none
         self.translatesAutoresizingMaskIntoConstraints = false
 
