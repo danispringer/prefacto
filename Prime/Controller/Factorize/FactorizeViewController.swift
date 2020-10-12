@@ -18,7 +18,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
     @IBOutlet weak var myTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var myToolbar: UIToolbar!
 
 
     // MARK: Properties

@@ -310,7 +310,6 @@
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                                <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TF9-a1-dCQ"/>
@@ -728,7 +727,6 @@ Factors: 1234567890</string>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gY1-mh-IAj">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                                <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S73-cg-56T"/>
@@ -898,7 +896,6 @@ Divisible by: 857.</string>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="30j-1q-z28">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                                <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bW7-lc-1I8"/>
