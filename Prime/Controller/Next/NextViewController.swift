@@ -11,7 +11,7 @@ import MessageUI
 import StoreKit
 
 class NextViewController: UIViewController, SKStoreProductViewControllerDelegate,
-UITextFieldDelegate {
+                          UITextFieldDelegate {
 
 
     // MARK: Outlets
@@ -39,15 +39,15 @@ UITextFieldDelegate {
         nextButton.target = self
         nextButton.action = #selector(nextButtonPressed)
         let doneButton = UIBarButtonItem(title: Constants.Messages.done,
-                                           style: .plain,
-                                           target: self,
-                                           action: #selector(donePressed))
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myResignToolBar.items = [doneButton, space, nextButton]
         myResignToolBar.sizeToFit()
         myResignToolBar.setBackgroundImage(UIImage(),
-                                             forToolbarPosition: .any,
-                                             barMetrics: .default)
+                                           forToolbarPosition: .any,
+                                           barMetrics: .default)
         myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolBar

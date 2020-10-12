@@ -84,8 +84,8 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         ]
         myResignToolbar.sizeToFit()
         myResignToolbar.setBackgroundImage(UIImage(),
-                                        forToolbarPosition: .any,
-                                        barMetrics: .default)
+                                           forToolbarPosition: .any,
+                                           barMetrics: .default)
         myResignToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         for textfield in [firstTextField, secondTextField] {
@@ -124,13 +124,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-            case firstTextField:
-                secondTextField.becomeFirstResponder()
-            case secondTextField:
-                secondTextField.resignFirstResponder()
-                listButtonPressed()
-            default:
-                fatalError()
+        case firstTextField:
+            secondTextField.becomeFirstResponder()
+        case secondTextField:
+            secondTextField.resignFirstResponder()
+            listButtonPressed()
+        default:
+            fatalError()
         }
         return true
     }
@@ -259,8 +259,8 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
             let goToCheckAction = UIAlertAction(
-            title: "\(Constants.Messages.check)",
-            style: .default) { _ in
+                title: "\(Constants.Messages.check)",
+                style: .default) { _ in
                 self.navigationController?.popToRootViewController(animated: true)
                 let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
                 let checkVC = storyboard.instantiateViewController(
@@ -279,7 +279,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         return true
     }
 
-
+    
     // MARK: Toggle UI
 
     func enableUI(enabled: Bool) {

@@ -53,8 +53,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         myResignToolbar.items = [doneButton, space, factorButton]
         myResignToolbar.sizeToFit()
         myResignToolbar.setBackgroundImage(UIImage(),
-                                        forToolbarPosition: .any,
-                                        barMetrics: .default)
+                                           forToolbarPosition: .any,
+                                           barMetrics: .default)
         myResignToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolbar

@@ -227,7 +227,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-
+        
         return action == #selector(copy(_:))
     }
 

@@ -80,7 +80,7 @@ class RandomResultsViewController: UIViewController {
         }
         self.present(activityController, animated: true)
     }
-
+    
 
     @IBAction func copyPressed(_ sender: Any) {
         if let myNumber = myNumber {
