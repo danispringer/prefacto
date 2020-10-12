@@ -103,12 +103,16 @@ class MainMenuTableViewController: UIViewController,
 
     func showApps() {
 
-        let controller = SKStoreProductViewController()
-        controller.delegate = self
-        controller.loadProduct(
-            withParameters: [SKStoreProductParameterITunesItemIdentifier: Const.Messages.devID],
-            completionBlock: nil)
-        present(controller, animated: true)
+        let myURL = URL(string: Const.Messages.appsLink)
+
+        guard let safeURL = myURL else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            present(alert, animated: true)
+            return
+        }
+
+        UIApplication.shared.open(safeURL, options: [:], completionHandler: nil)
+
     }
 
 

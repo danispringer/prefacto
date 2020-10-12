@@ -79,6 +79,7 @@ struct Const {
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
         static let showAppsButtonTitle = "More by Daniel Springer"
+        static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let devID = "1402417666"
         static let shareApp = "Tell a Friend"
         static let shareMessage = """

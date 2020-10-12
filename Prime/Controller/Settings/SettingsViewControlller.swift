@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
     // MARK: Properties
 
     let settingsCell = "SettingsCell"
-    let options = ["Light", "Dark"]
+    let options = ["light-setting", "dark-setting"]
 
 
     // MARK: Life Cycle
@@ -32,8 +32,8 @@ class SettingsViewController: UIViewController {
         iconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(
             forKey: Const.UserDef.selectedIcon)
 
-        for (index, title) in options.enumerated() {
-            iconSegmentedControl.setTitle(title, forSegmentAt: index)
+        for (index, imageName) in options.enumerated() {
+            iconSegmentedControl.setImage(UIImage(named: imageName), forSegmentAt: index)
         }
 
     }
