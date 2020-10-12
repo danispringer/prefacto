@@ -34,11 +34,11 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
 
         let checkButton = UIBarButtonItem()
 
-        checkButton.title = Constants.Messages.check
+        checkButton.title = Const.Messages.check
         checkButton.style = .plain
         checkButton.target = self
         checkButton.action = #selector(checkButtonPressed)
-        let doneButton = UIBarButtonItem(title: Constants.Messages.done,
+        let doneButton = UIBarButtonItem(title: Const.Messages.done,
                                          style: .plain,
                                          target: self,
                                          action: #selector(donePressed))
@@ -51,7 +51,8 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
         myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolBar
-        myTextField.placeholder = Constants.Messages.placeholderText
+        myTextField.placeholder = Const.Messages.placeholderText
+        self.title = Const.Title.check
     }
 
 
@@ -161,8 +162,8 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
 
 
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.checkResults)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.checkResults)
             as? CheckResultsViewController
         controller?.number = number
         controller?.isPrime = isPrime

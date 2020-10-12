@@ -32,7 +32,7 @@ var localPreviousPrime: Int64 = 0
 
 // MARK: Constants Struct
 
-struct Constants {
+struct Const {
 
 
     struct StoryboardID {
@@ -50,6 +50,16 @@ struct Constants {
         static let previous = "PreviousViewController"
         static let previousResults = "PreviousResultsViewController"
         static let settings = "SettingsViewController"
+    }
+
+
+    struct Title {
+        static let check = "Check"
+        static let factorize = "Factorize"
+        static let list = "List"
+        static let random = "Randomize"
+        static let next = "Next"
+        static let previous = "Previous"
     }
 
 

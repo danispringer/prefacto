@@ -39,12 +39,12 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         myTextField.delegate = self
 
         let factorButton = UIBarButtonItem(
-            title: Constants.Messages.factorize,
+            title: Const.Messages.factorize,
             style: .plain,
             target: self,
             action: #selector(factorizeButtonPressed))
         let doneButton = UIBarButtonItem(
-            title: Constants.Messages.done,
+            title: Const.Messages.done,
             style: .plain,
             target: self,
             action: #selector(donePressed))
@@ -58,7 +58,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
         myResignToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolbar
-        myTextField.placeholder = Constants.Messages.placeholderText
+        myTextField.placeholder = Const.Messages.placeholderText
+        self.title = Const.Title.factorize
 
     }
 
@@ -154,9 +155,9 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStorePro
 
 
     func presentResults(number: Int64) {
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
-            withIdentifier: Constants.StoryboardID.factorizeResults) as? FactorizeResultsViewController
+            withIdentifier: Const.StoryboardID.factorizeResults) as? FactorizeResultsViewController
         controller?.number = number
         controller?.source = arrayOfInts
         if let toPresent = controller {

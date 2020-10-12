@@ -28,9 +28,9 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        thousandsSeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        thousandsSeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
         iconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(
-            forKey: Constants.UserDef.selectedIcon)
+            forKey: Const.UserDef.selectedIcon)
 
         for (index, title) in options.enumerated() {
             iconSegmentedControl.setTitle(title, forSegmentAt: index)
@@ -42,12 +42,12 @@ class SettingsViewController: UIViewController {
     // Helpers
 
     @IBAction func showSeparatorToggled(sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.showSeparator)
+        UserDefaults.standard.set(sender.isOn, forKey: Const.UserDef.showSeparator)
     }
 
 
     @IBAction func updateIcon(sender: UISegmentedControl) {
-        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: Constants.UserDef.selectedIcon)
+        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: Const.UserDef.selectedIcon)
         setIcon()
     }
 
@@ -56,13 +56,13 @@ class SettingsViewController: UIViewController {
 
         var myIcon = ""
 
-        switch UserDefaults.standard.integer(forKey: Constants.UserDef.selectedIcon) {
+        switch UserDefaults.standard.integer(forKey: Const.UserDef.selectedIcon) {
         case 0:
-            myIcon = Constants.UserDef.light
+            myIcon = Const.UserDef.light
         case 1:
-            myIcon = Constants.UserDef.dark
+            myIcon = Const.UserDef.dark
         default:
-            myIcon = Constants.UserDef.light
+            myIcon = Const.UserDef.light
         }
 
         guard UIApplication.shared.supportsAlternateIcons else {

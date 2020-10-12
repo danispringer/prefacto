@@ -39,7 +39,7 @@ class CheckResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
         let myIsDivisibleByFormatted = showSeparator ?
             separate(number: myIsDivisibleBy)
@@ -87,9 +87,9 @@ class CheckResultsViewController: UIViewController {
         localNumber = myNumber
         localIsDivisibleBy = myIsDivisibleBy
         if isPrime {
-            message = Constants.Messages.isPrimeMessage
+            message = Const.Messages.isPrimeMessage
         } else {
-            message = Constants.Messages.isNotPrimeMessage
+            message = Const.Messages.isNotPrimeMessage
         }
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem

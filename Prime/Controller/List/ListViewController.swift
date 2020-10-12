@@ -42,13 +42,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         secondTextField.delegate = self
 
         let listButton = UIBarButtonItem(
-            title: Constants.Messages.list,
+            title: Const.Messages.list,
             style: .plain,
             target: self,
             action: #selector(listButtonPressed))
 
         let doneButton = UIBarButtonItem(
-            title: Constants.Messages.done,
+            title: Const.Messages.done,
             style: .plain,
             target: self,
             action: #selector(donePressed))
@@ -90,8 +90,10 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
         for textfield in [firstTextField, secondTextField] {
             textfield?.inputAccessoryView = myResignToolbar
-            textfield?.placeholder = Constants.Messages.placeholderText
+            textfield?.placeholder = Const.Messages.placeholderText
         }
+
+        self.title = Const.Title.list
 
     }
 
@@ -162,9 +164,9 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
-                let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+                let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Constants.StoryboardID.listResults) as? ListResultsViewController
+                    withIdentifier: Const.StoryboardID.listResults) as? ListResultsViewController
                 controller?.source = self.arrayOfInts
 
                 // below line avoids bug that let old results get added to next ones
@@ -259,12 +261,12 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
             let goToCheckAction = UIAlertAction(
-                title: "\(Constants.Messages.check)",
+                title: "\(Const.Messages.check)",
                 style: .default) { _ in
                 self.navigationController?.popToRootViewController(animated: true)
-                let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+                let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
                 let checkVC = storyboard.instantiateViewController(
-                    withIdentifier: Constants.StoryboardID.check) as? CheckViewController
+                    withIdentifier: Const.StoryboardID.check) as? CheckViewController
                 self.navigationController?.pushViewController(checkVC!, animated: true)
 
             }
@@ -279,7 +281,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         return true
     }
 
-    
+
     // MARK: Toggle UI
 
     func enableUI(enabled: Bool) {

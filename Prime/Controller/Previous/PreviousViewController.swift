@@ -35,11 +35,11 @@ class PreviousViewController: UIViewController, SKStoreProductViewControllerDele
 
         let previousButton = UIBarButtonItem()
 
-        previousButton.title = Constants.Messages.previous
+        previousButton.title = Const.Messages.previous
         previousButton.style = .plain
         previousButton.target = self
         previousButton.action = #selector(previousButtonPressed)
-        let doneButton = UIBarButtonItem(title: Constants.Messages.done,
+        let doneButton = UIBarButtonItem(title: Const.Messages.done,
                                          style: .plain,
                                          target: self,
                                          action: #selector(donePressed))
@@ -52,7 +52,9 @@ class PreviousViewController: UIViewController, SKStoreProductViewControllerDele
         myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolBar
-        myTextField.placeholder = Constants.Messages.placeholderText
+        myTextField.placeholder = Const.Messages.placeholderText
+
+        self.title = Const.Title.previous
     }
 
 
@@ -172,8 +174,8 @@ class PreviousViewController: UIViewController, SKStoreProductViewControllerDele
 
 
     func presentResult(originalNumber: Int64, previousPrime: Int64) {
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.previousResults)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.previousResults)
             as? PreviousResultsViewController
         controller?.originalNumber = originalNumber
         controller?.previousPrime = previousPrime
@@ -194,7 +196,7 @@ class PreviousViewController: UIViewController, SKStoreProductViewControllerDele
             self.view.endEditing(!enabled)
         }
     }
-    
+
 
     // MARK: TextField Delegate
 

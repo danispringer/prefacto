@@ -27,25 +27,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         UserDefaults.standard.register(defaults: [
-                                        Constants.UserDef.showSeparator: false,
-                                        Constants.UserDef.selectedIcon: 0])
+                                        Const.UserDef.showSeparator: false,
+                                        Const.UserDef.selectedIcon: 0])
 
-        UINavigationBar.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
+        UINavigationBar.appearance().tintColor = UIColor(named: Const.View.specialButtonColor)
         UIView.appearance(
             whenContainedInInstancesOf: [
-                UIAlertController.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+                UIAlertController.self]).tintColor = UIColor(named: Const.View.specialButtonColor)
         UIView.appearance(
             whenContainedInInstancesOf: [
-                UIToolbar.self]).tintColor = UIColor(named: Constants.View.specialButtonColor)
+                UIToolbar.self]).tintColor = UIColor(named: Const.View.specialButtonColor)
 
-        UIButton.appearance().tintColor = UIColor(named: Constants.View.specialButtonColor)
+        UIButton.appearance().tintColor = UIColor(named: Const.View.specialButtonColor)
 
-        UISwitch.appearance().onTintColor = UIColor(named: Constants.View.specialSwitchColor)
+        UISwitch.appearance().onTintColor = UIColor(named: Const.View.specialSwitchColor)
 
         for state: UIControl.State in [.application, .highlighted, .normal, .selected] {
             UIBarButtonItem.appearance().setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: UIColor(
-                    named: Constants.View.specialButtonColor)!
+                    named: Const.View.specialButtonColor)!
             ], for: state)
         }
 
@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let navC = window?.rootViewController as? UINavigationController
         navC?.popToRootViewController(animated: false)
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let randomVC = (storyboard.instantiateViewController(
-                            withIdentifier: Constants.StoryboardID.random) as? RandomViewController)!
+                            withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
         navC?.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
 

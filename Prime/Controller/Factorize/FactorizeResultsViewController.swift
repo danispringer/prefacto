@@ -43,7 +43,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             present(alert, animated: true)
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
         let sourceFirstFormatted = showSeparator ? separate(number: source.first!) : "\(source.first!)"
         let sourceLastFormatted = showSeparator ? separate(number: source.last!) : "\(source.last!)"
@@ -121,9 +121,9 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         localSourceFirst = mySourceFirst
         localSourceLast = mySourceLast
         if source.count == 1 {
-            message = Constants.Messages.isPrimeMessage
+            message = Const.Messages.isPrimeMessage
         } else if source.count == 2 {
-            message = Constants.Messages.twoPrimeFactorsMessage
+            message = Const.Messages.twoPrimeFactorsMessage
         } else {
             localSourceDroppedLastArray = Array(source.dropLast())
             localStringSourceDroppedLast = "\(localSourceDroppedLastArray)"
@@ -133,7 +133,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
             localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
 
-            message = Constants.Messages.manyPrimeFactorsMessage
+            message = Const.Messages.manyPrimeFactorsMessage
         }
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButtonItem
@@ -165,7 +165,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let showSeparator = UserDefaults.standard.bool(forKey: Constants.UserDef.showSeparator)
+        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
         cell?.numberLabel?.text = showSeparator ?
@@ -181,7 +181,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         return true
     }
 
-    
+
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return action == #selector(copy(_:))

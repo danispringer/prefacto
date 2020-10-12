@@ -47,31 +47,31 @@ class MainMenuTableViewController: UIViewController,
     // MARK: Helpers
 
     @IBAction func aboutPressed(_ sender: Any) {
-        let version: String? = Bundle.main.infoDictionary![Constants.Messages.appVersion] as? String
+        let version: String? = Bundle.main.infoDictionary![Const.Messages.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
-            infoAlert.message = "\(Constants.Messages.version) \(version)"
-            infoAlert.title = Constants.Messages.appName
+            infoAlert.message = "\(Const.Messages.version) \(version)"
+            infoAlert.title = Const.Messages.appName
         }
         infoAlert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Constants.Messages.cancel, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Const.Messages.cancel, style: .cancel) { _ in
             self.dismiss(animated: true)
         }
-        let shareAppAction = UIAlertAction(title: Constants.Messages.shareApp, style: .default) { _ in
+        let shareAppAction = UIAlertAction(title: Const.Messages.shareApp, style: .default) { _ in
             self.shareApp()
         }
-        let mailAction = UIAlertAction(title: Constants.Messages.sendFeedback, style: .default) { _ in
+        let mailAction = UIAlertAction(title: Const.Messages.sendFeedback, style: .default) { _ in
             self.launchEmail()
         }
-        let reviewAction = UIAlertAction(title: Constants.Messages.leaveReview, style: .default) { _ in
+        let reviewAction = UIAlertAction(title: Const.Messages.leaveReview, style: .default) { _ in
             self.requestReviewManually()
         }
-        let settingsAction = UIAlertAction(title: Constants.Messages.settings, style: .default) { _ in
-            let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settings)
+        let settingsAction = UIAlertAction(title: Const.Messages.settings, style: .default) { _ in
+            let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-        let showAppsAction = UIAlertAction(title: Constants.Messages.showAppsButtonTitle, style: .default) { _ in
+        let showAppsAction = UIAlertAction(title: Const.Messages.showAppsButtonTitle, style: .default) { _ in
             self.showApps()
         }
         for action in [settingsAction, mailAction, reviewAction,
@@ -86,7 +86,7 @@ class MainMenuTableViewController: UIViewController,
 
 
     func shareApp() {
-        let message = Constants.Messages.shareMessage
+        let message = Const.Messages.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
@@ -106,7 +106,7 @@ class MainMenuTableViewController: UIViewController,
         let controller = SKStoreProductViewController()
         controller.delegate = self
         controller.loadProduct(
-            withParameters: [SKStoreProductParameterITunesItemIdentifier: Constants.Messages.devID],
+            withParameters: [SKStoreProductParameterITunesItemIdentifier: Const.Messages.devID],
             completionBlock: nil)
         present(controller, animated: true)
     }
@@ -133,44 +133,44 @@ class MainMenuTableViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
 
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
         case myDataSource[0]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.check) as? CheckViewController
+                withIdentifier: Const.StoryboardID.check) as? CheckViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[1]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.factorize) as? FactorizeViewController
+                withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[2]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.list) as? ListViewController
+                withIdentifier: Const.StoryboardID.list) as? ListViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[3]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.random) as? RandomViewController
+                withIdentifier: Const.StoryboardID.random) as? RandomViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[4]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.next) as? NextViewController
+                withIdentifier: Const.StoryboardID.next) as? NextViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[5]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.previous) as? PreviousViewController
+                withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
@@ -191,12 +191,12 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
     // MARK: Helpers
 
     func launchEmail() {
-        var emailTitle = Constants.Messages.appName
-        if let version = Bundle.main.infoDictionary![Constants.Messages.appVersion] {
+        var emailTitle = Const.Messages.appName
+        if let version = Bundle.main.infoDictionary![Const.Messages.appVersion] {
             emailTitle += " \(version)"
         }
-        let messageBody = Constants.Messages.emailSample
-        let toRecipents = [Constants.Messages.emailAddress]
+        let messageBody = Const.Messages.emailSample
+        let toRecipents = [Const.Messages.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         mailComposer.setSubject(emailTitle)
@@ -235,7 +235,7 @@ extension MainMenuTableViewController {
     // MARK: Helpers
 
     func requestReviewManually() {
-        guard let writeReviewURL = URL(string: Constants.Messages.appReviewLink)
+        guard let writeReviewURL = URL(string: Const.Messages.appReviewLink)
         else {
             fatalError("Expected a valid URL")
         }
