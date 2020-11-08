@@ -8,10 +8,8 @@
 - Choose between light and dark mode
 - Choose whether to have sounds on or off
 - Choose between a light or a dark app icon
-- Get it here: https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8
 
 - Found a bug? Want a feature added? Let us know by opening the app and tapping on the top left 'I' on any page, then tapping on 'Contact Us'.
-- Love the app? Please consider leaving a review! It would mean the world to us.
 
 # Screenshots
 
