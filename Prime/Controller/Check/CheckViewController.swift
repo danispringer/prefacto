@@ -27,6 +27,13 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
 
     // MARK: Life Cycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -56,7 +63,19 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
     }
 
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        showKeyboard()
+    }
+
+
     // MARK: Helpers
+
+    @objc func showKeyboard() {
+        myTextField.becomeFirstResponder()
+    }
+
 
     @objc func donePressed() {
         myTextField.resignFirstResponder()

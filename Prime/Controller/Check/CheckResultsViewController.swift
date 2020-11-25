@@ -39,7 +39,7 @@ class CheckResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
         let myIsDivisibleByFormatted = showSeparator ?
             separate(number: myIsDivisibleBy)
@@ -108,7 +108,9 @@ class CheckResultsViewController: UIViewController {
 
 
     @IBAction func donePressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            notif.post(name: .didDisappear, object: nil, userInfo: nil)
+        })
     }
 
 

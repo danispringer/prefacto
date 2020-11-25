@@ -39,7 +39,7 @@ class PreviousResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myOriginalNumberFormatted = showSeparator ? separate(number: myOriginalNumber) : "\(myOriginalNumber)"
         let myPreviousPrimeFormatted = showSeparator ?
             separate(number: myPreviousPrime)
@@ -97,7 +97,9 @@ class PreviousResultsViewController: UIViewController {
 
 
     @IBAction func donePressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            notif.post(name: .didDisappear, object: nil, userInfo: nil)
+        })
     }
 
 

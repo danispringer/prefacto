@@ -28,8 +28,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        thousandsSeparatorSwitch.isOn = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
-        iconSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(
+        thousandsSeparatorSwitch.isOn = UDStan.bool(forKey: Const.UserDef.showSeparator)
+        iconSegmentedControl.selectedSegmentIndex = UDStan.integer(
             forKey: Const.UserDef.selectedIcon)
 
         for (index, imageName) in options.enumerated() {
@@ -42,12 +42,12 @@ class SettingsViewController: UIViewController {
     // Helpers
 
     @IBAction func showSeparatorToggled(sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Const.UserDef.showSeparator)
+        UDStan.set(sender.isOn, forKey: Const.UserDef.showSeparator)
     }
 
 
     @IBAction func updateIcon(sender: UISegmentedControl) {
-        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: Const.UserDef.selectedIcon)
+        UDStan.set(sender.selectedSegmentIndex, forKey: Const.UserDef.selectedIcon)
         setIcon()
     }
 
@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController {
 
         var myIcon = ""
 
-        switch UserDefaults.standard.integer(forKey: Const.UserDef.selectedIcon) {
+        switch UDStan.integer(forKey: Const.UserDef.selectedIcon) {
         case 0:
             myIcon = Const.UserDef.light
         case 1:
