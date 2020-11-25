@@ -43,7 +43,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myFromFormatted = showSeparator ? separate(number: myFrom) : "\(myFrom)"
         let myToFormatted = showSeparator ? separate(number: myTo) : "\(myTo)"
         if source.count == 0 {
@@ -194,7 +194,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     @IBAction func donePressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            notif.post(name: .didDisappear, object: nil, userInfo: nil)
+        })
     }
 
 
@@ -206,7 +208,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
 

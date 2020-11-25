@@ -31,6 +31,13 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
 
     // MARK: Life Cycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -94,11 +101,27 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
         }
 
         self.title = Const.Title.list
+    }
 
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        showKeyboard()
     }
 
 
     // MARK: Helpers
+
+    @objc func showKeyboard() {
+        let myInt: Int = UDStan.integer(forKey: Const.UserDef.selectedTextField)
+        if myInt == 1 {
+            secondTextField.becomeFirstResponder()
+        } else {
+            firstTextField.becomeFirstResponder()
+        }
+    }
+
 
     @objc func previousTextField() {
         firstTextField.becomeFirstResponder()
@@ -113,6 +136,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
     func textFieldDidBeginEditing(_ textField: UITextField) {
         previousButton.isEnabled = !(textField.tag == 0)
         nextButton.isEnabled = (textField.tag == 0)
+        UDStan.setValue(textField.tag, forKey: Const.UserDef.selectedTextField)
     }
 
 

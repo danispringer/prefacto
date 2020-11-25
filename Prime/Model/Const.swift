@@ -29,11 +29,12 @@ var localOriginalNumber: Int64 = 0
 var localNextPrime: Int64 = 0
 var localPreviousPrime: Int64 = 0
 
+let UDStan = UserDefaults.standard
+let notif = NotificationCenter.default
 
 // MARK: Constants Struct
 
 struct Const {
-
 
     struct StoryboardID {
         static let main = "Main"
@@ -209,6 +210,7 @@ struct Const {
         static let selectedIcon = "selectedIcon"
         static let light = "light"
         static let dark = "dark"
+        static let selectedTextField = "selectedTextField"
     }
 
 }

@@ -36,7 +36,7 @@ class RandomResultsViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber!)"
         resultLabel.text = "\(myNumberFormatted)"
         titleLabel.text = myTitle

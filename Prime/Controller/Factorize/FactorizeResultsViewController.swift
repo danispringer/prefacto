@@ -43,7 +43,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             present(alert, animated: true)
             return
         }
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
         let sourceFirstFormatted = showSeparator ? separate(number: source.first!) : "\(source.first!)"
         let sourceLastFormatted = showSeparator ? separate(number: source.last!) : "\(source.last!)"
@@ -151,7 +151,9 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
 
     @IBAction func donePressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            notif.post(name: .didDisappear, object: nil, userInfo: nil)
+        })
     }
 
 
@@ -164,7 +166,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let showSeparator = UserDefaults.standard.bool(forKey: Const.UserDef.showSeparator)
+        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
         cell?.numberLabel?.text = showSeparator ?
