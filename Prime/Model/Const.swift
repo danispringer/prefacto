@@ -99,7 +99,7 @@ struct Const {
         static let leaveReview = "Leave a Review"
         static let settings = "Settings"
         static let emailSample = "Hi. I have a question..."
-        static let emailAddress = "musicbyds@icloud.com"
+        static let emailAddress = "dani.springer@icloud.com"
         static var noPrimesInRangeMessage: String {
             return """
             Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
