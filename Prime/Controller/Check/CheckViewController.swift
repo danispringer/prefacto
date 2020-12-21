@@ -67,6 +67,11 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
         super.viewDidAppear(animated)
 
         showKeyboard()
+        if let myString: String = UDStan.string(forKey: Const.UserDef.numFromList), !myString.isEmpty {
+            myTextField.text = myString
+            UDStan.removeObject(forKey: Const.UserDef.numFromList)
+            checkButtonPressed()
+        }
     }
 
 
@@ -211,7 +216,6 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         checkButtonPressed()
-
         return true
     }
 
