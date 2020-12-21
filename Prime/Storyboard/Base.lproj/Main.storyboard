@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bgr-jy-98T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bgr-jy-98T">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -95,11 +95,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Prime" id="5XZ-nx-Dl6">
-                        <barButtonItem key="rightBarButtonItem" title="About" image="ellipsis.circle" catalog="system" id="hth-mK-DiQ">
-                            <connections>
-                                <action selector="aboutPressed:" destination="EO6-OC-f7d" id="XeQ-xW-D6n"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" image="ellipsis.circle" catalog="system" id="hth-mK-DiQ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="aboutButton" destination="hth-mK-DiQ" id="vBp-Gq-9c5"/>
@@ -684,9 +680,6 @@ Factors: 1234567890</string>
                                 <rect key="frame" x="16" y="436.5" width="382" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="blah blah blah"/>
-                                <connections>
-                                    <action selector="randomizeButtonPressed:" destination="rtL-8v-6Jg" eventType="touchUpInside" id="dgb-XP-O0F"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yjZ-am-8J6"/>
