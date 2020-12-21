@@ -27,9 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         UDStan.register(defaults: [
-                                        Const.UserDef.showSeparator: false,
-                                        Const.UserDef.selectedIcon: 0,
-                                        Const.UserDef.selectedTextField: 0])
+                            Const.UserDef.showSeparator: false,
+                            Const.UserDef.selectedIcon: 0,
+                            Const.UserDef.selectedTextField: 0,
+                            Const.UserDef.numFromList: ""])
 
         UINavigationBar.appearance().tintColor = UIColor(named: Const.View.specialButtonColor)
         UIView.appearance(

@@ -772,43 +772,29 @@ Factors: 1234567890</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="16" y="503.5" width="382" height="29"/>
-                                <accessibility key="accessibilityConfiguration" label="Copy"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3W-9z-qCm">
+                                <rect key="frame" x="16" y="436.5" width="382" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" image="doc.on.doc" catalog="system"/>
-                                <connections>
-                                    <action selector="copyPressed:" destination="7sC-Ww-chD" eventType="touchUpInside" id="Nol-tB-Siz"/>
-                                </connections>
+                                <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678901234567890" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsD-1r-mwL">
-                                <rect key="frame" x="16" y="443" width="382" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vmc-Bm-u6I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KsD-1r-mwL" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="0h5-2H-U3h"/>
                             <constraint firstItem="9h7-fu-4TW" firstAttribute="top" secondItem="PX3-Zc-OR8" secondAttribute="bottom" constant="16" id="1oC-gT-HDb"/>
-                            <constraint firstItem="DqT-zL-LYQ" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="467-Jk-6rv"/>
-                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="KsD-1r-mwL" secondAttribute="trailing" constant="16" id="7YW-XT-hsP"/>
+                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="D3W-9z-qCm" secondAttribute="trailing" constant="16" id="7tK-De-Rxh"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="top" secondItem="Vmc-Bm-u6I" secondAttribute="top" id="PCl-0a-aSw"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" id="VXB-pS-hTn"/>
                             <constraint firstItem="9h7-fu-4TW" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="W35-dO-orM"/>
-                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="DqT-zL-LYQ" secondAttribute="trailing" constant="16" id="dwg-uJ-dvU"/>
+                            <constraint firstItem="D3W-9z-qCm" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="aVD-2x-R5L"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="9h7-fu-4TW" secondAttribute="trailing" constant="16" id="ew7-n0-nAU"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="PX3-Zc-OR8" secondAttribute="trailing" id="fMf-sR-HuJ"/>
-                            <constraint firstItem="DqT-zL-LYQ" firstAttribute="top" secondItem="KsD-1r-mwL" secondAttribute="bottom" constant="40" id="wiu-Qj-uJ2"/>
-                            <constraint firstItem="KsD-1r-mwL" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="ywr-qh-Cfs"/>
+                            <constraint firstItem="D3W-9z-qCm" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="lSP-bG-MWq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="copyButton" destination="DqT-zL-LYQ" id="xkw-vd-w32"/>
                         <outlet property="myToolbar" destination="PX3-Zc-OR8" id="lP5-OH-3uD"/>
-                        <outlet property="resultLabel" destination="KsD-1r-mwL" id="fAa-qe-bzY"/>
+                        <outlet property="resultButton" destination="D3W-9z-qCm" id="TKN-lO-Qr7"/>
                         <outlet property="shareBarButtonItem" destination="8wG-x3-FZT" id="4zZ-8Q-uO5"/>
                         <outlet property="titleLabel" destination="9h7-fu-4TW" id="oT4-ep-NRa"/>
                     </connections>
@@ -969,7 +955,6 @@ Divisible by: 857.</string>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.up" catalog="system" width="128" height="72"/>
         <image name="dark.png" width="200" height="200"/>
-        <image name="doc.on.doc" catalog="system" width="116" height="128"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="light.png" width="200" height="200"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

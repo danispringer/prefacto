@@ -79,7 +79,7 @@ struct Const {
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
-        static let showAppsButtonTitle = "More by Daniel Springer"
+        static let showAppsButtonTitle = "More Apps"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let devID = "1402417666"
         static let shareApp = "Tell a Friend"
@@ -192,6 +192,7 @@ struct Const {
         static let light = "light"
         static let dark = "dark"
         static let selectedTextField = "selectedTextField"
+        static let numFromList = "numFromList"
     }
 
 }

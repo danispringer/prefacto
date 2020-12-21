@@ -85,7 +85,7 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             self.makeRandom(size: userChoice)
         }
 
-        let randomMenu = UIMenu(title: "Choose your random prime's size", image: nil, identifier: .none,
+        let randomMenu = UIMenu(title: "Choose Size", image: nil, identifier: .none,
                                 options: .displayInline,
                                 children: [xSmallAction, smallAction, mediumAction, largeAction, xLargeAction])
         return randomMenu
