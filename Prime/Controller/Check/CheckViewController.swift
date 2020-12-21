@@ -127,6 +127,7 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
         }
         guard !myTextFieldText.isEmpty else {
             let alert = self.createAlert(alertReasonParam: .textfieldEmpty)
+
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)

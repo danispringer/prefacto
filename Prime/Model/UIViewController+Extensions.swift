@@ -11,7 +11,6 @@ import UIKit
 
 extension UIViewController {
 
-
     enum AlertReason {
         case textfieldEmpty
         case notNumberOrTooBig
