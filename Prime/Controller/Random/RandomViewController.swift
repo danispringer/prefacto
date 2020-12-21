@@ -88,7 +88,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
         let randomMenu = UIMenu(title: "Choose your random prime's size", image: nil, identifier: .none,
                                 options: .displayInline,
                                 children: [xSmallAction, smallAction, mediumAction, largeAction, xLargeAction])
-        
         return randomMenu
     }
 
@@ -168,7 +167,11 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             }
             if let toPresent = randomResultsVC {
                 self.dismiss(animated: false, completion: {
-                    self.present(toPresent, animated: !fromShortcut)
+                    if fromShortcut {
+                        self.navigationController?.present(toPresent, animated: !fromShortcut)
+                    } else {
+                        self.present(toPresent, animated: !fromShortcut)
+                    }
                 })
             }
         }
