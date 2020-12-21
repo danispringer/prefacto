@@ -32,56 +32,48 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        if let selectedRow = myTableView.indexPathForSelectedRow {
-            myTableView.deselectRow(at: selectedRow, animated: true)
-        }
-
-        myTableView.rowHeight = UITableView.automaticDimension
-
+        aboutButton.menu = aboutMenu()
+        aboutButton.image = UIImage(systemName: "ellipsis.circle")
     }
 
 
     // MARK: Helpers
 
-    @IBAction func aboutPressed(_ sender: Any) {
-        let version: String? = Bundle.main.infoDictionary![Const.Messages.appVersion] as? String
-        let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        if let version = version {
-            infoAlert.message = "\(Const.Messages.version) \(version)"
-            infoAlert.title = Const.Messages.appName
-        }
-        infoAlert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Const.Messages.cancel, style: .cancel) { _ in
-            self.dismiss(animated: true)
-        }
-        let shareAppAction = UIAlertAction(title: Const.Messages.shareApp, style: .default) { _ in
+    func aboutMenu() -> UIMenu {
+        let shareApp = UIAction(title: Const.Messages.shareApp, image: UIImage(systemName: "heart"),
+                                state: .off) { _ in
             self.shareApp()
         }
-        let mailAction = UIAlertAction(title: Const.Messages.sendFeedback, style: .default) { _ in
+        let contact = UIAction(title: Const.Messages.sendFeedback, image: UIImage(systemName: "envelope"),
+                               state: .off) { _ in
             self.launchEmail()
         }
-        let reviewAction = UIAlertAction(title: Const.Messages.leaveReview, style: .default) { _ in
-            self.requestReviewManually()
+        let review = UIAction(title: Const.Messages.leaveReview,
+                              image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
+            self.requestReview()
         }
-        let settingsAction = UIAlertAction(title: Const.Messages.settings, style: .default) { _ in
+        let moreApps = UIAction(title: Const.Messages.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
+                                state: .off) { _ in
+            self.showApps()
+        }
+        let settings = UIAction(title: Const.Messages.settings,
+                                  image: UIImage(systemName: "gearshape"), state: .off) { _ in
             let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.settings)
             self.present(controller, animated: true)
         }
-        let showAppsAction = UIAlertAction(title: Const.Messages.showAppsButtonTitle, style: .default) { _ in
-            self.showApps()
+        let version: String? = Bundle.main.infoDictionary![Const.Messages.appVersion] as? String
+        var myTitle = Const.Messages.appName
+        if let safeVersion = version {
+            myTitle += " \(Const.Messages.version) \(safeVersion)"
         }
-        for action in [settingsAction, mailAction, reviewAction,
-                       shareAppAction, showAppsAction, cancelAction] {
-            infoAlert.addAction(action)
-        }
-        if let presenter = infoAlert.popoverPresentationController {
-            presenter.barButtonItem = aboutButton
-        }
-        present(infoAlert, animated: true)
+
+        let aboutMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
+                              children: [settings, contact, review, shareApp, moreApps])
+        return aboutMenu
     }
 
 
@@ -237,7 +229,7 @@ extension MainMenuTableViewController {
 
     // MARK: Helpers
 
-    func requestReviewManually() {
+    func requestReview() {
         guard let writeReviewURL = URL(string: Const.Messages.appReviewLink)
         else {
             fatalError("Expected a valid URL")

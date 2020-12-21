@@ -73,7 +73,7 @@ struct Const {
         static let randomize = "Create Random Prime"
         static let done = "Done"
         static let cancel = "Cancel"
-        static let version = "Version"
+        static let version = "v."
         static let appName = "Prime"
         static let placeholderText = "Enter number here"
         static let appVersion = "CFBundleShortVersionString"
