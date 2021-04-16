@@ -171,6 +171,15 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
 
     func presentResult(number: Int64, size: SizeOptions, fromShortcut: Bool) {
+        guard let myNav = self.navigationController, myNav.topViewController == self else {
+            // the view is not currently displayed. abort.
+            DispatchQueue.main.async {
+                if !fromShortcut {
+                    self.enableUI(enabled: true)
+                }
+            }
+            return
+        }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let randomResultsVC = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.randomResults) as? RandomResultsViewController

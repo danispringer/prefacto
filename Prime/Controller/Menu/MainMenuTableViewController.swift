@@ -117,6 +117,15 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: TableView Delegate
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Check, List, Factorize"
+        } else {
+            fatalError()
+        }
+    }
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myDataSource.count
     }
