@@ -772,31 +772,22 @@ Factors: 1234567890</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="16" y="241" width="398" height="29"/>
+                                <rect key="frame" x="16" y="241" width="398" height="33"/>
                                 <accessibility key="accessibilityConfiguration" label="Copy"/>
-=======
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3W-9z-qCm">
-                                <rect key="frame" x="16" y="436.5" width="382" height="33"/>
->>>>>>> 1ce84784449669edbcaa44e95b3aabd7e98ba9cc
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Button"/>
                             </button>
-<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678901234567890" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsD-1r-mwL">
                                 <rect key="frame" x="16" y="188.5" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-=======
->>>>>>> 1ce84784449669edbcaa44e95b3aabd7e98ba9cc
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vmc-Bm-u6I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-<<<<<<< HEAD
                             <constraint firstItem="9h7-fu-4TW" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="5wu-HY-srS"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" id="67f-l7-FQV"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="KsD-1r-mwL" secondAttribute="trailing" constant="16" id="Paf-WZ-YG5"/>
@@ -810,22 +801,11 @@ Factors: 1234567890</string>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="centerX" secondItem="tUT-Up-DS9" secondAttribute="centerX" id="qaj-pD-9Aq"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DqT-zL-LYQ" secondAttribute="bottom" constant="16" id="v9K-Rg-4lc"/>
                             <constraint firstItem="DqT-zL-LYQ" firstAttribute="top" secondItem="KsD-1r-mwL" secondAttribute="bottom" constant="32" id="vqj-sC-5DC"/>
-=======
-                            <constraint firstItem="9h7-fu-4TW" firstAttribute="top" secondItem="PX3-Zc-OR8" secondAttribute="bottom" constant="16" id="1oC-gT-HDb"/>
-                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="D3W-9z-qCm" secondAttribute="trailing" constant="16" id="7tK-De-Rxh"/>
-                            <constraint firstItem="PX3-Zc-OR8" firstAttribute="top" secondItem="Vmc-Bm-u6I" secondAttribute="top" id="PCl-0a-aSw"/>
-                            <constraint firstItem="PX3-Zc-OR8" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" id="VXB-pS-hTn"/>
-                            <constraint firstItem="9h7-fu-4TW" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="W35-dO-orM"/>
-                            <constraint firstItem="D3W-9z-qCm" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="aVD-2x-R5L"/>
-                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="9h7-fu-4TW" secondAttribute="trailing" constant="16" id="ew7-n0-nAU"/>
-                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="PX3-Zc-OR8" secondAttribute="trailing" id="fMf-sR-HuJ"/>
-                            <constraint firstItem="D3W-9z-qCm" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="lSP-bG-MWq"/>
->>>>>>> 1ce84784449669edbcaa44e95b3aabd7e98ba9cc
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="myToolbar" destination="PX3-Zc-OR8" id="lP5-OH-3uD"/>
-                        <outlet property="resultButton" destination="D3W-9z-qCm" id="TKN-lO-Qr7"/>
+                        <outlet property="resultButton" destination="DqT-zL-LYQ" id="3E2-Gf-A8R"/>
                         <outlet property="shareBarButtonItem" destination="8wG-x3-FZT" id="4zZ-8Q-uO5"/>
                         <outlet property="titleLabel" destination="9h7-fu-4TW" id="oT4-ep-NRa"/>
                     </connections>
