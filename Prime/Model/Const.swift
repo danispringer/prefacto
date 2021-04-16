@@ -73,13 +73,13 @@ struct Const {
         static let randomize = "Create Random Prime"
         static let done = "Done"
         static let cancel = "Cancel"
-        static let version = "Version"
+        static let version = "v."
         static let appName = "Prime"
         static let placeholderText = "Enter number here"
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
-        static let showAppsButtonTitle = "More by Daniel Springer"
+        static let showAppsButtonTitle = "More Apps"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let devID = "1402417666"
         static let shareApp = "Tell a Friend"
@@ -103,80 +103,80 @@ struct Const {
         static var noPrimesInRangeMessage: String {
             return """
             Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
-            I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var singlePrimeInRangeMessage: String {
             return """
             Hey, did you know that the only prime number between \(localFrom) and \(localTo) is \
-            \(localSourceFirst)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            \(localSourceFirst)?
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var twoPrimesInRange: String {
             return """
             Hey, did you know that the only prime numbers between \(localFrom) and \(localTo) are \
-            \(localSourceFirst) and \(localSourceLast)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            \(localSourceFirst) and \(localSourceLast)?
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var manyPrimesInrange: String {
             return """
             Hey, did you know that the prime numbers between \(localFrom) and \(localTo) are \
             \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
-            \(localSource.count) numbers! I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            \(localSource.count) numbers!
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var isPrimeMessage: String {
             return """
-            Hey, did you know that \(localNumber) is a prime number? I just found out, using \
-            this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            Hey, did you know that \(localNumber) is a prime number?
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var isNotPrimeMessage: String {
             return """
             Hey, did you know that \(localNumber) is not prime, because it is divisible by \
-            \(localIsDivisibleBy)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            \(localIsDivisibleBy)?
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var twoPrimeFactorsMessage: String {
             return """
             Hey, did you know that the prime factors of \(localNumber) are \(localSourceFirst) \
-            and \(localSourceLast)? I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            and \(localSourceLast)?
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var manyPrimeFactorsMessage: String {
             return """
             Hey, did you know that the prime factors of \(localNumber) are \
             \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
-            \(localSource.count) numbers! I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            \(localSource.count) numbers!
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var nextPrimeMessage: String {
             return """
             Hey, did you know that the next prime after \(localOriginalNumber) is \(localNextPrime)? \
-            I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
         static var previousPrimeMessage: String {
             return """
             Hey, did you know that the previous prime before \(localOriginalNumber) is \(localPreviousPrime)? \
-            I just found out, using this app: \
-            https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+
+            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
             """
         }
-    }
-
-
-    struct Model {
-        static let name = "Model"
-        static let url = "url"
     }
 
 
@@ -192,6 +192,7 @@ struct Const {
         static let light = "light"
         static let dark = "dark"
         static let selectedTextField = "selectedTextField"
+        static let numFromList = "numFromList"
     }
 
 }

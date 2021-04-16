@@ -14,12 +14,10 @@ class RandomResultsViewController: UIViewController {
 
 
     // MARK: Outlets
-
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var copyButton: UIButton!
 
 
     // MARK: Properties
@@ -38,8 +36,19 @@ class RandomResultsViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber!)"
-        resultLabel.text = "\(myNumberFormatted)"
         titleLabel.text = myTitle
+        resultButton.setTitle("\(myNumberFormatted)", for: .normal)
+        resultButton.showsMenuAsPrimaryAction = true
+        resultButton.menu = UIMenu(
+            title: "", options: .displayInline,
+            children: [UIAction(title: "Copy",
+                                image: UIImage(systemName: "doc.on.doc"),
+                                state: .off) { _ in
+                if let myNumber = self.myNumber {
+                    UIPasteboard.general.string = String(myNumber)
+                }
+            }])
+
     }
 
 
@@ -78,13 +87,6 @@ class RandomResultsViewController: UIViewController {
             }
         }
         self.present(activityController, animated: true)
-    }
-
-
-    @IBAction func copyPressed(_ sender: Any) {
-        if let myNumber = myNumber {
-            UIPasteboard.general.string = String(myNumber)
-        }
     }
 
 
