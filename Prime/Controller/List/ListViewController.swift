@@ -291,6 +291,7 @@ class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductV
                 let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
                 let checkVC = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.check) as? CheckViewController
+                UDStan.setValue("\(firstNum)", forKey: Const.UserDef.numFromList)
                 self.navigationController?.pushViewController(checkVC!, animated: true)
 
             }

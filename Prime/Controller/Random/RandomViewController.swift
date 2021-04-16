@@ -39,34 +39,65 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
         randomizeButton.setTitle(Const.Messages.randomize, for: .normal)
         self.title = Const.Title.random
+        randomizeButton.menu = randomMenu()
+        randomizeButton.showsMenuAsPrimaryAction = true
     }
 
 
     // MARK: Helpers
 
-    @IBAction func randomizeButtonPressed(_ sender: Any) {
-        let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
-        activity.title = "Get random prime"
-        activity.isEligibleForSearch = true
+    func randomMenu() -> UIMenu {
 
-        activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
-        activity.suggestedInvocationPhrase = "Show me a Random Prime"
-        view.userActivity = activity
-        activity.becomeCurrent()
+        var userChoice = SizeOptions.xSmall
+        let xSmallAction = UIAction(title: SizeOptions.xSmall.rawValue, state: .off) { _ in
+            userChoice = .xSmall
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
+            self.makeRandom(size: userChoice)
+        }
+        let smallAction = UIAction(title: SizeOptions.small.rawValue, state: .off) { _ in
+            userChoice = .small
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
+            self.makeRandom(size: userChoice)
+        }
+        let mediumAction = UIAction(title: SizeOptions.medium.rawValue, state: .off) { _ in
+            userChoice = .medium
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
+            self.makeRandom(size: userChoice)
+        }
+        let largeAction = UIAction(title: SizeOptions.large.rawValue, state: .off) { _ in
+            userChoice = .large
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
+            self.makeRandom(size: userChoice)
+        }
+        let xLargeAction = UIAction(title: SizeOptions.xLarge.rawValue, state: .off) { _ in
+            userChoice = .xLarge
+            DispatchQueue.main.async {
+                self.enableUI(enabled: false)
+            }
+            self.makeRandom(size: userChoice)
+        }
 
-        showOptions()
+        let randomMenu = UIMenu(title: "Choose Size", image: nil, identifier: .none,
+                                options: .displayInline,
+                                children: [xSmallAction, smallAction, mediumAction, largeAction, xLargeAction])
+        return randomMenu
     }
 
 
     func makeRandomShortcut() {
-
         var limit = Int64.max / 10 * 9
         limit /= power(coeff: 10, exp: 12)
         var randInt = Int64.random(in: 1...limit)
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
-
             while !Int64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
@@ -78,6 +109,15 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
 
 
     func makeRandom(size: SizeOptions) {
+        // donate to siri shortcuts
+        let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
+        activity.title = "Get random prime"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
+        activity.suggestedInvocationPhrase = "Show me a Random Prime"
+        view.userActivity = activity
+        activity.becomeCurrent()
 
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
@@ -115,61 +155,6 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
     }
 
 
-    func showOptions() {
-        var userChoice = SizeOptions.xSmall
-        let alert = UIAlertController(title: "Choose Size",
-                                      message: "Choose your random prime's size",
-                                      preferredStyle: .actionSheet)
-        alert.modalPresentationStyle = .popover
-        let cancelAction = UIAlertAction(title: Const.Messages.cancel, style: .cancel)
-        let xSmallAction = UIAlertAction(title: SizeOptions.xSmall.rawValue, style: .default) { _ in
-            userChoice = .xSmall
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let smallAction = UIAlertAction(title: SizeOptions.small.rawValue, style: .default) { _ in
-            userChoice = .small
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let mediumAction = UIAlertAction(title: SizeOptions.medium.rawValue, style: .default) { _ in
-            userChoice = .medium
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let largeAction = UIAlertAction(title: SizeOptions.large.rawValue, style: .default) { _ in
-            userChoice = .large
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let xLargeAction = UIAlertAction(title: SizeOptions.xLarge.rawValue, style: .default) { _ in
-            userChoice = .xLarge
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        for action in [cancelAction, xSmallAction, smallAction, mediumAction, largeAction, xLargeAction] {
-            alert.addAction(action)
-        }
-        if let presenter = alert.popoverPresentationController {
-            presenter.sourceView = self.view
-            presenter.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-            presenter.permittedArrowDirections = []
-        }
-        present(alert, animated: true)
-
-    }
-
-
     func presentResult(number: Int64, size: SizeOptions, fromShortcut: Bool) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
@@ -191,7 +176,11 @@ class RandomViewController: UIViewController, SKStoreProductViewControllerDelega
             }
             if let toPresent = randomResultsVC {
                 self.dismiss(animated: false, completion: {
-                    self.present(toPresent, animated: !fromShortcut)
+                    if fromShortcut {
+                        self.navigationController?.present(toPresent, animated: !fromShortcut)
+                    } else {
+                        self.present(toPresent, animated: !fromShortcut)
+                    }
                 })
             }
         }
