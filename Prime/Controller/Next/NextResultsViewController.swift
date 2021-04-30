@@ -38,11 +38,8 @@ class NextResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-        let myOriginalNumberFormatted = showSeparator ? separate(number: myOriginalNumber) : "\(myOriginalNumber)"
-        let myNextPrimeFormatted = showSeparator ?
-            separate(number: myNextPrime)
-            : "\(myNextPrime)"
+        let myOriginalNumberFormatted = "\(myOriginalNumber)"
+        let myNextPrimeFormatted = "\(myNextPrime)"
         resultLabel.text = """
         The next prime after
         \(myOriginalNumberFormatted)
@@ -58,14 +55,6 @@ class NextResultsViewController: UIViewController {
 
 
     // MARK: Helpers
-
-    func separate(number: Int64) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let myNSNumber = NSNumber(value: number)
-        return formatter.string(from: myNSNumber)!
-    }
-
 
     @IBAction func share() {
         var message = ""

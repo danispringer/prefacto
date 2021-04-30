@@ -200,20 +200,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thousands Separator" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5L-ML-EPG">
-                                <rect key="frame" x="16" y="144.33333333333334" width="163.66666666666666" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-qf-z7j">
-                                <rect key="frame" x="325" y="139" width="51" height="31"/>
-                                <connections>
-                                    <action selector="showSeparatorToggledWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="sEU-mR-9S5"/>
-                                </connections>
-                            </switch>
                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
-                                <rect key="frame" x="213" y="186" width="161" height="81"/>
+                                <rect key="frame" x="213" y="138.66666666666666" width="161" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="HiB-bF-JUP"/>
                                     <constraint firstAttribute="width" secondItem="6zn-5I-jYs" secondAttribute="height" multiplier="2:1" constant="1" id="adk-3d-CBH"/>
@@ -227,7 +215,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-f8-8RI">
-                                <rect key="frame" x="16" y="216" width="67.666666666666671" height="20.333333333333343"/>
+                                <rect key="frame" x="16" y="168.33333333333334" width="67.666666666666671" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,16 +238,11 @@
                         <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="Lfo-qf-z7j" secondAttribute="trailing" constant="16" id="0Us-Rj-knO"/>
-                            <constraint firstItem="6zn-5I-jYs" firstAttribute="top" secondItem="Lfo-qf-z7j" secondAttribute="bottom" constant="16" id="GI4-mI-tAa"/>
-                            <constraint firstItem="Lfo-qf-z7j" firstAttribute="centerY" secondItem="V5L-ML-EPG" secondAttribute="centerY" id="HrT-tH-3MW"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="6zn-5I-jYs" secondAttribute="trailing" constant="16" id="K2h-BI-hO0"/>
-                            <constraint firstItem="Lfo-qf-z7j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V5L-ML-EPG" secondAttribute="trailing" constant="16" id="L01-lH-Ymc"/>
                             <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="e7B-ug-FYW" secondAttribute="trailing" constant="16" id="MX3-xQ-SJ5"/>
                             <constraint firstItem="6zn-5I-jYs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DeZ-f8-8RI" secondAttribute="trailing" constant="8" id="Rr2-p2-Hot"/>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="40" id="TT7-6b-kDF"/>
-                            <constraint firstItem="V5L-ML-EPG" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="16" id="cZD-4c-7BC"/>
-                            <constraint firstItem="V5L-ML-EPG" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="40" id="dMU-cb-T8r"/>
+                            <constraint firstItem="DeZ-f8-8RI" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="64" id="hAo-Xq-q0L"/>
                             <constraint firstItem="cAh-4I-Eqv" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="16" id="lwt-bf-1uO"/>
                             <constraint firstItem="e7B-ug-FYW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="8" id="qm9-DB-8nG"/>
                             <constraint firstItem="e7B-ug-FYW" firstAttribute="centerY" secondItem="cAh-4I-Eqv" secondAttribute="centerY" id="rcR-Ul-0Yi"/>
@@ -269,7 +252,6 @@
                     </view>
                     <connections>
                         <outlet property="iconSegmentedControl" destination="6zn-5I-jYs" id="63f-qB-KRd"/>
-                        <outlet property="thousandsSeparatorSwitch" destination="Lfo-qf-z7j" id="ihC-f8-fmC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-q0-kOz" userLabel="First Responder" sceneMemberID="firstResponder"/>

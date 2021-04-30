@@ -34,8 +34,7 @@ class RandomResultsViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-        let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber!)"
+        let myNumberFormatted = "\(myNumber!)"
         titleLabel.text = myTitle
         resultButton.setTitle(myNumberFormatted, for: .normal)
         resultButton.showsMenuAsPrimaryAction = true
@@ -53,14 +52,6 @@ class RandomResultsViewController: UIViewController {
 
 
     // MARK: Helpers
-
-    func separate(number: Int64) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let myNSNumber = NSNumber(value: number)
-        return formatter.string(from: myNSNumber)!
-    }
-
 
     @IBAction func share() {
         var message = ""

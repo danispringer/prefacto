@@ -43,9 +43,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-        let myFromFormatted = showSeparator ? separate(number: myFrom) : "\(myFrom)"
-        let myToFormatted = showSeparator ? separate(number: myTo) : "\(myTo)"
+        let myFromFormatted = "\(myFrom)"
+        let myToFormatted = "\(myTo)"
         if source.count == 0 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
@@ -57,7 +56,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             \(myToFormatted)
             """
         } else if source.count == 1 {
-            let sourceFormatted = showSeparator ? separate(number: source[0]) : "\(source[0])"
+            let sourceFormatted = "\(source[0])"
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
@@ -70,10 +69,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             \(sourceFormatted)
             """
         } else if source.count == 2 {
-            let sourceFirstFormatted = showSeparator ?
-                separate(number: source.first!)
-                : "\(source.first!)"
-            let sourceLastFormatted = showSeparator ? separate(number: source.last!) : "\(source.last!)"
+            let sourceFirstFormatted = "\(source.first!)"
+            let sourceLastFormatted = "\(source.last!)"
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
@@ -88,9 +85,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             \(sourceLastFormatted)
             """
         } else {
-            let sourceCountFormatted = showSeparator ?
-                separate(number: Int64(source!.count))
-                : "\(source.count)"
+            let sourceCountFormatted = "\(source.count)"
             resultLabel.text = """
             There are
             \(sourceCountFormatted)
@@ -108,14 +103,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     // MARK: Helpers
-
-    func separate(number: Int64) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let myNSNumber = NSNumber(value: number)
-        return formatter.string(from: myNSNumber)!
-    }
-
 
     func jumpToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
@@ -208,13 +195,10 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
 
-        cell?.numberLabel?.text = showSeparator ?
-            separate(number: source[(indexPath as NSIndexPath).row])
-            : "\(source[(indexPath as NSIndexPath).row])"
+        cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
         return cell ?? UITableViewCell()

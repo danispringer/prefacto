@@ -39,11 +39,9 @@ class PreviousResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-        let myOriginalNumberFormatted = showSeparator ? separate(number: myOriginalNumber) : "\(myOriginalNumber)"
-        let myPreviousPrimeFormatted = showSeparator ?
-            separate(number: myPreviousPrime)
-            : "\(myPreviousPrime)"
+
+        let myOriginalNumberFormatted = "\(myOriginalNumber)"
+        let myPreviousPrimeFormatted = "\(myPreviousPrime)"
         resultLabel.text = """
         The previous prime before
         \(myOriginalNumberFormatted)
@@ -59,14 +57,6 @@ class PreviousResultsViewController: UIViewController {
 
 
     // MARK: Helpers
-
-    func separate(number: Int64) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let myNSNumber = NSNumber(value: number)
-        return formatter.string(from: myNSNumber)!
-    }
-
 
     @IBAction func share() {
         var message = ""
