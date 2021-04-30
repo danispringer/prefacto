@@ -43,12 +43,10 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             present(alert, animated: true)
             return
         }
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-        let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
-        let sourceFirstFormatted = showSeparator ? separate(number: source.first!) : "\(source.first!)"
-        let sourceLastFormatted = showSeparator ? separate(number: source.last!) : "\(source.last!)"
-        let sourceCountFormatted = showSeparator ?
-            separate(number: Int64(source!.count)) : "\(source.count)"
+        let myNumberFormatted = "\(myNumber)"
+        let sourceFirstFormatted = "\(source.first!)"
+        let sourceLastFormatted = "\(source.last!)"
+        let sourceCountFormatted = "\(source.count)"
 
         if source.count == 1 {
             resultsTableView.isHidden = true
@@ -83,14 +81,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
 
     // MARK: Helpers
-
-    func separate(number: Int64) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let myNSNumber = NSNumber(value: number)
-        return formatter.string(from: myNSNumber)!
-    }
-
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
@@ -166,12 +156,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
-        cell?.numberLabel?.text = showSeparator ?
-            separate(number: source[(indexPath as NSIndexPath).row])
-            : "\(source[(indexPath as NSIndexPath).row])"
+        cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
         return cell ?? UITableViewCell()

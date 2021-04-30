@@ -13,7 +13,6 @@ class SettingsViewController: UIViewController {
 
     // MARK: Outlets
 
-    @IBOutlet weak var thousandsSeparatorSwitch: UISwitch!
     @IBOutlet weak var iconSegmentedControl: UISegmentedControl!
 
 
@@ -27,8 +26,6 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        thousandsSeparatorSwitch.isOn = UDStan.bool(forKey: Const.UserDef.showSeparator)
         iconSegmentedControl.selectedSegmentIndex = UDStan.integer(
             forKey: Const.UserDef.selectedIcon)
 
@@ -40,11 +37,6 @@ class SettingsViewController: UIViewController {
 
 
     // Helpers
-
-    @IBAction func showSeparatorToggled(sender: UISwitch) {
-        UDStan.set(sender.isOn, forKey: Const.UserDef.showSeparator)
-    }
-
 
     @IBAction func updateIcon(sender: UISegmentedControl) {
         UDStan.set(sender.selectedSegmentIndex, forKey: Const.UserDef.selectedIcon)

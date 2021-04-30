@@ -39,11 +39,8 @@ class CheckResultsViewController: UIViewController {
             }
             return
         }
-        let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
-        let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber)"
-        let myIsDivisibleByFormatted = showSeparator ?
-            separate(number: myIsDivisibleBy)
-            : "\(myIsDivisibleBy)"
+        let myNumberFormatted = "\(myNumber)"
+        let myIsDivisibleByFormatted = "\(myIsDivisibleBy)"
         if isPrime {
             resultLabel.text = """
             \(myNumberFormatted)
@@ -65,15 +62,6 @@ class CheckResultsViewController: UIViewController {
 
 
     // MARK: Helpers
-
-
-    func separate(number: Int64) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let myNSNumber = NSNumber(value: number)
-        return formatter.string(from: myNSNumber)!
-    }
-
 
     @IBAction func share() {
         var message = ""

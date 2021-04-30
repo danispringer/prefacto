@@ -187,7 +187,6 @@ struct Const {
 
 
     struct UserDef {
-        static let showSeparator = "showSeparator"
         static let selectedIcon = "selectedIcon"
         static let light = "light"
         static let dark = "dark"
