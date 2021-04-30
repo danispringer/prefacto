@@ -37,7 +37,7 @@ class RandomResultsViewController: UIViewController {
         let showSeparator = UDStan.bool(forKey: Const.UserDef.showSeparator)
         let myNumberFormatted = showSeparator ? separate(number: myNumber) : "\(myNumber!)"
         titleLabel.text = myTitle
-        resultButton.setTitle("\(myNumberFormatted)", for: .normal)
+        resultButton.setTitle(myNumberFormatted, for: .normal)
         resultButton.showsMenuAsPrimaryAction = true
         resultButton.menu = UIMenu(
             title: "", options: .displayInline,
