@@ -187,6 +187,13 @@ class CheckViewController: UIViewController, SKStoreProductViewControllerDelegat
 
 
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
+        guard let myNav = self.navigationController, myNav.topViewController == self else {
+            // the view is not currently displayed. abort.
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+            }
+            return
+        }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.checkResults)
             as? CheckResultsViewController

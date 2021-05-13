@@ -182,6 +182,13 @@ class NextViewController: UIViewController, SKStoreProductViewControllerDelegate
 
 
     func presentResult(originalNumber: Int64, nextPrime: Int64) {
+        guard let myNav = self.navigationController, myNav.topViewController == self else {
+            // the view is not currently displayed. abort.
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+            }
+            return
+        }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.nextResults)
             as? NextResultsViewController
