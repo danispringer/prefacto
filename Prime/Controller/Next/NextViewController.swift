@@ -98,14 +98,23 @@ class NextViewController: UIViewController, SKStoreProductViewControllerDelegate
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             downloadQueue.async {
                 var foundNextPrime = false
-                var possibleNextPrime = userNumber + 1
+                var possibleNextPrime = userNumber // we add 1 below
 
                 while !foundNextPrime {
+                    if possibleNextPrime == Int.max {
+                        let alert = self.createAlert(alertReasonParam: .overflow, num: userNumber)
+                        DispatchQueue.main.async {
+                            alert.view.layoutIfNeeded()
+                            self.enableUI(enabled: true)
+                            self.present(alert, animated: true)
+                        }
+                        return
+                    }
+                    possibleNextPrime += 1
                     if Int64.IsPrime(number: possibleNextPrime).isPrime {
                         foundNextPrime = true
                         nextPrime = possibleNextPrime
                     }
-                    possibleNextPrime += 1
                 }
 
                 DispatchQueue.main.async {
