@@ -100,14 +100,15 @@ class PreviousViewController: UIViewController, SKStoreProductViewControllerDele
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             downloadQueue.async {
                 var foundPreviousPrime = false
-                var possiblePreviousPrime = userNumber - 1
+                var possiblePreviousPrime = userNumber // we subtract below
 
                 while !foundPreviousPrime {
+                    possiblePreviousPrime -= 1
                     if Int64.IsPrime(number: possiblePreviousPrime).isPrime {
                         foundPreviousPrime = true
                         previousPrime = possiblePreviousPrime
                     }
-                    possiblePreviousPrime -= 1
+
                 }
 
                 DispatchQueue.main.async {

@@ -14,6 +14,7 @@ extension UIViewController {
     enum AlertReason {
         case textfieldEmpty
         case notNumberOrTooBig
+        case overflow
         case zero
         case one
         case two
@@ -28,8 +29,7 @@ extension UIViewController {
     }
 
 
-    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, divisibleBy: Int64 = 0,
-                     firstNum: Int64 = 0, secondNum: Int64 = 0) -> UIAlertController {
+    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0) -> UIAlertController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
@@ -81,6 +81,12 @@ extension UIViewController {
         case .messageSent:
             alertTitle = "Success!"
             alertMessage = "Message sent. You should hear from us within 24 hours."
+        case .overflow:
+            alertTitle = "Overflow"
+            alertMessage = """
+                There are no primes above \(num) which are lower than 9223372036854775807 \
+                (your device's limit)
+                """
         default:
             alertTitle = "Unknown error"
             alertMessage = """

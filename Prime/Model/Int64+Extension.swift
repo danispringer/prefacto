@@ -32,13 +32,19 @@ extension Int64 {
             }
             var divisor: Int64 = 5
             var lever: Int64 = 2
-            while divisor * divisor <= number {
+
+            while divisor * divisor <= number { // max int is 9223372036854775807
                 if number % divisor == 0 {
                     self.isPrime = false
                     self.divisor = divisor
                     return
                 }
                 divisor += lever
+                let thing = divisor.multipliedReportingOverflow(by: divisor) // 3037000501 errors
+                if thing.overflow {
+                    break // to avoid crashes and such. Seems to work. Hard to verify if returned primes
+                    // are indeed always prime.
+                }
                 lever = 6 - lever
             }
             self.isPrime = true
