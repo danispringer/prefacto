@@ -71,7 +71,7 @@ class MainMenuTableViewController: UIViewController,
             myTitle += " \(Const.Messages.version) \(safeVersion)"
         }
 
-        let aboutMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
+        let aboutMenu = UIMenu(title: myTitle, options: .displayInline,
                               children: [settings, contact, review, shareApp, moreApps])
         return aboutMenu
     }
@@ -125,13 +125,13 @@ class MainMenuTableViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as? MainMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
 
-        cell?.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
-        cell?.myImage.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-        cell?.selectionStyle = .none
+        cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
+        cell.myImage.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
+        cell.selectionStyle = .none
 
-        return cell ?? UITableViewCell()
+        return cell
     }
 
 
