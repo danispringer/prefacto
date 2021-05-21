@@ -26,7 +26,7 @@ class NextResultsViewController: UIViewController {
     var nextPrime: Int64!
 
 
-    // MARK: Life Cycle.
+    // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
