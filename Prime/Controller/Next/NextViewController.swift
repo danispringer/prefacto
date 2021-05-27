@@ -8,9 +8,8 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 
-class NextViewController: UIViewController, SKStoreProductViewControllerDelegate,
+class NextViewController: UIViewController,
                           UITextFieldDelegate {
 
 

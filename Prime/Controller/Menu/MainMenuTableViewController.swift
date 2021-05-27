@@ -8,12 +8,10 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 
 class MainMenuTableViewController: UIViewController,
                                    UITableViewDataSource,
-                                   UITableViewDelegate,
-                                   SKStoreProductViewControllerDelegate {
+                                   UITableViewDelegate {
 
 
     // MARK: Outlets
@@ -24,7 +22,12 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["Check", "Factorize", "List", "Randomize", "Next", "Previous"]
+    let myDataSource = ["Check if a given number is prime",
+                        "Decompose a given number to its prime factors",
+                        "List all prime numbers in a given range",
+                        "Generate a random prime number of a given size",
+                        "Find the next prime number after a given number",
+                        "Find the previous prime number before a given number"]
     let myImageSource = ["checkmark", "divide", "list.dash", "shuffle", "plus", "minus"]
 
     let menuCell = "MenuCell"
@@ -59,7 +62,7 @@ class MainMenuTableViewController: UIViewController,
                                 state: .off) { _ in
             self.showApps()
         }
-        let settings = UIAction(title: Const.Messages.settings,
+        let settings = UIAction(title: Const.Messages.chooseAppIcon,
                                   image: UIImage(systemName: "gearshape"), state: .off) { _ in
             let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.settings)
@@ -111,7 +114,7 @@ class MainMenuTableViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Check, List, Factorize"
+            return nil//"Check, List, Factorize"
         } else {
             fatalError()
         }
@@ -129,7 +132,8 @@ class MainMenuTableViewController: UIViewController,
 
         cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
         cell.myImage.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-        cell.selectionStyle = .none
+        //cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
@@ -183,6 +187,9 @@ class MainMenuTableViewController: UIViewController,
             alert.view.layoutIfNeeded()
             present(alert, animated: true)
         }
+
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
 
 

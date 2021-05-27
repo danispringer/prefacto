@@ -8,10 +8,9 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 
 
-class ListViewController: UIViewController, UITextFieldDelegate, SKStoreProductViewControllerDelegate {
+class ListViewController: UIViewController, UITextFieldDelegate {
 
 
     // MARK: Outlets
