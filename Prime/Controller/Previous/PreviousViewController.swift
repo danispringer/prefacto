@@ -9,9 +9,9 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 
-class PreviousViewController: UIViewController, SKStoreProductViewControllerDelegate,
+
+class PreviousViewController: UIViewController,
                               UITextFieldDelegate {
 
 

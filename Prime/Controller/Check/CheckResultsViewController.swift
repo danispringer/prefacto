@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import StoreKit
 
 
 class CheckResultsViewController: UIViewController {

@@ -8,3 +8,4 @@ disabled_rules:
   - cyclomatic_complexity
   - switch_case_alignment
   - force_cast
+  - comment_spacing

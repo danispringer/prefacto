@@ -8,10 +8,9 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 
 
-class FactorizeViewController: UIViewController, UITextFieldDelegate, SKStoreProductViewControllerDelegate {
+class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 
     // MARK: Outlets

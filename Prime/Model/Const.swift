@@ -97,7 +97,7 @@ struct Const {
                    """
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
-        static let settings = "Settings"
+        static let chooseAppIcon = "Choose App Icon"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "dani.springer@icloud.com"
         static var noPrimesInRangeMessage: String {

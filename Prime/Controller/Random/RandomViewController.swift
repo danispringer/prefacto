@@ -8,11 +8,10 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 import Intents
 
 
-class RandomViewController: UIViewController, SKStoreProductViewControllerDelegate {
+class RandomViewController: UIViewController {
 
 
     // MARK: Outlets
