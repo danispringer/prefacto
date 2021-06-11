@@ -15,6 +15,9 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>dark</string>
+					<string>dark-120</string>
+					<string>dark-152</string>
+					<string>dark-167</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -24,6 +27,9 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>light</string>
+					<string>light-120</string>
+					<string>light-152</string>
+					<string>light-167</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
