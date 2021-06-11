@@ -3,7 +3,7 @@
 //  Prime
 //
 //  Created by Dani on 11/24/20.
-//  Copyright © 2020 Dani Springer. All rights reserved.
+//  Copyright © 2021 Dani Springer. All rights reserved.
 //
 
 import UIKit
