@@ -7,7 +7,6 @@
 - Share or save your results
 - Choose between light and dark mode
 - Choose whether to have sounds on or off
-- Choose between a light or a dark app icon
 
 - Email: dani.springer@icloud.com
 
@@ -20,6 +19,3 @@
 - Credits:
   - Dark mode: https://www.juventus.com
   - Light mode: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
-
-# License
-Copyright © 2020 Daniel Springer. All rights reserved.
