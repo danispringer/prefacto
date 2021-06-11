@@ -192,63 +192,6 @@
             </objects>
             <point key="canvasLocation" x="-174" y="1436"/>
         </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="RXM-9H-pex">
-            <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="EGf-9u-VfO" customClass="SettingsViewController" customModule="Prime" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vp4-zW-nbr">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5I-jYs">
-                                <rect key="frame" x="67" y="141" width="256" height="128.66666666666669"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="J5j-mI-mRT"/>
-                                    <constraint firstAttribute="width" secondItem="6zn-5I-jYs" secondAttribute="height" multiplier="2:1" constant="1" id="adk-3d-CBH"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="" image="light.png"/>
-                                    <segment title="" image="dark.png"/>
-                                </segments>
-                                <connections>
-                                    <action selector="updateIconWithSender:" destination="EGf-9u-VfO" eventType="valueChanged" id="Auq-vT-IaT"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-4I-Eqv" userLabel="Settings Label">
-                                <rect key="frame" x="15.999999999999993" y="60" width="114.33333333333331" height="17"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7B-ug-FYW">
-                                <rect key="frame" x="339" y="54" width="35" height="29"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="donePressed:" destination="EGf-9u-VfO" eventType="touchUpInside" id="T2o-aC-qX0"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="7kV-2V-rwv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6zn-5I-jYs" firstAttribute="centerX" secondItem="7kV-2V-rwv" secondAttribute="centerX" id="GYJ-6O-lsF"/>
-                            <constraint firstItem="7kV-2V-rwv" firstAttribute="trailing" secondItem="e7B-ug-FYW" secondAttribute="trailing" constant="16" id="MX3-xQ-SJ5"/>
-                            <constraint firstItem="cAh-4I-Eqv" firstAttribute="top" secondItem="7kV-2V-rwv" secondAttribute="top" constant="16" id="TT7-6b-kDF"/>
-                            <constraint firstItem="6zn-5I-jYs" firstAttribute="top" secondItem="cAh-4I-Eqv" secondAttribute="bottom" constant="64" id="hfC-j2-QkK"/>
-                            <constraint firstItem="cAh-4I-Eqv" firstAttribute="leading" secondItem="7kV-2V-rwv" secondAttribute="leading" constant="16" id="lwt-bf-1uO"/>
-                            <constraint firstItem="e7B-ug-FYW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cAh-4I-Eqv" secondAttribute="trailing" constant="8" id="qm9-DB-8nG"/>
-                            <constraint firstItem="e7B-ug-FYW" firstAttribute="centerY" secondItem="cAh-4I-Eqv" secondAttribute="centerY" id="rcR-Ul-0Yi"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="iconSegmentedControl" destination="6zn-5I-jYs" id="63f-qB-KRd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-q0-kOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3936" y="2175"/>
-        </scene>
         <!--List View Controller-->
         <scene sceneID="CXi-cY-2n2">
             <objects>
@@ -929,9 +872,7 @@ Divisible by: 857.</string>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.up" catalog="system" width="128" height="72"/>
-        <image name="dark.png" width="133.33332824707031" height="133.33332824707031"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
-        <image name="light.png" width="133.33332824707031" height="133.33332824707031"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="SpecialButtonColor">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

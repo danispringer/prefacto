@@ -62,12 +62,6 @@ class MainMenuTableViewController: UIViewController,
                                 state: .off) { _ in
             self.showApps()
         }
-        let settings = UIAction(title: Const.Messages.chooseAppIcon,
-                                  image: UIImage(systemName: "gearshape"), state: .off) { _ in
-            let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.settings)
-            self.present(controller, animated: true)
-        }
         let version: String? = Bundle.main.infoDictionary![Const.Messages.appVersion] as? String
         var myTitle = Const.Messages.appName
         if let safeVersion = version {
@@ -75,7 +69,7 @@ class MainMenuTableViewController: UIViewController,
         }
 
         let aboutMenu = UIMenu(title: myTitle, options: .displayInline,
-                              children: [settings, contact, review, shareApp, moreApps])
+                              children: [contact, review, shareApp, moreApps])
         return aboutMenu
     }
 

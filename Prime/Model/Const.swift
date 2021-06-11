@@ -50,7 +50,6 @@ struct Const {
         static let nextResults = "NextResultsViewController"
         static let previous = "PreviousViewController"
         static let previousResults = "PreviousResultsViewController"
-        static let settings = "SettingsViewController"
     }
 
 
@@ -97,7 +96,6 @@ struct Const {
                    """
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
-        static let chooseAppIcon = "Choose App Icon"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "dani.springer@icloud.com"
         static var noPrimesInRangeMessage: String {
@@ -187,9 +185,6 @@ struct Const {
 
 
     struct UserDef {
-        static let selectedIcon = "selectedIcon"
-        static let light = "light"
-        static let dark = "dark"
         static let selectedTextField = "selectedTextField"
         static let numFromList = "numFromList"
     }
