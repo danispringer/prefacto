@@ -65,8 +65,8 @@ class PreviousViewController: UIViewController,
     }
 
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
         showKeyboard()
     }
