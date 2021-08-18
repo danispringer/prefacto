@@ -110,11 +110,11 @@ class RandomViewController: UIViewController {
     func makeRandom(size: SizeOptions) {
         // donate to siri shortcuts
         let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
-        activity.title = "Get random prime"
+        activity.title = Const.Messages.randomize
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
         activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
-        activity.suggestedInvocationPhrase = "Show me a Random Prime"
+        activity.suggestedInvocationPhrase = Const.Messages.randomize
         view.userActivity = activity
         activity.becomeCurrent()
 
