@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import IntentsUI
 
 class MainMenuTableViewController: UIViewController,
                                    UITableViewDataSource,
@@ -31,6 +32,8 @@ class MainMenuTableViewController: UIViewController,
     let myImageSource = ["checkmark", "divide", "list.dash", "shuffle", "plus", "minus"]
 
     let menuCell = "MenuCell"
+
+    let addToSiriController = UIViewController()
 
 
     // MARK: Life Cycle
@@ -58,6 +61,12 @@ class MainMenuTableViewController: UIViewController,
                               image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
             self.requestReview()
         }
+
+        let addToSiri = UIAction(title: Const.Messages.addToSiri,
+                              image: UIImage(systemName: "mic.circle"), state: .off) { _ in
+            self.presentAddToSiri()
+        }
+
         let moreApps = UIAction(title: Const.Messages.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
                                 state: .off) { _ in
             self.showApps()
@@ -69,8 +78,55 @@ class MainMenuTableViewController: UIViewController,
         }
 
         let aboutMenu = UIMenu(title: myTitle, options: .displayInline,
-                              children: [contact, review, shareApp, moreApps])
+                              children: [contact, review, shareApp, moreApps, addToSiri])
         return aboutMenu
+    }
+
+
+    func presentAddToSiri() {
+        let addToSiriButton = INUIAddVoiceShortcutButton(style: .white)
+        let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
+        activity.title = Const.Messages.randomize
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
+        activity.suggestedInvocationPhrase = Const.Messages.randomize
+        view.userActivity = activity
+        activity.becomeCurrent()
+
+        addToSiriButton.translatesAutoresizingMaskIntoConstraints = false
+        addToSiriButton.shortcut = INShortcut(userActivity: activity)
+        addToSiriButton.delegate = self
+        addToSiriController.view.addSubview(addToSiriButton)
+        addToSiriController.view.backgroundColor = UIColor.systemBackground
+
+        let doneButton = UIButton()
+        let font = UIFont.preferredFont(forTextStyle: .body)
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.setAttributedTitle(NSAttributedString(
+                                        string: "Done",
+                                        attributes: [NSAttributedString.Key.font: font]), for: .normal)
+        doneButton.setTitleColor(UIColor(named: Const.View.specialButtonColor), for: .normal)
+        doneButton.addTarget(self, action: #selector(addToSiriDonePressed), for: .touchUpInside)
+        addToSiriController.view.addSubview(doneButton)
+
+        NSLayoutConstraint.activate([
+            addToSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
+            addToSiriButton.centerYAnchor.constraint(equalTo: addToSiriController.view.centerYAnchor),
+            doneButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
+            doneButton.bottomAnchor.constraint(equalTo: addToSiriController.view.bottomAnchor, constant: -64),
+            doneButton.widthAnchor.constraint(equalToConstant: 120),
+            addToSiriButton.widthAnchor.constraint(equalToConstant: 320),
+            addToSiriButton.heightAnchor.constraint(equalToConstant: 64)
+        ])
+
+        self.navigationController?.present(addToSiriController, animated: true)
+
+    }
+
+
+    @objc func addToSiriDonePressed() {
+        addToSiriController.dismiss(animated: true)
     }
 
 
@@ -249,7 +305,48 @@ extension MainMenuTableViewController {
                                   completionHandler: nil)
     }
 
+}
 
+extension MainMenuTableViewController: INUIAddVoiceShortcutButtonDelegate {
+
+    func present(_ addVoiceShortcutViewController: INUIAddVoiceShortcutViewController,
+                 for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
+        addVoiceShortcutViewController.delegate = self
+        addToSiriController.present(addVoiceShortcutViewController, animated: true, completion: nil)
+    }
+
+    func present(_ editVoiceShortcutViewController: INUIEditVoiceShortcutViewController,
+                 for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
+        editVoiceShortcutViewController.delegate = self
+        addToSiriController.present(editVoiceShortcutViewController, animated: true, completion: nil)
+    }
+}
+
+extension MainMenuTableViewController: INUIAddVoiceShortcutViewControllerDelegate,
+                                       INUIEditVoiceShortcutViewControllerDelegate {
+
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController,
+                                        didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController,
+                                         didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController,
+                                         didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 
 
