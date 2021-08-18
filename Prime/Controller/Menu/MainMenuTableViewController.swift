@@ -84,7 +84,7 @@ class MainMenuTableViewController: UIViewController,
 
 
     func presentAddToSiri() {
-        let addToSiriButton = INUIAddVoiceShortcutButton(style: .white)
+        let addToSiriButton = INUIAddVoiceShortcutButton(style: .whiteOutline)
         let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
         activity.title = Const.Messages.randomize
         activity.isEligibleForSearch = true
