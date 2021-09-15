@@ -23,13 +23,26 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["Check if a given number is prime",
-                        "Decompose a given number to its prime factors",
-                        "List all prime numbers in a given range",
-                        "Generate a random prime number of a given size",
-                        "Find the next prime number after a given number",
-                        "Find the previous prime number before a given number"]
-    let myImageSource = ["checkmark", "divide", "list.dash", "shuffle", "plus", "minus"]
+    let myDataSource = ["Check",
+                        "Factorize",
+                        "List",
+                        "Randomize",
+                        "Next",
+                        "Previous"]
+    let myImageSource = ["checkmark"/*.square.fill"*/, // TODO: use squares once bleeding is fixed
+                         "divide"/*.square.fill"*/, // TODO: set image size in IB to 32 once using squares, and reduce padding above and below label to 8 each
+                         "arrow.up.and.down"/*.square.fill"*/,
+                         "questionmark"/*.square.fill"*/,
+                         "arrow.right"/*.square.fill"*/,
+                         "arrow.left"/*.square.fill"*/]
+    let tintColorsArray: [UIColor] = [
+        .systemGreen,
+        .systemBlue,
+        .systemPurple,
+        .systemOrange,
+        .systemTeal,
+        .systemTeal
+    ]
 
     let menuCell = "MenuCell"
 
@@ -181,8 +194,13 @@ class MainMenuTableViewController: UIViewController,
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
 
         cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
-        cell.myImage.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-        //cell.selectionStyle = .none
+        let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
+
+        cell.myImageView.image = aImage
+        cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
+        //cell.myImageView.backgroundColor = .white
+
+        // TODO: make fill background color not bleed outside image itself
         cell.accessoryType = .disclosureIndicator
 
         return cell
