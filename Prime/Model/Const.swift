@@ -179,12 +179,6 @@ struct Const {
     }
 
 
-    struct View {
-        static let specialButtonColor = "SpecialButtonColor"
-        static let specialSwitchColor = "SpecialSwitchColor"
-    }
-
-
     struct UserDef {
         static let selectedTextField = "selectedTextField"
         static let numFromList = "numFromList"

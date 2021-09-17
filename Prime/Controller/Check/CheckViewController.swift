@@ -23,11 +23,14 @@ class CheckViewController: UIViewController,
 
     var myResignToolBar: UIToolbar! = nil
 
+    var myThemeColor: UIColor!
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
     }
@@ -199,6 +202,7 @@ class CheckViewController: UIViewController,
         controller?.number = number
         controller?.isPrime = isPrime
         controller?.isDivisibleBy = isDivisibleBy
+        controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {

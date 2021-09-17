@@ -29,11 +29,16 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     var rangeTo: Int64!
     let listCell = "ListCell"
 
+    var myThemeColor: UIColor!
+
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
+
         guard let myFrom = rangeFrom, let myTo = rangeTo else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {

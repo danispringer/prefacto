@@ -24,11 +24,16 @@ class NextResultsViewController: UIViewController {
     var originalNumber: Int64!
     var nextPrime: Int64!
 
+    var myThemeColor: UIColor!
+
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
+
         guard let myOriginalNumber = originalNumber, let myNextPrime = nextPrime else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {

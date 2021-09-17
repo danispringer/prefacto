@@ -115,7 +115,6 @@
 				33A96A3D20FDFA71009E1DBA /* Random */,
 				65D90C2C23CC0EAE0084FB07 /* Next */,
 				65D90C2D23CC0EC60084FB07 /* Previous */,
-				333AD7E5210581020010D446 /* Settings */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,13 +128,6 @@
 				652FAD8423838BB700E3B06E /* MainMenuTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		333AD7E5210581020010D446 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		333F996720F2BA4F003774D4 /* List */ = {
@@ -532,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0;
+				MARKETING_VERSION = 6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Prime-Numbers-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -558,7 +550,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0;
+				MARKETING_VERSION = 6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Prime-Numbers-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

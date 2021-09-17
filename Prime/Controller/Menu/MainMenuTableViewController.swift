@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 import IntentsUI
 
+
 class MainMenuTableViewController: UIViewController,
                                    UITableViewDataSource,
                                    UITableViewDelegate {
@@ -29,8 +30,9 @@ class MainMenuTableViewController: UIViewController,
                         "Randomize",
                         "Next",
                         "Previous"]
-    let myImageSource = ["checkmark"/*.square.fill"*/, // TODO: use squares once bleeding is fixed
-                         "divide"/*.square.fill"*/, // TODO: set image size in IB to 32 once using squares, and reduce padding above and below label to 8 each
+    let myImageSource = ["checkmark"/*.square.fill"*/, // also: (see two more alsos) use squares once bleeding is fixed
+                         "divide"/*.square.fill"*/, // also: set image size in IB to 32 once using squares,
+                         // and reduce padding above and below label to 8 each
                          "arrow.up.and.down"/*.square.fill"*/,
                          "questionmark"/*.square.fill"*/,
                          "arrow.right"/*.square.fill"*/,
@@ -48,11 +50,15 @@ class MainMenuTableViewController: UIViewController,
 
     let addToSiriController = UIViewController()
 
+    let myThemeColor = UIColor.systemBlue
+
 
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         aboutButton.menu = aboutMenu()
         aboutButton.image = UIImage(systemName: "ellipsis.circle")
@@ -119,7 +125,6 @@ class MainMenuTableViewController: UIViewController,
         doneButton.setAttributedTitle(NSAttributedString(
                                         string: "Done",
                                         attributes: [NSAttributedString.Key.font: font]), for: .normal)
-        doneButton.setTitleColor(UIColor(named: Const.View.specialButtonColor), for: .normal)
         doneButton.addTarget(self, action: #selector(addToSiriDonePressed), for: .touchUpInside)
         addToSiriController.view.addSubview(doneButton)
 
@@ -200,7 +205,7 @@ class MainMenuTableViewController: UIViewController,
         cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
         //cell.myImageView.backgroundColor = .white
 
-        // TODO: make fill background color not bleed outside image itself
+        // also: make fill background color not bleed outside image itself
         cell.accessoryType = .disclosureIndicator
 
         return cell
@@ -218,36 +223,42 @@ class MainMenuTableViewController: UIViewController,
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Const.StoryboardID.check) as? CheckViewController
             if let toPresent = controller {
+                controller?.myThemeColor = tintColorsArray[0]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[1]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
             if let toPresent = controller {
+                controller?.myThemeColor = tintColorsArray[1]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[2]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Const.StoryboardID.list) as? ListViewController
             if let toPresent = controller {
+                controller?.myThemeColor = tintColorsArray[2]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[3]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Const.StoryboardID.random) as? RandomViewController
             if let toPresent = controller {
+                controller?.myThemeColor = tintColorsArray[3]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[4]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Const.StoryboardID.next) as? NextViewController
             if let toPresent = controller {
+                controller?.myThemeColor = tintColorsArray[4]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[5]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
             if let toPresent = controller {
+                controller?.myThemeColor = tintColorsArray[5]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         default:
