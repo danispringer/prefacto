@@ -13,6 +13,7 @@ class RandomResultsViewController: UIViewController {
 
 
     // MARK: Outlets
+
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
@@ -24,11 +25,15 @@ class RandomResultsViewController: UIViewController {
     var myNumber: Int64!
     var myTitle: String!
 
+    var myThemeColor: UIColor!
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
+
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)

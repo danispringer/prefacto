@@ -30,25 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             Const.UserDef.selectedTextField: 0,
                             Const.UserDef.numFromList: ""])
 
-        UINavigationBar.appearance().tintColor = UIColor(named: Const.View.specialButtonColor)
-        UIView.appearance(
-            whenContainedInInstancesOf: [
-                UIAlertController.self]).tintColor = UIColor(named: Const.View.specialButtonColor)
-        UIView.appearance(
-            whenContainedInInstancesOf: [
-                UIToolbar.self]).tintColor = UIColor(named: Const.View.specialButtonColor)
-
-        UIButton.appearance().tintColor = UIColor(named: Const.View.specialButtonColor)
-
-        UISwitch.appearance().onTintColor = UIColor(named: Const.View.specialSwitchColor)
-
-        for state: UIControl.State in [.application, .highlighted, .normal, .selected] {
-            UIBarButtonItem.appearance().setTitleTextAttributes([
-                NSAttributedString.Key.foregroundColor: UIColor(
-                    named: Const.View.specialButtonColor)!
-            ], for: state)
-        }
-
 
         return true
     }

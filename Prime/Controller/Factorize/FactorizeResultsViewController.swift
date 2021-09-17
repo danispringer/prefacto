@@ -28,10 +28,15 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     var number: Int64!
     let factorCell = "FactorCell"
 
+    var myThemeColor: UIColor!
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
+
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)

@@ -30,11 +30,15 @@ class RandomViewController: UIViewController {
         case xLarge = "Extra-Large"
     }
 
+    var myThemeColor: UIColor!
+
 
     // MARK: Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         randomizeButton.setTitle(Const.Messages.randomize, for: .normal)
         self.title = Const.Title.random
@@ -165,15 +169,16 @@ class RandomViewController: UIViewController {
             return
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let randomResultsVC = storyboard.instantiateViewController(
+        let controller = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.randomResults) as? RandomResultsViewController
-        randomResultsVC?.myNumber = number
-        randomResultsVC?.myTitle = "Your Random \(size.rawValue) Prime"
+        controller?.myNumber = number
+        controller?.myTitle = "Your Random \(size.rawValue) Prime"
+        controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             if !fromShortcut {
                 self.enableUI(enabled: true)
             }
-            if let toPresent = randomResultsVC {
+            if let toPresent = controller {
                 self.dismiss(animated: false, completion: {
                     if fromShortcut {
                         self.navigationController?.present(toPresent, animated: !fromShortcut)

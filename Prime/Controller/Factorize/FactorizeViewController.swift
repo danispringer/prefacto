@@ -24,11 +24,15 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     var arrayOfInts = [Int64]()
     var myResignToolbar: UIToolbar! = nil
 
+    var myThemeColor: UIColor!
+
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
     }
@@ -182,6 +186,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             withIdentifier: Const.StoryboardID.factorizeResults) as? FactorizeResultsViewController
         controller?.number = number
         controller?.source = arrayOfInts
+        controller?.myThemeColor = myThemeColor
         if let toPresent = controller {
             present(toPresent, animated: true)
         }

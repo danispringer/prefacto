@@ -27,11 +27,14 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     var nextButton = UIBarButtonItem()
     var myResignToolbar: UIToolbar! = nil
 
+    var myThemeColor: UIColor!
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
     }
@@ -202,6 +205,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
                 controller?.rangeFrom = firstNumber
                 controller?.rangeTo = secondNumber
+                controller?.myThemeColor = self.myThemeColor
                 if let toPresent = controller {
                     self.present(toPresent, animated: true)
                 }

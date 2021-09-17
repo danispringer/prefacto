@@ -25,11 +25,15 @@ class CheckResultsViewController: UIViewController {
     var isPrime: Bool!
     var isDivisibleBy: Int64!
 
+    var myThemeColor: UIColor!
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setThemeColorTo(myThemeColor: myThemeColor)
+
         guard let myNumber = number, let myIsDivisibleBy = isDivisibleBy else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
