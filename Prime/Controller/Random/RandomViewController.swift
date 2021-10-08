@@ -30,7 +30,7 @@ class RandomViewController: UIViewController {
         case xLarge = "Extra-Large"
     }
 
-    var myThemeColor: UIColor!
+    var myThemeColor = UIColor.systemOrange
 
 
     // MARK: Life Cycle
