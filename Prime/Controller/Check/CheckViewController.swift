@@ -22,8 +22,8 @@ class CheckViewController: UIViewController,
     // MARK: Properties
 
     var myResignToolBar: UIToolbar! = nil
+    var myThemeColor: UIColor = .systemGreen
 
-    var myThemeColor: UIColor!
 
     // MARK: Life Cycle
 
@@ -31,7 +31,6 @@ class CheckViewController: UIViewController,
         super.viewDidLoad()
 
         setThemeColorTo(myThemeColor: myThemeColor)
-
         notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
     }
 
@@ -40,9 +39,7 @@ class CheckViewController: UIViewController,
         super.viewWillAppear(animated)
 
         myResignToolBar = UIToolbar()
-
         let checkButton = UIBarButtonItem()
-
         checkButton.title = Const.Messages.check
         checkButton.style = .plain
         checkButton.target = self
