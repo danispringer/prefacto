@@ -21,10 +21,6 @@ extension UIViewController {
         case negative
         case sameTwice
         case noPrimesInRange
-        case messageSaved
-        case messageCanceled
-        case messageFailed
-        case messageSent
         case unknown
     }
 
@@ -34,67 +30,53 @@ extension UIViewController {
         var alertMessage = ""
         switch alertReasonParam {
             case .textfieldEmpty:
-                alertTitle = "Textfield empty"
-                alertMessage = "Please enter a number."
+                alertTitle = NSLocalizedString("Textfield empty", comment: "")
+                alertMessage = NSLocalizedString("Please enter a number.", comment: "")
             case .notNumberOrTooBig:
-                alertTitle = "Invalid entry"
-                alertMessage = """
+                alertTitle = NSLocalizedString("Invalid entry", comment: "")
+                alertMessage = NSLocalizedString("""
                 Only numbers allowed. No decimals.
                 Max number: 9223372036854775807
-                """
+                """, comment: "")
             case .zero:
-                alertTitle = "0 not allowed here"
-                alertMessage = """
+                alertTitle = NSLocalizedString("0 not allowed here", comment: "")
+                alertMessage = NSLocalizedString("""
                 Please enter a different number.
-                """
+                """, comment: "")
             case .one:
-                alertTitle = "1 not allowed here"
-                alertMessage = """
+                alertTitle = NSLocalizedString("1 not allowed here", comment: "")
+                alertMessage = NSLocalizedString("""
                 Please enter a different number.
-                """
+                """, comment: "")
             case .two:
-                alertTitle = "2 not allowed here"
-                alertMessage = """
+                alertTitle = NSLocalizedString("2 not allowed here", comment: "")
+                alertMessage = NSLocalizedString("""
             Please enter a different number.
-            """
+            """, comment: "")
             case .negative:
-                alertTitle = "Negative numbers not allowed here"
-                alertMessage = """
+                alertTitle = NSLocalizedString("Negative numbers not allowed here", comment: "")
+                alertMessage = NSLocalizedString("""
                 Please enter a different number.
-                """
+                """, comment: "")
             case .sameTwice:
-                alertTitle = "Same number entered twice"
-                alertMessage = """
+                alertTitle = NSLocalizedString("Same number entered twice", comment: "")
+                alertMessage = NSLocalizedString("""
                 Please enter two different numbers. To check if a single number is prime, use Check.
-                """
-            case .messageSaved:
-                alertTitle = "Message saved"
-                alertMessage = "Message saved to drafts."
-            case .messageCanceled:
-                alertTitle = "Action cancelled"
-                alertMessage = "Message not sent."
-            case .messageFailed:
-                alertTitle = "Action failed"
-                alertMessage = """
-                Message not sent. Please try again later, or contact us by leaving a review.
-                """
-            case .messageSent:
-                alertTitle = "Success!"
-                alertMessage = "Message sent. You should hear from us within 24 hours."
+                """, comment: "")
             case .overflow:
-                alertTitle = "Overflow"
-                alertMessage = """
+                alertTitle = NSLocalizedString("Overflow", comment: "")
+                alertMessage = NSLocalizedString("""
                 There are no primes above \(num) which are lower than 9223372036854775807 \
                 (your device's limit)
-                """
+                """, comment: "")
             default:
-                alertTitle = "Unknown error"
-                alertMessage = """
+                alertTitle = NSLocalizedString("Unknown error", comment: "")
+                alertMessage = NSLocalizedString("""
                 An unknown error occurred. Please try again later, or contact us at dani.springer@icloud.com
-                """
+                """, comment: "")
         }
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
         alert.addAction(alertAction)
         return alert
     }
@@ -120,6 +102,5 @@ extension UIViewController {
             ], for: state)
         }
     }
-
 
 }

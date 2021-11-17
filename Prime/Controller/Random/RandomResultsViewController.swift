@@ -44,7 +44,7 @@ class RandomResultsViewController: UIViewController {
         resultButton.showsMenuAsPrimaryAction = true
         resultButton.menu = UIMenu(
             title: "", options: .displayInline,
-            children: [UIAction(title: "Copy",
+            children: [UIAction(title: NSLocalizedString("Copy", comment: ""),
                                 image: UIImage(systemName: "doc.on.doc"),
                                 state: .off) { _ in
                 if let myNumber = self.myNumber {

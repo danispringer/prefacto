@@ -55,33 +55,29 @@ struct Const {
 
     struct Title {
         static let check = NSLocalizedString("Check", comment: "")
-        static let factorize = "Factorize"
-        static let list = "List"
-        static let random = "Randomize"
-        static let next = "Next"
-        static let previous = "Previous"
+        static let factorize = NSLocalizedString("Factorize", comment: "")
+        static let list = NSLocalizedString("List", comment: "")
+        static let random = NSLocalizedString("Randomize", comment: "")
+        static let next = NSLocalizedString("Next", comment: "")
+        static let previous = NSLocalizedString("Previous", comment: "")
     }
 
 
     struct Messages {
-        static let list = "List"
-        static let next = "Next"
-        static let previous = "Previous"
-        static let factorize = "Factorize"
-        static let randomize = "Create Random Prime"
-        static let done = "Done"
-        static let cancel = "Cancel"
-        static let version = "v."
+        static let randomize = NSLocalizedString("Create Random Prime", comment: "")
+        static let done = NSLocalizedString("Done", comment: "")
+        static let cancel = NSLocalizedString("Cancel", comment: "")
+        static let version = NSLocalizedString("v.", comment: "")
         static let appName = "Prime"
-        static let placeholderText = "Enter number here"
+        static let placeholderText = NSLocalizedString("Enter number here", comment: "")
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
-        static let showAppsButtonTitle = "More Apps"
+        static let showAppsButtonTitle = NSLocalizedString("More Apps", comment: "")
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let devID = "1402417666"
-        static let shareApp = "Tell a Friend"
-        static let shareMessage = """
+        static let shareApp = NSLocalizedString("Tell a Friend", comment: "")
+        static let shareMessage = NSLocalizedString("""
                    • Check whether a number is prime
                    • List the primes in a range
                    • Decompose a number to its prime factors
@@ -92,11 +88,11 @@ struct Const {
                    • Enjoying Prime? Please consider leaving a 5-star review. It would mean the world to us!
 
                    https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-                   """
-        static let sendFeedback = "Contact Us"
-        static let leaveReview = "Leave a Review"
-        static let addToSiri = "Add to Siri"
-        static let emailSample = "Hi. I have a question..."
+                   """, comment: "")
+        static let sendFeedback = NSLocalizedString("Contact Us", comment: "")
+        static let leaveReview = NSLocalizedString("Leave a Review", comment: "")
+        static let addToSiri = NSLocalizedString("Add to Siri", comment: "")
+        static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
         static let emailAddress = "dani.springer@icloud.com"
         static var noPrimesInRangeMessage: String {
             return """

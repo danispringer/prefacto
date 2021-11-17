@@ -48,7 +48,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myTextField.delegate = self
 
         let factorButton = UIBarButtonItem(
-            title: Const.Messages.factorize,
+            title: Const.Title.factorize,
             style: .plain,
             target: self,
             action: #selector(factorizeButtonPressed))

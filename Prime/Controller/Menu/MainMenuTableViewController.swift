@@ -123,7 +123,7 @@ class MainMenuTableViewController: UIViewController,
         let font = UIFont.preferredFont(forTextStyle: .body)
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.setAttributedTitle(NSAttributedString(
-                                        string: "Done",
+                                        string: NSLocalizedString("Done", comment: ""),
                                         attributes: [NSAttributedString.Key.font: font]), for: .normal)
         doneButton.addTarget(self, action: #selector(addToSiriDonePressed), for: .touchUpInside)
         addToSiriController.view.addSubview(doneButton)
