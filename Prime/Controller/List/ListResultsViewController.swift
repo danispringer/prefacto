@@ -47,41 +47,24 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
-        let myFromFormatted = "\(myFrom)"
-        let myToFormatted = "\(myTo)"
         localSource = source
+        localFrom = myFrom
+        localTo = myTo
         if source.count == 0 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
             resultLabel.text = """
             There are no primes between
-            \(myFromFormatted)
+            \(myFrom)
             and
-            \(myToFormatted)
-            """
-        } else if source.count == 1 {
-            let sourceFormatted = "\(source[0])"
-            resultsTableView.isHidden = true
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
-            resultLabel.text = """
-            The only prime between
-            \(myFromFormatted)
-            and
-            \(myToFormatted)
-            is
-            \(sourceFormatted)
+            \(myTo)
             """
         } else {
-            let sourceCountFormatted = "\(source.count)"
             resultLabel.text = """
-            There are
-            \(sourceCountFormatted)
-            primes between
-            \(myFromFormatted)
-            and
-            \(myToFormatted)
+            From: \(myFrom)
+            To: \(myTo)
+            Count: \(source.count)
             """
         }
         myToolbar.setBackgroundImage(UIImage(),

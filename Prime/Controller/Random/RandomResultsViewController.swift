@@ -15,7 +15,6 @@ class RandomResultsViewController: UIViewController {
     // MARK: Outlets
 
     @IBOutlet weak var resultButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
 
@@ -23,7 +22,6 @@ class RandomResultsViewController: UIViewController {
     // MARK: Properties
 
     var myNumber: Int64!
-    var myTitle: String!
 
     var myThemeColor: UIColor!
 
@@ -39,7 +37,6 @@ class RandomResultsViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         let myNumberFormatted = "\(myNumber!)"
-        titleLabel.text = myTitle
         resultButton.setTitle(myNumberFormatted, for: .normal)
         resultButton.showsMenuAsPrimaryAction = true
         resultButton.menu = UIMenu(

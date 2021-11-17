@@ -60,10 +60,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             """
         } else {
             resultLabel.text = """
-            \(myNumberFormatted)
-            has
-            \(sourceCountFormatted)
-            prime factors
+            Value: \(myNumberFormatted)
+            Count: \(sourceCountFormatted)
             """
         }
 

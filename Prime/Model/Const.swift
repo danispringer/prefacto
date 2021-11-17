@@ -92,7 +92,7 @@ struct Const {
             return """
             From: \(localFrom)
             To: \(localTo)
-            Amount of primes: \(localSource.count)
+            Count: \(localSource.count)
             Values: \(localSource)
             """
         }
@@ -112,7 +112,7 @@ struct Const {
         static var manyPrimeFactors: String {
             return """
             Value: \(localNumber)
-            Amount of factors: \(localSource.count)
+            Count: \(localSource.count)
             Factors: \(localSource)
             """
         }
