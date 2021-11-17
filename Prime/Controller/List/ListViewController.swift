@@ -292,7 +292,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
             let goToCheckAction = UIAlertAction(
-                title: "\(Const.Messages.check)",
+                title: "\(Const.Title.check)",
                 style: .default) { _ in
                 self.navigationController?.popToRootViewController(animated: true)
                 let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)

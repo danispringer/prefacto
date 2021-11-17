@@ -40,7 +40,7 @@ class CheckViewController: UIViewController,
 
         myResignToolBar = UIToolbar()
         let checkButton = UIBarButtonItem()
-        checkButton.title = Const.Messages.check
+        checkButton.title = Const.Title.check
         checkButton.style = .plain
         checkButton.target = self
         checkButton.action = #selector(checkButtonPressed)

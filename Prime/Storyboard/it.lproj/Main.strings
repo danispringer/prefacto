@@ -1,0 +1,99 @@
+
+/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "0C7-Dz-uiP"; */
+"0C7-Dz-uiP.placeholder" = "blah blah blah";
+
+/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "32E-wM-ebq"; */
+"32E-wM-ebq.placeholder" = "blah blah blah";
+
+/* Class = "UIButton"; accessibilityLabel = "Jump to bottom"; ObjectID = "4HI-oU-hkH"; */
+"4HI-oU-hkH.accessibilityLabel" = "Jump to bottom";
+
+/* Class = "UINavigationItem"; title = "Prime"; ObjectID = "5XZ-nx-Dl6"; */
+"5XZ-nx-Dl6.title" = "Prime";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "8wG-x3-FZT"; */
+"8wG-x3-FZT.title" = "Share";
+
+/* Class = "UILabel"; text = "Your Random Prime"; ObjectID = "9h7-fu-4TW"; */
+"9h7-fu-4TW.text" = "Your Random Prime";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "AMw-Pt-ueC"; */
+"AMw-Pt-ueC.title" = "Share";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "Ahw-gk-FOH"; */
+"Ahw-gk-FOH.title" = "Share";
+
+/* Class = "UINavigationController"; title = "Prime"; ObjectID = "Bgr-jy-98T"; */
+"Bgr-jy-98T.title" = "Prime";
+
+/* Class = "UIButton"; accessibilityLabel = "Copy"; ObjectID = "DqT-zL-LYQ"; */
+"DqT-zL-LYQ.accessibilityLabel" = "Copy";
+
+/* Class = "UIButton"; normalTitle = "1234567890"; ObjectID = "DqT-zL-LYQ"; */
+"DqT-zL-LYQ.normalTitle" = "1234567890";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "E7H-Ry-hi3"; */
+"E7H-Ry-hi3.title" = "Share";
+
+/* Class = "UILabel"; text = "From: 1234567890\nTo: 1234567890\nPrimes: 123456890"; ObjectID = "Gno-To-rhb"; */
+"Gno-To-rhb.text" = "From: 1234567890\nTo: 1234567890\nPrimes: 123456890";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ira-YK-Szs"; */
+"Ira-YK-Szs.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "T8l-rz-Rbw"; */
+"T8l-rz-Rbw.text" = "Label";
+
+/* Class = "UILabel"; text = "12345678901: not prime.\nDivisible by: 857."; ObjectID = "UOJ-zv-56H"; */
+"UOJ-zv-56H.text" = "12345678901: not prime.\nDivisible by: 857.";
+
+/* Class = "UIButton"; normalTitle = "blah blah blah"; ObjectID = "VWa-1q-r4D"; */
+"VWa-1q-r4D.normalTitle" = "blah blah blah";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Vzb-yw-AMK"; */
+"Vzb-yw-AMK.text" = "Label";
+
+/* Class = "UILabel"; text = "12345678901: not prime.\nDivisible by: 857."; ObjectID = "XHh-na-Oah"; */
+"XHh-na-Oah.text" = "12345678901: not prime.\nDivisible by: 857.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bPn-Vr-3ZX"; */
+"bPn-Vr-3ZX.text" = "Label";
+
+/* Class = "UILabel"; text = "12345678901: not prime.\nDivisible by: 857."; ObjectID = "cC4-n8-DGZ"; */
+"cC4-n8-DGZ.text" = "12345678901: not prime.\nDivisible by: 857.";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "hth-mK-DiQ"; */
+"hth-mK-DiQ.title" = "About";
+
+/* Class = "UIButton"; accessibilityLabel = "Jump to top"; ObjectID = "i8z-rE-tr8"; */
+"i8z-rE-tr8.accessibilityLabel" = "Jump to top";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lns-Po-Sqc"; */
+"lns-Po-Sqc.text" = "Label";
+
+/* Class = "UIButton"; accessibilityLabel = "Jump to bottom"; ObjectID = "lyv-wW-QU7"; */
+"lyv-wW-QU7.accessibilityLabel" = "Jump to bottom";
+
+/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "m0x-Lr-7Xl"; */
+"m0x-Lr-7Xl.placeholder" = "blah blah blah";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "oOG-Wh-v3w"; */
+"oOG-Wh-v3w.title" = "Share";
+
+/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "ptO-hj-b9l"; */
+"ptO-hj-b9l.placeholder" = "blah blah blah";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "toa-VH-Pka"; */
+"toa-VH-Pka.title" = "Share";
+
+/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "u8x-FV-42z"; */
+"u8x-FV-42z.placeholder" = "blah blah blah";
+
+/* Class = "UIButton"; accessibilityLabel = "Jump to top"; ObjectID = "uvb-aY-8KG"; */
+"uvb-aY-8KG.accessibilityLabel" = "Jump to top";
+
+/* Class = "UILabel"; text = "N: 1234567890\nFactors: 1234567890"; ObjectID = "vtG-MD-Tnd"; */
+"vtG-MD-Tnd.text" = "N: 1234567890\nFactors: 1234567890";
+
+/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "yc2-op-hSX"; */
+"yc2-op-hSX.placeholder" = "blah blah blah";
