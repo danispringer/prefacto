@@ -149,7 +149,7 @@ class MainMenuTableViewController: UIViewController,
 
 
     func shareApp() {
-        let message = Const.UX.shareMessage
+        let message = Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in

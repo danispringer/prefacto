@@ -42,13 +42,9 @@ class NextResultsViewController: UIViewController {
             }
             return
         }
-        let myOriginalNumberFormatted = "\(myOriginalNumber)"
-        let myNextPrimeFormatted = "\(myNextPrime)"
         resultLabel.text = """
-        The next prime after
-        \(myOriginalNumberFormatted)
-        is
-        \(myNextPrimeFormatted)
+        Value: \(myOriginalNumber)
+        Next prime: \(myNextPrime)
         """
 
         myToolbar.setBackgroundImage(UIImage(),
