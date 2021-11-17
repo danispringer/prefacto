@@ -44,7 +44,7 @@ class NextViewController: UIViewController,
 
         let nextButton = UIBarButtonItem()
 
-        nextButton.title = Const.Messages.next
+        nextButton.title = Const.Title.next
         nextButton.style = .plain
         nextButton.target = self
         nextButton.action = #selector(nextButtonPressed)

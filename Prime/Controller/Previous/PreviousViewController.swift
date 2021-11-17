@@ -46,7 +46,7 @@ class PreviousViewController: UIViewController,
 
         let previousButton = UIBarButtonItem()
 
-        previousButton.title = Const.Messages.previous
+        previousButton.title = Const.Title.previous
         previousButton.style = .plain
         previousButton.target = self
         previousButton.action = #selector(previousButtonPressed)

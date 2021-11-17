@@ -51,7 +51,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         secondTextField.delegate = self
 
         let listButton = UIBarButtonItem(
-            title: Const.Messages.list,
+            title: Const.Title.list,
             style: .plain,
             target: self,
             action: #selector(listButtonPressed))
@@ -68,7 +68,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: #selector(previousTextField))
 
-        previousButton.accessibilityLabel = "Go up"
+        previousButton.accessibilityLabel = NSLocalizedString("Go to previous textfield", comment: "")
 
         nextButton = UIBarButtonItem(
             image: UIImage(systemName: "chevron.down"),
@@ -76,7 +76,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: #selector(nextTextField))
 
-        nextButton.accessibilityLabel = "Go down"
+        nextButton.accessibilityLabel = NSLocalizedString("Go to next textfield", comment: "")
 
         let spaceFlexible = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,

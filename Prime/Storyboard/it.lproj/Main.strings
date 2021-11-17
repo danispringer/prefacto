@@ -1,9 +1,9 @@
 
-/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "0C7-Dz-uiP"; */
-"0C7-Dz-uiP.placeholder" = "blah blah blah";
+/* Class = "UITextField"; placeholder = "Enter text here"; ObjectID = "0C7-Dz-uiP"; */
+"0C7-Dz-uiP.placeholder" = "Enter text here";
 
-/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "32E-wM-ebq"; */
-"32E-wM-ebq.placeholder" = "blah blah blah";
+/* Class = "UITextField"; placeholder = "Enter number here"; ObjectID = "32E-wM-ebq"; */
+"32E-wM-ebq.placeholder" = "Enter number here";
 
 /* Class = "UIButton"; accessibilityLabel = "Jump to bottom"; ObjectID = "4HI-oU-hkH"; */
 "4HI-oU-hkH.accessibilityLabel" = "Jump to bottom";
@@ -47,8 +47,8 @@
 /* Class = "UILabel"; text = "12345678901: not prime.\nDivisible by: 857."; ObjectID = "UOJ-zv-56H"; */
 "UOJ-zv-56H.text" = "12345678901: not prime.\nDivisible by: 857.";
 
-/* Class = "UIButton"; normalTitle = "blah blah blah"; ObjectID = "VWa-1q-r4D"; */
-"VWa-1q-r4D.normalTitle" = "blah blah blah";
+/* Class = "UIButton"; normalTitle = "Randomize button"; ObjectID = "VWa-1q-r4D"; */
+"VWa-1q-r4D.normalTitle" = "Randomize button";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Vzb-yw-AMK"; */
 "Vzb-yw-AMK.text" = "Label";
@@ -74,20 +74,20 @@
 /* Class = "UIButton"; accessibilityLabel = "Jump to bottom"; ObjectID = "lyv-wW-QU7"; */
 "lyv-wW-QU7.accessibilityLabel" = "Jump to bottom";
 
-/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "m0x-Lr-7Xl"; */
-"m0x-Lr-7Xl.placeholder" = "blah blah blah";
+/* Class = "UITextField"; placeholder = "Enter text here"; ObjectID = "m0x-Lr-7Xl"; */
+"m0x-Lr-7Xl.placeholder" = "Enter text here";
 
 /* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "oOG-Wh-v3w"; */
 "oOG-Wh-v3w.title" = "Share";
 
-/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "ptO-hj-b9l"; */
-"ptO-hj-b9l.placeholder" = "blah blah blah";
+/* Class = "UITextField"; placeholder = "Enter number here"; ObjectID = "ptO-hj-b9l"; */
+"ptO-hj-b9l.placeholder" = "Enter number here";
 
 /* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "toa-VH-Pka"; */
 "toa-VH-Pka.title" = "Share";
 
-/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "u8x-FV-42z"; */
-"u8x-FV-42z.placeholder" = "blah blah blah";
+/* Class = "UITextField"; placeholder = "Enter first number here"; ObjectID = "u8x-FV-42z"; */
+"u8x-FV-42z.placeholder" = "Enter first number here";
 
 /* Class = "UIButton"; accessibilityLabel = "Jump to top"; ObjectID = "uvb-aY-8KG"; */
 "uvb-aY-8KG.accessibilityLabel" = "Jump to top";
@@ -95,5 +95,5 @@
 /* Class = "UILabel"; text = "N: 1234567890\nFactors: 1234567890"; ObjectID = "vtG-MD-Tnd"; */
 "vtG-MD-Tnd.text" = "N: 1234567890\nFactors: 1234567890";
 
-/* Class = "UITextField"; placeholder = "blah blah blah"; ObjectID = "yc2-op-hSX"; */
-"yc2-op-hSX.placeholder" = "blah blah blah";
+/* Class = "UITextField"; placeholder = "Enter second number here"; ObjectID = "yc2-op-hSX"; */
+"yc2-op-hSX.placeholder" = "Enter second number here";

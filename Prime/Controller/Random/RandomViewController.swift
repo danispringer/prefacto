@@ -88,7 +88,7 @@ class RandomViewController: UIViewController {
             self.makeRandom(size: userChoice)
         }
 
-        let randomMenu = UIMenu(title: "Choose Size", image: nil, identifier: .none,
+        let randomMenu = UIMenu(title: NSLocalizedString("Choose Size", comment: ""), image: nil, identifier: .none,
                                 options: .displayInline,
                                 children: [xSmallAction, smallAction, mediumAction, largeAction, xLargeAction])
         return randomMenu
