@@ -44,13 +44,9 @@ class PreviousResultsViewController: UIViewController {
             return
         }
 
-        let myOriginalNumberFormatted = "\(myOriginalNumber)"
-        let myPreviousPrimeFormatted = "\(myPreviousPrime)"
         resultLabel.text = """
-        The previous prime before
-        \(myOriginalNumberFormatted)
-        is
-        \(myPreviousPrimeFormatted)
+        Value: \(myOriginalNumber)
+        Previous prime: \(myPreviousPrime)
         """
 
         myToolbar.setBackgroundImage(UIImage(),

@@ -70,18 +70,6 @@ struct Const {
         static let thisAppLink = "https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"
         static let devID = "1402417666"
         static let shareApp = NSLocalizedString("Tell a Friend", comment: "")
-        static let shareMessage = NSLocalizedString("""
-                   • Check whether a number is prime
-                   • List the primes in a range
-                   • Decompose a number to its prime factors
-                   • Share or save your results
-                   • And more
-
-                   • Ask us anything: dani.springer@icloud.com
-                   • Enjoying Prime? Please consider leaving a 5-star review. It would mean the world to us!
-
-                   https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-                   """, comment: "")
         static let sendFeedback = NSLocalizedString("Contact Us", comment: "")
         static let leaveReview = NSLocalizedString("Leave a Review", comment: "")
         static let addToSiri = NSLocalizedString("Add to Siri", comment: "")
