@@ -54,7 +54,7 @@ struct Const {
 
 
     struct Title {
-        static let check = "Check"
+        static let check = NSLocalizedString("Check", comment: "")
         static let factorize = "Factorize"
         static let list = "List"
         static let random = "Randomize"
@@ -64,7 +64,6 @@ struct Const {
 
 
     struct Messages {
-        static let check = "Check"
         static let list = "List"
         static let next = "Next"
         static let previous = "Previous"

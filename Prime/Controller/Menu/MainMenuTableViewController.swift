@@ -24,12 +24,12 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["Check",
-                        "Factorize",
-                        "List",
-                        "Randomize",
-                        "Next",
-                        "Previous"]
+    let myDataSource = [Const.Title.check,
+                        Const.Title.factorize,
+                        Const.Title.list,
+                        Const.Title.random,
+                        Const.Title.next,
+                        Const.Title.previous]
     let myImageSource = ["checkmark"/*.square.fill"*/, // also: (see two more alsos) use squares once bleeding is fixed
                          "divide"/*.square.fill"*/, // also: set image size in IB to 32 once using squares,
                          // and reduce padding above and below label to 8 each
@@ -182,7 +182,7 @@ class MainMenuTableViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return nil//"Check, List, Factorize"
+            return nil
         } else {
             fatalError()
         }
@@ -292,7 +292,9 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setSubject(emailTitle)
         mailComposer.setMessageBody(messageBody, isHTML: false)
         mailComposer.setToRecipients(toRecipents)
-        self.present(mailComposer, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(mailComposer, animated: true, completion: nil)
+        }
     }
 
 
