@@ -213,7 +213,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
         }
     }
 

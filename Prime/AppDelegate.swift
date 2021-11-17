@@ -26,13 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-        UDStan.register(defaults: [
-                            Const.UserDef.selectedTextField: 0,
-                            Const.UserDef.numFromList: ""])
+                UDStan.register(defaults: [
+                    Const.UserDef.numFromList: ""])
 
 
-        return true
-    }
+                return true
+            }
 
 
     // MARK: Shortcuts
@@ -45,12 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navC?.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let randomVC = (storyboard.instantiateViewController(
-                            withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
+            withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
         navC?.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
 
         return true
     }
-
 
 }

@@ -82,7 +82,7 @@ class MainMenuTableViewController: UIViewController,
         }
 
         let addToSiri = UIAction(title: Const.UX.addToSiri,
-                              image: UIImage(systemName: "mic.circle"), state: .off) { _ in
+                                 image: UIImage(systemName: "mic.circle"), state: .off) { _ in
             self.presentAddToSiri()
         }
 
@@ -97,7 +97,7 @@ class MainMenuTableViewController: UIViewController,
         }
 
         let aboutMenu = UIMenu(title: myTitle, options: .displayInline,
-                              children: [contact, review, shareApp, moreApps, addToSiri])
+                               children: [contact, review, shareApp, moreApps, addToSiri])
         return aboutMenu
     }
 
@@ -123,8 +123,8 @@ class MainMenuTableViewController: UIViewController,
         let font = UIFont.preferredFont(forTextStyle: .body)
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.setAttributedTitle(NSAttributedString(
-                                        string: NSLocalizedString("Done", comment: ""),
-                                        attributes: [NSAttributedString.Key.font: font]), for: .normal)
+            string: NSLocalizedString("Done", comment: ""),
+            attributes: [NSAttributedString.Key.font: font]), for: .normal)
         doneButton.addTarget(self, action: #selector(addToSiriDonePressed), for: .touchUpInside)
         addToSiriController.view.addSubview(doneButton)
 
@@ -219,52 +219,52 @@ class MainMenuTableViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
-        case myDataSource[0]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.check) as? CheckViewController
-            if let toPresent = controller {
-                controller?.myThemeColor = tintColorsArray[0]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[1]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
-            if let toPresent = controller {
-                controller?.myThemeColor = tintColorsArray[1]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[2]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.list) as? ListViewController
-            if let toPresent = controller {
-                controller?.myThemeColor = tintColorsArray[2]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[3]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.random) as? RandomViewController
-            if let toPresent = controller {
-                controller?.myThemeColor = tintColorsArray[3]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[4]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.next) as? NextViewController
-            if let toPresent = controller {
-                controller?.myThemeColor = tintColorsArray[4]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[5]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
-            if let toPresent = controller {
-                controller?.myThemeColor = tintColorsArray[5]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        default:
-            let alert = createAlert(alertReasonParam: AlertReason.unknown)
-            alert.view.layoutIfNeeded()
-            present(alert, animated: true)
+            case myDataSource[0]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.check) as? CheckViewController
+                if let toPresent = controller {
+                    controller?.myThemeColor = tintColorsArray[0]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[1]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
+                if let toPresent = controller {
+                    controller?.myThemeColor = tintColorsArray[1]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[2]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.list) as? ListViewController
+                if let toPresent = controller {
+                    controller?.myThemeColor = tintColorsArray[2]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[3]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.random) as? RandomViewController
+                if let toPresent = controller {
+                    controller?.myThemeColor = tintColorsArray[3]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[4]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.next) as? NextViewController
+                if let toPresent = controller {
+                    controller?.myThemeColor = tintColorsArray[4]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[5]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
+                if let toPresent = controller {
+                    controller?.myThemeColor = tintColorsArray[5]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            default:
+                let alert = createAlert(alertReasonParam: AlertReason.unknown)
+                alert.view.layoutIfNeeded()
+                present(alert, animated: true)
         }
 
         tableView.deselectRow(at: indexPath, animated: true)
@@ -370,6 +370,6 @@ extension MainMenuTableViewController: INUIAddVoiceShortcutViewControllerDelegat
 
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-    return Dictionary(uniqueKeysWithValues: input.map { key, value in
-                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-}
+        return Dictionary(uniqueKeysWithValues: input.map { key, value in
+            (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    }

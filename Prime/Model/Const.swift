@@ -132,7 +132,6 @@ struct Const {
 
 
     struct UserDef {
-        static let selectedTextField = "selectedTextField"
         static let numFromList = "numFromList"
     }
 
