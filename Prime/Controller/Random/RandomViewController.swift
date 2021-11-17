@@ -40,7 +40,7 @@ class RandomViewController: UIViewController {
 
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        randomizeButton.setTitle(Const.Messages.randomize, for: .normal)
+        randomizeButton.setTitle(Const.UX.randomize, for: .normal)
         self.title = Const.Title.random
         randomizeButton.menu = randomMenu()
         randomizeButton.showsMenuAsPrimaryAction = true
@@ -113,12 +113,12 @@ class RandomViewController: UIViewController {
 
     func makeRandom(size: SizeOptions) {
         // donate to siri shortcuts
-        let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
-        activity.title = Const.Messages.randomize
+        let activity = NSUserActivity(activityType: Const.UX.bundleAndRandom)
+        activity.title = Const.UX.randomize
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
-        activity.suggestedInvocationPhrase = Const.Messages.randomize
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.UX.bundleAndRandom)
+        activity.suggestedInvocationPhrase = Const.UX.randomize
         view.userActivity = activity
         activity.becomeCurrent()
 

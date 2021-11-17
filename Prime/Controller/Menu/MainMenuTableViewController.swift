@@ -68,32 +68,32 @@ class MainMenuTableViewController: UIViewController,
     // MARK: Helpers
 
     func aboutMenu() -> UIMenu {
-        let shareApp = UIAction(title: Const.Messages.shareApp, image: UIImage(systemName: "heart"),
+        let shareApp = UIAction(title: Const.UX.shareApp, image: UIImage(systemName: "heart"),
                                 state: .off) { _ in
             self.shareApp()
         }
-        let contact = UIAction(title: Const.Messages.sendFeedback, image: UIImage(systemName: "envelope"),
+        let contact = UIAction(title: Const.UX.sendFeedback, image: UIImage(systemName: "envelope"),
                                state: .off) { _ in
             self.launchEmail()
         }
-        let review = UIAction(title: Const.Messages.leaveReview,
+        let review = UIAction(title: Const.UX.leaveReview,
                               image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
             self.requestReview()
         }
 
-        let addToSiri = UIAction(title: Const.Messages.addToSiri,
+        let addToSiri = UIAction(title: Const.UX.addToSiri,
                               image: UIImage(systemName: "mic.circle"), state: .off) { _ in
             self.presentAddToSiri()
         }
 
-        let moreApps = UIAction(title: Const.Messages.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
+        let moreApps = UIAction(title: Const.UX.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
                                 state: .off) { _ in
             self.showApps()
         }
-        let version: String? = Bundle.main.infoDictionary![Const.Messages.appVersion] as? String
-        var myTitle = Const.Messages.appName
+        let version: String? = Bundle.main.infoDictionary![Const.UX.appVersion] as? String
+        var myTitle = Const.UX.appName
         if let safeVersion = version {
-            myTitle += " \(Const.Messages.version) \(safeVersion)"
+            myTitle += " \(Const.UX.version) \(safeVersion)"
         }
 
         let aboutMenu = UIMenu(title: myTitle, options: .displayInline,
@@ -104,12 +104,12 @@ class MainMenuTableViewController: UIViewController,
 
     func presentAddToSiri() {
         let addToSiriButton = INUIAddVoiceShortcutButton(style: .whiteOutline)
-        let activity = NSUserActivity(activityType: Const.Messages.bundleAndRandom)
-        activity.title = Const.Messages.randomize
+        let activity = NSUserActivity(activityType: Const.UX.bundleAndRandom)
+        activity.title = Const.UX.randomize
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.Messages.bundleAndRandom)
-        activity.suggestedInvocationPhrase = Const.Messages.randomize
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.UX.bundleAndRandom)
+        activity.suggestedInvocationPhrase = Const.UX.randomize
         view.userActivity = activity
         activity.becomeCurrent()
 
@@ -149,7 +149,7 @@ class MainMenuTableViewController: UIViewController,
 
 
     func shareApp() {
-        let message = Const.Messages.shareMessage
+        let message = Const.UX.shareMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
@@ -165,7 +165,7 @@ class MainMenuTableViewController: UIViewController,
 
     func showApps() {
 
-        let myURL = URL(string: Const.Messages.appsLink)
+        let myURL = URL(string: Const.UX.appsLink)
 
         guard let safeURL = myURL else {
             let alert = createAlert(alertReasonParam: .unknown)
@@ -281,12 +281,12 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
     // MARK: Helpers
 
     func launchEmail() {
-        var emailTitle = Const.Messages.appName
-        if let version = Bundle.main.infoDictionary![Const.Messages.appVersion] {
+        var emailTitle = Const.UX.appName
+        if let version = Bundle.main.infoDictionary![Const.UX.appVersion] {
             emailTitle += " \(version)"
         }
-        let messageBody = Const.Messages.emailSample
-        let toRecipents = [Const.Messages.emailAddress]
+        let messageBody = Const.UX.emailSample
+        let toRecipents = [Const.UX.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         mailComposer.setSubject(emailTitle)
@@ -312,7 +312,7 @@ extension MainMenuTableViewController {
     // MARK: Helpers
 
     func requestReview() {
-        guard let writeReviewURL = URL(string: Const.Messages.appReviewLink)
+        guard let writeReviewURL = URL(string: Const.UX.appReviewLink)
         else {
             fatalError("Expected a valid URL")
         }

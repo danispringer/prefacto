@@ -71,7 +71,8 @@ class NextResultsViewController: UIViewController {
         }
         localOriginalNumber = myOriginalNumber
         localNextPrime = myNextPrime
-        message = Const.Messages.nextPrimeMessage
+        message = Const.UX.nextPrimeMessage
+        message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in

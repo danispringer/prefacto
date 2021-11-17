@@ -48,8 +48,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             return
         }
         let myNumberFormatted = "\(myNumber)"
-        let sourceFirstFormatted = "\(source.first!)"
-        let sourceLastFormatted = "\(source.last!)"
+//        let sourceFirstFormatted = "\(source.first!)"
+//        let sourceLastFormatted = "\(source.last!)"
         let sourceCountFormatted = "\(source.count)"
 
         if source.count == 1 {
@@ -59,18 +59,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             resultLabel.text = """
             \(myNumberFormatted)
             is prime, therefore its only factor is itself
-            """
-        } else if source.count == 2 {
-            resultsTableView.isHidden = true
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
-            resultLabel.text = """
-            The prime factors of
-            \(myNumberFormatted)
-            are
-            \(sourceFirstFormatted)
-            and
-            \(sourceLastFormatted)
             """
         } else {
             resultLabel.text = """
@@ -102,7 +90,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBAction func share(_ sender: Any) {
         var message = ""
-        guard number != nil, source != nil, let mySourceFirst = source.first, let mySourceLast = source.last else {
+        guard number != nil, source != nil else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -112,23 +100,14 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         }
         localNumber = number
         localSource = source
-        localSourceFirst = mySourceFirst
-        localSourceLast = mySourceLast
         if source.count == 1 {
-            message = Const.Messages.isPrimeMessage
-        } else if source.count == 2 {
-            message = Const.Messages.twoPrimeFactorsMessage
+            message = Const.UX.isPrimeMessage
         } else {
-            localSourceDroppedLastArray = Array(source.dropLast())
-            localStringSourceDroppedLast = "\(localSourceDroppedLastArray)"
-            localStart = localStringSourceDroppedLast.index(localStringSourceDroppedLast.startIndex, offsetBy: 1)
-            localEnd = localStringSourceDroppedLast.index(localStringSourceDroppedLast.endIndex, offsetBy: -1)
-            localRange = localStart..<localEnd
+            localSource = source
 
-            localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
-
-            message = Const.Messages.manyPrimeFactorsMessage
+            message = Const.UX.manyPrimeFactors
         }
+        message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButtonItem
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in

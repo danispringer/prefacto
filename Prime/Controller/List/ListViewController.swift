@@ -57,7 +57,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             action: #selector(listButtonPressed))
 
         let doneButton = UIBarButtonItem(
-            title: Const.Messages.done,
+            title: Const.UX.done,
             style: .plain,
             target: self,
             action: #selector(donePressed))
@@ -99,7 +99,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
         for textfield in [firstTextField, secondTextField] {
             textfield?.inputAccessoryView = myResignToolbar
-            textfield?.placeholder = Const.Messages.placeholderText
+            textfield?.placeholder = Const.UX.placeholderText
         }
 
         self.title = Const.Title.list

@@ -12,17 +12,7 @@ import UIKit
 
 var localFrom: Int64 = 0
 var localTo: Int64 = 0
-var localSourceFirst: Int64 = 0
-var localSourceLast: Int64 = 0
 var localSource: [Int64] = []
-var localCleanedSourceDroppedLast: [Int64] = []
-var localSourceDroppedLastArray: [Int64] = []
-var localStringSourceDroppedLast: String = ""
-var localStringCleanedSourceDroppedLast: String = ""
-var localStart: String.Index = String.Index(utf16Offset: 0, in: "") //String.Index(encodedOffset: 0)
-var localEnd: String.Index = String.Index(utf16Offset: 0, in: "") //String.Index(encodedOffset: 0)
-var localRange: Range<String.Index> = " ".index(
-    " ".startIndex, offsetBy: 0)..<" ".index(" ".startIndex, offsetBy: 1)
 var localNumber: Int64 = 0
 var localIsDivisibleBy: Int64 = 0
 var localOriginalNumber: Int64 = 0
@@ -31,6 +21,7 @@ var localPreviousPrime: Int64 = 0
 
 let UDStan = UserDefaults.standard
 let notif = NotificationCenter.default
+
 
 // MARK: Constants Struct
 
@@ -63,7 +54,8 @@ struct Const {
     }
 
 
-    struct Messages {
+    // swiftlint:disable:next type_name
+    struct UX {
         static let randomize = NSLocalizedString("Create Random Prime", comment: "")
         static let done = NSLocalizedString("Done", comment: "")
         static let cancel = NSLocalizedString("Cancel", comment: "")
@@ -75,6 +67,7 @@ struct Const {
         static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
         static let showAppsButtonTitle = NSLocalizedString("More Apps", comment: "")
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
+        static let thisAppLink = "https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"
         static let devID = "1402417666"
         static let shareApp = NSLocalizedString("Tell a Friend", comment: "")
         static let shareMessage = NSLocalizedString("""
@@ -94,81 +87,45 @@ struct Const {
         static let addToSiri = NSLocalizedString("Add to Siri", comment: "")
         static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
         static let emailAddress = "dani.springer@icloud.com"
-        static var noPrimesInRangeMessage: String {
-            return """
-            Hey, did you know that there are no prime numbers between \(localFrom) and \(localTo)? \
 
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-            """
-        }
-        static var singlePrimeInRangeMessage: String {
+        static var manyPrimesInRange: String {
             return """
-            Hey, did you know that the only prime number between \(localFrom) and \(localTo) is \
-            \(localSourceFirst)?
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-            """
-        }
-        static var twoPrimesInRange: String {
-            return """
-            Hey, did you know that the only prime numbers between \(localFrom) and \(localTo) are \
-            \(localSourceFirst) and \(localSourceLast)?
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-            """
-        }
-        static var manyPrimesInrange: String {
-            return """
-            Hey, did you know that the prime numbers between \(localFrom) and \(localTo) are \
-            \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
-            \(localSource.count) numbers!
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            From: \(localFrom)
+            To: \(localTo)
+            Amount of primes: \(localSource.count)
+            Values: \(localSource)
             """
         }
         static var isPrimeMessage: String {
             return """
-            Hey, did you know that \(localNumber) is a prime number?
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            Value: \(localNumber)
+            Prime: Yes
             """
         }
         static var isNotPrimeMessage: String {
             return """
-            Hey, did you know that \(localNumber) is not prime, because it is divisible by \
-            \(localIsDivisibleBy)?
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            Value: \(localNumber)
+            Prime: No
+            Factor: \(localIsDivisibleBy)
             """
         }
-        static var twoPrimeFactorsMessage: String {
+        static var manyPrimeFactors: String {
             return """
-            Hey, did you know that the prime factors of \(localNumber) are \(localSourceFirst) \
-            and \(localSourceLast)?
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
-            """
-        }
-        static var manyPrimeFactorsMessage: String {
-            return """
-            Hey, did you know that the prime factors of \(localNumber) are \
-            \(localStringCleanedSourceDroppedLast), and \(localSourceLast)? That's no less than \
-            \(localSource.count) numbers!
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            Value: \(localNumber)
+            Amount of factors: \(localSource.count)
+            Factors: \(localSource)
             """
         }
         static var nextPrimeMessage: String {
             return """
-            Hey, did you know that the next prime after \(localOriginalNumber) is \(localNextPrime)? \
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            Value: \(localOriginalNumber)
+            Next prime: \(localNextPrime)
             """
         }
         static var previousPrimeMessage: String {
             return """
-            Hey, did you know that the previous prime before \(localOriginalNumber) is \(localPreviousPrime)? \
-
-            I just found out, using this app: https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667
+            Value: \(localOriginalNumber)
+            Previous prime: \(localPreviousPrime)
             """
         }
     }

@@ -44,7 +44,7 @@ class CheckViewController: UIViewController,
         checkButton.style = .plain
         checkButton.target = self
         checkButton.action = #selector(checkButtonPressed)
-        let doneButton = UIBarButtonItem(title: Const.Messages.done,
+        let doneButton = UIBarButtonItem(title: Const.UX.done,
                                          style: .plain,
                                          target: self,
                                          action: #selector(donePressed))
@@ -57,7 +57,7 @@ class CheckViewController: UIViewController,
         myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolBar
-        myTextField.placeholder = Const.Messages.placeholderText
+        myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.check
     }
 
