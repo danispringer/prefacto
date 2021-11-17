@@ -42,21 +42,26 @@ class CheckResultsViewController: UIViewController {
             }
             return
         }
-        let myNumberFormatted = "\(myNumber)"
-        let myIsDivisibleByFormatted = "\(myIsDivisibleBy)"
+        localNumber = myNumber
+        localIsDivisibleBy = myIsDivisibleBy
         if isPrime {
-            resultLabel.text = """
-            \(myNumberFormatted)
-            is prime.
-            """
+            resultLabel.text = Const.UX.isPrimeMessage
         } else {
-            resultLabel.text = """
-            \(myNumberFormatted)
-            is not prime.
-            It is divisible by
-            \(myIsDivisibleByFormatted)
-            """
+            resultLabel.text = Const.UX.isNotPrimeMessage
         }
+//        if isPrime {
+//            resultLabel.text = """
+//            \(myNumberFormatted)
+//            is prime.
+//            """
+//        } else {
+//            resultLabel.text = """
+//            \(myNumberFormatted)
+//            is not prime.
+//            It is divisible by
+//            \(myIsDivisibleByFormatted)
+//            """
+//        }
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -78,10 +83,11 @@ class CheckResultsViewController: UIViewController {
         localNumber = myNumber
         localIsDivisibleBy = myIsDivisibleBy
         if isPrime {
-            message = Const.Messages.isPrimeMessage
+            message = Const.UX.isPrimeMessage
         } else {
-            message = Const.Messages.isNotPrimeMessage
+            message = Const.UX.isNotPrimeMessage
         }
+        message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in

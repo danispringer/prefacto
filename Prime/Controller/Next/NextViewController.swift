@@ -48,7 +48,7 @@ class NextViewController: UIViewController,
         nextButton.style = .plain
         nextButton.target = self
         nextButton.action = #selector(nextButtonPressed)
-        let doneButton = UIBarButtonItem(title: Const.Messages.done,
+        let doneButton = UIBarButtonItem(title: Const.UX.done,
                                          style: .plain,
                                          target: self,
                                          action: #selector(donePressed))
@@ -61,7 +61,7 @@ class NextViewController: UIViewController,
         myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolBar
-        myTextField.placeholder = Const.Messages.placeholderText
+        myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.next
     }
 

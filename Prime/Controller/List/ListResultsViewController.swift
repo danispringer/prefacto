@@ -49,6 +49,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         }
         let myFromFormatted = "\(myFrom)"
         let myToFormatted = "\(myTo)"
+        localSource = source
         if source.count == 0 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
@@ -137,32 +138,19 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
         localFrom = rangeFrom
         localTo = rangeTo
         guard source.count != 0 else {
-            message = Const.Messages.noPrimesInRangeMessage
+            message = Const.UX.manyPrimesInRange
             presentShareController(message: message)
             return
         }
-        guard let mySource = source, let mySourceFirst = mySource.first, let mySourceLast = mySource.last else {
+        guard let mySource = source else {
             let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
-        localSourceFirst = mySourceFirst
-        localSourceLast = mySourceLast
         localSource = mySource
-        if mySource.count == 1 {
-            message = Const.Messages.singlePrimeInRangeMessage
-        } else if mySource.count == 2 {
-            message = Const.Messages.twoPrimesInRange
-        } else {
-            localSourceDroppedLastArray = Array(mySource.dropLast())
-            localStringSourceDroppedLast = "\(localSourceDroppedLastArray)"
-            localStart = localStringSourceDroppedLast.index(localStringSourceDroppedLast.startIndex, offsetBy: 1)
-            localEnd = localStringSourceDroppedLast.index(localStringSourceDroppedLast.endIndex, offsetBy: -1)
-            localRange = localStart..<localEnd
+        message = Const.UX.manyPrimesInRange
+        message += "\n\n" + Const.UX.thisAppLink
 
-            localStringCleanedSourceDroppedLast = String(localStringSourceDroppedLast[localRange])
-            message = Const.Messages.manyPrimesInrange
-        }
         presentShareController(message: message)
     }
 

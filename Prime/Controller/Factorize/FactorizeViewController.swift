@@ -53,7 +53,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: #selector(factorizeButtonPressed))
         let doneButton = UIBarButtonItem(
-            title: Const.Messages.done,
+            title: Const.UX.done,
             style: .plain,
             target: self,
             action: #selector(donePressed))
@@ -67,7 +67,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myResignToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myResignToolbar
-        myTextField.placeholder = Const.Messages.placeholderText
+        myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.factorize
     }
 
