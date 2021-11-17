@@ -172,7 +172,6 @@ class RandomViewController: UIViewController {
         let controller = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.randomResults) as? RandomResultsViewController
         controller?.myNumber = number
-        controller?.myTitle = "Your Random \(size.rawValue) Prime"
         controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             if !fromShortcut {

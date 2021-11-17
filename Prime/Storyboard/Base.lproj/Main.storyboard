@@ -35,26 +35,25 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N6E-ik-2ux">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <inset key="separatorInset" minX="56" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="Wc3-Jt-wPS" customClass="MainMenuTableViewCell" customModule="Prime" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="31.666666030883789" width="343" height="49.333332061767578"/>
+                                        <rect key="frame" x="16" y="31.666666030883789" width="343" height="52.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wc3-Jt-wPS" id="HWy-pL-99m">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="49.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="52.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPn-Vr-3ZX" userLabel="My Label">
-                                                    <rect key="frame" x="48" y="15.999999999999998" width="279" height="17.333333333333329"/>
+                                                    <rect key="frame" x="48" y="16" width="279" height="20.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="XLE-bf-6b4"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BQj-1o-dPs" userLabel="My Image">
-                                                    <rect key="frame" x="16" y="12.666666666666664" width="24" height="24"/>
+                                                    <rect key="frame" x="16" y="14.333333333333336" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="FyT-Xj-Ywr"/>
                                                         <constraint firstAttribute="width" secondItem="BQj-1o-dPs" secondAttribute="height" multiplier="1:1" id="pmR-dI-GCn"/>
@@ -272,26 +271,25 @@
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-To-rhb">
-                                <rect key="frame" x="16" y="104" width="343" height="55"/>
+                                <rect key="frame" x="16" y="104" width="343" height="113"/>
                                 <string key="text">From: 1234567890
 To: 1234567890
 Primes: 123456890</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
-                                <rect key="frame" x="16" y="247" width="343" height="443"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
+                                <rect key="frame" x="0.0" y="329" width="375" height="361"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Prime" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="343" height="44"/>
+                                        <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H6G-mI-jWo" id="bVR-LQ-lpl">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lns-Po-Sqc" userLabel="Number Label">
-                                                    <rect key="frame" x="50.666666666666657" y="13.666666666666664" width="282.33333333333337" height="17"/>
+                                                    <rect key="frame" x="50.666666666666657" y="13.333333333333336" width="282.33333333333337" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="9se-nT-z3F"/>
                                                     </constraints>
@@ -329,7 +327,7 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="171.66666666666666" y="203.66666666666666" width="32" height="22"/>
+                                <rect key="frame" x="171.66666666666666" y="285.66666666666669" width="32" height="21.999999999999972"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i8z-rE-tr8" secondAttribute="height" multiplier="1:1" id="OOa-l9-ayj"/>
@@ -359,11 +357,11 @@ Primes: 123456890</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pot-Xn-7oP" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" id="85F-i7-GH3"/>
-                            <constraint firstItem="cUP-pY-AOE" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" constant="16" id="9X0-tU-cBa"/>
-                            <constraint firstItem="i8z-rE-tr8" firstAttribute="top" secondItem="Gno-To-rhb" secondAttribute="bottom" constant="40" id="CTR-pR-3Qb"/>
+                            <constraint firstItem="cUP-pY-AOE" firstAttribute="leading" secondItem="IJQ-WZ-WUE" secondAttribute="leading" id="9X0-tU-cBa"/>
+                            <constraint firstItem="i8z-rE-tr8" firstAttribute="top" secondItem="Gno-To-rhb" secondAttribute="bottom" constant="64" id="CTR-pR-3Qb"/>
                             <constraint firstItem="cUP-pY-AOE" firstAttribute="top" secondItem="i8z-rE-tr8" secondAttribute="bottom" constant="16" id="SQR-4G-E39"/>
                             <constraint firstItem="4HI-oU-hkH" firstAttribute="centerX" secondItem="IJQ-WZ-WUE" secondAttribute="centerX" id="Su8-W6-TSH"/>
-                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="cUP-pY-AOE" secondAttribute="trailing" constant="16" id="egN-xt-Mg9"/>
+                            <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="cUP-pY-AOE" secondAttribute="trailing" id="egN-xt-Mg9"/>
                             <constraint firstItem="Gno-To-rhb" firstAttribute="top" secondItem="pot-Xn-7oP" secondAttribute="bottom" constant="16" id="i5a-Tu-JWR"/>
                             <constraint firstItem="4HI-oU-hkH" firstAttribute="top" secondItem="cUP-pY-AOE" secondAttribute="bottom" constant="16" id="kNg-Fe-qYW"/>
                             <constraint firstItem="IJQ-WZ-WUE" firstAttribute="trailing" secondItem="Gno-To-rhb" secondAttribute="trailing" constant="16" id="kT9-iH-SQ8"/>
@@ -413,10 +411,10 @@ Primes: 123456890</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHh-na-Oah">
-                                <rect key="frame" x="16" y="393" width="343" height="36"/>
+                                <rect key="frame" x="16" y="354.66666666666669" width="343" height="113"/>
                                 <string key="text">12345678901: not prime.
 Divisible by: 857.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -466,19 +464,18 @@ Divisible by: 857.</string>
                                 </items>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
-                                <rect key="frame" x="16" y="228" width="343" height="462"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
+                                <rect key="frame" x="0.0" y="291" width="375" height="399"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Prime" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="343" height="44"/>
+                                        <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsJ-X1-QkV" id="cRd-m7-bIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-YK-Szs" userLabel="Number Label">
-                                                    <rect key="frame" x="50.666666666666657" y="13.666666666666664" width="282.33333333333337" height="17"/>
+                                                    <rect key="frame" x="50.666666666666657" y="13.333333333333336" width="282.33333333333337" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="kQQ-5j-MEI"/>
                                                     </constraints>
@@ -514,7 +511,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="171.66666666666666" y="184.66666666666666" width="32" height="22"/>
+                                <rect key="frame" x="171.66666666666666" y="247.66666666666663" width="32" height="22.000000000000028"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="hWc-rC-abA"/>
@@ -540,10 +537,10 @@ Divisible by: 857.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtG-MD-Tnd">
-                                <rect key="frame" x="16" y="104" width="343" height="36"/>
+                                <rect key="frame" x="16" y="104" width="343" height="75"/>
                                 <string key="text">N: 1234567890
 Factors: 1234567890</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -556,15 +553,15 @@ Factors: 1234567890</string>
                             <constraint firstItem="o0x-Ps-BCo" firstAttribute="top" secondItem="uvb-aY-8KG" secondAttribute="bottom" constant="16" id="86L-Vh-YoA"/>
                             <constraint firstItem="uvb-aY-8KG" firstAttribute="centerX" secondItem="QOY-xE-4JJ" secondAttribute="centerX" id="C9o-3i-CDx"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="vtG-MD-Tnd" secondAttribute="trailing" constant="16" id="G18-gq-xqI"/>
-                            <constraint firstItem="uvb-aY-8KG" firstAttribute="top" secondItem="vtG-MD-Tnd" secondAttribute="bottom" constant="40" id="ImK-bk-XeH"/>
+                            <constraint firstItem="uvb-aY-8KG" firstAttribute="top" secondItem="vtG-MD-Tnd" secondAttribute="bottom" constant="64" id="ImK-bk-XeH"/>
                             <constraint firstItem="lyv-wW-QU7" firstAttribute="centerX" secondItem="QOY-xE-4JJ" secondAttribute="centerX" id="QIA-Hd-1WW"/>
                             <constraint firstItem="lyv-wW-QU7" firstAttribute="top" secondItem="o0x-Ps-BCo" secondAttribute="bottom" constant="16" id="R0i-Km-HFR"/>
                             <constraint firstItem="RU3-mS-M5k" firstAttribute="top" secondItem="QOY-xE-4JJ" secondAttribute="top" id="TqB-PI-XtA"/>
                             <constraint firstItem="vtG-MD-Tnd" firstAttribute="top" secondItem="RU3-mS-M5k" secondAttribute="bottom" constant="16" id="YLP-TU-rqb"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="RU3-mS-M5k" secondAttribute="trailing" id="ZA8-Kn-Y1b"/>
                             <constraint firstItem="QOY-xE-4JJ" firstAttribute="bottom" secondItem="lyv-wW-QU7" secondAttribute="bottom" constant="40" id="ZdC-Q9-WQc"/>
-                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="o0x-Ps-BCo" secondAttribute="trailing" constant="16" id="fJE-hP-XIO"/>
-                            <constraint firstItem="o0x-Ps-BCo" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" constant="16" id="ve2-7f-B95"/>
+                            <constraint firstItem="QOY-xE-4JJ" firstAttribute="trailing" secondItem="o0x-Ps-BCo" secondAttribute="trailing" id="fJE-hP-XIO"/>
+                            <constraint firstItem="o0x-Ps-BCo" firstAttribute="leading" secondItem="QOY-xE-4JJ" secondAttribute="leading" id="ve2-7f-B95"/>
                         </constraints>
                     </view>
                     <connections>
@@ -592,8 +589,8 @@ Factors: 1234567890</string>
                                 <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="16" y="396.66666666666669" width="343" height="29"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <rect key="frame" x="16" y="386.66666666666669" width="343" height="49"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Randomize button"/>
                             </button>
                         </subviews>
@@ -681,16 +678,10 @@ Factors: 1234567890</string>
                                 </items>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h7-fu-4TW">
-                                <rect key="frame" x="16" y="104" width="343" height="17"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="0.0" y="402.66666666666669" width="375" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
+                                <rect key="frame" x="0.0" y="392.66666666666669" width="375" height="37"/>
                                 <accessibility key="accessibilityConfiguration" label="Copy"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="1234567890"/>
                             </button>
@@ -698,13 +689,10 @@ Factors: 1234567890</string>
                         <viewLayoutGuide key="safeArea" id="Vmc-Bm-u6I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9h7-fu-4TW" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="5wu-HY-srS"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" id="67f-l7-FQV"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="DqT-zL-LYQ" secondAttribute="trailing" id="YMb-2E-GdR"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="top" secondItem="Vmc-Bm-u6I" secondAttribute="top" id="bYh-Qq-0Qf"/>
-                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="9h7-fu-4TW" secondAttribute="trailing" constant="16" id="dvO-nV-Woc"/>
                             <constraint firstItem="DqT-zL-LYQ" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" id="mNd-LL-HMc"/>
-                            <constraint firstItem="9h7-fu-4TW" firstAttribute="top" secondItem="PX3-Zc-OR8" secondAttribute="bottom" constant="16" id="qNk-9r-fXf"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="centerX" secondItem="tUT-Up-DS9" secondAttribute="centerX" id="qaj-pD-9Aq"/>
                             <constraint firstItem="DqT-zL-LYQ" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="ubh-JT-CBv"/>
                         </constraints>
@@ -713,7 +701,6 @@ Factors: 1234567890</string>
                         <outlet property="myToolbar" destination="PX3-Zc-OR8" id="lP5-OH-3uD"/>
                         <outlet property="resultButton" destination="DqT-zL-LYQ" id="3E2-Gf-A8R"/>
                         <outlet property="shareBarButtonItem" destination="8wG-x3-FZT" id="4zZ-8Q-uO5"/>
-                        <outlet property="titleLabel" destination="9h7-fu-4TW" id="oT4-ep-NRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lc-oO-aJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -746,10 +733,10 @@ Factors: 1234567890</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-n8-DGZ">
-                                <rect key="frame" x="16" y="393" width="343" height="36"/>
+                                <rect key="frame" x="16" y="354.66666666666669" width="343" height="113"/>
                                 <string key="text">12345678901: not prime.
 Divisible by: 857.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -839,10 +826,10 @@ Divisible by: 857.</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOJ-zv-56H">
-                                <rect key="frame" x="16" y="393" width="343" height="36"/>
+                                <rect key="frame" x="16" y="354.66666666666669" width="343" height="113"/>
                                 <string key="text">12345678901: not prime.
 Divisible by: 857.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
