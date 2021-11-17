@@ -65,10 +65,10 @@ extension UIViewController {
                 """, comment: "")
             case .overflow:
                 alertTitle = NSLocalizedString("Overflow", comment: "")
-                alertMessage = NSLocalizedString("""
+                alertMessage = """
                 There are no primes above \(num) which are lower than 9223372036854775807 \
                 (your device's limit)
-                """, comment: "")
+                """
             default:
                 alertTitle = NSLocalizedString("Unknown error", comment: "")
                 alertMessage = NSLocalizedString("""
