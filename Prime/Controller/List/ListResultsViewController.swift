@@ -73,22 +73,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             is
             \(sourceFormatted)
             """
-        } else if source.count == 2 {
-            let sourceFirstFormatted = "\(source.first!)"
-            let sourceLastFormatted = "\(source.last!)"
-            resultsTableView.isHidden = true
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
-            resultLabel.text = """
-            The primes between
-            \(myFromFormatted)
-            and
-            \(myToFormatted)
-            are
-            \(sourceFirstFormatted)
-            and
-            \(sourceLastFormatted)
-            """
         } else {
             let sourceCountFormatted = "\(source.count)"
             resultLabel.text = """

@@ -202,7 +202,7 @@ class NextViewController: UIViewController,
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.nextResults)
-            as? NextResultsViewController
+        as? NextResultsViewController
         controller?.originalNumber = originalNumber
         controller?.nextPrime = nextPrime
         controller?.myThemeColor = myThemeColor
@@ -219,7 +219,7 @@ class NextViewController: UIViewController,
         DispatchQueue.main.async {
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
         }
     }

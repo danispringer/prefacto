@@ -48,8 +48,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             return
         }
         let myNumberFormatted = "\(myNumber)"
-//        let sourceFirstFormatted = "\(source.first!)"
-//        let sourceLastFormatted = "\(source.last!)"
         let sourceCountFormatted = "\(source.count)"
 
         if source.count == 1 {
@@ -103,8 +101,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         if source.count == 1 {
             message = Const.UX.isPrimeMessage
         } else {
-            localSource = source
-
             message = Const.UX.manyPrimeFactors
         }
         message += "\n\n" + Const.UX.thisAppLink

@@ -105,10 +105,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         self.title = Const.Title.list
     }
 
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         showKeyboard()
     }
 
@@ -116,12 +114,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     // MARK: Helpers
 
     @objc func showKeyboard() {
-        let myInt: Int = UDStan.integer(forKey: Const.UserDef.selectedTextField)
-        if myInt == 1 {
-            secondTextField.becomeFirstResponder()
-        } else {
-            firstTextField.becomeFirstResponder()
-        }
+        firstTextField.becomeFirstResponder()
+
     }
 
 
@@ -138,7 +132,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         previousButton.isEnabled = !(textField.tag == 0)
         nextButton.isEnabled = (textField.tag == 0)
-        UDStan.setValue(textField.tag, forKey: Const.UserDef.selectedTextField)
     }
 
 
@@ -152,13 +145,13 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case firstTextField:
-            secondTextField.becomeFirstResponder()
-        case secondTextField:
-            secondTextField.resignFirstResponder()
-            listButtonPressed()
-        default:
-            fatalError()
+            case firstTextField:
+                secondTextField.becomeFirstResponder()
+            case secondTextField:
+                secondTextField.resignFirstResponder()
+                listButtonPressed()
+            default:
+                fatalError()
         }
         return true
     }
@@ -294,14 +287,14 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             let goToCheckAction = UIAlertAction(
                 title: "\(Const.Title.check)",
                 style: .default) { _ in
-                self.navigationController?.popToRootViewController(animated: true)
-                let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-                let checkVC = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.check) as? CheckViewController
-                UDStan.setValue("\(firstNum)", forKey: Const.UserDef.numFromList)
-                self.navigationController?.pushViewController(checkVC!, animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
+                    let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+                    let checkVC = storyboard.instantiateViewController(
+                        withIdentifier: Const.StoryboardID.check) as? CheckViewController
+                    UDStan.setValue("\(firstNum)", forKey: Const.UserDef.numFromList)
+                    self.navigationController?.pushViewController(checkVC!, animated: true)
 
-            }
+                }
             alert.addAction(goToCheckAction)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
@@ -321,7 +314,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             self.view.endEditing(!enabled)
         }
     }

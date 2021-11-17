@@ -49,19 +49,7 @@ class CheckResultsViewController: UIViewController {
         } else {
             resultLabel.text = Const.UX.isNotPrimeMessage
         }
-//        if isPrime {
-//            resultLabel.text = """
-//            \(myNumberFormatted)
-//            is prime.
-//            """
-//        } else {
-//            resultLabel.text = """
-//            \(myNumberFormatted)
-//            is not prime.
-//            It is divisible by
-//            \(myIsDivisibleByFormatted)
-//            """
-//        }
+
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
