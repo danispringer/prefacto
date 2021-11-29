@@ -61,7 +61,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         } else {
             resultLabel.text = """
             Value: \(myNumberFormatted)
-            Count: \(sourceCountFormatted)
+            Count of factors: \(sourceCountFormatted)
             """
         }
 
