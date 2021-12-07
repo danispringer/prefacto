@@ -69,6 +69,13 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
 
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        notif.post(name: .tryShowingKeyboard, object: nil)
+    }
+
+
     // MARK: Helpers
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
@@ -120,7 +127,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBAction func donePressed(_ sender: Any) {
         dismiss(animated: true, completion: {
-            notif.post(name: .didDisappear, object: nil, userInfo: nil)
+            notif.post(name: .tryShowingKeyboard, object: nil, userInfo: nil)
         })
     }
 

@@ -36,7 +36,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -106,8 +106,9 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     // MARK: Helpers
 
     @objc func showKeyboard() {
-        firstTextField.becomeFirstResponder()
-
+        if !secondTextField.isFirstResponder {
+            firstTextField.becomeFirstResponder()
+        }
     }
 
 
@@ -270,18 +271,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         guard !(firstNum == secondNum) else {
             let alert = createAlert(alertReasonParam: .sameTwice)
-            let goToCheckAction = UIAlertAction(
-                title: "\(Const.Title.check)",
-                style: .default) { _ in
-                    self.navigationController?.popToRootViewController(animated: true)
-                    let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-                    let checkVC = storyboard.instantiateViewController(
-                        withIdentifier: Const.StoryboardID.check) as? CheckViewController
-                    UD.setValue("\(firstNum)", forKey: Const.UserDef.numFromList)
-                    self.navigationController?.pushViewController(checkVC!, animated: true)
-
-                }
-            alert.addAction(goToCheckAction)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()

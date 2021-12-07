@@ -9,5 +9,5 @@
 import UIKit
 
 extension Notification.Name {
-    static let didDisappear = Notification.Name("didDisappear")
+    static let tryShowingKeyboard = Notification.Name("tryShowingKeyboard")
 }
