@@ -200,6 +200,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = !enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
             self.activityIndicator.startAnimating()
@@ -211,7 +212,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         factorizeButtonPressed()
-
         return true
     }
 

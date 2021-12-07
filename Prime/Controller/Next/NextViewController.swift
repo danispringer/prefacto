@@ -207,10 +207,11 @@ class NextViewController: UIViewController,
 
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = !enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
             self.activityIndicator.startAnimating()
-            self.view.endEditing(!enabled)
+            //self.view.endEditing(!enabled)
         }
     }
 
@@ -219,7 +220,6 @@ class NextViewController: UIViewController,
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nextButtonPressed()
-
         return true
     }
 

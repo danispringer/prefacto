@@ -37,6 +37,7 @@ extension UIViewController {
                 alertMessage = NSLocalizedString("""
                 Only numbers allowed. No decimals.
                 Max number: 9223372036854775807
+                If your device is higher than 64-bit, please let me know: dani.springer@icloud.com
                 """, comment: "")
             case .zero:
                 alertTitle = NSLocalizedString("0 not allowed here", comment: "")
@@ -68,6 +69,7 @@ extension UIViewController {
                 alertMessage = """
                 There are no primes above \(num) which are lower than 9223372036854775807 \
                 (your device's limit)
+                If your device is higher than 64-bit, please let me know: dani.springer@icloud.com
                 """
             default:
                 alertTitle = NSLocalizedString("Unknown error", comment: "")
