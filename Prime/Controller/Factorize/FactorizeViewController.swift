@@ -22,7 +22,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
-    var myResignToolbar: UIToolbar! = nil
+    var myToolbar: UIToolbar! = nil
 
     let myThemeColor: UIColor = .systemBlue
 
@@ -41,7 +41,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myResignToolbar = UIToolbar()
+        myToolbar = UIToolbar()
 
         arrayOfInts = []
 
@@ -52,21 +52,16 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             style: .plain,
             target: self,
             action: #selector(factorizeButtonPressed))
-        let doneButton = UIBarButtonItem(
-            title: Const.UX.done,
-            style: .plain,
-            target: self,
-            action: #selector(donePressed))
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myResignToolbar.items = [doneButton, space, factorButton]
-        myResignToolbar.sizeToFit()
-        myResignToolbar.setBackgroundImage(UIImage(),
+        myToolbar.items = [space, factorButton]
+        myToolbar.sizeToFit()
+        myToolbar.setBackgroundImage(UIImage(),
                                            forToolbarPosition: .any,
                                            barMetrics: .default)
-        myResignToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        myTextField.inputAccessoryView = myResignToolbar
+        myTextField.inputAccessoryView = myToolbar
         myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.factorize
     }
@@ -82,11 +77,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     @objc func showKeyboard() {
         myTextField.becomeFirstResponder()
-    }
-
-
-    @objc func donePressed() {
-        myTextField.resignFirstResponder()
     }
 
 

@@ -119,21 +119,21 @@ class MainMenuTableViewController: UIViewController,
         addToSiriController.view.addSubview(addToSiriButton)
         addToSiriController.view.backgroundColor = UIColor.systemBackground
 
-        let doneButton = UIButton()
+        let closeSiriButton = UIButton()
         let font = UIFont.preferredFont(forTextStyle: .body)
-        doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.setAttributedTitle(NSAttributedString(
-            string: NSLocalizedString("Done", comment: ""),
+        closeSiriButton.translatesAutoresizingMaskIntoConstraints = false
+        closeSiriButton.setAttributedTitle(NSAttributedString(
+            string: Const.UX.done,
             attributes: [NSAttributedString.Key.font: font]), for: .normal)
-        doneButton.addTarget(self, action: #selector(addToSiriDonePressed), for: .touchUpInside)
-        addToSiriController.view.addSubview(doneButton)
+        closeSiriButton.addTarget(self, action: #selector(closeSiriTapped), for: .touchUpInside)
+        addToSiriController.view.addSubview(closeSiriButton)
 
         NSLayoutConstraint.activate([
             addToSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
             addToSiriButton.centerYAnchor.constraint(equalTo: addToSiriController.view.centerYAnchor),
-            doneButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
-            doneButton.bottomAnchor.constraint(equalTo: addToSiriController.view.bottomAnchor, constant: -64),
-            doneButton.widthAnchor.constraint(equalToConstant: 120),
+            closeSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
+            closeSiriButton.bottomAnchor.constraint(equalTo: addToSiriController.view.bottomAnchor, constant: -64),
+            closeSiriButton.widthAnchor.constraint(equalToConstant: 120),
             addToSiriButton.widthAnchor.constraint(equalToConstant: 320),
             addToSiriButton.heightAnchor.constraint(equalToConstant: 64)
         ])
@@ -143,7 +143,7 @@ class MainMenuTableViewController: UIViewController,
     }
 
 
-    @objc func addToSiriDonePressed() {
+    @objc func closeSiriTapped() {
         addToSiriController.dismiss(animated: true)
     }
 
@@ -179,15 +179,6 @@ class MainMenuTableViewController: UIViewController,
 
 
     // MARK: TableView Delegate
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return nil
-        } else {
-            fatalError()
-        }
-    }
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myDataSource.count

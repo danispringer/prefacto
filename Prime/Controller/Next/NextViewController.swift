@@ -21,7 +21,7 @@ class NextViewController: UIViewController,
 
     // MARK: Properties
 
-    var myResignToolBar: UIToolbar! = nil
+    var myToolBar: UIToolbar! = nil
 
     let myThemeColor: UIColor = .systemTeal
 
@@ -40,7 +40,7 @@ class NextViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myResignToolBar = UIToolbar()
+        myToolBar = UIToolbar()
 
         let nextButton = UIBarButtonItem()
 
@@ -48,19 +48,15 @@ class NextViewController: UIViewController,
         nextButton.style = .plain
         nextButton.target = self
         nextButton.action = #selector(nextButtonPressed)
-        let doneButton = UIBarButtonItem(title: Const.UX.done,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myResignToolBar.items = [doneButton, space, nextButton]
-        myResignToolBar.sizeToFit()
-        myResignToolBar.setBackgroundImage(UIImage(),
+        myToolBar.items = [space, nextButton]
+        myToolBar.sizeToFit()
+        myToolBar.setBackgroundImage(UIImage(),
                                            forToolbarPosition: .any,
                                            barMetrics: .default)
-        myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        myTextField.inputAccessoryView = myResignToolBar
+        myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.next
     }
@@ -76,11 +72,6 @@ class NextViewController: UIViewController,
 
     @objc func showKeyboard() {
         myTextField.becomeFirstResponder()
-    }
-
-
-    @objc func donePressed() {
-        myTextField.resignFirstResponder()
     }
 
 

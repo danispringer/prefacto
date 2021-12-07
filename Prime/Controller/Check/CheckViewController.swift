@@ -21,7 +21,7 @@ class CheckViewController: UIViewController,
 
     // MARK: Properties
 
-    var myResignToolBar: UIToolbar! = nil
+    var myToolBar: UIToolbar! = nil
     let myThemeColor: UIColor = .systemGreen
 
 
@@ -38,25 +38,21 @@ class CheckViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myResignToolBar = UIToolbar()
+        myToolBar = UIToolbar()
         let checkButton = UIBarButtonItem()
         checkButton.title = Const.Title.check
         checkButton.style = .plain
         checkButton.target = self
         checkButton.action = #selector(checkButtonPressed)
-        let doneButton = UIBarButtonItem(title: Const.UX.done,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myResignToolBar.items = [doneButton, space, checkButton]
-        myResignToolBar.sizeToFit()
-        myResignToolBar.setBackgroundImage(UIImage(),
+        myToolBar.items = [space, checkButton]
+        myToolBar.sizeToFit()
+        myToolBar.setBackgroundImage(UIImage(),
                                            forToolbarPosition: .any,
                                            barMetrics: .default)
-        myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        myTextField.inputAccessoryView = myResignToolBar
+        myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.check
     }
@@ -78,11 +74,6 @@ class CheckViewController: UIViewController,
 
     @objc func showKeyboard() {
         myTextField.becomeFirstResponder()
-    }
-
-
-    @objc func donePressed() {
-        myTextField.resignFirstResponder()
     }
 
 
