@@ -31,7 +31,7 @@ class CheckViewController: UIViewController,
         super.viewDidLoad()
 
         setThemeColorTo(myThemeColor: myThemeColor)
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -55,6 +55,7 @@ class CheckViewController: UIViewController,
         myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.check
+        showKeyboard()
     }
 
 
@@ -62,11 +63,6 @@ class CheckViewController: UIViewController,
         super.viewDidLayoutSubviews()
 
         showKeyboard()
-        if let myString: String = UD.string(forKey: Const.UserDef.numFromList), !myString.isEmpty {
-            myTextField.text = myString
-            UD.removeObject(forKey: Const.UserDef.numFromList)
-            checkButtonPressed()
-        }
     }
 
 
@@ -216,6 +212,5 @@ class CheckViewController: UIViewController,
         checkButtonPressed()
         return true
     }
-
 
 }

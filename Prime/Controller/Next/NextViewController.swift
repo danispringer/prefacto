@@ -33,7 +33,7 @@ class NextViewController: UIViewController,
 
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -64,9 +64,9 @@ class NextViewController: UIViewController,
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         showKeyboard()
     }
+
 
     // MARK: Helpers
 

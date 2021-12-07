@@ -54,6 +54,13 @@ class NextResultsViewController: UIViewController {
     }
 
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        notif.post(name: .tryShowingKeyboard, object: nil)
+    }
+
+
     // MARK: Helpers
 
     @IBAction func share() {
@@ -87,7 +94,7 @@ class NextResultsViewController: UIViewController {
 
     @IBAction func donePressed(_ sender: Any) {
         dismiss(animated: true, completion: {
-            notif.post(name: .didDisappear, object: nil, userInfo: nil)
+            notif.post(name: .tryShowingKeyboard, object: nil, userInfo: nil)
         })
     }
 

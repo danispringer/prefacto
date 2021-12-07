@@ -34,7 +34,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
 

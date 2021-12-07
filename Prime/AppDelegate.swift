@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-                UD.register(defaults: [
-                    Const.UserDef.numFromList: ""])
-
-
                 return true
             }
 

@@ -40,7 +40,7 @@ extension Int64 {
                     return
                 }
                 divisor += lever
-                let thing = divisor.multipliedReportingOverflow(by: divisor) // 3037000501 errors
+                let thing = divisor.multipliedReportingOverflow(by: divisor)
                 if thing.overflow {
                     break // to avoid crashes and such. Seems to work. Hard to verify if returned primes
                     // are indeed always prime.

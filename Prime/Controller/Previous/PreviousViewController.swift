@@ -24,7 +24,6 @@ class PreviousViewController: UIViewController,
     // MARK: Properties
 
     var myToolBar: UIToolbar! = nil
-
     let myThemeColor: UIColor = .systemTeal
 
 
@@ -32,8 +31,7 @@ class PreviousViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .didDisappear, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -41,11 +39,8 @@ class PreviousViewController: UIViewController,
         super.viewWillAppear(animated)
 
         setThemeColorTo(myThemeColor: myThemeColor)
-
         myToolBar = UIToolbar()
-
         let previousButton = UIBarButtonItem()
-
         previousButton.title = Const.Title.previous
         previousButton.style = .plain
         previousButton.target = self
@@ -57,17 +52,14 @@ class PreviousViewController: UIViewController,
                                            forToolbarPosition: .any,
                                            barMetrics: .default)
         myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
         myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
-
         self.title = Const.Title.previous
     }
 
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         showKeyboard()
     }
 

@@ -120,10 +120,5 @@ struct Const {
         }
     }
 
-
-    struct UserDef {
-        static let numFromList = "numFromList"
-    }
-
 }
 // 9223372036854775807

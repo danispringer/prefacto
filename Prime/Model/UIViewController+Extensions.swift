@@ -78,7 +78,9 @@ extension UIViewController {
                 """, comment: "")
         }
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
+            notif.post(name: .tryShowingKeyboard, object: nil, userInfo: nil)
+        }
         alert.addAction(alertAction)
         return alert
     }
