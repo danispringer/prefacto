@@ -55,13 +55,11 @@ class CheckViewController: UIViewController,
         myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.check
-        showKeyboard()
     }
 
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         showKeyboard()
     }
 
