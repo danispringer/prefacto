@@ -66,9 +66,9 @@ class CheckViewController: UIViewController,
         super.viewDidLayoutSubviews()
 
         showKeyboard()
-        if let myString: String = UDStan.string(forKey: Const.UserDef.numFromList), !myString.isEmpty {
+        if let myString: String = UD.string(forKey: Const.UserDef.numFromList), !myString.isEmpty {
             myTextField.text = myString
-            UDStan.removeObject(forKey: Const.UserDef.numFromList)
+            UD.removeObject(forKey: Const.UserDef.numFromList)
             checkButtonPressed()
         }
     }

@@ -16,7 +16,6 @@
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
 		336646DB2321A53900674340 /* Int64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336646DA2321A53900674340 /* Int64+Extension.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
-		3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376A51321000688001431C8 /* UIImage+Extension.swift */; };
 		339CBB88256DD517001F4E2C /* NotificationsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CBB87256DD517001F4E2C /* NotificationsNames.swift */; };
 		33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */; };
 		33A96A4120FDFA8F009E1DBA /* RandomResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */; };
@@ -59,7 +58,6 @@
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		336646DA2321A53900674340 /* Int64+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Extension.swift"; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
-		3376A51321000688001431C8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		339CBB87256DD517001F4E2C /* NotificationsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsNames.swift; sourceTree = "<group>"; };
 		33A96A3E20FDFA83009E1DBA /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		33A96A4020FDFA8F009E1DBA /* RandomResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomResultsViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		3317915C20DA042F00CA739F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3376A51321000688001431C8 /* UIImage+Extension.swift */,
 				33428EE821AB6A810074F538 /* Const.swift */,
 				336646DA2321A53900674340 /* Int64+Extension.swift */,
 				33BE80A3256DF73300928E77 /* UIViewController+Extensions.swift */,
@@ -363,7 +360,6 @@
 				33F6747D20DF7C7B0094BCBA /* FactorizeViewController.swift in Sources */,
 				333F996A20F2D91F003774D4 /* CheckResultsViewController.swift in Sources */,
 				33A96A3F20FDFA83009E1DBA /* RandomViewController.swift in Sources */,
-				3376A51421000688001431C8 /* UIImage+Extension.swift in Sources */,
 				3312262A210D233500802138 /* FactorizeTableViewCell.swift in Sources */,
 				333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */,
 				652FAD8723838CA500E3B06E /* MainMenuTableViewController.swift in Sources */,
