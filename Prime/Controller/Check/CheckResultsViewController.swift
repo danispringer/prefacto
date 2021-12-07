@@ -25,7 +25,7 @@ class CheckResultsViewController: UIViewController {
     var isPrime: Bool!
     var isDivisibleBy: Int64!
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemGreen
 
     // MARK: Life Cycle
 

@@ -23,7 +23,7 @@ class RandomResultsViewController: UIViewController {
 
     var myNumber: Int64!
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemOrange
 
     // MARK: Life Cycle
 

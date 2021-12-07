@@ -24,7 +24,7 @@ class NextResultsViewController: UIViewController {
     var originalNumber: Int64!
     var nextPrime: Int64!
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemTeal
 
 
     // MARK: Life Cycle

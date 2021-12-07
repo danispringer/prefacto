@@ -25,7 +25,7 @@ class PreviousViewController: UIViewController,
 
     var myResignToolBar: UIToolbar! = nil
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemTeal
 
 
     // MARK: Life Cycle
@@ -210,7 +210,6 @@ class PreviousViewController: UIViewController,
         as? PreviousResultsViewController
         controller?.originalNumber = originalNumber
         controller?.previousPrime = previousPrime
-        controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {

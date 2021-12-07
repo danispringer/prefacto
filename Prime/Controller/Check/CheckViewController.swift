@@ -22,7 +22,7 @@ class CheckViewController: UIViewController,
     // MARK: Properties
 
     var myResignToolBar: UIToolbar! = nil
-    var myThemeColor: UIColor = .systemGreen
+    let myThemeColor: UIColor = .systemGreen
 
 
     // MARK: Life Cycle
@@ -199,7 +199,6 @@ class CheckViewController: UIViewController,
         controller?.number = number
         controller?.isPrime = isPrime
         controller?.isDivisibleBy = isDivisibleBy
-        controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {
