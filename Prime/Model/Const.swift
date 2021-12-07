@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 // MARK: Properties
 
 var localFrom: Int64 = 0
@@ -19,7 +20,8 @@ var localOriginalNumber: Int64 = 0
 var localNextPrime: Int64 = 0
 var localPreviousPrime: Int64 = 0
 
-let UDStan = UserDefaults.standard
+// swiftlint:disable:next identifier_name
+let UD = UserDefaults.standard
 let notif = NotificationCenter.default
 
 

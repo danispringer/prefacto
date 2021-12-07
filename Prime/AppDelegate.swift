@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-                UDStan.register(defaults: [
+                UD.register(defaults: [
                     Const.UserDef.numFromList: ""])
 
 
@@ -40,12 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
-        let navC = window?.rootViewController as? UINavigationController
-        navC?.popToRootViewController(animated: false)
+        guard let safeNavVC = window?.rootViewController as? UINavigationController else {
+            return false
+        }
+
+        safeNavVC.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let randomVC = (storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
-        navC?.pushViewController(randomVC, animated: false)
+        safeNavVC.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
 
         return true
