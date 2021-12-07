@@ -24,7 +24,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     var arrayOfInts = [Int64]()
     var myResignToolbar: UIToolbar! = nil
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemBlue
 
 
     // MARK: Life Cycle
@@ -186,7 +186,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             withIdentifier: Const.StoryboardID.factorizeResults) as? FactorizeResultsViewController
         controller?.number = number
         controller?.source = arrayOfInts
-        controller?.myThemeColor = myThemeColor
         if let toPresent = controller {
             present(toPresent, animated: true)
         }

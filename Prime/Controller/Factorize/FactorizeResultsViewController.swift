@@ -28,7 +28,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     var number: Int64!
     let factorCell = "FactorCell"
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemBlue
+
 
     // MARK: Life Cycle
 

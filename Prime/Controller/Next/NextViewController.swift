@@ -23,7 +23,7 @@ class NextViewController: UIViewController,
 
     var myResignToolBar: UIToolbar! = nil
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemTeal
 
 
     // MARK: Life Cycle
@@ -205,7 +205,6 @@ class NextViewController: UIViewController,
         as? NextResultsViewController
         controller?.originalNumber = originalNumber
         controller?.nextPrime = nextPrime
-        controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             self.enableUI(enabled: true)
             if let toPresent = controller {

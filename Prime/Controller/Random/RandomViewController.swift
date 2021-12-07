@@ -30,7 +30,7 @@ class RandomViewController: UIViewController {
         case xLarge = "Extra-Large"
     }
 
-    var myThemeColor = UIColor.systemOrange
+    let myThemeColor: UIColor = .systemOrange
 
 
     // MARK: Life Cycle
@@ -172,7 +172,6 @@ class RandomViewController: UIViewController {
         let controller = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.randomResults) as? RandomResultsViewController
         controller?.myNumber = number
-        controller?.myThemeColor = myThemeColor
         DispatchQueue.main.async {
             if !fromShortcut {
                 self.enableUI(enabled: true)

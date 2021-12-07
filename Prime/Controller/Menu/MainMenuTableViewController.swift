@@ -223,42 +223,36 @@ class MainMenuTableViewController: UIViewController,
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.check) as? CheckViewController
                 if let toPresent = controller {
-                    controller?.myThemeColor = tintColorsArray[0]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[1]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
                 if let toPresent = controller {
-                    controller?.myThemeColor = tintColorsArray[1]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[2]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.list) as? ListViewController
                 if let toPresent = controller {
-                    controller?.myThemeColor = tintColorsArray[2]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[3]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.random) as? RandomViewController
                 if let toPresent = controller {
-                    controller?.myThemeColor = tintColorsArray[3]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[4]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.next) as? NextViewController
                 if let toPresent = controller {
-                    controller?.myThemeColor = tintColorsArray[4]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[5]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
                 if let toPresent = controller {
-                    controller?.myThemeColor = tintColorsArray[5]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             default:

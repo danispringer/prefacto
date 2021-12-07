@@ -27,7 +27,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     var nextButton = UIBarButtonItem()
     var myResignToolbar: UIToolbar! = nil
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemPurple
 
     // MARK: Life Cycle
 
