@@ -25,7 +25,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     var arrayOfInts = [Int64]()
     var previousButton = UIBarButtonItem()
     var nextButton = UIBarButtonItem()
-    var myResignToolbar: UIToolbar! = nil
+    var myToolbar: UIToolbar! = nil
 
     let myThemeColor: UIColor = .systemPurple
 
@@ -43,7 +43,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myResignToolbar = UIToolbar()
+        myToolbar = UIToolbar()
 
         arrayOfInts = []
 
@@ -55,12 +55,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             style: .plain,
             target: self,
             action: #selector(listButtonPressed))
-
-        let doneButton = UIBarButtonItem(
-            title: Const.UX.done,
-            style: .plain,
-            target: self,
-            action: #selector(donePressed))
 
         previousButton = UIBarButtonItem(
             image: UIImage(systemName: "chevron.up"),
@@ -88,17 +82,15 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: nil)
 
-        myResignToolbar.items = [
-            previousButton, spaceFix, nextButton, spaceFlexible, doneButton, listButton
-        ]
-        myResignToolbar.sizeToFit()
-        myResignToolbar.setBackgroundImage(UIImage(),
+        myToolbar.items = [previousButton, spaceFix, nextButton, spaceFlexible, listButton]
+        myToolbar.sizeToFit()
+        myToolbar.setBackgroundImage(UIImage(),
                                            forToolbarPosition: .any,
                                            barMetrics: .default)
-        myResignToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         for textfield in [firstTextField, secondTextField] {
-            textfield?.inputAccessoryView = myResignToolbar
+            textfield?.inputAccessoryView = myToolbar
             textfield?.placeholder = Const.UX.placeholderText
         }
 
@@ -135,12 +127,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    @objc func donePressed() {
-        firstTextField.resignFirstResponder()
-        secondTextField.resignFirstResponder()
-    }
-
-
     // MARK: TextField Delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -151,7 +137,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 secondTextField.resignFirstResponder()
                 listButtonPressed()
             default:
-                fatalError()
+                return false
         }
         return true
     }

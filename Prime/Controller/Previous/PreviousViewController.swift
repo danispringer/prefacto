@@ -23,7 +23,7 @@ class PreviousViewController: UIViewController,
 
     // MARK: Properties
 
-    var myResignToolBar: UIToolbar! = nil
+    var myToolBar: UIToolbar! = nil
 
     let myThemeColor: UIColor = .systemTeal
 
@@ -42,7 +42,7 @@ class PreviousViewController: UIViewController,
 
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        myResignToolBar = UIToolbar()
+        myToolBar = UIToolbar()
 
         let previousButton = UIBarButtonItem()
 
@@ -50,19 +50,15 @@ class PreviousViewController: UIViewController,
         previousButton.style = .plain
         previousButton.target = self
         previousButton.action = #selector(previousButtonPressed)
-        let doneButton = UIBarButtonItem(title: Const.UX.done,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myResignToolBar.items = [doneButton, space, previousButton]
-        myResignToolBar.sizeToFit()
-        myResignToolBar.setBackgroundImage(UIImage(),
+        myToolBar.items = [space, previousButton]
+        myToolBar.sizeToFit()
+        myToolBar.setBackgroundImage(UIImage(),
                                            forToolbarPosition: .any,
                                            barMetrics: .default)
-        myResignToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        myTextField.inputAccessoryView = myResignToolBar
+        myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
 
         self.title = Const.Title.previous
@@ -80,11 +76,6 @@ class PreviousViewController: UIViewController,
 
     @objc func showKeyboard() {
         myTextField.becomeFirstResponder()
-    }
-
-
-    @objc func donePressed() {
-        myTextField.resignFirstResponder()
     }
 
 
