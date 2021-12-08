@@ -35,6 +35,7 @@ struct Const {
 
     struct StoryboardID {
         static let main = "Main"
+        static let splash = "Splash"
         static let check = "CheckViewController"
         static let checkResults = "CheckResultsViewController"
         static let factorize = "FactorizeViewController"
