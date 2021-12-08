@@ -62,6 +62,11 @@ class MainMenuTableViewController: UIViewController,
 
         aboutButton.menu = aboutMenu()
         aboutButton.image = UIImage(systemName: "ellipsis.circle")
+
+        if !UD.bool(forKey: Const.Udef.didShowSplashScreen) {
+            UD.set(true, forKey: Const.Udef.didShowSplashScreen)
+            // TODO: show splash screen
+        }
     }
 
 
