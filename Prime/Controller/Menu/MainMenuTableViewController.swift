@@ -62,18 +62,10 @@ class MainMenuTableViewController: UIViewController,
 
         aboutButton.menu = aboutMenu()
         aboutButton.image = UIImage(systemName: "ellipsis.circle")
-    }
-
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
 
         if !UD.bool(forKey: Const.Udef.didShowSplashScreen) {
             UD.set(true, forKey: Const.Udef.didShowSplashScreen)
-            let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-            let splashVC = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.splash)
-            present(splashVC, animated: true)
-
+            // TODO: show splash screen
         }
     }
 
