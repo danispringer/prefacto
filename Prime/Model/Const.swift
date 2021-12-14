@@ -29,10 +29,6 @@ let notif = NotificationCenter.default
 
 struct Const {
 
-    struct Udef {
-        static let didShowSplashScreen = "didShowSplashScreen"
-    }
-
     struct StoryboardID {
         static let main = "Main"
         static let check = "CheckViewController"
