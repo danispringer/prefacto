@@ -81,14 +81,14 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     @IBAction func jumpToTopPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
         let indexPath = IndexPath(row: 0, section: 0)
-        resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 
 
     @IBAction func jumpToBottomPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
         let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
-        resultsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 
 
