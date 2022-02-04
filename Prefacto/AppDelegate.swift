@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var launchedShortcutItem: UIApplicationShortcutItem?
+
 
     // Life Cycle
 
@@ -26,8 +28,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
+                if let shortcutItem = launchOptions?[
+                    UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+
+                    launchedShortcutItem = shortcutItem
+
+                    // Since, the app launch is triggered by QuicAction, block "performActionForShortcutItem:completionHandler"
+                    // method from being called.
+                    return false
+                }
+
                 return true
             }
+
+    // MARK: long press app icon
+
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+
+        guard let safeNavVC = window?.rootViewController as? UINavigationController else {
+            return
+        }
+
+        safeNavVC.popToRootViewController(animated: false)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let randomVC = (storyboard.instantiateViewController(
+            withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
+        safeNavVC.pushViewController(randomVC, animated: false)
+        randomVC.makeRandomShortcut()
+
+    }
+
+
 
 
     // MARK: Shortcuts

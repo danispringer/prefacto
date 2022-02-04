@@ -48,5 +48,16 @@
 	<false/>
 	<key>item</key>
 	<string>io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>wand</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Create Random Prime</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>RandomAction</string>
+		</dict>
+	</array>
 </dict>
 </plist>
