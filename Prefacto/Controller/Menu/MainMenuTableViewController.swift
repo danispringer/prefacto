@@ -34,7 +34,7 @@ class MainMenuTableViewController: UIViewController,
                          "divide"/*.square.fill"*/, // also: set image size in IB to 32 once using squares,
                          // and reduce padding above and below label to 8 each
                          "arrow.up.and.down"/*.square.fill"*/,
-                         "questionmark"/*.square.fill"*/,
+                         "wand.and.stars"/*.square.fill"*/,
                          "arrow.right"/*.square.fill"*/,
                          "arrow.left"/*.square.fill"*/]
     let tintColorsArray: [UIColor] = [
