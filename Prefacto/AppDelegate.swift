@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                     launchedShortcutItem = shortcutItem
 
-                    // Since, the app launch is triggered by QuicAction, block "performActionForShortcutItem:completionHandler"
+                    // Since, the app launch is triggered by QuicAction, block
+                    // "performActionForShortcutItem:completionHandler"
                     // method from being called.
                     return false
                 }
@@ -58,8 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         randomVC.makeRandomShortcut()
 
     }
-
-
 
 
     // MARK: Shortcuts
