@@ -48,9 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let safeNavVC = window?.rootViewController as? UINavigationController else {
             return false
         }
-        // TODO: only start from home if not on random, and only go to random home if not on results
-
-
 
         safeNavVC.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
