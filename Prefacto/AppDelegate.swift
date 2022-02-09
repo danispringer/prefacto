@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
 
                     launchedShortcutItem = shortcutItem
-
+                    _ = makeRandomAndReturnDidWork()
                     // Since, the app launch is triggered by QuicAction, block
                     // "performActionForShortcutItem:completionHandler"
                     // method from being called.
@@ -44,12 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: long press app icon
 
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem,
-                     completionHandler: @escaping (Bool) -> Void) {
-
+    fileprivate func makeRandomAndReturnDidWork() -> Bool {
         guard let safeNavVC = window?.rootViewController as? UINavigationController else {
-            return
+            return false
         }
+        // TODO: only start from home if not on random, and only go to random home if not on results
+
+
 
         safeNavVC.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
@@ -57,6 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
         safeNavVC.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
+        return true
+    }
+
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+
+
+        _ = makeRandomAndReturnDidWork()
 
     }
 
@@ -67,18 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
-        guard let safeNavVC = window?.rootViewController as? UINavigationController else {
-            return false
-        }
-
-        safeNavVC.popToRootViewController(animated: false)
-        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let randomVC = (storyboard.instantiateViewController(
-            withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
-        safeNavVC.pushViewController(randomVC, animated: false)
-        randomVC.makeRandomShortcut()
-
-        return true
+        makeRandomAndReturnDidWork()
     }
 
 }
