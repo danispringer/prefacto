@@ -66,10 +66,10 @@ struct Const {
         static let placeholderText = NSLocalizedString("Enter number here", comment: "")
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
-        static let appReviewLink = "https://itunes.apple.com/app/id1402417667?action=write-review"
+        static let appReviewLink = "https://apps.apple.com/app/id1402417667?action=write-review"
         static let showAppsButtonTitle = NSLocalizedString("More Apps", comment: "")
-        static let appsLink = "https://itunes.apple.com/developer/id1402417666"
-        static let thisAppLink = "https://itunes.apple.com/us/app/prime-numbers-fun/id1402417667"
+        static let appsLink = "https://apps.apple.com/developer/id1402417666"
+        static let thisAppLink = "https://apps.apple.com/app/id1402417667"
         static let devID = "1402417666"
         static let shareApp = NSLocalizedString("Tell a Friend", comment: "")
         static let sendFeedback = NSLocalizedString("Contact Us", comment: "")
