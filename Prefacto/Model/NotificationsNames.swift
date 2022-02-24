@@ -2,8 +2,8 @@
 //  NotificationsNames.swift
 // Prefacto
 //
-//  Created by Dani on 11/24/20.
-//  Copyright © 2021 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 11/24/20.
+//  Copyright © 2022 Daniel Springer. All rights reserved.
 //
 
 import UIKit
