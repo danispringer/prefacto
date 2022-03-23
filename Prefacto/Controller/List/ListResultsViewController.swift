@@ -47,9 +47,6 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             return
         }
-        localSource = source
-        localFrom = myFrom
-        localTo = myTo
         if source.count == 0 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
@@ -109,10 +106,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             present(alert, animated: true)
             return
         }
-        localFrom = rangeFrom
-        localTo = rangeTo
         guard source.count != 0 else {
-            message = Const.UX.manyPrimesInRange
+            message = manyPrimesInRange(localFrom: rangeFrom, localTo: rangeTo, localSource: source)
             presentShareController(message: message)
             return
         }
@@ -121,8 +116,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             present(alert, animated: true)
             return
         }
-        localSource = mySource
-        message = Const.UX.manyPrimesInRange
+        message = manyPrimesInRange(localFrom: rangeFrom, localTo: rangeTo, localSource: mySource)
         message += "\n\n" + Const.UX.thisAppLink
 
         presentShareController(message: message)

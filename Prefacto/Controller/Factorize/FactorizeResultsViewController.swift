@@ -102,12 +102,10 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             }
             return
         }
-        localNumber = number
-        localSource = source
         if source.count == 1 {
-            message = Const.UX.isPrimeMessage
+            message = isPrimeMessage(localNumber: number)
         } else {
-            message = Const.UX.manyPrimeFactors
+            message = manyPrimeFactors(localNumber: number, localSource: source)
         }
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)

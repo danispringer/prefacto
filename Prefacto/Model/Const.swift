@@ -11,15 +11,6 @@ import UIKit
 
 // MARK: Properties
 
-var localFrom: Int64 = 0
-var localTo: Int64 = 0
-var localSource: [Int64] = []
-var localNumber: Int64 = 0
-var localIsDivisibleBy: Int64 = 0
-var localOriginalNumber: Int64 = 0
-var localNextPrime: Int64 = 0
-var localPreviousPrime: Int64 = 0
-
 // swiftlint:disable:next identifier_name
 let UD = UserDefaults.standard
 let notif = NotificationCenter.default
@@ -78,46 +69,6 @@ struct Const {
         static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
         static let emailAddress = "dani.springer@icloud.com"
 
-        static var manyPrimesInRange: String {
-            return """
-            From: \(localFrom)
-            To: \(localTo)
-            Count: \(localSource.count)
-            Values: \(localSource)
-            """
-        }
-        static var isPrimeMessage: String {
-            return """
-            Value: \(localNumber)
-            Prime: Yes
-            """
-        }
-        static var isNotPrimeMessage: String {
-            return """
-            Value: \(localNumber)
-            Prime: No
-            Factor: \(localIsDivisibleBy)
-            """
-        }
-        static var manyPrimeFactors: String {
-            return """
-            Value: \(localNumber)
-            Count: \(localSource.count)
-            Factors: \(localSource)
-            """
-        }
-        static var nextPrimeMessage: String {
-            return """
-            Value: \(localOriginalNumber)
-            Next prime: \(localNextPrime)
-            """
-        }
-        static var previousPrimeMessage: String {
-            return """
-            Value: \(localOriginalNumber)
-            Previous prime: \(localPreviousPrime)
-            """
-        }
     }
 
 }
