@@ -74,9 +74,8 @@ class PreviousResultsViewController: UIViewController {
             }
             return
         }
-        localOriginalNumber = myOriginalNumber
-        localPreviousPrime = myPreviousPrime
-        message = Const.UX.previousPrimeMessage
+
+        message = previousPrimeMessage(localOriginalNumber: myOriginalNumber, localPreviousPrime: myPreviousPrime)
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem

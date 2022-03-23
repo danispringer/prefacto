@@ -107,4 +107,55 @@ extension UIViewController {
         }
     }
 
+    func manyPrimesInRange(localFrom: Int64, localTo: Int64, localSource: [Int64]) -> String {
+        return """
+        From: \(localFrom)
+        To: \(localTo)
+        Count: \(localSource.count)
+        Values: \(localSource)
+        """
+    }
+
+
+    func isPrimeMessage(localNumber: Int64) -> String {
+        return """
+        Value: \(localNumber)
+        Prime: Yes
+        """
+    }
+
+
+    func isNotPrimeMessage(localNumber: Int64, localIsDivisibleBy: Int64) -> String {
+        return """
+        Value: \(localNumber)
+        Prime: No
+        Factor: \(localIsDivisibleBy)
+        """
+    }
+
+
+    func manyPrimeFactors(localNumber: Int64, localSource: [Int64]) -> String {
+        return """
+        Value: \(localNumber)
+        Count: \(localSource.count)
+        Factors: \(localSource)
+        """
+    }
+
+
+    func nextPrimeMessage(localOriginalNumber: Int64, localNextPrime: Int64) -> String {
+        return """
+        Value: \(localOriginalNumber)
+        Next prime: \(localNextPrime)
+        """
+    }
+
+
+    func previousPrimeMessage(localOriginalNumber: Int64, localPreviousPrime: Int64) -> String {
+        return """
+        Value: \(localOriginalNumber)
+        Previous prime: \(localPreviousPrime)
+        """
+    }
+
 }

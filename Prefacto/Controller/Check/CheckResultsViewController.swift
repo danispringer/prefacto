@@ -42,12 +42,10 @@ class CheckResultsViewController: UIViewController {
             }
             return
         }
-        localNumber = myNumber
-        localIsDivisibleBy = myIsDivisibleBy
         if isPrime {
-            resultLabel.text = Const.UX.isPrimeMessage
+            resultLabel.text = isPrimeMessage(localNumber: myNumber)
         } else {
-            resultLabel.text = Const.UX.isNotPrimeMessage
+            resultLabel.text = isNotPrimeMessage(localNumber: myNumber, localIsDivisibleBy: myIsDivisibleBy)
         }
 
         myToolbar.setBackgroundImage(UIImage(),
@@ -75,12 +73,10 @@ class CheckResultsViewController: UIViewController {
             }
             return
         }
-        localNumber = myNumber
-        localIsDivisibleBy = myIsDivisibleBy
         if isPrime {
-            message = Const.UX.isPrimeMessage
+            message = isPrimeMessage(localNumber: myNumber)
         } else {
-            message = Const.UX.isNotPrimeMessage
+            message = isNotPrimeMessage(localNumber: myNumber, localIsDivisibleBy: myIsDivisibleBy)
         }
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
