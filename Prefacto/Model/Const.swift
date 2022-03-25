@@ -67,7 +67,7 @@ struct Const {
         static let leaveReview = NSLocalizedString("Leave a Review", comment: "")
         static let addToSiri = NSLocalizedString("Add to Siri", comment: "")
         static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
-        static let emailAddress = "dani.springer@icloud.com"
+        static let emailAddress = "00.segue_affix@icloud.com"
 
     }
 
