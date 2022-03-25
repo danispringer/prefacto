@@ -266,6 +266,14 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
     // MARK: Helpers
 
     func launchEmail() {
+        guard MFMailComposeViewController.canSendMail() else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true)
+            }
+
+            return
+        }
         var emailTitle = Const.UX.appName
         if let version = Bundle.main.infoDictionary![Const.UX.appVersion] {
             emailTitle += " \(version)"
