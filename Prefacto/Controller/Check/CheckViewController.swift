@@ -67,6 +67,12 @@ class CheckViewController: UIViewController,
     // MARK: Helpers
 
     @objc func showKeyboard() {
+        guard self.presentedViewController == nil else {
+            // something is already being presented. don't show keyboard to avoid weird bugs.
+            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
+            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            return
+        }
         myTextField.becomeFirstResponder()
     }
 
@@ -173,6 +179,13 @@ class CheckViewController: UIViewController,
     func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
+            }
+            return
+        }
+        guard self.presentedViewController == nil else {
+            // something is already being presented. investigate...
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
             }

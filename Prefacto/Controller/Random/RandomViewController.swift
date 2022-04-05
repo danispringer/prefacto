@@ -88,7 +88,7 @@ class RandomViewController: UIViewController {
             self.makeRandom(size: userChoice)
         }
 
-        let randomMenu = UIMenu(title: NSLocalizedString("Choose Size", comment: ""), image: nil, identifier: .none,
+        let randomMenu = UIMenu(title: "Choose Size", image: nil, identifier: .none,
                                 options: .displayInline,
                                 children: [xSmallAction, smallAction, mediumAction, largeAction, xLargeAction])
         return randomMenu
@@ -165,6 +165,13 @@ class RandomViewController: UIViewController {
                 if !fromShortcut {
                     self.enableUI(enabled: true)
                 }
+            }
+            return
+        }
+        guard self.presentedViewController == nil else {
+            // something is already being presented. investigate...
+            DispatchQueue.main.async {
+                self.enableUI(enabled: true)
             }
             return
         }
