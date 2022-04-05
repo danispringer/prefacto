@@ -30,55 +30,56 @@ extension UIViewController {
         var alertMessage = ""
         switch alertReasonParam {
             case .textfieldEmpty:
-                alertTitle = NSLocalizedString("Textfield empty", comment: "")
-                alertMessage = NSLocalizedString("Please enter a number.", comment: "")
+                alertTitle = "Textfield empty"
+                alertMessage = "Please enter a number."
             case .notNumberOrTooBig:
-                alertTitle = NSLocalizedString("Invalid entry", comment: "")
-                alertMessage = NSLocalizedString("""
-                Only numbers allowed. No decimals.
-                Max number: 9223372036854775807
-                If your device is higher than 64-bit, please let me know: \(Const.UX.emailAddress)
-                """, comment: "")
+                alertTitle = "Invalid entry"
+                alertMessage = """
+                Only numbers allowed (no decimals)
+                Max number allowed: 9223372036854775807
+                Need more help? Email: \(Const.UX.emailAddress)
+                """
             case .zero:
-                alertTitle = NSLocalizedString("0 not allowed here", comment: "")
-                alertMessage = NSLocalizedString("""
+                alertTitle = "0 not allowed here"
+                alertMessage = """
                 Please enter a different number.
-                """, comment: "")
+                """
             case .one:
-                alertTitle = NSLocalizedString("1 not allowed here", comment: "")
-                alertMessage = NSLocalizedString("""
+                alertTitle = "1 not allowed here"
+                alertMessage = """
                 Please enter a different number.
-                """, comment: "")
+                """
             case .two:
-                alertTitle = NSLocalizedString("2 not allowed here", comment: "")
-                alertMessage = NSLocalizedString("""
+                alertTitle = "2 not allowed here"
+                alertMessage = """
             Please enter a different number.
-            """, comment: "")
+            """
             case .negative:
-                alertTitle = NSLocalizedString("Negative numbers not allowed here", comment: "")
-                alertMessage = NSLocalizedString("""
+                alertTitle = "Negative numbers not allowed here"
+                alertMessage = """
                 Please enter a different number.
-                """, comment: "")
+                """
             case .sameTwice:
-                alertTitle = NSLocalizedString("Same number entered twice", comment: "")
-                alertMessage = NSLocalizedString("""
+                alertTitle = "Same number entered twice"
+                alertMessage = """
                 Please enter two different numbers. To check if a single number is prime, use Check.
-                """, comment: "")
+                """
             case .overflow:
-                alertTitle = NSLocalizedString("Overflow", comment: "")
+                alertTitle = "Overflow"
                 alertMessage = """
                 There are no primes above \(num) which are lower than 9223372036854775807 \
                 (your device's limit)
-                If your device is higher than 64-bit, please let me know: \(Const.UX.emailAddress)
+                Need more help? Email: \(Const.UX.emailAddress)
                 """
             default:
-                alertTitle = NSLocalizedString("Unknown error", comment: "")
-                alertMessage = NSLocalizedString("""
-                An unknown error occurred. Please try again later, or contact us at \(Const.UX.emailAddress)
-                """, comment: "")
+                alertTitle = "Unknown error"
+                alertMessage = """
+                An unknown error occurred. Please try again.
+                Need more help? Email: \(Const.UX.emailAddress)
+                """
         }
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
+        let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
             notif.post(name: .tryShowingKeyboard, object: nil, userInfo: nil)
         }
         alert.addAction(alertAction)

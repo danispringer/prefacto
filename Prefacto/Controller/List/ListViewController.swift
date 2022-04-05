@@ -62,7 +62,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: #selector(previousTextField))
 
-        previousButton.accessibilityLabel = NSLocalizedString("Go to previous textfield", comment: "")
+        previousButton.accessibilityLabel = "Go to previous textfield"
 
         nextButton = UIBarButtonItem(
             image: UIImage(systemName: "chevron.down"),
@@ -70,7 +70,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: #selector(nextTextField))
 
-        nextButton.accessibilityLabel = NSLocalizedString("Go to next textfield", comment: "")
+        nextButton.accessibilityLabel = "Go to next textfield"
 
         let spaceFlexible = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
@@ -106,6 +106,12 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     // MARK: Helpers
 
     @objc func showKeyboard() {
+        guard self.presentedViewController == nil else {
+            // something is already being presented. don't show keyboard to avoid weird bugs.
+            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
+            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            return
+        }
         if !secondTextField.isFirstResponder {
             firstTextField.becomeFirstResponder()
         }
