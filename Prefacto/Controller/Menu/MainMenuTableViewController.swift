@@ -188,15 +188,13 @@ class MainMenuTableViewController: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-
         cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
-        let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-
-        cell.myImageView.image = aImage
-        cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
-        //cell.myImageView.backgroundColor = .white
-
-        // also: make fill background color not bleed outside image itself
+        let aConfig = UIImage.SymbolConfiguration(weight: .bold)
+        let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row], withConfiguration: aConfig)
+        cell.newImageView.image = aImage
+        cell.newImageView.tintColor = .white
+        cell.imageViewContainer.backgroundColor = tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
         return cell
