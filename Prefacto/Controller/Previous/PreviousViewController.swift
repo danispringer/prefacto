@@ -38,6 +38,8 @@ class PreviousViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        myTextField.delegate = self
+
         setThemeColorTo(myThemeColor: myThemeColor)
         myToolBar = UIToolbar()
         let previousButton = UIBarButtonItem()
