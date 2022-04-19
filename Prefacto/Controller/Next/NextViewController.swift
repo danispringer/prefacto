@@ -40,6 +40,8 @@ class NextViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        myTextField.delegate = self
+
         myToolBar = UIToolbar()
 
         let nextButton = UIBarButtonItem()

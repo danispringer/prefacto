@@ -38,6 +38,8 @@ class CheckViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        myTextField.delegate = self
+
         myToolBar = UIToolbar()
         let checkButton = UIBarButtonItem()
         checkButton.title = Const.Title.check
