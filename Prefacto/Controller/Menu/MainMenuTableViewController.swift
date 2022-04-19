@@ -30,13 +30,12 @@ class MainMenuTableViewController: UIViewController,
                         Const.Title.random,
                         Const.Title.next,
                         Const.Title.previous]
-    let myImageSource = ["checkmark"/*.square.fill"*/, // also: (see two more alsos) use squares once bleeding is fixed
-                         "divide"/*.square.fill"*/, // also: set image size in IB to 32 once using squares,
-                         // and reduce padding above and below label to 8 each
-                         "arrow.up.and.down"/*.square.fill"*/,
-                         "wand.and.stars"/*.square.fill"*/,
-                         "arrow.right"/*.square.fill"*/,
-                         "arrow.left"/*.square.fill"*/]
+    let myImageSource = ["checkmark",
+                         "divide",
+                         "arrow.up.and.down",
+                         "wand.and.stars",
+                         "arrow.right",
+                         "arrow.left"]
     let tintColorsArray: [UIColor] = [
         .systemGreen,
         .systemBlue,
