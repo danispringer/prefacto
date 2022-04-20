@@ -51,8 +51,8 @@ class PreviousViewController: UIViewController,
         myToolBar.items = [space, previousButton]
         myToolBar.sizeToFit()
         myToolBar.setBackgroundImage(UIImage(),
-                                           forToolbarPosition: .any,
-                                           barMetrics: .default)
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
         myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
         myTextField.inputAccessoryView = myToolBar
         myTextField.placeholder = Const.UX.placeholderText
