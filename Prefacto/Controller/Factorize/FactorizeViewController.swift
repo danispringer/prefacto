@@ -57,8 +57,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myToolbar.items = [space, factorButton]
         myToolbar.sizeToFit()
         myToolbar.setBackgroundImage(UIImage(),
-                                           forToolbarPosition: .any,
-                                           barMetrics: .default)
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myToolbar

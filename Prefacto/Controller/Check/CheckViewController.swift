@@ -50,8 +50,8 @@ class CheckViewController: UIViewController,
         myToolBar.items = [space, checkButton]
         myToolBar.sizeToFit()
         myToolBar.setBackgroundImage(UIImage(),
-                                           forToolbarPosition: .any,
-                                           barMetrics: .default)
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
         myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.inputAccessoryView = myToolBar

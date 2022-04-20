@@ -85,8 +85,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         myToolbar.items = [previousButton, spaceFix, nextButton, spaceFlexible, listButton]
         myToolbar.sizeToFit()
         myToolbar.setBackgroundImage(UIImage(),
-                                           forToolbarPosition: .any,
-                                           barMetrics: .default)
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         for textfield in [firstTextField, secondTextField] {
