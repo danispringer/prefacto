@@ -13,6 +13,7 @@
 		333F996F20F3179F003774D4 /* FactorizeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */; };
 		33428EE921AB6A810074F538 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33428EE821AB6A810074F538 /* Const.swift */; };
 		334C779C20E01E8600BE2C65 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334C779B20E01E8600BE2C65 /* ListViewController.swift */; };
+		3353807F281B4DE300ECDA35 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353807E281B4DE300ECDA35 /* UIFont+Extensions.swift */; };
 		3357A329210D18290011965D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A328210D18290011965D /* ListTableViewCell.swift */; };
 		336646DB2321A53900674340 /* Int64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336646DA2321A53900674340 /* Int64+Extension.swift */; };
 		3368773221CF65A900D31C18 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368773121CF65A900D31C18 /* MyTextField.swift */; };
@@ -56,6 +57,7 @@
 		333F996E20F3179F003774D4 /* FactorizeResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeResultsViewController.swift; sourceTree = "<group>"; };
 		33428EE821AB6A810074F538 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		334C779B20E01E8600BE2C65 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3353807E281B4DE300ECDA35 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		3357A328210D18290011965D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		336646DA2321A53900674340 /* Int64+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Extension.swift"; sourceTree = "<group>"; };
 		3368773121CF65A900D31C18 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				336646DA2321A53900674340 /* Int64+Extension.swift */,
 				33BE80A3256DF73300928E77 /* UIViewController+Extensions.swift */,
 				339CBB87256DD517001F4E2C /* NotificationsNames.swift */,
+				3353807E281B4DE300ECDA35 /* UIFont+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				650B32AF252FEE6F00AA8B4D /* PreviousResultsViewController.swift in Sources */,
 				3368773221CF65A900D31C18 /* MyTextField.swift in Sources */,
 				65D90C2F23CC0EE80084FB07 /* NextViewController.swift in Sources */,
+				3353807F281B4DE300ECDA35 /* UIFont+Extensions.swift in Sources */,
 				339CBB88256DD517001F4E2C /* NotificationsNames.swift in Sources */,
 				652FAD8523838BB700E3B06E /* MainMenuTableViewCell.swift in Sources */,
 				333F996620F2BA33003774D4 /* ListResultsViewController.swift in Sources */,
