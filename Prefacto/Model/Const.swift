@@ -53,7 +53,7 @@ struct Const {
         static let done = "Done"
         static let cancel = "Cancel"
         static let version = "v."
-        static let appName = "Prefacto"
+        static let appName = "Prime Powerhouse"
         static let placeholderText = "Enter number here"
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
