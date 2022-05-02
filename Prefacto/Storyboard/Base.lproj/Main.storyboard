@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-2739" y="1748"/>
         </scene>
-        <!--Prime Powerhouse-->
+        <!--Prime Number App-->
         <scene sceneID="XlG-UP-rKc">
             <objects>
                 <viewController id="EO6-OC-f7d" customClass="MainMenuTableViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,7 +102,7 @@
                             <constraint firstItem="lM0-rl-ZB5" firstAttribute="bottom" secondItem="N6E-ik-2ux" secondAttribute="bottom" id="tpd-jJ-UoV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Prime Powerhouse" id="5XZ-nx-Dl6">
+                    <navigationItem key="navigationItem" title="Prime Number App" id="5XZ-nx-Dl6">
                         <barButtonItem key="rightBarButtonItem" title="About" image="ellipsis.circle" catalog="system" id="hth-mK-DiQ"/>
                     </navigationItem>
                     <connections>
