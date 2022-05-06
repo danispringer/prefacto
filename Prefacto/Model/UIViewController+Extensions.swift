@@ -10,7 +10,7 @@ import UIKit
 
 
 extension UIViewController {
-
+    
     enum AlertReason {
         case textfieldEmptyOne
         case textfieldEmptyTwo
@@ -22,8 +22,8 @@ extension UIViewController {
         case noPrimesInRange
         case unknown
     }
-
-
+    
+    
     func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, higherThann: Int64 = -999) -> UIAlertController {
         var alertTitle = ""
         var alertMessage = ""
@@ -74,8 +74,8 @@ extension UIViewController {
         alert.addAction(alertAction)
         return alert
     }
-
-
+    
+    
     func setThemeColorTo(myThemeColor: UIColor) {
         self.navigationController?.navigationBar.tintColor = myThemeColor
         UINavigationBar.appearance().tintColor = myThemeColor
@@ -85,18 +85,18 @@ extension UIViewController {
         UIView.appearance(
             whenContainedInInstancesOf: [
                 UIToolbar.self]).tintColor = myThemeColor
-
+        
         UIButton.appearance().tintColor = myThemeColor
-
+        
         UISwitch.appearance().onTintColor = myThemeColor
-
+        
         for state: UIControl.State in [.application, .highlighted, .normal, .selected] {
             UIBarButtonItem.appearance().setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: myThemeColor
             ], for: state)
         }
     }
-
+    
     func manyPrimesInRange(localFrom: Int64, localTo: Int64, localSource: [Int64]) -> String {
         return """
         From: \(localFrom)
@@ -105,16 +105,16 @@ extension UIViewController {
         Values: \(localSource)
         """
     }
-
-
+    
+    
     func isPrimeMessage(localNumber: Int64) -> String {
         return """
         Value: \(localNumber)
         Prime: Yes
         """
     }
-
-
+    
+    
     func isNotPrimeMessage(localNumber: Int64, localIsDivisibleBy: Int64) -> String {
         return """
         Value: \(localNumber)
@@ -122,8 +122,8 @@ extension UIViewController {
         Factor: \(localIsDivisibleBy)
         """
     }
-
-
+    
+    
     func manyPrimeFactors(localNumber: Int64, localSource: [Int64]) -> String {
         return """
         Value: \(localNumber)
@@ -131,21 +131,21 @@ extension UIViewController {
         Factors: \(localSource)
         """
     }
-
-
+    
+    
     func nextPrimeMessage(localOriginalNumber: Int64, localNextPrime: Int64) -> String {
         return """
         Value: \(localOriginalNumber)
         Next prime: \(localNextPrime)
         """
     }
-
-
+    
+    
     func previousPrimeMessage(localOriginalNumber: Int64, localPreviousPrime: Int64) -> String {
         return """
         Value: \(localOriginalNumber)
         Previous prime: \(localPreviousPrime)
         """
     }
-
+    
 }

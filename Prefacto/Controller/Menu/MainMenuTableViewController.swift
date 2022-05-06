@@ -185,30 +185,30 @@ class MainMenuTableViewController: UIViewController,
     }
 
 
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        let sectionText = UILabel()
-//        sectionText.frame = CGRect.init(
-//            x: 16, y: 16,
-//            width: tableView.frame.width - 16,
-//            height: 0)
-//        sectionText.text = """
-//        subtitle for home page
-//        """
-//        sectionText.font = UIFont.preferredFont(for: .title2, weight: .bold)
-//        sectionText.adjustsFontForContentSizeCategory = true
-//        sectionText.textColor = UIColor.label
-//        sectionText.lineBreakMode = .byWordWrapping
-//        sectionText.numberOfLines = 0
-//        sectionText.sizeToFit()
-//
-//        return sectionText
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 60 // my custom height
-//    }
+    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //
+    //        let sectionText = UILabel()
+    //        sectionText.frame = CGRect.init(
+    //            x: 16, y: 16,
+    //            width: tableView.frame.width - 16,
+    //            height: 0)
+    //        sectionText.text = """
+    //        subtitle for home page
+    //        """
+    //        sectionText.font = UIFont.preferredFont(for: .title2, weight: .bold)
+    //        sectionText.adjustsFontForContentSizeCategory = true
+    //        sectionText.textColor = UIColor.label
+    //        sectionText.lineBreakMode = .byWordWrapping
+    //        sectionText.numberOfLines = 0
+    //        sectionText.sizeToFit()
+    //
+    //        return sectionText
+    //    }
+    //
+    //
+    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //        return 60 // my custom height
+    //    }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

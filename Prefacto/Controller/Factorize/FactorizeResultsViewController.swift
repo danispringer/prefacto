@@ -150,7 +150,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
 
     func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
