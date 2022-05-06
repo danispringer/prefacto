@@ -119,6 +119,7 @@ class MainMenuTableViewController: UIViewController,
         addToSiriController.view.backgroundColor = UIColor.systemBackground
 
         let closeSiriButton = UIButton()
+        closeSiriButton.configuration = .filled()
         let font = UIFont.preferredFont(forTextStyle: .body)
         closeSiriButton.translatesAutoresizingMaskIntoConstraints = false
         closeSiriButton.setAttributedTitle(NSAttributedString(
@@ -131,7 +132,7 @@ class MainMenuTableViewController: UIViewController,
             addToSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
             addToSiriButton.centerYAnchor.constraint(equalTo: addToSiriController.view.centerYAnchor),
             closeSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
-            closeSiriButton.bottomAnchor.constraint(equalTo: addToSiriController.view.bottomAnchor, constant: -64),
+            closeSiriButton.topAnchor.constraint(equalTo: addToSiriButton.bottomAnchor, constant: 64),
             closeSiriButton.widthAnchor.constraint(equalToConstant: 120),
             addToSiriButton.widthAnchor.constraint(equalToConstant: 320),
             addToSiriButton.heightAnchor.constraint(equalToConstant: 64)

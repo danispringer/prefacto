@@ -21,8 +21,6 @@ class NextViewController: UIViewController,
 
     // MARK: Properties
 
-    var myToolBar: UIToolbar! = nil
-
     let myThemeColor: UIColor = .systemTeal
 
 
@@ -42,24 +40,6 @@ class NextViewController: UIViewController,
 
         myTextField.delegate = self
 
-        myToolBar = UIToolbar()
-
-        let nextButton = UIBarButtonItem()
-
-        nextButton.title = Const.Title.next
-        nextButton.style = .plain
-        nextButton.target = self
-        nextButton.action = #selector(nextButtonPressed)
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolBar.items = [space, nextButton]
-        myToolBar.sizeToFit()
-        myToolBar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
-        myTextField.inputAccessoryView = myToolBar
-        myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.next
     }
 
@@ -82,8 +62,7 @@ class NextViewController: UIViewController,
         myTextField.becomeFirstResponder()
     }
 
-
-    @objc func nextButtonPressed() {
+    @IBAction func nextTapped() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
@@ -234,7 +213,7 @@ class NextViewController: UIViewController,
     // MARK: TextField Delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nextButtonPressed()
+        nextTapped()
         return true
     }
 

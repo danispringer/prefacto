@@ -54,7 +54,6 @@ struct Const {
         static let cancel = "Cancel"
         static let version = "v."
         static let appName = "Prime Number App"
-        static let placeholderText = "Enter number here"
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
         static let appReviewLink = "https://apps.apple.com/app/id1402417667?action=write-review"
