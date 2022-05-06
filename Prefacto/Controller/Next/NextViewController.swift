@@ -116,7 +116,7 @@ class NextViewController: UIViewController,
             return nil
         }
         guard !myTextFieldText.isEmpty else {
-            let alert = self.createAlert(alertReasonParam: .textfieldEmpty)
+            let alert = self.createAlert(alertReasonParam: .textfieldEmptySingle)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
@@ -139,26 +139,8 @@ class NextViewController: UIViewController,
 
 
     func isNotEdgeCaseNumber(number: Int64) -> Bool {
-        guard number != 0 else {
-            let alert = self.createAlert(alertReasonParam: .zero)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return false
-        }
-        guard !(number < 0) else {
-            let alert = self.createAlert(alertReasonParam: .negative)
-            DispatchQueue.main.async {
-                alert.view.layoutIfNeeded()
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return false
-        }
-        guard number != 1 else {
-            let alert = self.createAlert(alertReasonParam: .one)
+        guard number > 1 else {
+            let alert = self.createAlert(alertReasonParam: .higherPlease, higherThann: 1)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)

@@ -12,60 +12,49 @@ import UIKit
 extension UIViewController {
 
     enum AlertReason {
-        case textfieldEmpty
+        case textfieldEmptyOne
+        case textfieldEmptyTwo
+        case textfieldEmptySingle
         case notNumberOrTooBig
         case overflow
-        case zero
-        case one
-        case two
-        case negative
+        case higherPlease
         case sameTwice
         case noPrimesInRange
         case unknown
     }
 
 
-    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0) -> UIAlertController {
+    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, higherThann: Int64 = -999) -> UIAlertController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-            case .textfieldEmpty:
-                alertTitle = "Textfield empty"
-                alertMessage = "Please enter a number."
+            case .textfieldEmptyOne:
+                alertTitle = "Please enter your first number"
+                alertMessage = "Then try again"
+            case .textfieldEmptyTwo:
+                alertTitle = "Please enter your second number"
+                alertMessage = "Then try again"
+            case .textfieldEmptySingle:
+                alertTitle = "Please enter your number"
+                alertMessage = "Then try again"
             case .notNumberOrTooBig:
-                alertTitle = "Invalid entry"
+                alertTitle = "Please enter numbers only"
                 alertMessage = """
-                Only numbers allowed (no decimals)
-                Max number allowed: 9223372036854775807
+                Highest number allowed: 9223372036854775807
                 Need more help? Email: \(Const.UX.emailAddress)
                 """
-            case .zero:
-                alertTitle = "0 not allowed here"
+            case .higherPlease:
+                alertTitle = "Please enter a higher number"
                 alertMessage = """
-                Please enter a different number.
-                """
-            case .one:
-                alertTitle = "1 not allowed here"
-                alertMessage = """
-                Please enter a different number.
-                """
-            case .two:
-                alertTitle = "2 not allowed here"
-                alertMessage = """
-            Please enter a different number.
-            """
-            case .negative:
-                alertTitle = "Negative numbers not allowed here"
-                alertMessage = """
-                Please enter a different number.
+                Please enter a number higher than \(higherThann)
                 """
             case .sameTwice:
                 alertTitle = "Same number entered twice"
                 alertMessage = """
-                Please enter two different numbers. To check if a single number is prime, use Check.
+                Please enter two different numbers. To check if a single number is prime, use Check
                 """
             case .overflow:
-                alertTitle = "Overflow"
+                alertTitle = "Please enter a lower number"
                 alertMessage = """
                 There are no primes above \(num) which are lower than 9223372036854775807 \
                 (your device's limit)

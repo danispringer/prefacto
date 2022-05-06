@@ -100,7 +100,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
         guard !text.isEmpty else {
-            let alert = createAlert(alertReasonParam: .textfieldEmpty)
+            let alert = createAlert(alertReasonParam: .textfieldEmptySingle)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.present(alert, animated: true)
@@ -121,24 +121,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 
     func isNotEdgeCase(number: Int64) -> Bool {
-        guard number != 0 else {
-            let alert = createAlert(alertReasonParam: .zero)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return false
-        }
-        guard !(number < 0) else {
-            let alert = createAlert(alertReasonParam: .negative)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                self.present(alert, animated: true)
-            }
-            return false
-        }
-        guard number != 1 else {
-            let alert = self.createAlert(alertReasonParam: .one)
+        guard number > 1 else {
+            let alert = self.createAlert(alertReasonParam: .higherPlease, higherThann: 1)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)
