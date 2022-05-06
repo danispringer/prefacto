@@ -173,7 +173,7 @@ class CheckViewController: UIViewController,
         }
     }
 
-
+    
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = !enabled
