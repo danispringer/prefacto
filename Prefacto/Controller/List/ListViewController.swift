@@ -238,6 +238,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = !enabled
+            self.actionButton.isEnabled = enabled
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :

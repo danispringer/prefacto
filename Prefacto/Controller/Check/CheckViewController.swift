@@ -17,7 +17,7 @@ class CheckViewController: UIViewController,
 
     @IBOutlet weak var myTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var actionButton: UIButton!
 
     // MARK: Properties
 
@@ -177,6 +177,7 @@ class CheckViewController: UIViewController,
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = !enabled
+            self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
             self.activityIndicator.startAnimating()
