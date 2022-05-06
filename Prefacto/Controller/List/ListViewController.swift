@@ -50,14 +50,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         firstTextField.delegate = self
         secondTextField.delegate = self
 
-        let listButton = UIBarButtonItem(
-            title: Const.Title.list,
-            style: .plain,
-            target: self,
-            action: #selector(listButtonPressed))
-
         previousButton = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.up"),
+            image: UIImage(systemName: "chevron.left"),
             style: .plain,
             target: self,
             action: #selector(previousTextField))
@@ -65,7 +59,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         previousButton.accessibilityLabel = "Go to previous textfield"
 
         nextButton = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.down"),
+            image: UIImage(systemName: "chevron.right"),
             style: .plain,
             target: self,
             action: #selector(nextTextField))
@@ -82,7 +76,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: nil)
 
-        myToolbar.items = [previousButton, spaceFix, nextButton, spaceFlexible, listButton]
+        myToolbar.items = [spaceFlexible, previousButton, spaceFix, nextButton]
         myToolbar.sizeToFit()
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -91,7 +85,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
         for textfield in [firstTextField, secondTextField] {
             textfield?.inputAccessoryView = myToolbar
-            textfield?.placeholder = Const.UX.placeholderText
         }
 
         self.title = Const.Title.list
@@ -142,15 +135,14 @@ class ListViewController: UIViewController, UITextFieldDelegate {
                 secondTextField.becomeFirstResponder()
             case secondTextField:
                 secondTextField.resignFirstResponder()
-                listButtonPressed()
+                listTapped()
             default:
                 return false
         }
         return true
     }
 
-
-    @objc func listButtonPressed() {
+    @IBAction func listTapped() {
 
         DispatchQueue.main.async {
             self.enableUI(enabled: false)

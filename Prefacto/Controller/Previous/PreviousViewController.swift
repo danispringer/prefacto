@@ -23,7 +23,6 @@ class PreviousViewController: UIViewController,
 
     // MARK: Properties
 
-    var myToolBar: UIToolbar! = nil
     let myThemeColor: UIColor = .systemTeal
 
 
@@ -41,21 +40,7 @@ class PreviousViewController: UIViewController,
         myTextField.delegate = self
 
         setThemeColorTo(myThemeColor: myThemeColor)
-        myToolBar = UIToolbar()
-        let previousButton = UIBarButtonItem()
-        previousButton.title = Const.Title.previous
-        previousButton.style = .plain
-        previousButton.target = self
-        previousButton.action = #selector(previousButtonPressed)
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolBar.items = [space, previousButton]
-        myToolBar.sizeToFit()
-        myToolBar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        myTextField.inputAccessoryView = myToolBar
-        myTextField.placeholder = Const.UX.placeholderText
+
         self.title = Const.Title.previous
     }
 
@@ -78,8 +63,8 @@ class PreviousViewController: UIViewController,
         myTextField.becomeFirstResponder()
     }
 
+    @IBAction func previousTapped() {
 
-    @objc func previousButtonPressed() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
@@ -231,7 +216,7 @@ class PreviousViewController: UIViewController,
     // MARK: TextField Delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        previousButtonPressed()
+        previousTapped()
         return true
     }
 

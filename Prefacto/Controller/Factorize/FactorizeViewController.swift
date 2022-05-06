@@ -22,7 +22,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
 
     var arrayOfInts = [Int64]()
-    var myToolbar: UIToolbar! = nil
 
     let myThemeColor: UIColor = .systemBlue
 
@@ -41,28 +40,11 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myToolbar = UIToolbar()
-
         arrayOfInts = []
 
         myTextField.delegate = self
 
-        let factorButton = UIBarButtonItem(
-            title: Const.Title.factorize,
-            style: .plain,
-            target: self,
-            action: #selector(factorizeButtonPressed))
 
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.items = [space, factorButton]
-        myToolbar.sizeToFit()
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
-        myTextField.inputAccessoryView = myToolbar
-        myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.factorize
     }
 
@@ -85,8 +67,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myTextField.becomeFirstResponder()
     }
 
-
-    @objc func factorizeButtonPressed() {
+    @IBAction func factorizeTapped() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
@@ -224,7 +205,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     // MARK: TextField Delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        factorizeButtonPressed()
+        factorizeTapped()
         return true
     }
 

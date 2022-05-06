@@ -21,7 +21,6 @@ class CheckViewController: UIViewController,
 
     // MARK: Properties
 
-    var myToolBar: UIToolbar! = nil
     let myThemeColor: UIColor = .systemGreen
 
 
@@ -40,22 +39,6 @@ class CheckViewController: UIViewController,
 
         myTextField.delegate = self
 
-        myToolBar = UIToolbar()
-        let checkButton = UIBarButtonItem()
-        checkButton.title = Const.Title.check
-        checkButton.style = .plain
-        checkButton.target = self
-        checkButton.action = #selector(checkButtonPressed)
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolBar.items = [space, checkButton]
-        myToolBar.sizeToFit()
-        myToolBar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
-        myTextField.inputAccessoryView = myToolBar
-        myTextField.placeholder = Const.UX.placeholderText
         self.title = Const.Title.check
     }
 
@@ -79,7 +62,7 @@ class CheckViewController: UIViewController,
     }
 
 
-    @objc func checkButtonPressed() {
+    @IBAction func checkTapped() {
         DispatchQueue.main.async {
             self.enableUI(enabled: false)
         }
@@ -222,7 +205,7 @@ class CheckViewController: UIViewController,
     // MARK: TextField Delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        checkButtonPressed()
+        checkTapped()
         return true
     }
 
