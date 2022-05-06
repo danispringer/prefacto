@@ -19,7 +19,7 @@ let notif = NotificationCenter.default
 // MARK: Constants Struct
 
 struct Const {
-    
+
     struct StoryboardID {
         static let main = "Main"
         static let check = "CheckViewController"
@@ -35,8 +35,8 @@ struct Const {
         static let previous = "PreviousViewController"
         static let previousResults = "PreviousResultsViewController"
     }
-    
-    
+
+
     struct Title {
         static let check = "Check"
         static let factorize = "Factorize"
@@ -45,8 +45,8 @@ struct Const {
         static let next = "Next"
         static let previous = "Previous"
     }
-    
-    
+
+
     // swiftlint:disable:next type_name
     struct UX {
         static let randomize = "Create Random Prime"
@@ -67,9 +67,9 @@ struct Const {
         static let addToSiri = "Add to Siri"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "00.segue_affix@icloud.com"
-        
+
     }
-    
+
 }
 // max num 64-bit phone can handle: 9223372036854775807
 // largest prime under that limit: 9223372036854775783

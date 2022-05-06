@@ -176,7 +176,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    
+
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = !enabled
