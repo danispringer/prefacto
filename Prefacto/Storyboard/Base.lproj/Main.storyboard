@@ -171,6 +171,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="Inf-5b-W1z" id="nAt-cC-Ej9"/>
                         <outlet property="activityIndicator" destination="dhX-Mn-u5f" id="ZdQ-Zs-eJF"/>
                         <outlet property="firstTextField" destination="u8x-FV-42z" id="Dbv-ki-ZjY"/>
                         <outlet property="secondTextField" destination="yc2-op-hSX" id="h06-mI-7LD"/>

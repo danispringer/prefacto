@@ -271,7 +271,7 @@ class MainMenuTableViewController: UIViewController,
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             default:
-                let alert = createAlert(alertReasonParam: AlertReason.unknown)
+                let alert = createAlert(alertReasonParam: .unknown)
                 alert.view.layoutIfNeeded()
                 present(alert, animated: true)
         }

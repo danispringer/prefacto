@@ -18,6 +18,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstTextField: MyTextField!
     @IBOutlet weak var secondTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var actionButton: UIButton!
 
 
     // MARK: Properties
@@ -25,7 +26,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     var arrayOfInts = [Int64]()
     var previousButton = UIBarButtonItem()
     var nextButton = UIBarButtonItem()
-    var myToolbar: UIToolbar! = nil
 
     let myThemeColor: UIColor = .systemPurple
 
@@ -37,62 +37,27 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         setThemeColorTo(myThemeColor: myThemeColor)
 
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
+
     }
 
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        myToolbar = UIToolbar()
-
         arrayOfInts = []
 
         firstTextField.delegate = self
         secondTextField.delegate = self
 
-        previousButton = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.left"),
-            style: .plain,
-            target: self,
-            action: #selector(previousTextField))
-
-        previousButton.accessibilityLabel = "Go to previous textfield"
-
-        nextButton = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.right"),
-            style: .plain,
-            target: self,
-            action: #selector(nextTextField))
-
-        nextButton.accessibilityLabel = "Go to next textfield"
-
-        let spaceFlexible = UIBarButtonItem(
-            barButtonSystemItem: .flexibleSpace,
-            target: self,
-            action: nil)
-
-        let spaceFix = UIBarButtonItem(
-            barButtonSystemItem: .fixedSpace,
-            target: self,
-            action: nil)
-
-        myToolbar.items = [spaceFlexible, previousButton, spaceFix, nextButton]
-        myToolbar.sizeToFit()
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
-        for textfield in [firstTextField, secondTextField] {
-            textfield?.inputAccessoryView = myToolbar
-        }
-
         self.title = Const.Title.list
     }
 
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         showKeyboard()
+
     }
 
 
@@ -203,7 +168,9 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
         guard !firstText.isEmpty, !secondText.isEmpty else {
-            let alert = createAlert(alertReasonParam: .textfieldEmpty)
+            let alert = firstText.isEmpty ?
+            createAlert(alertReasonParam: .textfieldEmptyOne) :
+            createAlert(alertReasonParam: .textfieldEmptyTwo)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -238,37 +205,23 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
 
     func isNotEdgeCase(firstNum: Int64, secondNum: Int64) -> Bool {
-        guard ([firstNum, secondNum].allSatisfy { $0 != 0 }) else {
-            let alert = createAlert(alertReasonParam: .zero)
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
-                alert.view.layoutIfNeeded()
-                if firstNum == 0 {
-                    self.firstTextField.becomeFirstResponder()
-                } else {
-                    self.secondTextField.becomeFirstResponder()
-                }
-                self.present(alert, animated: true)
-            }
-            return false
-        }
         guard ([firstNum, secondNum].allSatisfy { $0 > 0 }) else {
-            let alert = createAlert(alertReasonParam: .negative)
+            let alert = createAlert(alertReasonParam: .higherPlease, higherThann: 0)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
-                if !(firstNum > 0) {
+                if firstNum <= 0 {
                     self.firstTextField.becomeFirstResponder()
                 } else {
                     self.secondTextField.becomeFirstResponder()
                 }
-
                 self.present(alert, animated: true)
             }
             return false
         }
+
         guard !(firstNum == secondNum) else {
-            let alert = createAlert(alertReasonParam: .sameTwice)
+            let alert = createAlert(alertReasonParam: .sameTwice, higherThann: -1)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
