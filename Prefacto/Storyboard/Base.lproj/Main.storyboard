@@ -56,6 +56,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RoM-QN-z2j"/>
                     <connections>
+                        <outlet property="actionButton" destination="cza-b0-GeO" id="fc2-3z-fU1"/>
                         <outlet property="activityIndicator" destination="2NI-Ma-ASa" id="TNC-Yp-8HM"/>
                         <outlet property="myTextField" destination="m0x-Lr-7Xl" id="LsP-l7-Xxx"/>
                     </connections>
@@ -107,6 +108,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="52F-Pd-S7V" id="NB5-bp-2Wt"/>
                         <outlet property="activityIndicator" destination="fXB-4V-786" id="hc1-1T-V6t"/>
                         <outlet property="myTextField" destination="ptO-hj-b9l" id="sHl-RG-VwR"/>
                     </connections>
@@ -263,6 +265,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="ZgS-IO-7m2" id="C4I-bf-ZhY"/>
                         <outlet property="activityIndicator" destination="gY1-mh-IAj" id="XT3-z4-OgY"/>
                         <outlet property="myTextField" destination="0C7-Dz-uiP" id="Cfi-wM-I8i"/>
                     </connections>
@@ -312,6 +315,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="qS5-oq-ifv" id="sF5-fR-ygx"/>
                         <outlet property="activityIndicator" destination="30j-1q-z28" id="OgB-Ca-iDX"/>
                         <outlet property="myTextField" destination="32E-wM-ebq" id="b5a-tL-OE5"/>
                     </connections>

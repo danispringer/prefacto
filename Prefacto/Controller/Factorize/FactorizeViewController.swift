@@ -17,6 +17,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var myTextField: MyTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var actionButton: UIButton!
 
 
     // MARK: Properties
@@ -179,6 +180,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = !enabled
+            self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
             self.activityIndicator.startAnimating()

@@ -199,7 +199,6 @@ class RandomViewController: UIViewController {
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = !enabled
-            self.randomizeButton.isHidden = !enabled
             self.randomizeButton.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
             self.activityIndicator.startAnimating()
