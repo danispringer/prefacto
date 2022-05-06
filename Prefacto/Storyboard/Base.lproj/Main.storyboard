@@ -135,8 +135,8 @@
                                     <outlet property="delegate" destination="1t2-Bt-9xD" id="0yx-iL-Djq"/>
                                 </connections>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-Ma-ASa">
-                                <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-Ma-ASa">
+                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iu7-ta-hZk"/>
@@ -177,8 +177,8 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
-                                <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
+                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DGV-fo-RV1"/>
@@ -228,8 +228,8 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
-                                <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
+                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TF9-a1-dCQ"/>
@@ -289,7 +289,7 @@ Primes: 123456890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
-                                <rect key="frame" x="0.0" y="329" width="375" height="361"/>
+                                <rect key="frame" x="0.0" y="331.33333333333337" width="375" height="356.33333333333337"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Prefacto" customModuleProvider="target">
                                         <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
@@ -337,27 +337,28 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="171.66666666666666" y="285.66666666666669" width="32" height="21.999999999999972"/>
+                                <rect key="frame" x="161.33333333333334" y="281" width="52.333333333333343" height="34.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="i8z-rE-tr8" secondAttribute="height" multiplier="1:1" id="OOa-l9-ayj"/>
-                                    <constraint firstAttribute="width" constant="32" id="zE3-qf-cUg"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="chevron.up" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Top">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToTopPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="P50-yM-qRC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
-                                <rect key="frame" x="171.66666666666666" y="711.33333333333337" width="32" height="22"/>
+                                <rect key="frame" x="147.66666666666666" y="703.66666666666663" width="80" height="34.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4HI-oU-hkH" secondAttribute="height" multiplier="1:1" id="8fn-T3-HjB"/>
-                                    <constraint firstAttribute="width" constant="32" id="LXu-Pz-zkZ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <state key="normal" backgroundImage="chevron.down" catalog="system"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Bottom"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Bottom">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToBottomPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="fdm-Jr-Gfz"/>
                                 </connections>
@@ -475,7 +476,7 @@ Divisible by: 857.</string>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
-                                <rect key="frame" x="0.0" y="291" width="375" height="399"/>
+                                <rect key="frame" x="0.0" y="293.33333333333337" width="375" height="394.33333333333337"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Prefacto" customModuleProvider="target">
                                         <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
@@ -521,27 +522,28 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="171.66666666666666" y="247.66666666666663" width="32" height="22.000000000000028"/>
+                                <rect key="frame" x="161.33333333333334" y="243.00000000000003" width="52.333333333333343" height="34.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="hWc-rC-abA"/>
-                                    <constraint firstAttribute="width" secondItem="uvb-aY-8KG" secondAttribute="height" multiplier="1:1" id="k4B-Ej-Dem"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="chevron.up" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Top">
+                                    <backgroundConfiguration key="background" image="chevron.up" catalog="system"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToTopPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="Ock-dN-zZU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
-                                <rect key="frame" x="171.66666666666666" y="711.33333333333337" width="32" height="22"/>
+                                <rect key="frame" x="147.66666666666666" y="703.66666666666663" width="80" height="34.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lyv-wW-QU7" secondAttribute="height" multiplier="1:1" id="BRu-BW-g3l"/>
-                                    <constraint firstAttribute="width" constant="32" id="Hgq-t7-4Xh"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <state key="normal" backgroundImage="chevron.down" catalog="system"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="bottom"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Bottom">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToBottomPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="IKv-RL-pX8"/>
                                 </connections>
@@ -595,22 +597,26 @@ Factors: 1234567890</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-Z1-5xH">
-                                <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-Z1-5xH">
+                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="16" y="386.66666666666669" width="343" height="49"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <rect key="frame" x="58.333333333333343" y="389" width="258.33333333333326" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Randomize button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Create Random Prime">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yjZ-am-8J6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="VWa-1q-r4D" secondAttribute="trailing" constant="16" id="GcN-W9-bvE"/>
+                            <constraint firstItem="VWa-1q-r4D" firstAttribute="centerX" secondItem="yjZ-am-8J6" secondAttribute="centerX" id="6i2-IK-Jjt"/>
+                            <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VWa-1q-r4D" secondAttribute="trailing" constant="16" id="GcN-W9-bvE"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="JAd-wu-aHm"/>
                             <constraint firstItem="VWa-1q-r4D" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="Smh-Z4-oJb"/>
-                            <constraint firstItem="VWa-1q-r4D" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="16" id="sLx-tr-Kjx"/>
+                            <constraint firstItem="VWa-1q-r4D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="16" id="sLx-tr-Kjx"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerX" secondItem="yjZ-am-8J6" secondAttribute="centerX" id="zVg-fx-AzR"/>
                         </constraints>
                     </view>
@@ -640,8 +646,8 @@ Factors: 1234567890</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gY1-mh-IAj">
-                                <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gY1-mh-IAj">
+                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S73-cg-56T"/>
@@ -787,8 +793,8 @@ Divisible by: 857.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="30j-1q-z28">
-                                <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="30j-1q-z28">
+                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bW7-lc-1I8"/>
@@ -866,7 +872,6 @@ Divisible by: 857.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.up" catalog="system" width="128" height="72"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
