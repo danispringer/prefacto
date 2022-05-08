@@ -42,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return true
             }
 
-    // MARK: long press app icon
+
+    // MARK: long press app icon OR Siri Shortcut
 
     fileprivate func makeRandomAndReturnDidWork() -> Bool {
         guard let safeNavVC = window?.rootViewController as? UINavigationController else {
@@ -51,19 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         safeNavVC.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let randomVC = (storyboard.instantiateViewController(
-            withIdentifier: Const.StoryboardID.random) as? RandomViewController)!
+        let randomVC: RandomViewController = (storyboard.instantiateViewController(
+            withIdentifier: Const.StoryboardID.random) as! RandomViewController)
         safeNavVC.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
         return true
     }
 
+
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem,
                      completionHandler: @escaping (Bool) -> Void) {
 
-
         _ = makeRandomAndReturnDidWork()
-
     }
 
 
