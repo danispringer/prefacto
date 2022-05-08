@@ -157,10 +157,10 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
-
         cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
         cell?.selectionStyle = .none
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
+        cell?.accessibilityLabel = cell?.numberLabel?.text
         return cell ?? UITableViewCell()
     }
 
