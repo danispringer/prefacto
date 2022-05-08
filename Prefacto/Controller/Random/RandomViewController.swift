@@ -181,9 +181,9 @@ class RandomViewController: UIViewController {
                     return
                 }
             }
-        }
+        } // else clause needed..?
 
-        
+
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.randomResults) as! RandomResultsViewController
