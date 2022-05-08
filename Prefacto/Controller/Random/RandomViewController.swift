@@ -168,29 +168,36 @@ class RandomViewController: UIViewController {
             }
             return
         }
-        guard self.presentedViewController == nil else {
-            // something is already being presented. investigate...
-            DispatchQueue.main.async {
-                self.enableUI(enabled: true)
+
+        if self.presentedViewController is RandomResultsViewController {
+            self.dismiss(animated: false) {
+                guard self.presentedViewController == nil else {
+                    // something is already being presented. investigate...
+                    DispatchQueue.main.async {
+                        if !fromShortcut {
+                            self.enableUI(enabled: true)
+                        }
+                    }
+                    return
+                }
             }
-            return
         }
+
+        
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(
-            withIdentifier: Const.StoryboardID.randomResults) as? RandomResultsViewController
-        controller?.myNumber = number
+            withIdentifier: Const.StoryboardID.randomResults) as! RandomResultsViewController
+        controller.myNumber = number
         DispatchQueue.main.async {
+            self.dismiss(animated: false, completion: {
+                if fromShortcut {
+                    self.navigationController!.present(controller, animated: !fromShortcut)
+                } else {
+                    self.present(controller, animated: !fromShortcut)
+                }
+            })
             if !fromShortcut {
                 self.enableUI(enabled: true)
-            }
-            if let toPresent = controller {
-                self.dismiss(animated: false, completion: {
-                    if fromShortcut {
-                        self.navigationController?.present(toPresent, animated: !fromShortcut)
-                    } else {
-                        self.present(toPresent, animated: !fromShortcut)
-                    }
-                })
             }
         }
     }
