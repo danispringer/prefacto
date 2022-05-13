@@ -140,8 +140,8 @@ class NextViewController: UIViewController,
 
 
     func isNotEdgeCaseNumber(number: Int64) -> Bool {
-        guard number > 1 else {
-            let alert = self.createAlert(alertReasonParam: .higherPlease, higherThann: 1)
+        guard number > 0 else {
+            let alert = self.createAlert(alertReasonParam: .higherThanZero)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)

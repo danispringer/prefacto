@@ -134,8 +134,8 @@ class PreviousViewController: UIViewController,
 
 
     func isNotEdgeCaseNumberForPrevious(number: Int64) -> Bool {
-        guard number > 2 else {
-            let alert = self.createAlert(alertReasonParam: .higherPlease, higherThann: 2)
+        guard number > 1 else {
+            let alert = self.createAlert(alertReasonParam: .higherThanOne)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)

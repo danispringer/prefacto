@@ -98,9 +98,9 @@
 			children = (
 				33428EE821AB6A810074F538 /* Const.swift */,
 				336646DA2321A53900674340 /* Int64+Extension.swift */,
-				33BE80A3256DF73300928E77 /* UIViewController+Extensions.swift */,
 				339CBB87256DD517001F4E2C /* NotificationsNames.swift */,
 				3353807E281B4DE300ECDA35 /* UIFont+Extensions.swift */,
+				33BE80A3256DF73300928E77 /* UIViewController+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
