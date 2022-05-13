@@ -43,9 +43,11 @@ class CheckResultsViewController: UIViewController {
             return
         }
         if isPrime {
-            resultLabel.text = isPrimeMessage(localNumber: myNumber)
+            resultLabel.attributedText = isPrimeMessage(localNumber: myNumber, color: myThemeColor)
         } else {
-            resultLabel.text = isNotPrimeMessage(localNumber: myNumber, localIsDivisibleBy: myIsDivisibleBy)
+            resultLabel.attributedText = isNotPrimeMessage(localNumber: myNumber,
+                                                           localIsDivisibleBy: myIsDivisibleBy,
+                                                           color: myThemeColor)
         }
 
         myToolbar.setBackgroundImage(UIImage(),
@@ -74,9 +76,9 @@ class CheckResultsViewController: UIViewController {
             return
         }
         if isPrime {
-            message = isPrimeMessage(localNumber: myNumber)
+            message = isPrimeMessageShare(localNumber: myNumber)
         } else {
-            message = isNotPrimeMessage(localNumber: myNumber, localIsDivisibleBy: myIsDivisibleBy)
+            message = isNotPrimeMessageShare(localNumber: myNumber, localIsDivisibleBy: myIsDivisibleBy)
         }
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)

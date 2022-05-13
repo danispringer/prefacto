@@ -64,7 +64,7 @@ class RandomResultsViewController: UIViewController {
             }
             return
         }
-        message = isPrimeMessage(localNumber: myNumber)
+        message = isPrimeMessageShare(localNumber: myNumber)
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem

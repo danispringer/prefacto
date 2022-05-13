@@ -42,10 +42,8 @@ class NextResultsViewController: UIViewController {
             }
             return
         }
-        resultLabel.text = """
-        Value: \(myOriginalNumber)
-        Next prime: \(myNextPrime)
-        """
+        resultLabel.attributedText = nextPrimeMessage(localOriginalNumber: myOriginalNumber,
+                                                      localNextPrime: myNextPrime, color: myThemeColor)
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -72,7 +70,7 @@ class NextResultsViewController: UIViewController {
             }
             return
         }
-        message = nextPrimeMessage(localOriginalNumber: myOriginalNumber, localNextPrime: myNextPrime)
+        message = nextPrimeMessageShare(localOriginalNumber: myOriginalNumber, localNextPrime: myNextPrime)
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
