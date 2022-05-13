@@ -107,7 +107,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         guard source.count != 0 else {
-            message = manyPrimesInRange(localFrom: rangeFrom, localTo: rangeTo, localSource: source)
+            message = manyPrimesInRangeShare(localFrom: rangeFrom, localTo: rangeTo, localSource: source)
+            message += "\n\n" + Const.UX.thisAppLink
             presentShareController(message: message)
             return
         }
@@ -116,7 +117,7 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             present(alert, animated: true)
             return
         }
-        message = manyPrimesInRange(localFrom: rangeFrom, localTo: rangeTo, localSource: mySource)
+        message = manyPrimesInRangeShare(localFrom: rangeFrom, localTo: rangeTo, localSource: mySource)
         message += "\n\n" + Const.UX.thisAppLink
 
         presentShareController(message: message)

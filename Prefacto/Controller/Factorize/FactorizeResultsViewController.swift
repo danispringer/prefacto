@@ -55,23 +55,18 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
-            resultLabel.text = """
-            \(myNumberFormatted)
-            is prime, therefore its only factor is itself
-            """
+            resultLabel.attributedText = isPrimeMessage(localNumber: myNumber, color: myThemeColor)
         } else {
             resultLabel.text = """
             Value: \(myNumberFormatted)
             Count of factors: \(sourceCountFormatted)
             """
         }
-
     }
 
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
         notif.post(name: .tryShowingKeyboard, object: nil)
     }
 
@@ -103,9 +98,9 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             return
         }
         if source.count == 1 {
-            message = isPrimeMessage(localNumber: number)
+            message = isPrimeMessageShare(localNumber: number)
         } else {
-            message = manyPrimeFactors(localNumber: number, localSource: source)
+            message = manyPrimeFactorsShare(localNumber: number, localSource: source)
         }
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
