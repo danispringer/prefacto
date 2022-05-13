@@ -25,7 +25,7 @@ extension UIViewController {
     }
 
 
-    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0, higherThann: Int64 = -999) -> UIAlertController {
+    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0) -> UIAlertController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
