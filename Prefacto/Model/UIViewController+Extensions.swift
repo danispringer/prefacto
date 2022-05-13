@@ -17,7 +17,8 @@ extension UIViewController {
         case textfieldEmptySingle
         case notNumberOrTooBig
         case overflow
-        case higherPlease
+        case higherThanZero
+        case higherThanOne
         case sameTwice
         case noPrimesInRange
         case unknown
@@ -43,10 +44,15 @@ extension UIViewController {
                 Highest number allowed: 9223372036854775807
                 Need more help? Email: \(Const.UX.emailAddress)
                 """
-            case .higherPlease:
-                alertTitle = "Please enter a higher number"
+            case .higherThanZero:
+                alertTitle = "Please enter a positive number"
                 alertMessage = """
-                Please enter a number higher than \(higherThann)
+                Please enter a number higher than 0
+                """
+            case .higherThanOne:
+                alertTitle = "Please enter 2 or higher"
+                alertMessage = """
+                Since 1 is the first prime, there is no "previous" prime for it.
                 """
             case .sameTwice:
                 alertTitle = "Same number entered twice"

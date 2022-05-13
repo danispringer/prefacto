@@ -81,8 +81,12 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         let savedUserNumber = number
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
-            self.arrayOfInts = []
-            self.primeFactors(number: number)
+            if number == 1 {
+                self.arrayOfInts = [1]
+            } else {
+                self.arrayOfInts = []
+                self.primeFactors(number: number)
+            }
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 self.presentResults(number: savedUserNumber)
@@ -122,8 +126,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
 
     func isNotEdgeCase(number: Int64) -> Bool {
-        guard number > 1 else {
-            let alert = self.createAlert(alertReasonParam: .higherPlease, higherThann: 1)
+        guard number > 0 else {
+            let alert = self.createAlert(alertReasonParam: .higherThanZero)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
                 self.enableUI(enabled: true)

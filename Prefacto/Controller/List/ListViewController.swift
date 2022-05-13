@@ -206,7 +206,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     func isNotEdgeCase(firstNum: Int64, secondNum: Int64) -> Bool {
         guard ([firstNum, secondNum].allSatisfy { $0 > 0 }) else {
-            let alert = createAlert(alertReasonParam: .higherPlease, higherThann: 0)
+            let alert = createAlert(alertReasonParam: .higherThanZero)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -221,7 +221,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
 
         guard !(firstNum == secondNum) else {
-            let alert = createAlert(alertReasonParam: .sameTwice, higherThann: -1)
+            let alert = createAlert(alertReasonParam: .sameTwice, higherThann: -1111)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
