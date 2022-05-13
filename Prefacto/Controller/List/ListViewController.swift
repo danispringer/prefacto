@@ -221,7 +221,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
 
         guard !(firstNum == secondNum) else {
-            let alert = createAlert(alertReasonParam: .sameTwice, higherThann: -1111)
+            let alert = createAlert(alertReasonParam: .sameTwice)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
