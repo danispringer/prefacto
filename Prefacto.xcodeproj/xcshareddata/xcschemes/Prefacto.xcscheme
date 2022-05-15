@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "337A6827282F1B5A00E9551F"
+               BuildableName = "PrefactoScreenshots.xctest"
+               BlueprintName = "PrefactoScreenshots"
+               ReferencedContainer = "container:Prefacto.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

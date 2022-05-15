@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
+                if CommandLine.arguments.contains("--prefactoScreenshots") {
+                    // We are in testing mode, make arrangements if needed
+                UIView.setAnimationsEnabled(false)
+                }
+
                 if let shortcutItem = launchOptions?[
                     UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
 
