@@ -31,6 +31,12 @@ class PreviousViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if CommandLine.arguments.contains("--prefactoScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            UIView.setAnimationsEnabled(false)
+        }
+        
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 

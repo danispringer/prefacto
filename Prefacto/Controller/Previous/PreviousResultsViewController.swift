@@ -33,6 +33,11 @@ class PreviousResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if CommandLine.arguments.contains("--prefactoScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            UIView.setAnimationsEnabled(false)
+        }
+
         setThemeColorTo(myThemeColor: myThemeColor)
 
         guard let myOriginalNumber = originalNumber, let myPreviousPrime = previousPrime else {
