@@ -48,7 +48,7 @@ class PrefactoScreenshots: XCTestCase {
             case "Previous":
                 textToType = "2350"
             default:
-                break
+                return
         }
 
         if word != "Randomize" {
@@ -60,6 +60,7 @@ class PrefactoScreenshots: XCTestCase {
         if word == "Randomize" {
             app.buttons["Create Random Prime"].firstMatch.tap()
             app.buttons["Medium"].firstMatch.tap()
+            XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
             takeScreenshot(named: "\(word)-Results")
             app.buttons["Done"].firstMatch.tap()
             app.navigationBars[word].buttons["Prime Number App"].tap()
@@ -74,8 +75,11 @@ class PrefactoScreenshots: XCTestCase {
             app.alerts.buttons.firstMatch.tap() // dismiss alert
             XCTAssertTrue(app.textFields.firstMatch.waitForExistence(timeout: 5))
             app.typeText("2350") // second field should have focus, from swift
+            takeScreenshot(named: "\(word)-Results-2")
             app.buttons[word].firstMatch.tap() // list
         }
+
+        XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
 
         takeScreenshot(named: "\(word)-Results")
 
