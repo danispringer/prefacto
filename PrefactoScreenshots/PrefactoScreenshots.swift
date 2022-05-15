@@ -55,10 +55,12 @@ class PrefactoScreenshots: XCTestCase {
             firstTextField.typeText(textToType)
         }
 
+        takeScreenshot(named: "\(word)-Home")
+
         if word == "Randomize" {
             app.buttons["Create Random Prime"].firstMatch.tap()
             app.buttons["Medium"].firstMatch.tap()
-            takeScreenshot(named: word)
+            takeScreenshot(named: "\(word)-Results")
             app.buttons["Done"].firstMatch.tap()
             app.navigationBars[word].buttons["Prime Number App"].tap()
             return
@@ -75,7 +77,7 @@ class PrefactoScreenshots: XCTestCase {
             app.buttons[word].firstMatch.tap() // list
         }
 
-        takeScreenshot(named: word)
+        takeScreenshot(named: "\(word)-Results")
 
         app.buttons["Done"].firstMatch.tap()
         app.navigationBars[word].buttons["Prime Number App"].tap()
@@ -86,14 +88,11 @@ class PrefactoScreenshots: XCTestCase {
         app.launch()
 
         // Home
-//        takeScreenshot(named: "Home")
-
+        takeScreenshot(named: "Home")
 
         for aItem in aList {
             anAction(word: aItem)
         }
-
-//        takeScreenshot(named: "Insights")
     }
 
 
