@@ -45,6 +45,7 @@ do
         for appearance in "${appearances[@]}"
         do
             rm -rf /tmp/PrefactoDerivedData/Logs/Test
+            rm -rf /Users/dani/Desktop/PrefactoScreenshots
             echo "📲 Building and Running for $simulator in $language"
 
             # Boot up the new simulator and set it to 
