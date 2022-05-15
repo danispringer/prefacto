@@ -29,6 +29,12 @@ class CheckViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+// TODO: add this to all viewdidload and ensure animations still work in regular launches
+        if CommandLine.arguments.contains("--prefactoScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            UIView.setAnimationsEnabled(false)
+        }
+
         setThemeColorTo(myThemeColor: myThemeColor)
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }

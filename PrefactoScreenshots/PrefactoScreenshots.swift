@@ -67,9 +67,9 @@ class PrefactoScreenshots: XCTestCase {
         app.buttons[word].firstMatch.tap()
 
         if word == "List" {
-            app.buttons.firstMatch.tap()
-            app.typeText("2350")
-            app.buttons[word].firstMatch.tap()
+            app.buttons.firstMatch.tap() // dismiss alert
+            app.typeText("2350") // second textfield should be already focused on, from swift code
+            app.buttons[word].firstMatch.tap() // list
         }
 
         takeScreenshot(named: word)
