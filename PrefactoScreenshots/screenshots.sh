@@ -12,10 +12,13 @@ schemeName="Prefacto"
 # "Devices and Simulators" window
 # or from `xcrun simctl list`.
 simulators=(
-    "iPhone 8 Plus"
     "iPhone 13 Pro Max"
-    "iPad Pro (12.9-inch) (5th generation)"
 )
+#simulators=(
+#    "iPhone 8 Plus"
+#    "iPhone 13 Pro Max"
+#    "iPad Pro (12.9-inch) (5th generation)"
+#)
 
 # All the languages we want to screenshot (ISO 3166-1 codes)
 languages=(
@@ -42,7 +45,7 @@ do
         for appearance in "${appearances[@]}"
         do
             rm -rf /tmp/PrefactoDerivedData/Logs/Test
-            echo "📲  Building and Running for $simulator in $language"
+            echo "📲 Building and Running for $simulator in $language"
 
             # Boot up the new simulator and set it to 
             # the correct appearance
@@ -51,11 +54,11 @@ do
 
             # Build and Test
             xcodebuild -testLanguage $language -scheme $schemeName -project $projectName -derivedDataPath '/tmp/PrefactoDerivedData/' -destination "platform=iOS Simulator,name=$simulator" build test
-            echo "🖼  Collecting Results..."
+            echo "Collecting Results..."
             mkdir -p "$targetFolder/$simulator/$language/$appearance"
             find /tmp/PrefactoDerivedData/Logs/Test -maxdepth 1 -type d -exec xcparse screenshots {} "$targetFolder/$simulator/$language/$appearance" \;
         done
     done
 
-    echo "✅  Done"
+    echo "✅ Done"
 done
