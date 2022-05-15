@@ -36,7 +36,7 @@ class PreviousViewController: UIViewController,
             // We are in testing mode, make arrangements if needed
             UIView.setAnimationsEnabled(false)
         }
-        
+
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
