@@ -67,8 +67,11 @@ class PrefactoScreenshots: XCTestCase {
         app.buttons[word].firstMatch.tap()
 
         if word == "List" {
-            app.buttons.firstMatch.tap() // dismiss alert
-            app.typeText("2350") // second textfield should be already focused on, from swift code
+            let aAlert = app.alerts.firstMatch
+            XCTAssertTrue(aAlert.waitForExistence(timeout: 5))
+            app.alerts.buttons.firstMatch.tap() // dismiss alert
+            XCTAssertTrue(app.textFields.firstMatch.waitForExistence(timeout: 5))
+            app.typeText("2350") // second field should have focus, from swift
             app.buttons[word].firstMatch.tap() // list
         }
 
