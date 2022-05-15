@@ -33,7 +33,7 @@ appearances=(
 
 # Save final screenshots into this folder (it will be created)
 targetFolder="/Users/dani/Desktop/PrefactoScreenshots"
-
+rm -rf /Users/dani/Desktop/PrefactoScreenshots
 
 ## No need to edit anything beyond this point
 
@@ -45,7 +45,6 @@ do
         for appearance in "${appearances[@]}"
         do
             rm -rf /tmp/PrefactoDerivedData/Logs/Test
-            rm -rf /Users/dani/Desktop/PrefactoScreenshots
             echo "📲 Building and Running for $simulator in $language"
 
             # Boot up the new simulator and set it to 
