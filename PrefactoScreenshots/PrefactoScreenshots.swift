@@ -11,7 +11,8 @@ import XCTest
 class PrefactoScreenshots: XCTestCase {
 
 
-    // xcodebuild -testLanguage en -scheme Prefacto -project ./Prefacto.xcodeproj -derivedDataPath '/tmp/PrefactoDerivedData/' -destination "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
+    // xcodebuild -testLanguage en -scheme Prefacto -project ./Prefacto.xcodeproj -derivedDataPath
+    // '/tmp/PrefactoDerivedData/' -destination "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
 
     var app: XCUIApplication!
 

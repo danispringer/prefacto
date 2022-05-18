@@ -51,7 +51,7 @@ class RandomViewController: UIViewController {
         setThemeColorTo(myThemeColor: myThemeColor)
 
         randomizeButton.setTitle(Const.UX.randomize, for: .normal)
-        self.title = Const.Title.random
+        self.title = Const.TitleEnum.Randomize.rawValue
         randomizeButton.menu = randomMenu()
         randomizeButton.showsMenuAsPrimaryAction = true
     }

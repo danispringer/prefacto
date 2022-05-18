@@ -51,7 +51,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         myTextField.delegate = self
 
 
-        self.title = Const.Title.factorize
+        self.title = Const.TitleEnum.Factorize.rawValue
     }
 
 

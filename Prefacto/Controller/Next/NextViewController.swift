@@ -46,7 +46,7 @@ class NextViewController: UIViewController,
 
         myTextField.delegate = self
 
-        self.title = Const.Title.next
+        self.title = Const.TitleEnum.Next.rawValue
     }
 
 

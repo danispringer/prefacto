@@ -48,7 +48,7 @@ class PreviousViewController: UIViewController,
 
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        self.title = Const.Title.previous
+        self.title = Const.TitleEnum.Previous.rawValue
     }
 
 
