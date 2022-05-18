@@ -54,7 +54,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         firstTextField.delegate = self
         secondTextField.delegate = self
 
-        self.title = Const.Title.list
+        self.title = Const.TitleEnum.List.rawValue
     }
 
 

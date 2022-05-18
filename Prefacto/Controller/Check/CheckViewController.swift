@@ -44,7 +44,7 @@ class CheckViewController: UIViewController,
 
         myTextField.delegate = self
 
-        self.title = Const.Title.check
+        self.title = Const.TitleEnum.Check.rawValue
     }
 
 

@@ -24,27 +24,6 @@ class MainMenuTableViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = [Const.Title.check,
-                        Const.Title.factorize,
-                        Const.Title.list,
-                        Const.Title.random,
-                        Const.Title.next,
-                        Const.Title.previous]
-    let myImageSource = ["checkmark",
-                         "divide",
-                         "arrow.up.and.down",
-                         "wand.and.stars",
-                         "arrow.right",
-                         "arrow.left"]
-    let tintColorsArray: [UIColor] = [
-        .systemGreen,
-        .systemBlue,
-        .systemPurple,
-        .systemOrange,
-        .systemTeal,
-        .systemTeal
-    ]
-
     let menuCell = "MenuCell"
 
     let addToSiriController = UIViewController()
@@ -181,7 +160,7 @@ class MainMenuTableViewController: UIViewController,
     // MARK: TableView Delegate
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myDataSource.count
+        return Const.TitleEnum.allCases.count
     }
 
 
@@ -214,12 +193,15 @@ class MainMenuTableViewController: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-        cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
+
+        let myIndexRow: Int = (indexPath as NSIndexPath).row
+        cell.myLabel.text = Const.titleArrFromEnum[myIndexRow]
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
-        let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row], withConfiguration: aConfig)
+        let aImage = UIImage(systemName: Const.myImageSource[(indexPath as NSIndexPath).row],
+                             withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
-        cell.imageViewContainer.backgroundColor = tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.imageViewContainer.backgroundColor = Const.tintColorsArray[(indexPath as NSIndexPath).row]
         cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
@@ -234,37 +216,37 @@ class MainMenuTableViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
-            case myDataSource[0]:
+            case Const.TitleEnum.Check.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.check) as? CheckViewController
                 if let toPresent = controller {
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[1]:
+            case Const.TitleEnum.Factorize.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
                 if let toPresent = controller {
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[2]:
+            case Const.TitleEnum.List.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.list) as? ListViewController
                 if let toPresent = controller {
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[3]:
+            case Const.TitleEnum.Randomize.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.random) as? RandomViewController
                 if let toPresent = controller {
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[4]:
+            case Const.TitleEnum.Next.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.next) as? NextViewController
                 if let toPresent = controller {
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[5]:
+            case Const.TitleEnum.Previous.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
                 if let toPresent = controller {

@@ -37,13 +37,36 @@ struct Const {
     }
 
 
-    struct Title {
-        static let check = "Check"
-        static let factorize = "Factorize"
-        static let list = "List"
-        static let random = "Randomize"
-        static let next = "Next"
-        static let previous = "Previous"
+    enum TitleEnum: String, CaseIterable {
+        // swiftlint:disable:next identifier_name
+        case Check, List, Next, Previous, Factorize, Randomize
+    }
+
+
+    static let tintColorsArray: [UIColor] = [
+        .systemGreen,
+        .systemPurple,
+        .systemTeal,
+        .systemTeal,
+        .systemBlue,
+        .systemOrange
+    ]
+
+
+    static let myImageSource = ["checkmark",
+                                "arrow.up.and.down",
+                                "arrow.right",
+                                "arrow.left",
+                                "divide",
+                                "wand.and.stars"]
+
+
+    static var titleArrFromEnum: [String] {
+        var mySampleArray: [String] = []
+        for item in Const.TitleEnum.allCases {
+            mySampleArray.append(item.rawValue)
+        }
+        return mySampleArray
     }
 
 
