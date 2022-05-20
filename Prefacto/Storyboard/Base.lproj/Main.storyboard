@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bgr-jy-98T">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="CheckViewController" id="1t2-Bt-9xD" customClass="CheckViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yAl-ue-BIR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type number to check if prime" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-Lr-7Xl" customClass="MyTextField" customModule="Prefacto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84" width="343" height="40"/>
+                                <rect key="frame" x="16" y="84" width="396" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
@@ -30,10 +30,10 @@
                                 </connections>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-Ma-ASa">
-                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
+                                <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cza-b0-GeO">
-                                <rect key="frame" x="155" y="156" width="65" height="31"/>
+                                <rect key="frame" x="181.66666666666666" y="156" width="65" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Check"/>
                                 <connections>
@@ -69,11 +69,11 @@
             <objects>
                 <viewController storyboardIdentifier="FactorizeViewController" id="GDH-dL-aVw" customClass="FactorizeViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rfk-CT-EXo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type number to factorize" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-hj-b9l" customClass="MyTextField" customModule="Prefacto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84" width="343" height="40"/>
+                                <rect key="frame" x="16" y="84" width="396" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
@@ -83,10 +83,10 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-4V-786">
-                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
+                                <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52F-Pd-S7V">
-                                <rect key="frame" x="146" y="156" width="83.333333333333314" height="31"/>
+                                <rect key="frame" x="172.33333333333334" y="156" width="83.333333333333343" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Factorize"/>
                                 <connections>
@@ -121,11 +121,11 @@
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="enb-lg-n27" customClass="ListViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiV-bV-0HS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List primes from..." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-FV-42z" customClass="MyTextField" customModule="Prefacto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84" width="155.66666666666666" height="40"/>
+                                <rect key="frame" x="16" y="84" width="182" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
@@ -135,7 +135,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To..." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-op-hSX" customClass="MyTextField" customModule="Prefacto" customModuleProvider="target">
-                                <rect key="frame" x="203.66666666666663" y="84" width="155.33333333333337" height="40"/>
+                                <rect key="frame" x="230" y="84" width="182" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
@@ -145,10 +145,10 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Mn-u5f">
-                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
+                                <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-5b-W1z">
-                                <rect key="frame" x="164" y="156" width="47.333333333333343" height="31"/>
+                                <rect key="frame" x="190.33333333333334" y="156" width="47.333333333333343" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="List"/>
                                 <connections>
@@ -187,14 +187,14 @@
             <objects>
                 <viewController storyboardIdentifier="RandomViewController" id="rtL-8v-6Jg" customClass="RandomViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gH-MG-fXP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-Z1-5xH">
-                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
+                                <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="58.333333333333343" y="389" width="258.33333333333326" height="44"/>
+                                <rect key="frame" x="85" y="446" width="258.33333333333331" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Randomize button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Random Prime">
@@ -228,11 +228,11 @@
             <objects>
                 <viewController storyboardIdentifier="NextViewController" id="GOD-XX-EqB" customClass="NextViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2nO-PJ-qc9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type number to get next prime" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0C7-Dz-uiP" customClass="MyTextField" customModule="Prefacto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84" width="343" height="40"/>
+                                <rect key="frame" x="16" y="84" width="396" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BYu-ka-9CP"/>
                                 </constraints>
@@ -240,10 +240,10 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gY1-mh-IAj">
-                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
+                                <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgS-IO-7m2">
-                                <rect key="frame" x="160.66666666666666" y="156" width="54" height="31"/>
+                                <rect key="frame" x="187" y="156" width="54" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next"/>
                                 <connections>
@@ -278,11 +278,11 @@
             <objects>
                 <viewController storyboardIdentifier="PreviousViewController" id="beV-Hn-QCd" customClass="PreviousViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="agi-Fk-iXJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type number to get previous prime" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="32E-wM-ebq" customClass="MyTextField" customModule="Prefacto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84" width="343" height="40"/>
+                                <rect key="frame" x="16" y="84" width="396" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4G6-dg-DlP"/>
                                 </constraints>
@@ -290,10 +290,10 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="30j-1q-z28">
-                                <rect key="frame" x="177.66666666666666" y="401" width="20" height="20"/>
+                                <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-oq-ifv">
-                                <rect key="frame" x="147.66666666666666" y="156" width="79.666666666666657" height="31"/>
+                                <rect key="frame" x="174.33333333333334" y="156" width="79.666666666666657" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Previous"/>
                                 <connections>
@@ -328,11 +328,11 @@
             <objects>
                 <viewController storyboardIdentifier="CheckResultsViewController" id="gze-xP-mv9" customClass="CheckResultsViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dop-lv-uoq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEg-Xb-Lgt">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="E7H-Ry-hi3">
@@ -349,7 +349,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHh-na-Oah">
-                                <rect key="frame" x="16" y="373.66666666666669" width="343" height="75"/>
+                                <rect key="frame" x="16" y="430.66666666666669" width="396" height="75"/>
                                 <string key="text">12345678901: not prime.
 Divisible by: 857.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -382,11 +382,11 @@ Divisible by: 857.</string>
             <objects>
                 <viewController storyboardIdentifier="FactorizeResultsViewController" id="qan-ov-WlY" customClass="FactorizeResultsViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlJ-vu-o2F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU3-mS-M5k">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="AMw-Pt-ueC">
                                         <connections>
@@ -403,17 +403,17 @@ Divisible by: 857.</string>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
-                                <rect key="frame" x="0.0" y="293.33333333333337" width="375" height="394.33333333333337"/>
+                                <rect key="frame" x="0.0" y="293.33333333333337" width="428" height="508.33333333333337"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Prefacto" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="49" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsJ-X1-QkV" id="cRd-m7-bIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-YK-Szs" userLabel="Number Label">
-                                                    <rect key="frame" x="50.666666666666657" y="13.333333333333336" width="282.33333333333337" height="17"/>
+                                                    <rect key="frame" x="50.666666666666657" y="13.333333333333336" width="327.33333333333337" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="kQQ-5j-MEI"/>
                                                     </constraints>
@@ -449,7 +449,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="129.66666666666666" y="243.00000000000003" width="115.66666666666666" height="34.333333333333343"/>
+                                <rect key="frame" x="156.33333333333334" y="243.00000000000003" width="115.66666666666666" height="34.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -462,7 +462,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
-                                <rect key="frame" x="114.66666666666667" y="703.66666666666663" width="145.66666666666663" height="34.333333333333371"/>
+                                <rect key="frame" x="141.33333333333337" y="817.66666666666663" width="145.66666666666663" height="34.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -475,7 +475,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtG-MD-Tnd">
-                                <rect key="frame" x="16" y="104" width="343" height="75"/>
+                                <rect key="frame" x="16" y="104" width="396" height="75"/>
                                 <string key="text">N: 1234567890
 Factors: 1234567890</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -520,11 +520,11 @@ Factors: 1234567890</string>
             <objects>
                 <viewController storyboardIdentifier="ListResultsViewController" id="JVg-gq-MAH" customClass="ListResultsViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hfp-05-dJl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pot-Xn-7oP">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="Ahw-gk-FOH">
                                         <connections>
@@ -541,7 +541,7 @@ Factors: 1234567890</string>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-To-rhb">
-                                <rect key="frame" x="16" y="104" width="343" height="113"/>
+                                <rect key="frame" x="16" y="104" width="396" height="113"/>
                                 <string key="text">From: 1234567890
 To: 1234567890
 Primes: 123456890</string>
@@ -549,17 +549,17 @@ Primes: 123456890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
-                                <rect key="frame" x="0.0" y="331.33333333333337" width="375" height="356.33333333333337"/>
+                                <rect key="frame" x="0.0" y="331.33333333333337" width="428" height="470.33333333333337"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Prefacto" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="49" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H6G-mI-jWo" id="bVR-LQ-lpl">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lns-Po-Sqc" userLabel="Number Label">
-                                                    <rect key="frame" x="50.666666666666657" y="13.333333333333336" width="282.33333333333337" height="17"/>
+                                                    <rect key="frame" x="50.666666666666657" y="13.333333333333336" width="327.33333333333337" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="9se-nT-z3F"/>
                                                     </constraints>
@@ -597,7 +597,7 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="129.66666666666666" y="281" width="115.66666666666666" height="34.333333333333314"/>
+                                <rect key="frame" x="156.33333333333334" y="281" width="115.66666666666666" height="34.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -610,7 +610,7 @@ Primes: 123456890</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
-                                <rect key="frame" x="114.66666666666667" y="703.66666666666663" width="145.66666666666663" height="34.333333333333371"/>
+                                <rect key="frame" x="141.33333333333337" y="817.66666666666663" width="145.66666666666663" height="34.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -660,11 +660,11 @@ Primes: 123456890</string>
             <objects>
                 <viewController storyboardIdentifier="RandomResultsViewController" id="7sC-Ww-chD" customClass="RandomResultsViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tUT-Up-DS9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-Zc-OR8">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="8wG-x3-FZT">
                                         <connections>
@@ -680,13 +680,19 @@ Primes: 123456890</string>
                                 </items>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="16" y="392.66666666666669" width="343" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
+                                <rect key="frame" x="16" y="449.66666666666669" width="396" height="37"/>
                                 <accessibility key="accessibilityConfiguration" label="Copy"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="1234567890123456789"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEl-es-9Ki">
+                                <rect key="frame" x="16" y="104" width="396" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vmc-Bm-u6I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -694,6 +700,9 @@ Primes: 123456890</string>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" id="67f-l7-FQV"/>
                             <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="DqT-zL-LYQ" secondAttribute="trailing" constant="16" id="YMb-2E-GdR"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="top" secondItem="Vmc-Bm-u6I" secondAttribute="top" id="bYh-Qq-0Qf"/>
+                            <constraint firstItem="kEl-es-9Ki" firstAttribute="top" secondItem="PX3-Zc-OR8" secondAttribute="bottom" constant="16" id="dhh-7v-jAf"/>
+                            <constraint firstItem="Vmc-Bm-u6I" firstAttribute="trailing" secondItem="kEl-es-9Ki" secondAttribute="trailing" constant="16" id="juN-Xy-ieN"/>
+                            <constraint firstItem="kEl-es-9Ki" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="kEp-8c-30I"/>
                             <constraint firstItem="DqT-zL-LYQ" firstAttribute="leading" secondItem="Vmc-Bm-u6I" secondAttribute="leading" constant="16" id="mNd-LL-HMc"/>
                             <constraint firstItem="PX3-Zc-OR8" firstAttribute="centerX" secondItem="tUT-Up-DS9" secondAttribute="centerX" id="qaj-pD-9Aq"/>
                             <constraint firstItem="DqT-zL-LYQ" firstAttribute="centerY" secondItem="Vmc-Bm-u6I" secondAttribute="centerY" id="ubh-JT-CBv"/>
@@ -714,11 +723,11 @@ Primes: 123456890</string>
             <objects>
                 <viewController storyboardIdentifier="NextResultsViewController" id="HDr-SO-aa9" customClass="NextResultsViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZB-TJ-LAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-H7-HgR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="oOG-Wh-v3w">
@@ -735,7 +744,7 @@ Primes: 123456890</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-n8-DGZ">
-                                <rect key="frame" x="16" y="373.66666666666669" width="343" height="75"/>
+                                <rect key="frame" x="16" y="430.66666666666669" width="396" height="75"/>
                                 <string key="text">Value: 12345678901
 Next prime: 857</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -768,11 +777,11 @@ Next prime: 857</string>
             <objects>
                 <viewController storyboardIdentifier="PreviousResultsViewController" id="eiF-m7-Zat" customClass="PreviousResultsViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ReX-eQ-W0Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45a-pv-4KF">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="toa-VH-Pka">
@@ -789,7 +798,7 @@ Next prime: 857</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOJ-zv-56H">
-                                <rect key="frame" x="16" y="373.66666666666669" width="343" height="75"/>
+                                <rect key="frame" x="16" y="430.66666666666669" width="396" height="75"/>
                                 <string key="text">Value: 12345678901
 Next prime: 857</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -822,7 +831,7 @@ Next prime: 857</string>
             <objects>
                 <navigationController id="Bgr-jy-98T" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="S1Q-aD-SE7">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -838,22 +847,22 @@ Next prime: 857</string>
             <objects>
                 <viewController id="EO6-OC-f7d" customClass="MainMenuTableViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSI-9F-Wy4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N6E-ik-2ux">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="Wc3-Jt-wPS" customClass="MainMenuTableViewCell" customModule="Prefacto" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="31.666666030883789" width="343" height="96.333335876464844"/>
+                                        <rect key="frame" x="20" y="31.666666030883789" width="388" height="96.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wc3-Jt-wPS" id="HWy-pL-99m">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="96.333335876464844"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="96.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPn-Vr-3ZX" userLabel="My Label">
-                                                    <rect key="frame" x="96" y="16" width="231" height="64.333333333333329"/>
+                                                    <rect key="frame" x="96" y="16" width="276" height="64.333333333333329"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
