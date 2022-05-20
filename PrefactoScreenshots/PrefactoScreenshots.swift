@@ -13,6 +13,7 @@ class PrefactoScreenshots: XCTestCase {
 
     // xcodebuild -testLanguage en -scheme Prefacto -project ./Prefacto.xcodeproj -derivedDataPath
     // '/tmp/PrefactoDerivedData/' -destination "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
+    // https://blog.winsmith.de/english/ios/2020/04/14/xcuitest-screenshots.html
 
     var app: XCUIApplication!
 
