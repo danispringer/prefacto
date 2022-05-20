@@ -55,7 +55,7 @@ class PrefactoScreenshots: XCTestCase {
             firstTextField.typeText(textToType)
         }
 
-        if word != "Previous" {
+        if word != "Previous" && word != "List" && word != "Next" {
             takeScreenshot(named: "\(word)-Home")
         }
 
