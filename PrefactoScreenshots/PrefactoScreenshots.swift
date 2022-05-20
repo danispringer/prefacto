@@ -17,7 +17,7 @@ class PrefactoScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Check", "Factorize", "List", "Randomize", "Next", "Previous"]
+    let aList = ["Check", "Factorize", "List", "Randomize", "Next"]
 
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -47,8 +47,6 @@ class PrefactoScreenshots: XCTestCase {
                 break
             case "Next":
                 textToType = "2350"
-            case "Previous":
-                textToType = "2350"
             default:
                 return
         }
@@ -57,7 +55,10 @@ class PrefactoScreenshots: XCTestCase {
             firstTextField.typeText(textToType)
         }
 
-        takeScreenshot(named: "\(word)-Home")
+        if word != "Previous" {
+            takeScreenshot(named: "\(word)-Home")
+        }
+
 
         if word == "Randomize" {
             app.buttons["Create Random Prime"].firstMatch.tap()
@@ -78,7 +79,7 @@ class PrefactoScreenshots: XCTestCase {
             XCTAssertTrue(app.textFields.firstMatch.waitForExistence(timeout: 5))
             app.typeText("2350") // second field should have focus, from swift
             takeScreenshot(named: "\(word)-Results-2")
-            app.buttons[word].firstMatch.tap() // list
+            app.buttons[word].firstMatch.tap() // tap list butotn
         }
 
         XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
