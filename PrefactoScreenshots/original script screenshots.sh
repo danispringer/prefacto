@@ -45,7 +45,7 @@ do
             rm -rf /tmp/PrefactoDerivedData/Logs/Test
             echo "📲 Building and Running for $simulator in $language"
 
-            # Boot up the new simulator and set it to
+            # Boot up the new simulator and set it to 
             # the correct appearance
             xcrun simctl boot "$simulator"
             xcrun simctl ui "$simulator" appearance $appearance
@@ -53,8 +53,8 @@ do
             # Build and Test
             xcodebuild -testLanguage $language -scheme $schemeName -project $projectName -derivedDataPath '/tmp/PrefactoDerivedData/' -destination "platform=iOS Simulator,name=$simulator" build test
             echo "Collecting Results..."
-            mkdir -p "$targetFolder/$simulator/"
-            find /tmp/PrefactoDerivedData/Logs/Test -maxdepth 1 -type d -exec xcparse screenshots {} "$targetFolder/$simulator/" \;
+            mkdir -p "$targetFolder/$simulator/$language/$appearance"
+            find /tmp/PrefactoDerivedData/Logs/Test -maxdepth 1 -type d -exec xcparse screenshots {} "$targetFolder/$simulator/$language/$appearance" \;
         done
     done
 
