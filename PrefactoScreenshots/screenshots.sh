@@ -35,8 +35,6 @@ appearances=(
 targetFolder="/Users/dani/Desktop/PrefactoScreenshots"
 rm -rf /Users/dani/Desktop/PrefactoScreenshots
 
-## No need to edit anything beyond this point
-
 
 for simulator in "${simulators[@]}"
 do
