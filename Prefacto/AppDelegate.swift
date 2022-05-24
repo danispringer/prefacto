@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
 
 
-    // MARK: long press app icon OR Siri Shortcut
+    // MARK: Long press app icon OR Siri Shortcut
 
     fileprivate func makeRandomAndReturnDidWork() -> Bool {
         guard let safeNavVC = window?.rootViewController as? UINavigationController else {
