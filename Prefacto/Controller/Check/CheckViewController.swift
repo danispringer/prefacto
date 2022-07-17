@@ -34,7 +34,6 @@ class CheckViewController: UIViewController,
             UIView.setAnimationsEnabled(false)
         }
 
-        setThemeColorTo(myThemeColor: myThemeColor)
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
@@ -42,6 +41,7 @@ class CheckViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        setThemeColorTo(myThemeColor: myThemeColor)
         myTextField.delegate = self
 
         self.title = Const.TitleEnum.Check.rawValue

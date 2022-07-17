@@ -39,8 +39,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             UIView.setAnimationsEnabled(false)
         }
 
-        setThemeColorTo(myThemeColor: myThemeColor)
-
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
 
     }
@@ -53,7 +51,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
         firstTextField.delegate = self
         secondTextField.delegate = self
-
+        setThemeColorTo(myThemeColor: myThemeColor)
         self.title = Const.TitleEnum.List.rawValue
     }
 
