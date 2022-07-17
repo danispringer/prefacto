@@ -35,8 +35,6 @@ class NextViewController: UIViewController,
             UIView.setAnimationsEnabled(false)
         }
 
-        setThemeColorTo(myThemeColor: myThemeColor)
-
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
@@ -45,7 +43,7 @@ class NextViewController: UIViewController,
         super.viewWillAppear(animated)
 
         myTextField.delegate = self
-
+        setThemeColorTo(myThemeColor: myThemeColor)
         self.title = Const.TitleEnum.Next.rawValue
     }
 

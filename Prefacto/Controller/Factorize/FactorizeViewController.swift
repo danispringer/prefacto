@@ -37,8 +37,6 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             UIView.setAnimationsEnabled(false)
         }
 
-        setThemeColorTo(myThemeColor: myThemeColor)
-
         notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
     }
 
@@ -47,7 +45,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
 
         arrayOfInts = []
-
+        setThemeColorTo(myThemeColor: myThemeColor)
         myTextField.delegate = self
 
 
