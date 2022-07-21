@@ -42,7 +42,6 @@ extension UIViewController {
                 alertTitle = "Please enter numbers only"
                 alertMessage = """
                 Highest number allowed: 9223372036854775807
-                Need more help? Email: \(Const.UX.emailAddress)
                 """
             case .higherThanZero:
                 alertTitle = "Please enter a positive number"
@@ -64,13 +63,11 @@ extension UIViewController {
                 alertMessage = """
                 There are no primes above \(num) which are lower than 9223372036854775807 \
                 (your device's limit)
-                Need more help? Email: \(Const.UX.emailAddress)
                 """
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """
                 An unknown error occurred. Please try again.
-                Need more help? Email: \(Const.UX.emailAddress)
                 """
         }
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)

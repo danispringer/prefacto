@@ -88,9 +88,6 @@ struct Const {
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
         static let addToSiri = "Add to Siri"
-        static let emailSample = "Hi. I have a question..."
-        static let emailAddress = "00.segue_affix@icloud.com"
-
     }
 
 }
