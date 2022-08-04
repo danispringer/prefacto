@@ -128,10 +128,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
 
-            for number in firstNumber...secondNumber {
-                if Int64.IsPrime(number: number).isPrime {
-                    self.arrayOfInts.append(number)
-                }
+            for number in firstNumber...secondNumber where Int64.IsPrime(number: number).isPrime {
+                self.arrayOfInts.append(number)
             }
 
             DispatchQueue.main.async {
