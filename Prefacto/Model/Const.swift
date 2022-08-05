@@ -91,5 +91,5 @@ struct Const {
     }
 
 }
+//                        Int64                   UInt64
 // limit raised from 9223372036854775807 to 18446744073709551615
-// max uint64: 18446744073709551615
