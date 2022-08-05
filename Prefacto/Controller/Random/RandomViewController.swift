@@ -11,24 +11,18 @@ import MessageUI
 import Intents
 
 
-class RandomViewController: UIViewController {
-
+class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     // MARK: Outlets
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var randomizeButton: UIButton!
+    @IBOutlet weak var myPickerView: UIPickerView!
 
 
     // MARK: Properties
 
-    enum SizeOptions: String {
-        case xSmall = "Extra-Small"
-        case small = "Small"
-        case medium = "Medium"
-        case large = "Large"
-        case xLarge = "Extra-Large"
-    }
+    let pickerDataSource = Array(1...20)
 
     let myThemeColor: UIColor = .systemOrange
 
@@ -43,65 +37,26 @@ class RandomViewController: UIViewController {
             UIView.setAnimationsEnabled(false)
         }
 
+        myPickerView.selectRow(2, inComponent: 0, animated: true)
+
     }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         setThemeColorTo(myThemeColor: myThemeColor)
-
         randomizeButton.setTitle(Const.UX.randomize, for: .normal)
         self.title = Const.TitleEnum.Randomize.rawValue
-        randomizeButton.menu = randomMenu()
-        randomizeButton.showsMenuAsPrimaryAction = true
     }
 
 
     // MARK: Helpers
 
-    func randomMenu() -> UIMenu {
-
-        var userChoice = SizeOptions.xSmall
-        let xSmallAction = UIAction(title: SizeOptions.xSmall.rawValue, state: .off) { _ in
-            userChoice = .xSmall
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
+    @IBAction func randomTapped() {
+        DispatchQueue.main.async {
+            self.enableUI(enabled: false)
         }
-        let smallAction = UIAction(title: SizeOptions.small.rawValue, state: .off) { _ in
-            userChoice = .small
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let mediumAction = UIAction(title: SizeOptions.medium.rawValue, state: .off) { _ in
-            userChoice = .medium
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let largeAction = UIAction(title: SizeOptions.large.rawValue, state: .off) { _ in
-            userChoice = .large
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-        let xLargeAction = UIAction(title: SizeOptions.xLarge.rawValue, state: .off) { _ in
-            userChoice = .xLarge
-            DispatchQueue.main.async {
-                self.enableUI(enabled: false)
-            }
-            self.makeRandom(size: userChoice)
-        }
-
-        let randomMenu = UIMenu(title: "Choose Size", image: nil, identifier: .none,
-                                options: .displayInline,
-                                children: [xSmallAction, smallAction, mediumAction, largeAction, xLargeAction])
-        return randomMenu
+        self.makeRandom()
     }
 
 
@@ -114,14 +69,17 @@ class RandomViewController: UIViewController {
             while !UInt64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
+
+            let myInt = self.pickerDataSource.randomElement()!
+
             DispatchQueue.main.async {
-                self.presentResult(number: randInt, size: SizeOptions.medium, fromShortcut: true)
+                self.presentResult(number: randInt, size: myInt, fromShortcut: true)
             }
         }
     }
 
 
-    func makeRandom(size: SizeOptions) {
+    func makeRandom() {
         // donate to siri shortcuts
         let activity = NSUserActivity(activityType: Const.UX.bundleAndRandom)
         activity.title = Const.UX.randomize
@@ -132,22 +90,13 @@ class RandomViewController: UIViewController {
         view.userActivity = activity
         activity.becomeCurrent()
 
+        let selected = myPickerView.selectedRow(inComponent: 0)
+
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-        downloadQueue.async {
-            var limit = UInt64.max / 10 * 9
-            switch size {
-                case .xSmall:
-                    limit /= self.power(coeff: 10, exp: 16)
-                case .small:
-                    limit /= self.power(coeff: 10, exp: 15)
-                case .medium:
-                    limit /= self.power(coeff: 10, exp: 12)
-                case .large:
-                    limit /= self.power(coeff: 10, exp: 7)
-                case .xLarge:
-                    break
-            }
-            var randInt = UInt64.random(in: 1...limit)
+        downloadQueue.async { [self] in
+            let size = pickerDataSource[selected]
+            let myRange = getRangeOf(size: size)
+            var randInt = UInt64.random(in: myRange)
 
             while !UInt64.IsPrime(number: randInt).isPrime {
                 randInt += 1
@@ -168,7 +117,7 @@ class RandomViewController: UIViewController {
     }
 
 
-    func presentResult(number: UInt64, size: SizeOptions, fromShortcut: Bool) {
+    func presentResult(number: UInt64, size: Int, fromShortcut: Bool) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {
@@ -214,13 +163,60 @@ class RandomViewController: UIViewController {
 
 
     func enableUI(enabled: Bool) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             UIApplication.shared.isIdleTimerDisabled = !enabled
-            self.randomizeButton.isEnabled = enabled
-            _ = enabled ? self.activityIndicator.stopAnimating() :
-            self.activityIndicator.startAnimating()
-            //self.view.endEditing(!enabled)
+            randomizeButton.isEnabled = enabled
+            _ = enabled ? activityIndicator.stopAnimating() :
+            activityIndicator.startAnimating()
+            myPickerView.isUserInteractionEnabled = enabled
         }
     }
+
+
+    func getRangeOf(size: Int) -> ClosedRange<UInt64> {
+
+        var firstNumber = "1"
+        let toAppend = String(repeating: "0", count: size-1) // -1 cuz leading digit is 1
+        firstNumber.append(contentsOf: toAppend)
+
+        if size == 1 {
+            firstNumber = "2" // so app doesn't try to use 1 in its range, which might cause
+            // issues if randomly chosen
+        }
+
+        var lastNumber: UInt64 = 0
+
+        if size == 20 { // just repeating 9s would be too high
+            lastNumber = UInt64.max-1_000
+        } else if size == 1 {
+            lastNumber = 7 // cuz 7 is max 1digit prime, so >7 might go to 2 digits
+        } else {
+            lastNumber = UInt64("9" + String(repeating: "0", count: size-1))!
+        }
+
+        let firstNumberAsUInt64 = UInt64(firstNumber)!
+
+        let myRange: ClosedRange<UInt64> = firstNumberAsUInt64...lastNumber
+        return myRange
+    }
+
+
+    // MARK: PickerView Delegate
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(pickerDataSource[row]) digit"
+    }
+
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//
+//    }
 
 }

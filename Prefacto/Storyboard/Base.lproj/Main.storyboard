@@ -190,32 +190,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaF-EG-2yH">
+                                <rect key="frame" x="0.0" y="568" width="428" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rtL-8v-6Jg" id="Vyb-yf-hXJ"/>
+                                    <outlet property="delegate" destination="rtL-8v-6Jg" id="U0f-Zu-Ko0"/>
+                                </connections>
+                            </pickerView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-Z1-5xH">
                                 <rect key="frame" x="204" y="458" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="85" y="446" width="258.33333333333331" height="44"/>
+                                <rect key="frame" x="85" y="816" width="258.33333333333331" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Randomize button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Random Prime">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="randomTapped" destination="rtL-8v-6Jg" eventType="touchUpInside" id="RkG-sG-ODu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yjZ-am-8J6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VWa-1q-r4D" firstAttribute="centerX" secondItem="yjZ-am-8J6" secondAttribute="centerX" id="6i2-IK-Jjt"/>
+                            <constraint firstItem="FaF-EG-2yH" firstAttribute="leading" secondItem="yjZ-am-8J6" secondAttribute="leading" id="EEw-jk-65C"/>
                             <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VWa-1q-r4D" secondAttribute="trailing" constant="16" id="GcN-W9-bvE"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="JAd-wu-aHm"/>
-                            <constraint firstItem="VWa-1q-r4D" firstAttribute="centerY" secondItem="yjZ-am-8J6" secondAttribute="centerY" id="Smh-Z4-oJb"/>
+                            <constraint firstItem="FaF-EG-2yH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yjZ-am-8J6" secondAttribute="top" constant="32" id="OYr-Mj-21O"/>
+                            <constraint firstItem="VWa-1q-r4D" firstAttribute="top" secondItem="FaF-EG-2yH" secondAttribute="bottom" constant="32" id="U6b-Vh-egN"/>
+                            <constraint firstItem="yjZ-am-8J6" firstAttribute="bottom" secondItem="VWa-1q-r4D" secondAttribute="bottom" constant="32" id="W4C-ZF-0lG"/>
                             <constraint firstItem="VWa-1q-r4D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yjZ-am-8J6" secondAttribute="leading" constant="16" id="sLx-tr-Kjx"/>
+                            <constraint firstItem="yjZ-am-8J6" firstAttribute="trailing" secondItem="FaF-EG-2yH" secondAttribute="trailing" id="uEn-6T-aU8"/>
                             <constraint firstItem="Cjb-Z1-5xH" firstAttribute="centerX" secondItem="yjZ-am-8J6" secondAttribute="centerX" id="zVg-fx-AzR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N5f-P2-4fN"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Cjb-Z1-5xH" id="Yvu-R7-JZY"/>
+                        <outlet property="myPickerView" destination="FaF-EG-2yH" id="BWo-9M-OcF"/>
                         <outlet property="randomizeButton" destination="VWa-1q-r4D" id="Rob-RT-53Z"/>
                     </connections>
                 </viewController>
