@@ -177,6 +177,11 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
                 localNumber /= divisor
             }
             divisor += divisor == 2 ? 1 : 2
+            let thing = divisor.multipliedReportingOverflow(by: divisor)
+            if thing.overflow {
+                break // to avoid crashes and such. Seems to work. Hard to verify if returned primes
+                // are indeed always prime.
+            }
         }
         if localNumber > 1 {
             arrayOfInts.append(localNumber)

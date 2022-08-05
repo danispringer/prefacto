@@ -213,7 +213,7 @@ extension UIViewController {
         let regularAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.preferredFont(forTextStyle: .body)]
         let jumboAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
+            .font: UIFont.systemFont(ofSize: 32, weight: .semibold),
             .foregroundColor: color]
         let attributedMessagePre = NSAttributedString(
             string: "\n\n\(preString)\n",
