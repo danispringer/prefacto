@@ -79,7 +79,7 @@ class CheckViewController: UIViewController,
                 return
             }
             var isPrimeBool = true
-            var isDivisibleBy: Int64 = 0
+            var isDivisibleBy: UInt64 = 0
             guard userNumber != 2 else {
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
@@ -89,7 +89,7 @@ class CheckViewController: UIViewController,
             }
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             downloadQueue.async {
-                let results = Int64.IsPrime(number: userNumber)
+                let results = UInt64.IsPrime(number: userNumber)
                 isPrimeBool = results.isPrime
                 isDivisibleBy = results.divisor
                 DispatchQueue.main.async {
@@ -100,7 +100,7 @@ class CheckViewController: UIViewController,
     }
 
 
-    func isNumberOrNil(textfield: UITextField) -> Int64? {
+    func isNumberOrNil(textfield: UITextField) -> UInt64? {
         guard let myTextFieldText = textfield.text else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -121,7 +121,7 @@ class CheckViewController: UIViewController,
             return nil
         }
         let trimmedText = myTextFieldText.trimmingCharacters(in: .whitespaces)
-        guard let number = Int64(trimmedText) else {
+        guard let number = UInt64(trimmedText) else {
             let alert = self.createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -134,7 +134,7 @@ class CheckViewController: UIViewController,
     }
 
 
-    func isNotEdgeCaseNumber(number: Int64) -> Bool {
+    func isNotEdgeCaseNumber(number: UInt64) -> Bool {
 
         guard number > 0 else {
             let alert = self.createAlert(alertReasonParam: .higherThanZero)
@@ -149,7 +149,7 @@ class CheckViewController: UIViewController,
     }
 
 
-    func presentResult(number: Int64, isPrime: Bool, isDivisibleBy: Int64) {
+    func presentResult(number: UInt64, isPrime: Bool, isDivisibleBy: UInt64) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {

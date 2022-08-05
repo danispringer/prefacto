@@ -91,5 +91,5 @@ struct Const {
     }
 
 }
-// max num 64-bit phone can handle: 9223372036854775807
-// largest prime under that limit: 9223372036854775783
+// limit raised from 9223372036854775807 to 18446744073709551615
+// max uint64: 18446744073709551615

@@ -106,12 +106,12 @@ class RandomViewController: UIViewController {
 
 
     func makeRandomShortcut() {
-        var limit = Int64.max / 10 * 9
+        var limit = UInt64.max / 10 * 9
         limit /= power(coeff: 10, exp: 12)
-        var randInt = Int64.random(in: 1...limit)
+        var randInt = UInt64.random(in: 1...limit)
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
-            while !Int64.IsPrime(number: randInt).isPrime {
+            while !UInt64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
             DispatchQueue.main.async {
@@ -134,7 +134,7 @@ class RandomViewController: UIViewController {
 
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
-            var limit = Int64.max / 10 * 9
+            var limit = UInt64.max / 10 * 9
             switch size {
                 case .xSmall:
                     limit /= self.power(coeff: 10, exp: 16)
@@ -147,9 +147,9 @@ class RandomViewController: UIViewController {
                 case .xLarge:
                     break
             }
-            var randInt = Int64.random(in: 1...limit)
+            var randInt = UInt64.random(in: 1...limit)
 
-            while !Int64.IsPrime(number: randInt).isPrime {
+            while !UInt64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
             DispatchQueue.main.async {
@@ -159,7 +159,7 @@ class RandomViewController: UIViewController {
     }
 
 
-    func power(coeff: Int64, exp: Int64) -> Int64 {
+    func power(coeff: UInt64, exp: UInt64) -> UInt64 {
         var initialValue = coeff
         for _ in 1...exp {
             initialValue *= coeff
@@ -168,7 +168,7 @@ class RandomViewController: UIViewController {
     }
 
 
-    func presentResult(number: Int64, size: SizeOptions, fromShortcut: Bool) {
+    func presentResult(number: UInt64, size: SizeOptions, fromShortcut: Bool) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {

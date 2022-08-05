@@ -25,7 +25,7 @@ extension UIViewController {
     }
 
 
-    func createAlert(alertReasonParam: AlertReason, num: Int64 = 0) -> UIAlertController {
+    func createAlert(alertReasonParam: AlertReason, num: UInt64 = 0) -> UIAlertController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
@@ -103,7 +103,7 @@ extension UIViewController {
 
     // MARK: Many
 
-    func manyPrimesInRangeShare(localFrom: Int64, localTo: Int64, localSource: [Int64]) -> String {
+    func manyPrimesInRangeShare(localFrom: UInt64, localTo: UInt64, localSource: [UInt64]) -> String {
 
         guard localSource.count > 0 else {
             return """
@@ -125,14 +125,14 @@ extension UIViewController {
 
     // MARK: Is Prime
 
-    func isPrimeMessage(localNumber: Int64, color: UIColor) -> NSMutableAttributedString {
+    func isPrimeMessage(localNumber: UInt64, color: UIColor) -> NSMutableAttributedString {
         let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
         aString.append(attrifyString(preString: "Prime:", toAttrify: "Yes", color: color))
         return aString
     }
 
 
-    func isPrimeMessageShare(localNumber: Int64) -> String {
+    func isPrimeMessageShare(localNumber: UInt64) -> String {
         let aString = "Value: \(localNumber)\nPrime: Yes"
         return aString
     }
@@ -140,7 +140,7 @@ extension UIViewController {
 
     // MARK: Is Not Prime
 
-    func isNotPrimeMessage(localNumber: Int64, localIsDivisibleBy: Int64,
+    func isNotPrimeMessage(localNumber: UInt64, localIsDivisibleBy: UInt64,
                            color: UIColor) -> NSMutableAttributedString {
         let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
         aString.append(attrifyString(preString: "Prime:", toAttrify: "No", color: color))
@@ -149,14 +149,14 @@ extension UIViewController {
     }
 
 
-    func isNotPrimeMessageShare(localNumber: Int64, localIsDivisibleBy: Int64) -> String {
+    func isNotPrimeMessageShare(localNumber: UInt64, localIsDivisibleBy: UInt64) -> String {
         return "Value: \(localNumber)\nPrime: No\nFactor: \(localIsDivisibleBy)"
     }
 
 
     // MARK: Many Factors
 
-    func manyPrimeFactors(localNumber: Int64, localSource: [Int64], color: UIColor) -> NSMutableAttributedString {
+    func manyPrimeFactors(localNumber: UInt64, localSource: [UInt64], color: UIColor) -> NSMutableAttributedString {
         let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
         aString.append(attrifyString(preString: "Count:", toAttrify: "\(localSource.count)", color: color))
         aString.append(attrifyString(preString: "Factors:", toAttrify: "\(localSource)", color: color))
@@ -164,7 +164,7 @@ extension UIViewController {
     }
 
 
-    func manyPrimeFactorsShare(localNumber: Int64, localSource: [Int64]) -> String {
+    func manyPrimeFactorsShare(localNumber: UInt64, localSource: [UInt64]) -> String {
         return """
         Value: \(localNumber)
         Count: \(localSource.count)
@@ -175,7 +175,7 @@ extension UIViewController {
 
     // MARK: Next
 
-    func nextPrimeMessage(localOriginalNumber: Int64, localNextPrime: Int64,
+    func nextPrimeMessage(localOriginalNumber: UInt64, localNextPrime: UInt64,
                           color: UIColor) -> NSMutableAttributedString {
         let aString = attrifyString(preString: "Value:", toAttrify: "\(localOriginalNumber)", color: color)
         aString.append(attrifyString(preString: "Next prime:", toAttrify: "\(localNextPrime)", color: color))
@@ -183,7 +183,7 @@ extension UIViewController {
     }
 
 
-    func nextPrimeMessageShare(localOriginalNumber: Int64, localNextPrime: Int64) -> String {
+    func nextPrimeMessageShare(localOriginalNumber: UInt64, localNextPrime: UInt64) -> String {
         return """
         Value: \(localOriginalNumber)
         Next prime: \(localNextPrime)
@@ -193,7 +193,7 @@ extension UIViewController {
 
     // MARK: Previous
 
-    func previousPrimeMessage(localOriginalNumber: Int64, localPreviousPrime: Int64,
+    func previousPrimeMessage(localOriginalNumber: UInt64, localPreviousPrime: UInt64,
                               color: UIColor) -> NSMutableAttributedString {
         let aString = attrifyString(preString: "Value:", toAttrify: "\(localOriginalNumber)", color: color)
         aString.append(attrifyString(preString: "Previous prime:", toAttrify: "\(localPreviousPrime)", color: color))
@@ -201,7 +201,7 @@ extension UIViewController {
     }
 
 
-    func previousPrimeMessageShare(localOriginalNumber: Int64, localPreviousPrime: Int64) -> String {
+    func previousPrimeMessageShare(localOriginalNumber: UInt64, localPreviousPrime: UInt64) -> String {
         return """
         Value: \(localOriginalNumber)
         Previous prime: \(localPreviousPrime)

@@ -35,6 +35,9 @@ class MainMenuTableViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print(UInt64.max)
+
         if CommandLine.arguments.contains("--prefactoScreenshots") {
             // We are in testing mode, make arrangements if needed
             UIView.setAnimationsEnabled(false)
@@ -190,7 +193,7 @@ class MainMenuTableViewController: UIViewController,
     //    }
     //
     //
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGUInt64 {
     //        return 60 // my custom height
     //    }
 

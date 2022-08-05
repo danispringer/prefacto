@@ -21,7 +21,7 @@ class RandomResultsViewController: UIViewController {
 
     // MARK: Properties
 
-    var myNumber: Int64!
+    var myNumber: UInt64!
 
     let myThemeColor: UIColor = .systemOrange
 

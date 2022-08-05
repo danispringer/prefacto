@@ -22,8 +22,8 @@ class PreviousResultsViewController: UIViewController {
 
     // MARK: Properties
 
-    var originalNumber: Int64!
-    var previousPrime: Int64!
+    var originalNumber: UInt64!
+    var previousPrime: UInt64!
 
     let myThemeColor: UIColor = .systemTeal
 

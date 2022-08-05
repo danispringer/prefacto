@@ -77,7 +77,7 @@ class NextViewController: UIViewController,
             guard self.isNotEdgeCaseNumber(number: userNumber) else {
                 return
             }
-            var nextPrime: Int64 = 0
+            var nextPrime: UInt64 = 0
 
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             downloadQueue.async {
@@ -85,7 +85,7 @@ class NextViewController: UIViewController,
                 var possibleNextPrime = userNumber // we add 1 below
 
                 while !foundNextPrime {
-                    if possibleNextPrime == Int.max {
+                    if possibleNextPrime == UInt64.max {
                         let alert = self.createAlert(alertReasonParam: .overflow, num: userNumber)
                         DispatchQueue.main.async {
                             alert.view.layoutIfNeeded()
@@ -95,7 +95,7 @@ class NextViewController: UIViewController,
                         return
                     }
                     possibleNextPrime += 1
-                    if Int64.IsPrime(number: possibleNextPrime).isPrime {
+                    if UInt64.IsPrime(number: possibleNextPrime).isPrime {
                         foundNextPrime = true
                         nextPrime = possibleNextPrime
                     }
@@ -109,7 +109,7 @@ class NextViewController: UIViewController,
     }
 
 
-    func isNumberOrNil(textfield: UITextField) -> Int64? {
+    func isNumberOrNil(textfield: UITextField) -> UInt64? {
         guard let myTextFieldText = textfield.text else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -129,7 +129,7 @@ class NextViewController: UIViewController,
             return nil
         }
         let trimmedText = myTextFieldText.trimmingCharacters(in: .whitespaces)
-        guard let number = Int64(trimmedText) else {
+        guard let number = UInt64(trimmedText) else {
             let alert = self.createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -142,7 +142,7 @@ class NextViewController: UIViewController,
     }
 
 
-    func isNotEdgeCaseNumber(number: Int64) -> Bool {
+    func isNotEdgeCaseNumber(number: UInt64) -> Bool {
         guard number > 0 else {
             let alert = self.createAlert(alertReasonParam: .higherThanZero)
             DispatchQueue.main.async {
@@ -156,7 +156,7 @@ class NextViewController: UIViewController,
     }
 
 
-    func presentResult(originalNumber: Int64, nextPrime: Int64) {
+    func presentResult(originalNumber: UInt64, nextPrime: UInt64) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {

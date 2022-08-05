@@ -1,5 +1,5 @@
 //
-//  Int64+Extension.swift
+//  UInt64+Extension.swift
 //  Prefacto
 //
 //  Created by Daniel Springer on 9/5/19.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-extension Int64 {
+extension UInt64 {
 
     struct IsPrime {
-        var value: Int64
+        var value: UInt64
         var isPrime: Bool
-        var divisor: Int64
+        var divisor: UInt64
 
-        init(number: Int64) {
+        init(number: UInt64) {
             self.value = number
             self.isPrime = false
             self.divisor = 0
@@ -25,15 +25,16 @@ extension Int64 {
                 self.divisor = 0
                 return
             }
-            for intruder: Int64 in [2, 3] where number % intruder == 0 {
+            for intruder: UInt64 in [2, 3]
+            where number % intruder == 0 {
                 self.isPrime = false
                 self.divisor = intruder
                 return
             }
-            var divisor: Int64 = 5
-            var lever: Int64 = 2
+            var divisor: UInt64 = 5
+            var lever: UInt64 = 2
 
-            while divisor * divisor <= number { // max int is 9223372036854775807
+            while divisor * divisor <= number {
                 if number % divisor == 0 {
                     self.isPrime = false
                     self.divisor = divisor
