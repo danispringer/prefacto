@@ -41,7 +41,7 @@ extension UIViewController {
             case .notNumberOrTooBig:
                 alertTitle = "Please enter numbers only"
                 alertMessage = """
-                Highest number allowed: 9223372036854775807
+                Highest number allowed: \(UInt64.max)
                 """
             case .higherThanZero:
                 alertTitle = "Please enter a positive number"
@@ -61,7 +61,7 @@ extension UIViewController {
             case .overflow:
                 alertTitle = "Please enter a lower number"
                 alertMessage = """
-                There are no primes above \(num) which are lower than 9223372036854775807 \
+                There are no primes above \(num) which are lower than \(UInt64.max) \
                 (your device's limit)
                 """
             default:
