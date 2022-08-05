@@ -23,7 +23,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
 
-    var arrayOfInts = [Int64]()
+    var arrayOfInts = [UInt64]()
     var previousButton = UIBarButtonItem()
     var nextButton = UIBarButtonItem()
 
@@ -128,7 +128,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
 
-            for number in firstNumber...secondNumber where Int64.IsPrime(number: number).isPrime {
+            for number in firstNumber...secondNumber where UInt64.IsPrime(number: number).isPrime {
                 self.arrayOfInts.append(number)
             }
 
@@ -158,7 +158,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func isNumberOrNil() -> (Int64, Int64)? {
+    func isNumberOrNil() -> (UInt64, UInt64)? {
         guard let firstText = firstTextField.text, let secondText = secondTextField.text else {
             let alert = createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -186,12 +186,12 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         let firstTextTrimmed = firstText.trimmingCharacters(in: .whitespaces)
         let secondTextTrimmed = secondText.trimmingCharacters(in: .whitespaces)
-        guard let firstNumber = Int64(firstTextTrimmed), let secondNumber = Int64(secondTextTrimmed) else {
+        guard let firstNumber = UInt64(firstTextTrimmed), let secondNumber = UInt64(secondTextTrimmed) else {
             let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
-                if Int64(firstTextTrimmed) == nil {
+                if UInt64(firstTextTrimmed) == nil {
                     self.firstTextField.becomeFirstResponder()
                 } else {
                     self.secondTextField.becomeFirstResponder()
@@ -205,7 +205,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func isNotEdgeCase(firstNum: Int64, secondNum: Int64) -> Bool {
+    func isNotEdgeCase(firstNum: UInt64, secondNum: UInt64) -> Bool {
         guard ([firstNum, secondNum].allSatisfy { $0 > 0 }) else {
             let alert = createAlert(alertReasonParam: .higherThanZero)
             DispatchQueue.main.async {

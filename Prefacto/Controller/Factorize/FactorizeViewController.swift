@@ -22,7 +22,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
 
-    var arrayOfInts = [Int64]()
+    var arrayOfInts = [UInt64]()
 
     let myThemeColor: UIColor = .systemBlue
 
@@ -98,7 +98,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func isNumberOrNil() -> Int64? {
+    func isNumberOrNil() -> UInt64? {
         guard let text = myTextField.text else {
             let alert = createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -116,7 +116,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
         let trimmedText = text.trimmingCharacters(in: .whitespaces)
-        guard let number = Int64(trimmedText) else {
+        guard let number = UInt64(trimmedText) else {
             let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
@@ -128,7 +128,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func isNotEdgeCase(number: Int64) -> Bool {
+    func isNotEdgeCase(number: UInt64) -> Bool {
         guard number > 0 else {
             let alert = self.createAlert(alertReasonParam: .higherThanZero)
             DispatchQueue.main.async {
@@ -142,7 +142,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func presentResults(number: Int64) {
+    func presentResults(number: UInt64) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {
@@ -168,9 +168,9 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func primeFactors(number: Int64) {
+    func primeFactors(number: UInt64) {
         var localNumber = number
-        var divisor: Int64 = 2
+        var divisor: UInt64 = 2
         while divisor * divisor <= localNumber {
             while localNumber % divisor == 0 {
                 arrayOfInts.append(divisor)

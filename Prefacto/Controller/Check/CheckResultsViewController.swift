@@ -21,9 +21,9 @@ class CheckResultsViewController: UIViewController {
 
     // MARK: Properties
 
-    var number: Int64!
+    var number: UInt64!
     var isPrime: Bool!
-    var isDivisibleBy: Int64!
+    var isDivisibleBy: UInt64!
 
     let myThemeColor: UIColor = .systemGreen
 

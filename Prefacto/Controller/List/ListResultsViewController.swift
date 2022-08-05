@@ -24,9 +24,9 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
     // MARK: Properties
 
-    var source: [Int64]!
-    var rangeFrom: Int64!
-    var rangeTo: Int64!
+    var source: [UInt64]!
+    var rangeFrom: UInt64!
+    var rangeTo: UInt64!
     let listCell = "ListCell"
 
     var myThemeColor: UIColor!

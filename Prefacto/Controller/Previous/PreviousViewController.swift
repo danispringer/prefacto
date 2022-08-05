@@ -82,7 +82,7 @@ class PreviousViewController: UIViewController,
             guard self.isNotEdgeCaseNumberForPrevious(number: userNumber) else {
                 return
             }
-            var previousPrime: Int64 = 0
+            var previousPrime: UInt64 = 0
 
             let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
             downloadQueue.async {
@@ -91,7 +91,7 @@ class PreviousViewController: UIViewController,
 
                 while !foundPreviousPrime {
                     possiblePreviousPrime -= 1
-                    if Int64.IsPrime(number: possiblePreviousPrime).isPrime {
+                    if UInt64.IsPrime(number: possiblePreviousPrime).isPrime {
                         foundPreviousPrime = true
                         previousPrime = possiblePreviousPrime
                     }
@@ -106,7 +106,7 @@ class PreviousViewController: UIViewController,
     }
 
 
-    func isNumberOrNil(textfield: UITextField) -> Int64? {
+    func isNumberOrNil(textfield: UITextField) -> UInt64? {
         guard let myTextFieldText = textfield.text else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
@@ -126,7 +126,7 @@ class PreviousViewController: UIViewController,
             return nil
         }
         let trimmedText = myTextFieldText.trimmingCharacters(in: .whitespaces)
-        guard let number = Int64(trimmedText) else {
+        guard let number = UInt64(trimmedText) else {
             let alert = self.createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -139,7 +139,7 @@ class PreviousViewController: UIViewController,
     }
 
 
-    func isNotEdgeCaseNumberForPrevious(number: Int64) -> Bool {
+    func isNotEdgeCaseNumberForPrevious(number: UInt64) -> Bool {
         guard number > 1 else {
             let alert = self.createAlert(alertReasonParam: .higherThanOne)
             DispatchQueue.main.async {
@@ -153,7 +153,7 @@ class PreviousViewController: UIViewController,
     }
 
 
-    func presentResult(originalNumber: Int64, previousPrime: Int64) {
+    func presentResult(originalNumber: UInt64, previousPrime: UInt64) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {
