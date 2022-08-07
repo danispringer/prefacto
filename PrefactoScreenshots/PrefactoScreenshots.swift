@@ -61,8 +61,8 @@ class PrefactoScreenshots: XCTestCase {
 
 
         if word == "Randomize" {
+            app.pickerWheels.element.adjust(toPickerWheelValue: "3 digit")
             app.buttons["Create Random Prime"].firstMatch.tap()
-            app.buttons["Medium"].firstMatch.tap()
             XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
             takeScreenshot(named: "\(word)-Results")
             app.buttons["Done"].firstMatch.tap()
