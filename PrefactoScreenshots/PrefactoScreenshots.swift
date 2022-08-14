@@ -17,7 +17,7 @@ class PrefactoScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Check", "Factorize", "List", "Randomize", "Next"]
+    let aList = ["Check", "List", "Factorize", "Randomize", "Next"]
 
     override func setUpWithError() throws {
         continueAfterFailure = false
