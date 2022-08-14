@@ -140,7 +140,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     return
                 }
             }
-        } // else clause needed..?
+        }
 
 
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
