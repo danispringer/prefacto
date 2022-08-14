@@ -74,7 +74,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let selected = Array(0...9).randomElement()! // cuz highest from datasource don't load well from bg
         DispatchQueue.main.async { [self] in
             self.enableUI(enabled: false)
-            myPickerView.selectRow(selected, inComponent: 0, animated: true)
+            self.myPickerView?.selectRow(selected, inComponent: 0, animated: true)
         }
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async { [self] in
@@ -160,10 +160,10 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func enableUI(enabled: Bool) {
         DispatchQueue.main.async { [self] in
             UIApplication.shared.isIdleTimerDisabled = !enabled
-            randomizeButton.isEnabled = enabled
-            _ = enabled ? activityIndicator.stopAnimating() :
-            activityIndicator.startAnimating()
-            myPickerView.isUserInteractionEnabled = enabled
+            randomizeButton?.isEnabled = enabled
+            _ = enabled ? activityIndicator?.stopAnimating() :
+            activityIndicator?.startAnimating()
+            myPickerView?.isUserInteractionEnabled = enabled
         }
     }
 
