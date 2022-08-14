@@ -73,8 +73,8 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func makeRandomShortcut() {
         let selected = Array(0...9).randomElement()! // cuz highest from datasource don't load well from bg
         DispatchQueue.main.async { [self] in
-            self.enableUI(enabled: false)
-            self.myPickerView?.selectRow(selected, inComponent: 0, animated: true)
+            enableUI(enabled: false)
+            myPickerView?.selectRow(selected, inComponent: 0, animated: true)
         }
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async { [self] in
@@ -144,15 +144,15 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             withIdentifier: Const.StoryboardID.randomResults) as! RandomResultsViewController
         controller.myNumber = number
         controller.myTitle = "Your \(size)-digit Random Prime"
-        DispatchQueue.main.async {
-            self.dismiss(animated: false, completion: {
+        DispatchQueue.main.async { [self] in
+            dismiss(animated: false, completion: {
                 if fromShortcut {
-                    self.navigationController!.present(controller, animated: !fromShortcut)
+                    navigationController!.present(controller, animated: !fromShortcut)
                 } else {
-                    self.present(controller, animated: !fromShortcut)
+                    present(controller, animated: !fromShortcut)
                 }
             })
-            self.enableUI(enabled: true)
+            enableUI(enabled: true)
         }
     }
 
