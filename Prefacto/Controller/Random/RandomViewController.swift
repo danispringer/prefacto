@@ -39,6 +39,16 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
         myPickerView.selectRow(2, inComponent: 0, animated: true)
 
+        // donate to siri shortcuts
+        let activity = NSUserActivity(activityType: Const.UX.bundleAndRandom)
+        activity.title = Const.UX.randomize
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.UX.bundleAndRandom)
+        activity.suggestedInvocationPhrase = Const.UX.randomize
+        view.userActivity = activity
+        activity.becomeCurrent()
+
     }
 
 
@@ -61,43 +71,33 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
 
     func makeRandomShortcut() {
-        var limit = UInt64.max / 10 * 9
-        limit /= power(coeff: 10, exp: 12)
-        var randInt = UInt64.random(in: 1...limit)
+        let selected = Array(0...9).randomElement()! // cuz highest from datasource don't load well from bg
+        DispatchQueue.main.async { [self] in
+            self.enableUI(enabled: false)
+            myPickerView.selectRow(selected, inComponent: 0, animated: true)
+        }
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
-        downloadQueue.async {
+        downloadQueue.async { [self] in
+            let size = pickerDataSource[selected]
+            let myRange = getRangeOf(size: size)
+            var randInt = UInt64.random(in: myRange)
             while !UInt64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
-
-            let myInt = self.pickerDataSource.randomElement()!
-
             DispatchQueue.main.async {
-                self.presentResult(number: randInt, size: myInt, fromShortcut: true)
+                self.presentResult(number: randInt, size: size, fromShortcut: true)
             }
         }
     }
 
 
     func makeRandom() {
-        // donate to siri shortcuts
-        let activity = NSUserActivity(activityType: Const.UX.bundleAndRandom)
-        activity.title = Const.UX.randomize
-        activity.isEligibleForSearch = true
-        activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.UX.bundleAndRandom)
-        activity.suggestedInvocationPhrase = Const.UX.randomize
-        view.userActivity = activity
-        activity.becomeCurrent()
-
         let selected = myPickerView.selectedRow(inComponent: 0)
-
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async { [self] in
             let size = pickerDataSource[selected]
             let myRange = getRangeOf(size: size)
             var randInt = UInt64.random(in: myRange)
-
             while !UInt64.IsPrime(number: randInt).isPrime {
                 randInt += 1
             }
@@ -121,9 +121,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
             DispatchQueue.main.async {
-                if !fromShortcut {
-                    self.enableUI(enabled: true)
-                }
+                self.enableUI(enabled: true)
             }
             return
         }
@@ -133,9 +131,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 guard self.presentedViewController == nil else {
                     // something is already being presented. investigate...
                     DispatchQueue.main.async {
-                        if !fromShortcut {
-                            self.enableUI(enabled: true)
-                        }
+                        self.enableUI(enabled: true)
                     }
                     return
                 }
@@ -156,9 +152,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     self.present(controller, animated: !fromShortcut)
                 }
             })
-            if !fromShortcut {
-                self.enableUI(enabled: true)
-            }
+            self.enableUI(enabled: true)
         }
     }
 
