@@ -147,6 +147,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let controller = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.randomResults) as! RandomResultsViewController
         controller.myNumber = number
+        controller.myTitle = "Your \(size)-digit Random Prime"
         DispatchQueue.main.async {
             self.dismiss(animated: false, completion: {
                 if fromShortcut {
@@ -212,7 +213,8 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(pickerDataSource[row]) digit"
+        let digitDigits = row == 0 ? "digit" : "digits"
+        return "\(pickerDataSource[row]) \(digitDigits)"
     }
 
 //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

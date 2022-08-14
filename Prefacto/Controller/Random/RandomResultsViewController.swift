@@ -17,11 +17,13 @@ class RandomResultsViewController: UIViewController {
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var titleLabel: UILabel!
 
 
     // MARK: Properties
 
     var myNumber: UInt64!
+    var myTitle: String!
 
     let myThemeColor: UIColor = .systemOrange
 
@@ -53,6 +55,7 @@ class RandomResultsViewController: UIViewController {
                                         UIPasteboard.general.string = String(myNumber)
                                     }
                                 }])
+        titleLabel.text = myTitle
 
     }
 
