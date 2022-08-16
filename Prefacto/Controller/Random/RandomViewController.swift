@@ -145,7 +145,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         controller.myNumber = number
         controller.myTitle = "Your \(size)-digit Random Prime"
         DispatchQueue.main.async { [self] in
-            dismiss(animated: false, completion: {
+            dismiss(animated: false, completion: { [self] in
                 if fromShortcut {
                     navigationController!.present(controller, animated: !fromShortcut)
                 } else {
