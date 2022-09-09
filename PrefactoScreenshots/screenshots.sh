@@ -16,7 +16,7 @@ schemeName="Prefacto"
 #)
 simulators=(
     "iPhone 8 Plus"
-    "iPhone 13 Pro Max"
+    "iPhone 14 Pro Max"
     "iPad Pro (12.9-inch) (5th generation)"
 )
 
