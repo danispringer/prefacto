@@ -83,10 +83,12 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     func mergeDupesOf(array: [UInt64]) -> [NSAttributedString] {
 
+        let halfOfBodyHeight = UIFont.preferredFont(forTextStyle: .body).pointSize/2
         let fontRegular = UIFont.preferredFont(forTextStyle: .body)
         let fontSuper = UIFont.preferredFont(forTextStyle: .caption2)
         let attrRegular: [NSAttributedString.Key: Any] = [.font: fontRegular]
-        let attrSuper: [NSAttributedString.Key: Any] = [.font: fontSuper, .baselineOffset: 10] // TODO: get half height of body font size
+        let attrSuper: [NSAttributedString.Key: Any] = [.font: fontSuper,
+                                                        .baselineOffset: halfOfBodyHeight]
 
         var valuesForNum: [UInt64: UInt64] = [:]
         for number in sourceRaw {
@@ -193,7 +195,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return action == #selector(copy(_:))
     }
-
+    
 
     func tableView(_ tableView: UITableView, performAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) {
