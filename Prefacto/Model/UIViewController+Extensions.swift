@@ -115,10 +115,12 @@ extension UIViewController {
         }
 
         return """
-        From: \(localFrom)
-        To: \(localTo)
-        Count: \(localSource.count)
-        Values: \(localSource)
+        There are \(localSource.count) prime numbers from
+        \(localFrom)
+        to
+        \(localTo)
+        They are:
+        \(localSource)
         """
     }
 
@@ -133,7 +135,7 @@ extension UIViewController {
 
 
     func isPrimeMessageShare(localNumber: UInt64) -> String {
-        let aString = "Value: \(localNumber)\nPrime: Yes"
+        let aString = "The number \(localNumber) is prime"
         return aString
     }
 
@@ -150,7 +152,9 @@ extension UIViewController {
 
 
     func isNotPrimeMessageShare(localNumber: UInt64, localIsDivisibleBy: UInt64) -> String {
-        return "Value: \(localNumber)\nPrime: No\nFactor: \(localIsDivisibleBy)"
+        return """
+        The number \(localNumber) is not prime, as it divides by \(localIsDivisibleBy)
+        """
     }
 
 
@@ -165,10 +169,10 @@ extension UIViewController {
 
 
     func manyPrimeFactorsShare(localNumber: UInt64, localSource: [String]) -> String {
+        let localSourceCleaned = localSource.joined(separator: ", ").replacingOccurrences(of: "\"", with: "")
         return """
-        Value: \(localNumber)
-        Count: \(localSource.count)
-        Factors: \(localSource)
+        The number \(localNumber) has \(localSource.count) factors
+        They are: \(localSourceCleaned)
         """
     }
 
@@ -185,8 +189,7 @@ extension UIViewController {
 
     func nextPrimeMessageShare(localOriginalNumber: UInt64, localNextPrime: UInt64) -> String {
         return """
-        Value: \(localOriginalNumber)
-        Next prime: \(localNextPrime)
+        The next prime above \(localOriginalNumber) is \(localNextPrime)
         """
     }
 
@@ -203,8 +206,7 @@ extension UIViewController {
 
     func previousPrimeMessageShare(localOriginalNumber: UInt64, localPreviousPrime: UInt64) -> String {
         return """
-        Value: \(localOriginalNumber)
-        Previous prime: \(localPreviousPrime)
+        The previous prime below \(localOriginalNumber) is \(localPreviousPrime)
         """
     }
 
