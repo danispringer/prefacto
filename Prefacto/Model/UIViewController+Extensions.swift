@@ -164,7 +164,7 @@ extension UIViewController {
     }
 
 
-    func manyPrimeFactorsShare(localNumber: UInt64, localSource: [UInt64]) -> String {
+    func manyPrimeFactorsShare(localNumber: UInt64, localSource: [String]) -> String {
         return """
         Value: \(localNumber)
         Count: \(localSource.count)
