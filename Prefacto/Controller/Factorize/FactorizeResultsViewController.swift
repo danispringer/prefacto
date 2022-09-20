@@ -101,11 +101,11 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         var arrayOfStrings: [NSAttributedString] = []
         for pair in valuesForNum {
             if pair.value == 1 {
-                var myAttrString = NSMutableAttributedString(string: "")
+                let myAttrString = NSMutableAttributedString(string: "")
                 myAttrString.append(NSAttributedString(string: "\(pair.key)", attributes: attrRegular))
                 arrayOfStrings.append(myAttrString)
             } else {
-                var myAttrString = NSMutableAttributedString(string: "")
+                let myAttrString = NSMutableAttributedString(string: "")
                 myAttrString.append(NSAttributedString(string: "\(pair.key)", attributes: attrRegular))
                 myAttrString.append(NSAttributedString(string: "\(pair.value)", attributes: attrSuper))
                 arrayOfStrings.append(myAttrString)
@@ -195,7 +195,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
                    forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return action == #selector(copy(_:))
     }
-    
+
 
     func tableView(_ tableView: UITableView, performAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) {
