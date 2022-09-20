@@ -161,7 +161,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
         let controller = storyboard.instantiateViewController(
             withIdentifier: Const.StoryboardID.factorizeResults) as? FactorizeResultsViewController
         controller?.number = number
-        controller?.source = arrayOfInts
+        controller?.sourceRaw = arrayOfInts
         if let toPresent = controller {
             present(toPresent, animated: true)
         }

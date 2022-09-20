@@ -24,10 +24,11 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     // MARK: Properties
 
-    var source: [UInt64]!
+    var sourceRaw: [UInt64]!
     var number: UInt64!
-    let factorCell = "FactorCell"
+    var sourceNoDupes: [NSAttributedString]!
 
+    let factorCell = "FactorCell"
     let myThemeColor: UIColor = .systemBlue
 
 
@@ -53,18 +54,20 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             present(alert, animated: true)
             return
         }
-        let myNumberFormatted = "\(myNumber)"
-        let sourceCountFormatted = "\(source.count)"
+        //let myNumberFormatted = "\(myNumber)"
+        //let sourceRawCountAsString = "\(sourceRaw.count)"
 
-        if source.count == 1 {
+        sourceNoDupes = mergeDupesOf(array: sourceRaw)
+
+        if sourceRaw.count == 1 {
             resultsTableView.isHidden = true
             jumpToTopButton.isHidden = true
             jumpToBottomButton.isHidden = true
             resultLabel.attributedText = isPrimeMessage(localNumber: myNumber, color: myThemeColor)
         } else {
             resultLabel.text = """
-            Value: \(myNumberFormatted)
-            Count of factors: \(sourceCountFormatted)
+            Value: \(myNumber)
+            Count of factors: \(sourceNoDupes.count)
             """
         }
     }
@@ -77,6 +80,39 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
 
     // MARK: Helpers
+
+    func mergeDupesOf(array: [UInt64]) -> [NSAttributedString] {
+
+        let fontRegular = UIFont.preferredFont(forTextStyle: .body)
+        let fontSuper = UIFont.preferredFont(forTextStyle: .caption2)
+        let attrRegular: [NSAttributedString.Key: Any] = [.font: fontRegular]
+        let attrSuper: [NSAttributedString.Key: Any] = [.font: fontSuper, .baselineOffset: 10] // TODO: get half height of body font size
+
+        var valuesForNum: [UInt64: UInt64] = [:]
+        for number in sourceRaw {
+            if valuesForNum.keys.contains(number) {
+                valuesForNum[number]! += 1
+            } else {
+                valuesForNum[number] = 1
+            }
+        }
+        var arrayOfStrings: [NSAttributedString] = []
+        for pair in valuesForNum {
+            if pair.value == 1 {
+                var myAttrString = NSMutableAttributedString(string: "")
+                myAttrString.append(NSAttributedString(string: "\(pair.key)", attributes: attrRegular))
+                arrayOfStrings.append(myAttrString)
+            } else {
+                var myAttrString = NSMutableAttributedString(string: "")
+                myAttrString.append(NSAttributedString(string: "\(pair.key)", attributes: attrRegular))
+                myAttrString.append(NSAttributedString(string: "\(pair.value)", attributes: attrSuper))
+                arrayOfStrings.append(myAttrString)
+            }
+
+        }
+        return arrayOfStrings
+    }
+
 
     @IBAction func jumpToTopPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
@@ -94,7 +130,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBAction func share(_ sender: Any) {
         var message = ""
-        guard number != nil, source != nil else {
+        guard number != nil, sourceRaw != nil else {
             let alert = self.createAlert(alertReasonParam: .unknown)
             DispatchQueue.main.async {
                 alert.view.layoutIfNeeded()
@@ -102,10 +138,10 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             }
             return
         }
-        if source.count == 1 {
+        if sourceRaw.count == 1 {
             message = isPrimeMessageShare(localNumber: number)
         } else {
-            message = manyPrimeFactorsShare(localNumber: number, localSource: source)
+            message = manyPrimeFactorsShare(localNumber: number, localSource: sourceRaw)
         }
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
@@ -133,14 +169,14 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return source.count
+        return sourceNoDupes.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
-        cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
+        cell?.numberLabel?.attributedText = sourceNoDupes[indexPath.row]
         cell?.selectionStyle = .none
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
         cell?.accessibilityLabel = cell?.numberLabel?.text
