@@ -110,7 +110,11 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         }
 
         for pair in valuesForNumAsStringValues {
-            valuesForNumAsStringValues[pair.key] = minify(string: pair.value)
+            if pair.value == "1" {
+                valuesForNumAsStringValues[pair.key] = ""
+            } else {
+                valuesForNumAsStringValues[pair.key] = minify(string: pair.value)
+            }
         }
         var arrayOfStrings: [String] = []
         for pair in valuesForNumAsStringValues {
@@ -215,7 +219,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
         return action == #selector(copy(_:))
     }
 
-
+    
     func tableView(_ tableView: UITableView, performAction action: Selector,
                    forRowAt indexPath: IndexPath, withSender sender: Any?) {
         if action == #selector(copy(_:)) {
