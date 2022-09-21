@@ -125,8 +125,6 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
 
     func minify(string: String) -> String {
-        // 123
-        // ¹²³
 
         var newString = string
 
