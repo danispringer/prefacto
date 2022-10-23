@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 if CommandLine.arguments.contains("--prefactoScreenshots") {
                     // We are in testing mode, make arrangements if needed
-                    UIView.setAnimationsEnabled(false)
+                    DispatchQueue.main.async {
+                        UIView.setAnimationsEnabled(false)
+                    }
+
                 }
 
                 if let shortcutItem = launchOptions?[
