@@ -28,27 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-                if CommandLine.arguments.contains("--prefactoScreenshots") {
-                    // We are in testing mode, make arrangements if needed
-                    DispatchQueue.main.async {
-                        UIView.setAnimationsEnabled(false)
-                    }
-
-                }
-
-                if let shortcutItem = launchOptions?[
-                    UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-
-                    launchedShortcutItem = shortcutItem
-                    _ = makeRandomAndReturnDidWork()
-                    // Since, the app launch is triggered by QuicAction, block
-                    // "performActionForShortcutItem:completionHandler"
-                    // method from being called.
-                    return false
-                }
-
-                return true
+        if CommandLine.arguments.contains("--prefactoScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            DispatchQueue.main.async {
+                UIView.setAnimationsEnabled(false)
             }
+
+        }
+
+        if let shortcutItem = launchOptions?[
+            UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+
+            launchedShortcutItem = shortcutItem
+            _ = makeRandomAndReturnDidWork()
+            // Since, the app launch is triggered by QuicAction, block
+            // "performActionForShortcutItem:completionHandler"
+            // method from being called.
+            return false
+        }
+
+        return true
+    }
 
 
     // MARK: Long press app icon OR Siri Shortcut
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         safeNavVC.popToRootViewController(animated: false)
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let randomVC: RandomViewController = (storyboard.instantiateViewController(
-            withIdentifier: Const.StoryboardID.random) as! RandomViewController)
+                                                withIdentifier: Const.StoryboardID.random) as! RandomViewController)
         safeNavVC.pushViewController(randomVC, animated: false)
         randomVC.makeRandomShortcut()
         return true

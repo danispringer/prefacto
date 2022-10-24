@@ -162,7 +162,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             UIApplication.shared.isIdleTimerDisabled = !enabled
             randomizeButton?.isEnabled = enabled
             _ = enabled ? activityIndicator?.stopAnimating() :
-            activityIndicator?.startAnimating()
+                activityIndicator?.startAnimating()
             myPickerView?.isUserInteractionEnabled = enabled
         }
     }
@@ -211,8 +211,8 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return "\(pickerDataSource[row]) \(digitDigits)"
     }
 
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//
-//    }
+    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    //
+    //    }
 
 }

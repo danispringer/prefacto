@@ -166,7 +166,7 @@ class CheckViewController: UIViewController,
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.checkResults)
-        as? CheckResultsViewController
+            as? CheckResultsViewController
         controller?.number = number
         controller?.isPrime = isPrime
         controller?.isDivisibleBy = isDivisibleBy
@@ -185,7 +185,7 @@ class CheckViewController: UIViewController,
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-            self.activityIndicator.startAnimating()
+                self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }

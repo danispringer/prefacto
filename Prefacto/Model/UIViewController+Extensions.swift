@@ -29,44 +29,44 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-            case .textfieldEmptyOne:
-                alertTitle = "Please enter your first number"
-                alertMessage = "Then try again"
-            case .textfieldEmptyTwo:
-                alertTitle = "Please enter your second number"
-                alertMessage = "Then try again"
-            case .textfieldEmptySingle:
-                alertTitle = "Please enter your number"
-                alertMessage = "Then try again"
-            case .notNumberOrTooBig:
-                alertTitle = "Please enter numbers only"
-                alertMessage = """
+        case .textfieldEmptyOne:
+            alertTitle = "Please enter your first number"
+            alertMessage = "Then try again"
+        case .textfieldEmptyTwo:
+            alertTitle = "Please enter your second number"
+            alertMessage = "Then try again"
+        case .textfieldEmptySingle:
+            alertTitle = "Please enter your number"
+            alertMessage = "Then try again"
+        case .notNumberOrTooBig:
+            alertTitle = "Please enter numbers only"
+            alertMessage = """
                 Highest number allowed: \(UInt64.max)
                 """
-            case .higherThanZero:
-                alertTitle = "Please enter a positive number"
-                alertMessage = """
+        case .higherThanZero:
+            alertTitle = "Please enter a positive number"
+            alertMessage = """
                 Please enter a number higher than 0
                 """
-            case .higherThanOne:
-                alertTitle = "Please enter 2 or higher"
-                alertMessage = """
+        case .higherThanOne:
+            alertTitle = "Please enter 2 or higher"
+            alertMessage = """
                 Since 1 is the first prime, there is no "previous" prime for it.
                 """
-            case .sameTwice:
-                alertTitle = "Same number entered twice"
-                alertMessage = """
+        case .sameTwice:
+            alertTitle = "Same number entered twice"
+            alertMessage = """
                 Please enter two different numbers. To check if a single number is prime, use Check
                 """
-            case .overflow:
-                alertTitle = "Please enter a lower number"
-                alertMessage = """
+        case .overflow:
+            alertTitle = "Please enter a lower number"
+            alertMessage = """
                 There are no primes above \(num) which are lower than \(UInt64.max) \
                 (your device's limit)
                 """
-            default:
-                alertTitle = "Unknown error"
-                alertMessage = """
+        default:
+            alertTitle = "Unknown error"
+            alertMessage = """
                 An unknown error occurred. Please try again.
                 """
         }

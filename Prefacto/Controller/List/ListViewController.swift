@@ -99,13 +99,13 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-            case firstTextField:
-                secondTextField.becomeFirstResponder()
-            case secondTextField:
-                secondTextField.resignFirstResponder()
-                listTapped()
-            default:
-                return false
+        case firstTextField:
+            secondTextField.becomeFirstResponder()
+        case secondTextField:
+            secondTextField.resignFirstResponder()
+            listTapped()
+        default:
+            return false
         }
         return true
     }
@@ -170,8 +170,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         guard !firstText.isEmpty, !secondText.isEmpty else {
             let alert = firstText.isEmpty ?
-            createAlert(alertReasonParam: .textfieldEmptyOne) :
-            createAlert(alertReasonParam: .textfieldEmptyTwo)
+                createAlert(alertReasonParam: .textfieldEmptyOne) :
+                createAlert(alertReasonParam: .textfieldEmptyTwo)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -243,7 +243,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-            self.activityIndicator.startAnimating()
+                self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }

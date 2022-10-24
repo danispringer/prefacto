@@ -37,18 +37,18 @@ class PrefactoScreenshots: XCTestCase {
         let firstTextField = app.textFields.firstMatch
         var textToType = ""
         switch word {
-            case "Check":
-                textToType = "2351"
-            case "Factorize":
-                textToType = "2350"
-            case "List":
-                textToType = "1"
-            case "Randomize":
-                break
-            case "Next":
-                textToType = "2350"
-            default:
-                return
+        case "Check":
+            textToType = "2351"
+        case "Factorize":
+            textToType = "2350"
+        case "List":
+            textToType = "1"
+        case "Randomize":
+            break
+        case "Next":
+            textToType = "2350"
+        default:
+            return
         }
 
         if word != "Randomize" {

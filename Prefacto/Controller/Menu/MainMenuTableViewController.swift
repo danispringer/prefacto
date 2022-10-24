@@ -108,8 +108,8 @@ class MainMenuTableViewController: UIViewController,
         let font = UIFont.preferredFont(forTextStyle: .body)
         closeSiriButton.translatesAutoresizingMaskIntoConstraints = false
         closeSiriButton.setAttributedTitle(NSAttributedString(
-            string: Const.UX.done,
-            attributes: [NSAttributedString.Key.font: font]), for: .normal)
+                                            string: Const.UX.done,
+                                            attributes: [NSAttributedString.Key.font: font]), for: .normal)
         closeSiriButton.addTarget(self, action: #selector(closeSiriTapped), for: .touchUpInside)
         addToSiriController.view.addSubview(closeSiriButton)
 
@@ -222,46 +222,46 @@ class MainMenuTableViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
-            case Const.TitleEnum.Check.rawValue:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.check) as? CheckViewController
-                if let toPresent = controller {
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            case Const.TitleEnum.Factorize.rawValue:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
-                if let toPresent = controller {
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            case Const.TitleEnum.List.rawValue:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.list) as? ListViewController
-                if let toPresent = controller {
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            case Const.TitleEnum.Randomize.rawValue:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.random) as? RandomViewController
-                if let toPresent = controller {
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            case Const.TitleEnum.Next.rawValue:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.next) as? NextViewController
-                if let toPresent = controller {
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            case Const.TitleEnum.Previous.rawValue:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
-                if let toPresent = controller {
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            default:
-                let alert = createAlert(alertReasonParam: .unknown)
-                alert.view.layoutIfNeeded()
-                present(alert, animated: true)
+        case Const.TitleEnum.Check.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.StoryboardID.check) as? CheckViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case Const.TitleEnum.Factorize.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case Const.TitleEnum.List.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.StoryboardID.list) as? ListViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case Const.TitleEnum.Randomize.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.StoryboardID.random) as? RandomViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case Const.TitleEnum.Next.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.StoryboardID.next) as? NextViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case Const.TitleEnum.Previous.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        default:
+            let alert = createAlert(alertReasonParam: .unknown)
+            alert.view.layoutIfNeeded()
+            present(alert, animated: true)
         }
 
         tableView.deselectRow(at: indexPath, animated: true)
@@ -336,6 +336,6 @@ extension MainMenuTableViewController: INUIAddVoiceShortcutViewControllerDelegat
 
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-        return Dictionary(uniqueKeysWithValues: input.map { key, value in
-            (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-    }
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in
+                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}

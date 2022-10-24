@@ -174,7 +174,7 @@ class NextViewController: UIViewController,
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.nextResults)
-        as? NextResultsViewController
+            as? NextResultsViewController
         controller?.originalNumber = originalNumber
         controller?.nextPrime = nextPrime
         DispatchQueue.main.async {
@@ -192,7 +192,7 @@ class NextViewController: UIViewController,
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-            self.activityIndicator.startAnimating()
+                self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }

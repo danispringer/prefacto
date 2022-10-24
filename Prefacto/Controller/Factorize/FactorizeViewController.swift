@@ -195,7 +195,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-            self.activityIndicator.startAnimating()
+                self.activityIndicator.startAnimating()
         }
     }
 

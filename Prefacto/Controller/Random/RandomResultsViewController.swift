@@ -51,10 +51,10 @@ class RandomResultsViewController: UIViewController {
             children: [UIAction(title: "Copy",
                                 image: UIImage(systemName: "doc.on.doc"),
                                 state: .off) { _ in
-                                    if let myNumber = self.myNumber {
-                                        UIPasteboard.general.string = String(myNumber)
-                                    }
-                                }])
+                if let myNumber = self.myNumber {
+                    UIPasteboard.general.string = String(myNumber)
+                }
+            }])
         titleLabel.text = myTitle
 
     }
