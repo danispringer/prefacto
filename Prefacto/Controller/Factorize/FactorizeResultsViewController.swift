@@ -69,17 +69,18 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
         sourceNoDupes = mergeDupesOf(array: sourceRaw)
 
-        if sourceNoDupes.count == 1 {
-            resultsTableView.isHidden = true
-            jumpToTopButton.isHidden = true
-            jumpToBottomButton.isHidden = true
-            resultLabel.attributedText = isPrimeMessage(localNumber: myNumber, color: myThemeColor)
-        } else {
-            resultLabel.text = """
-            Value: \(myNumber)
-            Count of factors: \(sourceNoDupes.count)
-            """
+        guard sourceNoDupes.count == 1 else {
+            setUIIsNotPrime(myNum: myNumber)
+            return
         }
+
+        for smallNum in superDict.values {
+            guard !sourceNoDupes.first!.contains(smallNum) else {
+                setUIIsNotPrime(myNum: myNumber)
+                return
+            }
+        }
+        setUIIsPrime(myNum: myNumber)
     }
 
 
@@ -91,8 +92,23 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     // MARK: Helpers
 
-    func mergeDupesOf(array: [UInt64]) -> [String] {
+    func setUIIsPrime(myNum: UInt64) {
+        resultsTableView.isHidden = true
+        jumpToTopButton.isHidden = true
+        jumpToBottomButton.isHidden = true
+        resultLabel.attributedText = isPrimeMessage(localNumber: myNum, color: myThemeColor)
+    }
 
+
+    func setUIIsNotPrime(myNum: UInt64) {
+        resultLabel.text = """
+            Value: \(myNum)
+            Count of factors: \(sourceNoDupes.count)
+            """
+    }
+
+
+    func mergeDupesOf(array: [UInt64]) -> [String] {
 
         var valuesForNum: [UInt64: UInt64] = [:]
         for number in sourceRaw {
