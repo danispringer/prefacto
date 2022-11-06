@@ -44,7 +44,7 @@ class RandomResultsViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         let myNumberFormatted = "\(myNumber!)"
-        resultButton.setTitle(myNumberFormatted, for: .normal)
+        resultButton.setTitleNew(myNumberFormatted)
         resultButton.showsMenuAsPrimaryAction = true
         resultButton.menu = UIMenu(
             title: "", options: .displayInline,

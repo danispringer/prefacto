@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bgr-jy-98T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bgr-jy-98T">
     <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,9 +34,11 @@
                                 <rect key="frame" x="204" y="459.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cza-b0-GeO">
-                                <rect key="frame" x="177.66666666666666" y="159" width="72.666666666666657" height="34.333333333333343"/>
+                                <rect key="frame" x="154.66666666666666" y="159" width="118.66666666666666" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Check"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Check">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="checkTapped" destination="1t2-Bt-9xD" eventType="touchUpInside" id="jyW-Ln-W4Z"/>
                                 </connections>
@@ -87,9 +89,11 @@
                                 <rect key="frame" x="204" y="459.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52F-Pd-S7V">
-                                <rect key="frame" x="167" y="159" width="94" height="34.333333333333343"/>
+                                <rect key="frame" x="136" y="159" width="156.33333333333337" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Factorize"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Factorize">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="factorizeTapped" destination="GDH-dL-aVw" eventType="touchUpInside" id="0hk-W3-ecH"/>
                                 </connections>
@@ -149,9 +153,11 @@
                                 <rect key="frame" x="204" y="459.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-5b-W1z">
-                                <rect key="frame" x="188.33333333333334" y="159" width="51.333333333333343" height="34.333333333333343"/>
+                                <rect key="frame" x="175.66666666666666" y="159" width="76.666666666666657" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="List"/>
+                                <buttonConfiguration key="configuration" style="filled" title="List">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="listTapped" destination="enb-lg-n27" eventType="touchUpInside" id="CY3-2S-GU7"/>
                                 </connections>
@@ -192,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaF-EG-2yH">
-                                <rect key="frame" x="0.0" y="564.33333333333337" width="428" height="216"/>
+                                <rect key="frame" x="0.0" y="557.33333333333337" width="428" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="rtL-8v-6Jg" id="Vyb-yf-hXJ"/>
                                     <outlet property="delegate" destination="rtL-8v-6Jg" id="U0f-Zu-Ko0"/>
@@ -202,11 +208,11 @@
                                 <rect key="frame" x="204" y="459.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-1q-r4D">
-                                <rect key="frame" x="71" y="812.33333333333337" width="286.33333333333331" height="47.666666666666629"/>
+                                <rect key="frame" x="43.666666666666657" y="805.33333333333337" width="341" height="54.666666666666629"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Randomize button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Random Prime">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="randomTapped" destination="rtL-8v-6Jg" eventType="touchUpInside" id="RkG-sG-ODu"/>
@@ -268,9 +274,11 @@
                                 <rect key="frame" x="204" y="459.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgS-IO-7m2">
-                                <rect key="frame" x="184.33333333333334" y="159" width="59.666666666666657" height="34.333333333333343"/>
+                                <rect key="frame" x="167.66666666666666" y="159" width="92.666666666666657" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Next">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="nextTapped" destination="GOD-XX-EqB" eventType="touchUpInside" id="IE0-p9-pLH"/>
                                 </connections>
@@ -318,9 +326,11 @@
                                 <rect key="frame" x="204" y="459.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-oq-ifv">
-                                <rect key="frame" x="169.33333333333334" y="159" width="89.666666666666657" height="34.333333333333343"/>
+                                <rect key="frame" x="140" y="159" width="148.33333333333337" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Previous"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Previous">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="previousTapped" destination="beV-Hn-QCd" eventType="touchUpInside" id="fr5-18-6x5"/>
                                 </connections>
@@ -428,7 +438,7 @@ Divisible by: 857.</string>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Ps-BCo">
-                                <rect key="frame" x="0.0" y="306.66666666666674" width="428" height="491.33333333333326"/>
+                                <rect key="frame" x="0.0" y="323.33333333333326" width="428" height="458"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FactorCell" id="EsJ-X1-QkV" customClass="FactorizeTableViewCell" customModule="Prefacto" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="388" height="43.666667938232422"/>
@@ -474,26 +484,26 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="149.33333333333331" y="252.66666666666663" width="129.33333333333331" height="38"/>
+                                <rect key="frame" x="115.33333333333333" y="252.66666666666666" width="197.33333333333343" height="54.666666666666657"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="chevron.up" catalog="system"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Jump to top">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToTopPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="Ock-dN-zZU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-wW-QU7">
-                                <rect key="frame" x="132.33333333333337" y="814" width="163.66666666666663" height="38"/>
+                                <rect key="frame" x="87.000000000000014" y="797.33333333333337" width="254.33333333333337" height="54.666666666666629"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="bottom"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Jump to bottom">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToBottomPressed:" destination="qan-ov-WlY" eventType="touchUpInside" id="IKv-RL-pX8"/>
@@ -574,7 +584,7 @@ Primes: 123456890</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-pY-AOE">
-                                <rect key="frame" x="0.0" y="347.66666666666674" width="428" height="450.33333333333326"/>
+                                <rect key="frame" x="0.0" y="364.33333333333326" width="428" height="417"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="H6G-mI-jWo" customClass="ListTableViewCell" customModule="Prefacto" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="388" height="43.666667938232422"/>
@@ -622,26 +632,26 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="149.33333333333331" y="293.66666666666669" width="129.33333333333331" height="38"/>
+                                <rect key="frame" x="115.33333333333333" y="293.66666666666669" width="197.33333333333343" height="54.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="chevron.up" catalog="system"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Jump to top">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToTopPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="P50-yM-qRC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-oU-hkH">
-                                <rect key="frame" x="132.33333333333337" y="814" width="163.66666666666663" height="38"/>
+                                <rect key="frame" x="87.000000000000014" y="797.33333333333337" width="254.33333333333337" height="54.666666666666629"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to bottom"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Bottom"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Jump to bottom">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="jumpToBottomPressed:" destination="JVg-gq-MAH" eventType="touchUpInside" id="fdm-Jr-Gfz"/>
@@ -706,13 +716,16 @@ Primes: 123456890</string>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-zL-LYQ">
-                                <rect key="frame" x="16" y="449" width="396" height="41"/>
+                                <rect key="frame" x="16" y="421.66666666666669" width="396" height="95.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" label="Copy"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="1234567890123456789"/>
+                                <buttonConfiguration key="configuration" style="filled" title="1234567890123456789">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEl-es-9Ki">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Random Prime" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEl-es-9Ki">
                                 <rect key="frame" x="16" y="107" width="396" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
@@ -877,7 +890,7 @@ Next prime: 857</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N6E-ik-2ux">
-                                <rect key="frame" x="0.0" y="91" width="428" height="801"/>
+                                <rect key="frame" x="0.0" y="143" width="428" height="749"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="Wc3-Jt-wPS" customClass="MainMenuTableViewCell" customModule="Prefacto" customModuleProvider="target">
@@ -962,7 +975,7 @@ Next prime: 857</string>
         <image name="chevron.up" catalog="system" width="128" height="70"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="wand" width="21.5" height="19.5"/>
+        <image name="wand" width="43" height="39"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

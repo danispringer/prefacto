@@ -55,7 +55,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setThemeColorTo(myThemeColor: myThemeColor)
-        randomizeButton.setTitle(Const.UX.randomize, for: .normal)
+        randomizeButton.setTitleNew(Const.UX.randomize)
         self.title = Const.TitleEnum.Randomize.rawValue
     }
 
