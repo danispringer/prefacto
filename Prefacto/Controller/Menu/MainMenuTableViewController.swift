@@ -105,7 +105,7 @@ class MainMenuTableViewController: UIViewController,
 
         let closeSiriButton = UIButton()
         closeSiriButton.configuration = .filled()
-        let font = UIFont.preferredFont(forTextStyle: .body)
+        let font = UIFont.preferredFont(forTextStyle: .largeTitle)
         closeSiriButton.translatesAutoresizingMaskIntoConstraints = false
         closeSiriButton.setAttributedTitle(NSAttributedString(
                                             string: Const.UX.done,
