@@ -72,7 +72,6 @@ struct Const {
     struct UX {
         static let randomize = "Create Random Prime"
         static let done = "Done"
-//        static let cancel = "Cancel"
         static let version = "v."
         static let appName = "Prime Number App"
         static let appVersion = "CFBundleShortVersionString"
@@ -81,9 +80,7 @@ struct Const {
         static let showAppsButtonTitle = "More Apps"
         static let appsLink = "https://apps.apple.com/developer/id1402417666"
         static let thisAppLink = "https://apps.apple.com/app/id1402417667"
-//        static let devID = "1402417666"
         static let shareApp = "Tell a Friend"
-//        static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
         static let addToSiri = "Add to Siri"
     }

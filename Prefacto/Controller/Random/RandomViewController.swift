@@ -108,15 +108,6 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
 
-//    func power(coeff: UInt64, exp: UInt64) -> UInt64 {
-//        var initialValue = coeff
-//        for _ in 1...exp {
-//            initialValue *= coeff
-//        }
-//        return initialValue
-//    }
-
-
     func presentResult(number: UInt64, size: Int, fromShortcut: Bool) {
         guard let myNav = self.navigationController, myNav.topViewController == self else {
             // the view is not currently displayed. abort.
