@@ -160,12 +160,12 @@ extension UIViewController {
 
     // MARK: Many Factors
 
-    func manyPrimeFactors(localNumber: UInt64, localSource: [UInt64], color: UIColor) -> NSMutableAttributedString {
-        let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
-        aString.append(attrifyString(preString: "Count:", toAttrify: "\(localSource.count)", color: color))
-        aString.append(attrifyString(preString: "Factors:", toAttrify: "\(localSource)", color: color))
-        return aString
-    }
+//    func manyPrimeFactors(localNumber: UInt64, localSource: [UInt64], color: UIColor) -> NSMutableAttributedString {
+//        let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
+//        aString.append(attrifyString(preString: "Count:", toAttrify: "\(localSource.count)", color: color))
+//        aString.append(attrifyString(preString: "Factors:", toAttrify: "\(localSource)", color: color))
+//        return aString
+//    }
 
 
     func manyPrimeFactorsShare(localNumber: UInt64, localSource: [String]) -> String {

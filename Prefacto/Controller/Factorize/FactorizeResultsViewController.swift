@@ -103,7 +103,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     func setUIIsNotPrime(myNum: UInt64) {
         resultLabel.text = """
             Value: \(myNum)
-            Count of factors: \(sourceNoDupes.count)
+            Count: \(sourceNoDupes.count)
             """
     }
 

@@ -49,19 +49,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		330F2BF321E70E9E0012E38D /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		33122629210D233500802138 /* FactorizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorizeTableViewCell.swift; sourceTree = "<group>"; };
 		33183F21279E94B100E26202 /* Prime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prime.entitlements; sourceTree = "<group>"; };
@@ -101,13 +88,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		337A6825282F1B5A00E9551F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		33EE5BC420D996C4008FEAF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,10 +283,9 @@
 			buildConfigurationList = 33EE5BD920D996C7008FEAF2 /* Build configuration list for PBXNativeTarget "Prefacto" */;
 			buildPhases = (
 				33EE5BC320D996C4008FEAF2 /* Sources */,
-				33EE5BC420D996C4008FEAF2 /* Frameworks */,
 				33EE5BC520D996C4008FEAF2 /* Resources */,
-				334E931221B627A400C6CEDD /* ShellScript */,
-				330F2BF321E70E9E0012E38D /* Embed Foundation Extensions */,
+				334E931221B627A400C6CEDD /* Run Script: Swiftlint */,
+				33C69310291C9658000ECC32 /* Run Script: Ruby Unused */,
 			);
 			buildRules = (
 			);
@@ -387,7 +366,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		334E931221B627A400C6CEDD /* ShellScript */ = {
+		334E931221B627A400C6CEDD /* Run Script: Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -397,6 +376,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script: Swiftlint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -404,6 +384,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		33C69310291C9658000ECC32 /* Run Script: Ruby Unused */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Ruby Unused";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfile=\"unused.rb\"\nif [ -f \"$file\" ]\nthen\necho \"$file found.\"\nruby unused.rb xcode\nelse\necho \"unused.rb doesn't exist\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
