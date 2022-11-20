@@ -99,7 +99,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func jumpToBottomPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
-        let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
+        let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1,
+                                  section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 
@@ -112,7 +113,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         guard source.count != 0 else {
-            message = manyPrimesInRangeShare(localFrom: rangeFrom, localTo: rangeTo, localSource: source)
+            message = manyPrimesInRangeShare(localFrom: rangeFrom, localTo: rangeTo,
+                                             localSource: source)
             message += "\n\n" + Const.UX.thisAppLink
             presentShareController(message: message)
             return
@@ -122,7 +124,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
             present(alert, animated: true)
             return
         }
-        message = manyPrimesInRangeShare(localFrom: rangeFrom, localTo: rangeTo, localSource: mySource)
+        message = manyPrimesInRangeShare(localFrom: rangeFrom, localTo: rangeTo,
+                                         localSource: mySource)
         message += "\n\n" + Const.UX.thisAppLink
 
         presentShareController(message: message)
@@ -130,9 +133,11 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
 
 
     func presentShareController(message: String) {
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
@@ -160,7 +165,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell) as? ListTableViewCell
         cell?.numberLabel?.text = "\(source[(indexPath as NSIndexPath).row])"
@@ -171,7 +177,8 @@ class ListResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 
-    func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView,
+                   shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 

@@ -50,7 +50,8 @@ class PreviousResultsViewController: UIViewController {
         }
 
         resultLabel.attributedText = previousPrimeMessage(localOriginalNumber: myOriginalNumber,
-                                                          localPreviousPrime: myPreviousPrime, color: myThemeColor)
+                                                          localPreviousPrime: myPreviousPrime,
+                                                          color: myThemeColor)
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -78,11 +79,14 @@ class PreviousResultsViewController: UIViewController {
             return
         }
 
-        message = previousPrimeMessageShare(localOriginalNumber: myOriginalNumber, localPreviousPrime: myPreviousPrime)
+        message = previousPrimeMessageShare(localOriginalNumber: myOriginalNumber,
+                                            localPreviousPrime: myPreviousPrime)
         message += "\n\n" + Const.UX.thisAppLink
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {

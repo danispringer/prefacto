@@ -9,7 +9,8 @@
 import UIKit
 
 
-class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FactorizeResultsViewController: UIViewController, UITableViewDelegate,
+                                      UITableViewDataSource {
 
 
     // MARK: Outlets
@@ -162,7 +163,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBAction func jumpToBottomPressed(_ sender: Any) {
         resultsTableView.flashScrollIndicators()
-        let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1, section: 0)
+        let indexPath = IndexPath(row: resultsTableView.numberOfRows(inSection: 0) - 1,
+                                  section: 0)
         resultsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 
@@ -183,9 +185,11 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
             message = manyPrimeFactorsShare(localNumber: number, localSource: sourceNoDupes)
         }
         message += "\n\n" + Const.UX.thisAppLink
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButtonItem
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {
@@ -212,9 +216,11 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: factorCell) as? FactorizeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: factorCell)
+        as? FactorizeTableViewCell
         cell?.numberLabel?.text = sourceNoDupes[indexPath.row]
         cell?.selectionStyle = .none
         cell?.indexLabel?.text = "\(indexPath.row + 1)."
@@ -223,7 +229,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate, UIT
     }
 
 
-    func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView,
+                   shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 

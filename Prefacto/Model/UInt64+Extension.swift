@@ -43,8 +43,8 @@ extension UInt64 {
                 divisor += lever
                 let thing = divisor.multipliedReportingOverflow(by: divisor)
                 if thing.overflow {
-                    break // to avoid crashes and such. Seems to work. Hard to verify if returned primes
-                    // are indeed always prime.
+                    break // to avoid crashes and such. Seems to work. Hard to verify if
+                    // returned primes are indeed always prime.
                 }
                 lever = 6 - lever
             }

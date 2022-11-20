@@ -37,7 +37,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             UIView.setAnimationsEnabled(false)
         }
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard),
+                          name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -64,8 +65,9 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
     @objc func showKeyboard() {
         guard self.presentedViewController == nil else {
             // something is already being presented. don't show keyboard to avoid weird bugs.
-            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
-            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            // this might be a band-aid. ideally you want to directly handle an alert being
+            // presented over another, not simply prevent the keyboard from being presented if
+            // an alert is shown, to prevent that one scenario.
             return
         }
         myTextField.becomeFirstResponder()
@@ -158,8 +160,9 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(
-            withIdentifier: Const.StoryboardID.factorizeResults) as? FactorizeResultsViewController
+        let controller = storyboard
+            .instantiateViewController(withIdentifier: Const.StoryboardID.factorizeResults)
+        as? FactorizeResultsViewController
         controller?.number = number
         controller?.sourceRaw = arrayOfInts
         if let toPresent = controller {
@@ -179,8 +182,8 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             divisor += divisor == 2 ? 1 : 2
             let thing = divisor.multipliedReportingOverflow(by: divisor)
             if thing.overflow {
-                break // to avoid crashes and such. Seems to work. Hard to verify if returned primes
-                // are indeed always prime.
+                break // to avoid crashes and such. Seems to work. Hard to verify if returned
+                // primes are indeed always prime.
             }
         }
         if localNumber > 1 {
@@ -195,7 +198,7 @@ class FactorizeViewController: UIViewController, UITextFieldDelegate {
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
         }
     }
 

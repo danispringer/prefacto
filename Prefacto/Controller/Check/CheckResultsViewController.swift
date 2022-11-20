@@ -48,7 +48,8 @@ class CheckResultsViewController: UIViewController {
             return
         }
         if isPrime {
-            resultLabel.attributedText = isPrimeMessage(localNumber: myNumber, color: myThemeColor)
+            resultLabel.attributedText = isPrimeMessage(localNumber: myNumber,
+                                                        color: myThemeColor)
         } else {
             resultLabel.attributedText = isNotPrimeMessage(localNumber: myNumber,
                                                            localIsDivisibleBy: myIsDivisibleBy,
@@ -83,12 +84,15 @@ class CheckResultsViewController: UIViewController {
         if isPrime {
             message = isPrimeMessageShare(localNumber: myNumber)
         } else {
-            message = isNotPrimeMessageShare(localNumber: myNumber, localIsDivisibleBy: myIsDivisibleBy)
+            message = isNotPrimeMessageShare(localNumber: myNumber,
+                                             localIsDivisibleBy: myIsDivisibleBy)
         }
         message += "\n\n" + Const.UX.thisAppLink
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {

@@ -51,10 +51,10 @@ class RandomResultsViewController: UIViewController {
             children: [UIAction(title: "Copy",
                                 image: UIImage(systemName: "doc.on.doc"),
                                 state: .off) { _ in
-                if let myNumber = self.myNumber {
-                    UIPasteboard.general.string = String(myNumber)
-                }
-            }])
+                                    if let myNumber = self.myNumber {
+                                        UIPasteboard.general.string = String(myNumber)
+                                    }
+                                }])
         titleLabel.text = myTitle
 
     }
@@ -74,9 +74,11 @@ class RandomResultsViewController: UIViewController {
         }
         message = isPrimeMessageShare(localNumber: myNumber)
         message += "\n\n" + Const.UX.thisAppLink
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 DispatchQueue.main.async {

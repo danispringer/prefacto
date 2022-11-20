@@ -44,7 +44,8 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         activity.title = Const.UX.randomize
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.UX.bundleAndRandom)
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(
+            Const.UX.bundleAndRandom)
         activity.suggestedInvocationPhrase = Const.UX.randomize
         view.userActivity = activity
         activity.becomeCurrent()
@@ -71,7 +72,8 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
 
     func makeRandomShortcut() {
-        let selected = Array(0...9).randomElement()! // cuz highest from datasource don't load well from bg
+        let selected = Array(0...9).randomElement()! // cuz highest from datasource don't
+        // load well from bg
         DispatchQueue.main.async { [self] in
             enableUI(enabled: false)
             myPickerView?.selectRow(selected, inComponent: 0, animated: true)
@@ -153,7 +155,7 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             UIApplication.shared.isIdleTimerDisabled = !enabled
             randomizeButton?.isEnabled = enabled
             _ = enabled ? activityIndicator?.stopAnimating() :
-                activityIndicator?.startAnimating()
+            activityIndicator?.startAnimating()
             myPickerView?.isUserInteractionEnabled = enabled
         }
     }
@@ -197,12 +199,14 @@ class RandomViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return pickerDataSource.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,
+                    forComponent component: Int) -> String? {
         let digitDigits = row == 0 ? "digit" : "digits"
         return "\(pickerDataSource[row]) \(digitDigits)"
     }
 
-    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,
+    // inComponent component: Int) {
     //
     //    }
 

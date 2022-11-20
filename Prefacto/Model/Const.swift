@@ -75,7 +75,9 @@ struct Const {
         static let version = "v."
         static let appName = "Prime Number App"
         static let appVersion = "CFBundleShortVersionString"
-        static let bundleAndRandom = "io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut"
+        static let bundleAndRandom = """
+        io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut
+        """
         static let appReviewLink = "https://apps.apple.com/app/id1402417667?action=write-review"
         static let showAppsButtonTitle = "More Apps"
         static let appsLink = "https://apps.apple.com/developer/id1402417666"

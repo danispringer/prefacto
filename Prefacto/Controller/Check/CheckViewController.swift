@@ -34,7 +34,8 @@ class CheckViewController: UIViewController,
             UIView.setAnimationsEnabled(false)
         }
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard),
+                          name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -59,8 +60,9 @@ class CheckViewController: UIViewController,
     @objc func showKeyboard() {
         guard self.presentedViewController == nil else {
             // something is already being presented. don't show keyboard to avoid weird bugs.
-            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
-            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            // this might be a band-aid. ideally you want to directly handle an alert
+            // being presented over another, not simply prevent the keyboard from being
+            // presented if an alert is shown, to prevent that one scenario.
             return
         }
         myTextField.becomeFirstResponder()
@@ -83,7 +85,8 @@ class CheckViewController: UIViewController,
             guard userNumber != 2 else {
                 DispatchQueue.main.async {
                     self.enableUI(enabled: true)
-                    self.presentResult(number: userNumber, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
+                    self.presentResult(number: userNumber, isPrime: isPrimeBool,
+                                       isDivisibleBy: isDivisibleBy)
                 }
                 return
             }
@@ -93,7 +96,8 @@ class CheckViewController: UIViewController,
                 isPrimeBool = results.isPrime
                 isDivisibleBy = results.divisor
                 DispatchQueue.main.async {
-                    self.presentResult(number: userNumber, isPrime: isPrimeBool, isDivisibleBy: isDivisibleBy)
+                    self.presentResult(number: userNumber, isPrime: isPrimeBool,
+                                       isDivisibleBy: isDivisibleBy)
                 }
             }
         }
@@ -165,8 +169,9 @@ class CheckViewController: UIViewController,
             return
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.checkResults)
-            as? CheckResultsViewController
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: Const.StoryboardID.checkResults)
+        as? CheckResultsViewController
         controller?.number = number
         controller?.isPrime = isPrime
         controller?.isDivisibleBy = isDivisibleBy
@@ -185,7 +190,7 @@ class CheckViewController: UIViewController,
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }

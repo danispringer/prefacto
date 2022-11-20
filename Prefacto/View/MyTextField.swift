@@ -35,7 +35,8 @@ class MyTextField: UITextField {
         bottomBorder.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         bottomBorder.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         bottomBorder.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        bottomBorder.heightAnchor.constraint(equalToConstant: 1).isActive = true // Set Border thickness
+        bottomBorder.heightAnchor.constraint(equalToConstant: 1)
+            .isActive = true // Set Border thickness
 
         self.textColor = firstColor
 

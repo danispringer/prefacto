@@ -11,8 +11,9 @@ import XCTest
 class PrefactoScreenshots: XCTestCase {
 
 
-    // xcodebuild -testLanguage en -scheme Prefacto -project ./Prefacto.xcodeproj -derivedDataPath
-    // '/tmp/PrefactoDerivedData/' -destination "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
+    // xcodebuild -testLanguage en -scheme Prefacto -project ./Prefacto.xcodeproj
+    // -derivedDataPath '/tmp/PrefactoDerivedData/' -destination
+    // "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
     // https://blog.winsmith.de/english/ios/2020/04/14/xcuitest-screenshots.html
 
     var app: XCUIApplication!
@@ -37,18 +38,18 @@ class PrefactoScreenshots: XCTestCase {
         let firstTextField = app.textFields.firstMatch
         var textToType = ""
         switch word {
-        case "Check":
-            textToType = "2351"
-        case "Factorize":
-            textToType = "2350"
-        case "List":
-            textToType = "1"
-        case "Randomize":
-            break
-        case "Next":
-            textToType = "2350"
-        default:
-            return
+            case "Check":
+                textToType = "2351"
+            case "Factorize":
+                textToType = "2350"
+            case "List":
+                textToType = "1"
+            case "Randomize":
+                break
+            case "Next":
+                textToType = "2350"
+            default:
+                return
         }
 
         if word != "Randomize" {

@@ -29,48 +29,50 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-        case .textfieldEmptyOne:
-            alertTitle = "Please enter your first number"
-            alertMessage = "Then try again"
-        case .textfieldEmptyTwo:
-            alertTitle = "Please enter your second number"
-            alertMessage = "Then try again"
-        case .textfieldEmptySingle:
-            alertTitle = "Please enter your number"
-            alertMessage = "Then try again"
-        case .notNumberOrTooBig:
-            alertTitle = "Please enter numbers only"
-            alertMessage = """
+            case .textfieldEmptyOne:
+                alertTitle = "Please enter your first number"
+                alertMessage = "Then try again"
+            case .textfieldEmptyTwo:
+                alertTitle = "Please enter your second number"
+                alertMessage = "Then try again"
+            case .textfieldEmptySingle:
+                alertTitle = "Please enter your number"
+                alertMessage = "Then try again"
+            case .notNumberOrTooBig:
+                alertTitle = "Please enter numbers only"
+                alertMessage = """
                 Highest number allowed: \(UInt64.max)
                 """
-        case .higherThanZero:
-            alertTitle = "Please enter a positive number"
-            alertMessage = """
+            case .higherThanZero:
+                alertTitle = "Please enter a positive number"
+                alertMessage = """
                 Please enter a number higher than 0
                 """
-        case .higherThanOne:
-            alertTitle = "Please enter 2 or higher"
-            alertMessage = """
+            case .higherThanOne:
+                alertTitle = "Please enter 2 or higher"
+                alertMessage = """
                 Since 1 is the first prime, there is no "previous" prime for it.
                 """
-        case .sameTwice:
-            alertTitle = "Same number entered twice"
-            alertMessage = """
-                Please enter two different numbers. To check if a single number is prime, use Check
+            case .sameTwice:
+                alertTitle = "Same number entered twice"
+                alertMessage = """
+                Please enter two different numbers. To check if a single number is prime, \
+                use Check
                 """
-        case .overflow:
-            alertTitle = "Please enter a lower number"
-            alertMessage = """
+            case .overflow:
+                alertTitle = "Please enter a lower number"
+                alertMessage = """
                 There are no primes above \(num) which are lower than \(UInt64.max) \
                 (your device's limit)
                 """
-        default:
-            alertTitle = "Unknown error"
-            alertMessage = """
+            default:
+                alertTitle = "Unknown error"
+                alertMessage = """
                 An unknown error occurred. Please try again.
                 """
         }
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let alert = UIAlertController(title: alertTitle, message: alertMessage,
+                                      preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
             notif.post(name: .tryShowingKeyboard, object: nil, userInfo: nil)
         }
@@ -103,7 +105,8 @@ extension UIViewController {
 
     // MARK: Many
 
-    func manyPrimesInRangeShare(localFrom: UInt64, localTo: UInt64, localSource: [UInt64]) -> String {
+    func manyPrimesInRangeShare(localFrom: UInt64, localTo: UInt64,
+                                localSource: [UInt64]) -> String {
 
         guard localSource.count > 0 else {
             return """
@@ -128,7 +131,8 @@ extension UIViewController {
     // MARK: Is Prime
 
     func isPrimeMessage(localNumber: UInt64, color: UIColor) -> NSMutableAttributedString {
-        let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
+        let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)",
+                                    color: color)
         aString.append(attrifyString(preString: "Prime:", toAttrify: "Yes", color: color))
         return aString
     }
@@ -144,9 +148,11 @@ extension UIViewController {
 
     func isNotPrimeMessage(localNumber: UInt64, localIsDivisibleBy: UInt64,
                            color: UIColor) -> NSMutableAttributedString {
-        let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)", color: color)
+        let aString = attrifyString(preString: "Value:", toAttrify: "\(localNumber)",
+                                    color: color)
         aString.append(attrifyString(preString: "Prime:", toAttrify: "No", color: color))
-        aString.append(attrifyString(preString: "Factor:", toAttrify: "\(localIsDivisibleBy)", color: color))
+        aString.append(attrifyString(preString: "Factor:",
+                                     toAttrify: "\(localIsDivisibleBy)", color: color))
         return aString
     }
 
@@ -161,7 +167,8 @@ extension UIViewController {
     // MARK: Many Factors
 
     func manyPrimeFactorsShare(localNumber: UInt64, localSource: [String]) -> String {
-        let localSourceCleaned = localSource.joined(separator: ", ").replacingOccurrences(of: "\"", with: "")
+        let localSourceCleaned = localSource.joined(separator: ", ")
+            .replacingOccurrences(of: "\"", with: "")
         return """
         The number \(localNumber) has \(localSource.count) factors
         They are: \(localSourceCleaned)
@@ -173,8 +180,10 @@ extension UIViewController {
 
     func nextPrimeMessage(localOriginalNumber: UInt64, localNextPrime: UInt64,
                           color: UIColor) -> NSMutableAttributedString {
-        let aString = attrifyString(preString: "Value:", toAttrify: "\(localOriginalNumber)", color: color)
-        aString.append(attrifyString(preString: "Next prime:", toAttrify: "\(localNextPrime)", color: color))
+        let aString = attrifyString(preString: "Value:",
+                                    toAttrify: "\(localOriginalNumber)", color: color)
+        aString.append(attrifyString(preString: "Next prime:",
+                                     toAttrify: "\(localNextPrime)", color: color))
         return aString
     }
 
@@ -190,20 +199,24 @@ extension UIViewController {
 
     func previousPrimeMessage(localOriginalNumber: UInt64, localPreviousPrime: UInt64,
                               color: UIColor) -> NSMutableAttributedString {
-        let aString = attrifyString(preString: "Value:", toAttrify: "\(localOriginalNumber)", color: color)
-        aString.append(attrifyString(preString: "Previous prime:", toAttrify: "\(localPreviousPrime)", color: color))
+        let aString = attrifyString(preString: "Value:",
+                                    toAttrify: "\(localOriginalNumber)", color: color)
+        aString.append(attrifyString(preString: "Previous prime:",
+                                     toAttrify: "\(localPreviousPrime)", color: color))
         return aString
     }
 
 
-    func previousPrimeMessageShare(localOriginalNumber: UInt64, localPreviousPrime: UInt64) -> String {
+    func previousPrimeMessageShare(localOriginalNumber: UInt64,
+                                   localPreviousPrime: UInt64) -> String {
         return """
         The previous prime below \(localOriginalNumber) is \(localPreviousPrime)
         """
     }
 
 
-    func attrifyString(preString: String, toAttrify: String, color: UIColor) -> NSMutableAttributedString {
+    func attrifyString(preString: String, toAttrify: String,
+                       color: UIColor) -> NSMutableAttributedString {
         let regularAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.preferredFont(forTextStyle: .body)]
         let jumboAttributes: [NSAttributedString.Key: Any] = [
@@ -213,7 +226,8 @@ extension UIViewController {
             string: "\n\n\(preString)\n",
             attributes: regularAttributes)
 
-        let attributedMessageJumbo = NSAttributedString(string: "\(toAttrify)\n", attributes: jumboAttributes)
+        let attributedMessageJumbo = NSAttributedString(string: "\(toAttrify)\n",
+                                                        attributes: jumboAttributes)
 
         let myAttributedText = NSMutableAttributedString()
 

@@ -39,7 +39,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             UIView.setAnimationsEnabled(false)
         }
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard),
+                          name: .tryShowingKeyboard, object: nil)
 
     }
 
@@ -69,8 +70,9 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     @objc func showKeyboard() {
         guard self.presentedViewController == nil else {
             // something is already being presented. don't show keyboard to avoid weird bugs.
-            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
-            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            // this might be a band-aid. ideally you want to directly handle an alert being
+            // presented over another, not simply prevent the keyboard from being presented
+            // if an alert is shown, to prevent that one scenario.
             return
         }
         if !secondTextField.isFirstResponder {
@@ -99,13 +101,13 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case firstTextField:
-            secondTextField.becomeFirstResponder()
-        case secondTextField:
-            secondTextField.resignFirstResponder()
-            listTapped()
-        default:
-            return false
+            case firstTextField:
+                secondTextField.becomeFirstResponder()
+            case secondTextField:
+                secondTextField.resignFirstResponder()
+                listTapped()
+            default:
+                return false
         }
         return true
     }
@@ -128,19 +130,22 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         let downloadQueue = DispatchQueue(label: "download", qos: .userInitiated)
         downloadQueue.async {
 
-            for number in firstNumber...secondNumber where UInt64.IsPrime(number: number).isPrime {
+            for number in firstNumber...secondNumber
+            where UInt64.IsPrime(number: number).isPrime {
                 self.arrayOfInts.append(number)
             }
 
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
-                guard let myNav = self.navigationController, myNav.topViewController == self else {
+                guard let myNav = self.navigationController,
+                      myNav.topViewController == self else {
                     // the view is not currently displayed. abort.
                     return
                 }
                 let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.listResults) as? ListResultsViewController
+                    withIdentifier: Const.StoryboardID.listResults)
+                as? ListResultsViewController
                 controller?.source = self.arrayOfInts
 
                 // below line avoids bug that let old results get added to next ones
@@ -170,8 +175,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         guard !firstText.isEmpty, !secondText.isEmpty else {
             let alert = firstText.isEmpty ?
-                createAlert(alertReasonParam: .textfieldEmptyOne) :
-                createAlert(alertReasonParam: .textfieldEmptyTwo)
+            createAlert(alertReasonParam: .textfieldEmptyOne) :
+            createAlert(alertReasonParam: .textfieldEmptyTwo)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
                 alert.view.layoutIfNeeded()
@@ -186,7 +191,8 @@ class ListViewController: UIViewController, UITextFieldDelegate {
         }
         let firstTextTrimmed = firstText.trimmingCharacters(in: .whitespaces)
         let secondTextTrimmed = secondText.trimmingCharacters(in: .whitespaces)
-        guard let firstNumber = UInt64(firstTextTrimmed), let secondNumber = UInt64(secondTextTrimmed) else {
+        guard let firstNumber = UInt64(firstTextTrimmed),
+              let secondNumber = UInt64(secondTextTrimmed) else {
             let alert = createAlert(alertReasonParam: .notNumberOrTooBig)
             DispatchQueue.main.async {
                 self.enableUI(enabled: true)
@@ -243,7 +249,7 @@ class ListViewController: UIViewController, UITextFieldDelegate {
             self.firstTextField.isEnabled = enabled
             self.secondTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }

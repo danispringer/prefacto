@@ -70,7 +70,8 @@ class MainMenuTableViewController: UIViewController,
             self.presentAddToSiri()
         }
 
-        let moreApps = UIAction(title: Const.UX.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
+        let moreApps = UIAction(title: Const.UX.showAppsButtonTitle,
+                                image: UIImage(systemName: "apps.iphone"),
                                 state: .off) { _ in
             self.showApps()
         }
@@ -92,7 +93,8 @@ class MainMenuTableViewController: UIViewController,
         activity.title = Const.UX.randomize
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(Const.UX.bundleAndRandom)
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(
+            Const.UX.bundleAndRandom)
         activity.suggestedInvocationPhrase = Const.UX.randomize
         view.userActivity = activity
         activity.becomeCurrent()
@@ -108,16 +110,20 @@ class MainMenuTableViewController: UIViewController,
         let font = UIFont.preferredFont(forTextStyle: .largeTitle)
         closeSiriButton.translatesAutoresizingMaskIntoConstraints = false
         closeSiriButton.setAttributedTitle(NSAttributedString(
-                                            string: Const.UX.done,
-                                            attributes: [NSAttributedString.Key.font: font]), for: .normal)
+            string: Const.UX.done,
+            attributes: [NSAttributedString.Key.font: font]), for: .normal)
         closeSiriButton.addTarget(self, action: #selector(closeSiriTapped), for: .touchUpInside)
         addToSiriController.view.addSubview(closeSiriButton)
 
         NSLayoutConstraint.activate([
-            addToSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
-            addToSiriButton.centerYAnchor.constraint(equalTo: addToSiriController.view.centerYAnchor),
-            closeSiriButton.centerXAnchor.constraint(equalTo: addToSiriController.view.centerXAnchor),
-            closeSiriButton.topAnchor.constraint(equalTo: addToSiriButton.bottomAnchor, constant: 64),
+            addToSiriButton.centerXAnchor.constraint(
+                equalTo: addToSiriController.view.centerXAnchor),
+            addToSiriButton.centerYAnchor.constraint(
+                equalTo: addToSiriController.view.centerYAnchor),
+            closeSiriButton.centerXAnchor.constraint(
+                equalTo: addToSiriController.view.centerXAnchor),
+            closeSiriButton.topAnchor.constraint(
+                equalTo: addToSiriButton.bottomAnchor, constant: 64),
             closeSiriButton.widthAnchor.constraint(equalToConstant: 120),
             addToSiriButton.widthAnchor.constraint(equalToConstant: 320),
             addToSiriButton.heightAnchor.constraint(equalToConstant: 64)
@@ -135,15 +141,17 @@ class MainMenuTableViewController: UIViewController,
 
     func shareApp() {
         let message = Const.UX.thisAppLink
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
-            guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: .unknown)
-                self.present(alert, animated: true)
-                return
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+                guard error == nil else {
+                    let alert = self.createAlert(alertReasonParam: .unknown)
+                    self.present(alert, animated: true)
+                    return
+                }
             }
-        }
         present(activityController, animated: true)
     }
 
@@ -170,35 +178,11 @@ class MainMenuTableViewController: UIViewController,
     }
 
 
-    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //
-    //        let sectionText = UILabel()
-    //        sectionText.frame = CGRect.init(
-    //            x: 16, y: 16,
-    //            width: tableView.frame.width - 16,
-    //            height: 0)
-    //        sectionText.text = """
-    //        subtitle for home page
-    //        """
-    //        sectionText.font = UIFont.preferredFont(for: .title2, weight: .bold)
-    //        sectionText.adjustsFontForContentSizeCategory = true
-    //        sectionText.textColor = UIColor.label
-    //        sectionText.lineBreakMode = .byWordWrapping
-    //        sectionText.numberOfLines = 0
-    //        sectionText.sizeToFit()
-    //
-    //        return sectionText
-    //    }
-    //
-    //
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGUInt64 {
-    //        return 60 // my custom height
-    //    }
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)
+        as! MainMenuTableViewCell
 
         let myIndexRow: Int = (indexPath as NSIndexPath).row
         cell.myLabel.text = Const.titleArrFromEnum[myIndexRow]
@@ -207,7 +191,8 @@ class MainMenuTableViewController: UIViewController,
                              withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
-        cell.imageViewContainer.backgroundColor = Const.tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.imageViewContainer.backgroundColor = Const.tintColorsArray[
+            (indexPath as NSIndexPath).row]
         cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
@@ -222,46 +207,46 @@ class MainMenuTableViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
-        case Const.TitleEnum.Check.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.check) as? CheckViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case Const.TitleEnum.Factorize.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case Const.TitleEnum.List.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.list) as? ListViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case Const.TitleEnum.Randomize.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.random) as? RandomViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case Const.TitleEnum.Next.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.next) as? NextViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case Const.TitleEnum.Previous.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        default:
-            let alert = createAlert(alertReasonParam: .unknown)
-            alert.view.layoutIfNeeded()
-            present(alert, animated: true)
+            case Const.TitleEnum.Check.rawValue:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.check) as? CheckViewController
+                if let toPresent = controller {
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case Const.TitleEnum.Factorize.rawValue:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.factorize) as? FactorizeViewController
+                if let toPresent = controller {
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case Const.TitleEnum.List.rawValue:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.list) as? ListViewController
+                if let toPresent = controller {
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case Const.TitleEnum.Randomize.rawValue:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.random) as? RandomViewController
+                if let toPresent = controller {
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case Const.TitleEnum.Next.rawValue:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.next) as? NextViewController
+                if let toPresent = controller {
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case Const.TitleEnum.Previous.rawValue:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.previous) as? PreviousViewController
+                if let toPresent = controller {
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            default:
+                let alert = createAlert(alertReasonParam: .unknown)
+                alert.view.layoutIfNeeded()
+                present(alert, animated: true)
         }
 
         tableView.deselectRow(at: indexPath, animated: true)
@@ -282,9 +267,10 @@ extension MainMenuTableViewController {
         else {
             fatalError("Expected a valid URL")
         }
-        UIApplication.shared.open(writeReviewURL, options:
-                                    convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
-                                  completionHandler: nil)
+        UIApplication.shared
+            .open(writeReviewURL, options:
+                    convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
+                  completionHandler: nil)
     }
 
 }
@@ -294,41 +280,48 @@ extension MainMenuTableViewController: INUIAddVoiceShortcutButtonDelegate {
     func present(_ addVoiceShortcutViewController: INUIAddVoiceShortcutViewController,
                  for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
         addVoiceShortcutViewController.delegate = self
-        addToSiriController.present(addVoiceShortcutViewController, animated: true, completion: nil)
+        addToSiriController.present(addVoiceShortcutViewController,
+                                    animated: true, completion: nil)
     }
 
     func present(_ editVoiceShortcutViewController: INUIEditVoiceShortcutViewController,
                  for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
         editVoiceShortcutViewController.delegate = self
-        addToSiriController.present(editVoiceShortcutViewController, animated: true, completion: nil)
+        addToSiriController.present(editVoiceShortcutViewController,
+                                    animated: true, completion: nil)
     }
 }
 
 extension MainMenuTableViewController: INUIAddVoiceShortcutViewControllerDelegate,
                                        INUIEditVoiceShortcutViewControllerDelegate {
 
-    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController,
-                                        didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+    func addVoiceShortcutViewController(
+        _ controller: INUIAddVoiceShortcutViewController,
+        didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+            controller.dismiss(animated: true, completion: nil)
+        }
+
+    func addVoiceShortcutViewControllerDidCancel(
+        _ controller: INUIAddVoiceShortcutViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
 
-    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
+    func editVoiceShortcutViewController(
+        _ controller: INUIEditVoiceShortcutViewController,
+        didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
+            controller.dismiss(animated: true, completion: nil)
+        }
 
-    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController,
-                                         didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
+    func editVoiceShortcutViewController(
+        _ controller: INUIEditVoiceShortcutViewController,
+        didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
+            controller.dismiss(animated: true, completion: nil)
+        }
 
-    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController,
-                                         didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
+    func editVoiceShortcutViewControllerDidCancel(
+        _ controller: INUIEditVoiceShortcutViewController) {
+            controller.dismiss(animated: true, completion: nil)
+        }
 }
 
 
@@ -336,6 +329,6 @@ extension MainMenuTableViewController: INUIAddVoiceShortcutViewControllerDelegat
 
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-    return Dictionary(uniqueKeysWithValues: input.map { key, value in
-                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-}
+        return Dictionary(uniqueKeysWithValues: input.map { key, value in
+            (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    }

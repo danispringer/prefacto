@@ -35,7 +35,8 @@ class NextViewController: UIViewController,
             UIView.setAnimationsEnabled(false)
         }
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard),
+                          name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -59,8 +60,9 @@ class NextViewController: UIViewController,
     @objc func showKeyboard() {
         guard self.presentedViewController == nil else {
             // something is already being presented. don't show keyboard to avoid weird bugs.
-            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
-            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            // this might be a band-aid. ideally you want to directly handle an alert being
+            // presented over another, not simply prevent the keyboard from being presented
+            // if an alert is shown, to prevent that one scenario.
             return
         }
         myTextField.becomeFirstResponder()
@@ -87,7 +89,8 @@ class NextViewController: UIViewController,
 
                 while !foundNextPrime {
                     if possibleNextPrime == UInt64.max {
-                        let alert = self.createAlert(alertReasonParam: .overflow, num: userNumber)
+                        let alert = self.createAlert(alertReasonParam: .overflow,
+                                                     num: userNumber)
                         DispatchQueue.main.async {
                             alert.view.layoutIfNeeded()
                             self.enableUI(enabled: true)
@@ -173,8 +176,9 @@ class NextViewController: UIViewController,
             return
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.nextResults)
-            as? NextResultsViewController
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: Const.StoryboardID.nextResults)
+        as? NextResultsViewController
         controller?.originalNumber = originalNumber
         controller?.nextPrime = nextPrime
         DispatchQueue.main.async {
@@ -192,7 +196,7 @@ class NextViewController: UIViewController,
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }
@@ -204,6 +208,5 @@ class NextViewController: UIViewController,
         nextTapped()
         return true
     }
-
 
 }

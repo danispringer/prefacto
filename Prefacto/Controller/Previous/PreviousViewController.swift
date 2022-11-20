@@ -37,7 +37,8 @@ class PreviousViewController: UIViewController,
             UIView.setAnimationsEnabled(false)
         }
 
-        notif.addObserver(self, selector: #selector(showKeyboard), name: .tryShowingKeyboard, object: nil)
+        notif.addObserver(self, selector: #selector(showKeyboard),
+                          name: .tryShowingKeyboard, object: nil)
     }
 
 
@@ -63,8 +64,9 @@ class PreviousViewController: UIViewController,
     @objc func showKeyboard() {
         guard self.presentedViewController == nil else {
             // something is already being presented. don't show keyboard to avoid weird bugs.
-            // this might be a band-aid. ideally you want to directly handle an alert being presented over another, not
-            // simply prevent the keyboard from being presented if an alert is shown, to prevent that one scenario.
+            // this might be a band-aid. ideally you want to directly handle an alert being
+            // presented over another, not simply prevent the keyboard from being presented
+            // if an alert is shown, to prevent that one scenario.
             return
         }
         myTextField.becomeFirstResponder()
@@ -169,8 +171,9 @@ class PreviousViewController: UIViewController,
             return
         }
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.previousResults)
-            as? PreviousResultsViewController
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: Const.StoryboardID.previousResults)
+        as? PreviousResultsViewController
         controller?.originalNumber = originalNumber
         controller?.previousPrime = previousPrime
         DispatchQueue.main.async {
@@ -188,7 +191,7 @@ class PreviousViewController: UIViewController,
             self.actionButton.isEnabled = enabled
             self.myTextField.isEnabled = enabled
             _ = enabled ? self.activityIndicator.stopAnimating() :
-                self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             //self.view.endEditing(!enabled)
         }
     }
