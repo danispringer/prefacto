@@ -85,6 +85,8 @@ struct Const {
         static let shareApp = "Tell a Friend"
         static let leaveReview = "Leave a Review"
         static let addToSiri = "Add to Siri"
+        static let contact = "Email Me"
+        static let emailString = "00.segue_affix@icloud.com"
     }
 
 }

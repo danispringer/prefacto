@@ -75,6 +75,11 @@ class MainMenuTableViewController: UIViewController,
                                 state: .off) { _ in
             self.showApps()
         }
+        let emailAction = UIAction(title: Const.UX.contact,
+                                   image: UIImage(systemName: "envelope.badge"),
+                                   state: .off) { _ in
+            self.sendEmailTapped()
+        }
         let version: String? = Bundle.main.infoDictionary![Const.UX.appVersion] as? String
         var myTitle = Const.UX.appName
         if let safeVersion = version {
@@ -82,7 +87,7 @@ class MainMenuTableViewController: UIViewController,
         }
 
         let aboutMenu = UIMenu(title: myTitle, options: .displayInline,
-                               children: [review, shareApp, moreApps, addToSiri])
+                               children: [emailAction, review, shareApp, moreApps, addToSiri])
         return aboutMenu
     }
 
@@ -256,6 +261,51 @@ class MainMenuTableViewController: UIViewController,
 
 }
 
+extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
+
+    func sendEmailTapped() {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+
+
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the
+        // --mailComposeDelegate-- property, NOT the --delegate-- property
+
+        mailComposerVC.setToRecipients([Const.UX.emailString])
+        let version: String? = Bundle.main.infoDictionary![Const.UX.appVersion] as? String
+        var myTitle = Const.UX.appName
+        if let safeVersion = version {
+            myTitle += " \(Const.UX.version) \(safeVersion)"
+        }
+        mailComposerVC.setSubject(myTitle)
+        mailComposerVC.setMessageBody("Hi, I have a question about your app.", isHTML: false)
+
+        return mailComposerVC
+    }
+
+
+    func showSendMailErrorAlert() {
+        let alert = createAlert(alertReasonParam: .emailError)
+        present(alert, animated: true)
+    }
+
+
+    // MARK: MFMailComposeViewControllerDelegate
+
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+
+}
+
 
 extension MainMenuTableViewController {
 
@@ -303,8 +353,8 @@ extension MainMenuTableViewController: INUIAddVoiceShortcutViewControllerDelegat
 
     func addVoiceShortcutViewControllerDidCancel(
         _ controller: INUIAddVoiceShortcutViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
+            controller.dismiss(animated: true, completion: nil)
+        }
 
     func editVoiceShortcutViewController(
         _ controller: INUIEditVoiceShortcutViewController,

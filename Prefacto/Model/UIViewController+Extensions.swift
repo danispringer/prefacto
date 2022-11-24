@@ -22,6 +22,7 @@ extension UIViewController {
         case sameTwice
         case noPrimesInRange
         case unknown
+        case emailError
     }
 
 
@@ -29,6 +30,12 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
+            case .emailError:
+                alertTitle = "Email Not Sent"
+                alertMessage = """
+                Your device could not send e-mail. Please check e-mail configuration and \
+                try again.
+                """
             case .textfieldEmptyOne:
                 alertTitle = "Please enter your first number"
                 alertMessage = "Then try again"
