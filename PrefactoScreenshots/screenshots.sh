@@ -6,7 +6,6 @@ projectName="./Prefacto.xcodeproj"
 # The scheme to run tests for
 schemeName="Prefacto"
 
-
 # All the simulators we want to screenshot
 # Copy/Paste new names from Xcode's
 # "Devices and Simulators" window
@@ -35,13 +34,9 @@ appearances=(
 targetFolder="/Users/dani/Desktop/PrefactoScreenshots"
 rm -rf /Users/dani/Desktop/PrefactoScreenshots
 
-
-for simulator in "${simulators[@]}"
-do
-    for language in "${languages[@]}"
-    do
-        for appearance in "${appearances[@]}"
-        do
+for simulator in "${simulators[@]}"; do
+    for language in "${languages[@]}"; do
+        for appearance in "${appearances[@]}"; do
             rm -rf /tmp/PrefactoDerivedData/Logs/Test
             echo "📲 Building and Running for $simulator in $language"
 
