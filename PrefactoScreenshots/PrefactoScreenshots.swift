@@ -30,7 +30,7 @@ class PrefactoScreenshots: XCTestCase {
     }
 
 
-    func anAction(word: String) {
+    func anAction(word: String, myIndex: Int) {
         let tablesQuery = app.tables
         let aThing = tablesQuery.cells.staticTexts[word]
         XCTAssertTrue(aThing.waitForExistence(timeout: 5))
@@ -57,7 +57,7 @@ class PrefactoScreenshots: XCTestCase {
         }
 
         if word != "Previous" && word != "List" && word != "Next" {
-            takeScreenshot(named: "\(word)-Home")
+            takeScreenshot(named: "\(myIndex)A-\(word)-Home")
         }
 
 
@@ -65,7 +65,7 @@ class PrefactoScreenshots: XCTestCase {
             app.pickerWheels.element.adjust(toPickerWheelValue: "3 digits")
             app.buttons["Create Random Prime"].firstMatch.tap()
             XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
-            takeScreenshot(named: "\(word)-Results")
+            takeScreenshot(named: "\(myIndex)B-\(word)")
             app.buttons["Done"].firstMatch.tap()
             app.navigationBars[word].buttons["Prime Number App"].tap()
             return
@@ -79,13 +79,13 @@ class PrefactoScreenshots: XCTestCase {
             app.alerts.buttons.firstMatch.tap() // dismiss alert
             XCTAssertTrue(app.textFields.firstMatch.waitForExistence(timeout: 5))
             app.typeText("2350") // second field should have focus, from swift
-            takeScreenshot(named: "\(word)-Results-2")
+            takeScreenshot(named: "\(myIndex)B-\(word)")
             app.buttons[word].firstMatch.tap() // tap list butotn
         }
 
         XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
 
-        takeScreenshot(named: "\(word)-Results")
+        takeScreenshot(named: "\(myIndex)B-\(word)")
 
         app.buttons["Done"].firstMatch.tap()
         app.navigationBars[word].buttons["Prime Number App"].tap()
@@ -96,10 +96,10 @@ class PrefactoScreenshots: XCTestCase {
         app.launch()
 
         // Home
-        takeScreenshot(named: "Home")
+        takeScreenshot(named: "00-Home")
 
-        for aItem in aList {
-            anAction(word: aItem)
+        for (myIndex, aItem) in aList.enumerated() {
+            anAction(word: aItem, myIndex: myIndex)
         }
     }
 
