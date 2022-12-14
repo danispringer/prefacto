@@ -67,7 +67,7 @@ class PrefactoScreenshots: XCTestCase {
             XCTAssertTrue(app.buttons["Done"].firstMatch.waitForExistence(timeout: 5))
             takeScreenshot(named: "\(myIndex)B-\(word)")
             app.buttons["Done"].firstMatch.tap()
-            app.navigationBars[word].buttons["Prime Number App"].tap()
+            app.navigationBars[word].buttons["Prefacto"].tap()
             return
         }
 
@@ -88,7 +88,7 @@ class PrefactoScreenshots: XCTestCase {
         takeScreenshot(named: "\(myIndex)B-\(word)")
 
         app.buttons["Done"].firstMatch.tap()
-        app.navigationBars[word].buttons["Prime Number App"].tap()
+        app.navigationBars[word].buttons["Prefacto"].tap()
     }
 
 

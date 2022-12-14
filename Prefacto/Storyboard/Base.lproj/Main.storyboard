@@ -484,7 +484,7 @@ Divisible by: 857.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-aY-8KG">
-                                <rect key="frame" x="115.33333333333333" y="252.66666666666666" width="197.33333333333343" height="54.666666666666657"/>
+                                <rect key="frame" x="115.33333333333333" y="252.66666666666666" width="197.33333333333337" height="54.666666666666657"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -632,7 +632,7 @@ Primes: 123456890</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-rE-tr8">
-                                <rect key="frame" x="115.33333333333333" y="293.66666666666669" width="197.33333333333343" height="54.666666666666686"/>
+                                <rect key="frame" x="115.33333333333333" y="293.66666666666669" width="197.33333333333337" height="54.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" label="Jump to top"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -881,7 +881,7 @@ Next prime: 857</string>
             </objects>
             <point key="canvasLocation" x="-2739" y="1748"/>
         </scene>
-        <!--Prime Number App-->
+        <!--Prefacto-->
         <scene sceneID="XlG-UP-rKc">
             <objects>
                 <viewController id="EO6-OC-f7d" customClass="MainMenuTableViewController" customModule="Prefacto" customModuleProvider="target" sceneMemberID="viewController">
@@ -890,7 +890,7 @@ Next prime: 857</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N6E-ik-2ux">
-                                <rect key="frame" x="0.0" y="143" width="428" height="749"/>
+                                <rect key="frame" x="0.0" y="91" width="428" height="801"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="Wc3-Jt-wPS" customClass="MainMenuTableViewCell" customModule="Prefacto" customModuleProvider="target">
@@ -958,7 +958,7 @@ Next prime: 857</string>
                             <constraint firstItem="lM0-rl-ZB5" firstAttribute="bottom" secondItem="N6E-ik-2ux" secondAttribute="bottom" id="tpd-jJ-UoV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Prime Number App" id="5XZ-nx-Dl6">
+                    <navigationItem key="navigationItem" title="Prefacto" id="5XZ-nx-Dl6">
                         <barButtonItem key="rightBarButtonItem" title="About" image="ellipsis.circle" catalog="system" id="hth-mK-DiQ"/>
                     </navigationItem>
                     <connections>
