@@ -646,12 +646,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JMVGHP3288;
 				INFOPLIST_FILE = "$(SRCROOT)/Prefacto/Assets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Prefacto - Prime Numbers";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.43;
+				MARKETING_VERSION = 7.44;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Prime-Numbers-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -675,12 +676,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JMVGHP3288;
 				INFOPLIST_FILE = "$(SRCROOT)/Prefacto/Assets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Prefacto - Prime Numbers";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.43;
+				MARKETING_VERSION = 7.44;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Prime-Numbers-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

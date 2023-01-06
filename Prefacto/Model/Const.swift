@@ -73,7 +73,7 @@ struct Const {
         static let randomize = "Create Random Prime"
         static let done = "Done"
         static let version = "v."
-        static let appName = "Prefacto"
+        static let appName = "Prefacto - Prime Numbers"
         static let appVersion = "CFBundleShortVersionString"
         static let bundleAndRandom = """
         io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut
