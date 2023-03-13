@@ -29,6 +29,8 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate,
     var number: UInt64!
     var sourceNoDupes: [String]!
 
+    var viewDidLoadThinksItsPrime: Bool!
+
     let superDict: [String: String] = [
         "0": "⁰",
         "1": "¹",
@@ -94,6 +96,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate,
     // MARK: Helpers
 
     func setUIIsPrime(myNum: UInt64) {
+        viewDidLoadThinksItsPrime = true
         resultsTableView.isHidden = true
         jumpToTopButton.isHidden = true
         jumpToBottomButton.isHidden = true
@@ -102,6 +105,7 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate,
 
 
     func setUIIsNotPrime(myNum: UInt64) {
+        viewDidLoadThinksItsPrime = false
         resultLabel.text = """
             Value: \(myNum)
             Count: \(sourceNoDupes.count)
@@ -179,10 +183,10 @@ class FactorizeResultsViewController: UIViewController, UITableViewDelegate,
             }
             return
         }
-        if sourceNoDupes.count == 1 {
+        if viewDidLoadThinksItsPrime {
             message = isPrimeMessageShare(localNumber: number)
         } else {
-            message = manyPrimeFactorsShare(localNumber: number, localSource: sourceNoDupes)
+            message = manyPrimeFactorsShare(localNumber: number, localSource: sourceRaw)
         }
         message += "\n\n" + Const.UX.thisAppLink
         let activityController = UIActivityViewController(activityItems: [message],

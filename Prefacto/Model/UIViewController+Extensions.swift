@@ -173,9 +173,9 @@ extension UIViewController {
 
     // MARK: Many Factors
 
-    func manyPrimeFactorsShare(localNumber: UInt64, localSource: [String]) -> String {
-        let localSourceCleaned = localSource.joined(separator: ", ")
-            .replacingOccurrences(of: "\"", with: "")
+    func manyPrimeFactorsShare(localNumber: UInt64, localSource: [UInt64]) -> String {
+        let localSourceCleaned = "\(localSource)".replacingOccurrences(of: "[", with: "")
+            .replacingOccurrences(of: "]", with: "")
         return """
         The number \(localNumber) has \(localSource.count) factors
         They are: \(localSourceCleaned)
