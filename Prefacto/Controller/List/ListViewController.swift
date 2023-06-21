@@ -24,8 +24,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
 
     var arrayOfInts = [UInt64]()
-    var previousButton = UIBarButtonItem()
-    var nextButton = UIBarButtonItem()
 
     let myThemeColor: UIColor = .systemPurple
 
@@ -88,12 +86,6 @@ class ListViewController: UIViewController, UITextFieldDelegate {
 
     @objc func nextTextField() {
         secondTextField.becomeFirstResponder()
-    }
-
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        previousButton.isEnabled = !(textField.tag == 0)
-        nextButton.isEnabled = (textField.tag == 0)
     }
 
 
