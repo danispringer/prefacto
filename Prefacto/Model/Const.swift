@@ -79,7 +79,7 @@ struct Const {
         io.github.danispringer.Prime-Numbers-Fun.makeRandomShortcut
         """
         static let appReviewLink = "https://apps.apple.com/app/id1402417667?action=write-review"
-        static let showAppsButtonTitle = "More Apps"
+        static let showAppsButtonTitle = "More By Daniel Springer"
         static let appsLink = "https://apps.apple.com/developer/id1402417666"
         static let thisAppLink = "https://apps.apple.com/app/id1402417667"
         static let shareApp = "Tell a Friend"
