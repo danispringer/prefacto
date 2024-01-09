@@ -52,6 +52,12 @@ class MainMenuTableViewController: UIViewController,
         aboutButton.image = UIImage(systemName: "ellipsis.circle")
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        myTableView.flashScrollIndicators()
+    }
+
 
     // MARK: Helpers
 
