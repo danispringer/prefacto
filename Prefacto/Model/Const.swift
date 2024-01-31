@@ -18,6 +18,13 @@ let notif = NotificationCenter.default
 
 struct Const {
 
+    struct API {
+        static let key = "exhaust"
+        static let code = "baubles"
+        static let user = "@"
+        static let password = "_01"
+    }
+
     struct StoryboardID {
         static let main = "Main"
         static let check = "CheckViewController"
@@ -86,7 +93,7 @@ struct Const {
         static let leaveReview = "Leave a Review"
         static let addToSiri = "Add to Siri"
         static let contact = "Email Me"
-        static let emailString = "00.segue_affix@icloud.com"
+        static let apple = "icloud.com"
     }
 
 }

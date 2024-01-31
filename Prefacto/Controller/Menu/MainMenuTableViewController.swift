@@ -289,7 +289,15 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the
         // --mailComposeDelegate-- property, NOT the --delegate-- property
 
-        mailComposerVC.setToRecipients([Const.UX.emailString])
+        let recipient = Const.API.key +
+        Const.API.password +
+        Const.API.code +
+        Const.API.user +
+        Const.UX.apple
+
+        print(recipient)
+
+        mailComposerVC.setToRecipients([recipient])
         let version: String? = Bundle.main.infoDictionary![Const.UX.appVersion] as? String
         var myTitle = Const.UX.appName
         if let safeVersion = version {
