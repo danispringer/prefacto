@@ -295,8 +295,6 @@ extension MainMenuTableViewController: MFMailComposeViewControllerDelegate {
         Const.API.user +
         Const.UX.apple
 
-        print(recipient)
-
         mailComposerVC.setToRecipients([recipient])
         let version: String? = Bundle.main.infoDictionary![Const.UX.appVersion] as? String
         var myTitle = Const.UX.appName
